@@ -8,17 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		AFAF80DA29D9C646002B9921 /* KanjiProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80D929D9C646002B9921 /* KanjiProjectApp.swift */; };
-		AFAF80DC29D9C646002B9921 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80DB29D9C646002B9921 /* ContentView.swift */; };
+		AFAF80DC29D9C646002B9921 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80DB29D9C646002B9921 /* MainScreenView.swift */; };
 		AFAF80DE29D9C647002B9921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFAF80DD29D9C647002B9921 /* Assets.xcassets */; };
 		AFAF80E129D9C647002B9921 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFAF80E029D9C647002B9921 /* Preview Assets.xcassets */; };
+		AFAF80EB29D9C770002B9921 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80EA29D9C770002B9921 /* BackgroundView.swift */; };
+		AFAF80EE29D9CEBF002B9921 /* KanjiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80ED29D9CEBF002B9921 /* KanjiModel.swift */; };
+		AFAF80F129D9DC5F002B9921 /* IFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80F029D9DC5F002B9921 /* IFileManager.swift */; };
+		AFAF80F429D9DCD6002B9921 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80F329D9DCD6002B9921 /* FileManager.swift */; };
+		AFAF80FB29D9E1CA002B9921 /* Kanji.csv in Resources */ = {isa = PBXBuildFile; fileRef = AFAF80FA29D9DE6F002B9921 /* Kanji.csv */; };
+		AFAF80FE29D9E59C002B9921 /* IFileMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80FD29D9E59C002B9921 /* IFileMapper.swift */; };
+		AFAF810029D9E690002B9921 /* FileMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80FF29D9E690002B9921 /* FileMapper.swift */; };
+		AFAF810229D9E7A9002B9921 /* IKanjiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF810129D9E7A9002B9921 /* IKanjiMapper.swift */; };
+		AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF810329D9E801002B9921 /* KanjiMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AFAF80D629D9C646002B9921 /* KanjiProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanjiProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFAF80D929D9C646002B9921 /* KanjiProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiProjectApp.swift; sourceTree = "<group>"; };
-		AFAF80DB29D9C646002B9921 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AFAF80DB29D9C646002B9921 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		AFAF80DD29D9C647002B9921 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFAF80E029D9C647002B9921 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AFAF80EA29D9C770002B9921 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		AFAF80ED29D9CEBF002B9921 /* KanjiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiModel.swift; sourceTree = "<group>"; };
+		AFAF80F029D9DC5F002B9921 /* IFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFileManager.swift; sourceTree = "<group>"; };
+		AFAF80F329D9DCD6002B9921 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		AFAF80FA29D9DE6F002B9921 /* Kanji.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kanji.csv; sourceTree = "<group>"; };
+		AFAF80FD29D9E59C002B9921 /* IFileMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFileMapper.swift; sourceTree = "<group>"; };
+		AFAF80FF29D9E690002B9921 /* FileMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileMapper.swift; sourceTree = "<group>"; };
+		AFAF810129D9E7A9002B9921 /* IKanjiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKanjiMapper.swift; sourceTree = "<group>"; };
+		AFAF810329D9E801002B9921 /* KanjiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +70,13 @@
 			isa = PBXGroup;
 			children = (
 				AFAF80D929D9C646002B9921 /* KanjiProjectApp.swift */,
-				AFAF80DB29D9C646002B9921 /* ContentView.swift */,
-				AFAF80DD29D9C647002B9921 /* Assets.xcassets */,
+				AFAF80E929D9C740002B9921 /* Views */,
+				AFAF80EF29D9DC33002B9921 /* Protocols */,
+				AFAF80F229D9DCBF002B9921 /* Mappers */,
+				AFAF80FC29D9E329002B9921 /* Assets */,
 				AFAF80DF29D9C647002B9921 /* Preview Content */,
+				AFAF80EC29D9CEB0002B9921 /* Models */,
+				AFAF80F529D9DDF8002B9921 /* Files */,
 			);
 			path = KanjiProject;
 			sourceTree = "<group>";
@@ -65,6 +87,75 @@
 				AFAF80E029D9C647002B9921 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AFAF80E929D9C740002B9921 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AFAF80DB29D9C646002B9921 /* MainScreenView.swift */,
+				AFAF80EA29D9C770002B9921 /* BackgroundView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AFAF80EC29D9CEB0002B9921 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AFAF80ED29D9CEBF002B9921 /* KanjiModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AFAF80EF29D9DC33002B9921 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AFAF80F029D9DC5F002B9921 /* IFileManager.swift */,
+				AFAF80FD29D9E59C002B9921 /* IFileMapper.swift */,
+				AFAF810129D9E7A9002B9921 /* IKanjiMapper.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		AFAF80F229D9DCBF002B9921 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				AFAF80F329D9DCD6002B9921 /* FileManager.swift */,
+				AFAF80FF29D9E690002B9921 /* FileMapper.swift */,
+				AFAF810329D9E801002B9921 /* KanjiMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		AFAF80F529D9DDF8002B9921 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				AFAF80F929D9DE66002B9921 /* CSVFiles */,
+				AFAF80F629D9DE22002B9921 /* TXTFiles */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		AFAF80F629D9DE22002B9921 /* TXTFiles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TXTFiles;
+			sourceTree = "<group>";
+		};
+		AFAF80F929D9DE66002B9921 /* CSVFiles */ = {
+			isa = PBXGroup;
+			children = (
+				AFAF80FA29D9DE6F002B9921 /* Kanji.csv */,
+			);
+			path = CSVFiles;
+			sourceTree = "<group>";
+		};
+		AFAF80FC29D9E329002B9921 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AFAF80DD29D9C647002B9921 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +185,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
@@ -125,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFAF80FB29D9E1CA002B9921 /* Kanji.csv in Resources */,
 				AFAF80E129D9C647002B9921 /* Preview Assets.xcassets in Resources */,
 				AFAF80DE29D9C647002B9921 /* Assets.xcassets in Resources */,
 			);
@@ -137,7 +232,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFAF80DC29D9C646002B9921 /* ContentView.swift in Sources */,
+				AFAF810029D9E690002B9921 /* FileMapper.swift in Sources */,
+				AFAF80F129D9DC5F002B9921 /* IFileManager.swift in Sources */,
+				AFAF80EB29D9C770002B9921 /* BackgroundView.swift in Sources */,
+				AFAF80EE29D9CEBF002B9921 /* KanjiModel.swift in Sources */,
+				AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */,
+				AFAF80F429D9DCD6002B9921 /* FileManager.swift in Sources */,
+				AFAF810229D9E7A9002B9921 /* IKanjiMapper.swift in Sources */,
+				AFAF80FE29D9E59C002B9921 /* IFileMapper.swift in Sources */,
+				AFAF80DC29D9C646002B9921 /* MainScreenView.swift in Sources */,
 				AFAF80DA29D9C646002B9921 /* KanjiProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,8 @@ import SwiftUI
 struct KanjiProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainScreenView()
+                
         }
     }
 }
