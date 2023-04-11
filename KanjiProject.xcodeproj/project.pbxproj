@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF6A2DED29E5953A00D7C1A9 /* ButtonVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2DEC29E5953A00D7C1A9 /* ButtonVIew.swift */; };
+		AF6A2DF029E597EC00D7C1A9 /* MainViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2DEF29E597EC00D7C1A9 /* MainViewButton.swift */; };
+		AF6A2DF229E5AF5100D7C1A9 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2DF129E5AF5100D7C1A9 /* NavigationView.swift */; };
 		AFAF80DA29D9C646002B9921 /* KanjiProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80D929D9C646002B9921 /* KanjiProjectApp.swift */; };
 		AFAF80DC29D9C646002B9921 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80DB29D9C646002B9921 /* MainScreenView.swift */; };
 		AFAF80DE29D9C647002B9921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFAF80DD29D9C647002B9921 /* Assets.xcassets */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF6A2DEC29E5953A00D7C1A9 /* ButtonVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonVIew.swift; sourceTree = "<group>"; };
+		AF6A2DEF29E597EC00D7C1A9 /* MainViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewButton.swift; sourceTree = "<group>"; };
+		AF6A2DF129E5AF5100D7C1A9 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		AFAF80D629D9C646002B9921 /* KanjiProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanjiProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFAF80D929D9C646002B9921 /* KanjiProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiProjectApp.swift; sourceTree = "<group>"; };
 		AFAF80DB29D9C646002B9921 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
@@ -50,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF6A2DEE29E597D400D7C1A9 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				AF6A2DEF29E597EC00D7C1A9 /* MainViewButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		AFAF80CD29D9C645002B9921 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +108,9 @@
 			children = (
 				AFAF80DB29D9C646002B9921 /* MainScreenView.swift */,
 				AFAF80EA29D9C770002B9921 /* BackgroundView.swift */,
+				AF6A2DEC29E5953A00D7C1A9 /* ButtonVIew.swift */,
+				AF6A2DF129E5AF5100D7C1A9 /* NavigationView.swift */,
+				AF6A2DEE29E597D400D7C1A9 /* Buttons */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,13 +251,16 @@
 			files = (
 				AFAF810029D9E690002B9921 /* FileMapper.swift in Sources */,
 				AFAF80F129D9DC5F002B9921 /* IFileManager.swift in Sources */,
+				AF6A2DF029E597EC00D7C1A9 /* MainViewButton.swift in Sources */,
 				AFAF80EB29D9C770002B9921 /* BackgroundView.swift in Sources */,
 				AFAF80EE29D9CEBF002B9921 /* KanjiModel.swift in Sources */,
 				AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */,
 				AFAF80F429D9DCD6002B9921 /* FileManager.swift in Sources */,
 				AFAF810229D9E7A9002B9921 /* IKanjiMapper.swift in Sources */,
 				AFAF80FE29D9E59C002B9921 /* IFileMapper.swift in Sources */,
+				AF6A2DF229E5AF5100D7C1A9 /* NavigationView.swift in Sources */,
 				AFAF80DC29D9C646002B9921 /* MainScreenView.swift in Sources */,
+				AF6A2DED29E5953A00D7C1A9 /* ButtonVIew.swift in Sources */,
 				AFAF80DA29D9C646002B9921 /* KanjiProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

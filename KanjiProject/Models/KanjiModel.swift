@@ -10,4 +10,6 @@ struct KanjiModel: Hashable {
     let kun: String
     let on: String
     let translate: String
+    let number: Int
+    let level: Int
 }

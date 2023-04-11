@@ -9,12 +9,15 @@ import SwiftUI
 
 struct MainScreenView: View {
     
-    let arrat = [KanjiModel]()
+    @State var arrat = [KanjiModel]()
     
     var body: some View {
         ZStack {
-            BackgroundView(level: .All)
-            
+            BackgroundView(array: arrat)
+            ButtonVIew()
+        }
+        .onAppear() {
+            arrat = KanjiMapper().gettingData(entity: FileMapper().transform(data: try! FileManager().loadFile(fileName: "Kanji", fileType: .csv)))
         }
     }
 }

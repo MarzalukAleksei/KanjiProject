@@ -20,9 +20,9 @@ class KanjiMapper: IKanjiMapper {
             let translate = elements[1]
             let on = elements[2]
             let kun = elements[3]
-            let number = elements[4]
-            let level = elements[5]
-            result.append(KanjiModel(body: body, kun: kun, on: on, translate: translate))
+            let number = Int(elements[4]) ?? 0
+            let level = Int(elements[5]) ?? 0
+            result.append(KanjiModel(body: body, kun: kun, on: on, translate: translate, number: number, level: level))
         }
         
         return result
