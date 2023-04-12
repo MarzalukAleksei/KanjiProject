@@ -12,7 +12,8 @@
 		AF6A2DF229E5AF5100D7C1A9 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */; };
 		AF6A2E0129E62CDA00D7C1A9 /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0029E62CDA00D7C1A9 /* Stores.swift */; };
 		AF6A2E0429E721BE00D7C1A9 /* KanjiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */; };
-		AF6A2E0629E7267400D7C1A9 /* IKanjiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0529E7267400D7C1A9 /* IKanjiStore.swift */; };
+		AF6A2E0629E7267400D7C1A9 /* IStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0529E7267400D7C1A9 /* IStore.swift */; };
+		AF6A2E0829E730F900D7C1A9 /* KanaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0729E730F900D7C1A9 /* KanaModel.swift */; };
 		AFAF80DA29D9C646002B9921 /* KanjiProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80D929D9C646002B9921 /* KanjiProjectApp.swift */; };
 		AFAF80DC29D9C646002B9921 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80DB29D9C646002B9921 /* MainScreenView.swift */; };
 		AFAF80DE29D9C647002B9921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFAF80DD29D9C647002B9921 /* Assets.xcassets */; };
@@ -33,7 +34,8 @@
 		AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		AF6A2E0029E62CDA00D7C1A9 /* Stores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
 		AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiStore.swift; sourceTree = "<group>"; };
-		AF6A2E0529E7267400D7C1A9 /* IKanjiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKanjiStore.swift; sourceTree = "<group>"; };
+		AF6A2E0529E7267400D7C1A9 /* IStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStore.swift; sourceTree = "<group>"; };
+		AF6A2E0729E730F900D7C1A9 /* KanaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaModel.swift; sourceTree = "<group>"; };
 		AFAF80D629D9C646002B9921 /* KanjiProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanjiProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFAF80D929D9C646002B9921 /* KanjiProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiProjectApp.swift; sourceTree = "<group>"; };
 		AFAF80DB29D9C646002B9921 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
@@ -60,14 +62,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AF6A2DEE29E597D400D7C1A9 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				AF6A2DEF29E597EC00D7C1A9 /* MainViewButton.swift */,
-			);
-			path = Buttons;
-			sourceTree = "<group>";
-		};
 		AF6A2E0229E71EAA00D7C1A9 /* Store */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,10 +70,29 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		AF6A2E0929E7358800D7C1A9 /* MainScreenViewObjects */ = {
+			isa = PBXGroup;
+			children = (
+				AF6A2DEC29E5953A00D7C1A9 /* ButtonVIew.swift */,
+				AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */,
+				AF6A2DEF29E597EC00D7C1A9 /* MainViewButton.swift */,
+			);
+			path = MainScreenViewObjects;
+			sourceTree = "<group>";
+		};
+		AF6A2E0A29E735BD00D7C1A9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AF6A2E0929E7358800D7C1A9 /* MainScreenViewObjects */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		AFAF80CD29D9C645002B9921 = {
 			isa = PBXGroup;
 			children = (
 				AFAF80D829D9C646002B9921 /* KanjiProject */,
+				AF6A2E0029E62CDA00D7C1A9 /* Stores.swift */,
 				AFAF80D729D9C646002B9921 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,13 +110,13 @@
 			children = (
 				AFAF80D929D9C646002B9921 /* KanjiProjectApp.swift */,
 				AFAF80E929D9C740002B9921 /* Views */,
+				AF6A2E0A29E735BD00D7C1A9 /* Core */,
 				AFAF80EF29D9DC33002B9921 /* Protocols */,
 				AFAF80F229D9DCBF002B9921 /* Mappers */,
 				AFAF80FC29D9E329002B9921 /* Assets */,
 				AFAF80DF29D9C647002B9921 /* Preview Content */,
 				AFAF80EC29D9CEB0002B9921 /* Models */,
 				AFAF80F529D9DDF8002B9921 /* Files */,
-				AF6A2E0029E62CDA00D7C1A9 /* Stores.swift */,
 				AF6A2E0229E71EAA00D7C1A9 /* Store */,
 			);
 			path = KanjiProject;
@@ -121,9 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				AFAF80DB29D9C646002B9921 /* MainScreenView.swift */,
-				AF6A2DEC29E5953A00D7C1A9 /* ButtonVIew.swift */,
-				AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */,
-				AF6A2DEE29E597D400D7C1A9 /* Buttons */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				AFAF80ED29D9CEBF002B9921 /* KanjiModel.swift */,
+				AF6A2E0729E730F900D7C1A9 /* KanaModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -142,7 +153,7 @@
 				AFAF80F029D9DC5F002B9921 /* IFileManager.swift */,
 				AFAF80FD29D9E59C002B9921 /* IFileMapper.swift */,
 				AFAF810129D9E7A9002B9921 /* IKanjiMapper.swift */,
-				AF6A2E0529E7267400D7C1A9 /* IKanjiStore.swift */,
+				AF6A2E0529E7267400D7C1A9 /* IStore.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -266,9 +277,10 @@
 				AFAF810029D9E690002B9921 /* FileMapper.swift in Sources */,
 				AFAF80F129D9DC5F002B9921 /* IFileManager.swift in Sources */,
 				AF6A2E0129E62CDA00D7C1A9 /* Stores.swift in Sources */,
-				AF6A2E0629E7267400D7C1A9 /* IKanjiStore.swift in Sources */,
+				AF6A2E0629E7267400D7C1A9 /* IStore.swift in Sources */,
 				AF6A2DF029E597EC00D7C1A9 /* MainViewButton.swift in Sources */,
 				AFAF80EE29D9CEBF002B9921 /* KanjiModel.swift in Sources */,
+				AF6A2E0829E730F900D7C1A9 /* KanaModel.swift in Sources */,
 				AF6A2E0429E721BE00D7C1A9 /* KanjiStore.swift in Sources */,
 				AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */,
 				AFAF80F429D9DCD6002B9921 /* FileManager.swift in Sources */,

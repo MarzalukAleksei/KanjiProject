@@ -8,17 +8,10 @@
 import Foundation
 
 class KanjiStore: IStore {
-    
     typealias Result = [KanjiModel]
-    
     typealias Entity = [KanjiModel]
     
-    
     private var data: [KanjiModel] = []
-    
-    init() {
-        
-    }
     
     func getData() -> [KanjiModel] {
         return data

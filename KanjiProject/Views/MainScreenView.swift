@@ -14,11 +14,9 @@ struct MainScreenView: View {
     
     var body: some View {
         NavigationStack(path: $path) {
-            GeometryReader { geometry in
-                ZStack {
-                    BackgroundView(size: geometry.size, array: stores.kanjistore.getData())
-                    ButtonVIew()
-                }
+            ZStack {
+                BackgroundView(array: stores.kanjistore.getData())
+                ButtonVIew()
             }
             .navigationTitle("Main")
             .navigationBarTitleDisplayMode(.inline)

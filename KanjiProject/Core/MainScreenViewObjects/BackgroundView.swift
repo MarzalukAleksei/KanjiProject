@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct BackgroundView: View {
-    let size: CGSize
     let array: [KanjiModel]
     @State var navigationPath = NavigationPath()
     @State private var twoDemensionalArray = [[KanjiModel]]()
@@ -16,11 +15,11 @@ struct BackgroundView: View {
 //        NavigationStack(path: $navigationPath) {
                 GeometryReader(content: { geometry in
                     VStack(spacing: 0) {
-                        ForEach(twoDemensionalArray, id: \.self) { section in
+                        ForEach(twoDemensionalArray, id: \.self) { row in
                             HStack(spacing: 0) {
-                                ForEach(section, id: \.self) { element in
+                                ForEach(row, id: \.self) { element in
                                     Text(element.body)
-                                        .frame(width: amountWidth(geometry: geometry, amountCount: section), height: amountHeight(geometry: geometry, amountCount: twoDemensionalArray))
+                                        .frame(width: amountWidth(geometry: geometry, amountCount: row), height: amountHeight(geometry: geometry, amountCount: twoDemensionalArray))
                                         .foregroundColor(.black.opacity(0.2))
 //                                        .background(Color.gray)
                                         .font(.system(size: totalSize(geometry: geometry, array: twoDemensionalArray) - 2))
@@ -39,6 +38,11 @@ struct BackgroundView: View {
             
 //        }
         
+    }
+    
+    func getElement() -> String {
+        
+        return ""
     }
     
     func totalSize(geometry: GeometryProxy, array: [[KanjiModel]]) -> CGFloat {
@@ -90,6 +94,6 @@ struct BackgroundView: View {
 
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView(size: CGSize(width: 300, height: 400), array: [KanjiModel(body: "漢", kun: "", on: "", translate: "", number: 0, level: 0)])
+        BackgroundView(array: [KanjiModel(body: "漢", kun: "", on: "", translate: "", number: 0, level: 0)])
     }
 }

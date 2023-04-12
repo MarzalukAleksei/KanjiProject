@@ -14,6 +14,9 @@ class KanjiMapper: IKanjiMapper {
     func gettingData(entity: [String]) -> [KanjiModel] {
         var result: [KanjiModel] = []
         
+        var entity = entity
+        entity.removeFirst()
+        
         for row in entity {
             let elements = row.components(separatedBy: ",")
             let body = elements[0]
