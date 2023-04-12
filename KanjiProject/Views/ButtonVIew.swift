@@ -24,6 +24,7 @@ struct ButtonVIew: View {
                 }
 //                Spacer()
                 VStack {
+                    
                     HStack {
                         Spacer()
                         Spacer()

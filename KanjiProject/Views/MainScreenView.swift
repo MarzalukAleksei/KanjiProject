@@ -9,21 +9,27 @@ import SwiftUI
 
 struct MainScreenView: View {
     
-    @State var arrat = [KanjiModel]()
+    @State var stores: Stores
+    @State var path = NavigationPath()
     
     var body: some View {
-        ZStack {
-            BackgroundView(array: arrat)
-            ButtonVIew()
-        }
-        .onAppear() {
-            arrat = KanjiMapper().gettingData(entity: FileMapper().transform(data: try! FileManager().loadFile(fileName: "Kanji", fileType: .csv)))
+        NavigationStack(path: $path) {
+            GeometryReader { geometry in
+                ZStack {
+                    BackgroundView(size: geometry.size, array: stores.kanjistore.getData())
+                    ButtonVIew()
+                }
+            }
+            .navigationTitle("Main")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(Color.gray, for: .navigationBar)
         }
     }
 }
 
 struct MainScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        MainScreenView()
+        MainScreenView(stores: .init())
     }
 }

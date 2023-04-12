@@ -1,88 +1,95 @@
 //
-//  BackgroundView.swift
+//  NavigationView.swift
 //  KanjiProject
 //
-//  Created by ブラック狼 on 2023/04/02.
+//  Created by ブラック狼 on 2023/04/11.
 //
 
 import SwiftUI
 
 struct BackgroundView: View {
-    
-    private let size: CGFloat = 30
-    private let padding: CGFloat = 5
+    let size: CGSize
     let array: [KanjiModel]
-    @State var elements: [[KanjiModel]] = []
-    @State var width: CGFloat = 0
-    
+    @State var navigationPath = NavigationPath()
+    @State private var twoDemensionalArray = [[KanjiModel]]()
     var body: some View {
-        GeometryReader { geometry in
-            
-            ZStack {
-                VStack {
-                    ForEach(backBroundsElements(geometry: geometry), id: \.self) { row in
-                        HStack(alignment: .center, spacing: 0) {
-                            ForEach(row, id: \.self) { element in
-                                Text(element.body)
-//                                    .frame(width: width(geometry: geometry), height: size)
-                                    .frame(width: size, height: size)
-//                                    .font(.system(size: width(geometry: geometry)))
-                                    .font(.system(size: size))
-                                    .foregroundColor(.black.opacity(0.2))
-                                    .padding(.horizontal, 4)
-                                    
-                                    
+//        NavigationStack(path: $navigationPath) {
+                GeometryReader(content: { geometry in
+                    VStack(spacing: 0) {
+                        ForEach(twoDemensionalArray, id: \.self) { section in
+                            HStack(spacing: 0) {
+                                ForEach(section, id: \.self) { element in
+                                    Text(element.body)
+                                        .frame(width: amountWidth(geometry: geometry, amountCount: section), height: amountHeight(geometry: geometry, amountCount: twoDemensionalArray))
+                                        .foregroundColor(.black.opacity(0.2))
+//                                        .background(Color.gray)
+                                        .font(.system(size: totalSize(geometry: geometry, array: twoDemensionalArray) - 2))
+                                }
                             }
                         }
-                        .padding(.horizontal, padding)
                     }
-                }
-            }
-//            .padding(0)
-        }
+                    .padding(5)
+                    .onAppear() {
+                        twoDemensionalArray = array(geometry: geometry)
+                    }
+                })
+//                .navigationTitle("Main")
+//            .navigationBarTitleDisplayMode(.inline)
+//            .frame(width: size.width, height: size.height)
+            
+//        }
         
     }
     
-    private func width(geometry: GeometryProxy) -> CGFloat {
-        let width = geometry.size.width
-        let inLine = width / (size + padding) + 1
-        let remains = inLine - inLine.rounded(.towardZero)
-        let result = size + size * remains
+    func totalSize(geometry: GeometryProxy, array: [[KanjiModel]]) -> CGFloat {
+        let width = amountWidth(geometry: geometry, amountCount: array.first ?? [])
+        let heignt = amountHeight(geometry: geometry, amountCount: array)
+        let ratio = heignt / width
+        let result = 30 * ratio
         return result
     }
     
-    private func elementsInRow(geometry: GeometryProxy) -> Int {
-//        let inLine = geometry.size.width / size - 3
-        let width = geometry.size.width - (size + padding) - padding * 2
-        let inRow = width / (size + padding) + 1
-        print(inRow)
-        return Int(inRow)
+    func amountWidth(geometry: GeometryProxy, amountCount: [KanjiModel]) -> CGFloat {
+        let width = geometry.size.width - 10
+        let result = width / CGFloat(amountCount.count)
+        return result
     }
     
-    private func elemtntsInSection(geometry: GeometryProxy) -> Int {
-        let height = geometry.size.height - (size + padding) - padding * 2
-        let inSection = height / (size + padding) + 1
-        return Int(inSection)
+    func amountHeight(geometry: GeometryProxy, amountCount:[[KanjiModel]]) -> CGFloat {
+        let height = geometry.size.height - 10
+        let result = height / CGFloat(amountCount.count)
+        return result
     }
     
-    private func backBroundsElements(geometry: GeometryProxy) -> [[KanjiModel]] {
+    func array(geometry: GeometryProxy) -> [[KanjiModel]] {
         var result: [[KanjiModel]] = []
-        for _ in 1...elemtntsInSection(geometry: geometry) {
+        let section = inSection(geometry: geometry)
+        let inRow = inRow(geometry: geometry)
+        for _ in 0..<section {
             var row: [KanjiModel] = []
-            for _ in 1...elementsInRow(geometry: geometry) {
-                if let obj = array.randomElement() {
-                    row.append(obj)
-                }
+            for _ in 0..<inRow {
+                row.append(array.randomElement() ?? KanjiModel(body: "漢", kun: "", on: "", translate: "", number: 0, level: 0))
             }
             result.append(row)
         }
-        
         return result
+    }
+    
+    func inRow(geometry: GeometryProxy) -> Int {
+        let width = geometry.size.width - 10
+        let result = width / 30
+        return Int(result.rounded(.towardZero))
+    }
+    
+    func inSection(geometry: GeometryProxy) -> Int {
+        let height = geometry.size.height - 10
+        let result = height / 30
+        return Int(result)
     }
 }
 
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView(array: [KanjiModel(body: "漢", kun: "", on: "", translate: "",number: 0, level: 0)])
+        BackgroundView(size: CGSize(width: 300, height: 400), array: [KanjiModel(body: "漢", kun: "", on: "", translate: "", number: 0, level: 0)])
     }
 }
