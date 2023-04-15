@@ -20,7 +20,9 @@ struct BackgroundView: View {
                                     Text(element)
                                         .frame(width: amountWidth(geometry: geometry, amountCount: row), height: amountHeight(geometry: geometry, amountCount: twoDemensionalArray))
                                         .foregroundColor(.black.opacity(0.2))
-                                        .font(.system(size: totalSize(geometry: geometry, array: twoDemensionalArray) - 2))
+//                                        .font(.system(size: totalSize(geometry: geometry, array: twoDemensionalArray) - 2))
+                                        .font(.custom("ZeroGothic", size: totalSize(geometry: geometry, array: twoDemensionalArray) - 2))
+//                                        .font(.custom("ZeroGothic", size: 30))
                                 }
                             }
                         }

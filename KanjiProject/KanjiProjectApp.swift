@@ -6,25 +6,41 @@
 //
 
 import SwiftUI
-//import UIKit
-//
-//class UIAppDelegate: NSObject, UIApplicationDelegate {
-//    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-//
-//        return true
-//    }
-//}
 
 @main
 struct KanjiProjectApp: App {
     
-//    @UIApplicationDelegateAdaptor(UIAppDelegate.self) var appDelegate
+    @Environment(\.scenePhase) var scenePhase
     
-    let stores = Stores()
+    @ObservedObject var stores: Stores
     
     var body: some Scene {
         WindowGroup {
             MainScreenView(stores: stores)
+        }
+        .onChange(of: scenePhase) { phase in
+            switch phase {
+            case .active: break
+            case .background: break
+            case .inactive: break
+            @unknown default:
+                break
+            }
+        }
+        
+    }
+    
+    init() {
+        self.stores = Stores()
+//        checkFontTitle()
+    }
+    
+    func checkFontTitle() {
+        for familyName in UIFont.familyNames {
+            print(familyName)
+            for name in UIFont.fontNames(forFamilyName: familyName) {
+                print("--- \(name)")
+            }
         }
     }
 }

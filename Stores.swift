@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Stores {
+class Stores: ObservableObject {
     let kanjistore = KanjiStore()
 //    let kana = KanaStore()
     
