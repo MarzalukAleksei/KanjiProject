@@ -14,6 +14,7 @@
 		AF30EB0229EAB7DF00E5B7A9 /* ScrollButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EB0129EAB7DF00E5B7A9 /* ScrollButton.swift */; };
 		AF30EB0529EABFE600E5B7A9 /* ScrollsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EB0429EABFE600E5B7A9 /* ScrollsView.swift */; };
 		AF30EB0729EAC3E200E5B7A9 /* unaojapon-p-2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF30EB0629EAC3E200E5B7A9 /* unaojapon-p-2.ttf */; };
+		AF30EB0929EAE21700E5B7A9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EB0829EAE21700E5B7A9 /* UserData.swift */; };
 		AF6A2DF229E5AF5100D7C1A9 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */; };
 		AF6A2E0129E62CDA00D7C1A9 /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0029E62CDA00D7C1A9 /* Stores.swift */; };
 		AF6A2E0429E721BE00D7C1A9 /* KanjiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */; };
@@ -40,6 +41,7 @@
 		AF30EB0129EAB7DF00E5B7A9 /* ScrollButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollButton.swift; sourceTree = "<group>"; };
 		AF30EB0429EABFE600E5B7A9 /* ScrollsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollsView.swift; sourceTree = "<group>"; };
 		AF30EB0629EAC3E200E5B7A9 /* unaojapon-p-2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "unaojapon-p-2.ttf"; sourceTree = "<group>"; };
+		AF30EB0829EAE21700E5B7A9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		AF6A2E0029E62CDA00D7C1A9 /* Stores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
 		AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiStore.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				AF30EAF529E9F98A00E5B7A9 /* HiraganaModel.swift */,
 				AFAF80ED29D9CEBF002B9921 /* KanjiModel.swift */,
 				AF30EAF729E9F99800E5B7A9 /* KatakanaModel.swift */,
+				AF30EB0829EAE21700E5B7A9 /* UserData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				AFAF810229D9E7A9002B9921 /* IKanjiMapper.swift in Sources */,
 				AF30EAF829E9F99800E5B7A9 /* KatakanaModel.swift in Sources */,
 				AF30EAF629E9F98A00E5B7A9 /* HiraganaModel.swift in Sources */,
+				AF30EB0929EAE21700E5B7A9 /* UserData.swift in Sources */,
 				AFAF80FE29D9E59C002B9921 /* IFileMapper.swift in Sources */,
 				AF6A2DF229E5AF5100D7C1A9 /* BackgroundView.swift in Sources */,
 				AF30EB0229EAB7DF00E5B7A9 /* ScrollButton.swift in Sources */,

@@ -12,7 +12,8 @@ struct ScrollsView: View {
     let buttons = [
         Button(title: "漢字", subtitle: "kanji"),
         Button(title: "平仮名", subtitle: "hiragana"),
-        Button(title: "片仮名", subtitle: "katakana")
+        Button(title: "片仮名", subtitle: "katakana"),
+        Button(title: "暗記カード", subtitle: "Anki Cards")
     ]
     
     var body: some View {
@@ -20,9 +21,12 @@ struct ScrollsView: View {
         GeometryReader { geometry in
             ZStack {
 //                Color.cyan
-                VStack {
+                VStack(spacing: 10) {
                     ForEach(buttons, id: \.self) { button in
                         ScrollButton(title: button.title, subtitle: button.subtitle, size: buttonsSize(geometry))
+                            .onTapGesture {
+                                print(button)
+                            }
                     }
                     Spacer()
                 }

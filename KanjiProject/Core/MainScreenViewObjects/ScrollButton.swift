@@ -13,28 +13,19 @@ struct ScrollButton: View {
     let size: CGSize
     var body: some View {
         ZStack(alignment: .center) {
-            Text("")
-                .background {
-                    Image("Scroll")
-                        .resizable()
-                        .frame(width: size.width * 1.16, height: size.height * 2, alignment: .center)
-                }
-            HStack {
-                Text(title)
-                    .font(.custom("UNAO-JAPON-pro--new--", size: titleSize()))
-                Spacer()
-                Text(subtitle.uppercased())
-                    .font(.system(size: titleSize() / 3))
-            }
-            .padding(size.width / 8)
+            Image("Scroll")
+                .resizable()
+                .frame(width: size.width, height: size.height, alignment: .center)
+            Text(title)
+                .font(.custom("UNAO-JAPON-pro--new--", size: titleSize()))
         }
-        .frame(width: size.width, height: size.height)
-        
     }
+    
 
     
     func titleSize() -> Double {
-        let result = size.height / 2.8
+        let ratio = size.width / size.height
+        let result = size.height / ratio
         return result
     }
     
