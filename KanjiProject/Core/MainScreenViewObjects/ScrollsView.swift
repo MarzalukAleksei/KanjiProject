@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ScrollsView: View {
+    @Binding var path: NavigationPath
+    @Binding var stores: Stores
     
     let buttons = [
         Button(title: "漢字", subtitle: "kanji"),
@@ -25,13 +27,17 @@ struct ScrollsView: View {
                     ForEach(buttons, id: \.self) { button in
                         ScrollButton(title: button.title, subtitle: button.subtitle, size: buttonsSize(geometry))
                             .onTapGesture {
-                                print(button)
+                                path.append(button)
                             }
                     }
                     Spacer()
                 }
+                .navigationDestination(for: Button.self, destination: { button in
+                    SelectLevelView()
+                })
                 .padding(10)
             }
+//            .navigationTitle("q")
         }
     }
     
@@ -49,6 +55,6 @@ struct ScrollsView: View {
 
 struct ScrollsView_Previews: PreviewProvider {
     static var previews: some View {
-        ScrollsView()
+        ScrollsView(path: .constant(.init()), stores: .constant(.init()))
     }
 }

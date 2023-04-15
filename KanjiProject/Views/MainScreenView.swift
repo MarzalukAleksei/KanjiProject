@@ -17,7 +17,7 @@ struct MainScreenView: View {
             ZStack {
                 BackgroundView(array: stores.kanjistore.getData())
 //                ButtonVIew()
-                ScrollsView()
+                ScrollsView(path: $path, stores: $stores)
             }
             .navigationTitle("Main")
             .navigationBarTitleDisplayMode(.inline)

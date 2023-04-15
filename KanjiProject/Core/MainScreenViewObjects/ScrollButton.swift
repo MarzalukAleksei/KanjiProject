@@ -15,10 +15,11 @@ struct ScrollButton: View {
         ZStack(alignment: .center) {
             Image("Scroll")
                 .resizable()
-                .frame(width: size.width, height: size.height, alignment: .center)
+//                .frame(width: size.width, height: size.height, alignment: .center)
             Text(title)
                 .font(.custom("UNAO-JAPON-pro--new--", size: titleSize()))
         }
+        .frame(height: size.height)
     }
     
 
