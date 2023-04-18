@@ -14,10 +14,20 @@ struct MainScreenView: View {
     
     var body: some View {
         NavigationStack(path: $path) {
-            ZStack {
-                BackgroundView(array: stores.kanjistore.getData())
-//                ButtonVIew()
-                ScrollsView(path: $path, stores: $stores)
+            TabView {
+                ZStack {
+                    BackgroundView(array: stores.kanjistore.getData())
+                    ScrollsView(path: $path, stores: $stores)
+                }
+                    .tabItem {
+                        Label {
+                            Text("Main")
+                        } icon: {
+                            Image(systemName: "pencil")
+                        }
+
+                    }
+                
             }
             .navigationTitle("Main")
             .navigationBarTitleDisplayMode(.inline)

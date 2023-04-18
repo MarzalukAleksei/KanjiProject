@@ -33,7 +33,7 @@ struct ScrollsView: View {
                     Spacer()
                 }
                 .navigationDestination(for: Button.self, destination: { button in
-                    SelectLevelView()
+                    SelectLevelView(stores: $stores, path: $path)
                 })
                 .padding(10)
             }
