@@ -22,7 +22,7 @@ struct ScrollsView: View {
         
         GeometryReader { geometry in
             ZStack {
-//                Color.cyan
+                BackgroundView(array: stores.kanjistore.getData())
                 VStack(spacing: 10) {
                     ForEach(buttons, id: \.self) { button in
                         ScrollButton(title: button.title, subtitle: button.subtitle, size: buttonsSize(geometry))
@@ -37,7 +37,6 @@ struct ScrollsView: View {
                 })
                 .padding(10)
             }
-//            .navigationTitle("q")
         }
     }
     

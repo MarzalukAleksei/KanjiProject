@@ -15,19 +15,14 @@ struct MainScreenView: View {
     var body: some View {
         NavigationStack(path: $path) {
             TabView {
-                ZStack {
-                    BackgroundView(array: stores.kanjistore.getData())
-                    ScrollsView(path: $path, stores: $stores)
-                }
+                ScrollsView(path: $path, stores: $stores)
                     .tabItem {
-                        Label {
-                            Text("Main")
-                        } icon: {
-                            Image(systemName: "pencil")
-                        }
-
+                        Label("Main", systemImage: "pencil")
                     }
-                
+                SelectLevelView(stores: $stores, path: $path)
+                    .tabItem {
+                        Label("Level", systemImage: "book")
+                    }
             }
             .navigationTitle("Main")
             .navigationBarTitleDisplayMode(.inline)

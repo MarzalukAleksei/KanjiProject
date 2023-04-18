@@ -98,7 +98,6 @@
 		AF6A2E0929E7358800D7C1A9 /* ViewObjects */ = {
 			isa = PBXGroup;
 			children = (
-				AF30EB0429EABFE600E5B7A9 /* ScrollsView.swift */,
 				AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */,
 				AF30EB0129EAB7DF00E5B7A9 /* ScrollButton.swift */,
 			);
@@ -159,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				AFAF80DB29D9C646002B9921 /* MainScreenView.swift */,
+				AF30EB0429EABFE600E5B7A9 /* ScrollsView.swift */,
 				AF30EB0E29EB060400E5B7A9 /* SelectLevelView.swift */,
 				AF30EB1629EB236B00E5B7A9 /* KanjiListViewListView.swift */,
 			);

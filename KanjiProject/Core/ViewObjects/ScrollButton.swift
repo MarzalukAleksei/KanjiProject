@@ -15,24 +15,17 @@ struct ScrollButton: View {
         ZStack(alignment: .center) {
             Image("Scroll")
                 .resizable()
-//                .frame(width: size.width, height: size.height, alignment: .center)
             Text(title.uppercased())
                 .font(.custom("UNAO-JAPON-pro--new--", size: titleSize()))
         }
         .frame(height: size.height)
     }
     
-
-    
     func titleSize() -> Double {
         let ratio = size.width / size.height
         let result = size.height / ratio
         return result
     }
-    
-//    func transformedTitle() -> [String] {
-//        return title.map { String($0) }
-//    }
     
 }
 
