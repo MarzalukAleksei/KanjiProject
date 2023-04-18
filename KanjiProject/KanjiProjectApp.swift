@@ -16,7 +16,7 @@ struct KanjiProjectApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainScreenView(stores: stores)
+            MainView(stores: stores)
         }
         .onChange(of: scenePhase) { phase in
             switch phase {

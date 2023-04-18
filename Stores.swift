@@ -20,8 +20,8 @@ class Stores: ObservableObject {
         do {
             let kanji = KanjiMapper().gettingData(entity: FileMapper().transform(data: try FileManager().loadFile(fileName: "Kanji", fileType: .csv)))
             
-            
-            kanjistore.update(data: kanji)
+            kanjistore.updateAll(data: kanji)
+//            kanjistore.update(data: kanji)
         } catch {
             print(error)
         }

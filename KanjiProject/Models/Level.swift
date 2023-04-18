@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum Level: Int {
+enum Level: Int, CaseIterable {
+    case another = 0
     case N1 = 1
     case N2, N3, N4, N5
 }
