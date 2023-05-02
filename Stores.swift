@@ -8,9 +8,9 @@
 import Foundation
 
 class Stores: ObservableObject {
-    let kanjistore = KanjiStore()
+    @Published var kanjistore = KanjiStore()
 //    let kana = KanaStore()
-    
+//    let yojijukugo = Yojijukugo()
     
     init() {
         loadData()

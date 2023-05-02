@@ -16,7 +16,7 @@ struct ScrollButton: View {
             Image("Scroll")
                 .resizable()
             Text(title.uppercased())
-                .font(.custom("UNAO-JAPON-pro--new--", size: titleSize()))
+                .font(Font.scroll(size: titleSize()))
         }
         .frame(height: size.height)
     }

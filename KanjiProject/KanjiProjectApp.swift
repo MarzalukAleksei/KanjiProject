@@ -12,11 +12,12 @@ struct KanjiProjectApp: App {
     
     @Environment(\.scenePhase) var scenePhase
     
-    @ObservedObject var stores: Stores
+//    @ObservedObject var stores: Stores
     
     var body: some Scene {
         WindowGroup {
-            MainView(stores: stores)
+            MainView()
+                .environmentObject(Stores())
         }
         .onChange(of: scenePhase) { phase in
             switch phase {
@@ -31,7 +32,7 @@ struct KanjiProjectApp: App {
     }
     
     init() {
-        self.stores = Stores()
+//        self.stores = Stores()
 //        checkFontTitle()
     }
     

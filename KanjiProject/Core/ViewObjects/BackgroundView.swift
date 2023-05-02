@@ -9,8 +9,8 @@ import SwiftUI
 
 struct BackgroundView: View {
     let array: [Any]
-    @State var navigationPath = NavigationPath()
-    @State private var twoDemensionalArray = [[String]]()
+//    @State var navigationPath = NavigationPath()
+    @State private var twoDemensionalArray: [[String]] = []
     var body: some View {
                 GeometryReader(content: { geometry in
                     VStack(spacing: 0) {
@@ -21,14 +21,14 @@ struct BackgroundView: View {
                                         .frame(width: amountWidth(geometry: geometry, amountCount: row), height: amountHeight(geometry: geometry, amountCount: twoDemensionalArray))
                                         .foregroundColor(.black.opacity(0.2))
 //                                        .font(.system(size: totalSize(geometry: geometry, array: twoDemensionalArray) - 2))
-                                        .font(.custom("ZeroGothic", size: totalSize(geometry: geometry, array: twoDemensionalArray) - 2))
+                                        .font(Font.background(size: totalSize(geometry: geometry, array: twoDemensionalArray) - 2))
 //                                        .font(.custom("ZeroGothic", size: 30))
                                 }
                             }
                         }
                     }
                     .padding(5)
-                    .onAppear() {
+                    .onAppear {
                         twoDemensionalArray = array(geometry: geometry)
                     }
                 })
