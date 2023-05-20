@@ -16,6 +16,7 @@
 		AF30EB0929EAE21700E5B7A9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EB0829EAE21700E5B7A9 /* UserData.swift */; };
 		AF30EB1129EB0A0C00E5B7A9 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EB1029EB0A0C00E5B7A9 /* Level.swift */; };
 		AF69CE712A001739009C7B92 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69CE702A001739009C7B92 /* Images.swift */; };
+		AF69CE732A014A10009C7B92 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69CE722A014A10009C7B92 /* DictionaryView.swift */; };
 		AF6A2DF229E5AF5100D7C1A9 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */; };
 		AF6A2E0129E62CDA00D7C1A9 /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0029E62CDA00D7C1A9 /* Stores.swift */; };
 		AF6A2E0429E721BE00D7C1A9 /* KanjiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */; };
@@ -45,6 +46,7 @@
 		AF30EB0829EAE21700E5B7A9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		AF30EB1029EB0A0C00E5B7A9 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		AF69CE702A001739009C7B92 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		AF69CE722A014A10009C7B92 /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 		AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		AF6A2E0029E62CDA00D7C1A9 /* Stores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
 		AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiStore.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				AF9CCE6729F3C12F006B17F3 /* MainView.swift */,
+				AF69CE722A014A10009C7B92 /* DictionaryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				AF6A2E0129E62CDA00D7C1A9 /* Stores.swift in Sources */,
 				AF6A2E0629E7267400D7C1A9 /* IStore.swift in Sources */,
 				AFAF80EE29D9CEBF002B9921 /* KanjiModel.swift in Sources */,
+				AF69CE732A014A10009C7B92 /* DictionaryView.swift in Sources */,
 				AF6A2E0429E721BE00D7C1A9 /* KanjiStore.swift in Sources */,
 				AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */,
 				AF69CE712A001739009C7B92 /* Images.swift in Sources */,

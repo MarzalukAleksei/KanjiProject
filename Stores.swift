@@ -8,12 +8,15 @@
 import Foundation
 
 class Stores: ObservableObject {
-    @Published var kanjistore = KanjiStore()
+    var kanjistore = KanjiStore()
 //    let kana = KanaStore()
 //    let yojijukugo = Yojijukugo()
+//    let bushu = Bushu() // ключи
+    @Published var user = UserData(level: .beginer, dictionary: [])
     
     init() {
         loadData()
+        user.dictionary = kanjistore.getData(.N5)
     }
     
     private func loadData() {

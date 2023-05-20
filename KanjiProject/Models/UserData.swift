@@ -9,9 +9,10 @@ import Foundation
 
 struct UserData {
     
-    enum Level {
+    enum Level: String {
         case N1, N2, N3, N4, N5, beginer
     }
     
     var level: Level
+    var dictionary: [KanjiModel]
 }
