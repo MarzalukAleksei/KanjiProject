@@ -21,7 +21,7 @@ struct BackgroundView: View {
                                         .frame(width: amountWidth(geometry: geometry, amountCount: row), height: amountHeight(geometry: geometry, amountCount: twoDemensionalArray))
                                         .foregroundColor(.black.opacity(0.2))
 //                                        .font(.system(size: totalSize(geometry: geometry, array: twoDemensionalArray) - 2))
-                                        .font(Font.background(size: totalSize(geometry: geometry, array: twoDemensionalArray) - 2))
+                                        .font(FontStyle.background(size: totalSize(geometry: geometry, array: twoDemensionalArray) - 2))
 //                                        .font(.custom("ZeroGothic", size: 30))
                                 }
                             }

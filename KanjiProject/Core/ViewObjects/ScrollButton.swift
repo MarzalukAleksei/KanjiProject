@@ -16,7 +16,7 @@ struct ScrollButton: View {
             Image("Scroll")
                 .resizable()
             Text(title.uppercased())
-                .font(Font.scroll(size: titleSize()))
+                .font(FontStyle.scroll(size: titleSize()))
         }
         .frame(height: size.height)
     }

@@ -8,7 +8,11 @@
 import Foundation
 import SwiftUI
 
-extension Font {
+class FontStyle {
+    static var cardMainKanji: Font {
+        Font.system(size: 70)
+    }
+    
     static func background(size: CGFloat) -> Font {
         return Font.custom("ZeroGothic", size: size)
     }
@@ -16,6 +20,7 @@ extension Font {
     static func scroll(size: CGFloat) -> Font {
         return Font.custom("UNAO-JAPON-pro--new--", size: size)
     }
+    
 }
 
 

@@ -17,3 +17,12 @@ struct KanjiModel: Hashable {
     var rightAnwers = 0
     var wrongAnswers = 0
 }
+
+extension KanjiModel {
+    static let MOCK_KANJI: KanjiModel = KanjiModel(body: "使",
+                                                   kun: "つか-える",
+                                                   on: "シ",
+                                                   translate: "Использовать",
+                                                   number: 0,
+                                                   level: 4)
+}

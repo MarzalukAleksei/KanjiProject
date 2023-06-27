@@ -12,6 +12,7 @@ class Stores: ObservableObject {
 //    let kana = KanaStore()
 //    let yojijukugo = Yojijukugo()
 //    let bushu = Bushu() // ключи
+    var dictionaryStore = DictionaryStore()
     @Published var user = UserData(level: .beginer, dictionary: [])
     
     init() {
@@ -22,9 +23,10 @@ class Stores: ObservableObject {
     private func loadData() {
         do {
             let kanji = KanjiMapper().gettingData(entity: FileMapper().transform(data: try FileManager().loadFile(fileName: "Kanji", fileType: .csv)))
-            
+//            let dictionary = DictionaryMapper().gettingData(entity: FileMapper().transform(data: try FileManager().loadFile(fileName: "warodai", fileType: .txt)))
             kanjistore.updateAll(data: kanji)
 //            kanjistore.update(data: kanji)
+//            dictionaryStore.updateAll(data: dictionary)
         } catch {
             print(error)
         }

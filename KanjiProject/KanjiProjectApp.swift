@@ -16,7 +16,7 @@ struct KanjiProjectApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainTabView()
                 .environmentObject(Stores())
         }
         .onChange(of: scenePhase) { phase in
