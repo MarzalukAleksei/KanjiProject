@@ -15,11 +15,24 @@ enum TabBarElements: String, CaseIterable {
 }
 
 struct MainTabView: View {
-    @EnvironmentObject var stores: Stores
+//    @EnvironmentObject var stores: Stores
     @State var currentTab: TabBarElements = .kanji
+    @FetchRequest(sortDescriptors: []) private var kanji: FetchedResults<Kanji>
+//    @FetchRequest(sortDescriptors: []) private var user: FetchedResults<UserFaivorite>
+    @Environment(\.managedObjectContext) var viewContext
+//    @FetchRequest(entity: Kanji.entity(), sortDescriptors: []) var kanji: FetchedResults<Kanji>
     
     init() {
         UITabBar.appearance().isHidden = true
+    }
+    
+    func setCoreData() {
+        let store = Stores()
+        
+        for storedElement in store.kanjistore.getAll().enumerated() {
+            DataController().add(kanji: storedElement.element, context: viewContext)
+            print("Now \(storedElement.offset)")
+        }
     }
     
     var body: some View {
@@ -27,13 +40,22 @@ struct MainTabView: View {
         ZStack(alignment: .bottom) {
             TabView(selection: $currentTab) {
                 SelectLevel()
+//                    .onTapGesture {
+//                        if kanji.isEmpty {
+//                            print("Start Loading File")
+//                //            setCoreData()
+//                            print("End Loading File")
+//                        } else {
+//                            print("CoreData have \(kanji.count) Elements")
+//                        }
+//                    }
                     .tag(TabBarElements.kanji)
                 Text("Yojijukugo")
                     .tag(TabBarElements.yojijukugo)
                 Text("card")
                     .tag(TabBarElements.card)
-                DictionaryView()
-                    .tag(TabBarElements.dictionary)
+//                DictionaryView()
+//                    .tag(TabBarElements.dictionary)
             }
             .padding(.bottom, 50)
             HStack {
@@ -47,7 +69,26 @@ struct MainTabView: View {
             .frame(maxWidth: .infinity)
             .background(Color.gray)
         }
-        
+        .onAppear {
+            if kanji.isEmpty {
+                print("Start Loading File")
+                setCoreData()
+                print("End Loading File")
+            } else {
+                print("CoreData have \(kanji.count) Elements")
+                print("Store have \(Stores().kanjistore.getAll().count) Elements")
+            }
+            
+            guard let kanji = kanji.randomElement(),
+                  let body = kanji.body,
+                  let kun = kanji.kun,
+                  let on = kanji.on else { return }
+            
+            print(body, kun, on)
+            
+//                DataController().deleteAllKanjiData(context: viewContext)
+            
+        }
     }
 }
 

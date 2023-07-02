@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct LearningCardView: View {
+    @Environment(\.managedObjectContext) private var context
+//    @Environment
+    
     @EnvironmentObject var stores: Stores
     @State var number: Int = 0
     @State var isFrontSide = true

@@ -30,7 +30,7 @@ class DataController: ObservableObject {
     }
     
     func add(kanji: KanjiModel, context: NSManagedObjectContext) {
-        var kan = Kanji(context: context)
+        let kan = Kanji(context: context)
         kan.body = kanji.body
         kan.kun = kanji.kun
         kan.on = kanji.on
@@ -38,4 +38,23 @@ class DataController: ObservableObject {
         save(context: context)
     }
     
+    func addUserKanji(kanji: KanjiModel, context: NSManagedObjectContext) {
+        let newKanji = Kanji(context: context)
+        newKanji.body = kanji.body
+        newKanji.kun = kanji.kun
+        newKanji.on = kanji.on
+        
+        save(context: context)
+    }
+    
+    func deleteAllKanjiData(context: NSManagedObjectContext) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Kanji.fetchRequest()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try context.execute(deleteRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
