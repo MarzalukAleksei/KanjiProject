@@ -14,7 +14,7 @@ struct DictionaryModel: Codable {
     var translate: [String]
     var examples: [String]
     var references: [String]
-    let mainData: String
+    var mainData: String = ""
 }
 
 extension DictionaryModel {

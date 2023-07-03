@@ -9,15 +9,22 @@ import Foundation
 import CoreData
 
 class DataController: ObservableObject {
+    static let shared = DataController()
+    
     let container = NSPersistentContainer(name: "SavedData")
+    let options = [NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption: true]
+
     
     init() {
         container.loadPersistentStores { description, error in
             if let error = error {
+                
                 print("Faild to load the data ---> \(error.localizedDescription)")
+                    
             }
             
         }
+        container.viewContext.automaticallyMergesChangesFromParent = true
     }
     
     func save(context: NSManagedObjectContext) {
@@ -38,13 +45,27 @@ class DataController: ObservableObject {
         save(context: context)
     }
     
-    func addUserKanji(kanji: KanjiModel, context: NSManagedObjectContext) {
-        let newKanji = Kanji(context: context)
-        newKanji.body = kanji.body
-        newKanji.kun = kanji.kun
-        newKanji.on = kanji.on
-        
+    func add(dictionary: DictionaryModel, context: NSManagedObjectContext) {
+        let newDictionary = DictionaryCoreData(context: context)
+        newDictionary.body = dictionary.body
+        newDictionary.reading = dictionary.reading
+        newDictionary.translate = dictionary.translate
+        newDictionary.references = dictionary.references
+        newDictionary.examples = dictionary.examples
+        newDictionary.number = dictionary.number
+
         save(context: context)
+    }
+    
+    func deleteAllDictionaryData(context: NSManagedObjectContext) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = DictionaryCoreData.fetchRequest()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try context.execute(deleteRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func deleteAllKanjiData(context: NSManagedObjectContext) {

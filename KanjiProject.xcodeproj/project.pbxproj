@@ -159,13 +159,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		AFA6704B2A4B23A500ED639D /* DataModel */ = {
+		AFA6704B2A4B23A500ED639D /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				AFF443A02A51B05100FF4404 /* SavedData.xcdatamodeld */,
 				AFA6704C2A4B23BB00ED639D /* DataController.swift */,
 			);
-			path = DataModel;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		AFAF80CD29D9C645002B9921 = {
@@ -173,7 +173,7 @@
 			children = (
 				AFAF80D829D9C646002B9921 /* KanjiProject */,
 				AF6A2E0029E62CDA00D7C1A9 /* Stores.swift */,
-				AFA6704B2A4B23A500ED639D /* DataModel */,
+				AFA6704B2A4B23A500ED639D /* CoreData */,
 				AFAF80D729D9C646002B9921 /* Products */,
 			);
 			sourceTree = "<group>";

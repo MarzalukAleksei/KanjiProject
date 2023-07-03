@@ -15,24 +15,18 @@ enum TabBarElements: String, CaseIterable {
 }
 
 struct MainTabView: View {
-//    @EnvironmentObject var stores: Stores
-    @State var currentTab: TabBarElements = .kanji
-    @FetchRequest(sortDescriptors: []) private var kanji: FetchedResults<Kanji>
+    @EnvironmentObject var stores: Stores
+    @State var currentTab: TabBarElements = .dictionary
+//    @FetchRequest(sortDescriptors: []) private var kanji: FetchedResults<Kanji>
 //    @FetchRequest(sortDescriptors: []) private var user: FetchedResults<UserFaivorite>
     @Environment(\.managedObjectContext) var viewContext
-//    @FetchRequest(entity: Kanji.entity(), sortDescriptors: []) var kanji: FetchedResults<Kanji>
+    @FetchRequest(entity: Kanji.entity(),
+                  sortDescriptors: []) var kanji: FetchedResults<Kanji>
+    @FetchRequest(entity: DictionaryCoreData.entity(),
+                  sortDescriptors: []) var dictionary: FetchedResults<DictionaryCoreData>
     
     init() {
         UITabBar.appearance().isHidden = true
-    }
-    
-    func setCoreData() {
-        let store = Stores()
-        
-        for storedElement in store.kanjistore.getAll().enumerated() {
-            DataController().add(kanji: storedElement.element, context: viewContext)
-            print("Now \(storedElement.offset)")
-        }
     }
     
     var body: some View {
@@ -40,15 +34,6 @@ struct MainTabView: View {
         ZStack(alignment: .bottom) {
             TabView(selection: $currentTab) {
                 SelectLevel()
-//                    .onTapGesture {
-//                        if kanji.isEmpty {
-//                            print("Start Loading File")
-//                //            setCoreData()
-//                            print("End Loading File")
-//                        } else {
-//                            print("CoreData have \(kanji.count) Elements")
-//                        }
-//                    }
                     .tag(TabBarElements.kanji)
                 Text("Yojijukugo")
                     .tag(TabBarElements.yojijukugo)
@@ -70,9 +55,10 @@ struct MainTabView: View {
             .background(Color.gray)
         }
         .onAppear {
+//            checkCoreData()
             if kanji.isEmpty {
                 print("Start Loading File")
-                setCoreData()
+                setCoreDataKanji()
                 print("End Loading File")
             } else {
                 print("CoreData have \(kanji.count) Elements")
@@ -85,9 +71,45 @@ struct MainTabView: View {
                   let on = kanji.on else { return }
             
             print(body, kun, on)
+            print(stores.dictionaryStore.getAll().count)
+            print(stores.dictionaryStore.getAll().randomElement())
             
-//                DataController().deleteAllKanjiData(context: viewContext)
+//            DataController.shared.deleteAllKanjiData(context: viewContext)
             
+        }
+    }
+    
+    func checkCoreData() {
+        if kanji.isEmpty {
+            print("Start Loading File")
+            setCoreDataKanji()
+            print("End Loading File")
+        } else {
+            print("CoreData have \(kanji.count) Elements")
+            print("Store have \(stores.kanjistore.getAll().count) Elements")
+        }
+        
+//        if dictionary.isEmpty {
+//            setCoreDataDictionary()
+//        } else {
+//            print("CoreData have \(dictionary.count) Elements")
+//            print("Store have \(stores.dictionaryStore.getAll().count) Elements")
+//        }
+    }
+    
+    func setCoreDataDictionary() {
+        for word in stores.dictionaryStore.getAll().enumerated() {
+            
+        }
+    }
+    
+    func setCoreDataKanji() {
+        let stores = Stores()
+        
+        for storedElement in stores.kanjistore.getAll().enumerated() {
+//            DataController().add(kanji: storedElement.element, context: viewContext)
+            DataController.shared.add(kanji: storedElement.element, context: viewContext)
+            print("Now \(storedElement.offset)")
         }
     }
 }
