@@ -9,6 +9,14 @@ import Foundation
 
 class DictionaryMapper: IDictionaryMapper {
     
+    enum DisplayMode {
+        case colored
+    }
+    
+    var dictionary: [DisplayMode: String] = [:]
+    
+    
+    
     typealias Result = [DictionaryModel]
     typealias Entity = [String]
     
@@ -19,24 +27,32 @@ class DictionaryMapper: IDictionaryMapper {
         entiry.removeFirst()
         
         for row in entiry {
-            let innerRows = row.split(separator: "\n").map { String($0) }
-            let body = value(from: "【", to: "】", in: innerRows.first ?? "")
-//            let body = ""
-            let number = value(from: "〔", to: "〕", in: innerRows.first ?? "")
-//            let number = ""
-            let reading = getReading(string: innerRows.first ?? "")
-//            let reading = ""
+            var innerRows = row.split(separator: "\n").map { String($0) }
+            let firstRow = innerRows.removeFirst()
+            let body = value(from: "【", to: "】", in: firstRow)
+            let number = value(from: "〔", to: "〕", in: firstRow)
+            let reading = getReading(string: firstRow)
             let translate: [String] = []
-            let examples: [String] = []
-            let references: [String] = []
+            let examples: [String] = removeTrash(array: innerRows)
             
-            result.append(.init(body: body, number: number, reading: reading, translate: translate, examples: examples, references: references))
+            result.append(.init(body: body, number: number, reading: reading, translate: translate, examples: examples))
         }
         return result
     }
     
-    private func replacingTwoMarks(first firstMark: String, second secondMark: String) {
+    private func replacingTwoMarks(first firstMark: String, second secondMark: String, array: [String]) -> [String] {
         
+        return []
+    }
+    
+    private func removeTrash(array: [String]) -> [String] {
+        var result = array
+        result = result.map { $0.replacingOccurrences(of: "<i>", with: "") }
+        result = result.map { $0.replacingOccurrences(of: "</i>", with: "") }
+        result = result.map { $0.replacingOccurrences(of: "<a href=\"", with: "") }
+        result = result.map { $0.replacingOccurrences(of: "\">", with: "$#") }
+        result = result.map { $0.replacingOccurrences(of: "</a>", with: "") }
+        return result
     }
     
     private func getReading(string: String) -> String {
