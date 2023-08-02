@@ -15,7 +15,7 @@ enum TabBarElements: String, CaseIterable {
 }
 
 struct MainTabView: View {
-    @EnvironmentObject var stores: Stores
+//    @EnvironmentObject var stores: Stores
     @State var currentTab: TabBarElements = .dictionary
 //    @FetchRequest(sortDescriptors: []) private var kanji: FetchedResults<Kanji>
 //    @FetchRequest(sortDescriptors: []) private var user: FetchedResults<UserFaivorite>
@@ -57,24 +57,21 @@ struct MainTabView: View {
         .onAppear {
 //            checkCoreData()
             if kanji.isEmpty {
-                print("Start Loading File")
-                setCoreDataKanji()
-                print("End Loading File")
-            } else {
-                print("CoreData have \(kanji.count) Elements")
-                print("Store have \(Stores().kanjistore.getAll().count) Elements")
+                print("Kanji is Empty")
             }
+            if dictionary.isEmpty {
+                print("Dictionary is Empty")
+            }
+//            guard let kanji = kanji.randomElement(),
+//                  let body = kanji.body,
+//                  let kun = kanji.kun,
+//                  let on = kanji.on else { return }
+//
+//            print(body, kun, on)
             
-            guard let kanji = kanji.randomElement(),
-                  let body = kanji.body,
-                  let kun = kanji.kun,
-                  let on = kanji.on else { return }
+//            print(stores.dictionaryStore.getAll().count)
             
-            print(body, kun, on)
-            print(stores.dictionaryStore.getAll().count)
-            print(stores.dictionaryStore.getAll().randomElement())
-            
-//            DataController.shared.deleteAllKanjiData(context: viewContext)
+            DataController.shared.deleteAllKanjiData(context: viewContext)
             
         }
     }
@@ -86,7 +83,7 @@ struct MainTabView: View {
             print("End Loading File")
         } else {
             print("CoreData have \(kanji.count) Elements")
-            print("Store have \(stores.kanjistore.getAll().count) Elements")
+//            print("Store have \(stores.kanjistore.getAll().count) Elements")
         }
         
 //        if dictionary.isEmpty {
@@ -97,11 +94,11 @@ struct MainTabView: View {
 //        }
     }
     
-    func setCoreDataDictionary() {
-        for word in stores.dictionaryStore.getAll().enumerated() {
-            
-        }
-    }
+//    func setCoreDataDictionary() {
+//        for word in stores.dictionaryStore.getAll().enumerated() {
+//
+//        }
+//    }
     
     func setCoreDataKanji() {
         let stores = Stores()
@@ -125,6 +122,6 @@ private struct CustomImage: View {
 struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()
-            .environmentObject(Stores())
+//            .environmentObject(Stores())
     }
 }

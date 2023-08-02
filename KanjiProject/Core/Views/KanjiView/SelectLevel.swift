@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SelectLevel: View {
-    @EnvironmentObject var stores: Stores
+//    @EnvironmentObject var stores: Stores
     
     var body: some View {
         NavigationStack {
@@ -26,7 +26,7 @@ struct SelectLevel: View {
     
     func data(level: Level) -> [KanjiModel] {
         var result: [KanjiModel] = []
-        result = stores.kanjistore.getData(level)
+//        result = stores.kanjistore.getData(level)
         
         return result
     }
@@ -35,6 +35,6 @@ struct SelectLevel: View {
 struct SelectLevel_Previews: PreviewProvider {
     static var previews: some View {
         SelectLevel()
-            .environmentObject(Stores())
+//            .environmentObject(Stores())
     }
 }

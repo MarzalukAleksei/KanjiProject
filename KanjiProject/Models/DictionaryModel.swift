@@ -8,12 +8,12 @@
 import Foundation
 
 struct DictionaryModel: Codable {
+    
     var body: String
     var number: String
     var reading: String
     var translate: [String]
-    var examples: [String]
-    var references: [String]
+    var examples: [String] = []
     var mainData: String = ""
 }
 
@@ -23,7 +23,6 @@ extension DictionaryModel {
                                                         reading: "あいおい",
                                                         translate: ["совместное произрастание", "близнецы"],
                                                         examples: ["～する вместе расти;", "相生の松 двуствольная сосна;"],
-                                                        references: ["003-24-00"],
                                                         mainData:
                                                                 """
                                                                 あいおい【相生】(аиои)〔007-06-37〕

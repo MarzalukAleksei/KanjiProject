@@ -47,12 +47,12 @@ class DataController: ObservableObject {
     
     func add(dictionary: DictionaryModel, context: NSManagedObjectContext) {
         let newDictionary = DictionaryCoreData(context: context)
-        newDictionary.body = dictionary.body
-        newDictionary.reading = dictionary.reading
-        newDictionary.translate = dictionary.translate
-        newDictionary.references = dictionary.references
-        newDictionary.examples = dictionary.examples
-        newDictionary.number = dictionary.number
+//        newDictionary.body = dictionary.body
+//        newDictionary.reading = dictionary.reading
+//        newDictionary.translate = dictionary.translate
+//        newDictionary.references = dictionary.references
+//        newDictionary.examples = dictionary.examples
+//        newDictionary.number = dictionary.number
 
         save(context: context)
     }
@@ -63,6 +63,7 @@ class DataController: ObservableObject {
         
         do {
             try context.execute(deleteRequest)
+            try context.save()
         } catch {
             print(error.localizedDescription)
         }
@@ -74,6 +75,7 @@ class DataController: ObservableObject {
         
         do {
             try context.execute(deleteRequest)
+            try context.save()
         } catch {
             print(error.localizedDescription)
         }
