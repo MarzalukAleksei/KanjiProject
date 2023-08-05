@@ -41,18 +41,24 @@ class DataController: ObservableObject {
         kan.body = kanji.body
         kan.kun = kanji.kun
         kan.on = kanji.on
+        kan.translate = kanji.translate
+        kan.level = kanji.level
+        kan.examples = kanji.examples
+        kan.number = kanji.number
+        kan.rightAnswers = kanji.rightAnwers
+        kan.wrongAnswers = kanji.wrongAnswers
         
         save(context: context)
     }
     
     func add(dictionary: DictionaryModel, context: NSManagedObjectContext) {
         let newDictionary = DictionaryCoreData(context: context)
-//        newDictionary.body = dictionary.body
-//        newDictionary.reading = dictionary.reading
-//        newDictionary.translate = dictionary.translate
+        newDictionary.body = dictionary.body
+        newDictionary.reading = dictionary.reading
+        newDictionary.translate = dictionary.translate
 //        newDictionary.references = dictionary.references
-//        newDictionary.examples = dictionary.examples
-//        newDictionary.number = dictionary.number
+        newDictionary.examples = dictionary.examples
+        newDictionary.number = dictionary.number
 
         save(context: context)
     }

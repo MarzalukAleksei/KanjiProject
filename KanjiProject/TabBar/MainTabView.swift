@@ -15,10 +15,8 @@ enum TabBarElements: String, CaseIterable {
 }
 
 struct MainTabView: View {
-//    @EnvironmentObject var stores: Stores
+    
     @State var currentTab: TabBarElements = .dictionary
-//    @FetchRequest(sortDescriptors: []) private var kanji: FetchedResults<Kanji>
-//    @FetchRequest(sortDescriptors: []) private var user: FetchedResults<UserFaivorite>
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: Kanji.entity(),
                   sortDescriptors: []) var kanji: FetchedResults<Kanji>
@@ -62,16 +60,9 @@ struct MainTabView: View {
             if dictionary.isEmpty {
                 print("Dictionary is Empty")
             }
-//            guard let kanji = kanji.randomElement(),
-//                  let body = kanji.body,
-//                  let kun = kanji.kun,
-//                  let on = kanji.on else { return }
-//
-//            print(body, kun, on)
             
-//            print(stores.dictionaryStore.getAll().count)
-            
-            DataController.shared.deleteAllKanjiData(context: viewContext)
+//            DataController.shared.deleteAllKanjiData(context: viewContext)
+//            DataController.shared.deleteAllDictionaryData(context: viewContext)
             
         }
     }
@@ -86,19 +77,22 @@ struct MainTabView: View {
 //            print("Store have \(stores.kanjistore.getAll().count) Elements")
         }
         
-//        if dictionary.isEmpty {
-//            setCoreDataDictionary()
-//        } else {
-//            print("CoreData have \(dictionary.count) Elements")
-//            print("Store have \(stores.dictionaryStore.getAll().count) Elements")
-//        }
+        if dictionary.isEmpty {
+            setCoreDataDictionary()
+        } else {
+            print("CoreData have \(dictionary.count) Elements")
+//            print("Store have \(Stores().dictionaryStore.getAll().count) Elements")
+        }
     }
     
-//    func setCoreDataDictionary() {
-//        for word in stores.dictionaryStore.getAll().enumerated() {
-//
-//        }
-//    }
+    func setCoreDataDictionary() {
+        let stores = Stores()
+        
+        for word in stores.dictionaryStore.getAll().enumerated() {
+            DataController.shared.add(dictionary: word.element, context: viewContext)
+            print("Now \(word.offset), Remain \(stores.dictionaryStore.getAll().count - word.offset)")
+        }
+    }
     
     func setCoreDataKanji() {
         let stores = Stores()

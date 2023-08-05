@@ -10,6 +10,7 @@ import SwiftUI
 struct BackSideView: View {
     
     let kanji: KanjiModel
+    @Binding var angle: Double
     
 //    private let grid: [GridItem] = [
 //        .init(.flexible(), spacing: 2, alignment: .leading),
@@ -56,7 +57,7 @@ struct BackSideView: View {
                     
                     HStack {
                         Text(kanji.translate)
-                            .lineLimit(0)
+                            .lineLimit(nil)
                             .font(.system(size: 25))
                         
                         Spacer()
@@ -69,6 +70,7 @@ struct BackSideView: View {
             }
             .padding(10)
         }
+        .rotation3DEffect(.degrees(angle), axis: (x: 0, y: 1, z: 0))
     }
     func readingDevider(value: String) -> [String] {
         var result: [String] = []
@@ -86,6 +88,6 @@ struct BackSideView: View {
 
 struct BackSideView_Previews: PreviewProvider {
     static var previews: some View {
-        BackSideView(kanji: .MOCK_KANJI)
+        BackSideView(kanji: .MOCK_KANJI, angle: .constant(0))
     }
 }

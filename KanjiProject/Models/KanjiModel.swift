@@ -13,7 +13,6 @@ struct KanjiModel: Hashable {
     let number: Int
     let level: Int
     var examples: [String] = []
-//    var madeMistake: Bool = false
     var rightAnwers = 0
     var wrongAnswers = 0
 }

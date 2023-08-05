@@ -10,6 +10,7 @@ import SwiftUI
 struct FrontSideVIew: View {
     let kanji: KanjiModel
     @State var id: Int = 11
+    @Binding var angle: Double
     
     var body: some View {
         ZStack {
@@ -53,6 +54,7 @@ struct FrontSideVIew: View {
             }
             .padding(10)
         }
+        .rotation3DEffect(.degrees(angle), axis: (x: 0, y: 1, z: 0))
     }
     func okurigana() -> [String] {
         let okurigana = kanji.kun.components(separatedBy: "・")
@@ -74,6 +76,6 @@ struct FrontSideVIew: View {
 
 struct FrontSideVIew_Previews: PreviewProvider {
     static var previews: some View {
-        FrontSideVIew(kanji: .MOCK_KANJI)
+        FrontSideVIew(kanji: .MOCK_KANJI, angle: .constant(0))
     }
 }

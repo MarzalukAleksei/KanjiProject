@@ -9,32 +9,24 @@ import SwiftUI
 
 struct LearningCardView: View {
     @Environment(\.managedObjectContext) private var context
-//    @Environment
     
-    @EnvironmentObject var stores: Stores
+    @State private var frontViewAngle = 0.0
+    @State private var backViewAngle = 90.0
     @State var number: Int = 0
     @State var isFrontSide = true
     var currentLearning: [KanjiModel]
+    let duration = 0.35
     
     @State var curentKanji: KanjiModel
     
-//    init(learningLevel: Level) {
-//        self.learningLevel = learningLevel
-//        self.curentKanji = stores.kanjistore.getData(learningLevel).first ?? .MOCK_KANJI
-//    }
-    
     var body: some View {
         VStack {
-            
-            Group {
-                if isFrontSide {
-                    FrontSideVIew(kanji: curentKanji)
-                } else {
-                    BackSideView(kanji: curentKanji)
-                }
+            ZStack {
+                BackSideView(kanji: curentKanji, angle: $backViewAngle)
+                FrontSideVIew(kanji: curentKanji, angle: $frontViewAngle)
             }
             .onTapGesture {
-                isFrontSide.toggle()
+                flip()
             }
             
             HStack {
@@ -56,20 +48,46 @@ struct LearningCardView: View {
         .padding(.bottom, 70)
     }
     
-    func index(number: Int) -> Int {
+    private func index(number: Int) -> Int {
         var result = self.number
         if currentLearning.count == 1 {
             return result
         }
-        if number >= 0 && number <= currentLearning.count {
+        if number >= 0 && number <= currentLearning.count { // срабатывает если это не крайний элемент
             result = number
+            isFrontSide = true
+            defaultAngle()
         }
         return result
     }
     
-    func changeKanji(index: Int) {
+    private func changeKanji(index: Int) {
         number = self.index(number: index)
         curentKanji = currentLearning[number]
+    }
+    
+    private func defaultAngle() {
+        frontViewAngle = 0
+        backViewAngle = 90
+    }
+    
+    private func flip() {
+        isFrontSide.toggle()
+        if isFrontSide {
+            withAnimation(.easeInOut(duration: duration)) {
+                frontViewAngle = -90
+            }
+            withAnimation(.easeInOut(duration: duration).delay(duration)) {
+                backViewAngle = 0
+            }
+        } else {
+            withAnimation(.easeInOut(duration: duration)) {
+                backViewAngle = 90
+            }
+            withAnimation(.easeInOut(duration: duration).delay(duration)) {
+                frontViewAngle = 0
+            }
+        }
     }
 }
 

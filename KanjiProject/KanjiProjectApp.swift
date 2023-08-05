@@ -11,13 +11,10 @@ import SwiftUI
 struct KanjiProjectApp: App {
     
     @Environment(\.scenePhase) var scenePhase
-//    @StateObject private var dataController = DataController()
-//    @ObservedObject var stores: Stores
     
     var body: some Scene {
         WindowGroup {
             MainTabView()
-//                .environmentObject(Stores())
                 .environment(\.managedObjectContext, DataController.shared.container.viewContext)
         }
         .onChange(of: scenePhase) { phase in
@@ -33,7 +30,6 @@ struct KanjiProjectApp: App {
     }
     
     init() {
-//        self.stores = Stores()
 //        checkFontTitle()
     }
     

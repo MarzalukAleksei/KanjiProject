@@ -7,17 +7,17 @@
 
 import Foundation
 
-class Stores: ObservableObject {
+class Stores {
+//    static let shared = Stores()
+    
     var kanjistore = KanjiStore()
 //    let kana = KanaStore()
 //    let yojijukugo = Yojijukugo()
 //    let bushu = Bushu() // ключи
     var dictionaryStore = DictionaryStore()
-    @Published var user = UserData(level: .beginer, dictionary: [])
     
     init() {
         loadData()
-        user.dictionary = kanjistore.getData(.N5)
     }
     
     private func loadData() {
@@ -31,4 +31,8 @@ class Stores: ObservableObject {
             print(error)
         }
     }
+}
+
+extension Stores: ObservableObject {
+    
 }

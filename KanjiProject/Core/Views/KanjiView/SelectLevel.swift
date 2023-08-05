@@ -9,12 +9,15 @@ import SwiftUI
 
 struct SelectLevel: View {
 //    @EnvironmentObject var stores: Stores
+    @FetchRequest(entity: Kanji.entity(),
+                  sortDescriptors: []) var kanji: FetchedResults<Kanji>
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(Level.allCases, id: \.self) { level in
                     NavigationLink("\(level.rawValue)", value: level)
+                    
                 }
             }
             .navigationDestination(for: Level.self) { level in
@@ -25,8 +28,7 @@ struct SelectLevel: View {
     }
     
     func data(level: Level) -> [KanjiModel] {
-        var result: [KanjiModel] = []
-//        result = stores.kanjistore.getData(level)
+        var result = Kanji.transformToKanjiModel(kanji: kanji, level)
         
         return result
     }
