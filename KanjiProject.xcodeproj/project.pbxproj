@@ -125,11 +125,6 @@
 		AF17F93D2A4485A500D5631D /* KanjiView */ = {
 			isa = PBXGroup;
 			children = (
-				AF17F93E2A4485BF00D5631D /* LearningCardView.swift */,
-				AF17F9402A4486A100D5631D /* FrontSideVIew.swift */,
-				AF17F9422A4486AC00D5631D /* BackSideView.swift */,
-				AF17F94E2A478D1400D5631D /* SelectLevel.swift */,
-				AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */,
 				AFFC08AC2A822AF60043B741 /* KanjiView.swift */,
 			);
 			path = KanjiView;
@@ -194,6 +189,7 @@
 		AFACD9C52A7A80B500F4091F /* Refactor */ = {
 			isa = PBXGroup;
 			children = (
+				AFFC08BC2A82773B0043B741 /* KanjiViewScrolls */,
 				AF30EAFF29EAB79900E5B7A9 /* Images.xcassets */,
 				AF6A2E0929E7358800D7C1A9 /* ViewObjects */,
 				AFFC08AB2A8190E50043B741 /* Components */,
@@ -368,6 +364,18 @@
 				AFFC08B32A823EAB0043B741 /* LevelButton.swift */,
 			);
 			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		AFFC08BC2A82773B0043B741 /* KanjiViewScrolls */ = {
+			isa = PBXGroup;
+			children = (
+				AF17F93E2A4485BF00D5631D /* LearningCardView.swift */,
+				AF17F9402A4486A100D5631D /* FrontSideVIew.swift */,
+				AF17F9422A4486AC00D5631D /* BackSideView.swift */,
+				AF17F94E2A478D1400D5631D /* SelectLevel.swift */,
+				AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */,
+			);
+			path = KanjiViewScrolls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

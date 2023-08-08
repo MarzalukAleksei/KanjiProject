@@ -15,6 +15,7 @@ struct KanjiModel: Hashable {
     var examples: [String] = []
     var rightAnwers = 0
     var wrongAnswers = 0
+    var lastAnswerRight: Bool? = nil
 }
 
 extension KanjiModel {

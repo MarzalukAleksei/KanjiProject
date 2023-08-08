@@ -13,4 +13,6 @@ class PartsSize {
     static let litleWoodPartSize: (width: CGFloat, height: CGFloat) = (7, 8)
     
     static let navigationCornerRadius: CGFloat = 60
+    
+    static let levelButtonSize: CGSize = CGSize(width: 85, height: 85)
 }

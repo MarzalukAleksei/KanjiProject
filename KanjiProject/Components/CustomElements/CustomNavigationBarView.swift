@@ -11,17 +11,17 @@ struct CustomNavigationBarView: View {
     var title = ""
     var body: some View {
         VStack(spacing: 0) {
-            Color.black.ignoresSafeArea().frame(width: .infinity, height: 0)
+            Color.black.ignoresSafeArea().frame(maxWidth: .infinity, maxHeight: 0)
             HStack {
                 Spacer()
                 Text(title)
                     .font(.title)
-                    .frame(width: .infinity, height: 120, alignment: .bottom)
-                    .padding(.bottom, 15)
+                    .frame(maxWidth: .infinity, maxHeight: 120, alignment: .bottom)
+                    .padding(.bottom, 5)
                     .foregroundColor(.white)
                 Spacer()
             }
-            .background(Color.black.ignoresSafeArea())
+            .background(Color.black)
             .clipShape(PartialRoundedRectangle(cornerRadius: PartsSize.navigationCornerRadius, corners: .bottomLeft))
         }
     }

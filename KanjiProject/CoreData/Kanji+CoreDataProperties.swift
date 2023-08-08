@@ -25,6 +25,7 @@ extension Kanji {
     @NSManaged public var number: Int
     @NSManaged public var rightAnswers: Int
     @NSManaged public var wrongAnswers: Int
+    @NSManaged public var lastAnswerRight: Bool
     
 }
 

@@ -47,6 +47,7 @@ class DataController: ObservableObject {
         kan.number = kanji.number
         kan.rightAnswers = kanji.rightAnwers
         kan.wrongAnswers = kanji.wrongAnswers
+        kan.lastAnswerRight = kan.lastAnswerRight
         
         save(context: context)
     }

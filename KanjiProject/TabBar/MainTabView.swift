@@ -53,7 +53,7 @@ struct MainTabView: View {
             .background(Color.gray)
         }
         .onAppear {
-//            checkCoreData()
+            checkCoreData()
             if kanji.isEmpty {
                 print("Kanji is Empty")
             }
@@ -70,7 +70,7 @@ struct MainTabView: View {
     func checkCoreData() {
         if kanji.isEmpty {
             print("Start Loading File")
-//            setCoreDataKanji()
+            setCoreDataKanji()
             print("End Loading File")
         } else {
             print("CoreData have \(kanji.count) Elements")
@@ -85,24 +85,24 @@ struct MainTabView: View {
         }
     }
     
-//    func setCoreDataDictionary() {
-//        let stores = Stores()
-//
-//        for word in stores.dictionaryStore.getAll().enumerated() {
-//            DataController.shared.add(dictionary: word.element, context: viewContext)
-//            print("Now \(word.offset), Remain \(stores.dictionaryStore.getAll().count - word.offset)")
-//        }
-//    }
-//
-//    func setCoreDataKanji() {
-//        let stores = Stores()
-//
-//        for storedElement in stores.kanjistore.getAll().enumerated() {
-////            DataController().add(kanji: storedElement.element, context: viewContext)
-//            DataController.shared.add(kanji: storedElement.element, context: viewContext)
-//            print("Now \(storedElement.offset)")
-//        }
-//    }
+    func setCoreDataDictionary() {
+        let stores = Stores()
+
+        for word in stores.dictionaryStore.getAll().enumerated() {
+            DataController.shared.add(dictionary: word.element, context: viewContext)
+            print("Now \(word.offset), Remain \(stores.dictionaryStore.getAll().count - word.offset)")
+        }
+    }
+
+    func setCoreDataKanji() {
+        let stores = Stores()
+
+        for storedElement in stores.kanjistore.getAll().enumerated() {
+//            DataController().add(kanji: storedElement.element, context: viewContext)
+            DataController.shared.add(kanji: storedElement.element, context: viewContext)
+            print("Now \(storedElement.offset)")
+        }
+    }
 }
 
 private struct CustomImage: View {
