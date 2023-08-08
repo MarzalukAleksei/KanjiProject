@@ -25,25 +25,31 @@ struct KanjiView: View {
                     Text("Выберите уровень")
                         .font(CustomFont.scroll(size: 20))
                 }
-                //                .padding(.top, 30)
                 .padding(.bottom, 20)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 10) {
-                        //                    TabView {
-                        ForEach(Level.allCases.reversed(), id: \.self) { level in
-                            LevelButton(levelTitle: level,
-                                        size: CGSize(width: 100, height: 100),
-                                        color: selectedLevel == level ? .mint : .black)
-                            .onTapGesture {
-                                withAnimation {
-                                    selectedLevel = level
+                ScrollViewReader { proxy in
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            //                    TabView {
+                            ForEach(Level.allCases.reversed(), id: \.self) { level in
+                                LevelButton(levelTitle: level,
+                                            size: CGSize(width: 100, height: 100),
+                                            color: selectedLevel == level ? .mint : .black)
+                                .onTapGesture {
+                                    withAnimation {
+                                        selectedLevel = level
+                                    }
                                 }
+                                
                             }
-                            
+                        }
+                        .padding(.horizontal, 20)
+                    }
+                    .onAppear {
+                        withAnimation {
+                            proxy.scrollTo(selectedLevel, anchor: .center)
                         }
                     }
-                    .padding(.horizontal, 20)
                 }
                 
                 
