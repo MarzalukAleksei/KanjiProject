@@ -80,7 +80,7 @@ struct BackSideView: View {
     }
     
     func toNewLine(value: String) -> String {
-        var result = value.replacingOccurrences(of: "・", with: "\n")
+        let result = value.replacingOccurrences(of: "・", with: "\n")
         
         return result
     }

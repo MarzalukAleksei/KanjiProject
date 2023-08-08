@@ -15,4 +15,8 @@ class PartsSize {
     static let navigationCornerRadius: CGFloat = 60
     
     static let levelButtonSize: CGSize = CGSize(width: 85, height: 85)
+    
+    static let customNavigationBarHeight: CGFloat = 90
+    
+    static let customNavigationBarTitlePadding: CGFloat = 5
 }

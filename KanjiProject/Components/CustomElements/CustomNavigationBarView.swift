@@ -16,8 +16,8 @@ struct CustomNavigationBarView: View {
                 Spacer()
                 Text(title)
                     .font(.title)
-                    .frame(maxWidth: .infinity, maxHeight: 120, alignment: .bottom)
-                    .padding(.bottom, 5)
+                    .frame(maxWidth: .infinity, maxHeight: PartsSize.customNavigationBarHeight, alignment: .bottom)
+                    .padding(.bottom, PartsSize.customNavigationBarTitlePadding)
                     .foregroundColor(.white)
                 Spacer()
             }

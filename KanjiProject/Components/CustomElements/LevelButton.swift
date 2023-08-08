@@ -21,6 +21,7 @@ struct LevelButton: View {
             Text("\(levelTitle.rawValue)")
                 .foregroundColor(.white)
                 .font(CustomFont.scroll(size: 35))
+//            ForEach(values, id: \.self) { index in
             ForEach(0..<values.count) { index in
                 Circle()
                     .trim(from: index == 0 ? 0 : values[0..<index].reduce(0, +),

@@ -28,7 +28,7 @@ struct SelectLevel: View {
     }
     
     func data(level: Level) -> [KanjiModel] {
-        var result = Kanji.transformToKanjiModel(kanji: kanji, level)
+        let result = Kanji.transformToKanjiModel(kanji: kanji, level)
         
         return result
     }

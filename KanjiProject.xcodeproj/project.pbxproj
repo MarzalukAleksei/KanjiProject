@@ -56,6 +56,9 @@
 		AFFC08AD2A822AF60043B741 /* KanjiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08AC2A822AF60043B741 /* KanjiView.swift */; };
 		AFFC08B02A8234980043B741 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08AF2A8234980043B741 /* CustomNavigationBarView.swift */; };
 		AFFC08B42A823EAB0043B741 /* LevelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08B32A823EAB0043B741 /* LevelButton.swift */; };
+		AFFC08C22A829E3E0043B741 /* KanjiRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08C12A829E3E0043B741 /* KanjiRow.swift */; };
+		AFFC08C42A82A6840043B741 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08C32A82A6840043B741 /* Settings.swift */; };
+		AFFC08C62A82CE4D0043B741 /* ProgressIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08C52A82CE4D0043B741 /* ProgressIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +112,9 @@
 		AFFC08AC2A822AF60043B741 /* KanjiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiView.swift; sourceTree = "<group>"; };
 		AFFC08AF2A8234980043B741 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
 		AFFC08B32A823EAB0043B741 /* LevelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelButton.swift; sourceTree = "<group>"; };
+		AFFC08C12A829E3E0043B741 /* KanjiRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRow.swift; sourceTree = "<group>"; };
+		AFFC08C32A82A6840043B741 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		AFFC08C52A82CE4D0043B741 /* ProgressIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				AFFC08AC2A822AF60043B741 /* KanjiView.swift */,
+				AFFC08C12A829E3E0043B741 /* KanjiRow.swift */,
 			);
 			path = KanjiView;
 			sourceTree = "<group>";
@@ -336,6 +343,7 @@
 				AFBA6FF829F3640F008E11BB /* CustomFonts.swift */,
 				AF69CE702A001739009C7B92 /* Images.swift */,
 				AF3A72BB2A7E4AC500A5513C /* PartsSize.swift */,
+				AFFC08C32A82A6840043B741 /* Settings.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -362,6 +370,7 @@
 				AFFC08AF2A8234980043B741 /* CustomNavigationBarView.swift */,
 				AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */,
 				AFFC08B32A823EAB0043B741 /* LevelButton.swift */,
+				AFFC08C52A82CE4D0043B741 /* ProgressIndicatorView.swift */,
 			);
 			path = CustomElements;
 			sourceTree = "<group>";
@@ -457,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF17F9492A44A1C600D5631D /* DictionaryMapper.swift in Sources */,
+				AFFC08C22A829E3E0043B741 /* KanjiRow.swift in Sources */,
 				AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */,
 				AF17F94D2A44ABC500D5631D /* DictionaryStore.swift in Sources */,
 				AF17F9412A4486A100D5631D /* FrontSideVIew.swift in Sources */,
@@ -491,12 +501,14 @@
 				AFF443A22A51B05100FF4404 /* SavedData.xcdatamodeld in Sources */,
 				AFAF80FE29D9E59C002B9921 /* IFileMapper.swift in Sources */,
 				AF3A72BC2A7E4AC500A5513C /* PartsSize.swift in Sources */,
+				AFFC08C62A82CE4D0043B741 /* ProgressIndicatorView.swift in Sources */,
 				AF6A2DF229E5AF5100D7C1A9 /* BackgroundView.swift in Sources */,
 				AF30EB0229EAB7DF00E5B7A9 /* OpenScrollView.swift in Sources */,
 				AF30EB1129EB0A0C00E5B7A9 /* Level.swift in Sources */,
 				AFBA6FF929F3640F008E11BB /* CustomFonts.swift in Sources */,
 				AFFC08B02A8234980043B741 /* CustomNavigationBarView.swift in Sources */,
 				AFAF80DA29D9C646002B9921 /* KanjiProjectApp.swift in Sources */,
+				AFFC08C42A82A6840043B741 /* Settings.swift in Sources */,
 				AF9CCE6829F3C12F006B17F3 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

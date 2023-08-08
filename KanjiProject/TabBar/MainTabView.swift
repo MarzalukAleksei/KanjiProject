@@ -53,13 +53,13 @@ struct MainTabView: View {
             .background(Color.gray)
         }
         .onAppear {
-            checkCoreData()
-            if kanji.isEmpty {
-                print("Kanji is Empty")
-            }
-            if dictionary.isEmpty {
-                print("Dictionary is Empty")
-            }
+//            checkCoreData()
+//            if kanji.isEmpty {
+//                print("Kanji is Empty")
+//            }
+//            if dictionary.isEmpty {
+//                print("Dictionary is Empty")
+//            }
             
 //            DataController.shared.deleteAllKanjiData(context: viewContext)
 //            DataController.shared.deleteAllDictionaryData(context: viewContext)

@@ -12,6 +12,9 @@ struct KanjiView: View {
     @FetchRequest(entity: Kanji.entity(),
                   sortDescriptors: []) private var kanji: FetchedResults<Kanji>
     @State var levelsTrim: [Level: [Double]] = [:]
+    private var separated: [[KanjiModel]] {
+        separateKanji(Kanji.transformToKanjiModel(kanji: kanji, selectedLevel))
+    }
     
     var body: some View {
         NavigationStack {
@@ -40,7 +43,7 @@ struct KanjiView: View {
                                                          height: PartsSize.levelButtonSize.height),
                                             color: selectedLevel == level ? .secondary : .black)
                                 .onTapGesture {
-                                    withAnimation {
+                                    withAnimation(Animation.easeInOut(duration: 0.5)) {
                                         selectedLevel = level
                                     }
                                 }
@@ -56,15 +59,39 @@ struct KanjiView: View {
                         
                     }
                 }
-                List() {
-                    ForEach(getKanji(selectedLevel), id: \.self) { element in
-                        Text(element.body)
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 10) {
+//                        ForEach(separated, id: \.self) { arr in
+                        ForEach(Array(separateKanji(Kanji.transformToKanjiModel(kanji: kanji, selectedLevel)).enumerated()), id: \.element) { (index, kanjiArray) in
+                            KanjiRow(kanji: kanjiArray, number: index + 1)
+                        }
                     }
                 }
-                .padding(.top, 20)
+                .padding(.top, 10)
+                .padding(.horizontal, 20)
             }
             Spacer()
         }
+    }
+    
+    func separateKanji(_ kanjiArray: [KanjiModel]) -> [[KanjiModel]] {
+        var result: [[KanjiModel]] = []
+        var array: [KanjiModel] = []
+        
+        for kanji in kanjiArray {
+            if array.count < Settings.elementsInRow {
+                array.append(kanji)
+            } else {
+                result.append(array)
+                array.removeAll()
+            }
+        }
+        
+        if !array.isEmpty {
+            result.append(array)
+        }
+        
+        return result
     }
     
     func getKanji(_ level: Level) -> [KanjiModel] {
@@ -72,6 +99,11 @@ struct KanjiView: View {
     }
     
     func setTrims(_ level: Level) -> [Double] {
+        
+        if kanji.isEmpty {
+            return [0.0, 0.0, 1.0]
+        }
+        
         var result: [Double] = []
         let kanjiArray = Kanji.transformToKanjiModel(kanji: kanji, level)
         var answers:(rightAnswers: Int, wrongAnswers: Int) = (0, 0)
@@ -89,34 +121,6 @@ struct KanjiView: View {
         
         return result
     }
-    
-    //    func setTrims() -> [Level: [Double]] {
-    //        var result: [Level: [Double]] = [:]
-    //        var answers: [Double] = []
-    //
-    //        for level in Level.allCases {
-    //            let kanjiArray = Kanji.transformToKanjiModel(kanji: kanji, level)
-    //            var rightAnswers = 0
-    //            var wrongAnswers = 0
-    //
-    //            for element in kanjiArray {
-    //                if element.rightAnwers > element.wrongAnswers {
-    //                    rightAnswers += 1
-    //                } else if element.wrongAnswers > element.rightAnwers {
-    //                    wrongAnswers += 1
-    //                }
-    //            }
-    //            let notAnswed = kanjiArray.count - rightAnswers - wrongAnswers
-    //
-    //            answers.append(Double(rightAnswers / kanjiArray.count))
-    //            answers.append(Double(wrongAnswers / kanjiArray.count))
-    //            answers.append(Double(notAnswed / kanjiArray.count))
-    //
-    //            result[level] = answers
-    //        }
-    //
-    //        return result
-    //    }
 }
 
 
