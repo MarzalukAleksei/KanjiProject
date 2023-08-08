@@ -24,7 +24,7 @@ struct TabBarButton: View {
 //                CustomImage()
                 if tab == currentTab {
                     Text(tab.rawValue)
-                        .font(FontStyle.scroll(size: 25))
+                        .font(CustomFont.scroll(size: 25))
                         .lineLimit(1)
                 }
             }

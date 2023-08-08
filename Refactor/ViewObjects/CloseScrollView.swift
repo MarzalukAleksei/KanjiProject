@@ -15,7 +15,7 @@ struct CloseScrollView: View {
         HStack(spacing: 0) {
             Image("WoodPart")
                 .resizable()
-                .modifier(CloseScrollMainWoodPartModifier(width: size.width))
+                .modifier(CloseScrollMainWoodPartModifier(width: size.width, rotaion: 180))
             ZStack {
                 Image("YellowScroll")
                     .resizable()
@@ -31,12 +31,12 @@ struct CloseScrollView: View {
                     .foregroundColor(.brown)
                 Text(title)
                     .frame(width: size.height - 130, height: size.width - 50)
-                    .font(FontStyle.scroll(size: 30))
+                    .font(CustomFont.scroll(size: 30))
             }
                 
             Image("WoodPart")
                 .resizable()
-                .modifier(CloseScrollMainWoodPartModifier(width: size.width))
+                .modifier(CloseScrollMainWoodPartModifier(width: size.width, rotaion: 0))
         }
     }
 }

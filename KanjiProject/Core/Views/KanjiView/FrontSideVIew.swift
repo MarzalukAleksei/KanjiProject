@@ -27,7 +27,7 @@ struct FrontSideVIew: View {
             
             VStack {
                 Text(kanji.body)
-                    .font(FontStyle.cardMainKanji)
+                    .font(CustomFont.cardMainKanji)
                 
                     VStack(alignment: .leading) {
                         HStack {

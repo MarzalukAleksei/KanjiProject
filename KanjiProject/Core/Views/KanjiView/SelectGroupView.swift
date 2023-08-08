@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct SelectGroupView: View {
-    let moc = Array(1...3)
-    let padding: CGFloat = PartsSize.woodPartHeight * 2
+    let moc = Array(1...7)
+    let padding = PartsSize.woodPartHeight * 2
     var body: some View {
         GeometryReader { geo in
             ScrollView() {
                 VStack(spacing: 10) {
                     ForEach(moc, id: \.self) { row in
-                        CloseScrollView(size: CGSize(width: scrollsHeight(inList: 7, geo), height: scrollsWidth(geo, padding)))
+                        CloseScrollView(size: CGSize(width: scrollsHeight(inList: 7, geo), height: scrollsWidth(geo)))
                     }
                 }
                 .padding(.leading, padding / 2)
@@ -28,7 +28,7 @@ struct SelectGroupView: View {
     func scrollsHeight(inList number: CGFloat, _ geo: GeometryProxy) -> CGFloat {
         return geo.size.height / (number + 1)
     }
-    func scrollsWidth(_ geo: GeometryProxy, _ padding: CGFloat) -> CGFloat {
+    func scrollsWidth(_ geo: GeometryProxy) -> CGFloat {
         return geo.size.width - (padding * 2)
     }
 }

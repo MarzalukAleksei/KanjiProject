@@ -18,7 +18,9 @@ struct OpenScrollView: View {
                 VStack(spacing: 0) {
                     Image("WoodPart")
                         .resizable()
-                        .modifier(ScrollMainWoodPartModifier(width: size.width))
+                        .modifier(ScrollMainWoodPartModifier(width: size.width,
+                                                             corners: [.topLeft, .topRight]))
+                        
                     ZStack {
                         Image(imageName)
                             .resizable()
@@ -38,17 +40,20 @@ struct OpenScrollView: View {
                             ForEach(transformTitle(), id: \.self) { character in
                                 if transformTitle().count <= 5 {
                                     Text(character)
-                                        .font(FontStyle.scroll(size: 20))
+                                        .font(CustomFont.scroll(size: 20))
                                 } else {
                                     Text(character)
-                                        .font(FontStyle.scroll(size: 15))
+                                        .font(CustomFont.scroll(size: 15))
                                 }
                             }
                         }
                     }
+                    .modifier(OpenScrollParticalRoundedModifier(cornerRadius: size.width / 8,
+                                                                corners: [.topLeft, .bottomLeft]))
                     Image("WoodPart")
                         .resizable()
-                        .modifier(ScrollMainWoodPartModifier(width: size.width))
+                        .modifier(ScrollMainWoodPartModifier(width: size.width,
+                                                             corners: [.bottomLeft, .bottomRight]))
                 }
                 VStack(alignment: .leading, spacing: 0) {
                     ZStack(alignment: .leading) {
@@ -64,16 +69,19 @@ struct OpenScrollView: View {
                 VStack(spacing: 0) {
                     Image("WoodPart")
                         .resizable()
-                        .modifier(ScrollLittleWoodPartModifier())
+                        .modifier(ScrollLittleWoodPartModifier(corners: [.topLeft, .topRight]))
                     ZStack {
                         Image(imageName)
                             .resizable(capInsets: .init(top: 0, leading: 0, bottom: 0, trailing: 4))
                             .frame(width: 16, height: size.height)
                         YellowLines(size: CGSize(width: 16, height: size.height))
                     }
+                    .modifier(OpenScrollParticalRoundedModifier(cornerRadius: size.width / 9, corners: [.topRight, .bottomRight]))
+                    
                     Image("WoodPart")
                         .resizable()
-                        .modifier(ScrollLittleWoodPartModifier())
+                        .modifier(ScrollLittleWoodPartModifier(corners: [.bottomLeft,
+                                                                         .bottomRight]))
                 }
             }
         }

@@ -11,4 +11,6 @@ class PartsSize {
     static let woodPartHeight: CGFloat = 12
     
     static let litleWoodPartSize: (width: CGFloat, height: CGFloat) = (7, 8)
+    
+    static let navigationCornerRadius: CGFloat = 60
 }

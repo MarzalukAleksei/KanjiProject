@@ -25,7 +25,7 @@ struct BackSideView: View {
             
             VStack(spacing: 20) {
                 Text(kanji.body)
-                    .font(FontStyle.cardMainKanji)
+                    .font(CustomFont.cardMainKanji)
                 
                 VStack(spacing: 20) {
                     HStack {
