@@ -16,7 +16,7 @@ enum TabBarElements: String, CaseIterable {
 
 struct MainTabView: View {
     
-    @State var currentTab: TabBarElements = .dictionary
+    @State var currentTab: TabBarElements = .kanji
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(entity: Kanji.entity(),
                   sortDescriptors: []) var kanji: FetchedResults<Kanji>
@@ -31,7 +31,7 @@ struct MainTabView: View {
 
         ZStack(alignment: .bottom) {
             TabView(selection: $currentTab) {
-                SelectLevel()
+                KanjiView()
                     .tag(TabBarElements.kanji)
                 Text("Yojijukugo")
                     .tag(TabBarElements.yojijukugo)
@@ -70,7 +70,7 @@ struct MainTabView: View {
     func checkCoreData() {
         if kanji.isEmpty {
             print("Start Loading File")
-            setCoreDataKanji()
+//            setCoreDataKanji()
             print("End Loading File")
         } else {
             print("CoreData have \(kanji.count) Elements")
@@ -78,31 +78,31 @@ struct MainTabView: View {
         }
         
         if dictionary.isEmpty {
-            setCoreDataDictionary()
+//            setCoreDataDictionary()
         } else {
             print("CoreData have \(dictionary.count) Elements")
 //            print("Store have \(Stores().dictionaryStore.getAll().count) Elements")
         }
     }
     
-    func setCoreDataDictionary() {
-        let stores = Stores()
-        
-        for word in stores.dictionaryStore.getAll().enumerated() {
-            DataController.shared.add(dictionary: word.element, context: viewContext)
-            print("Now \(word.offset), Remain \(stores.dictionaryStore.getAll().count - word.offset)")
-        }
-    }
-    
-    func setCoreDataKanji() {
-        let stores = Stores()
-        
-        for storedElement in stores.kanjistore.getAll().enumerated() {
-//            DataController().add(kanji: storedElement.element, context: viewContext)
-            DataController.shared.add(kanji: storedElement.element, context: viewContext)
-            print("Now \(storedElement.offset)")
-        }
-    }
+//    func setCoreDataDictionary() {
+//        let stores = Stores()
+//
+//        for word in stores.dictionaryStore.getAll().enumerated() {
+//            DataController.shared.add(dictionary: word.element, context: viewContext)
+//            print("Now \(word.offset), Remain \(stores.dictionaryStore.getAll().count - word.offset)")
+//        }
+//    }
+//
+//    func setCoreDataKanji() {
+//        let stores = Stores()
+//
+//        for storedElement in stores.kanjistore.getAll().enumerated() {
+////            DataController().add(kanji: storedElement.element, context: viewContext)
+//            DataController.shared.add(kanji: storedElement.element, context: viewContext)
+//            print("Now \(storedElement.offset)")
+//        }
+//    }
 }
 
 private struct CustomImage: View {
