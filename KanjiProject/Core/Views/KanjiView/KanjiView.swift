@@ -34,7 +34,7 @@ struct KanjiView: View {
                             ForEach(Level.allCases.reversed(), id: \.self) { level in
                                 LevelButton(levelTitle: level,
                                             size: CGSize(width: 100, height: 100),
-                                            color: selectedLevel == level ? .mint : .black)
+                                            color: selectedLevel == level ? .secondary : .black)
                                 .onTapGesture {
                                     withAnimation {
                                         selectedLevel = level
@@ -49,15 +49,23 @@ struct KanjiView: View {
                         withAnimation {
                             proxy.scrollTo(selectedLevel, anchor: .center)
                         }
+                        
                     }
                 }
-                
+                List() {
+                    ForEach(getKanji(), id: \.self) { element in
+                        Text(element.kun)
+                    }
+                }
                 
             }
             Spacer()
         }
     }
-
+    func getKanji() -> [KanjiModel] {
+        
+        return []
+    }
 }
 
 
