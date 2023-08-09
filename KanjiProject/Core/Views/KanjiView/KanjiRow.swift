@@ -18,21 +18,24 @@ struct KanjiRow: View {
             HStack {
                 ZStack {
                     Rectangle()
-                        .frame(width: 100)
+                        .frame(width: Settings.customRowRectangleSize)
                         .clipShape(PartialRoundedRectangle(cornerRadius: 15,
                                                            corners: [.bottomLeft, .topLeft]))
-                    HStack(spacing: 2) {
+                    HStack(spacing: 1) {
                         Text("問")
+                        if number < 10 {
+                            Text(" ")
+                        }
                         Text("\(number)")
                     }
-                    .font(Font.system(size: 45))
+                    .font(Font.system(size: 37))
                     .foregroundColor(.white)
                 }
                 VStack(alignment: .leading, spacing: 5) {
                     Spacer()
 //                    Text("Title")
 //                        .font(.headline)
-                    Text("Пройдено \(rightAnswers()) из \(Settings.elementsInRow)")
+                    Text("Пройдено \(rightAnswers()) из \(kanji.count)")
                         .font(.subheadline)
                         .opacity(0.5)
                     ProgressIndicatorView(answers: CGFloat(Settings.elementsInRow), rightAnswers: CGFloat(rightAnswers()))
@@ -42,6 +45,7 @@ struct KanjiRow: View {
             }
 //            .frame(maxWidth: .infinity)
         }
+        .frame(height: Settings.customRowRectangleSize)
         .shadow(radius: 2.5, x: 0, y: 5)
         
     }

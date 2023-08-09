@@ -19,4 +19,6 @@ class PartsSize {
     static let customNavigationBarHeight: CGFloat = 90
     
     static let customNavigationBarTitlePadding: CGFloat = 5
+    
+    static let customtoggleSize: CGSize = CGSize(width: 60, height: 30)
 }

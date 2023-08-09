@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CustomNavigationBarView: View {
     var title = ""
+    let corners: UIRectCorner
+    let heigh: CGFloat
     var body: some View {
         VStack(spacing: 0) {
             Color.black.ignoresSafeArea().frame(maxWidth: .infinity, maxHeight: 0)
@@ -22,7 +24,7 @@ struct CustomNavigationBarView: View {
                 Spacer()
             }
             .background(Color.black)
-            .clipShape(PartialRoundedRectangle(cornerRadius: PartsSize.navigationCornerRadius, corners: .bottomLeft))
+            .clipShape(PartialRoundedRectangle(cornerRadius: PartsSize.navigationCornerRadius, corners: corners))
         }
     }
 }
@@ -30,7 +32,7 @@ struct CustomNavigationBarView: View {
 struct CustomNavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            CustomNavigationBarView(title: "Preview")
+            CustomNavigationBarView(title: "Preview", corners: .bottomLeft, heigh: PartsSize.customNavigationBarHeight)
             Spacer()
         }
         
