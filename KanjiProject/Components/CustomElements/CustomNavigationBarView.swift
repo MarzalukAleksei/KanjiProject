@@ -17,9 +17,9 @@ struct CustomNavigationBarView: View {
             HStack {
                 Spacer()
                 Text(title)
-                    .font(.title)
+                    .font(CustomFont.scroll(size: 25))
                     .frame(maxWidth: .infinity, maxHeight: PartsSize.customNavigationBarHeight, alignment: .bottom)
-                    .padding(.bottom, PartsSize.customNavigationBarTitlePadding)
+                    .padding(.bottom, Settings.customNavigationBarTitlePadding)
                     .foregroundColor(.white)
                 Spacer()
             }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomToggleView: View {
-    @State var toggle: Bool
+    @Binding var toggle: Bool
     var title: (left: String, right: String) = ("", "")
     
     var body: some View {
@@ -56,11 +56,11 @@ private struct BlackRectangle: View {
         ZStack {
             Rectangle()
                 .frame(width: geo.size.height)
-                .background(Color.blue)
                 .clipShape(PartialRoundedRectangle(cornerRadius: geo.size.height * Settings.customToggleViewCornerRadius, corners: corners))
             
             Text(title)
                 .foregroundColor(.white)
+                .font(CustomFont.scroll(size: geo.size.height * 0.7))
         }
     }
 }
@@ -78,7 +78,7 @@ private struct OpacityRectangle: View {
 
 struct CustomToggleView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomToggleView(toggle: false, title: ("問", "漢"))
+        CustomToggleView(toggle: .constant(false), title: ("問", "漢"))
             .frame(width: 200, height: 75)
     }
 }

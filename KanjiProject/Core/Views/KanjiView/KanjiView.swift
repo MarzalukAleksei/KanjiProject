@@ -16,16 +16,16 @@ struct KanjiView: View {
         separateKanji(Kanji.transformToKanjiModel(kanji: kanji, selectedLevel))
     }
     @State var isPresented = false
-    @State private var toggle = false
+    @State private var toggle = true
     
     var body: some View {
         NavigationStack() {
             VStack(spacing: 0) {
-                CustomNavigationBarView(title: "Kanji", corners: .bottomLeft, heigh: PartsSize.customNavigationBarHeight)
+                CustomNavigationBarView(title: "Изучаем Кандзи", corners: .bottomLeft, heigh: PartsSize.customNavigationBarHeight)
                 ZStack {
                     HStack {
                         Rectangle()
-                            .frame(maxWidth: .infinity, maxHeight: 70)
+                            .frame(maxWidth: .infinity, maxHeight: PartsSize.customtoggleSize.height + (Settings.padding * 2))
                             .clipShape(PartialRoundedRectangle(cornerRadius: PartsSize.navigationCornerRadius, corners: .topRight))
                             .background(Color.black)
                             .foregroundColor(.white)
@@ -36,7 +36,7 @@ struct KanjiView: View {
                     }
                     
                     HStack {
-                        CustomToggleView(toggle: toggle, title: ("問", "漢"))
+                        CustomToggleView(toggle: $toggle, title: ("問", "漢"))
                             .frame(width: PartsSize.customtoggleSize.width,
                                    height: PartsSize.customtoggleSize.height)
                         Spacer()
@@ -44,12 +44,13 @@ struct KanjiView: View {
                     .padding(.leading, 20)
                     
                 }
-                .padding(.bottom, Settings.padding)
+                //                .padding(.bottom, Settings.padding)
+                .padding(.bottom, 0)
                 
                 ScrollViewReader { proxy in
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
-                            //                    TabView {
+                            
                             ForEach(Level.allCases.reversed(), id: \.self) { level in
                                 LevelButton(levelTitle: level,
                                             size: CGSize(width: PartsSize.levelButtonSize.width,
@@ -73,25 +74,28 @@ struct KanjiView: View {
                         
                     }
                 }
+                
+                
                 ScrollView(showsIndicators: false) {
-                    VStack(spacing: 10) {
-//                        ForEach(separated, id: \.self) { arr in
-                        ForEach(Array(separateKanji(Kanji.transformToKanjiModel(kanji: kanji, selectedLevel)).enumerated()), id: \.element) { (index, kanjiArray) in
-                            
-//                            KanjiRow(kanji: kanjiArray, number: index + 1)
-//                                .onTapGesture {
-//                                    isPresented.toggle()
-//                                }
-                            
-                            NavigationLink(value: kanjiArray) {
-                                KanjiRow(kanji: kanjiArray, number: index + 1)
+                    LazyVStack(spacing: 10) {
+                        if !toggle {
+                            ForEach(Array(separateKanji(Kanji.transformToKanjiModel(kanji: kanji, selectedLevel)).enumerated()), id: \.element) { (index, kanjiArray) in
+                                
+                                NavigationLink(value: kanjiArray) {
+                                    KanjiRow(kanji: kanjiArray, number: index + 1)
+                                }
+                                .buttonStyle(.plain)
                             }
-                            .buttonStyle(.plain)
+                        } else {
+                            ForEach(Array(getKanji(selectedLevel).enumerated()),
+                                    id: \.element) { (index, row) in
+                                KanjiRow(kanji: [], number: 0)
+                            }
                         }
                     }
+                    .padding(.top, 10)
+                    .padding(.horizontal, 20)
                 }
-                .padding(.top, 10)
-                .padding(.horizontal, 20)
             }
             .navigationDestination(for: ([KanjiModel].self)) { kanji in
                 Text("\(kanji.count)")
@@ -99,9 +103,9 @@ struct KanjiView: View {
             
             Spacer()
         }
-//        .sheet(isPresented: $isPresented) {
-//            Text("sdsbdv")
-//        }
+        //        .sheet(isPresented: $isPresented) {
+        //            Text("sdsbdv")
+        //        }
     }
     
     func separateKanji(_ kanjiArray: [KanjiModel]) -> [[KanjiModel]] {
@@ -126,7 +130,9 @@ struct KanjiView: View {
     }
     
     func getKanji(_ level: Level) -> [KanjiModel] {
-        return Kanji.transformToKanjiModel(kanji: kanji, level)
+        let result = Kanji.transformToKanjiModel(kanji: kanji, level)
+        print(result.count)
+        return result
     }
     
     func setTrims(_ level: Level) -> [Double] {
