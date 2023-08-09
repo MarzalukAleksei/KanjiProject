@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomToggleView: View {
     @State var toggle: Bool
-    var title: (toFalse: String, toTrue: String) = ("", "")
+    var title: (left: String, right: String) = ("", "")
     
     var body: some View {
         GeometryReader { geo in
@@ -18,13 +18,23 @@ struct CustomToggleView: View {
                     .opacity(Settings.opacity)
                     .clipShape(RoundedRectangle(cornerRadius: geo.size.height * Settings.customToggleViewCornerRadius))
                 HStack(spacing: 0) {
-                    OpacityRectangle(size: CGSize(width: toggle ? geo.size.width - geo.size.height : 0, height: geo.size.height),
-                                     corners: [.topLeft, .bottomLeft])
-                    BlackRectangle(geo: geo, corners: [.allCorners],
-                                   title: toggle ? title.toTrue : title.toFalse)
-                    OpacityRectangle(size: CGSize(width: toggle ? 0 : geo.size.width - geo.size.height,
-                                                  height: geo.size.height),
-                                     corners: [.topRight, .bottomRight])
+                    OpacityRectangle(
+                        size: CGSize(width: toggle ? geo.size.width - geo.size.height : 0,
+                                     height: geo.size.height),
+                        corners: [.topLeft, .bottomLeft]
+                    )
+                    
+                    BlackRectangle(
+                        geo: geo,
+                        corners: .allCorners,
+                        title: toggle ? title.right : title.left
+                    )
+                    
+                    OpacityRectangle(
+                        size: CGSize(width: toggle ? 0 : geo.size.width - geo.size.height,
+                                     height: geo.size.height),
+                        corners: [.topRight, .bottomRight]
+                    )
                     
                 }
             }
@@ -61,7 +71,7 @@ private struct OpacityRectangle: View {
     var body: some View {
         Rectangle()
             .frame(width: size.width)
-            .opacity(0.0)
+            .opacity(0)
             .clipShape(PartialRoundedRectangle(cornerRadius: size.height * Settings.customToggleViewCornerRadius, corners: corners))
     }
 }
