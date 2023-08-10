@@ -21,7 +21,7 @@ struct BackSideView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .modifier(CardViewModifire())
+                .modifier(Modifiers.cardViewModifier)
             
             VStack(spacing: 20) {
                 Text(kanji.body)

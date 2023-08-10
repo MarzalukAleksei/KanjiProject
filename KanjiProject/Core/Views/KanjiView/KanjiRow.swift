@@ -18,7 +18,7 @@ struct KanjiRow: View {
             HStack {
                 ZStack {
                     Rectangle()
-                        .frame(width: Settings.customRowRectangleSize)
+                        .frame(width: PartsSize.customRowRectangleSize)
                         .clipShape(PartialRoundedRectangle(cornerRadius: 15,
                                                            corners: [.bottomLeft, .topLeft]))
                     HStack(spacing: 1) {
@@ -45,7 +45,7 @@ struct KanjiRow: View {
             }
 //            .frame(maxWidth: .infinity)
         }
-        .frame(height: Settings.customRowRectangleSize)
+        .frame(height: PartsSize.customRowRectangleSize)
         .shadow(radius: 2.5, x: 0, y: 5)
         
     }

@@ -16,12 +16,15 @@ struct KanjiView: View {
         separateKanji(Kanji.transformToKanjiModel(kanji: kanji, selectedLevel))
     }
     @State var isPresented = false
-    @State private var toggle = true
+    @State private var toggle = false
     
     var body: some View {
         NavigationStack() {
             VStack(spacing: 0) {
-                CustomNavigationBarView(title: "Изучаем Кандзи", corners: .bottomLeft, heigh: PartsSize.customNavigationBarHeight)
+                CustomNavigationBarView(title: "Изучаем Кандзи",
+                                        corners: .bottomLeft,
+                                        cornerRadius: PartsSize.navigationCornerRadius,
+                                        heigh: PartsSize.customNavigationBarHeight)
                 ZStack {
                     HStack {
                         Rectangle()
@@ -41,7 +44,7 @@ struct KanjiView: View {
                                    height: PartsSize.customtoggleSize.height)
                         Spacer()
                     }
-                    .padding(.leading, 20)
+                    .padding(.leading, Settings.padding)
                     
                 }
                 //                .padding(.bottom, Settings.padding)
@@ -49,7 +52,7 @@ struct KanjiView: View {
                 
                 ScrollViewReader { proxy in
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 10) {
+                        HStack(spacing: Settings.paddingBetweenElements) {
                             
                             ForEach(Level.allCases.reversed(), id: \.self) { level in
                                 LevelButton(levelTitle: level,
@@ -57,7 +60,7 @@ struct KanjiView: View {
                                                          height: PartsSize.levelButtonSize.height),
                                             color: selectedLevel == level ? .secondary : .black)
                                 .onTapGesture {
-                                    withAnimation(Animation.easeInOut(duration: 0.5)) {
+                                    withAnimation(Animation.easeInOut(duration: Settings.animationDuration)) {
                                         selectedLevel = level
                                         scrollTo(proxy: proxy)
                                     }
@@ -65,10 +68,10 @@ struct KanjiView: View {
                                 
                             }
                         }
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, Settings.padding)
                     }
                     .onAppear {
-                        withAnimation {
+                        withAnimation(Animation.easeInOut(duration: Settings.animationDuration)) {
                             scrollTo(proxy: proxy)
                         }
                         
@@ -77,7 +80,7 @@ struct KanjiView: View {
                 
                 
                 ScrollView(showsIndicators: false) {
-                    LazyVStack(spacing: 10) {
+                    LazyVStack(spacing: Settings.paddingBetweenElements) {
                         if !toggle {
                             ForEach(Array(separateKanji(Kanji.transformToKanjiModel(kanji: kanji, selectedLevel)).enumerated()), id: \.element) { (index, kanjiArray) in
                                 
@@ -98,7 +101,8 @@ struct KanjiView: View {
                 }
             }
             .navigationDestination(for: ([KanjiModel].self)) { kanji in
-                Text("\(kanji.count)")
+//                Text("\(kanji.count)")
+                LearningView(kanji: kanji)
             }
             
             Spacer()

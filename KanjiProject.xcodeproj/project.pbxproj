@@ -35,8 +35,9 @@
 		AF6A2E0129E62CDA00D7C1A9 /* Stores.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0029E62CDA00D7C1A9 /* Stores.swift */; };
 		AF6A2E0429E721BE00D7C1A9 /* KanjiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */; };
 		AF6A2E0629E7267400D7C1A9 /* IStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0529E7267400D7C1A9 /* IStore.swift */; };
-		AF78E6B82A49BB7000D43ED7 /* CardViewModifire.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF78E6B72A49BB7000D43ED7 /* CardViewModifire.swift */; };
 		AF960B412A83C70600A33373 /* CustomToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF960B402A83C70500A33373 /* CustomToggleView.swift */; };
+		AF960B432A855DD000A33373 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF960B422A855DD000A33373 /* LearningView.swift */; };
+		AF960B472A8563C200A33373 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF960B462A8563C200A33373 /* Modifiers.swift */; };
 		AF9CCE6829F3C12F006B17F3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CCE6729F3C12F006B17F3 /* MainTabView.swift */; };
 		AFA6704D2A4B23BB00ED639D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6704C2A4B23BB00ED639D /* DataController.swift */; };
 		AFACD9C32A7A6F3C00F4091F /* Kanji+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACD9C12A7A6F3C00F4091F /* Kanji+CoreDataClass.swift */; };
@@ -91,8 +92,9 @@
 		AF6A2E0029E62CDA00D7C1A9 /* Stores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
 		AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiStore.swift; sourceTree = "<group>"; };
 		AF6A2E0529E7267400D7C1A9 /* IStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStore.swift; sourceTree = "<group>"; };
-		AF78E6B72A49BB7000D43ED7 /* CardViewModifire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifire.swift; sourceTree = "<group>"; };
 		AF960B402A83C70500A33373 /* CustomToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggleView.swift; sourceTree = "<group>"; };
+		AF960B422A855DD000A33373 /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
+		AF960B462A8563C200A33373 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		AF9CCE6729F3C12F006B17F3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		AFA6704C2A4B23BB00ED639D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		AFACD9C12A7A6F3C00F4091F /* Kanji+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kanji+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				AFFC08AC2A822AF60043B741 /* KanjiView.swift */,
+				AF960B422A855DD000A33373 /* LearningView.swift */,
 				AFFC08C12A829E3E0043B741 /* KanjiRow.swift */,
 			);
 			path = KanjiView;
@@ -178,8 +181,7 @@
 		AF78E6B92A49BC1300D43ED7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				AFFC08B22A823E860043B741 /* CustomElements */,
-				AFFC08B12A823E790043B741 /* Modifiers */,
+				AFFC08B22A823E860043B741 /* CustomView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -344,6 +346,7 @@
 			children = (
 				AFBA6FF829F3640F008E11BB /* CustomFonts.swift */,
 				AF69CE702A001739009C7B92 /* Images.swift */,
+				AF960B462A8563C200A33373 /* Modifiers.swift */,
 				AF3A72BB2A7E4AC500A5513C /* PartsSize.swift */,
 				AFFC08C32A82A6840043B741 /* Settings.swift */,
 			);
@@ -358,15 +361,7 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		AFFC08B12A823E790043B741 /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
-				AF78E6B72A49BB7000D43ED7 /* CardViewModifire.swift */,
-			);
-			path = Modifiers;
-			sourceTree = "<group>";
-		};
-		AFFC08B22A823E860043B741 /* CustomElements */ = {
+		AFFC08B22A823E860043B741 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
 				AFFC08AF2A8234980043B741 /* CustomNavigationBarView.swift */,
@@ -375,7 +370,7 @@
 				AFFC08C52A82CE4D0043B741 /* ProgressIndicatorView.swift */,
 				AF960B402A83C70500A33373 /* CustomToggleView.swift */,
 			);
-			path = CustomElements;
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		AFFC08BC2A82773B0043B741 /* KanjiViewScrolls */ = {
@@ -490,15 +485,16 @@
 				AFFC08AD2A822AF60043B741 /* KanjiView.swift in Sources */,
 				AF3A72B82A7D1C3000A5513C /* ScrollPartsModifires.swift in Sources */,
 				AF960B412A83C70600A33373 /* CustomToggleView.swift in Sources */,
+				AF960B472A8563C200A33373 /* Modifiers.swift in Sources */,
 				AF6A2E0429E721BE00D7C1A9 /* KanjiStore.swift in Sources */,
 				AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */,
 				AFFC08B42A823EAB0043B741 /* LevelButton.swift in Sources */,
 				AFACD9C42A7A6F3C00F4091F /* Kanji+CoreDataProperties.swift in Sources */,
 				AF55A9222A18D9370062855F /* LoginView.swift in Sources */,
 				AF69CE712A001739009C7B92 /* Images.swift in Sources */,
+				AF960B432A855DD000A33373 /* LearningView.swift in Sources */,
 				AFAF80F429D9DCD6002B9921 /* FileManager.swift in Sources */,
 				AFAF810229D9E7A9002B9921 /* IKanjiMapper.swift in Sources */,
-				AF78E6B82A49BB7000D43ED7 /* CardViewModifire.swift in Sources */,
 				AF30EAF829E9F99800E5B7A9 /* KatakanaModel.swift in Sources */,
 				AF3A72BA2A7D4AD500A5513C /* CloseScrollView.swift in Sources */,
 				AF30EAF629E9F98A00E5B7A9 /* HiraganaModel.swift in Sources */,

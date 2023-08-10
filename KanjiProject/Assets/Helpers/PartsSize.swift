@@ -19,4 +19,8 @@ class PartsSize {
     static let customNavigationBarHeight: CGFloat = 90
     
     static let customtoggleSize: CGSize = CGSize(width: 60, height: 30)
+    
+    static let customRowRectangleSize: CGFloat = 80
+    
+    static let learningViewNavigationBarHeght: CGFloat = 250
 }

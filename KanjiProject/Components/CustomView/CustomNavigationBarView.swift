@@ -10,7 +10,8 @@ import SwiftUI
 struct CustomNavigationBarView: View {
     var title = ""
     let corners: UIRectCorner
-    let heigh: CGFloat
+    let cornerRadius: CGFloat
+    var heigh: CGFloat
     var body: some View {
         VStack(spacing: 0) {
             Color.black.ignoresSafeArea().frame(maxWidth: .infinity, maxHeight: 0)
@@ -18,13 +19,13 @@ struct CustomNavigationBarView: View {
                 Spacer()
                 Text(title)
                     .font(CustomFont.scroll(size: 25))
-                    .frame(maxWidth: .infinity, maxHeight: PartsSize.customNavigationBarHeight, alignment: .bottom)
+                    .frame(maxWidth: .infinity, maxHeight: heigh, alignment: .bottom)
                     .padding(.bottom, Settings.customNavigationBarTitlePadding)
                     .foregroundColor(.white)
                 Spacer()
             }
             .background(Color.black)
-            .clipShape(PartialRoundedRectangle(cornerRadius: PartsSize.navigationCornerRadius, corners: corners))
+            .clipShape(PartialRoundedRectangle(cornerRadius: cornerRadius, corners: corners))
         }
     }
 }
@@ -32,7 +33,7 @@ struct CustomNavigationBarView: View {
 struct CustomNavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            CustomNavigationBarView(title: "Preview", corners: .bottomLeft, heigh: PartsSize.customNavigationBarHeight)
+            CustomNavigationBarView(title: "Preview", corners: .bottomLeft, cornerRadius: PartsSize.navigationCornerRadius, heigh: PartsSize.customNavigationBarHeight)
             Spacer()
         }
         
