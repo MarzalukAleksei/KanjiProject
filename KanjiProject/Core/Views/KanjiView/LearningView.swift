@@ -9,13 +9,10 @@ import SwiftUI
 
 struct LearningView: View {
     @Environment(\.dismiss) var dismiss
+    @Binding var tabBarIsHidden: Bool
+    var kanjiFlow: KanjiFlow
     
-    var kanji: [KanjiModel]
-    
-    init(kanji: [KanjiModel]) {
-        self.kanji = kanji
-        UITabBar.appearance().isHidden = true
-    }
+    @State var index = 0
     
     var body: some View {
         VStack {
@@ -25,16 +22,30 @@ struct LearningView: View {
                                         cornerRadius: Settings.learningViewCornerRadius,
                                         heigh: PartsSize.learningViewNavigationBarHeght)
                 
-                RoundedRectangle(cornerRadius: Settings.learningViewCornerRadius)
-                    .foregroundColor(.white)
-                    .padding(Settings.padding)
+                LearningFrontSideView(index: kanjiFlow.index,
+                                      kanji: kanjiFlow.kanji.first ?? .MOCK_KANJI,
+                                      number: 1,
+                                      count: kanjiFlow.kanji.count)
+                    
             }
             .frame(maxHeight: PartsSize.learningViewNavigationBarHeght)
             
-            
-            
+            ScrollView {
+                Text(kanjiFlow.kanji[index].kun)
+            }
+            .padding(.horizontal ,Settings.padding)
+            .padding(.top, Settings.paddingBetweenElements)
             
             Spacer()
+            
+            DismissView()
+                .onTapGesture {
+                    dismiss()
+                }
+
+        }
+        .onAppear {
+            tabBarIsHidden = true
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -43,6 +54,6 @@ struct LearningView: View {
 
 struct LearningView_Previews: PreviewProvider {
     static var previews: some View {
-        LearningView(kanji: [.MOCK_KANJI, .MOCK_KANJI, .MOCK_KANJI])
+        LearningView(tabBarIsHidden: .constant(false), kanjiFlow: .MOCK_KANJIFLOW)
     }
 }
