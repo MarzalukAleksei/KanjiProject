@@ -5,6 +5,8 @@
 //  Created by ブラック狼 on 2023/04/02.
 //
 
+import SwiftUI
+
 struct KanjiModel: Hashable {
     let body: String
     let kun: String
@@ -25,4 +27,10 @@ extension KanjiModel {
                                                    translate: "Использовать",
                                                    number: 0,
                                                    level: 4)
+    
+    static func findExamples(_ dicdionary: FetchedResults<DictionaryCoreData>) -> [String] {
+        var result: [String] = []
+        
+        return result
+    }
 }

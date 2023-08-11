@@ -17,6 +17,9 @@ struct KanjiView: View {
     }
     @State var isPresented = false
     @State private var toggle = false
+    @Binding var tabBarIsHidden: Bool
+    
+    var passingKanji: (index: Int, kanji: [KanjiModel]) = (0, [])
     
     var body: some View {
         NavigationStack() {
@@ -38,13 +41,13 @@ struct KanjiView: View {
                             .font(CustomFont.scroll(size: 20))
                     }
                     
-                    HStack {
-                        CustomToggleView(toggle: $toggle, title: ("問", "漢"))
-                            .frame(width: PartsSize.customtoggleSize.width,
-                                   height: PartsSize.customtoggleSize.height)
-                        Spacer()
-                    }
-                    .padding(.leading, Settings.padding)
+//                    HStack {
+//                        CustomToggle(toggle: $toggle, title: ("問", "漢"))
+//                            .frame(width: PartsSize.customtoggleSize.width,
+//                                   height: PartsSize.customtoggleSize.height)
+//                        Spacer()
+//                    }
+//                    .padding(.leading, Settings.padding)
                     
                 }
                 //                .padding(.bottom, Settings.padding)
@@ -60,7 +63,7 @@ struct KanjiView: View {
                                                          height: PartsSize.levelButtonSize.height),
                                             color: selectedLevel == level ? .secondary : .black)
                                 .onTapGesture {
-                                    withAnimation(Animation.easeInOut(duration: Settings.animationDuration)) {
+                                    withAnimation(Settings.animation) {
                                         selectedLevel = level
                                         scrollTo(proxy: proxy)
                                     }
@@ -71,20 +74,20 @@ struct KanjiView: View {
                         .padding(.horizontal, Settings.padding)
                     }
                     .onAppear {
-                        withAnimation(Animation.easeInOut(duration: Settings.animationDuration)) {
+                        withAnimation(Settings.animation) {
                             scrollTo(proxy: proxy)
                         }
                         
                     }
                 }
-                
+                .padding(.bottom, Settings.paddingBetweenElements)
                 
                 ScrollView(showsIndicators: false) {
                     LazyVStack(spacing: Settings.paddingBetweenElements) {
                         if !toggle {
                             ForEach(Array(separateKanji(Kanji.transformToKanjiModel(kanji: kanji, selectedLevel)).enumerated()), id: \.element) { (index, kanjiArray) in
                                 
-                                NavigationLink(value: kanjiArray) {
+                                NavigationLink(value: KanjiFlow(index: index + 1, kanji: kanjiArray)) {
                                     KanjiRow(kanji: kanjiArray, number: index + 1)
                                 }
                                 .buttonStyle(.plain)
@@ -96,16 +99,23 @@ struct KanjiView: View {
                             }
                         }
                     }
-                    .padding(.top, 10)
-                    .padding(.horizontal, 20)
+                    .padding(.top, Settings.paddingBetweenElements)
+                    .padding(.horizontal, Settings.padding)
+//                    .padding(.bottom, Settings.paddingBetweenElements)
                 }
+                
             }
-            .navigationDestination(for: ([KanjiModel].self)) { kanji in
-//                Text("\(kanji.count)")
-                LearningView(kanji: kanji)
+            .onAppear {
+                tabBarIsHidden = false
+            }
+            .navigationDestination(for: KanjiFlow.self) { flow in
+                LearningView(tabBarIsHidden: $tabBarIsHidden, kanjiFlow: flow)
             }
             
             Spacer()
+            
+            Color.gray.ignoresSafeArea()
+                .modifier(Modifiers.tabBarSize)
         }
         //        .sheet(isPresented: $isPresented) {
         //            Text("sdsbdv")
@@ -171,6 +181,6 @@ struct KanjiView: View {
 
 struct KanjiView_Previews: PreviewProvider {
     static var previews: some View {
-        KanjiView()
+        KanjiView(tabBarIsHidden: .constant(false))
     }
 }

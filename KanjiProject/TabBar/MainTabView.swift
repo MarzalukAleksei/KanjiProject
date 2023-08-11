@@ -22,6 +22,7 @@ struct MainTabView: View {
                   sortDescriptors: []) var kanji: FetchedResults<Kanji>
     @FetchRequest(entity: DictionaryCoreData.entity(),
                   sortDescriptors: []) var dictionary: FetchedResults<DictionaryCoreData>
+    @State var tabBarIsHidden = false
     
     init() {
         UITabBar.appearance().isHidden = true
@@ -31,7 +32,7 @@ struct MainTabView: View {
 
         ZStack(alignment: .bottom) {
             TabView(selection: $currentTab) {
-                KanjiView()
+                KanjiView(tabBarIsHidden: $tabBarIsHidden)
                     .tag(TabBarElements.kanji)
                 Text("Yojijukugo")
                     .tag(TabBarElements.yojijukugo)
@@ -40,17 +41,22 @@ struct MainTabView: View {
 //                DictionaryView()
 //                    .tag(TabBarElements.dictionary)
             }
-            .padding(.bottom, 50)
-            HStack {
-                Spacer()
-                ForEach(TabBarElements.allCases, id: \.self) { tab in
-                        TabBarButton(tab: tab, currentTab: $currentTab)
+            .padding(.bottom, 0) // поставил 0 вместо 53 так как здесь тернарный оператор не работает
+            
+            
+            if !tabBarIsHidden {
+                HStack {
                     Spacer()
+                    ForEach(TabBarElements.allCases, id: \.self) { tab in
+                            TabBarButton(tab: tab, currentTab: $currentTab)
+                        Spacer()
+                    }
                 }
+                .padding(.top, Settings.padding)
+                .frame(maxWidth: .infinity)
+                .background(Color.gray)
             }
-            .padding(.top)
-            .frame(maxWidth: .infinity)
-            .background(Color.gray)
+                
         }
         .onAppear {
 //            checkCoreData()

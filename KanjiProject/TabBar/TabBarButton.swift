@@ -20,7 +20,8 @@ struct TabBarButton: View {
             } label: {
                 image(tab: tab, currentTab: currentTab)
                     .resizable()
-                    .frame(width: 20, height: 25)
+                    .frame(width: Settings.tabBarImageSize.width,
+                           height: Settings.tabBarImageSize.height)
 //                CustomImage()
                 if tab == currentTab {
                     Text(tab.rawValue)
@@ -29,7 +30,7 @@ struct TabBarButton: View {
                 }
             }
         }
-        .padding(.vertical, 10)
+        .padding(.vertical, Settings.padding / 2)
         .padding(.horizontal, 12.5)
         .background(Color.white)
         .clipShape(Capsule())
@@ -54,5 +55,6 @@ struct TabBarButton: View {
 struct TabBarButton_Preview: PreviewProvider {
     static var previews: some View {
         TabBarButton(tab: .card, currentTab: .constant(.card))
+            .background(Color.red)
     }
 }

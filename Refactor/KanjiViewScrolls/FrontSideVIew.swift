@@ -15,7 +15,7 @@ struct FrontSideVIew: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .modifier(Modifiers.cardViewModifier)
+                .modifier(Modifiers.cardView)
             VStack {
                 HStack {
                     Spacer()

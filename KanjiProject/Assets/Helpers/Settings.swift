@@ -20,8 +20,9 @@ class Settings {
     
     static let learningViewCornerRadius: CGFloat = 40
     
-    static let animationDuration = 0.5
+    static let animation = Animation.easeInOut(duration: 0.5)
     
     static let paddingBetweenElements: CGFloat = 10
     
+    static let tabBarImageSize = CGSize(width: 20, height: 25)
 }

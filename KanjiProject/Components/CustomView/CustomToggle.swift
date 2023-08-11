@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomToggleView: View {
+struct CustomToggle: View {
     @Binding var toggle: Bool
     var title: (left: String, right: String) = ("", "")
     
@@ -39,7 +39,7 @@ struct CustomToggleView: View {
                 }
             }
             .onTapGesture {
-                withAnimation {
+                withAnimation(Settings.animation) {
                     toggle.toggle()
                 }
             }
@@ -76,9 +76,9 @@ private struct OpacityRectangle: View {
     }
 }
 
-struct CustomToggleView_Previews: PreviewProvider {
+struct CustomToggle_Previews: PreviewProvider {
     static var previews: some View {
-        CustomToggleView(toggle: .constant(false), title: ("問", "漢"))
+        CustomToggle(toggle: .constant(false), title: ("問", "漢"))
             .frame(width: 200, height: 75)
     }
 }
