@@ -57,7 +57,7 @@
 		AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF810329D9E801002B9921 /* KanjiMapper.swift */; };
 		AFBA6FF929F3640F008E11BB /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBA6FF829F3640F008E11BB /* CustomFonts.swift */; };
 		AFC3CB9C2A8587AA00DD59D4 /* LearningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3CB9B2A8587AA00DD59D4 /* LearningCell.swift */; };
-		AFC3CB9E2A85B78500DD59D4 /* DismissView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3CB9D2A85B78500DD59D4 /* DismissView.swift */; };
+		AFC3CB9E2A85B78500DD59D4 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3CB9D2A85B78500DD59D4 /* DismissButton.swift */; };
 		AFF443A22A51B05100FF4404 /* SavedData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFF443A02A51B05100FF4404 /* SavedData.xcdatamodeld */; };
 		AFFC08AD2A822AF60043B741 /* KanjiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08AC2A822AF60043B741 /* KanjiView.swift */; };
 		AFFC08B02A8234980043B741 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08AF2A8234980043B741 /* CustomNavigationBarView.swift */; };
@@ -119,7 +119,7 @@
 		AFAF810329D9E801002B9921 /* KanjiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiMapper.swift; sourceTree = "<group>"; };
 		AFBA6FF829F3640F008E11BB /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
 		AFC3CB9B2A8587AA00DD59D4 /* LearningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCell.swift; sourceTree = "<group>"; };
-		AFC3CB9D2A85B78500DD59D4 /* DismissView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissView.swift; sourceTree = "<group>"; };
+		AFC3CB9D2A85B78500DD59D4 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		AFF443A12A51B05100FF4404 /* SavedData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedData.xcdatamodel; sourceTree = "<group>"; };
 		AFFC08AC2A822AF60043B741 /* KanjiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiView.swift; sourceTree = "<group>"; };
 		AFFC08AF2A8234980043B741 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
@@ -380,7 +380,7 @@
 				AFFC08C52A82CE4D0043B741 /* ProgressIndicatorView.swift */,
 				AF960B402A83C70500A33373 /* CustomToggle.swift */,
 				AFC3CB9B2A8587AA00DD59D4 /* LearningCell.swift */,
-				AFC3CB9D2A85B78500DD59D4 /* DismissView.swift */,
+				AFC3CB9D2A85B78500DD59D4 /* DismissButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -514,7 +514,7 @@
 				AF3A72BA2A7D4AD500A5513C /* CloseScrollView.swift in Sources */,
 				AF30EAF629E9F98A00E5B7A9 /* HiraganaModel.swift in Sources */,
 				AFF443A22A51B05100FF4404 /* SavedData.xcdatamodeld in Sources */,
-				AFC3CB9E2A85B78500DD59D4 /* DismissView.swift in Sources */,
+				AFC3CB9E2A85B78500DD59D4 /* DismissButton.swift in Sources */,
 				AFAF80FE29D9E59C002B9921 /* IFileMapper.swift in Sources */,
 				AF3A72BC2A7E4AC500A5513C /* PartsSize.swift in Sources */,
 				AFFC08C62A82CE4D0043B741 /* ProgressIndicatorView.swift in Sources */,

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct LearningView: View {
-    @Environment(\.dismiss) var dismiss
     @Binding var tabBarIsHidden: Bool
     var kanjiFlow: KanjiFlow
     
@@ -38,10 +37,7 @@ struct LearningView: View {
             
             Spacer()
             
-            DismissView()
-                .onTapGesture {
-                    dismiss()
-                }
+            DismissButton()
 
         }
         .onAppear {
