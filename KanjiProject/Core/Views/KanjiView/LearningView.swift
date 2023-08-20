@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct LearningView: View {
+    
     @Binding var tabBarIsHidden: Bool
     var kanjiFlow: KanjiFlow
-    
+    @State private var currentKanjiIndex = 0
     @State var index = 0
+//    let dictionary: [DictionaryModel]
     
     var body: some View {
         VStack {
@@ -22,17 +24,45 @@ struct LearningView: View {
                                         heigh: PartsSize.learningViewNavigationBarHeght)
                 
                 LearningFrontSideView(index: kanjiFlow.index,
-                                      kanji: kanjiFlow.kanji.first ?? .MOCK_KANJI,
-                                      number: 1,
+                                      kanji: kanjiFlow.kanji[currentKanjiIndex],
+                                      number: currentKanjiIndex + 1,
                                       count: kanjiFlow.kanji.count)
                     
             }
             .frame(maxHeight: PartsSize.learningViewNavigationBarHeght)
+            .onTapGesture {
+                withAnimation(Settings.animation) {
+                    addIndex()
+                }
+//                reduceIndex()
+            }
             
             ScrollView {
-                Text(kanjiFlow.kanji[index].kun)
+                LazyVStack(spacing: Settings.paddingBetweenElements + 1){
+                    LearningCell(title: "訓読み:", kanji: kanjiFlow.kanji[currentKanjiIndex], type: .kun)
+                        .modifier(Modifiers.learningCell)
+                        .padding(1)
+                    
+                    LearningCell(title: "音読み:", kanji: kanjiFlow.kanji[currentKanjiIndex], type: .on)
+                        .modifier(Modifiers.learningCell)
+                        .padding(1)
+                    
+                    LearningCell(title: "Значение:", kanji: kanjiFlow.kanji[currentKanjiIndex], type: .translate)
+                        .modifier(Modifiers.learningCell)
+                        .padding(1)
+                    
+                    HStack {
+                        Text("Примеры:")
+                            .opacity(Settings.opacity)
+                        Spacer()
+                    }
+                    
+//                    ForEach(examples(), id: \.self) { exp in
+//                        Text(exp.body)
+//                    }
+                }
             }
-            .padding(.horizontal ,Settings.padding)
+            .padding(.horizontal ,Settings.padding - 1)
             .padding(.top, Settings.paddingBetweenElements)
             
             Spacer()
@@ -46,6 +76,24 @@ struct LearningView: View {
         .navigationBarBackButtonHidden(true)
     }
     
+    func addIndex() {
+        if currentKanjiIndex < kanjiFlow.kanji.count - 1 {
+            currentKanjiIndex += 1
+        }
+    }
+    
+    func reduceIndex() {
+        if currentKanjiIndex > 0 {
+            currentKanjiIndex -= 1
+        }
+    }
+    
+//    func examples() -> [DictionaryModel] {
+//        let kanji = kanjiFlow.kanji[currentKanjiIndex]
+//        let result = dictionary.filter { $0.body.contains(kanji.body)}
+//        
+//        return result
+//    }
 }
 
 struct LearningView_Previews: PreviewProvider {

@@ -25,4 +25,8 @@ class Settings {
     static let paddingBetweenElements: CGFloat = 10
     
     static let tabBarImageSize = CGSize(width: 20, height: 25)
+    
+    static let dinamicResaiseblePartsCornerRadius: CGFloat = 8
+    
+    static let paddingBetweenText: CGFloat = 5
 }

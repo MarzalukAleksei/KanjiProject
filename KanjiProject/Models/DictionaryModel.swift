@@ -5,9 +5,9 @@
 //  Created by ブラック狼 on 2023/06/22.
 //
 
-import Foundation
+import SwiftUI
 
-struct DictionaryModel: Codable {
+struct DictionaryModel: Codable, Hashable {
     
     var body: String
     var number: String
@@ -18,6 +18,29 @@ struct DictionaryModel: Codable {
 }
 
 extension DictionaryModel {
+    
+    static func transform(_ dictionary: FetchedResults<DictionaryCoreData>) -> [DictionaryModel] {
+        let result = dictionary.map { data in
+            DictionaryModel(body: data.body ?? "",
+                            number: data.number ?? "",
+                            reading: data.reading ?? "",
+                            translate: data.translate ?? [])
+        }
+        
+        return result
+    }
+    
+    static func transform(_ dictionary: [FetchedResults<DictionaryCoreData>.Element]) -> [DictionaryModel] {
+        let result = dictionary.map { data in
+            DictionaryModel(body: data.body ?? "",
+                            number: data.number ?? "",
+                            reading: data.reading ?? "",
+                            translate: data.translate ?? [])
+        }
+        
+        return result
+    }
+    
     static let MOCK_DICTIONARY: DictionaryModel = .init(body: "相生",
                                                         number: "007-06-37",
                                                         reading: "あいおい",

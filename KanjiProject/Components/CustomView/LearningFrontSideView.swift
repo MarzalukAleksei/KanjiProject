@@ -27,13 +27,19 @@ struct LearningFrontSideView: View {
                         Text("問" + "\(index)")
                     }
                     .font(CustomFont.scroll(size: geo.size.height / 8))
-                    .padding(Settings.padding * 1.8)
+                    .padding(.horizontal ,Settings.padding * 1.8)
+                    .padding(.top, Settings.padding * 0.8)
                     
                     Spacer()
                 }
-                Text(kanji.body)
-                    .font(.system(size: geo.size.height / 3))
+                VStack {
+                    Text(kanji.body)
+                        .font(.system(size: geo.size.height / 3))
                     .bold()
+                    
+                    // отступ от нижней границы
+                    Text(" ")
+                }
             }
         }
     }

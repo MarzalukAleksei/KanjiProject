@@ -22,5 +22,9 @@ class PartsSize {
     
     static let customRowRectangleSize: CGFloat = 80
     
-    static let learningViewNavigationBarHeght: CGFloat = 250
+    static let learningViewNavigationBarHeght: CGFloat = 220
+    
+    static let dismissButtonShevronSize = CGSize(width: 15, height: 25)
+    
+    static let learningCellHeight: CGFloat = 60
 }

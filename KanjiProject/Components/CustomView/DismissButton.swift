@@ -11,30 +11,39 @@ struct DismissButton: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        Button {
-            dismiss()
-        } label: {
-            ZStack {
-                Text("Закрыть")
-                    .modifier(Modifiers.tabBarSize)
-                    .font(.largeTitle)
-                HStack {
-                    Image(systemName: "chevron.left")
-                        .resizable()
-                        .frame(width: 15, height: 15)
-                        .padding(Settings.padding)
-                    Spacer()
+//        VStack(spacing: 0) {
+            Button {
+                dismiss()
+            } label: {
+                ZStack {
+                    Text("Закрыть")
+                        .modifier(Modifiers.tabBarSize)
+                        .font(.largeTitle)
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .resizable()
+                            .frame(width: PartsSize.dismissButtonShevronSize.width,
+                                   height: PartsSize.dismissButtonShevronSize.height)
+                            .padding(Settings.padding)
+                        Spacer()
+                    }
                 }
+                .background(Color.black.ignoresSafeArea())
+//                .clipShape(PartialRoundedRectangle(cornerRadius: 20, corners: [.topLeft, .topRight]))
+                .foregroundColor(.white)
             }
-            .background(Color.black.ignoresSafeArea())
-            .foregroundColor(.white)
-        }
         .buttonStyle(.plain)
+//            Rectangle().frame(height: 0)
+//                .background(Color.black.ignoresSafeArea())
+//        }
     }
 }
 
 struct DismissButton_Previews: PreviewProvider {
     static var previews: some View {
-        DismissButton()
+        VStack {
+            Spacer()
+            DismissButton()
+        }
     }
 }

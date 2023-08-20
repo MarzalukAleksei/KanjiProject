@@ -13,6 +13,8 @@ class Modifiers {
     static let learningRect = LearningNavigarionBarRectModifier()
     
     static let tabBarSize = TabBarsizeModifier()
+    
+    static let learningCell = LearningCellModifier()
 }
 
 struct TabBarsizeModifier: ViewModifier {
@@ -34,8 +36,8 @@ struct TabBarsizeModifier: ViewModifier {
 struct CardViewModifire: ViewModifier {
     func body(content: Content) -> some View {
         content
-        .cornerRadius(20)
-        .foregroundColor(.gray)
+            .cornerRadius(20)
+            .foregroundColor(.gray)
     }
 }
 
@@ -44,6 +46,15 @@ struct LearningNavigarionBarRectModifier: ViewModifier {
         content
             .cornerRadius(Settings.learningViewCornerRadius)
             .foregroundColor(.white)
-            .padding(Settings.padding)
+            .padding(.horizontal, Settings.padding)
+            .padding(.bottom, Settings.padding)
     }
 }
+
+struct LearningCellModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(minHeight: PartsSize.learningCellHeight)
+    }
+}
+
