@@ -55,6 +55,16 @@ class DictionaryMapper: IDictionaryMapper {
         return result
     }
     
+//    private func getTranslate(_ string: [String]) -> [String] {
+//        var result: [String] = []
+//        let
+//        for row in string {
+//            
+//        }
+//        
+//        return []
+//    }
+    
     private func getReading(string: String) -> String {
         var devider: String {
             if string.contains("【") {

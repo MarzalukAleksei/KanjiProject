@@ -19,6 +19,8 @@ struct DictionaryModel: Codable, Hashable {
 
 extension DictionaryModel {
     
+    static var dictionary: [DictionaryModel] = []
+    
     static func transform(_ dictionary: FetchedResults<DictionaryCoreData>) -> [DictionaryModel] {
         let result = dictionary.map { data in
             DictionaryModel(body: data.body ?? "",
@@ -35,7 +37,8 @@ extension DictionaryModel {
             DictionaryModel(body: data.body ?? "",
                             number: data.number ?? "",
                             reading: data.reading ?? "",
-                            translate: data.translate ?? [])
+                            translate: data.translate ?? [],
+                            examples: data.examples ?? [])
         }
         
         return result

@@ -14,6 +14,8 @@ struct LearningView: View {
     @State private var currentKanjiIndex = 0
     @State var index = 0
 //    let dictionary: [DictionaryModel]
+//    @FetchRequest(entity: DictionaryCoreData.entity(),
+//                  sortDescriptors: [NSSortDescriptor(key: "body", ascending: true)]) var dictionary: FetchedResults<DictionaryCoreData>
     
     var body: some View {
         VStack {
@@ -57,9 +59,11 @@ struct LearningView: View {
                         Spacer()
                     }
                     
-//                    ForEach(examples(), id: \.self) { exp in
-//                        Text(exp.body)
-//                    }
+                    ForEach(examples(), id: \.self) { exp in
+                        LearningCell(title: "Примеры:", type: .examples, dictionary: exp)
+                            .modifier(Modifiers.learningCell)
+                            .padding(1)
+                    }
                 }
             }
             .padding(.horizontal ,Settings.padding - 1)
@@ -88,12 +92,17 @@ struct LearningView: View {
         }
     }
     
-//    func examples() -> [DictionaryModel] {
-//        let kanji = kanjiFlow.kanji[currentKanjiIndex]
-//        let result = dictionary.filter { $0.body.contains(kanji.body)}
-//        
-//        return result
-//    }
+    func examples() -> [DictionaryModel] {
+        let kanji = kanjiFlow.kanji[currentKanjiIndex]
+        let result = DictionaryModel.dictionary.filter {
+            $0.body.contains(kanji.body)
+        }.sorted {
+            $0.body.count < $1.body.count
+//            $0.body < $1.body
+        }
+        
+        return result
+    }
 }
 
 struct LearningView_Previews: PreviewProvider {

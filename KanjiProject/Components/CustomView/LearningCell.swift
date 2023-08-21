@@ -13,8 +13,9 @@ struct LearningCell: View {
     }
     
     let title: String
-    let kanji: KanjiModel
+    var kanji: KanjiModel = .MOCK_KANJI
     let type: Property
+    var dictionary: DictionaryModel = .MOCK_DICTIONARY
     
     var body: some View {
         
@@ -34,7 +35,7 @@ struct LearningCell: View {
                     
                     HStack(alignment: .top) {
                         VStack(alignment: .leading) {
-                            ForEach(readingArray(), id: \.self) { row in
+                            ForEach(separate(), id: \.self) { row in
                                 Text(row)
                             }
                         }
@@ -44,20 +45,42 @@ struct LearningCell: View {
                     
                 }
                 .padding(10)
-            } else {
+            } else if type == .translate {
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
-                        Text(readingArray()[0])
+                        Text(separate()[0])
                             .padding(Settings.paddingBetweenElements)
                         Spacer()
                     }
+                    Spacer()
+                }
+            } else if type == .examples {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(dictionary.reading)
+                            .font(.system(size: 12))
+                            .opacity(Settings.opacity)
+                        ForEach(separate(), id: \.self) { item in
+                            VStack {
+                                Text(item)
+                                    .bold()
+                            }
+                        }
+                        Spacer()
+                    }
+                    .padding(10)
+                    
+                    if !dictionary.examples.isEmpty {
+                        Text(dictionary.examples[0])
+                    }
+                    
                     Spacer()
                 }
             }
         }
     }
     
-    func readingArray() -> [String] {
+    func separate() -> [String] {
         switch type {
         case .kun:
             return kanji.kun.components(separatedBy: "・")
@@ -65,8 +88,8 @@ struct LearningCell: View {
             return kanji.on.components(separatedBy: "・")
         case .translate:
             return [kanji.translate]
-        case _:
-            return [""]
+        case .examples:
+            return dictionary.body.components(separatedBy: "･")
         }
     }
     
