@@ -41,13 +41,13 @@ struct TabBarButton: View {
     func image(tab: TabBarElements, currentTab: TabBarElements) -> Image {
         switch tab {
         case .kanji:
-            return ButtonsImage.mainScreen
+            return ButtonImages.mainScreen
         case .yojijukugo:
-            return ButtonsImage.brain
+            return ButtonImages.brain
         case .card:
-            return ButtonsImage.card
+            return ButtonImages.card
         case .dictionary:
-            return tab == currentTab ? ButtonsImage.openBook : ButtonsImage.closeBook
+            return tab == currentTab ? ButtonImages.openBook : ButtonImages.closeBook
         }
     }
 }

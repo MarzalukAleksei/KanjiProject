@@ -16,9 +16,12 @@ struct DismissButton: View {
                 dismiss()
             } label: {
                 ZStack {
-                    Text("Закрыть")
-                        .modifier(Modifiers.tabBarSize)
-                        .font(.largeTitle)
+//                    Text("Закрыть")
+//                        .modifier(Modifiers.tabBarSize)
+//                        .font(.largeTitle)
+                    ButtonImages.dismissButtonImage
+                        .resizable()
+                        .frame(width: 30, height: 30)
                     HStack {
                         Image(systemName: "chevron.left")
                             .resizable()

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FileManager: IFileManager {
+class FileManage: IFileManager {
     
     enum FileType: String {
         case txt

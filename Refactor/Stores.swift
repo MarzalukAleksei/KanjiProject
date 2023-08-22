@@ -22,8 +22,8 @@ class Stores {
     
     private func loadData() {
         do {
-            let kanji = KanjiMapper().gettingData(entity: FileMapper().transform(data: try FileManager().loadFile(fileName: "Kanji", fileType: .csv)))
-            let dictionary = DictionaryMapper().gettingData(entity: FileMapper().transform(data: try FileManager().loadFile(fileName: "warodai", fileType: .txt)))
+            let kanji = KanjiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Kanji", fileType: .csv)))
+            let dictionary = DictionaryMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "warodai", fileType: .txt)))
             kanjistore.updateAll(data: kanji)
 //            kanjistore.update(data: kanji)
             dictionaryStore.updateAll(data: dictionary)

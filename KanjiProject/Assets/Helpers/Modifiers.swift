@@ -15,6 +15,10 @@ class Modifiers {
     static let tabBarSize = TabBarsizeModifier()
     
     static let learningCell = LearningCellModifier()
+    
+    static let roundedRectTopRightBlackPart = RoundedRectWithBlackPartModifier(corner: .topRight)
+    
+    static let roundedRectTopLeftBlackPart = RoundedRectWithBlackPartModifier(corner: .topLeft)
 }
 
 struct TabBarsizeModifier: ViewModifier {
@@ -55,6 +59,17 @@ struct LearningCellModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(minHeight: PartsSize.learningCellHeight)
+            .padding(1)
     }
 }
 
+struct RoundedRectWithBlackPartModifier: ViewModifier {
+    let corner: UIRectCorner
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity, maxHeight: PartsSize.customtoggleSize.height + (Settings.padding * 2))
+            .clipShape(PartialRoundedRectangle(cornerRadius: PartsSize.navigationCornerRadius, corners: corner))
+            .background(Color.black)
+            .foregroundColor(.white)
+    }
+}

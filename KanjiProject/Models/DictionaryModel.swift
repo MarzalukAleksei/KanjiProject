@@ -19,7 +19,8 @@ struct DictionaryModel: Codable, Hashable {
 
 extension DictionaryModel {
     
-    static var dictionary: [DictionaryModel] = []
+    static var dictionary: [DictionaryModel] = [.MOCK_DICTIONARY, .MOCK_DICTIONARY, .MOCK_DICTIONARY,
+                                                .MOCK_DICTIONARY, .MOCK_DICTIONARY, .MOCK_DICTIONARY]
     
     static func transform(_ dictionary: FetchedResults<DictionaryCoreData>) -> [DictionaryModel] {
         let result = dictionary.map { data in

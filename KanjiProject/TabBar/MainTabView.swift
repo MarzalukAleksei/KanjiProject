@@ -8,10 +8,10 @@
 import SwiftUI
 
 enum TabBarElements: String, CaseIterable {
-    case kanji
-    case yojijukugo = "Idioms"
-    case card
-    case dictionary
+    case kanji = "Кандзи"
+    case yojijukugo = "Идиомы"
+    case card = "Карточки"
+    case dictionary = "Словарь"
 }
 
 struct MainTabView: View {
@@ -62,7 +62,7 @@ struct MainTabView: View {
             
             DictionaryModel.dictionary = DictionaryModel.transform(dictionary)
             print(DictionaryModel.dictionary.count)
-//            checkCoreData()
+            checkCoreData()
 //            if kanji.isEmpty {
 //                print("Kanji is Empty")
 //            }
@@ -86,12 +86,12 @@ struct MainTabView: View {
 //            print("Store have \(stores.kanjistore.getAll().count) Elements")
         }
         
-//        if dictionary.isEmpty {
-////            setCoreDataDictionary()
-//        } else {
-//            print("CoreData have \(dictionary.count) Elements")
-////            print("Store have \(Stores().dictionaryStore.getAll().count) Elements")
-//        }
+        if dictionary.isEmpty {
+            setCoreDataDictionary()
+        } else {
+            print("CoreData have \(dictionary.count) Elements")
+//            print("Store have \(Stores().dictionaryStore.getAll().count) Elements")
+        }
     }
     
     func setCoreDataDictionary() {

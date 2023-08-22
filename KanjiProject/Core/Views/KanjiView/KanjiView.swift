@@ -31,10 +31,7 @@ struct KanjiView: View {
                 ZStack {
                     HStack {
                         Rectangle()
-                            .frame(maxWidth: .infinity, maxHeight: PartsSize.customtoggleSize.height + (Settings.padding * 2))
-                            .clipShape(PartialRoundedRectangle(cornerRadius: PartsSize.navigationCornerRadius, corners: .topRight))
-                            .background(Color.black)
-                            .foregroundColor(.white)
+                            .modifier(Modifiers.roundedRectTopRightBlackPart)
                     }
                     VStack {
                         Text("Выберите уровень")

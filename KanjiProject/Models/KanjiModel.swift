@@ -20,7 +20,7 @@ struct KanjiModel: Hashable {
     var lastAnswerRight: Bool? = nil
 }
 
-extension KanjiModel {
+extension KanjiModel: Codable {
     static let MOCK_KANJI: KanjiModel = KanjiModel(body: "使",
                                                    kun: "つか-える",
                                                    on: "シ",

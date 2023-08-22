@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class ButtonsImage {
+class ButtonImages {
     static var openBook: Image {
         return Image(systemName: "book.fill")
     }
@@ -27,5 +27,9 @@ class ButtonsImage {
     
     static var card: Image {
         Image(systemName: "menucard")
+    }
+    
+    static var dismissButtonImage: Image {
+        Image(systemName: "xmark")
     }
 }

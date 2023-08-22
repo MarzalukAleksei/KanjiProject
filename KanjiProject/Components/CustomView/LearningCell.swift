@@ -16,6 +16,7 @@ struct LearningCell: View {
     var kanji: KanjiModel = .MOCK_KANJI
     let type: Property
     var dictionary: DictionaryModel = .MOCK_DICTIONARY
+    var chevronForwardIsHidden = true
     
     var body: some View {
         
@@ -44,7 +45,7 @@ struct LearningCell: View {
                     }
                     
                 }
-                .padding(10)
+                .padding(Settings.paddingBetweenElements)
             } else if type == .translate {
                 VStack(alignment: .leading) {
                     HStack(alignment: .top) {
@@ -68,13 +69,19 @@ struct LearningCell: View {
                         }
                         Spacer()
                     }
-                    .padding(10)
+                    .padding(Settings.paddingBetweenElements)
                     
                     if !dictionary.examples.isEmpty {
                         Text(dictionary.examples[0])
                     }
                     
                     Spacer()
+                    
+                    if !chevronForwardIsHidden {
+                        Image(systemName: "chevron.forward")
+                            .padding(Settings.paddingBetweenElements)
+                            .opacity(Settings.opacity)
+                    }
                 }
             }
         }
@@ -102,6 +109,10 @@ struct LearningCell_Previews: PreviewProvider {
             .padding(Settings.padding)
         
         LearningCell(title: "例:", kanji: .MOCK_KANJI, type: .examples)
+            .frame(maxWidth: .infinity, maxHeight: 100)
+            .padding(Settings.padding)
+        
+        LearningCell(title: "例:", kanji: .MOCK_KANJI, type: .examples, chevronForwardIsHidden: false)
             .frame(maxWidth: .infinity, maxHeight: 100)
             .padding(Settings.padding)
     }

@@ -13,9 +13,6 @@ struct LearningView: View {
     var kanjiFlow: KanjiFlow
     @State private var currentKanjiIndex = 0
     @State var index = 0
-//    let dictionary: [DictionaryModel]
-//    @FetchRequest(entity: DictionaryCoreData.entity(),
-//                  sortDescriptors: [NSSortDescriptor(key: "body", ascending: true)]) var dictionary: FetchedResults<DictionaryCoreData>
     
     var body: some View {
         VStack {
@@ -43,15 +40,12 @@ struct LearningView: View {
                 LazyVStack(spacing: Settings.paddingBetweenElements + 1){
                     LearningCell(title: "訓読み:", kanji: kanjiFlow.kanji[currentKanjiIndex], type: .kun)
                         .modifier(Modifiers.learningCell)
-                        .padding(1)
                     
                     LearningCell(title: "音読み:", kanji: kanjiFlow.kanji[currentKanjiIndex], type: .on)
                         .modifier(Modifiers.learningCell)
-                        .padding(1)
                     
                     LearningCell(title: "Значение:", kanji: kanjiFlow.kanji[currentKanjiIndex], type: .translate)
                         .modifier(Modifiers.learningCell)
-                        .padding(1)
                     
                     HStack {
                         Text("Примеры:")
@@ -60,13 +54,19 @@ struct LearningView: View {
                     }
                     
                     ForEach(examples(), id: \.self) { exp in
-                        LearningCell(title: "Примеры:", type: .examples, dictionary: exp)
-                            .modifier(Modifiers.learningCell)
-                            .padding(1)
+                        NavigationLink(value: exp) {
+//                            LearningCell(title: "Примеры:", type: .examples, dictionary: exp)
+                            LearningCell(title: "Примеры", type: .examples, dictionary: exp, chevronForwardIsHidden: false)
+                                .modifier(Modifiers.learningCell)
+                                
+                        }
+                        
+//                        .buttonStyle(.plain)
+                        .foregroundColor(.black)
                     }
                 }
             }
-            .padding(.horizontal ,Settings.padding - 1)
+            .padding(.horizontal, Settings.padding - 1)
             .padding(.top, Settings.paddingBetweenElements)
             
             Spacer()
@@ -78,6 +78,10 @@ struct LearningView: View {
             tabBarIsHidden = true
         }
         .navigationBarBackButtonHidden(true)
+        
+        .navigationDestination(for: DictionaryModel.self) { word in
+            WordDetailView(word: word)
+        }
     }
     
     func addIndex() {
