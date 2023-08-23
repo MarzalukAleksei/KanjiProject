@@ -62,7 +62,9 @@ struct MainTabView: View {
             
             DictionaryModel.dictionary = DictionaryModel.transform(dictionary)
             print(DictionaryModel.dictionary.count)
-            checkCoreData()
+//            checkCoreData()
+            JSON.methoods.saveToJSONFile(text: "jbbj", fileName: .dictionary)
+            print(JSON.methoods.readFile(file: .dictionary))
 //            if kanji.isEmpty {
 //                print("Kanji is Empty")
 //            }

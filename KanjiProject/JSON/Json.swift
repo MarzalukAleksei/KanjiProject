@@ -68,10 +68,14 @@ class JSON {
     }
     
     func saveToJSONFile(text: String, fileName: FileName) {
+        guard let file = Bundle.main.url(forResource: "\(fileName.rawValue)", withExtension: "json") else {
+            print("File not exist")
+            return
+        }
         let fileManager = FileManager.default
         guard let documentDirectory = fileManager.urls(for: .userDirectory, in: .userDomainMask).first else { return }
-        var fileName = fileName.rawValue
-        let fileURL = documentDirectory.appendingPathComponent(fileName, conformingTo: .json)
+        
+        let fileURL = documentDirectory.appendingPathComponent(fileName.rawValue, conformingTo: .json)
         
         do {
             try text.write(to: fileURL, atomically: true, encoding: .utf8)
@@ -80,4 +84,20 @@ class JSON {
             print(error)
         }
     }
+    
+    func readFile(file: FileName) -> String {
+        guard let url = Bundle.main.url(forResource: "\(file.rawValue)", withExtension: "json") else {
+            print("\(file.rawValue) not exist")
+            return ""
+        }
+        var result = ""
+        
+        do {
+            result = try String(contentsOf: url)
+        } catch {
+            print(error)
+        }
+        return result
+    }
+    
 }
