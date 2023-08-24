@@ -10,8 +10,8 @@ import Foundation
 class RefactoredStores {
 //    static let shared = Stores()
     
-    var kanjistore = KanjiStore()
-//    let kana = KanaStore()
+    var kanjiStore = KanjiStore()
+    var kanaStore = KanaStore()
 //    let yojijukugo = Yojijukugo()
 //    let bushu = Bushu() // ключи
     var dictionaryStore = DictionaryStore()
@@ -24,9 +24,12 @@ class RefactoredStores {
         do {
             let kanji = KanjiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Kanji", fileType: .csv)))
             let dictionary = DictionaryMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "warodai", fileType: .txt)))
-            kanjistore.updateAll(data: kanji)
+            let kana = KanaMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Kana", fileType: .csv)))
+            
+            kanjiStore.updateAll(data: kanji)
 //            kanjistore.update(data: kanji)
             dictionaryStore.updateAll(data: dictionary)
+            kanaStore.updateAll(data: kana)
         } catch {
             print(error)
         }

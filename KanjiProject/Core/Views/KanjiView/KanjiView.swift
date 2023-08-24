@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct KanjiView: View {
+    
+    @EnvironmentObject var store: Store
     @State var selectedLevel: Level = .N5
+    
     @FetchRequest(entity: Kanji.entity(),
                   sortDescriptors: []) private var kanji: FetchedResults<Kanji>
-    @State var levelsTrim: [Level: [Double]] = [:]
-    private var separated: [[KanjiModel]] {
-        separateKanji(Kanji.transformToKanjiModel(kanji: kanji, selectedLevel))
-    }
+//    @State var levelsTrim: [Level: [Double]] = [:]
     @State var isPresented = false
     @State private var toggle = false
     @Binding var tabBarIsHidden: Bool
     
     var passingKanji: (index: Int, kanji: [KanjiModel]) = (0, [])
+    
     
     var body: some View {
         NavigationStack() {
@@ -38,13 +39,13 @@ struct KanjiView: View {
                             .font(CustomFont.scroll(size: 20))
                     }
                     
-//                    HStack {
-//                        CustomToggle(toggle: $toggle, title: ("問", "漢"))
-//                            .frame(width: PartsSize.customtoggleSize.width,
-//                                   height: PartsSize.customtoggleSize.height)
-//                        Spacer()
-//                    }
-//                    .padding(.leading, Settings.padding)
+                    HStack {
+                        CustomToggle(toggle: $toggle, title: ("問", "漢"))
+                            .frame(width: PartsSize.customtoggleSize.width,
+                                   height: PartsSize.customtoggleSize.height)
+                        Spacer()
+                    }
+                    .padding(.leading, Settings.padding)
                     
                 }
                 //                .padding(.bottom, Settings.padding)
@@ -81,20 +82,20 @@ struct KanjiView: View {
                 
                 ScrollView(showsIndicators: false) {
                     LazyVStack(spacing: Settings.paddingBetweenElements) {
-                        if !toggle {
-                            ForEach(Array(separateKanji(Kanji.transformToKanjiModel(kanji: kanji, selectedLevel)).enumerated()), id: \.element) { (index, kanjiArray) in
+                        let separate = separateKanji(store.kanjiStore.getData(selectedLevel))
+                        
+                            ForEach(Array(separate.enumerated()), id: \.element) { (index, array) in
                                 
-                                NavigationLink(value: KanjiFlow(index: index + 1, kanji: kanjiArray)) {
-                                    KanjiRow(kanji: kanjiArray, number: index + 1)
+                                NavigationLink(value: KanjiFlow(index: index + 1, kanji: array)) {
+                                    if !toggle {
+                                        KanjiRow(kanji: array, number: index + 1, cellTitle: "問")
+                                    } else {
+                                        KanjiRow(kanji: array, number: index + 1, cellTitle: "漢")
+                                    }
                                 }
                                 .buttonStyle(.plain)
                             }
-                        } else {
-                            ForEach(Array(getKanji(selectedLevel).enumerated()),
-                                    id: \.element) { (index, row) in
-                                KanjiRow(kanji: [], number: 0)
-                            }
-                        }
+                        
                     }
                     .padding(.top, Settings.paddingBetweenElements)
                     .padding(.horizontal, Settings.padding)
@@ -106,7 +107,11 @@ struct KanjiView: View {
                 tabBarIsHidden = false
             }
             .navigationDestination(for: KanjiFlow.self) { flow in
-                LearningView(tabBarIsHidden: $tabBarIsHidden, kanjiFlow: flow)
+                if !toggle {
+                    LearningView(tabBarIsHidden: $tabBarIsHidden, kanjiFlow: flow)
+                } else {
+                    
+                }
             }
             
             Spacer()
@@ -141,7 +146,7 @@ struct KanjiView: View {
     }
     
     func getKanji(_ level: Level) -> [KanjiModel] {
-        let result = Kanji.transformToKanjiModel(kanji: kanji, level)
+        let result = store.kanjiStore.getData(level)
         print(result.count)
         return result
     }
@@ -149,7 +154,7 @@ struct KanjiView: View {
     func setTrims(_ level: Level) -> [Double] {
         
         if kanji.isEmpty {
-            return [0.0, 0.0, 1.0]
+            return [0.0, 0.3, 0.7]
         }
         
         var result: [Double] = []
@@ -179,5 +184,6 @@ struct KanjiView: View {
 struct KanjiView_Previews: PreviewProvider {
     static var previews: some View {
         KanjiView(tabBarIsHidden: .constant(false))
+            .environmentObject(Store())
     }
 }

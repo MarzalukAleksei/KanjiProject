@@ -10,6 +10,7 @@ import SwiftUI
 struct KanjiRow: View {
     let kanji: [KanjiModel]
     let number: Int
+    let cellTitle: String
     
     var body: some View {
         ZStack {
@@ -22,7 +23,7 @@ struct KanjiRow: View {
                         .clipShape(PartialRoundedRectangle(cornerRadius: 15,
                                                            corners: [.bottomLeft, .topLeft]))
                     HStack(spacing: 1) {
-                        Text("問")
+                        Text(cellTitle)
                         if number < 10 {
                             Text(" ")
                         }
@@ -58,7 +59,7 @@ struct KanjiRow: View {
 
 struct KanjiRow_Previews: PreviewProvider {
     static var previews: some View {
-        KanjiRow(kanji: [.MOCK_KANJI], number: 1)
+        KanjiRow(kanji: [.MOCK_KANJI], number: 1, cellTitle: "問")
 //            .padding(20)
             .frame(width: 300, height: 100)
     }

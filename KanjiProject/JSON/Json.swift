@@ -15,6 +15,7 @@ class JSON {
     enum FileName: String {
         case kanji = "Kanji"
         case dictionary = "Dictionary"
+        case kana = "Kana"
     }
     
     func encodeToJSON(kanji: [KanjiModel]) -> Data {
@@ -32,6 +33,17 @@ class JSON {
         var result = Data()
         do {
             let data = try JSONEncoder().encode(dictionary)
+            result = data
+        } catch {
+            print(error)
+        }
+        return result
+    }
+    
+    func encodeToJSON(kana: [KanaModel]) -> Data {
+        var result = Data()
+        do {
+            let data = try JSONEncoder().encode(kana)
             result = data
         } catch {
             print(error)
@@ -67,13 +79,24 @@ class JSON {
         return result
     }
     
+    private func decodeToKanaModel(data: Data) -> [KanaModel] {
+        var result: [KanaModel] = []
+        let decoder = JSONDecoder()
+        
+        do {
+            result = try decoder.decode([KanaModel].self, from: data)
+        } catch {
+            print(error)
+        }
+        return result
+    }
     
     
     ///   - МЕТОД ТОЛЬКО ДЛЯ СОЗДАНИЯ ФАЙЛА. В ЗОНЕ CТАНДАРТНОЙ РАБОТЫ ПРИЛОЖЕНИЯ НЕ ПРИМЕНЯТЬ
     ///   -
     ///   - ДОСТУП К ФАЙЛУ:  Finder -> (menu) go+option button -> library -> developer -> core simulator -> devices -> device -> data -> containers -> data -> aplication -> device -> documents
     ///   -
-    ///   - ДЕВАЙС: (В терминале написать) xcrun simctl list devices
+    ///   - ДЕВАЙС: (В терминале написать) xcrun simctl list devices или в консоли посмотреть адрес
     func saveJSONToFile(data: Data, fileName: FileName) {
         let fileManager = FileManager.default
         guard let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
@@ -88,7 +111,7 @@ class JSON {
     }
     
     func getDictionaryData() -> [DictionaryModel] {
-        guard let url = Bundle.main.url(forResource: "\(FileName.dictionary.rawValue)", withExtension: "json") else {
+        guard let url = Bundle.main.url(forResource: FileName.dictionary.rawValue, withExtension: "json") else {
             print("Dictionary file not exist")
             return []
         }
@@ -103,7 +126,7 @@ class JSON {
     }
     
     func getKanjiData() -> [KanjiModel] {
-        guard let url = Bundle.main.url(forResource: "\(FileName.kanji.rawValue)", withExtension: "json") else {
+        guard let url = Bundle.main.url(forResource: FileName.kanji.rawValue, withExtension: "json") else {
             print("Kanji file not exist")
             return []
         }
@@ -117,4 +140,19 @@ class JSON {
         return result
     }
     
+    func getKanaData() -> [KanaModel] {
+        var result: [KanaModel] = []
+        
+        guard let url = Bundle.main.url(forResource: FileName.kana.rawValue, withExtension: "json") else {
+            print("Kana file not found")
+            return []
+        }
+        
+        do {
+            result = decodeToKanaModel(data: try Data(contentsOf: url))
+        } catch {
+            print(error)
+        }
+        return result
+    }
 }

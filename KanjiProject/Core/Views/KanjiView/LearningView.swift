@@ -13,6 +13,7 @@ struct LearningView: View {
     var kanjiFlow: KanjiFlow
     @State private var currentKanjiIndex = 0
     @State var index = 0
+    @EnvironmentObject var store: Store
     
     var body: some View {
         VStack {
@@ -67,7 +68,7 @@ struct LearningView: View {
                 }
             }
             .padding(.horizontal, Settings.padding - 1)
-            .padding(.top, Settings.paddingBetweenElements)
+//            .padding(.top, Settings.paddingBetweenElements)
             
             Spacer()
             
@@ -98,7 +99,7 @@ struct LearningView: View {
     
     func examples() -> [DictionaryModel] {
         let kanji = kanjiFlow.kanji[currentKanjiIndex]
-        let result = DictionaryModel.dictionary.filter {
+        let result = store.dictionaryStore.getAll().filter {
             $0.body.contains(kanji.body)
         }.sorted {
             $0.body.count < $1.body.count
@@ -112,5 +113,6 @@ struct LearningView: View {
 struct LearningView_Previews: PreviewProvider {
     static var previews: some View {
         LearningView(tabBarIsHidden: .constant(false), kanjiFlow: .MOCK_KANJIFLOW)
+            .environmentObject(Store())
     }
 }

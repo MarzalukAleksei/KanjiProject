@@ -24,7 +24,7 @@ struct LearningFrontSideView: View {
                         
                         Spacer()
                         
-                        Text("問" + "\(index)")
+                        Text("漢" + "\(index)")
                     }
                     .font(CustomFont.scroll(size: geo.size.height / 8))
                     .padding(.horizontal ,Settings.padding * 1.8)

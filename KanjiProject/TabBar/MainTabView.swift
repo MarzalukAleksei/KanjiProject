@@ -61,8 +61,9 @@ struct MainTabView: View {
                 
         }
         .onAppear {
-            print(store.dictionaryStore.getAll().count)
-            print(store.kanjiStore.getAll().count)
+            print("Dictionary - ", store.dictionaryStore.getAll().count)
+            print("Kanji - ", store.kanjiStore.getAll().count)
+            print("kana - ", store.kanaStore.getAll().count)
 //            DictionaryModel.dictionary = DictionaryModel.transform(dictionary)
 //            print(DictionaryModel.dictionary.count)
 //            checkCoreData()
@@ -115,7 +116,7 @@ struct MainTabView: View {
     func setCoreDataKanji() {
         let stores = RefactoredStores()
 
-        for storedElement in stores.kanjistore.getAll().enumerated() {
+        for storedElement in stores.kanjiStore.getAll().enumerated() {
 //            DataController().add(kanji: storedElement.element, context: viewContext)
             DataController.shared.add(kanji: storedElement.element, context: viewContext)
             print("Now \(storedElement.offset)")
