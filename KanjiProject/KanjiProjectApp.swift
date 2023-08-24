@@ -16,6 +16,7 @@ struct KanjiProjectApp: App {
         WindowGroup {
             MainTabView()
                 .environment(\.managedObjectContext, DataController.shared.container.viewContext)
+                .environmentObject(Store())
                 
         }
         .onChange(of: scenePhase) { phase in

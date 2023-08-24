@@ -27,4 +27,20 @@ public class Kanji: NSManagedObject {
         
         return result
     }
+    
+    static func transformAll(kanji: FetchedResults<Kanji>) -> [KanjiModel] {
+        let result = kanji.map { data in
+            KanjiModel(body: data.body,
+                       kun: data.kun,
+                       on: data.on,
+                       translate: data.translate,
+                       number: data.number,
+                       level: data.level,
+                       examples: data.examples ?? [],
+                       rightAnwers: data.rightAnswers,
+                       wrongAnswers: data.wrongAnswers,
+                       lastAnswerRight: data.lastAnswerRight)
+        }
+        return result
+    }
 }

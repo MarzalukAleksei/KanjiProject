@@ -17,31 +17,31 @@ class JSON {
         case dictionary = "Dictionary"
     }
     
-    func encodeToString(kanji: [KanjiModel]) -> String {
-        var result = ""
+    func encodeToJSON(kanji: [KanjiModel]) -> Data {
+        var result = Data()
         do {
             let data = try JSONEncoder().encode(kanji)
-            result = String(data: data, encoding: .utf8) ?? ""
+            result = data
         } catch {
             print(error)
         }
         return result
     }
     
-    func encodeToString(dictionary: [DictionaryModel]) -> String {
-        var result = ""
+    func encodeToJSON(dictionary: [DictionaryModel]) -> Data {
+        var result = Data()
         do {
             let data = try JSONEncoder().encode(dictionary)
-            result = String(data: data, encoding: .utf8) ?? ""
+            result = data
         } catch {
             print(error)
         }
         return result
     }
     
-    func decodeToModel(text: String) -> [KanjiModel] {
+    private func decodeToKanjiModel(data: Data) -> [KanjiModel] {
         var result: [KanjiModel] = []
-        let data = Data(text.utf8)
+//        let data = Data(text.utf8)
         let decoder = JSONDecoder()
         
         do {
@@ -53,9 +53,9 @@ class JSON {
         return result
     }
     
-    func decodeToModel(text: String) -> [DictionaryModel] {
+    private func decodeToDictionaryModel(data: Data) -> [DictionaryModel] {
         var result: [DictionaryModel] = []
-        let data = Data(text.utf8)
+//        let data = Data(text.utf8)
         let decoder = JSONDecoder()
         
         do {
@@ -67,33 +67,50 @@ class JSON {
         return result
     }
     
-    func saveToJSONFile(text: String, fileName: FileName) {
-        guard let file = Bundle.main.url(forResource: "\(fileName.rawValue)", withExtension: "json") else {
-            print("File not exist")
-            return
-        }
+    
+    
+    ///   - МЕТОД ТОЛЬКО ДЛЯ СОЗДАНИЯ ФАЙЛА. В ЗОНЕ CТАНДАРТНОЙ РАБОТЫ ПРИЛОЖЕНИЯ НЕ ПРИМЕНЯТЬ
+    ///   -
+    ///   - ДОСТУП К ФАЙЛУ:  Finder -> (menu) go+option button -> library -> developer -> core simulator -> devices -> device -> data -> containers -> data -> aplication -> device -> documents
+    ///   -
+    ///   - ДЕВАЙС: (В терминале написать) xcrun simctl list devices
+    func saveJSONToFile(data: Data, fileName: FileName) {
         let fileManager = FileManager.default
-        guard let documentDirectory = fileManager.urls(for: .userDirectory, in: .userDomainMask).first else { return }
-        
+        guard let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
         let fileURL = documentDirectory.appendingPathComponent(fileName.rawValue, conformingTo: .json)
         
         do {
-            try text.write(to: fileURL, atomically: true, encoding: .utf8)
+            try data.write(to: fileURL)
             print("JSON SAVED TO \(fileURL)")
         } catch {
             print(error)
         }
     }
     
-    func readFile(file: FileName) -> String {
-        guard let url = Bundle.main.url(forResource: "\(file.rawValue)", withExtension: "json") else {
-            print("\(file.rawValue) not exist")
-            return ""
+    func getDictionaryData() -> [DictionaryModel] {
+        guard let url = Bundle.main.url(forResource: "\(FileName.dictionary.rawValue)", withExtension: "json") else {
+            print("Dictionary file not exist")
+            return []
         }
-        var result = ""
-        
+        var result: [DictionaryModel] = []
+         
         do {
-            result = try String(contentsOf: url)
+            result = decodeToDictionaryModel(data: try Data(contentsOf: url))
+        } catch {
+            print(error)
+        }
+        return result
+    }
+    
+    func getKanjiData() -> [KanjiModel] {
+        guard let url = Bundle.main.url(forResource: "\(FileName.kanji.rawValue)", withExtension: "json") else {
+            print("Kanji file not exist")
+            return []
+        }
+        var result: [KanjiModel] = []
+         
+        do {
+            result = decodeToKanjiModel(data: try Data(contentsOf: url))
         } catch {
             print(error)
         }

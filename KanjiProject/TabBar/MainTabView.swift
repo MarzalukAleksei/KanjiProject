@@ -24,6 +24,8 @@ struct MainTabView: View {
                   sortDescriptors: []) var dictionary: FetchedResults<DictionaryCoreData>
     @State var tabBarIsHidden = false
     
+    @EnvironmentObject var store: Store
+    
     init() {
         UITabBar.appearance().isHidden = true
     }
@@ -59,18 +61,23 @@ struct MainTabView: View {
                 
         }
         .onAppear {
-            
-            DictionaryModel.dictionary = DictionaryModel.transform(dictionary)
-            print(DictionaryModel.dictionary.count)
+            print(store.dictionaryStore.getAll().count)
+            print(store.kanjiStore.getAll().count)
+//            DictionaryModel.dictionary = DictionaryModel.transform(dictionary)
+//            print(DictionaryModel.dictionary.count)
 //            checkCoreData()
-            JSON.methoods.saveToJSONFile(text: "jbbj", fileName: .dictionary)
-            print(JSON.methoods.readFile(file: .dictionary))
-//            if kanji.isEmpty {
-//                print("Kanji is Empty")
-//            }
-//            if dictionary.isEmpty {
-//                print("Dictionary is Empty")
-//            }
+//            JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(dictionary: DictionaryModel.dictionary), fileName: .dictionary)
+//            JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(kanji: Kanji.transformAll(kanji: kanji)), fileName: .kanji)
+//
+//            let mockTest = JSON.methoods.getDictionaryData()
+//            print(mockTest.randomElement()!)
+            
+            if kanji.isEmpty {
+                print("Kanji is Empty")
+            }
+            if dictionary.isEmpty {
+                print("Dictionary is Empty")
+            }
 //            
 //            DataController.shared.deleteAllKanjiData(context: viewContext)
 //            DataController.shared.deleteAllDictionaryData(context: viewContext)
@@ -97,7 +104,7 @@ struct MainTabView: View {
     }
     
     func setCoreDataDictionary() {
-        let stores = Stores()
+        let stores = RefactoredStores()
 
         for word in stores.dictionaryStore.getAll().enumerated() {
             DataController.shared.add(dictionary: word.element, context: viewContext)
@@ -106,7 +113,7 @@ struct MainTabView: View {
     }
 
     func setCoreDataKanji() {
-        let stores = Stores()
+        let stores = RefactoredStores()
 
         for storedElement in stores.kanjistore.getAll().enumerated() {
 //            DataController().add(kanji: storedElement.element, context: viewContext)
@@ -127,6 +134,6 @@ private struct CustomImage: View {
 struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()
-//            .environmentObject(Stores())
+            .environmentObject(Store())
     }
 }
