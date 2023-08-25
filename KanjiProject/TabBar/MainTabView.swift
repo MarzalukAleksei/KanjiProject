@@ -64,26 +64,30 @@ struct MainTabView: View {
             print("Dictionary - ", store.dictionaryStore.getAll().count)
             print("Kanji - ", store.kanjiStore.getAll().count)
             print("kana - ", store.kanaStore.getAll().count)
+            
+//            setJSONFile()
+            
 //            DictionaryModel.dictionary = DictionaryModel.transform(dictionary)
 //            print(DictionaryModel.dictionary.count)
 //            checkCoreData()
-//            JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(dictionary: DictionaryModel.dictionary), fileName: .dictionary)
-//            JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(kanji: Kanji.transformAll(kanji: kanji)), fileName: .kanji)
-//
-//            let mockTest = JSON.methoods.getDictionaryData()
-//            print(mockTest.randomElement()!)
             
-            if kanji.isEmpty {
-                print("Kanji is Empty")
-            }
-            if dictionary.isEmpty {
-                print("Dictionary is Empty")
-            }
+//            if kanji.isEmpty {
+//                print("Kanji is Empty")
+//            }
+//            if dictionary.isEmpty {
+//                print("Dictionary is Empty")
+//            }
 //            
 //            DataController.shared.deleteAllKanjiData(context: viewContext)
 //            DataController.shared.deleteAllDictionaryData(context: viewContext)
             
         }
+    }
+    
+    func setJSONFile() {
+        let refactorStores = RefactoredStores()
+        JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(kanji: refactorStores.kanjiStore.getAll()), fileName: .kanji)
+        JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(dictionary: refactorStores.dictionaryStore.getAll()), fileName: .dictionary)
     }
     
     func checkCoreData() {

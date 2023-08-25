@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct KanjiModel: Hashable {
+struct KanjiModel: Hashable, Identifiable {
+    var id = UUID()
     let body: String
     let kun: String
     let on: String
@@ -28,9 +29,9 @@ extension KanjiModel: Codable {
                                                    number: 0,
                                                    level: 4)
     
-    static func findExamples(_ dicdionary: FetchedResults<DictionaryCoreData>) -> [String] {
-        var result: [String] = []
-        
-        return result
-    }
+}
+
+extension KanjiModel {
+    
+    
 }

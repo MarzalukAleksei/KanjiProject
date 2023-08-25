@@ -19,6 +19,8 @@ class Modifiers {
     static let roundedRectTopRightBlackPart = RoundedRectWithBlackPartModifier(corner: .topRight)
     
     static let roundedRectTopLeftBlackPart = RoundedRectWithBlackPartModifier(corner: .topLeft)
+    
+    static let userButton = UserListButtonModifier()
 }
 
 struct TabBarsizeModifier: ViewModifier {
@@ -71,5 +73,15 @@ struct RoundedRectWithBlackPartModifier: ViewModifier {
             .clipShape(PartialRoundedRectangle(cornerRadius: PartsSize.navigationCornerRadius, corners: corner))
             .background(Color.black)
             .foregroundColor(.white)
+    }
+}
+
+struct UserListButtonModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity, maxHeight: PartsSize.learningCellHeight)
+            .foregroundColor(.white)
+            .background(Color.black)
+            .clipShape(RoundedRectangle(cornerRadius: Settings.dinamicResaiseblePartsCornerRadius))
     }
 }

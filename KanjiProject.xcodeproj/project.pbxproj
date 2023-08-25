@@ -17,9 +17,7 @@
 		AF17F94B2A44A1E000D5631D /* IDictionaryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17F94A2A44A1E000D5631D /* IDictionaryMapper.swift */; };
 		AF17F94D2A44ABC500D5631D /* DictionaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17F94C2A44ABC500D5631D /* DictionaryStore.swift */; };
 		AF17F94F2A478D1400D5631D /* SelectLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17F94E2A478D1400D5631D /* SelectLevel.swift */; };
-		AF1EB0532A967E2500850A3B /* Dictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1EB0522A967E2500850A3B /* Dictionary.json */; };
 		AF1EB0562A972E4B00850A3B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB0552A972E4B00850A3B /* Store.swift */; };
-		AF1EB0582A9731E100850A3B /* Kanji.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1EB0572A9731E100850A3B /* Kanji.json */; };
 		AF1EB05C2A97618A00850A3B /* WordRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB05B2A97618A00850A3B /* WordRowView.swift */; };
 		AF1EB05E2A97756600850A3B /* Kana.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF1EB05D2A97756600850A3B /* Kana.csv */; };
 		AF1EB0602A9775A800850A3B /* KanaMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB05F2A9775A800850A3B /* KanaMapper.swift */; };
@@ -27,6 +25,11 @@
 		AF1EB0642A97760C00850A3B /* KanaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB0632A97760C00850A3B /* KanaModel.swift */; };
 		AF1EB0662A97796600850A3B /* KanaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB0652A97796600850A3B /* KanaStore.swift */; };
 		AF1EB0682A977E3D00850A3B /* Kana.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1EB0672A977E3D00850A3B /* Kana.json */; };
+		AF1EB06A2A98E12A00850A3B /* KanjiToUserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB0692A98E12A00850A3B /* KanjiToUserListView.swift */; };
+		AF1EB06C2A98E97800850A3B /* Kanji.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1EB06B2A98E97800850A3B /* Kanji.json */; };
+		AF1EB06E2A98F35500850A3B /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB06D2A98F35500850A3B /* UserDataModel.swift */; };
+		AF1EB0782A994DDD00850A3B /* Dictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1EB0772A994DDD00850A3B /* Dictionary.json */; };
+		AF1EB07A2A99693200850A3B /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB0792A99693200850A3B /* String + Extensions.swift */; };
 		AF30EAF629E9F98A00E5B7A9 /* HiraganaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EAF529E9F98A00E5B7A9 /* HiraganaModel.swift */; };
 		AF30EAF829E9F99800E5B7A9 /* KatakanaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EAF729E9F99800E5B7A9 /* KatakanaModel.swift */; };
 		AF30EAFE29E9FE1C00E5B7A9 /* ZeroGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF30EAFD29E9FE1C00E5B7A9 /* ZeroGothic.otf */; };
@@ -90,9 +93,7 @@
 		AF17F94A2A44A1E000D5631D /* IDictionaryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDictionaryMapper.swift; sourceTree = "<group>"; };
 		AF17F94C2A44ABC500D5631D /* DictionaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryStore.swift; sourceTree = "<group>"; };
 		AF17F94E2A478D1400D5631D /* SelectLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLevel.swift; sourceTree = "<group>"; };
-		AF1EB0522A967E2500850A3B /* Dictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Dictionary.json; sourceTree = "<group>"; };
 		AF1EB0552A972E4B00850A3B /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		AF1EB0572A9731E100850A3B /* Kanji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Kanji.json; sourceTree = "<group>"; };
 		AF1EB05B2A97618A00850A3B /* WordRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordRowView.swift; sourceTree = "<group>"; };
 		AF1EB05D2A97756600850A3B /* Kana.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Kana.csv; sourceTree = "<group>"; };
 		AF1EB05F2A9775A800850A3B /* KanaMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaMapper.swift; sourceTree = "<group>"; };
@@ -100,6 +101,11 @@
 		AF1EB0632A97760C00850A3B /* KanaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaModel.swift; sourceTree = "<group>"; };
 		AF1EB0652A97796600850A3B /* KanaStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaStore.swift; sourceTree = "<group>"; };
 		AF1EB0672A977E3D00850A3B /* Kana.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Kana.json; sourceTree = "<group>"; };
+		AF1EB0692A98E12A00850A3B /* KanjiToUserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiToUserListView.swift; sourceTree = "<group>"; };
+		AF1EB06B2A98E97800850A3B /* Kanji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Kanji.json; sourceTree = "<group>"; };
+		AF1EB06D2A98F35500850A3B /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		AF1EB0772A994DDD00850A3B /* Dictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Dictionary.json; sourceTree = "<group>"; };
+		AF1EB0792A99693200850A3B /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
 		AF30EAF529E9F98A00E5B7A9 /* HiraganaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaModel.swift; sourceTree = "<group>"; };
 		AF30EAF729E9F99800E5B7A9 /* KatakanaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatakanaModel.swift; sourceTree = "<group>"; };
 		AF30EAFD29E9FE1C00E5B7A9 /* ZeroGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ZeroGothic.otf; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 				AFFC08AC2A822AF60043B741 /* KanjiView.swift */,
 				AF960B422A855DD000A33373 /* LearningView.swift */,
 				AFB32FE82A93825F00934C09 /* WordDetailView.swift */,
+				AF1EB0692A98E12A00850A3B /* KanjiToUserListView.swift */,
 			);
 			path = KanjiView;
 			sourceTree = "<group>";
@@ -199,8 +206,8 @@
 			children = (
 				AF52678C2A950B2F00A14CCD /* Json.swift */,
 				AF1EB0672A977E3D00850A3B /* Kana.json */,
-				AF1EB0522A967E2500850A3B /* Dictionary.json */,
-				AF1EB0572A9731E100850A3B /* Kanji.json */,
+				AF1EB0772A994DDD00850A3B /* Dictionary.json */,
+				AF1EB06B2A98E97800850A3B /* Kanji.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -327,6 +334,7 @@
 				AF30EAF729E9F99800E5B7A9 /* KatakanaModel.swift */,
 				AF30EB1029EB0A0C00E5B7A9 /* Level.swift */,
 				AF960B482A85734100A33373 /* KanjiFlow.swift */,
+				AF1EB06D2A98F35500850A3B /* UserDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -409,6 +417,7 @@
 				AF960B462A8563C200A33373 /* Modifiers.swift */,
 				AF3A72BB2A7E4AC500A5513C /* PartsSize.swift */,
 				AFFC08C32A82A6840043B741 /* Settings.swift */,
+				AF1EB0792A99693200850A3B /* String + Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -495,13 +504,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF1EB0682A977E3D00850A3B /* Kana.json in Resources */,
+				AF1EB06C2A98E97800850A3B /* Kanji.json in Resources */,
 				AF17F9452A449AAF00D5631D /* warodai.txt in Resources */,
-				AF1EB0582A9731E100850A3B /* Kanji.json in Resources */,
+				AF1EB0782A994DDD00850A3B /* Dictionary.json in Resources */,
 				AFAF80FB29D9E1CA002B9921 /* Kanji.csv in Resources */,
 				AF1EB05E2A97756600850A3B /* Kana.csv in Resources */,
 				AF30EB0029EAB79900E5B7A9 /* Images.xcassets in Resources */,
 				AFAF80E129D9C647002B9921 /* Preview Assets.xcassets in Resources */,
-				AF1EB0532A967E2500850A3B /* Dictionary.json in Resources */,
 				AFAF80DE29D9C647002B9921 /* Assets.xcassets in Resources */,
 				AF30EB0729EAC3E200E5B7A9 /* unaojapon-p-2.ttf in Resources */,
 				AF30EAFE29E9FE1C00E5B7A9 /* ZeroGothic.otf in Resources */,
@@ -517,6 +526,7 @@
 			files = (
 				AF17F9492A44A1C600D5631D /* DictionaryMapper.swift in Sources */,
 				AFFC08C22A829E3E0043B741 /* KanjiRow.swift in Sources */,
+				AF1EB06E2A98F35500850A3B /* UserDataModel.swift in Sources */,
 				AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */,
 				AF1EB0562A972E4B00850A3B /* Store.swift in Sources */,
 				AF17F94D2A44ABC500D5631D /* DictionaryStore.swift in Sources */,
@@ -544,6 +554,7 @@
 				AFAF80EE29D9CEBF002B9921 /* KanjiModel.swift in Sources */,
 				AFFC08AD2A822AF60043B741 /* KanjiView.swift in Sources */,
 				AF3A72B82A7D1C3000A5513C /* ScrollPartsModifires.swift in Sources */,
+				AF1EB07A2A99693200850A3B /* String + Extensions.swift in Sources */,
 				AF960B412A83C70600A33373 /* CustomToggle.swift in Sources */,
 				AF960B472A8563C200A33373 /* Modifiers.swift in Sources */,
 				AF6A2E0429E721BE00D7C1A9 /* KanjiStore.swift in Sources */,
@@ -573,6 +584,7 @@
 				AFAF80DA29D9C646002B9921 /* KanjiProjectApp.swift in Sources */,
 				AFFC08C42A82A6840043B741 /* Settings.swift in Sources */,
 				AF1EB0622A9775CE00850A3B /* IKanaMapper.swift in Sources */,
+				AF1EB06A2A98E12A00850A3B /* KanjiToUserListView.swift in Sources */,
 				AF9CCE6829F3C12F006B17F3 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

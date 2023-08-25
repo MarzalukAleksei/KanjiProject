@@ -11,6 +11,7 @@ struct WordDetailView: View {
     
     let word: DictionaryModel
     @EnvironmentObject var store: Store
+    @State private var selectedKanji: KanjiModel? = nil
     
     var body: some View {
         VStack(spacing: 0) {
@@ -31,21 +32,46 @@ struct WordDetailView: View {
             }
             
             ScrollView {
+                
                 VStack(spacing: Settings.paddingBetweenElements) {
-                    ForEach(findKanji(), id:\.self) { kanji in
+                    ForEach(findKanji()) { kanji in
                         WordRowView(kanji: kanji)
                         .padding(.horizontal, Settings.padding)
+                        .onTapGesture {
+                            selectedKanji = kanji
+                        }
                     }
-                    
                     .frame(minHeight: PartsSize.learningCellHeight)
                     .modifier(Modifiers.learningCell)
+                    
+                    // ПЕРЕВОДЫ
                     
                     ForEach(word.translate, id: \.self) { translate in
                         Text(translate)
                     }
                     
+                    // ПРИМЕРЫ
+                    
                     ForEach(word.examples, id: \.self) { example in
-                        Text(example)
+                        // Если есть ссылка #...$#
+                        if example.contains("<<<") {
+                            Text("TEST")
+                                .onAppear {
+                                    print(example)
+                                    for i in example.textAndLinks() {
+                                        print(i.text)
+                                    }
+                                    
+                                }
+//                            ForEach(devideToParts(row: example), id: \.self) { row in
+//                                HStack {
+//                                    Text(row)
+//                                    Text(" ")
+//                                }
+//                            }
+//                        } else {
+                            Text(example)
+                        }
                     }
                 }
             }
@@ -59,6 +85,10 @@ struct WordDetailView: View {
         .onAppear {
             
         }
+        .sheet(item: $selectedKanji, content: { kanji in
+                KanjiToUserListView(kanji: kanji)
+        })
+        
     }
     
     func findKanji() -> [KanjiModel] {
@@ -74,7 +104,7 @@ struct WordDetailView: View {
                     continue
                 }
                 // ВРЕМЕННАЯ ЗАТЫЧКА
-                result.append(KanjiModel(body: String(char), kun: "Данный кандзи не входит в 2000 основных кандзи", on: "", translate: "", number: 0, level: 0))
+//                result.append(KanjiModel(body: String(char), kun: "Данный кандзи не входит в 2000 основных кандзи", on: "", translate: "", number: 0, level: 0))
             }
             
         }
