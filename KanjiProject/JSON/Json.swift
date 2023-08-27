@@ -53,7 +53,6 @@ class JSON {
     
     private func decodeToKanjiModel(data: Data) -> [KanjiModel] {
         var result: [KanjiModel] = []
-//        let data = Data(text.utf8)
         let decoder = JSONDecoder()
         
         do {
@@ -67,7 +66,6 @@ class JSON {
     
     private func decodeToDictionaryModel(data: Data) -> [DictionaryModel] {
         var result: [DictionaryModel] = []
-//        let data = Data(text.utf8)
         let decoder = JSONDecoder()
         
         do {
@@ -94,7 +92,7 @@ class JSON {
     
     ///   - МЕТОД ТОЛЬКО ДЛЯ СОЗДАНИЯ ФАЙЛА. В ЗОНЕ CТАНДАРТНОЙ РАБОТЫ ПРИЛОЖЕНИЯ НЕ ПРИМЕНЯТЬ
     ///   -
-    ///   - ДОСТУП К ФАЙЛУ:  Finder -> (menu) go+option button -> library -> developer -> core simulator -> devices -> device -> data -> containers -> data -> aplication -> device -> documents
+    ///   - ДОСТУП К ФАЙЛУ:  Finder -> (menu) go+option button -> Library -> остальной адрес можно увидеть в консоли)
     ///   -
     ///   - ДЕВАЙС: (В терминале написать) xcrun simctl list devices или в консоли посмотреть адрес
     func saveJSONToFile(data: Data, fileName: FileName) {
@@ -144,7 +142,7 @@ class JSON {
         var result: [KanaModel] = []
         
         guard let url = Bundle.main.url(forResource: FileName.kana.rawValue, withExtension: "json") else {
-            print("Kana file not found")
+            print("Kana file not exist")
             return []
         }
         

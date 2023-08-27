@@ -9,16 +9,16 @@ import Foundation
 
 extension String {
     func textAndLinks() -> [(isText: Bool, text: String)] {
-        let text = self
+        let text = self.removeBetween("【", and: "】")
         
         var result: [(isText: Bool, text: String)] = []
         let links = links(text: text)
         var newText = text
         
         for index in (0..<links.count).reversed() {
-            newText = newText.replacingCharacters(in: links[index].rightBracket.startIndex...links[index].rightBracket.lastIndex, with: "")
-            newText = newText.replacingCharacters(in: text.index(after: links[index].leftBracket.lastIndex)...text.index(before: links[index].rightBracket.startIndex), with: "###\(index)")
-            newText = newText.replacingCharacters(in: links[index].leftBracket.startIndex...links[index].leftBracket.lastIndex, with: "")
+//            newText = newText.replacingCharacters(in: links[index].rightBracket.startIndex...links[index].rightBracket.lastIndex, with: "")
+            newText = newText.replacingCharacters(in: links[index].leftBracket.startIndex...links[index].rightBracket.lastIndex, with: "###\(index)")
+//            newText = newText.replacingCharacters(in: links[index].leftBracket.startIndex...links[index].leftBracket.lastIndex, with: "")
         }
         var array: [String] = []
         for index in 0..<links.count {
@@ -79,6 +79,31 @@ extension String {
                                           lastIndex: rightBrackets[index].lastIndex)))
         }
         print(result)
+        return result
+    }
+    
+    func removeBetween(_ first: Character, and second: Character) -> String {
+        let text = self
+        var result = text
+        var stack: [Int] = []
+        var indexes: [(first: Int, last: Int)] = []
+        
+        for (index, character) in text.enumerated() {
+            if first == character {
+                stack.append(index)
+            }
+            
+            if second == character {
+                indexes.append((first: stack.removeLast(), last: index))
+            }
+        }
+        
+        for index in (0..<indexes.count).reversed() {
+            let startIndex = text.index(text.startIndex, offsetBy: indexes[index].first)
+            let lastIndex = text.index(text.startIndex, offsetBy: indexes[index].last)
+            result = result.replacingCharacters(in: startIndex...lastIndex, with: "")
+        }
+        
         return result
     }
 }

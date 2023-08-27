@@ -11,34 +11,35 @@ struct DismissButton: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-//        VStack(spacing: 0) {
-            Button {
-                dismiss()
-            } label: {
-                ZStack {
-//                    Text("Закрыть")
-//                        .modifier(Modifiers.tabBarSize)
-//                        .font(.largeTitle)
-                    ButtonImages.dismissButtonImage
+        //        VStack(spacing: 0) {
+        Button {
+            dismiss()
+        } label: {
+            ZStack {
+                Text("Назад")
+                    .font(.largeTitle)
+                    .modifier(Modifiers.tabBarSize)
+                
+//                ButtonImages.dismissButtonImage
+//                    .resizable()
+//                    .frame(width: 30, height: 30)
+                HStack {
+                    Image(systemName: "chevron.left")
                         .resizable()
-                        .frame(width: 30, height: 30)
-                    HStack {
-                        Image(systemName: "chevron.left")
-                            .resizable()
-                            .frame(width: PartsSize.dismissButtonShevronSize.width,
-                                   height: PartsSize.dismissButtonShevronSize.height)
-                            .padding(Settings.padding)
-                        Spacer()
-                    }
+                        .frame(width: PartsSize.dismissButtonShevronSize.width,
+                               height: PartsSize.dismissButtonShevronSize.height)
+                        .padding(Settings.padding)
+                    Spacer()
                 }
-                .background(Color.black.ignoresSafeArea())
-//                .clipShape(PartialRoundedRectangle(cornerRadius: 20, corners: [.topLeft, .topRight]))
-                .foregroundColor(.white)
             }
+            .background(Color.black.ignoresSafeArea())
+            //                .clipShape(PartialRoundedRectangle(cornerRadius: 20, corners: [.topLeft, .topRight]))
+            .foregroundColor(.white)
+        }
         .buttonStyle(.plain)
-//            Rectangle().frame(height: 0)
-//                .background(Color.black.ignoresSafeArea())
-//        }
+        //            Rectangle().frame(height: 0)
+        //                .background(Color.black.ignoresSafeArea())
+        //        }
     }
 }
 

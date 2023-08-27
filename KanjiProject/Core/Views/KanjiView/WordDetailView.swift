@@ -46,31 +46,29 @@ struct WordDetailView: View {
                     
                     // ПЕРЕВОДЫ
                     
-                    ForEach(word.translate, id: \.self) { translate in
-                        Text(translate)
-                    }
+//                    ForEach(word.translate, id: \.self) { translate in
+//                        Text(translate)
+//                    }
                     
                     // ПРИМЕРЫ
                     
                     ForEach(word.examples, id: \.self) { example in
                         // Если есть ссылка #...$#
                         if example.contains("<<<") {
-                            Text("TEST")
-                                .onAppear {
-                                    print(example)
-                                    for i in example.textAndLinks() {
-                                        print(i.text)
-                                    }
-                                    
+                            let textAndLinks = example.textAndLinks()
+//                            let jounedText = textAndLinks.map { $0.text }.joined()
+//                            HStack(alignment: .top, spacing: 0) {
+                                
+                                ForEach(textAndLinks, id: \.text) { item in
+                                    Text(item.text)
                                 }
-//                            ForEach(devideToParts(row: example), id: \.self) { row in
-//                                HStack {
-//                                    Text(row)
-//                                    Text(" ")
-//                                }
 //                            }
-//                        } else {
-                            Text(example)
+                            HStack {
+                                Text(example)
+                                
+                                Spacer()
+                            }
+                            .padding(.horizontal, Settings.padding)
                         }
                     }
                 }
@@ -90,6 +88,8 @@ struct WordDetailView: View {
         })
         
     }
+    
+    
     
     func findKanji() -> [KanjiModel] {
         var result: [KanjiModel] = []

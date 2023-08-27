@@ -8,40 +8,12 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var login: String = ""
-    @State private var password: String = ""
     
     var body: some View {
-        VStack {
-            TextField("Login", text: $login)
-                .textInputAutocapitalization(.none)
-                .font(.subheadline)
-                .padding(12)
-                .background(Color.gray.opacity(0.5))
-                .cornerRadius(10)
-                .padding(.horizontal, 20)
-            SecureField("Password", text: $password)
-                .font(.subheadline)
-                .padding(12)
-                .background(Color.gray.opacity(0.5))
-                .cornerRadius(10)
-                .padding(.horizontal, 20)
-            
-            Button {
-                
-            } label: {
-                Text("Log In")
-                    .font(.largeTitle)
-                    .padding(10)
-                
-//                    .background(Color.blue)
-                    .background(Color.red)
-                    
-                    
-            }
-
-        }
+            Text("Test")
     }
+    
+    
 }
 
 struct LoginView_Previews: PreviewProvider {

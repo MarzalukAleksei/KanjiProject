@@ -30,8 +30,8 @@ class DictionaryMapper: IDictionaryMapper {
             var innerRows = row.split(separator: "\n").map { String($0) }
             let firstRow = innerRows.removeFirst()
             let removedTrash = removeTrash(array: innerRows)
-            let body = value(from: "【", to: "】", in: firstRow)
-            let number = value(from: "〔", to: "〕", in: firstRow)
+            let body = firstRow.removeBetween("【", and: "】")
+            let number = firstRow.removeBetween("〔", and: "〕")
             let reading = getReading(string: firstRow)
             let translate: [String] = setTranslate(text: removedTrash)
             let examples: [String] = removedTrash
@@ -97,15 +97,7 @@ class DictionaryMapper: IDictionaryMapper {
         return array[0]
     }
     
-    private func value(from first: Character, to second: Character, in string: String) -> String {
-        let firstIndex = string.firstIndex(of: first)
-        let lastIndex = string.lastIndex(of: second)
-        guard let firstIndex = firstIndex,
-              let lastIndex = lastIndex else { return "" }
-        let indexRange = string.index(after: firstIndex)..<lastIndex
-        let result = String(string[indexRange])
-        return result
-    }
+    
     
 }
 
