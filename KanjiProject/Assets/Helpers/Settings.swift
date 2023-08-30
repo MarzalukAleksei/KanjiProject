@@ -29,4 +29,8 @@ class Settings {
     static let dinamicResaiseblePartsCornerRadius: CGFloat = 8
     
     static let paddingBetweenText: CGFloat = 5
+    
+    static let cornerRadius: CGFloat = 20
+    
+    static let spacingBetweenIdiomHeaderAndElements: CGFloat = -10
 }

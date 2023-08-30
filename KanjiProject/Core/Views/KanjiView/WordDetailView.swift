@@ -53,24 +53,11 @@ struct WordDetailView: View {
                     // ПРИМЕРЫ
                     
                     ForEach(word.examples, id: \.self) { example in
-                        // Если есть ссылка #...$#
-                        if example.contains("<<<") {
-                            let textAndLinks = example.textAndLinks()
-//                            let jounedText = textAndLinks.map { $0.text }.joined()
-//                            HStack(alignment: .top, spacing: 0) {
-                                
-                                ForEach(textAndLinks, id: \.text) { item in
-                                    Text(item.text)
-                                }
-//                            }
-                            HStack {
-                                Text(example)
-                                
-                                Spacer()
-                            }
-                            .padding(.horizontal, Settings.padding)
-                        }
+                        
+                        WordExampleView(text: example)
+                        
                     }
+                    .padding(.horizontal, Settings.padding)
                 }
             }
             
@@ -89,7 +76,28 @@ struct WordDetailView: View {
         
     }
     
+//    func findWord(number: String) -> DictionaryModel {
+//        return store.dictionaryStore.getAll().first { $0.number == number }
+//    }
     
+//    func links(_ textAndLinks: [(isText: Bool, text: String)]) -> (view: some View, words: [DictionaryModel]) {
+//        var result = Text("")
+//        var words: [DictionaryModel] = []
+//        
+//        for value in textAndLinks {
+//            if value.isText {
+//                result = result + Text(value.text)
+//            } else {
+//                let dictionaryWord = store.dictionaryStore.getAll().first { $0.number == value.text } ?? .MOCK_DICTIONARY
+//                result = result +
+//                Text(dictionaryWord.body)
+//                    .bold()
+//                words.append(dictionaryWord)
+//            }
+//        }
+//        
+//        return (result, words)
+//    }
     
     func findKanji() -> [KanjiModel] {
         var result: [KanjiModel] = []

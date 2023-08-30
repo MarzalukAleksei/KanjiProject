@@ -71,9 +71,30 @@ struct LearningCell: View {
                     }
                     .padding(Settings.paddingBetweenElements)
                     
-                    if !dictionary.examples.isEmpty {
-                        Text(dictionary.examples[0])
+                    
+//                    if !dictionary.examples.isEmpty {
+////                        let example = dictionary.examples[0].removeNumberExampleRow()
+//                        let example = getExample(examples: dictionary.examples)
+//
+//                        if example.contains("<<<") {
+//                            VStack(alignment: .leading) {
+//                                JoinedTextView(textAndLinks: example.textAndLinks(), text: example)
+//                            }
+//                        } else {
+//                            HStack {
+//                                Text(example)
+//                                Spacer()
+//                            }
+//                        }
+//                    }
+                    
+                    if !dictionary.translate.isEmpty {
+                        let translate = getExample(examples: dictionary.translate)
+                        
+                        JoinedTextView(text: translate)
                     }
+                    
+                    
                     
                     Spacer()
                     
@@ -85,6 +106,27 @@ struct LearningCell: View {
                 }
             }
         }
+    }
+    
+    func getExample(examples: [String]) -> String {
+        var result = ""
+        var examples = examples
+        for row in examples where !dictionary.examples.isEmpty {
+            let row = row
+            if row.count <= 3 {
+                continue
+            } else {
+                result = row
+                break
+            }
+        }
+        result = result.removeNumberExampleRow()
+        if result.count < 3, examples.count > 1 {
+            examples.removeFirst()
+            result = getExample(examples: examples)
+        }
+        
+        return result
     }
     
     func separate() -> [String] {

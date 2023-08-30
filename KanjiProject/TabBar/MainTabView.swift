@@ -65,6 +65,7 @@ struct MainTabView: View {
             print("Kanji - ", store.kanjiStore.getAll().count)
             print("kana - ", store.kanaStore.getAll().count)
             
+//            print(store.dictionaryStore.getAll().randomElement()?.translate)
 //            setJSONFile()
             
 //            DictionaryModel.dictionary = DictionaryModel.transform(dictionary)

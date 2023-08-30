@@ -21,17 +21,19 @@ class Modifiers {
     static let roundedRectTopLeftBlackPart = RoundedRectWithBlackPartModifier(corner: .topLeft)
     
     static let userButton = UserListButtonModifier()
+    
+    static let chevron = NavigationChevronModifier()
 }
 
 struct TabBarsizeModifier: ViewModifier {
     let padding = Settings.padding
     let imageHeigt = Settings.tabBarImageSize.height
     let imageWidth = Settings.tabBarImageSize.width
-    let extra: CGFloat
-    
-    init() {
-        self.extra = imageHeigt - imageWidth
-    }
+//    let extra: CGFloat
+//    
+//    init() {
+//        self.extra = imageHeigt - imageWidth
+//    }
     
     func body(content: Content) -> some View {
         content
@@ -42,7 +44,7 @@ struct TabBarsizeModifier: ViewModifier {
 struct CardViewModifire: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .cornerRadius(20)
+            .cornerRadius(Settings.cornerRadius)
             .foregroundColor(.gray)
     }
 }
@@ -83,5 +85,15 @@ struct UserListButtonModifier: ViewModifier {
             .foregroundColor(.white)
             .background(Color.black)
             .clipShape(RoundedRectangle(cornerRadius: Settings.dinamicResaiseblePartsCornerRadius))
+    }
+    
+}
+
+struct NavigationChevronModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: PartsSize.dismissButtonShevronSize.width,
+                   height: PartsSize.dismissButtonShevronSize.height)
+            .padding(Settings.padding)
     }
 }

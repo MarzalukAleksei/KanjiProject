@@ -59,6 +59,8 @@ extension String {
         var lastIndex: String.Index {
             text.index(text.startIndex, offsetBy: offSet + 2, limitedBy: text.endIndex) ?? text.startIndex
         }
+        if text.count > 0 {
+            
         
         for index in 0..<text.count - 2 {
             offSet = index
@@ -71,6 +73,7 @@ extension String {
                 rightBrackets.append((startIndex, lastIndex))
             }
         }
+    }
         
         for index in 0..<leftBrackes.count {
             result.append((leftBracket: (startIndex: leftBrackes[index].firstIndex,
@@ -102,6 +105,52 @@ extension String {
             let startIndex = text.index(text.startIndex, offsetBy: indexes[index].first)
             let lastIndex = text.index(text.startIndex, offsetBy: indexes[index].last)
             result = result.replacingCharacters(in: startIndex...lastIndex, with: "")
+        }
+        
+        return result
+    }
+    
+    func removeNumberExampleRow() -> String {
+        var result = self
+        if result.count > 3 {
+            let startIndex = result.startIndex
+            var offSet = 2
+            var lastIndex: String.Index {
+                result.index(startIndex, offsetBy: offSet)
+            }
+            var sequence: String.SubSequence {
+                result[startIndex...lastIndex]
+            }
+            if sequence.contains(")"), !sequence.contains(":") {
+                result = result.replacingOccurrences(of: sequence, with: "")
+            } else if sequence.contains(")"), sequence.contains(":") {
+                offSet += 1
+                result = result.replacingOccurrences(of: sequence, with: "")
+            } else if sequence.contains("уст"), result.count < 6 {
+                offSet += 1
+                result = result.replacingOccurrences(of: sequence, with: "")
+            } else if sequence.contains(": ～") {
+                offSet -= 1
+                result = result.replacingOccurrences(of: sequence, with: "")
+            } else if sequence.contains("кн.") {
+                offSet += 1
+                result = result.replacingOccurrences(of: sequence, with: "кн.")
+            }
+        }
+        
+        return result.replaceWords()
+    }
+    
+    private func replaceWords() -> String {
+        var result = self
+        if result.contains("кн.") {
+            result = result.replacingOccurrences(of: "кн.", with: "(Литературное) ")
+        } else if result.contains("эпист.") {
+            result = result.replacingOccurrences(of: "эпист.", with: "(Толкование)")
+//        } else if result.contains("ист.") {
+//            result = result.replacingOccurrences(of: "ист.", with: "(Историческое)")
+        } else if result.contains("связ.") {
+            result = result.replacingOccurrences(of: "связ.", with: "")
         }
         
         return result

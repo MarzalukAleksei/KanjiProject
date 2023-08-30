@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0070882A9B65D9001A4084 /* WordExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0070872A9B65D9001A4084 /* WordExampleView.swift */; };
+		AF00708A2A9BD960001A4084 /* JoinedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0070892A9BD960001A4084 /* JoinedTextView.swift */; };
+		AF00708D2A9CEC0E001A4084 /* LinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF00708C2A9CEC0E001A4084 /* LinesView.swift */; };
+		AF0070942A9DC199001A4084 /* IdiomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0070932A9DC199001A4084 /* IdiomView.swift */; };
+		AF0070962A9DC1FE001A4084 /* IdiomViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0070952A9DC1FE001A4084 /* IdiomViewHeader.swift */; };
 		AF17F93C2A44844200D5631D /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17F93B2A44844200D5631D /* TabBarButton.swift */; };
 		AF17F93F2A4485BF00D5631D /* LearningCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17F93E2A4485BF00D5631D /* LearningCardView.swift */; };
 		AF17F9412A4486A100D5631D /* FrontSideVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17F9402A4486A100D5631D /* FrontSideVIew.swift */; };
@@ -43,8 +48,7 @@
 		AF3A72BC2A7E4AC500A5513C /* PartsSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72BB2A7E4AC500A5513C /* PartsSize.swift */; };
 		AF3A72C22A80512800A5513C /* PartialRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */; };
 		AF52678D2A950B2F00A14CCD /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF52678C2A950B2F00A14CCD /* Json.swift */; };
-		AF55A9222A18D9370062855F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF55A9212A18D9370062855F /* LoginView.swift */; };
-		AF69CE712A001739009C7B92 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69CE702A001739009C7B92 /* Images.swift */; };
+		AF69CE712A001739009C7B92 /* ButtonImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69CE702A001739009C7B92 /* ButtonImages.swift */; };
 		AF6A2DF229E5AF5100D7C1A9 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */; };
 		AF6A2E0129E62CDA00D7C1A9 /* RefactoredStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0029E62CDA00D7C1A9 /* RefactoredStores.swift */; };
 		AF6A2E0429E721BE00D7C1A9 /* KanjiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */; };
@@ -83,6 +87,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF0070872A9B65D9001A4084 /* WordExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordExampleView.swift; sourceTree = "<group>"; };
+		AF0070892A9BD960001A4084 /* JoinedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedTextView.swift; sourceTree = "<group>"; };
+		AF00708C2A9CEC0E001A4084 /* LinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesView.swift; sourceTree = "<group>"; };
+		AF0070932A9DC199001A4084 /* IdiomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdiomView.swift; sourceTree = "<group>"; };
+		AF0070952A9DC1FE001A4084 /* IdiomViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdiomViewHeader.swift; sourceTree = "<group>"; };
 		AF17F93B2A44844200D5631D /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		AF17F93E2A4485BF00D5631D /* LearningCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCardView.swift; sourceTree = "<group>"; };
 		AF17F9402A4486A100D5631D /* FrontSideVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontSideVIew.swift; sourceTree = "<group>"; };
@@ -119,8 +128,7 @@
 		AF3A72BB2A7E4AC500A5513C /* PartsSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsSize.swift; sourceTree = "<group>"; };
 		AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialRoundedRectangle.swift; sourceTree = "<group>"; };
 		AF52678C2A950B2F00A14CCD /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
-		AF55A9212A18D9370062855F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		AF69CE702A001739009C7B92 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		AF69CE702A001739009C7B92 /* ButtonImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonImages.swift; sourceTree = "<group>"; };
 		AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		AF6A2E0029E62CDA00D7C1A9 /* RefactoredStores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactoredStores.swift; sourceTree = "<group>"; };
 		AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiStore.swift; sourceTree = "<group>"; };
@@ -170,6 +178,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF00708B2A9CEBD2001A4084 /* Grafics */ = {
+			isa = PBXGroup;
+			children = (
+				AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */,
+				AF00708C2A9CEC0E001A4084 /* LinesView.swift */,
+			);
+			path = Grafics;
+			sourceTree = "<group>";
+		};
+		AF0070922A9DC17C001A4084 /* IdiomView */ = {
+			isa = PBXGroup;
+			children = (
+				AF0070932A9DC199001A4084 /* IdiomView.swift */,
+			);
+			path = IdiomView;
+			sourceTree = "<group>";
+		};
 		AF17F93D2A4485A500D5631D /* KanjiView */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +250,7 @@
 		AF6A2E0A29E735BD00D7C1A9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AF00708B2A9CEBD2001A4084 /* Grafics */,
 				AFAF80E929D9C740002B9921 /* Views */,
 			);
 			path = Core;
@@ -235,14 +261,16 @@
 			children = (
 				AF960B4A2A8578D400A33373 /* LearningFrontSideView.swift */,
 				AFFC08AF2A8234980043B741 /* CustomNavigationBarView.swift */,
-				AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */,
 				AFFC08C12A829E3E0043B741 /* KanjiRow.swift */,
 				AFFC08B32A823EAB0043B741 /* LevelButton.swift */,
 				AFFC08C52A82CE4D0043B741 /* ProgressIndicatorView.swift */,
 				AF960B402A83C70500A33373 /* CustomToggle.swift */,
 				AFC3CB9B2A8587AA00DD59D4 /* LearningCell.swift */,
 				AFC3CB9D2A85B78500DD59D4 /* DismissButton.swift */,
+				AF0070952A9DC1FE001A4084 /* IdiomViewHeader.swift */,
 				AF1EB05B2A97618A00850A3B /* WordRowView.swift */,
+				AF0070872A9B65D9001A4084 /* WordExampleView.swift */,
+				AF0070892A9BD960001A4084 /* JoinedTextView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -319,7 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				AF17F93D2A4485A500D5631D /* KanjiView */,
-				AF55A9212A18D9370062855F /* LoginView.swift */,
+				AF0070922A9DC17C001A4084 /* IdiomView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -413,7 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				AFBA6FF829F3640F008E11BB /* CustomFonts.swift */,
-				AF69CE702A001739009C7B92 /* Images.swift */,
+				AF69CE702A001739009C7B92 /* ButtonImages.swift */,
 				AF960B462A8563C200A33373 /* Modifiers.swift */,
 				AF3A72BB2A7E4AC500A5513C /* PartsSize.swift */,
 				AFFC08C32A82A6840043B741 /* Settings.swift */,
@@ -528,17 +556,20 @@
 				AFFC08C22A829E3E0043B741 /* KanjiRow.swift in Sources */,
 				AF1EB06E2A98F35500850A3B /* UserDataModel.swift in Sources */,
 				AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */,
+				AF0070962A9DC1FE001A4084 /* IdiomViewHeader.swift in Sources */,
 				AF1EB0562A972E4B00850A3B /* Store.swift in Sources */,
 				AF17F94D2A44ABC500D5631D /* DictionaryStore.swift in Sources */,
 				AF960B4B2A8578D400A33373 /* LearningFrontSideView.swift in Sources */,
 				AF17F9412A4486A100D5631D /* FrontSideVIew.swift in Sources */,
 				AFAF810029D9E690002B9921 /* FileMapper.swift in Sources */,
+				AF0070942A9DC199001A4084 /* IdiomView.swift in Sources */,
 				AFAF80F129D9DC5F002B9921 /* IFileManager.swift in Sources */,
 				AF17F93F2A4485BF00D5631D /* LearningCardView.swift in Sources */,
 				AF1EB05C2A97618A00850A3B /* WordRowView.swift in Sources */,
 				AF17F93C2A44844200D5631D /* TabBarButton.swift in Sources */,
 				AF1EB0642A97760C00850A3B /* KanaModel.swift in Sources */,
 				AFACD9C32A7A6F3C00F4091F /* Kanji+CoreDataClass.swift in Sources */,
+				AF00708D2A9CEC0E001A4084 /* LinesView.swift in Sources */,
 				AF52678D2A950B2F00A14CCD /* Json.swift in Sources */,
 				AF3A72C22A80512800A5513C /* PartialRoundedRectangle.swift in Sources */,
 				AFA6704D2A4B23BB00ED639D /* DataController.swift in Sources */,
@@ -552,6 +583,7 @@
 				AF17F94F2A478D1400D5631D /* SelectLevel.swift in Sources */,
 				AF6A2E0629E7267400D7C1A9 /* IStore.swift in Sources */,
 				AFAF80EE29D9CEBF002B9921 /* KanjiModel.swift in Sources */,
+				AF00708A2A9BD960001A4084 /* JoinedTextView.swift in Sources */,
 				AFFC08AD2A822AF60043B741 /* KanjiView.swift in Sources */,
 				AF3A72B82A7D1C3000A5513C /* ScrollPartsModifires.swift in Sources */,
 				AF1EB07A2A99693200850A3B /* String + Extensions.swift in Sources */,
@@ -561,8 +593,7 @@
 				AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */,
 				AFFC08B42A823EAB0043B741 /* LevelButton.swift in Sources */,
 				AFACD9C42A7A6F3C00F4091F /* Kanji+CoreDataProperties.swift in Sources */,
-				AF55A9222A18D9370062855F /* LoginView.swift in Sources */,
-				AF69CE712A001739009C7B92 /* Images.swift in Sources */,
+				AF69CE712A001739009C7B92 /* ButtonImages.swift in Sources */,
 				AF960B432A855DD000A33373 /* LearningView.swift in Sources */,
 				AFAF80F429D9DCD6002B9921 /* FileManage.swift in Sources */,
 				AFAF810229D9E7A9002B9921 /* IKanjiMapper.swift in Sources */,
@@ -571,6 +602,7 @@
 				AF30EAF629E9F98A00E5B7A9 /* HiraganaModel.swift in Sources */,
 				AFF443A22A51B05100FF4404 /* SavedData.xcdatamodeld in Sources */,
 				AFC3CB9E2A85B78500DD59D4 /* DismissButton.swift in Sources */,
+				AF0070882A9B65D9001A4084 /* WordExampleView.swift in Sources */,
 				AFAF80FE29D9E59C002B9921 /* IFileMapper.swift in Sources */,
 				AF3A72BC2A7E4AC500A5513C /* PartsSize.swift in Sources */,
 				AFFC08C62A82CE4D0043B741 /* ProgressIndicatorView.swift in Sources */,

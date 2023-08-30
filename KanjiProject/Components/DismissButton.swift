@@ -24,11 +24,10 @@ struct DismissButton: View {
 //                    .resizable()
 //                    .frame(width: 30, height: 30)
                 HStack {
-                    Image(systemName: "chevron.left")
+                    ButtonImages.chevronLeft
                         .resizable()
-                        .frame(width: PartsSize.dismissButtonShevronSize.width,
-                               height: PartsSize.dismissButtonShevronSize.height)
-                        .padding(Settings.padding)
+                        .modifier(Modifiers.chevron)
+
                     Spacer()
                 }
             }
