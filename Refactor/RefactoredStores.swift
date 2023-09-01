@@ -12,7 +12,7 @@ class RefactoredStores {
     
     var kanjiStore = KanjiStore()
     var kanaStore = KanaStore()
-//    let yojijukugo = Yojijukugo()
+//    let yojijukugo = YojijukugoStore()
 //    let bushu = Bushu() // ключи
     var dictionaryStore = DictionaryStore()
     

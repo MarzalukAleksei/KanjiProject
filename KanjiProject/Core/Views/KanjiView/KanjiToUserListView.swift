@@ -37,7 +37,9 @@ struct KanjiToUserListView: View {
                 
                 Button {
                     
-                    dismiss()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        dismiss()
+                    }
                 } label: {
                     Text("В Мой Список")
                         .modifier(Modifiers.userButton)

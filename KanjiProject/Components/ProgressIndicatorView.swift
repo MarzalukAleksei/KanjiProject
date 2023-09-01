@@ -31,5 +31,7 @@ struct ProgressIndicatorView: View {
 struct ProgressIndicatorView_Previews: PreviewProvider {
     static var previews: some View {
         ProgressIndicatorView(answers: 20, rightAnswers: 11)
+            .padding(.top, 250)
+            .padding()
     }
 }

@@ -34,7 +34,7 @@ struct LinesView: Shape {
                                         y: height * 0.7),
                       control2: CGPoint(x: width * 0.35,
                                         y: height * 0.32))
-        path.addCurve(to: CGPoint(x: -20,
+        path.addCurve(to: CGPoint(x: -25,
                                   y: height),
                       control1: CGPoint(x: width * 0.12,
                                         y: height * 0.8),
@@ -42,7 +42,7 @@ struct LinesView: Shape {
                                         y: height * 0.8))
         
         
-        path.addLine(to: CGPoint(x: -20, y: -70))
+        path.addLine(to: CGPoint(x: -25, y: -70))
         
         return path
     }

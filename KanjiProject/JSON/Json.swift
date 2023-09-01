@@ -153,4 +153,18 @@ class JSON {
         }
         return result
     }
+    
+    func loadSavedKanji() -> [KanjiModel] {
+        var result: [KanjiModel] = []
+        let fileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(FileName.kanji.rawValue).json")
+
+        do {
+            let fileData = try Data(contentsOf: fileUrl)
+            result = decodeToKanjiModel(data: fileData)
+        } catch {
+            return getKanjiData()
+        }
+        
+        return result
+    }
 }

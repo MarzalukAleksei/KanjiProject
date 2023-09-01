@@ -12,7 +12,7 @@ struct LearningView: View {
     @Binding var tabBarIsHidden: Bool
     var kanjiFlow: KanjiFlow
     @State private var currentKanjiIndex = 0
-    @State var index = 0
+//    @State var index = 0
     @EnvironmentObject var store: Store
     
     var body: some View {
@@ -79,6 +79,9 @@ struct LearningView: View {
             tabBarIsHidden = true
         }
         .navigationBarBackButtonHidden(true)
+//        .onDisappear {
+//            tabBarIsHidden = false
+//        }
         
         .navigationDestination(for: DictionaryModel.self) { word in
             WordDetailView(word: word)

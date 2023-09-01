@@ -56,7 +56,7 @@ struct KanjiView: View {
                         HStack(spacing: Settings.paddingBetweenElements) {
                             
                             ForEach(Level.allCases.reversed(), id: \.self) { level in
-                                LevelButton(levelTitle: level,
+                                LevelButton(levelTitle: level, kanjiArray: store.kanjiStore.getData(selectedLevel),
                                             size: CGSize(width: PartsSize.levelButtonSize.width,
                                                          height: PartsSize.levelButtonSize.height),
                                             color: selectedLevel == level ? .secondary : .black)

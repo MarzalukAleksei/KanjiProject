@@ -13,12 +13,14 @@ struct IdiomViewHeader: View {
         ZStack {
 //            Color.black.ignoresSafeArea()
 //                .frame(height: 0)
-            Group {
+//            Group {
                 LinesView()
                     .frame(height: 200)
-                    .offset(CGSize(width: -5, height: -30))
+                    .offset(CGSize(width: 5, height: -30))
+                    .rotation3DEffect(Angle(degrees: 180), axis: (x: 0, y: 1, z: 0))
                     .overlay(alignment: .top) {
                         HStack {
+                            Spacer()
                             Spacer()
                             
                             Text(title)
@@ -26,16 +28,17 @@ struct IdiomViewHeader: View {
                                 .foregroundColor(.white)
                             
                             Spacer()
-                            Spacer()
                         }
                     }
                 
                 
                 LinesView()
-                    .offset(CGSize(width: 14, height: -10))
+                    .offset(CGSize(width: 24, height: -13))
                     .stroke(lineWidth: 1)
                     .frame(height: 210)
-            }
+                    .rotation3DEffect(Angle(degrees: 180), axis: (x: 0, y: 1, z: 0))
+                    .rotationEffect(Angle(degrees: 1))
+//            }
         }
     }
 }

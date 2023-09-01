@@ -39,6 +39,9 @@ struct KanjiRow: View {
                     Text("Пройдено \(rightAnswers()) из \(kanji.count)")
                         .font(.subheadline)
                         .opacity(0.5)
+                    
+                    Spacer()
+                    
                     ProgressIndicatorView(answers: CGFloat(Settings.elementsInRow), rightAnswers: CGFloat(rightAnswers()))
                         .padding(.vertical, 5)
                 }
@@ -53,7 +56,7 @@ struct KanjiRow: View {
     
     func rightAnswers() -> Int {
         
-        return 0
+        return kanji.filter { $0.lastAnswerRight == true }.count
     }
 }
 

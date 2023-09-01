@@ -27,7 +27,7 @@ class Modifiers {
 
 struct TabBarsizeModifier: ViewModifier {
     let padding = Settings.padding
-    let imageHeigt = Settings.tabBarImageSize.height
+    let imageHeigt = Settings.tabBarImageSize.height 
     let imageWidth = Settings.tabBarImageSize.width
 //    let extra: CGFloat
 //    

@@ -27,7 +27,8 @@ extension KanjiModel: Codable {
                                                    on: "シ",
                                                    translate: "Использовать",
                                                    number: 0,
-                                                   level: 4)
+                                                   level: 4,
+                                                   lastAnswerRight: true)
     
 }
 

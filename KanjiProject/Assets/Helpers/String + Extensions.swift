@@ -81,7 +81,7 @@ extension String {
                            rightBracket: (startIndex: rightBrackets[index].firstIndex,
                                           lastIndex: rightBrackets[index].lastIndex)))
         }
-        print(result)
+//        print(result)
         return result
     }
     

@@ -36,7 +36,7 @@ struct MainTabView: View {
             TabView(selection: $currentTab) {
                 KanjiView(tabBarIsHidden: $tabBarIsHidden)
                     .tag(TabBarElements.kanji)
-                Text("Yojijukugo")
+                IdiomView()
                     .tag(TabBarElements.yojijukugo)
                 Text("card")
                     .tag(TabBarElements.card)

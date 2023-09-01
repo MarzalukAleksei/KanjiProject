@@ -11,18 +11,20 @@ import SwiftUI
 struct KanjiProjectApp: App {
     
     @Environment(\.scenePhase) var scenePhase
+    @ObservedObject var store = Store()
     
     var body: some Scene {
         WindowGroup {
             MainTabView()
                 .environment(\.managedObjectContext, DataController.shared.container.viewContext)
-                .environmentObject(Store())
+                .environmentObject(store)
                 
         }
         .onChange(of: scenePhase) { phase in
             switch phase {
             case .active: break
-            case .background: break
+            case .background:
+                JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(kanji: store.kanjiStore.getAll()), fileName: .kanji)
             case .inactive: break
             @unknown default:
                 break
