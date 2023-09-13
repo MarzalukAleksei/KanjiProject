@@ -10,10 +10,12 @@ import SwiftUI
 struct KanjiFlow: Hashable {
     let index: Int
     let kanji: [KanjiModel]
+    let type: String
     
-    init(index: Int, kanji: [KanjiModel]) {
+    init(index: Int, kanji: [KanjiModel], type: String) {
         self.index = index
         self.kanji = kanji
+        self.type = type
     }
     
 //    static func == (lhs: KanjiFlow, rhs: KanjiFlow) -> Bool {
@@ -34,5 +36,6 @@ extension KanjiFlow {
                                                   .MOCK_KANJI,
                                                   .MOCK_KANJI,
                                                   .MOCK_KANJI,
-                                                  .MOCK_KANJI])
+                                                  .MOCK_KANJI],
+                                          type: "問")
 }

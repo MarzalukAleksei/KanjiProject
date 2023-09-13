@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DictionaryMapper: IDictionaryMapper {
+class DictionaryMapper: IDataMapper {
     
     enum DisplayMode {
         case colored

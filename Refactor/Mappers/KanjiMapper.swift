@@ -7,7 +7,7 @@
 
 import Foundation
 
-class KanjiMapper: IKanjiMapper {
+class KanjiMapper: IDataMapper {
     typealias Result = [KanjiModel]
     typealias Entity = [String]
     

@@ -16,86 +16,34 @@ class JSON {
         case kanji = "Kanji"
         case dictionary = "Dictionary"
         case kana = "Kana"
+        case yojijukugo = "Yojijukugo"
+        case giseigo = "Giseigo"
     }
     
-    func encodeToJSON(kanji: [KanjiModel]) -> Data {
-        var result = Data()
+    func encodeToJSON<T: Encodable>(_ model: T) -> Data {
         do {
-            let data = try JSONEncoder().encode(kanji)
-            result = data
+            return try JSONEncoder().encode(model)
         } catch {
             print(error)
         }
-        return result
+        return Data()
     }
     
-    func encodeToJSON(dictionary: [DictionaryModel]) -> Data {
-        var result = Data()
+    private func decodeToModel<T: Decodable>(_ data: Data) -> T? {
         do {
-            let data = try JSONEncoder().encode(dictionary)
-            result = data
+            return try JSONDecoder().decode(T.self, from: data)
         } catch {
             print(error)
         }
-        return result
+        return nil
     }
-    
-    func encodeToJSON(kana: [KanaModel]) -> Data {
-        var result = Data()
-        do {
-            let data = try JSONEncoder().encode(kana)
-            result = data
-        } catch {
-            print(error)
-        }
-        return result
-    }
-    
-    private func decodeToKanjiModel(data: Data) -> [KanjiModel] {
-        var result: [KanjiModel] = []
-        let decoder = JSONDecoder()
-        
-        do {
-            result = try decoder.decode([KanjiModel].self, from: data)
-        } catch {
-            print(error)
-        }
-        
-        return result
-    }
-    
-    private func decodeToDictionaryModel(data: Data) -> [DictionaryModel] {
-        var result: [DictionaryModel] = []
-        let decoder = JSONDecoder()
-        
-        do {
-            result = try decoder.decode([DictionaryModel].self, from: data)
-        } catch {
-            print(error)
-        }
-        
-        return result
-    }
-    
-    private func decodeToKanaModel(data: Data) -> [KanaModel] {
-        var result: [KanaModel] = []
-        let decoder = JSONDecoder()
-        
-        do {
-            result = try decoder.decode([KanaModel].self, from: data)
-        } catch {
-            print(error)
-        }
-        return result
-    }
-    
     
     ///   - МЕТОД ТОЛЬКО ДЛЯ СОЗДАНИЯ ФАЙЛА. В ЗОНЕ CТАНДАРТНОЙ РАБОТЫ ПРИЛОЖЕНИЯ НЕ ПРИМЕНЯТЬ
     ///   -
     ///   - ДОСТУП К ФАЙЛУ:  Finder -> (menu) go+option button -> Library -> остальной адрес можно увидеть в консоли)
     ///   -
     ///   - ДЕВАЙС: (В терминале написать) xcrun simctl list devices или в консоли посмотреть адрес
-    func saveJSONToFile(data: Data, fileName: FileName) {
+    func saveJSONToFile(_ data: Data, fileName: FileName) {
         let fileManager = FileManager.default
         guard let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
         let fileURL = documentDirectory.appendingPathComponent(fileName.rawValue, conformingTo: .json)
@@ -108,61 +56,68 @@ class JSON {
         }
     }
     
-    func getDictionaryData() -> [DictionaryModel] {
-        guard let url = Bundle.main.url(forResource: FileName.dictionary.rawValue, withExtension: "json") else {
-            print("Dictionary file not exist")
+    func getDictionary() -> [DictionaryModel] {
+        guard let url = Bundle.main.url(forResource: FileName.dictionary.rawValue, withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let result: [DictionaryModel] = decodeToModel(data) else {
+            
+            print("Dictionary Json file not exist")
             return []
         }
-        var result: [DictionaryModel] = []
-         
-        do {
-            result = decodeToDictionaryModel(data: try Data(contentsOf: url))
-        } catch {
-            print(error)
-        }
+        
         return result
     }
     
-    func getKanjiData() -> [KanjiModel] {
-        guard let url = Bundle.main.url(forResource: FileName.kanji.rawValue, withExtension: "json") else {
+    private func getKanjiFromBundle() -> [KanjiModel] {
+        guard let url = Bundle.main.url(forResource: FileName.kanji.rawValue, withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let result: [KanjiModel] = decodeToModel(data) else {
             print("Kanji file not exist")
             return []
         }
-        var result: [KanjiModel] = []
-         
-        do {
-            result = decodeToKanjiModel(data: try Data(contentsOf: url))
-        } catch {
-            print(error)
-        }
+        
         return result
     }
     
-    func getKanaData() -> [KanaModel] {
-        var result: [KanaModel] = []
-        
-        guard let url = Bundle.main.url(forResource: FileName.kana.rawValue, withExtension: "json") else {
-            print("Kana file not exist")
+    func getYojijukugo() -> [YojijukugoModel] {
+        guard let url = Bundle.main.url(forResource: FileName.yojijukugo.rawValue, withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let result: [YojijukugoModel] = decodeToModel(data) else {
+            print("Yojijukugo Json file not exist")
             return []
         }
         
-        do {
-            result = decodeToKanaModel(data: try Data(contentsOf: url))
-        } catch {
-            print(error)
-        }
         return result
     }
     
-    func loadSavedKanji() -> [KanjiModel] {
-        var result: [KanjiModel] = []
-        let fileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(FileName.kanji.rawValue).json")
-
-        do {
-            let fileData = try Data(contentsOf: fileUrl)
-            result = decodeToKanjiModel(data: fileData)
-        } catch {
-            return getKanjiData()
+    func getKana() -> [KanaModel] {
+        guard let url = Bundle.main.url(forResource: FileName.kana.rawValue, withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let result: [KanaModel] = decodeToModel(data) else {
+            print("Kana Json file not exist")
+            return []
+        }
+        
+        return result
+    }
+    
+    func getKanji() -> [KanjiModel] {
+        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(FileName.kanji.rawValue).json")
+        guard let data = try? Data(contentsOf: url),
+              let result: [KanjiModel] = decodeToModel(data) else {
+            
+            return getKanjiFromBundle()
+        }
+        
+        return result
+    }
+    
+    func getGiseigo() -> [GiseigoModel] {
+        guard let url = Bundle.main.url(forResource: FileName.giseigo.rawValue, withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let result: [GiseigoModel] = decodeToModel(data) else {
+            print("Giseigo Json File Not Exist")
+            return []
         }
         
         return result

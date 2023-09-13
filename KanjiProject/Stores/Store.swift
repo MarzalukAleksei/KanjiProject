@@ -11,18 +11,20 @@ final class Store: ObservableObject {
     @Published var kanjiStore = KanjiStore()
     @Published var dictionaryStore = DictionaryStore()
     @Published var kanaStore = KanaStore()
+    @Published var yojijukugoStore = YojijukugoStore()
+    @Published var giseigo = GiseigoStore()
     
     init() {
-//        kanjiStore.updateAll(data: JSON.methoods.getKanjiData())
-        kanjiStore.updateAll(data: JSON.methoods.loadSavedKanji())
-        dictionaryStore.updateAll(data: JSON.methoods.getDictionaryData())
-        kanaStore.updateAll(data: JSON.methoods.getKanaData())
+        kanjiStore.updateAll(data: JSON.methoods.getKanji())
+        dictionaryStore.updateAll(data: JSON.methoods.getDictionary())
+        kanaStore.updateAll(data: JSON.methoods.getKana())
+        yojijukugoStore.updateAll(data: JSON.methoods.getYojijukugo())
+        giseigo.updateAll(data: JSON.methoods.getGiseigo())
     }
     
     func updateKanji(_ kanji: KanjiModel) {
-        let backgroundThried = DispatchQueue(label: "background", qos: .background, attributes: .concurrent)
         
-        backgroundThried.async { [self] in
+        DispatchQueue.global(qos: .background).async { [self] in
             var newKanjiStore = kanjiStore.getAll()
             
             for (index, value) in kanjiStore.getAll().enumerated() where value.id == kanji.id {
@@ -31,6 +33,7 @@ final class Store: ObservableObject {
             kanjiStore.updateAll(data: newKanjiStore)
         }
     }
+    
 }
 
 

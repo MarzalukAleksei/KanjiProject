@@ -7,7 +7,7 @@
 
 import Foundation
 
-class KanaMapper: IKanaMapper {
+class KanaMapper: IDataMapper {
     
     typealias Result = [KanaModel]
     

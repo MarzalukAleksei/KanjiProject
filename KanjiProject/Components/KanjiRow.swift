@@ -42,7 +42,7 @@ struct KanjiRow: View {
                     
                     Spacer()
                     
-                    ProgressIndicatorView(answers: CGFloat(Settings.elementsInRow), rightAnswers: CGFloat(rightAnswers()))
+                    ProgressIndicatorLine(answers: CGFloat(kanji.count), rightAnswers: CGFloat(rightAnswers()))
                         .padding(.vertical, 5)
                 }
                 Spacer()

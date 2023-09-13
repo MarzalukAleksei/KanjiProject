@@ -11,10 +11,11 @@ class RefactoredStores {
 //    static let shared = Stores()
     
     var kanjiStore = KanjiStore()
-    var kanaStore = KanaStore()
-//    let yojijukugo = YojijukugoStore()
-//    let bushu = Bushu() // ключи
     var dictionaryStore = DictionaryStore()
+    var kanaStore = KanaStore()
+    var yojijukugoStore = YojijukugoStore()
+    var giseigoStore = GiseigoStore()
+//    let bushu = Bushu() // ключи
     
     init() {
         loadData()
@@ -25,11 +26,15 @@ class RefactoredStores {
             let kanji = KanjiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Kanji", fileType: .csv)))
             let dictionary = DictionaryMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "warodai", fileType: .txt)))
             let kana = KanaMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Kana", fileType: .csv)))
+            let yojijukugo = YojijukugoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Yojijukugo", fileType: .csv)))
+            let giseigo = GiseigoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Giseigo", fileType: .csv)))
             
             kanjiStore.updateAll(data: kanji)
-//            kanjistore.update(data: kanji)
             dictionaryStore.updateAll(data: dictionary)
             kanaStore.updateAll(data: kana)
+            yojijukugoStore.updateAll(data: yojijukugo)
+            giseigoStore.updateAll(data: giseigo)
+            
         } catch {
             print(error)
         }

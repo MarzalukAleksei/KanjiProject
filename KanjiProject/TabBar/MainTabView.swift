@@ -64,31 +64,20 @@ struct MainTabView: View {
             print("Dictionary - ", store.dictionaryStore.getAll().count)
             print("Kanji - ", store.kanjiStore.getAll().count)
             print("kana - ", store.kanaStore.getAll().count)
+            print("giseigo - ", store.giseigo.getAll().count)
             
-//            print(store.dictionaryStore.getAll().randomElement()?.translate)
 //            setJSONFile()
-            
-//            DictionaryModel.dictionary = DictionaryModel.transform(dictionary)
-//            print(DictionaryModel.dictionary.count)
-//            checkCoreData()
-            
-//            if kanji.isEmpty {
-//                print("Kanji is Empty")
-//            }
-//            if dictionary.isEmpty {
-//                print("Dictionary is Empty")
-//            }
-//            
-//            DataController.shared.deleteAllKanjiData(context: viewContext)
-//            DataController.shared.deleteAllDictionaryData(context: viewContext)
             
         }
     }
     
     func setJSONFile() {
         let refactorStores = RefactoredStores()
-        JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(kanji: refactorStores.kanjiStore.getAll()), fileName: .kanji)
-        JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(dictionary: refactorStores.dictionaryStore.getAll()), fileName: .dictionary)
+//        JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(kanji: refactorStores.kanjiStore.getAll()), fileName: .kanji)
+//        JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(dictionary: refactorStores.dictionaryStore.getAll()), fileName: .dictionary)
+//        JSON.methoods.saveJSONToFile(JSON.methoods.encodeToJSON(refactorStores.yojijukugoStore.getAll()), fileName: .yojijukugo)
+//        print(refactorStores.giseigoStore.getAll().randomElement())
+        JSON.methoods.saveJSONToFile(JSON.methoods.encodeToJSON(refactorStores.giseigoStore.getAll()), fileName: .giseigo)
     }
     
     func checkCoreData() {

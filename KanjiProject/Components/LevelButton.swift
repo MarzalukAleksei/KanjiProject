@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LevelButton: View {
+    @EnvironmentObject var store: Store
     let levelTitle: Level
     let kanjiArray: [KanjiModel]
     let size: CGSize

@@ -24,7 +24,7 @@ struct KanjiProjectApp: App {
             switch phase {
             case .active: break
             case .background:
-                JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(kanji: store.kanjiStore.getAll()), fileName: .kanji)
+                background()
             case .inactive: break
             @unknown default:
                 break
@@ -44,5 +44,12 @@ struct KanjiProjectApp: App {
                 print("--- \(name)")
             }
         }
+    }
+    
+    func background() {
+//        if let data = JSON.methoods.encodeToJSON(store.kanjiStore.getAll()) {
+        let data = JSON.methoods.encodeToJSON(store.kanjiStore.getAll())
+            JSON.methoods.saveJSONToFile(data, fileName: .kanji)
+//        }
     }
 }

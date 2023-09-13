@@ -26,13 +26,17 @@ struct LearningView: View {
                 LearningFrontSideView(index: kanjiFlow.index,
                                       kanji: kanjiFlow.kanji[currentKanjiIndex],
                                       number: currentKanjiIndex + 1,
-                                      count: kanjiFlow.kanji.count)
+                                      count: kanjiFlow.kanji.count,
+                                      type: kanjiFlow.type)
                     
             }
             .frame(maxHeight: PartsSize.learningViewNavigationBarHeght)
             .onTapGesture {
+                var kanji = kanjiFlow.kanji[currentKanjiIndex]
+                kanji.lastAnswerRight = true
                 withAnimation(Settings.animation) {
                     addIndex()
+                    store.updateKanji(kanji)
                 }
 //                reduceIndex()
             }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct IdiomView: View {
+    @EnvironmentObject var store: Store
+    
     var body: some View {
         VStack {
             
@@ -15,9 +17,21 @@ struct IdiomView: View {
 //                .frame(height: 230)
                 .padding(.bottom, Settings.spacingBetweenIdiomHeaderAndElements)
             
-                Text("TEXT")
+            ScrollView(showsIndicators: false) {
+                ForEach(store.yojijukugoStore.getAll()) { row in
+                    HStack {
+                        Text(row.body)
+                        Text(row.reading)
+                        Spacer()
+                    }
+                    .padding(.horizontal, Settings.padding)
+                }
+            }
                 
                 Spacer()
+            
+            Color.gray.ignoresSafeArea()
+                .modifier(Modifiers.tabBarSize)
         }
     }
 }
@@ -25,5 +39,6 @@ struct IdiomView: View {
 struct IdiomView_Previews: PreviewProvider {
     static var previews: some View {
         IdiomView()
+            .environmentObject(Store())
     }
 }

@@ -12,6 +12,7 @@ struct LearningFrontSideView: View {
     let kanji: KanjiModel
     let number: Int
     let count: Int
+    let type: String
     
     var body: some View {
         GeometryReader { geo in
@@ -24,7 +25,7 @@ struct LearningFrontSideView: View {
                         
                         Spacer()
                         
-                        Text("漢" + "\(index)")
+                        Text(type + "\(index)")
                     }
                     .font(CustomFont.scroll(size: geo.size.height / 8))
                     .padding(.horizontal ,Settings.padding * 1.8)
@@ -47,7 +48,7 @@ struct LearningFrontSideView: View {
 
 struct LearningFrontSideView_Previews: PreviewProvider {
     static var previews: some View {
-        LearningFrontSideView(index: 32, kanji: .MOCK_KANJI, number: 3, count: 20)
+        LearningFrontSideView(index: 32, kanji: .MOCK_KANJI, number: 3, count: 20, type: "漢")
             .frame(width: 380, height: 250)
             .background(Color.black)
             

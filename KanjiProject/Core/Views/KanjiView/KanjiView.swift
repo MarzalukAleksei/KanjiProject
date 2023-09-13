@@ -40,7 +40,7 @@ struct KanjiView: View {
                     }
                     
                     HStack {
-                        CustomToggle(toggle: $toggle, title: ("問", "漢"))
+                        CustomSlider(toggle: $toggle, title: ("問", "漢"))
                             .frame(width: PartsSize.customtoggleSize.width,
                                    height: PartsSize.customtoggleSize.height)
                         Spacer()
@@ -56,7 +56,9 @@ struct KanjiView: View {
                         HStack(spacing: Settings.paddingBetweenElements) {
                             
                             ForEach(Level.allCases.reversed(), id: \.self) { level in
-                                LevelButton(levelTitle: level, kanjiArray: store.kanjiStore.getData(selectedLevel),
+                                let kanjiArray = store.kanjiStore.getData(level)
+                                LevelButton(levelTitle: level,
+                                            kanjiArray: kanjiArray,
                                             size: CGSize(width: PartsSize.levelButtonSize.width,
                                                          height: PartsSize.levelButtonSize.height),
                                             color: selectedLevel == level ? .secondary : .black)
@@ -86,7 +88,7 @@ struct KanjiView: View {
                         
                             ForEach(Array(separate.enumerated()), id: \.element) { (index, array) in
                                 
-                                NavigationLink(value: KanjiFlow(index: index + 1, kanji: array)) {
+                                NavigationLink(value: KanjiFlow(index: index + 1, kanji: array, type: toggle ? "漢" : "問")) {
                                     if !toggle {
                                         KanjiRow(kanji: array, number: index + 1, cellTitle: "問")
                                     } else {
@@ -142,12 +144,6 @@ struct KanjiView: View {
             result.append(array)
         }
         
-        return result
-    }
-    
-    func getKanji(_ level: Level) -> [KanjiModel] {
-        let result = store.kanjiStore.getData(level)
-        print(result.count)
         return result
     }
     
