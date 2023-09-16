@@ -59,7 +59,7 @@ extension String {
         var lastIndex: String.Index {
             text.index(text.startIndex, offsetBy: offSet + 2, limitedBy: text.endIndex) ?? text.startIndex
         }
-        if text.count > 0 {
+        if text.count > 2 {
             
         
         for index in 0..<text.count - 2 {

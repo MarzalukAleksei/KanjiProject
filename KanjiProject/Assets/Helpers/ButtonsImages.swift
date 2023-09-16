@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class ButtonImages {
+class ButtonsImages {
     static var openBook: Image {
         return Image(systemName: "book.fill")
     }
@@ -39,5 +39,13 @@ class ButtonImages {
     
     static var chevronRight: Image {
         Image(systemName: "chevron.forward")
+    }
+    
+    static var settingsImage: Image {
+        Image(systemName: "gearshape")
+    }
+    
+    static var edittingImage: Image {
+        Image(systemName: "chart.bar")
     }
 }

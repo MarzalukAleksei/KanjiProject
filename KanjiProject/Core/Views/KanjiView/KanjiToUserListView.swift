@@ -9,6 +9,7 @@ import SwiftUI
 
 struct KanjiToUserListView: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) var viewContext
     
     let kanji: KanjiModel
     
@@ -36,7 +37,7 @@ struct KanjiToUserListView: View {
                 }
                 
                 Button {
-                    
+                    CoreDataManager.shared.add(kanji: kanji, context: viewContext)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         dismiss()
                     }

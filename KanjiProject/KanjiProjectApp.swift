@@ -16,7 +16,7 @@ struct KanjiProjectApp: App {
     var body: some Scene {
         WindowGroup {
             MainTabView()
-                .environment(\.managedObjectContext, DataController.shared.container.viewContext)
+                .environment(\.managedObjectContext, CoreDataManager.shared.container.viewContext)
                 .environmentObject(store)
                 
         }
@@ -48,8 +48,8 @@ struct KanjiProjectApp: App {
     
     func background() {
 //        if let data = JSON.methoods.encodeToJSON(store.kanjiStore.getAll()) {
-        let data = JSON.methoods.encodeToJSON(store.kanjiStore.getAll())
-            JSON.methoods.saveJSONToFile(data, fileName: .kanji)
+        let data = JSONManager.methoods.encodeToJSON(store.kanjiStore.getAll())
+            JSONManager.methoods.saveJSONToFile(data, fileName: .kanji)
 //        }
     }
 }

@@ -24,7 +24,7 @@ struct DismissButton: View {
 //                    .resizable()
 //                    .frame(width: 30, height: 30)
                 HStack {
-                    ButtonImages.chevronLeft
+                    ButtonsImages.chevronLeft
                         .resizable()
                         .modifier(Modifiers.chevron)
 

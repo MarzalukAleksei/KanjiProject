@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="DictionaryCoreData" representedClassName="DictionaryCoreData" syncable="YES" codeGenerationType="class">
-        <attribute name="body" optional="YES" attributeType="String"/>
-        <attribute name="examples" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
-        <attribute name="number" optional="YES" attributeType="String"/>
-        <attribute name="reading" optional="YES" attributeType="String"/>
-        <attribute name="references" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
-        <attribute name="translate" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
-    </entity>
-    <entity name="Kanji" representedClassName="Kanji" syncable="YES">
-        <attribute name="body" attributeType="String"/>
-        <attribute name="examples" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
-        <attribute name="kun" attributeType="String"/>
-        <attribute name="lastAnswerRight" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="number" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="on" attributeType="String"/>
-        <attribute name="rightAnswers" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="translate" optional="YES" attributeType="String"/>
-        <attribute name="wrongAnswers" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    <entity name="UsersKanji" representedClassName="UsersKanji" syncable="YES" codeGenerationType="class">
+        <attribute name="kanji" attributeType="String" valueTransformerName="" customClassName="KanjiModel"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
 </model>

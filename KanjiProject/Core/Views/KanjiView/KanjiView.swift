@@ -10,17 +10,16 @@ import SwiftUI
 struct KanjiView: View {
     
     @EnvironmentObject var store: Store
-    @State var selectedLevel: Level = .N5
+    @AppStorage("selectedLevel") var selectedLevel: Level = .N5
+    @AppStorage("selectedRow") var selectedRow: Data?
     
-    @FetchRequest(entity: Kanji.entity(),
-                  sortDescriptors: []) private var kanji: FetchedResults<Kanji>
-//    @State var levelsTrim: [Level: [Double]] = [:]
+    @FetchRequest(entity: UsersKanji.entity(),
+                  sortDescriptors: []) private var kanji: FetchedResults<UsersKanji>
     @State var isPresented = false
     @State private var toggle = false
     @Binding var tabBarIsHidden: Bool
     
-    var passingKanji: (index: Int, kanji: [KanjiModel]) = (0, [])
-    
+    @Environment(\.managedObjectContext) var viewContext
     
     var body: some View {
         NavigationStack() {
@@ -82,22 +81,25 @@ struct KanjiView: View {
                 }
                 .padding(.bottom, Settings.paddingBetweenElements)
                 
+                Button("TEST SAVE") {
+                    CoreDataManager.shared.add(kanji: store.kanjiStore.getAll().randomElement()!, context: viewContext)
+                }
+                
                 ScrollView(showsIndicators: false) {
                     LazyVStack(spacing: Settings.paddingBetweenElements) {
                         let separate = separateKanji(store.kanjiStore.getData(selectedLevel))
-                        
+                        let selectedRow = getSelectedRow()
                             ForEach(Array(separate.enumerated()), id: \.element) { (index, array) in
                                 
                                 NavigationLink(value: KanjiFlow(index: index + 1, kanji: array, type: toggle ? "漢" : "問")) {
                                     if !toggle {
-                                        KanjiRow(kanji: array, number: index + 1, cellTitle: "問")
+                                        KanjiRow(kanji: array, number: index + 1, cellTitle: "問", current: isCurrentRow(selectedRow, index))
                                     } else {
-                                        KanjiRow(kanji: array, number: index + 1, cellTitle: "漢")
+                                        KanjiRow(kanji: array, number: index + 1, cellTitle: "漢", current: isCurrentRow(selectedRow, index))
                                     }
                                 }
                                 .buttonStyle(.plain)
                             }
-                        
                     }
                     .padding(.top, Settings.paddingBetweenElements)
                     .padding(.horizontal, Settings.padding)
@@ -126,6 +128,21 @@ struct KanjiView: View {
         //        }
     }
     
+    // строка была выбрана ранее
+    func getSelectedRow() -> SelectedKanjiRow? {
+        guard let data = selectedRow,
+              let result = try? JSONDecoder().decode(SelectedKanjiRow.self, from: data) else { return nil }
+        return result
+    }
+    
+    func isCurrentRow(_ selectedRow: SelectedKanjiRow?, _ index: Int) -> Bool {
+        guard let selectedRow = selectedRow else { return false }
+        if selectedLevel.rawValue == selectedRow.level, selectedRow.row == index + 1 {
+            return true
+        }
+        return false
+    }
+    
     func separateKanji(_ kanjiArray: [KanjiModel]) -> [[KanjiModel]] {
         var result: [[KanjiModel]] = []
         var array: [KanjiModel] = []
@@ -143,30 +160,6 @@ struct KanjiView: View {
         if !array.isEmpty {
             result.append(array)
         }
-        
-        return result
-    }
-    
-    func setTrims(_ level: Level) -> [Double] {
-        
-        if kanji.isEmpty {
-            return [0.0, 0.3, 0.7]
-        }
-        
-        var result: [Double] = []
-        let kanjiArray = Kanji.transformToKanjiModel(kanji: kanji, level)
-        var answers:(rightAnswers: Int, wrongAnswers: Int) = (0, 0)
-        
-        for element in kanjiArray {
-            if element.rightAnwers > element.wrongAnswers {
-                answers.rightAnswers += 1
-            } else if element.wrongAnswers > element.rightAnwers {
-                answers.wrongAnswers += 1
-            }
-        }
-        result.append(Double(answers.rightAnswers / kanjiArray.count))
-        result.append(Double(answers.wrongAnswers / kanjiArray.count))
-        result.append(1 - result[0] - result[1])
         
         return result
     }

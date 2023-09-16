@@ -8,9 +8,9 @@
 import SwiftUI
 
 
-class JSON {
+class JSONManager {
     
-    static let methoods = JSON()
+    static let methoods = JSONManager()
     
     enum FileName: String {
         case kanji = "Kanji"
@@ -29,7 +29,7 @@ class JSON {
         return Data()
     }
     
-    private func decodeToModel<T: Decodable>(_ data: Data) -> T? {
+    func decodeToModel<T: Decodable>(_ data: Data) -> T? {
         do {
             return try JSONDecoder().decode(T.self, from: data)
         } catch {
@@ -68,7 +68,7 @@ class JSON {
         return result
     }
     
-    private func getKanjiFromBundle() -> [KanjiModel] {
+    private func getKanjiFromRootBundle() -> [KanjiModel] {
         guard let url = Bundle.main.url(forResource: FileName.kanji.rawValue, withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let result: [KanjiModel] = decodeToModel(data) else {
@@ -106,7 +106,7 @@ class JSON {
         guard let data = try? Data(contentsOf: url),
               let result: [KanjiModel] = decodeToModel(data) else {
             
-            return getKanjiFromBundle()
+            return getKanjiFromRootBundle()
         }
         
         return result

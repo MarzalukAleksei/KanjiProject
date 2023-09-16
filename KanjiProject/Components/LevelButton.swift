@@ -29,10 +29,18 @@ struct LevelButton: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .frame(width: size.width, height: size.height)
+//                .frame(width: size.width, height: size.height)
             Text("\(levelTitle.rawValue)")
                 .foregroundColor(.white)
                 .font(CustomFont.scroll(size: 35))
+            VStack {
+                Spacer()
+                Text("\(kanjiArray.count)")
+                    .font(.system(size: 8))
+//                    .foregroundColor(.init(red: 139, green: 148, blue: 141))
+                    .foregroundColor(.white)
+                    .padding(.bottom, 15)
+            }
             
             ForEach(0..<3) { index in
                 Circle()
@@ -44,6 +52,7 @@ struct LevelButton: View {
                     .rotationEffect(.degrees(-90))
             }
         }
+        .frame(width: size.width, height: size.height)
         .foregroundColor(color)
     }
 }

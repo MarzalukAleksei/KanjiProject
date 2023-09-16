@@ -15,11 +15,11 @@ final class Store: ObservableObject {
     @Published var giseigo = GiseigoStore()
     
     init() {
-        kanjiStore.updateAll(data: JSON.methoods.getKanji())
-        dictionaryStore.updateAll(data: JSON.methoods.getDictionary())
-        kanaStore.updateAll(data: JSON.methoods.getKana())
-        yojijukugoStore.updateAll(data: JSON.methoods.getYojijukugo())
-        giseigo.updateAll(data: JSON.methoods.getGiseigo())
+        kanjiStore.updateAll(data: JSONManager.methoods.getKanji())
+        dictionaryStore.updateAll(data: JSONManager.methoods.getDictionary())
+        kanaStore.updateAll(data: JSONManager.methoods.getKana())
+        yojijukugoStore.updateAll(data: JSONManager.methoods.getYojijukugo())
+        giseigo.updateAll(data: JSONManager.methoods.getGiseigo())
     }
     
     func updateKanji(_ kanji: KanjiModel) {

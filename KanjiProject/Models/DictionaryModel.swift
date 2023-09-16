@@ -19,31 +19,8 @@ struct DictionaryModel: Codable, Hashable {
 
 extension DictionaryModel {
     
-    static var dictionary: [DictionaryModel] = [.MOCK_DICTIONARY, .MOCK_DICTIONARY, .MOCK_DICTIONARY,
-                                                .MOCK_DICTIONARY, .MOCK_DICTIONARY, .MOCK_DICTIONARY]
-    
-    static func transform(_ dictionary: FetchedResults<DictionaryCoreData>) -> [DictionaryModel] {
-        let result = dictionary.map { data in
-            DictionaryModel(body: data.body ?? "",
-                            number: data.number ?? "",
-                            reading: data.reading ?? "",
-                            translate: data.translate ?? [])
-        }
-        
-        return result
-    }
-    
-    static func transform(_ dictionary: [FetchedResults<DictionaryCoreData>.Element]) -> [DictionaryModel] {
-        let result = dictionary.map { data in
-            DictionaryModel(body: data.body ?? "",
-                            number: data.number ?? "",
-                            reading: data.reading ?? "",
-                            translate: data.translate ?? [],
-                            examples: data.examples ?? [])
-        }
-        
-        return result
-    }
+//    static var dictionary: [DictionaryModel] = [.MOCK_DICTIONARY, .MOCK_DICTIONARY, .MOCK_DICTIONARY,
+//                                                .MOCK_DICTIONARY, .MOCK_DICTIONARY, .MOCK_DICTIONARY]
     
     static let MOCK_DICTIONARY: DictionaryModel = .init(body: "相生",
                                                         number: "007-06-37",

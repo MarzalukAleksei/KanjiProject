@@ -29,4 +29,6 @@ class PartsSize {
     static let learningCellHeight: CGFloat = 60
     
     static let wordDetailViewNavigationBarHight: CGFloat = 60
+    
+    static let edittingButtonSise = CGSize(width: 20, height: 17) // из-за ротации ширина - это высота и наоборот
 }

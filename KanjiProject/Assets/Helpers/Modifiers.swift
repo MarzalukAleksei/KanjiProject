@@ -23,6 +23,8 @@ class Modifiers {
     static let userButton = UserListButtonModifier()
     
     static let chevron = NavigationChevronModifier()
+    
+    static let edittingButton = EdittingButtonModifier()
 }
 
 struct TabBarsizeModifier: ViewModifier {
@@ -95,5 +97,32 @@ struct NavigationChevronModifier: ViewModifier {
             .frame(width: PartsSize.dismissButtonShevronSize.width,
                    height: PartsSize.dismissButtonShevronSize.height)
             .padding(Settings.padding)
+    }
+}
+
+struct EdittingButtonModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: PartsSize.edittingButtonSise.width, height: PartsSize.edittingButtonSise.height)
+            .rotationEffect(Angle(degrees: -90))
+    }
+}
+
+struct NavigationBarColor: ViewModifier {
+    init(backgroundColor: UIColor?, tintColor: UIColor?) {
+        let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.configureWithOpaqueBackground()
+        coloredAppearance.backgroundColor = backgroundColor
+        coloredAppearance.titleTextAttributes = [.foregroundColor: tintColor ?? UIColor.white]
+        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: tintColor ?? UIColor.white]
+
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().tintColor = tintColor ?? UIColor.white
+    }
+
+    func body(content: Content) -> some View {
+        content
     }
 }

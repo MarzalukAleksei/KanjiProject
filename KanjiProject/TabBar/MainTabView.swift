@@ -18,10 +18,9 @@ struct MainTabView: View {
     
     @State var currentTab: TabBarElements = .kanji
     @Environment(\.managedObjectContext) var viewContext
-    @FetchRequest(entity: Kanji.entity(),
-                  sortDescriptors: []) var kanji: FetchedResults<Kanji>
-    @FetchRequest(entity: DictionaryCoreData.entity(),
-                  sortDescriptors: []) var dictionary: FetchedResults<DictionaryCoreData>
+    @FetchRequest(sortDescriptors: []) var kanji: FetchedResults<UsersKanji>
+//    @FetchRequest(entity: DictionaryCoreData.entity(),
+//                  sortDescriptors: []) var dictionary: FetchedResults<DictionaryCoreData>
     @State var tabBarIsHidden = false
     
     @EnvironmentObject var store: Store
@@ -38,7 +37,7 @@ struct MainTabView: View {
                     .tag(TabBarElements.kanji)
                 IdiomView()
                     .tag(TabBarElements.yojijukugo)
-                Text("card")
+                UserListView()
                     .tag(TabBarElements.card)
 //                DictionaryView()
 //                    .tag(TabBarElements.dictionary)
@@ -66,6 +65,11 @@ struct MainTabView: View {
             print("kana - ", store.kanaStore.getAll().count)
             print("giseigo - ", store.giseigo.getAll().count)
             
+            
+//            CoreDataManager.shared.deleteAllUsersKanjiData(context: viewContext)
+            
+            
+            
 //            setJSONFile()
             
         }
@@ -77,45 +81,45 @@ struct MainTabView: View {
 //        JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(dictionary: refactorStores.dictionaryStore.getAll()), fileName: .dictionary)
 //        JSON.methoods.saveJSONToFile(JSON.methoods.encodeToJSON(refactorStores.yojijukugoStore.getAll()), fileName: .yojijukugo)
 //        print(refactorStores.giseigoStore.getAll().randomElement())
-        JSON.methoods.saveJSONToFile(JSON.methoods.encodeToJSON(refactorStores.giseigoStore.getAll()), fileName: .giseigo)
+        JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.giseigoStore.getAll()), fileName: .giseigo)
     }
     
-    func checkCoreData() {
-        if kanji.isEmpty {
-            print("Start Loading File")
-            setCoreDataKanji()
-            print("End Loading File")
-        } else {
-            print("CoreData have \(kanji.count) Elements")
-//            print("Store have \(stores.kanjistore.getAll().count) Elements")
-        }
-        
-        if dictionary.isEmpty {
-            setCoreDataDictionary()
-        } else {
-            print("CoreData have \(dictionary.count) Elements")
-//            print("Store have \(Stores().dictionaryStore.getAll().count) Elements")
-        }
-    }
+//    func checkCoreData() {
+//        if kanji.isEmpty {
+//            print("Start Loading File")
+//            setCoreDataKanji()
+//            print("End Loading File")
+//        } else {
+//            print("CoreData have \(kanji.count) Elements")
+////            print("Store have \(stores.kanjistore.getAll().count) Elements")
+//        }
+//
+//        if dictionary.isEmpty {
+//            setCoreDataDictionary()
+//        } else {
+//            print("CoreData have \(dictionary.count) Elements")
+////            print("Store have \(Stores().dictionaryStore.getAll().count) Elements")
+//        }
+//    }
     
-    func setCoreDataDictionary() {
-        let stores = RefactoredStores()
-
-        for word in stores.dictionaryStore.getAll().enumerated() {
-            DataController.shared.add(dictionary: word.element, context: viewContext)
-            print("Now \(word.offset), Remain \(stores.dictionaryStore.getAll().count - word.offset)")
-        }
-    }
-
-    func setCoreDataKanji() {
-        let stores = RefactoredStores()
-
-        for storedElement in stores.kanjiStore.getAll().enumerated() {
-//            DataController().add(kanji: storedElement.element, context: viewContext)
-            DataController.shared.add(kanji: storedElement.element, context: viewContext)
-            print("Now \(storedElement.offset)")
-        }
-    }
+//    func setCoreDataDictionary() {
+//        let stores = RefactoredStores()
+//
+//        for word in stores.dictionaryStore.getAll().enumerated() {
+//            DataController.shared.add(dictionary: word.element, context: viewContext)
+//            print("Now \(word.offset), Remain \(stores.dictionaryStore.getAll().count - word.offset)")
+//        }
+//    }
+//
+//    func setCoreDataKanji() {
+//        let stores = RefactoredStores()
+//
+//        for storedElement in stores.kanjiStore.getAll().enumerated() {
+////            DataController().add(kanji: storedElement.element, context: viewContext)
+//            DataController.shared.add(kanji: storedElement.element, context: viewContext)
+//            print("Now \(storedElement.offset)")
+//        }
+//    }
 }
 
 private struct CustomImage: View {

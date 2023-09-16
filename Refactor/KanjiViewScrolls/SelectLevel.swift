@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SelectLevel: View {
 //    @EnvironmentObject var stores: Stores
-    @FetchRequest(entity: Kanji.entity(),
-                  sortDescriptors: []) var kanji: FetchedResults<Kanji>
+//    @FetchRequest(entity: Kanji.entity(),
+//                  sortDescriptors: []) var kanji: FetchedResults<Kanji>
     
     var body: some View {
         NavigationStack {
@@ -20,18 +20,18 @@ struct SelectLevel: View {
                     
                 }
             }
-            .navigationDestination(for: Level.self) { level in
-                let array = data(level: level)
-                LearningCardView(currentLearning: array, curentKanji: array.first ?? .MOCK_KANJI)
-            }
+//            .navigationDestination(for: Level.self) { level in
+//                let array = data(level: level)
+//                LearningCardView(currentLearning: array, curentKanji: array.first ?? .MOCK_KANJI)
+//            }
         }
     }
     
-    func data(level: Level) -> [KanjiModel] {
-        let result = Kanji.transformToKanjiModel(kanji: kanji, level)
-        
-        return result
-    }
+//    func data(level: Level) -> [KanjiModel] {
+//        let result = Kanji.transformToKanjiModel(kanji: kanji, level)
+//
+//        return result
+//    }
 }
 
 struct SelectLevel_Previews: PreviewProvider {

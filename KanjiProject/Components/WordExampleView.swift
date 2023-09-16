@@ -19,7 +19,7 @@ struct WordExampleView: View {
                 Spacer()
                 
                 if !text.textAndLinks().isEmpty {
-                    ButtonImages.chevronRight
+                    ButtonsImages.chevronRight
                         .padding(Settings.paddingBetweenElements)
                         .opacity(Settings.opacity)
                 }

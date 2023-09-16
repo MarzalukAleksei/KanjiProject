@@ -39,25 +39,25 @@ struct BackgroundView: View {
         let element = array.randomElement()
         
         switch element {
-        case is KanjiModel:
-            guard let element = element as? KanjiModel else { return "" }
-            return element.body
-        case is HiraganaModel:
-            guard var element = element as? HiraganaModel else { return "" }
-            while element.kana.count > 1 {
-                guard let value = array.randomElement() as? HiraganaModel else { return "H" }
-                element = value
-                
-            }
-            return element.kana
-        case is KatakanaModel:
-            guard var element = element as? KatakanaModel else { return "" }
-            while element.kana.count > 1 {
-                guard let value = array.randomElement() as? KatakanaModel else { return "K" }
-                element = value
-                
-            }
-            return element.kana
+//        case is KanjiModel:
+//            guard let element = element as? KanjiModel else { return "" }
+//            return element.body
+//        case is HiraganaModel:
+//            guard var element = element as? HiraganaModel else { return "" }
+//            while element.kana.count > 1 {
+//                guard let value = array.randomElement() as? HiraganaModel else { return "H" }
+//                element = value
+//
+//            }
+//            return element.kana
+//        case is KatakanaModel:
+//            guard var element = element as? KatakanaModel else { return "" }
+//            while element.kana.count > 1 {
+//                guard let value = array.randomElement() as? KatakanaModel else { return "K" }
+//                element = value
+//
+//            }
+//            return element.kana
         case _:
             return "X"
         }

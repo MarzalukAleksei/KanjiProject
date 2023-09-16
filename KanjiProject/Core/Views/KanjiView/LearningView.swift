@@ -9,11 +9,12 @@ import SwiftUI
 
 struct LearningView: View {
     
+    @EnvironmentObject var store: Store
+    @AppStorage("selectedRow") var selectedRow: Data?
+    
     @Binding var tabBarIsHidden: Bool
     var kanjiFlow: KanjiFlow
     @State private var currentKanjiIndex = 0
-//    @State var index = 0
-    @EnvironmentObject var store: Store
     
     var body: some View {
         VStack {
@@ -81,6 +82,7 @@ struct LearningView: View {
         }
         .onAppear {
             tabBarIsHidden = true
+            selectedRow = encodeData(kanjiFlow.kanji, row: kanjiFlow.index)
         }
         .navigationBarBackButtonHidden(true)
 //        .onDisappear {
@@ -90,6 +92,12 @@ struct LearningView: View {
         .navigationDestination(for: DictionaryModel.self) { word in
             WordDetailView(word: word)
         }
+    }
+    
+    func encodeData(_ kanji: [KanjiModel], row: Int) -> Data {
+        guard let kanji = kanji.first,
+              let result = try? JSONEncoder().encode(SelectedKanjiRow(level: kanji.level, row: kanjiFlow.index)) else { return Data() }
+        return result
     }
     
     func addIndex() {
