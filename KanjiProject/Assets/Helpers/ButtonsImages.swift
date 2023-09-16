@@ -48,4 +48,8 @@ class ButtonsImages {
     static var edittingImage: Image {
         Image(systemName: "chart.bar")
     }
+    
+    static var trashImage: Image {
+        Image(systemName: "trash")
+    }
 }

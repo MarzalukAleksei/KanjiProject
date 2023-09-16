@@ -26,8 +26,8 @@ struct KanjiView: View {
             VStack(spacing: 0) {
                 CustomNavigationBarView(title: "漢字を勉強しよう",
                                         corners: .bottomLeft,
-                                        cornerRadius: PartsSize.navigationCornerRadius,
-                                        heigh: PartsSize.customNavigationBarHeight)
+                                        cornerRadius: ElementSize.navigationCornerRadius,
+                                        heigh: ElementSize.customNavigationBarHeight)
                 ZStack {
                     HStack {
                         Rectangle()
@@ -40,8 +40,8 @@ struct KanjiView: View {
                     
                     HStack {
                         CustomSlider(toggle: $toggle, title: ("問", "漢"))
-                            .frame(width: PartsSize.customtoggleSize.width,
-                                   height: PartsSize.customtoggleSize.height)
+                            .frame(width: ElementSize.customtoggleSize.width,
+                                   height: ElementSize.customtoggleSize.height)
                         Spacer()
                     }
                     .padding(.leading, Settings.padding)
@@ -58,8 +58,8 @@ struct KanjiView: View {
                                 let kanjiArray = store.kanjiStore.getData(level)
                                 LevelButton(levelTitle: level,
                                             kanjiArray: kanjiArray,
-                                            size: CGSize(width: PartsSize.levelButtonSize.width,
-                                                         height: PartsSize.levelButtonSize.height),
+                                            size: CGSize(width: ElementSize.levelButtonSize.width,
+                                                         height: ElementSize.levelButtonSize.height),
                                             color: selectedLevel == level ? .secondary : .black)
                                 .onTapGesture {
                                     withAnimation(Settings.animation) {

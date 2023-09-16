@@ -25,6 +25,8 @@ class Modifiers {
     static let chevron = NavigationChevronModifier()
     
     static let edittingButton = EdittingButtonModifier()
+    
+    static let trashButton = TrashButtonModifier()
 }
 
 struct TabBarsizeModifier: ViewModifier {
@@ -64,7 +66,7 @@ struct LearningNavigarionBarRectModifier: ViewModifier {
 struct LearningCellModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .frame(minHeight: PartsSize.learningCellHeight)
+            .frame(minHeight: ElementSize.learningCellHeight)
             .padding(1)
     }
 }
@@ -73,8 +75,8 @@ struct RoundedRectWithBlackPartModifier: ViewModifier {
     let corner: UIRectCorner
     func body(content: Content) -> some View {
         content
-            .frame(maxWidth: .infinity, maxHeight: PartsSize.customtoggleSize.height + (Settings.padding * 2))
-            .clipShape(PartialRoundedRectangle(cornerRadius: PartsSize.navigationCornerRadius, corners: corner))
+            .frame(maxWidth: .infinity, maxHeight: ElementSize.customtoggleSize.height + (Settings.padding * 2))
+            .clipShape(PartialRoundedRectangle(cornerRadius: ElementSize.navigationCornerRadius, corners: corner))
             .background(Color.black)
             .foregroundColor(.white)
     }
@@ -83,7 +85,7 @@ struct RoundedRectWithBlackPartModifier: ViewModifier {
 struct UserListButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .frame(maxWidth: .infinity, maxHeight: PartsSize.learningCellHeight)
+            .frame(maxWidth: .infinity, maxHeight: ElementSize.learningCellHeight)
             .foregroundColor(.white)
             .background(Color.black)
             .clipShape(RoundedRectangle(cornerRadius: Settings.dinamicResaiseblePartsCornerRadius))
@@ -94,8 +96,8 @@ struct UserListButtonModifier: ViewModifier {
 struct NavigationChevronModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .frame(width: PartsSize.dismissButtonShevronSize.width,
-                   height: PartsSize.dismissButtonShevronSize.height)
+            .frame(width: ElementSize.dismissButtonShevronSize.width,
+                   height: ElementSize.dismissButtonShevronSize.height)
             .padding(Settings.padding)
     }
 }
@@ -103,8 +105,15 @@ struct NavigationChevronModifier: ViewModifier {
 struct EdittingButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .frame(width: PartsSize.edittingButtonSise.width, height: PartsSize.edittingButtonSise.height)
             .rotationEffect(Angle(degrees: -90))
+            .frame(width: ElementSize.edittingButtonSise.height, height: ElementSize.edittingButtonSise.width) // из-за ротации ширина - это высота и наоборот
+    }
+}
+
+struct TrashButtonModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: ElementSize.edittingButtonSise.width, height: ElementSize.edittingButtonSise.height)
     }
 }
 

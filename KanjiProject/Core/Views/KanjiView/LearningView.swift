@@ -22,7 +22,7 @@ struct LearningView: View {
             ZStack {
                 CustomNavigationBarView(corners: [.bottomLeft, .bottomRight],
                                         cornerRadius: Settings.learningViewCornerRadius,
-                                        heigh: PartsSize.learningViewNavigationBarHeght)
+                                        heigh: ElementSize.learningViewNavigationBarHeght)
                 
                 LearningFrontSideView(index: kanjiFlow.index,
                                       kanji: kanjiFlow.kanji[currentKanjiIndex],
@@ -31,7 +31,7 @@ struct LearningView: View {
                                       type: kanjiFlow.type)
                     
             }
-            .frame(maxHeight: PartsSize.learningViewNavigationBarHeght)
+            .frame(maxHeight: ElementSize.learningViewNavigationBarHeght)
             .onTapGesture {
                 var kanji = kanjiFlow.kanji[currentKanjiIndex]
                 kanji.lastAnswerRight = true

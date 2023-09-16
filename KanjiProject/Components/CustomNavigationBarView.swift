@@ -33,7 +33,7 @@ struct CustomNavigationBarView: View {
 struct CustomNavigationBarView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            CustomNavigationBarView(title: "Preview", corners: .bottomLeft, cornerRadius: PartsSize.navigationCornerRadius, heigh: PartsSize.customNavigationBarHeight)
+            CustomNavigationBarView(title: "Preview", corners: .bottomLeft, cornerRadius: ElementSize.navigationCornerRadius, heigh: ElementSize.customNavigationBarHeight)
             Spacer()
         }
         

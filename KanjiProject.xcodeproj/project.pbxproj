@@ -31,10 +31,8 @@
 		AF1EB0682A977E3D00850A3B /* Kana.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1EB0672A977E3D00850A3B /* Kana.json */; };
 		AF1EB06A2A98E12A00850A3B /* KanjiToUserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB0692A98E12A00850A3B /* KanjiToUserListView.swift */; };
 		AF1EB06C2A98E97800850A3B /* Kanji.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1EB06B2A98E97800850A3B /* Kanji.json */; };
-		AF1EB06E2A98F35500850A3B /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB06D2A98F35500850A3B /* UserDataModel.swift */; };
 		AF1EB0782A994DDD00850A3B /* Dictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = AF1EB0772A994DDD00850A3B /* Dictionary.json */; };
 		AF1EB07A2A99693200850A3B /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB0792A99693200850A3B /* String + Extensions.swift */; };
-		AF30EAF829E9F99800E5B7A9 /* KatakanaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EAF729E9F99800E5B7A9 /* KatakanaModel.swift */; };
 		AF30EAFE29E9FE1C00E5B7A9 /* ZeroGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF30EAFD29E9FE1C00E5B7A9 /* ZeroGothic.otf */; };
 		AF30EB0029EAB79900E5B7A9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF30EAFF29EAB79900E5B7A9 /* Images.xcassets */; };
 		AF30EB0229EAB7DF00E5B7A9 /* OpenScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EB0129EAB7DF00E5B7A9 /* OpenScrollView.swift */; };
@@ -43,7 +41,7 @@
 		AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */; };
 		AF3A72B82A7D1C3000A5513C /* ScrollPartsModifires.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B72A7D1C3000A5513C /* ScrollPartsModifires.swift */; };
 		AF3A72BA2A7D4AD500A5513C /* CloseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B92A7D4AD500A5513C /* CloseScrollView.swift */; };
-		AF3A72BC2A7E4AC500A5513C /* PartsSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72BB2A7E4AC500A5513C /* PartsSize.swift */; };
+		AF3A72BC2A7E4AC500A5513C /* ElementSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72BB2A7E4AC500A5513C /* ElementSize.swift */; };
 		AF3A72C22A80512800A5513C /* PartialRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */; };
 		AF4F2A9C2AB1C09C00F38EE9 /* Giseigo.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF4F2A9B2AB1C09C00F38EE9 /* Giseigo.csv */; };
 		AF4F2A9E2AB1C0EA00F38EE9 /* GiseigoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F2A9D2AB1C0EA00F38EE9 /* GiseigoMapper.swift */; };
@@ -120,10 +118,8 @@
 		AF1EB0672A977E3D00850A3B /* Kana.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Kana.json; sourceTree = "<group>"; };
 		AF1EB0692A98E12A00850A3B /* KanjiToUserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiToUserListView.swift; sourceTree = "<group>"; };
 		AF1EB06B2A98E97800850A3B /* Kanji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Kanji.json; sourceTree = "<group>"; };
-		AF1EB06D2A98F35500850A3B /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		AF1EB0772A994DDD00850A3B /* Dictionary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Dictionary.json; sourceTree = "<group>"; };
 		AF1EB0792A99693200850A3B /* String + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
-		AF30EAF729E9F99800E5B7A9 /* KatakanaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatakanaModel.swift; sourceTree = "<group>"; };
 		AF30EAFD29E9FE1C00E5B7A9 /* ZeroGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ZeroGothic.otf; sourceTree = "<group>"; };
 		AF30EAFF29EAB79900E5B7A9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AF30EB0129EAB7DF00E5B7A9 /* OpenScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScrollView.swift; sourceTree = "<group>"; };
@@ -132,7 +128,7 @@
 		AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupView.swift; sourceTree = "<group>"; };
 		AF3A72B72A7D1C3000A5513C /* ScrollPartsModifires.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPartsModifires.swift; sourceTree = "<group>"; };
 		AF3A72B92A7D4AD500A5513C /* CloseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseScrollView.swift; sourceTree = "<group>"; };
-		AF3A72BB2A7E4AC500A5513C /* PartsSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsSize.swift; sourceTree = "<group>"; };
+		AF3A72BB2A7E4AC500A5513C /* ElementSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementSize.swift; sourceTree = "<group>"; };
 		AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialRoundedRectangle.swift; sourceTree = "<group>"; };
 		AF4F2A9B2AB1C09C00F38EE9 /* Giseigo.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Giseigo.csv; sourceTree = "<group>"; };
 		AF4F2A9D2AB1C0EA00F38EE9 /* GiseigoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiseigoMapper.swift; sourceTree = "<group>"; };
@@ -375,10 +371,8 @@
 				AF17F9462A449B1700D5631D /* DictionaryModel.swift */,
 				AFAF80ED29D9CEBF002B9921 /* KanjiModel.swift */,
 				AF1EB0632A97760C00850A3B /* KanaModel.swift */,
-				AF30EAF729E9F99800E5B7A9 /* KatakanaModel.swift */,
 				AF30EB1029EB0A0C00E5B7A9 /* Level.swift */,
 				AF960B482A85734100A33373 /* KanjiFlow.swift */,
-				AF1EB06D2A98F35500850A3B /* UserDataModel.swift */,
 				AF4F2A9F2AB1C13400F38EE9 /* GiseigoModel.swift */,
 				AF5600762AA46C9400F0123C /* YojijukugoModel.swift */,
 				AFF528362AB2F71200CC5453 /* SelectedKanjiListRow.swift */,
@@ -465,7 +459,7 @@
 				AFBA6FF829F3640F008E11BB /* CustomFonts.swift */,
 				AF69CE702A001739009C7B92 /* ButtonsImages.swift */,
 				AF960B462A8563C200A33373 /* Modifiers.swift */,
-				AF3A72BB2A7E4AC500A5513C /* PartsSize.swift */,
+				AF3A72BB2A7E4AC500A5513C /* ElementSize.swift */,
 				AFFC08C32A82A6840043B741 /* Settings.swift */,
 				AF1EB0792A99693200850A3B /* String + Extensions.swift */,
 				AFEF74482AB5C6B4002AB67D /* View + Extension.swift */,
@@ -603,7 +597,6 @@
 				AF4F2A9E2AB1C0EA00F38EE9 /* GiseigoMapper.swift in Sources */,
 				AF17F9492A44A1C600D5631D /* DictionaryMapper.swift in Sources */,
 				AFFC08C22A829E3E0043B741 /* KanjiRow.swift in Sources */,
-				AF1EB06E2A98F35500850A3B /* UserDataModel.swift in Sources */,
 				AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */,
 				AF5600752AA46C2500F0123C /* YojijukugoMapper.swift in Sources */,
 				AF0070962A9DC1FE001A4084 /* IdiomViewHeader.swift in Sources */,
@@ -648,7 +641,6 @@
 				AF69CE712A001739009C7B92 /* ButtonsImages.swift in Sources */,
 				AF960B432A855DD000A33373 /* LearningView.swift in Sources */,
 				AFAF80F429D9DCD6002B9921 /* FileManage.swift in Sources */,
-				AF30EAF829E9F99800E5B7A9 /* KatakanaModel.swift in Sources */,
 				AF4F2AA02AB1C13400F38EE9 /* GiseigoModel.swift in Sources */,
 				AF3A72BA2A7D4AD500A5513C /* CloseScrollView.swift in Sources */,
 				AFF528372AB2F71200CC5453 /* SelectedKanjiListRow.swift in Sources */,
@@ -656,7 +648,7 @@
 				AFC3CB9E2A85B78500DD59D4 /* DismissButton.swift in Sources */,
 				AF0070882A9B65D9001A4084 /* WordExampleView.swift in Sources */,
 				AFAF80FE29D9E59C002B9921 /* IFileMapper.swift in Sources */,
-				AF3A72BC2A7E4AC500A5513C /* PartsSize.swift in Sources */,
+				AF3A72BC2A7E4AC500A5513C /* ElementSize.swift in Sources */,
 				AF4F2AA22AB1C67000F38EE9 /* GiseigoStore.swift in Sources */,
 				AFFC08C62A82CE4D0043B741 /* ProgressIndicatorLine.swift in Sources */,
 				AF6A2DF229E5AF5100D7C1A9 /* BackgroundView.swift in Sources */,

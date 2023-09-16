@@ -12,7 +12,7 @@ struct ScrollMainWoodPartModifier: ViewModifier {
     let corners: UIRectCorner
     func body(content: Content) -> some View {
         content
-            .frame(width: width / 2.5, height: PartsSize.woodPartHeight)
+            .frame(width: width / 2.5, height: ElementSize.woodPartHeight)
             .clipShape(PartialRoundedRectangle(cornerRadius: 5, corners: corners))
     }
 }
@@ -30,7 +30,7 @@ struct ScrollLittleWoodPartModifier: ViewModifier {
     let corners: UIRectCorner
     func body(content: Content) -> some View {
         content
-            .frame(width: PartsSize.litleWoodPartSize.width, height: PartsSize.litleWoodPartSize.height)
+            .frame(width: ElementSize.litleWoodPartSize.width, height: ElementSize.litleWoodPartSize.height)
             .clipShape(PartialRoundedRectangle(cornerRadius: 2.5, corners: corners))
     }
 }
@@ -61,11 +61,11 @@ struct CloseScrollMainWoodPartModifier: ViewModifier {
     let rotaion: CGFloat
     func body(content: Content) -> some View {
         content
-            .frame(width: width / 2.5, height: PartsSize.woodPartHeight)
+            .frame(width: width / 2.5, height: ElementSize.woodPartHeight)
             .clipShape(PartialRoundedRectangle(cornerRadius: width / 9,
                                                corners: [.topLeft,
                                                          .topRight]).rotation(.degrees(rotaion)))
             .rotationEffect(.degrees(90))
-            .frame(width: PartsSize.woodPartHeight, height: width / 2.5)
+            .frame(width: ElementSize.woodPartHeight, height: width / 2.5)
     }
 }

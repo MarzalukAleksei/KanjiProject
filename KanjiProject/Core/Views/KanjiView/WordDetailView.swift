@@ -17,8 +17,8 @@ struct WordDetailView: View {
         VStack(spacing: 0) {
             CustomNavigationBarView(title: word.body,
                                     corners: .bottomRight,
-                                    cornerRadius: PartsSize.navigationCornerRadius,
-                                    heigh: PartsSize.wordDetailViewNavigationBarHight)
+                                    cornerRadius: ElementSize.navigationCornerRadius,
+                                    heigh: ElementSize.wordDetailViewNavigationBarHight)
             ZStack {
                 Rectangle()
                     .modifier(Modifiers.roundedRectTopLeftBlackPart)
@@ -41,7 +41,7 @@ struct WordDetailView: View {
                             selectedKanji = kanji
                         }
                     }
-                    .frame(minHeight: PartsSize.learningCellHeight)
+                    .frame(minHeight: ElementSize.learningCellHeight)
                     .modifier(Modifiers.learningCell)
                     
                     // ПЕРЕВОДЫ

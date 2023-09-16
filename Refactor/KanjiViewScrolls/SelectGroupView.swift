@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectGroupView: View {
     let moc = Array(1...7)
-    let padding = PartsSize.woodPartHeight * 2
+    let padding = ElementSize.woodPartHeight * 2
     var body: some View {
         GeometryReader { geo in
             ScrollView() {

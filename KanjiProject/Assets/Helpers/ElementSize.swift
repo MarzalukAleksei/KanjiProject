@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class PartsSize {
+class ElementSize {
     static let woodPartHeight: CGFloat = 12
     
     static let litleWoodPartSize: (width: CGFloat, height: CGFloat) = (7, 8)
@@ -30,5 +30,6 @@ class PartsSize {
     
     static let wordDetailViewNavigationBarHight: CGFloat = 60
     
-    static let edittingButtonSise = CGSize(width: 20, height: 17) // из-за ротации ширина - это высота и наоборот
+    static let edittingButtonSise = CGSize(width: 17, height: 20) 
+    
 }

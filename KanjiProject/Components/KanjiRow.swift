@@ -17,7 +17,7 @@ struct KanjiRow: View {
         HStack(spacing: -10) {
             if current {
                 Rectangle()
-                    .frame(width: 20, height: PartsSize.customRowRectangleSize + 2)
+                    .frame(width: 20, height: ElementSize.customRowRectangleSize + 2)
 //                    .foregroundColor(.gra)
                     .opacity(Settings.opacity)
                     .clipShape(PartialRoundedRectangle(cornerRadius: 15, corners: [.topLeft, .bottomLeft]))
@@ -28,7 +28,7 @@ struct KanjiRow: View {
                 HStack {
                     ZStack {
                         Rectangle()
-                            .frame(width: PartsSize.customRowRectangleSize)
+                            .frame(width: ElementSize.customRowRectangleSize)
                             .clipShape(PartialRoundedRectangle(cornerRadius: 15,
                                                                corners: [.bottomLeft, .topLeft]))
                         HStack(spacing: 1) {
@@ -58,7 +58,7 @@ struct KanjiRow: View {
                 }
     //            .frame(maxWidth: .infinity)
             }
-            .frame(height: PartsSize.customRowRectangleSize)
+            .frame(height: ElementSize.customRowRectangleSize)
         .shadow(radius: 2.5, x: 0, y: 5)
         }
         

@@ -97,6 +97,19 @@ class CoreDataManager: ObservableObject {
         }
     }
     
+    func delete(_ kanji: KanjiModel, _ usersKanji: FetchedResults<UsersKanji>, context: NSManagedObjectContext) {
+        if let object = usersKanji.filter({ kanji == CoreDataManager.shared.decodeKanjiModel(coreDataString: $0.kanji) }).first {
+            context.delete(object)
+        }
+        
+        
+        do {
+            try context.save()
+        } catch {
+            print("Delete Error")
+        }
+    }
+    
 //    func deleteAllKanjiData(context: NSManagedObjectContext) {
 //        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Kanji.fetchRequest()
 //        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
