@@ -89,7 +89,8 @@ struct LearningCell: View {
 //                    }
                     
                     if !dictionary.translate.isEmpty {
-                        let translate = getExample(examples: dictionary.translate)
+//                        let translate = getExample(examples: dictionary.translate)
+                        let translate = DictionaryModel.getFirstExample(word: dictionary)
                         
                         JoinedTextView(text: translate)
                     }
@@ -108,26 +109,26 @@ struct LearningCell: View {
         }
     }
     
-    func getExample(examples: [String]) -> String {
-        var result = ""
-        var examples = examples
-        for row in examples where !dictionary.examples.isEmpty {
-            let row = row
-            if row.count <= 3 {
-                continue
-            } else {
-                result = row
-                break
-            }
-        }
-        result = result.removeNumberExampleRow()
-        if result.count < 3, examples.count > 1 {
-            examples.removeFirst()
-            result = getExample(examples: examples)
-        }
-        
-        return result
-    }
+//    func getExample(examples: [String]) -> String {
+//        var result = ""
+//        var examples = examples
+//        for row in examples where !dictionary.examples.isEmpty {
+//            let row = row
+//            if row.count <= 3 {
+//                continue
+//            } else {
+//                result = row
+//                break
+//            }
+//        }
+//        result = result.removeNumberExampleRow()
+//        if result.count < 3, examples.count > 1 {
+//            examples.removeFirst()
+//            result = getExample(examples: examples)
+//        }
+//        
+//        return result
+//    }
     
     func separate() -> [String] {
         switch type {

@@ -20,8 +20,8 @@ struct TabBarButton: View {
             } label: {
                 image(tab: tab, currentTab: currentTab)
                     .resizable()
-                    .frame(width: Settings.tabBarImageSize.width,
-                           height: Settings.tabBarImageSize.height)
+                    .frame(width: Settings.tabBarButtonImageSize.width,
+                           height: Settings.tabBarButtonImageSize.height)
 //                CustomImage()
                 if tab == currentTab {
                     Text(tab.rawValue)
@@ -45,9 +45,10 @@ struct TabBarButton: View {
         case .yojijukugo:
             return ButtonsImages.brain
         case .card:
-            return ButtonsImages.card
-        case .dictionary:
-            return tab == currentTab ? ButtonsImages.openBook : ButtonsImages.closeBook
+            return ButtonsImages.list
+        case .search:
+//            return tab == currentTab ? ButtonsImages.openBook : ButtonsImages.closeBook
+            return ButtonsImages.magnifyingglass
         }
     }
 }

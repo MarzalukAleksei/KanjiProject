@@ -25,6 +25,7 @@ extension String {
             array = newText.components(separatedBy: "###\(index)")
             
             result.append((isText: true, text: array.removeFirst()))
+            newText = array.first ?? ""
             
             let afterIndex = text.index(after: links[index].leftBracket.lastIndex)
             let beforeIndex = text.index(before: links[index].rightBracket.startIndex)

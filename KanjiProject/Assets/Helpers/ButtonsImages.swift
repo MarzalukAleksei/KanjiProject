@@ -52,4 +52,12 @@ class ButtonsImages {
     static var trashImage: Image {
         Image(systemName: "trash")
     }
+    
+    static var magnifyingglass: Image {
+        Image(systemName: "magnifyingglass")
+    }
+    
+    static var list: Image {
+        Image(systemName: "square.fill.text.grid.1x2")
+    }
 }

@@ -64,6 +64,7 @@ struct LearningView: View {
 //                            LearningCell(title: "Примеры:", type: .examples, dictionary: exp)
                             LearningCell(title: "Примеры", type: .examples, dictionary: exp, chevronForwardIsHidden: false)
                                 .modifier(Modifiers.learningCell)
+                                .multilineTextAlignment(.leading)
                                 
                         }
                         

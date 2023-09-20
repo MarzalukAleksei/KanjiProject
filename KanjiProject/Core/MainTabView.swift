@@ -11,7 +11,7 @@ enum TabBarElements: String, CaseIterable {
     case kanji = "Кандзи"
     case yojijukugo = "Идиомы"
     case card = "Карточки"
-    case dictionary = "Словарь"
+    case search = "Поиск"
 }
 
 struct MainTabView: View {
@@ -39,8 +39,8 @@ struct MainTabView: View {
                     .tag(TabBarElements.yojijukugo)
                 UserListView()
                     .tag(TabBarElements.card)
-//                DictionaryView()
-//                    .tag(TabBarElements.dictionary)
+                SearchView(isEditing: $tabBarIsHidden)
+                    .tag(TabBarElements.search)
             }
             .padding(.bottom, 0) // поставил 0 вместо 53 так как здесь тернарный оператор не работает
             
@@ -84,42 +84,6 @@ struct MainTabView: View {
         JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.giseigoStore.getAll()), fileName: .giseigo)
     }
     
-//    func checkCoreData() {
-//        if kanji.isEmpty {
-//            print("Start Loading File")
-//            setCoreDataKanji()
-//            print("End Loading File")
-//        } else {
-//            print("CoreData have \(kanji.count) Elements")
-////            print("Store have \(stores.kanjistore.getAll().count) Elements")
-//        }
-//
-//        if dictionary.isEmpty {
-//            setCoreDataDictionary()
-//        } else {
-//            print("CoreData have \(dictionary.count) Elements")
-////            print("Store have \(Stores().dictionaryStore.getAll().count) Elements")
-//        }
-//    }
-    
-//    func setCoreDataDictionary() {
-//        let stores = RefactoredStores()
-//
-//        for word in stores.dictionaryStore.getAll().enumerated() {
-//            DataController.shared.add(dictionary: word.element, context: viewContext)
-//            print("Now \(word.offset), Remain \(stores.dictionaryStore.getAll().count - word.offset)")
-//        }
-//    }
-//
-//    func setCoreDataKanji() {
-//        let stores = RefactoredStores()
-//
-//        for storedElement in stores.kanjiStore.getAll().enumerated() {
-////            DataController().add(kanji: storedElement.element, context: viewContext)
-//            DataController.shared.add(kanji: storedElement.element, context: viewContext)
-//            print("Now \(storedElement.offset)")
-//        }
-//    }
 }
 
 private struct CustomImage: View {

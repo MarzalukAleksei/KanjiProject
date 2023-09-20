@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct JoinedTextView: View {
-    @EnvironmentObject var store: Store
+    @EnvironmentObject private var store: Store
     let text: String
-    var textAndLinks: [(isText: Bool, text: String)] {
+    private var textAndLinks: [(isText: Bool, text: String)] {
         text.textAndLinks()
     }
     
@@ -20,14 +20,12 @@ struct JoinedTextView: View {
             Text(text)
                 .font(.system(size: 13))
         } else {
-            links(textAndLinks).view
+            links(textAndLinks)
         }
     }
     
-    func links(_ textAndLinks: [(isText: Bool, text: String)]) -> (view: some View, words: [DictionaryModel]) {
+    private func links(_ textAndLinks: [(isText: Bool, text: String)]) -> some View {
         var result = Text("")
-//            .font(.system(size: 5))
-        var words: [DictionaryModel] = []
         
         for value in textAndLinks {
             if value.isText {
@@ -37,13 +35,10 @@ struct JoinedTextView: View {
                 result = result +
                 Text("\(dictionaryWord.body) ")
                     .bold()
-                words.append(dictionaryWord)
             }
         }
-        result = result
-            .font(.system(size: 14))
         
-        return (result, words)
+        return result
     }
 }
 
