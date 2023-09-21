@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @EnvironmentObject private var store: Store
+    @EnvironmentObject private var tabBatState: TabBarState
     @State private var text: String = "青"
     @Binding var isEditing: Bool
     var body: some View {
@@ -28,7 +29,11 @@ struct SearchView: View {
                 }
             }
             .navigationDestination(for: DictionaryModel.self) { word in
-                SearchWordDetailView(word: word)
+//                SearchWordDetailView(word: word)
+                WordDetailView(word: word)
+            }
+            .onAppear {
+                tabBatState.tabBarIsHidden = false
             }
         }
     }

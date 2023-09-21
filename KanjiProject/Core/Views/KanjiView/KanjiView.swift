@@ -17,7 +17,8 @@ struct KanjiView: View {
                   sortDescriptors: []) private var kanji: FetchedResults<UsersKanji>
     @State var isPresented = false
     @State private var toggle = false
-    @Binding var tabBarIsHidden: Bool
+//    @Binding var tabBarIsHidden: Bool
+    @EnvironmentObject var tabBarState: TabBarState
     
     @Environment(\.managedObjectContext) var viewContext
     
@@ -108,11 +109,12 @@ struct KanjiView: View {
                 
             }
             .onAppear {
-                tabBarIsHidden = false
+                tabBarState.tabBarIsHidden = false
             }
             .navigationDestination(for: KanjiFlow.self) { flow in
                 if !toggle {
-                    LearningView(tabBarIsHidden: $tabBarIsHidden, kanjiFlow: flow)
+//                    LearningView(tabBarIsHidden: $tabBarIsHidden, kanjiFlow: flow)
+                    LearningView(kanjiFlow: flow)
                 } else {
                     
                 }
@@ -172,7 +174,8 @@ struct KanjiView: View {
 
 struct KanjiView_Previews: PreviewProvider {
     static var previews: some View {
-        KanjiView(tabBarIsHidden: .constant(false))
+        KanjiView()
             .environmentObject(Store())
+            .environmentObject(TabBarState())
     }
 }

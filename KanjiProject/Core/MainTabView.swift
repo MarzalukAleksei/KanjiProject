@@ -22,6 +22,7 @@ struct MainTabView: View {
 //    @FetchRequest(entity: DictionaryCoreData.entity(),
 //                  sortDescriptors: []) var dictionary: FetchedResults<DictionaryCoreData>
     @State var tabBarIsHidden = false
+    @EnvironmentObject private var tabBarState: TabBarState
     
     @EnvironmentObject var store: Store
     
@@ -33,7 +34,8 @@ struct MainTabView: View {
 
         ZStack(alignment: .bottom) {
             TabView(selection: $currentTab) {
-                KanjiView(tabBarIsHidden: $tabBarIsHidden)
+//                KanjiView(tabBarIsHidden: $tabBarIsHidden)
+                KanjiView()
                     .tag(TabBarElements.kanji)
                 IdiomView()
                     .tag(TabBarElements.yojijukugo)
@@ -45,7 +47,8 @@ struct MainTabView: View {
             .padding(.bottom, 0) // поставил 0 вместо 53 так как здесь тернарный оператор не работает
             
             
-            if !tabBarIsHidden {
+//            if !tabBarIsHidden {
+            if !tabBarState.tabBarIsHidden {
                 HStack {
                     Spacer()
                     ForEach(TabBarElements.allCases, id: \.self) { tab in
@@ -98,5 +101,6 @@ struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()
             .environmentObject(Store())
+            .environmentObject(TabBarState())
     }
 }

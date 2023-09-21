@@ -10,7 +10,8 @@ import SwiftUI
 struct WordDetailView: View {
     
     let word: DictionaryModel
-    @EnvironmentObject var store: Store
+    @EnvironmentObject private var store: Store
+    @EnvironmentObject private var tabBarState: TabBarState
     @State private var selectedKanji: KanjiModel? = nil
     
     var body: some View {
@@ -44,18 +45,19 @@ struct WordDetailView: View {
                     .frame(minHeight: ElementSize.learningCellHeight)
                     .modifier(Modifiers.learningCell)
                     
-                    // ПЕРЕВОДЫ
-                    
-//                    ForEach(word.translate, id: \.self) { translate in
-//                        Text(translate)
-//                    }
-                    
                     // ПРИМЕРЫ
                     
                     ForEach(word.examples, id: \.self) { example in
                         
-                        WordExampleView(text: example)
-                        
+                        if example.contains("<<<") {
+                            NavigationLink(value: example) {
+                                WordExampleView(text: example)
+                                    .multilineTextAlignment(.leading)
+                                    .foregroundColor(.black)
+                            }
+                        } else {
+                            WordExampleView(text: example)
+                        }
                     }
                     .padding(.horizontal, Settings.padding)
                 }
@@ -68,36 +70,13 @@ struct WordDetailView: View {
         .navigationBarBackButtonHidden(true)
         
         .onAppear {
-            
+            tabBarState.tabBarIsHidden = true
         }
         .sheet(item: $selectedKanji, content: { kanji in
                 KanjiToUserListView(kanji: kanji)
         })
         
     }
-    
-//    func findWord(number: String) -> DictionaryModel {
-//        return store.dictionaryStore.getAll().first { $0.number == number }
-//    }
-    
-//    func links(_ textAndLinks: [(isText: Bool, text: String)]) -> (view: some View, words: [DictionaryModel]) {
-//        var result = Text("")
-//        var words: [DictionaryModel] = []
-//        
-//        for value in textAndLinks {
-//            if value.isText {
-//                result = result + Text(value.text)
-//            } else {
-//                let dictionaryWord = store.dictionaryStore.getAll().first { $0.number == value.text } ?? .MOCK_DICTIONARY
-//                result = result +
-//                Text(dictionaryWord.body)
-//                    .bold()
-//                words.append(dictionaryWord)
-//            }
-//        }
-//        
-//        return (result, words)
-//    }
     
     func findKanji() -> [KanjiModel] {
         var result: [KanjiModel] = []
@@ -125,5 +104,6 @@ struct WordDetailView_Previews: PreviewProvider {
     static var previews: some View {
         WordDetailView(word: .MOCK_DICTIONARY)
             .environmentObject(Store())
+            .environmentObject(TabBarState())
     }
 }

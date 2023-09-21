@@ -86,6 +86,7 @@
 		AFEF744E2ABA6305002AB67D /* SearchNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF744D2ABA6304002AB67D /* SearchNavigationBar.swift */; };
 		AFEF74502ABB043C002AB67D /* SearchViewWordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF744F2ABB043C002AB67D /* SearchViewWordRow.swift */; };
 		AFEF74522ABB71CB002AB67D /* SearchWordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF74512ABB71CB002AB67D /* SearchWordDetailView.swift */; };
+		AFEF74542ABBB586002AB67D /* TabBarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF74532ABBB586002AB67D /* TabBarState.swift */; };
 		AFF443A22A51B05100FF4404 /* SavedData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFF443A02A51B05100FF4404 /* SavedData.xcdatamodeld */; };
 		AFF528372AB2F71200CC5453 /* SelectedKanjiListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF528362AB2F71200CC5453 /* SelectedKanjiListRow.swift */; };
 		AFF528392AB32E1D00CC5453 /* UserWordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF528382AB32E1D00CC5453 /* UserWordList.swift */; };
@@ -178,6 +179,7 @@
 		AFEF744D2ABA6304002AB67D /* SearchNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationBar.swift; sourceTree = "<group>"; };
 		AFEF744F2ABB043C002AB67D /* SearchViewWordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewWordRow.swift; sourceTree = "<group>"; };
 		AFEF74512ABB71CB002AB67D /* SearchWordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordDetailView.swift; sourceTree = "<group>"; };
+		AFEF74532ABBB586002AB67D /* TabBarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarState.swift; sourceTree = "<group>"; };
 		AFF443A12A51B05100FF4404 /* SavedData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedData.xcdatamodel; sourceTree = "<group>"; };
 		AFF528362AB2F71200CC5453 /* SelectedKanjiListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedKanjiListRow.swift; sourceTree = "<group>"; };
 		AFF528382AB32E1D00CC5453 /* UserWordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWordList.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 				AFFC08C32A82A6840043B741 /* Settings.swift */,
 				AF1EB0792A99693200850A3B /* String + Extensions.swift */,
 				AFEF74482AB5C6B4002AB67D /* View + Extension.swift */,
+				AFEF74532ABBB586002AB67D /* TabBarState.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				AF1EB0662A97796600850A3B /* KanaStore.swift in Sources */,
 				AFB32FE92A93825F00934C09 /* WordDetailView.swift in Sources */,
 				AF30EB1129EB0A0C00E5B7A9 /* Level.swift in Sources */,
+				AFEF74542ABBB586002AB67D /* TabBarState.swift in Sources */,
 				AFBA6FF929F3640F008E11BB /* CustomFonts.swift in Sources */,
 				AFFC08B02A8234980043B741 /* CustomNavigationBarView.swift in Sources */,
 				AFAF80DA29D9C646002B9921 /* KanjiProjectApp.swift in Sources */,

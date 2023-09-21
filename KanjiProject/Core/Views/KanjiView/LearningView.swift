@@ -9,10 +9,10 @@ import SwiftUI
 
 struct LearningView: View {
     
-    @EnvironmentObject var store: Store
+    @EnvironmentObject private var store: Store
+    @EnvironmentObject private var tabBarState: TabBarState
     @AppStorage("selectedRow") var selectedRow: Data?
     
-    @Binding var tabBarIsHidden: Bool
     var kanjiFlow: KanjiFlow
     @State private var currentKanjiIndex = 0
     
@@ -82,13 +82,10 @@ struct LearningView: View {
 
         }
         .onAppear {
-            tabBarIsHidden = true
+            tabBarState.tabBarIsHidden = true
             selectedRow = encodeData(kanjiFlow.kanji, row: kanjiFlow.index)
         }
         .navigationBarBackButtonHidden(true)
-//        .onDisappear {
-//            tabBarIsHidden = false
-//        }
         
         .navigationDestination(for: DictionaryModel.self) { word in
             WordDetailView(word: word)
@@ -128,7 +125,8 @@ struct LearningView: View {
 
 struct LearningView_Previews: PreviewProvider {
     static var previews: some View {
-        LearningView(tabBarIsHidden: .constant(false), kanjiFlow: .MOCK_KANJIFLOW)
+        LearningView(kanjiFlow: .MOCK_KANJIFLOW)
             .environmentObject(Store())
+            .environmentObject(TabBarState())
     }
 }

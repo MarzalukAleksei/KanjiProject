@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WordExampleView: View {
-    var text: String = ""
+    var text: String
     @EnvironmentObject var store: Store
 //    let isLinked: Bool
     var body: some View {

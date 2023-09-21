@@ -12,12 +12,14 @@ struct KanjiProjectApp: App {
     
     @Environment(\.scenePhase) var scenePhase
     @ObservedObject var store = Store()
+    @ObservedObject var taBarState = TabBarState()
     
     var body: some Scene {
         WindowGroup {
             MainTabView()
                 .environment(\.managedObjectContext, CoreDataManager.shared.container.viewContext)
                 .environmentObject(store)
+                .environmentObject(taBarState)
                 
         }
         .onChange(of: scenePhase) { phase in
