@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchNavigationBar: View {
     @Binding var text: String
-    @Binding var isEditing: Bool
+    @EnvironmentObject private var tabBarState: TabBarState
     
     var body: some View {
         VStack {
@@ -17,7 +17,7 @@ struct SearchNavigationBar: View {
                 Color.black.ignoresSafeArea()
                     .frame(height: ElementSize.customNavigationBarHeight)
                 TextField("Поиск", text: $text, onEditingChanged: { isEditing in
-                    self.isEditing = isEditing
+                    tabBarState.tabBarIsHidden = isEditing
                 })
                     .textFieldStyle(.roundedBorder)
                     .padding(.horizontal, Settings.padding)
@@ -32,9 +32,10 @@ struct SearchNavigationBar: View {
 struct SearchNavigationBar_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            SearchNavigationBar(text: .constant(""), isEditing: .constant(false))
+            SearchNavigationBar(text: .constant(""))
             Spacer()
         }
+        .environmentObject(TabBarState())
         
     }
 }

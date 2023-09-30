@@ -68,13 +68,11 @@ struct LearningView: View {
                                 
                         }
                         
-//                        .buttonStyle(.plain)
                         .foregroundColor(.black)
                     }
                 }
             }
             .padding(.horizontal, Settings.padding - 1)
-//            .padding(.top, Settings.paddingBetweenElements)
             
             Spacer()
             
@@ -83,7 +81,7 @@ struct LearningView: View {
         }
         .onAppear {
             tabBarState.tabBarIsHidden = true
-            selectedRow = encodeData(kanjiFlow.kanji, row: kanjiFlow.index)
+            selectedRow = encodeData(kanjiFlow.kanji, row: kanjiFlow.index) // Сохранение в памяти какая ячейка была открыта
         }
         .navigationBarBackButtonHidden(true)
         
@@ -116,7 +114,6 @@ struct LearningView: View {
             $0.body.contains(kanji.body)
         }.sorted {
             $0.body.count < $1.body.count
-//            $0.body < $1.body
         }
         
         return result

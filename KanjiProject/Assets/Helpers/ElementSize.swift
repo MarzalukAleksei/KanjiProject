@@ -32,4 +32,6 @@ class ElementSize {
     
     static let edittingButtonSise = CGSize(width: 17, height: 20) 
     
+    static let modalViewButtonHeight: CGFloat = 30
+    
 }

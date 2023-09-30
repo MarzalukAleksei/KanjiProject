@@ -13,6 +13,9 @@ struct WordDetailView: View {
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var tabBarState: TabBarState
     @State private var selectedKanji: KanjiModel? = nil
+    @State private var linskTapped = false
+    @State private var links: Links? = nil
+    @State private var moveTo: MoveTo = MoveTo(word: .MOCK_DICTIONARY)
     
     var body: some View {
         VStack(spacing: 0) {
@@ -48,12 +51,27 @@ struct WordDetailView: View {
                     // ПРИМЕРЫ
                     
                     ForEach(word.examples, id: \.self) { example in
-                        
+// MARK: Проверка на наличие с строке ссылки. Ссылка в тексте обозначена скобками <<< >>>
                         if example.contains("<<<") {
-                            NavigationLink(value: example) {
-                                WordExampleView(text: example)
-                                    .multilineTextAlignment(.leading)
-                                    .foregroundColor(.black)
+                            let words: [DictionaryModel] = example.textAndLinks().filter { !$0.isText }.map { findWord(by: $0.text) }
+// MARK: Если в строке есть только одна ссылка, то перейти в WordDetailView
+                            if words.count < 2 {
+                                NavigationLink {
+                                    WordDetailView(word: words[0])
+                                } label: {
+                                    WordExampleView(text: example)
+                                        .multilineTextAlignment(.leading)
+                                        .foregroundStyle(.black)
+                                }
+                            } else {
+// MARK: Если ссылок больче чем одна, то присвоить links.words массив ссылок. Изменение links вызывает ModalView
+                                Button(action: {
+                                    self.links = Links(words: words)
+                                }, label: {
+                                    WordExampleView(text: example)
+                                        .multilineTextAlignment(.leading)
+                                })
+                                .foregroundStyle(.black)
                             }
                         } else {
                             WordExampleView(text: example)
@@ -69,12 +87,35 @@ struct WordDetailView: View {
         }
         .navigationBarBackButtonHidden(true)
         
+// MARK: Переход на выбранное из всплывающего ModalView слова
+        .navigationDestination(isPresented: $moveTo.isActive, destination: {
+            WordDetailView(word: moveTo.word)
+                .onAppear {
+                    links = nil
+                }
+        })
+        
         .onAppear {
             tabBarState.tabBarIsHidden = true
         }
+        
         .sheet(item: $selectedKanji, content: { kanji in
                 KanjiToUserListView(kanji: kanji)
         })
+        
+// MARK: ModalView всплывающий если в строке больше чем одна ссылка
+        .sheet(item: $links) { links in
+            let height = (ElementSize.modalViewButtonHeight + (Settings.paddingBetweenText * 2)) * CGFloat(links.words.count)
+            ModalViewButtons(links: links, moveTo: $moveTo)
+                .padding(.vertical, Settings.paddingBetweenText)
+                .presentationDetents([.height(height)])
+            
+        }
+        
+    }
+    
+    func findWord(by link: String) -> DictionaryModel {
+        store.dictionaryStore.getAll().first(where: { $0.number == link }) ?? .MOCK_DICTIONARY
         
     }
     

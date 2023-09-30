@@ -32,5 +32,7 @@ class Settings {
     
     static let cornerRadius: CGFloat = 20
     
+    static let modalViewButtonCornerRadius: CGFloat = 10
+    
     static let spacingBetweenIdiomHeaderAndElements: CGFloat = -10
 }

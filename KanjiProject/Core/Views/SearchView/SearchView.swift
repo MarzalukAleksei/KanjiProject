@@ -11,11 +11,11 @@ struct SearchView: View {
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var tabBatState: TabBarState
     @State private var text: String = "青"
-    @Binding var isEditing: Bool
+//    @Binding var isEditing: Bool
     var body: some View {
         NavigationStack {
             VStack {
-                SearchNavigationBar(text: $text, isEditing: $isEditing)
+                SearchNavigationBar(text: $text)
                 
                 ScrollView(showsIndicators: false) {
                     ForEach(findWord(), id: \.self) { word in
@@ -46,7 +46,8 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(isEditing: .constant(false))
+        SearchView()
             .environmentObject(Store())
+            .environmentObject(TabBarState())
     }
 }

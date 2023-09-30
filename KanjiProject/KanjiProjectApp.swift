@@ -16,7 +16,7 @@ struct KanjiProjectApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            MainView()
                 .environment(\.managedObjectContext, CoreDataManager.shared.container.viewContext)
                 .environmentObject(store)
                 .environmentObject(taBarState)

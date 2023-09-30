@@ -17,7 +17,6 @@ struct KanjiView: View {
                   sortDescriptors: []) private var kanji: FetchedResults<UsersKanji>
     @State var isPresented = false
     @State private var toggle = false
-//    @Binding var tabBarIsHidden: Bool
     @EnvironmentObject var tabBarState: TabBarState
     
     @Environment(\.managedObjectContext) var viewContext
@@ -29,6 +28,7 @@ struct KanjiView: View {
                                         corners: .bottomLeft,
                                         cornerRadius: ElementSize.navigationCornerRadius,
                                         heigh: ElementSize.customNavigationBarHeight)
+//MARK: Область между хедером и кнопками уровня
                 ZStack {
                     HStack {
                         Rectangle()
@@ -48,25 +48,27 @@ struct KanjiView: View {
                     .padding(.leading, Settings.padding)
                     
                 }
-                //                .padding(.bottom, Settings.padding)
                 .padding(.bottom, 0)
                 
+// MARK:  Кнопки уровней
                 ScrollViewReader { proxy in
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: Settings.paddingBetweenElements) {
                             
                             ForEach(Level.allCases.reversed(), id: \.self) { level in
-                                let kanjiArray = store.kanjiStore.getData(level)
-                                LevelButton(levelTitle: level,
-                                            kanjiArray: kanjiArray,
-                                            size: CGSize(width: ElementSize.levelButtonSize.width,
-                                                         height: ElementSize.levelButtonSize.height),
-                                            color: selectedLevel == level ? .secondary : .black)
-                                .onTapGesture {
-                                    withAnimation(Settings.animation) {
-                                        selectedLevel = level
-                                        scrollTo(proxy: proxy)
-                                    }
+                                if level != .another {
+                                    let kanjiArray = store.kanjiStore.getData(level)
+                                    LevelButton(levelTitle: level,
+                                                kanjiArray: kanjiArray,
+                                                size: CGSize(width: ElementSize.levelButtonSize.width,
+                                                             height: ElementSize.levelButtonSize.height),
+                                                color: selectedLevel == level ? .secondary : .black)
+                                    .onTapGesture {
+                                        withAnimation(Settings.animation) {
+                                            selectedLevel = level
+                                            scrollTo(proxy: proxy)
+                                        }
+                                }
                                 }
                                 
                             }
@@ -82,10 +84,13 @@ struct KanjiView: View {
                 }
                 .padding(.bottom, Settings.paddingBetweenElements)
                 
-                Button("TEST SAVE") {
-                    CoreDataManager.shared.add(kanji: store.kanjiStore.getAll().randomElement()!, context: viewContext)
+                Button("Add kanji for test Core Data") {
+                    Task {
+                        CoreDataManager.shared.add(kanji: store.kanjiStore.getAll()[10], context: viewContext, kanji)
+                    }
                 }
-                
+
+// MARK: Список разделенный на ечейки
                 ScrollView(showsIndicators: false) {
                     LazyVStack(spacing: Settings.paddingBetweenElements) {
                         let separate = separateKanji(store.kanjiStore.getData(selectedLevel))
@@ -104,16 +109,15 @@ struct KanjiView: View {
                     }
                     .padding(.top, Settings.paddingBetweenElements)
                     .padding(.horizontal, Settings.padding)
-//                    .padding(.bottom, Settings.paddingBetweenElements)
                 }
                 
             }
             .onAppear {
                 tabBarState.tabBarIsHidden = false
             }
+// MARK: Destination
             .navigationDestination(for: KanjiFlow.self) { flow in
                 if !toggle {
-//                    LearningView(tabBarIsHidden: $tabBarIsHidden, kanjiFlow: flow)
                     LearningView(kanjiFlow: flow)
                 } else {
                     
@@ -125,12 +129,9 @@ struct KanjiView: View {
             Color.gray.ignoresSafeArea()
                 .modifier(Modifiers.tabBarSize)
         }
-        //        .sheet(isPresented: $isPresented) {
-        //            Text("sdsbdv")
-        //        }
     }
     
-    // строка была выбрана ранее
+// MARK: последняя выбранная ячейка сохраненная в памяти приложения
     func getSelectedRow() -> SelectedKanjiRow? {
         guard let data = selectedRow,
               let result = try? JSONDecoder().decode(SelectedKanjiRow.self, from: data) else { return nil }
@@ -144,7 +145,7 @@ struct KanjiView: View {
         }
         return false
     }
-    
+//MARK: Разделение массива на указанное количество элементов
     func separateKanji(_ kanjiArray: [KanjiModel]) -> [[KanjiModel]] {
         var result: [[KanjiModel]] = []
         var array: [KanjiModel] = []

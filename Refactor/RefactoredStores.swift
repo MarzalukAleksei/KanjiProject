@@ -15,6 +15,7 @@ class RefactoredStores {
     var kanaStore = KanaStore()
     var yojijukugoStore = YojijukugoStore()
     var giseigoStore = GiseigoStore()
+    var bunpouStore = BunpouStore()
 //    let bushu = Bushu() // ключи
     
     init() {
@@ -28,12 +29,14 @@ class RefactoredStores {
             let kana = KanaMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Kana", fileType: .csv)))
             let yojijukugo = YojijukugoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Yojijukugo", fileType: .csv)))
             let giseigo = GiseigoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Giseigo", fileType: .csv)))
+            let bunpou = BunpouMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Bunpou", fileType: .csv)))
             
             kanjiStore.updateAll(data: kanji)
             dictionaryStore.updateAll(data: dictionary)
             kanaStore.updateAll(data: kana)
             yojijukugoStore.updateAll(data: yojijukugo)
             giseigoStore.updateAll(data: giseigo)
+            bunpouStore.updateAll(data: bunpou)
             
         } catch {
             print(error)
