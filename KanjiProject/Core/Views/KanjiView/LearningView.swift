@@ -44,13 +44,14 @@ struct LearningView: View {
             
             ScrollView {
                 LazyVStack(spacing: Settings.paddingBetweenElements + 1){
-                    LearningCell(title: "訓読み:", kanji: kanjiFlow.kanji[currentKanjiIndex], type: .kun)
+// MARK: Кунное чтение
+                    LearningCell(kanji: kanjiFlow.kanji[currentKanjiIndex], type: .kun)
                         .modifier(Modifiers.learningCell)
-                    
-                    LearningCell(title: "音読み:", kanji: kanjiFlow.kanji[currentKanjiIndex], type: .on)
+// MARK: Онное чтение
+                    LearningCell(kanji: kanjiFlow.kanji[currentKanjiIndex], type: .on)
                         .modifier(Modifiers.learningCell)
-                    
-                    LearningCell(title: "Значение:", kanji: kanjiFlow.kanji[currentKanjiIndex], type: .translate)
+// MARK: Перевод
+                    LearningCell(kanji: kanjiFlow.kanji[currentKanjiIndex], type: .translate)
                         .modifier(Modifiers.learningCell)
                     
                     HStack {
@@ -58,11 +59,10 @@ struct LearningView: View {
                             .opacity(Settings.opacity)
                         Spacer()
                     }
-                    
+// MARK: Примеры
                     ForEach(examples(), id: \.self) { exp in
                         NavigationLink(value: exp) {
-//                            LearningCell(title: "Примеры:", type: .examples, dictionary: exp)
-                            LearningCell(title: "Примеры", type: .examples, dictionary: exp, chevronForwardIsHidden: false)
+                            LearningCell(type: .examples, dictionary: exp, chevronForwardIsHidden: false)
                                 .modifier(Modifiers.learningCell)
                                 .multilineTextAlignment(.leading)
                                 

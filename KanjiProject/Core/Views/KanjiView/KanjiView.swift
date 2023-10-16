@@ -10,7 +10,7 @@ import SwiftUI
 struct KanjiView: View {
     
     @EnvironmentObject var store: Store
-    @AppStorage("selectedLevel") var selectedLevel: Level = .N5
+    @AppStorage("selectedLevel") var selectedLevel: NouryokuLevel = .N5
     @AppStorage("selectedRow") var selectedRow: Data?
     
     @FetchRequest(entity: UsersKanji.entity(),
@@ -55,7 +55,7 @@ struct KanjiView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: Settings.paddingBetweenElements) {
                             
-                            ForEach(Level.allCases.reversed(), id: \.self) { level in
+                            ForEach(NouryokuLevel.allCases.reversed(), id: \.self) { level in
                                 if level != .another {
                                     let kanjiArray = store.kanjiStore.getData(level)
                                     LevelButton(levelTitle: level,
@@ -84,9 +84,10 @@ struct KanjiView: View {
                 }
                 .padding(.bottom, Settings.paddingBetweenElements)
                 
+// MARK: Тестовые данные для кордаты
                 Button("Add kanji for test Core Data") {
                     Task {
-                        CoreDataManager.shared.add(kanji: store.kanjiStore.getAll()[10], context: viewContext, kanji)
+                        CoreDataManager.shared.add(kanji: store.kanjiStore.getAll().randomElement() ?? .MOCK_KANJI, context: viewContext, kanji)
                     }
                 }
 

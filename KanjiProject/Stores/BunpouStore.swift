@@ -21,7 +21,7 @@ class BunpouStore: IStore {
         data
     }
     
-    func getAll(of level: Level) -> [BunpouModel] {
+    func getAll(of level: NouryokuLevel) -> [BunpouModel] {
         data.filter { $0.level == level }
     }
     

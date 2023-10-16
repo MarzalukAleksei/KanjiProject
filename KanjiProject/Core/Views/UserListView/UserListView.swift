@@ -42,7 +42,7 @@ struct UserListView: View {
                 Color.gray.ignoresSafeArea()
                     .modifier(Modifiers.tabBarSize)
             }
-            // MARK: Всплывающее окно с запросом на удаление сохраненных в CoreData данных
+// MARK: Всплывающее окно с запросом на удаление сохраненных в CoreData данных
             .alert("Убираем выбранные?", isPresented: $allertPresent, actions: {
                 Button("Отменить все") {
                     listEditButtonPressed = false

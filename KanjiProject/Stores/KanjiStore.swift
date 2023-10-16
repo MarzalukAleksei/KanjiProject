@@ -12,13 +12,13 @@ class KanjiStore: IStore {
     typealias Entity = [KanjiModel]
     
 //    private var data: [KanjiModel] = []
-    private var data: [Level: [KanjiModel]] = [:]
+    private var data: [NouryokuLevel: [KanjiModel]] = [:]
     
 //    func getData() -> [KanjiModel] {
 //        return data
 //    }
     
-    func getData(_ level: Level) -> [KanjiModel] {
+    func getData(_ level: NouryokuLevel) -> [KanjiModel] {
         guard let data = data[level] else { return [] }
         return data
     }
@@ -35,12 +35,12 @@ class KanjiStore: IStore {
 //        self.data = data
 //    }
     
-    func update(_ level: Level, data: [KanjiModel]) {
+    func update(_ level: NouryokuLevel, data: [KanjiModel]) {
         self.data[level] = data
     }
     
     func updateAll(data: [KanjiModel]) {
-        for level in Level.allCases {
+        for level in NouryokuLevel.allCases {
             self.data[level] = data.filter { $0.level == level.rawValue }
         }
     }

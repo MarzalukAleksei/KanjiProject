@@ -7,12 +7,12 @@
 
 import Foundation
 
+enum FileType: String {
+    case txt
+    case csv
+}
+
 class FileManage: IFileManager {
-    
-    enum FileType: String {
-        case txt
-        case csv
-    }
     
     func loadFile(fileName: String, fileType: FileType) throws -> String {
         guard let string = Bundle.main.path(forResource: fileName, ofType: fileType.rawValue) else {

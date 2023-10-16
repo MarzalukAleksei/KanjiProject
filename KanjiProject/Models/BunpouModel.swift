@@ -14,5 +14,5 @@ struct BunpouModel {
     let meaning: [String]
     let translate: [String]
     let examples: [String]
-    let level: Level
+    let level: NouryokuLevel
 }

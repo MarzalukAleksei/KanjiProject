@@ -28,7 +28,7 @@ class BunpouMapper: IDataMapper {
                                      translate: elements[4].components(separatedBy: "・"),
                                      // убирает пробелы если они есть
                                      examples: elements[5].components(separatedBy: "・").map{ $0.contains(" ") ? $0.replacingOccurrences(of: " ", with: "") : $0 }.map { $0.contains("　") ? $0.replacingOccurrences(of: "　", with: "") : $0 },
-                                     level: Level(rawValue: Int(elements[6]) ?? 0) ?? Level.another)
+                                     level: NouryokuLevel(rawValue: Int(elements[6]) ?? 0) ?? NouryokuLevel.another)
             result.append(bunpou)
         }
         

@@ -12,7 +12,6 @@ struct LearningCell: View {
         case kun, on, examples, translate
     }
     
-    let title: String
     var kanji: KanjiModel = .MOCK_KANJI
     let type: Property
     var dictionary: DictionaryModel = .MOCK_DICTIONARY
@@ -28,7 +27,7 @@ struct LearningCell: View {
                 VStack(spacing: Settings.paddingBetweenText) {
                     
                     HStack {
-                        Text(title)
+                        Text(title())
                             .bold()
                         Spacer()
                     }
@@ -71,31 +70,11 @@ struct LearningCell: View {
                     }
                     .padding(Settings.paddingBetweenElements)
                     
-                    
-//                    if !dictionary.examples.isEmpty {
-////                        let example = dictionary.examples[0].removeNumberExampleRow()
-//                        let example = getExample(examples: dictionary.examples)
-//
-//                        if example.contains("<<<") {
-//                            VStack(alignment: .leading) {
-//                                JoinedTextView(textAndLinks: example.textAndLinks(), text: example)
-//                            }
-//                        } else {
-//                            HStack {
-//                                Text(example)
-//                                Spacer()
-//                            }
-//                        }
-//                    }
-                    
                     if !dictionary.translate.isEmpty {
-//                        let translate = getExample(examples: dictionary.translate)
                         let translate = DictionaryModel.getFirstExample(word: dictionary)
                         
                         JoinedTextView(text: translate)
                     }
-                    
-                    
                     
                     Spacer()
                     
@@ -109,26 +88,14 @@ struct LearningCell: View {
         }
     }
     
-//    func getExample(examples: [String]) -> String {
-//        var result = ""
-//        var examples = examples
-//        for row in examples where !dictionary.examples.isEmpty {
-//            let row = row
-//            if row.count <= 3 {
-//                continue
-//            } else {
-//                result = row
-//                break
-//            }
-//        }
-//        result = result.removeNumberExampleRow()
-//        if result.count < 3, examples.count > 1 {
-//            examples.removeFirst()
-//            result = getExample(examples: examples)
-//        }
-//        
-//        return result
-//    }
+    func title() -> String {
+        if type == .on {
+            return "音読み"
+        } else if type == .kun {
+            return "訓読み"
+        }
+        return ""
+    }
     
     func separate() -> [String] {
         switch type {
@@ -147,15 +114,15 @@ struct LearningCell: View {
 
 struct LearningCell_Previews: PreviewProvider {
     static var previews: some View {
-        LearningCell(title: "訓読み:", kanji: .MOCK_KANJI, type: .kun)
+        LearningCell(kanji: .MOCK_KANJI, type: .kun)
             .frame(maxWidth: .infinity, maxHeight: 100)
             .padding(Settings.padding)
         
-        LearningCell(title: "例:", kanji: .MOCK_KANJI, type: .examples)
+        LearningCell(kanji: .MOCK_KANJI, type: .examples)
             .frame(maxWidth: .infinity, maxHeight: 100)
             .padding(Settings.padding)
         
-        LearningCell(title: "例:", kanji: .MOCK_KANJI, type: .examples, chevronForwardIsHidden: false)
+        LearningCell(kanji: .MOCK_KANJI, type: .examples, chevronForwardIsHidden: false)
             .frame(maxWidth: .infinity, maxHeight: 100)
             .padding(Settings.padding)
     }

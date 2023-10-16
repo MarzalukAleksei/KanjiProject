@@ -16,6 +16,7 @@ class RefactoredStores {
     var yojijukugoStore = YojijukugoStore()
     var giseigoStore = GiseigoStore()
     var bunpouStore = BunpouStore()
+    var kanjiKenteiStore = KanjiKenteiStore()
 //    let bushu = Bushu() // ключи
     
     init() {
@@ -30,6 +31,7 @@ class RefactoredStores {
             let yojijukugo = YojijukugoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Yojijukugo", fileType: .csv)))
             let giseigo = GiseigoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Giseigo", fileType: .csv)))
             let bunpou = BunpouMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Bunpou", fileType: .csv)))
+            let kanjiKentei = loadKanjiKentei()
             
             kanjiStore.updateAll(data: kanji)
             dictionaryStore.updateAll(data: dictionary)
@@ -37,10 +39,26 @@ class RefactoredStores {
             yojijukugoStore.updateAll(data: yojijukugo)
             giseigoStore.updateAll(data: giseigo)
             bunpouStore.updateAll(data: bunpou)
+            kanjiKenteiStore.updateAll(data: kanjiKentei)
             
         } catch {
             print(error)
         }
+    }
+    private func loadKanjiKentei() -> [KanjiKenteiModel]{
+        var result: [KanjiKenteiModel] = []
+        for name in KenteiLevel.allCases {
+            result += getKanjiKentei(name: name.rawValue)
+        }
+        return result
+    }
+    func getKanjiKentei(name: String) -> [KanjiKenteiModel] {
+        do {
+            return KanjiKenteiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: name, fileType: .txt)))
+        } catch {
+            print("\(name)")
+        }
+        return []
     }
 }
 

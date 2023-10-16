@@ -69,28 +69,34 @@ struct MainView: View {
             
             
             
-//            setJSONFile()
+            setJSONFile()
             
         }
     }
     
     func setJSONFile() {
         let refactorStores = RefactoredStores()
+//        refactorStores.kanjiKenteiStore.getAll().count
+        let kanjiKentei = refactorStores.kanjiKenteiStore.getAll().filter { $0.oldKanji != "" }
+        for row in kanjiKentei.enumerated() {
+            print(row.element.body, "--->", row.element.examples, row.element.kenteiLevel, row.offset, "OLD ---> \(row.element.oldKanji)")
+            print("")
+        }
 //        JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(kanji: refactorStores.kanjiStore.getAll()), fileName: .kanji)
 //        JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(dictionary: refactorStores.dictionaryStore.getAll()), fileName: .dictionary)
 //        JSON.methoods.saveJSONToFile(JSON.methoods.encodeToJSON(refactorStores.yojijukugoStore.getAll()), fileName: .yojijukugo)
 //        print(refactorStores.giseigoStore.getAll().randomElement())
 //    JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.giseigoStore.getAll()), fileName: .giseigo)
         
-        let array = refactorStores.bunpouStore.getAll()[0].points
-        for element in array {
-            print(element)
-            print("")
-//            for i in element {
-//                print(i)
-//            }
-        }
-        print(refactorStores.bunpouStore.getAll()[0])
+//        let array = refactorStores.bunpouStore.getAll()[0].points
+//        for element in array {
+//            print(element)
+//            print("")
+////            for i in element {
+////                print(i)
+////            }
+//        }
+//        print(refactorStores.bunpouStore.getAll()[0])
     }
     
 }

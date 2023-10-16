@@ -40,7 +40,7 @@
 		AF30EB0029EAB79900E5B7A9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF30EAFF29EAB79900E5B7A9 /* Images.xcassets */; };
 		AF30EB0229EAB7DF00E5B7A9 /* OpenScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EB0129EAB7DF00E5B7A9 /* OpenScrollView.swift */; };
 		AF30EB0729EAC3E200E5B7A9 /* unaojapon-p-2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF30EB0629EAC3E200E5B7A9 /* unaojapon-p-2.ttf */; };
-		AF30EB1129EB0A0C00E5B7A9 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EB1029EB0A0C00E5B7A9 /* Level.swift */; };
+		AF30EB1129EB0A0C00E5B7A9 /* NouryokuLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EB1029EB0A0C00E5B7A9 /* NouryokuLevel.swift */; };
 		AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */; };
 		AF3A72B82A7D1C3000A5513C /* ScrollPartsModifires.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B72A7D1C3000A5513C /* ScrollPartsModifires.swift */; };
 		AF3A72BA2A7D4AD500A5513C /* CloseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B92A7D4AD500A5513C /* CloseScrollView.swift */; };
@@ -61,6 +61,22 @@
 		AF6A2E0129E62CDA00D7C1A9 /* RefactoredStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0029E62CDA00D7C1A9 /* RefactoredStores.swift */; };
 		AF6A2E0429E721BE00D7C1A9 /* KanjiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */; };
 		AF6A2E0629E7267400D7C1A9 /* IStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0529E7267400D7C1A9 /* IStore.swift */; };
+		AF728D972ADD0D6D0098765D /* KanjiKenteiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF728D962ADD0D6D0098765D /* KanjiKenteiMapper.swift */; };
+		AF728D992ADD0D8D0098765D /* KanjiKenteiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF728D982ADD0D8D0098765D /* KanjiKenteiModel.swift */; };
+		AF728D9B2ADD12EC0098765D /* KanjiKenteiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF728D9A2ADD12EC0098765D /* KanjiKenteiStore.swift */; };
+		AF728DAB2ADD35A30098765D /* 01級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728D9F2ADD35A20098765D /* 01級.txt */; };
+		AF728DAC2ADD35A30098765D /* 04級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA02ADD35A20098765D /* 04級.txt */; };
+		AF728DAD2ADD35A30098765D /* 07級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA12ADD35A20098765D /* 07級.txt */; };
+		AF728DAE2ADD35A30098765D /* 10級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA22ADD35A20098765D /* 10級.txt */; };
+		AF728DAF2ADD35A30098765D /* 08級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA32ADD35A20098765D /* 08級.txt */; };
+		AF728DB02ADD35A30098765D /* 02級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA42ADD35A20098765D /* 02級.txt */; };
+		AF728DB12ADD35A30098765D /* 01準.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA52ADD35A30098765D /* 01準.txt */; };
+		AF728DB22ADD35A30098765D /* 03級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA62ADD35A30098765D /* 03級.txt */; };
+		AF728DB32ADD35A30098765D /* 02準.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA72ADD35A30098765D /* 02準.txt */; };
+		AF728DB42ADD35A30098765D /* 05級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA82ADD35A30098765D /* 05級.txt */; };
+		AF728DB52ADD35A30098765D /* 06級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA92ADD35A30098765D /* 06級.txt */; };
+		AF728DB62ADD35A30098765D /* 09級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DAA2ADD35A30098765D /* 09級.txt */; };
+		AF728DB82ADD3A170098765D /* KenteiLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF728DB72ADD3A170098765D /* KenteiLevel.swift */; };
 		AF960B412A83C70600A33373 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF960B402A83C70500A33373 /* CustomSlider.swift */; };
 		AF960B432A855DD000A33373 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF960B422A855DD000A33373 /* LearningView.swift */; };
 		AF960B472A8563C200A33373 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF960B462A8563C200A33373 /* Modifiers.swift */; };
@@ -138,7 +154,7 @@
 		AF30EAFF29EAB79900E5B7A9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AF30EB0129EAB7DF00E5B7A9 /* OpenScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScrollView.swift; sourceTree = "<group>"; };
 		AF30EB0629EAC3E200E5B7A9 /* unaojapon-p-2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "unaojapon-p-2.ttf"; sourceTree = "<group>"; };
-		AF30EB1029EB0A0C00E5B7A9 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		AF30EB1029EB0A0C00E5B7A9 /* NouryokuLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NouryokuLevel.swift; sourceTree = "<group>"; };
 		AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupView.swift; sourceTree = "<group>"; };
 		AF3A72B72A7D1C3000A5513C /* ScrollPartsModifires.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPartsModifires.swift; sourceTree = "<group>"; };
 		AF3A72B92A7D4AD500A5513C /* CloseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseScrollView.swift; sourceTree = "<group>"; };
@@ -159,6 +175,22 @@
 		AF6A2E0029E62CDA00D7C1A9 /* RefactoredStores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactoredStores.swift; sourceTree = "<group>"; };
 		AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiStore.swift; sourceTree = "<group>"; };
 		AF6A2E0529E7267400D7C1A9 /* IStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStore.swift; sourceTree = "<group>"; };
+		AF728D962ADD0D6D0098765D /* KanjiKenteiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiKenteiMapper.swift; sourceTree = "<group>"; };
+		AF728D982ADD0D8D0098765D /* KanjiKenteiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiKenteiModel.swift; sourceTree = "<group>"; };
+		AF728D9A2ADD12EC0098765D /* KanjiKenteiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiKenteiStore.swift; sourceTree = "<group>"; };
+		AF728D9F2ADD35A20098765D /* 01級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "01級.txt"; sourceTree = "<group>"; };
+		AF728DA02ADD35A20098765D /* 04級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "04級.txt"; sourceTree = "<group>"; };
+		AF728DA12ADD35A20098765D /* 07級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "07級.txt"; sourceTree = "<group>"; };
+		AF728DA22ADD35A20098765D /* 10級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "10級.txt"; sourceTree = "<group>"; };
+		AF728DA32ADD35A20098765D /* 08級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "08級.txt"; sourceTree = "<group>"; };
+		AF728DA42ADD35A20098765D /* 02級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "02級.txt"; sourceTree = "<group>"; };
+		AF728DA52ADD35A30098765D /* 01準.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "01準.txt"; sourceTree = "<group>"; };
+		AF728DA62ADD35A30098765D /* 03級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "03級.txt"; sourceTree = "<group>"; };
+		AF728DA72ADD35A30098765D /* 02準.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "02準.txt"; sourceTree = "<group>"; };
+		AF728DA82ADD35A30098765D /* 05級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "05級.txt"; sourceTree = "<group>"; };
+		AF728DA92ADD35A30098765D /* 06級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "06級.txt"; sourceTree = "<group>"; };
+		AF728DAA2ADD35A30098765D /* 09級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "09級.txt"; sourceTree = "<group>"; };
+		AF728DB72ADD3A170098765D /* KenteiLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KenteiLevel.swift; sourceTree = "<group>"; };
 		AF960B402A83C70500A33373 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		AF960B422A855DD000A33373 /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 		AF960B462A8563C200A33373 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
@@ -248,6 +280,7 @@
 				AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */,
 				AF17F94C2A44ABC500D5631D /* DictionaryStore.swift */,
 				AF1EB0652A97796600850A3B /* KanaStore.swift */,
+				AF728D9A2ADD12EC0098765D /* KanjiKenteiStore.swift */,
 				AF5600782AA46E9B00F0123C /* YojijukugoStore.swift */,
 				AF4F2AA12AB1C67000F38EE9 /* GiseigoStore.swift */,
 				AF1EB0552A972E4B00850A3B /* Store.swift */,
@@ -300,6 +333,25 @@
 				AFAF80E929D9C740002B9921 /* Views */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		AF728D9E2ADD32340098765D /* KanjiKentei */ = {
+			isa = PBXGroup;
+			children = (
+				AF728D9F2ADD35A20098765D /* 01級.txt */,
+				AF728DA52ADD35A30098765D /* 01準.txt */,
+				AF728DA42ADD35A20098765D /* 02級.txt */,
+				AF728DA72ADD35A30098765D /* 02準.txt */,
+				AF728DA62ADD35A30098765D /* 03級.txt */,
+				AF728DA02ADD35A20098765D /* 04級.txt */,
+				AF728DA82ADD35A30098765D /* 05級.txt */,
+				AF728DA92ADD35A30098765D /* 06級.txt */,
+				AF728DA12ADD35A20098765D /* 07級.txt */,
+				AF728DA32ADD35A20098765D /* 08級.txt */,
+				AF728DAA2ADD35A30098765D /* 09級.txt */,
+				AF728DA22ADD35A20098765D /* 10級.txt */,
+			);
+			path = KanjiKentei;
 			sourceTree = "<group>";
 		};
 		AF78E6B92A49BC1300D43ED7 /* Components */ = {
@@ -408,7 +460,8 @@
 				AF17F9462A449B1700D5631D /* DictionaryModel.swift */,
 				AFAF80ED29D9CEBF002B9921 /* KanjiModel.swift */,
 				AF1EB0632A97760C00850A3B /* KanaModel.swift */,
-				AF30EB1029EB0A0C00E5B7A9 /* Level.swift */,
+				AF30EB1029EB0A0C00E5B7A9 /* NouryokuLevel.swift */,
+				AF728DB72ADD3A170098765D /* KenteiLevel.swift */,
 				AF960B482A85734100A33373 /* KanjiFlow.swift */,
 				AF2D7FB12AC45E1200642B48 /* BunpouModel.swift */,
 				AF4F2A9F2AB1C13400F38EE9 /* GiseigoModel.swift */,
@@ -416,6 +469,7 @@
 				AFF528362AB2F71200CC5453 /* SelectedKanjiListRow.swift */,
 				AFCC213A2AC550A700F1E37D /* Links.swift */,
 				AFCC213C2AC550C100F1E37D /* MoveTo.swift */,
+				AF728D982ADD0D8D0098765D /* KanjiKenteiModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -436,6 +490,7 @@
 				AFAF80F329D9DCD6002B9921 /* FileManage.swift */,
 				AFAF80FF29D9E690002B9921 /* FileMapper.swift */,
 				AFAF810329D9E801002B9921 /* KanjiMapper.swift */,
+				AF728D962ADD0D6D0098765D /* KanjiKenteiMapper.swift */,
 				AF1EB05F2A9775A800850A3B /* KanaMapper.swift */,
 				AF2D7FAF2AC45DD600642B48 /* BunpouMapper.swift */,
 				AF4F2A9D2AB1C0EA00F38EE9 /* GiseigoMapper.swift */,
@@ -458,6 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				AF17F9442A449AAF00D5631D /* warodai.txt */,
+				AF728D9E2ADD32340098765D /* KanjiKentei */,
 			);
 			path = TXTFiles;
 			sourceTree = "<group>";
@@ -611,18 +667,30 @@
 			files = (
 				AF1EB0682A977E3D00850A3B /* Kana.json in Resources */,
 				AF1EB06C2A98E97800850A3B /* Kanji.json in Resources */,
+				AF728DB42ADD35A30098765D /* 05級.txt in Resources */,
 				AF17F9452A449AAF00D5631D /* warodai.txt in Resources */,
+				AF728DB12ADD35A30098765D /* 01準.txt in Resources */,
+				AF728DAF2ADD35A30098765D /* 08級.txt in Resources */,
 				AF1EB0782A994DDD00850A3B /* Dictionary.json in Resources */,
+				AF728DB02ADD35A30098765D /* 02級.txt in Resources */,
+				AF728DAE2ADD35A30098765D /* 10級.txt in Resources */,
 				AF4F2A9C2AB1C09C00F38EE9 /* Giseigo.csv in Resources */,
 				AF5600732AA46B4B00F0123C /* Yojijukugo.csv in Resources */,
 				AFAF80FB29D9E1CA002B9921 /* Kanji.csv in Resources */,
+				AF728DB62ADD35A30098765D /* 09級.txt in Resources */,
+				AF728DB52ADD35A30098765D /* 06級.txt in Resources */,
 				AF1EB05E2A97756600850A3B /* Kana.csv in Resources */,
 				AF30EB0029EAB79900E5B7A9 /* Images.xcassets in Resources */,
+				AF728DAC2ADD35A30098765D /* 04級.txt in Resources */,
+				AF728DAB2ADD35A30098765D /* 01級.txt in Resources */,
+				AF728DB32ADD35A30098765D /* 02準.txt in Resources */,
 				AFD0B3C22AA47A0F0045C0D0 /* Yojijukugo.json in Resources */,
 				AF4F2AA42AB1CB4200F38EE9 /* Giseigo.json in Resources */,
 				AFAF80E129D9C647002B9921 /* Preview Assets.xcassets in Resources */,
+				AF728DB22ADD35A30098765D /* 03級.txt in Resources */,
 				AFAF80DE29D9C647002B9921 /* Assets.xcassets in Resources */,
 				AF2D7FAE2AC45D9E00642B48 /* Bunpou.csv in Resources */,
+				AF728DAD2ADD35A30098765D /* 07級.txt in Resources */,
 				AF30EB0729EAC3E200E5B7A9 /* unaojapon-p-2.ttf in Resources */,
 				AF30EAFE29E9FE1C00E5B7A9 /* ZeroGothic.otf in Resources */,
 			);
@@ -642,6 +710,7 @@
 				AF17F9492A44A1C600D5631D /* DictionaryMapper.swift in Sources */,
 				AFFC08C22A829E3E0043B741 /* KanjiRow.swift in Sources */,
 				AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */,
+				AF728D992ADD0D8D0098765D /* KanjiKenteiModel.swift in Sources */,
 				AF5600752AA46C2500F0123C /* YojijukugoMapper.swift in Sources */,
 				AF9D2BD12AC4D3F900257D82 /* BunpouStore.swift in Sources */,
 				AF0070962A9DC1FE001A4084 /* IdiomViewHeader.swift in Sources */,
@@ -652,6 +721,7 @@
 				AF17F9412A4486A100D5631D /* FrontSideVIew.swift in Sources */,
 				AFAF810029D9E690002B9921 /* FileMapper.swift in Sources */,
 				AFEF74502ABB043C002AB67D /* SearchViewWordRow.swift in Sources */,
+				AF728DB82ADD3A170098765D /* KenteiLevel.swift in Sources */,
 				AF0070942A9DC199001A4084 /* IdiomView.swift in Sources */,
 				AFAF80F129D9DC5F002B9921 /* IFileManager.swift in Sources */,
 				AF17F93F2A4485BF00D5631D /* LearningCardView.swift in Sources */,
@@ -671,6 +741,7 @@
 				AF1EB0602A9775A800850A3B /* KanaMapper.swift in Sources */,
 				AF960B492A85734100A33373 /* KanjiFlow.swift in Sources */,
 				AFC3CB9C2A8587AA00DD59D4 /* LearningCell.swift in Sources */,
+				AF728D9B2ADD12EC0098765D /* KanjiKenteiStore.swift in Sources */,
 				AF2D7FB22AC45E1200642B48 /* BunpouModel.swift in Sources */,
 				AF17F9472A449B1700D5631D /* DictionaryModel.swift in Sources */,
 				AF17F94F2A478D1400D5631D /* SelectLevel.swift in Sources */,
@@ -687,6 +758,7 @@
 				AF2D7FB02AC45DD600642B48 /* BunpouMapper.swift in Sources */,
 				AFEF74492AB5C6B4002AB67D /* View + Extension.swift in Sources */,
 				AF5600772AA46C9400F0123C /* YojijukugoModel.swift in Sources */,
+				AF728D972ADD0D6D0098765D /* KanjiKenteiMapper.swift in Sources */,
 				AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */,
 				AFFC08B42A823EAB0043B741 /* LevelButton.swift in Sources */,
 				AF69CE712A001739009C7B92 /* ButtonsImages.swift in Sources */,
@@ -706,7 +778,7 @@
 				AF30EB0229EAB7DF00E5B7A9 /* OpenScrollView.swift in Sources */,
 				AF1EB0662A97796600850A3B /* KanaStore.swift in Sources */,
 				AFB32FE92A93825F00934C09 /* WordDetailView.swift in Sources */,
-				AF30EB1129EB0A0C00E5B7A9 /* Level.swift in Sources */,
+				AF30EB1129EB0A0C00E5B7A9 /* NouryokuLevel.swift in Sources */,
 				AFEF74542ABBB586002AB67D /* TabBarState.swift in Sources */,
 				AFBA6FF929F3640F008E11BB /* CustomFonts.swift in Sources */,
 				AFFC08B02A8234980043B741 /* CustomNavigationBarView.swift in Sources */,
