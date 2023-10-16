@@ -22,7 +22,7 @@ class KanjiKenteiMapper: IDataMapper {
             element = element.replacingOccurrences(of: "               ", with: "---")
             element = element.replacingOccurrences(of: "        ", with: "###")
             element = element.replacingOccurrences(of: "###     ", with: "+++")
-            element = element.replacingOccurrences(of: "###     ", with: "+++")
+//            element = element.replacingOccurrences(of: "###     ", with: "+++")
             element = element.replacingOccurrences(of: "+++###", with: "+++")
             element = element.replacingOccurrences(of: "+++---", with: "+++")
             element = element.replacingOccurrences(of: "---", with: "+++")
@@ -42,7 +42,9 @@ class KanjiKenteiMapper: IDataMapper {
 //            }
             
             var body = ""
-            var reading = ""
+            var defaultReading = ""
+//            var kunReading: [ExampleType: String] = [:]
+//            var onReading: [ExampleType: String] = [:]
             var example: [ExampleType : String] = [:]
             var exampleWithReading: [ExampleType : String] = [:]
             var meaning = ""
@@ -53,7 +55,9 @@ class KanjiKenteiMapper: IDataMapper {
             
             if element.count == 7 {
                 body = element[0]
-                reading = element[1]
+                defaultReading = element[1]
+//                kunReading = getTypeValue(element[1].components(separatedBy: "    ")[1])
+//                onReading = getTypeValue(element[1].components(separatedBy: "    ")[0])
                 meaning = element[2]
                 keys = element[4]
                 kenteiLevel = getNumber(element[5])
@@ -62,7 +66,9 @@ class KanjiKenteiMapper: IDataMapper {
                 body = element[0]
                 example = getTypeValue(element[1])
                 exampleWithReading = getTypeValue(element[2])
-                reading = element[3]
+                defaultReading = element[3]
+//                kunReading = getTypeValue(element[3].components(separatedBy: "    ")[1])
+//                onReading = getTypeValue(element[3].components(separatedBy: "    ")[0])
                 meaning = element[4]
                 keys = element[6]
                 kenteiLevel = getNumber(element[7])
@@ -72,7 +78,9 @@ class KanjiKenteiMapper: IDataMapper {
                 example = getTypeValue(element[1])
                 oldKanji = element[3]
                 exampleWithReading = getTypeValue(element[4])
-                reading = element[5]
+                defaultReading = element[5]
+//                kunReading = getTypeValue(element[5].components(separatedBy: "    ")[1])
+//                onReading = getTypeValue(element[5].components(separatedBy: "    ")[0])
                 meaning = element[6]
                 keys = element[8]
                 kenteiLevel = getNumber(element[9])
@@ -82,7 +90,9 @@ class KanjiKenteiMapper: IDataMapper {
             }
             
             result.append(KanjiKenteiModel(body: body,
-                                           reading: reading,
+                                           defaultReading: defaultReading,
+                                           kunReading: [:],
+                                           onReading: [:],
                                            examples: example,
                                            examplesWithReading: exampleWithReading,
                                            meaning: meaning,
@@ -94,10 +104,14 @@ class KanjiKenteiMapper: IDataMapper {
         return result
     }
     
-    private func getTypeValue(_ string: String) -> [ExampleType: String] {
+    func getTypeValue(_ string: String) -> [ExampleType: String] {
         var result: [ExampleType: String] = [:]
         var string = string.replacingOccurrences(of: " ", with: "")
         for type in ExampleType.allCases.reversed() {
+            if string.contains("\t") {
+                let startIndex = string.index(string.endIndex, offsetBy: -2)
+                string.removeSubrange(startIndex..<string.endIndex)
+            }
             let array = string.components(separatedBy: type.rawValue)
             if array.count > 1 {
                 result[type] = array[1]

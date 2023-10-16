@@ -16,7 +16,9 @@ enum ExampleType: String, Codable, CaseIterable {
 
 struct KanjiKenteiModel: Codable {
     let body: String
-    let reading: String
+    let defaultReading: String
+    var kunReading: [ExampleType: String]
+    var onReading: [ExampleType: String]
     let examples: [ExampleType: String]
     let examplesWithReading: [ExampleType: String]
     let meaning: String

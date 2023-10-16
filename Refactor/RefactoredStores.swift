@@ -39,12 +39,14 @@ class RefactoredStores {
             yojijukugoStore.updateAll(data: yojijukugo)
             giseigoStore.updateAll(data: giseigo)
             bunpouStore.updateAll(data: bunpou)
-            kanjiKenteiStore.updateAll(data: kanjiKentei)
+//            kanjiKenteiStore.updateAll(data: kanjiKentei)
+            kanjiKenteiStore.updateAll(data: separateReading(kana: kana, kanjiKentei: kanjiKentei))
             
         } catch {
             print(error)
         }
     }
+    
     private func loadKanjiKentei() -> [KanjiKenteiModel]{
         var result: [KanjiKenteiModel] = []
         for name in KenteiLevel.allCases {
@@ -52,13 +54,38 @@ class RefactoredStores {
         }
         return result
     }
-    func getKanjiKentei(name: String) -> [KanjiKenteiModel] {
+    
+    private func getKanjiKentei(name: String) -> [KanjiKenteiModel] {
         do {
             return KanjiKenteiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: name, fileType: .txt)))
         } catch {
             print("\(name)")
         }
         return []
+    }
+    
+    private func separateReading(kana: [KanaModel], kanjiKentei: [KanjiKenteiModel]) -> [KanjiKenteiModel] {
+        var result: [KanjiKenteiModel] = []
+        for kanji in kanjiKentei {
+            let array = kanji.defaultReading.components(separatedBy: "    ")
+            var newKanji = kanji
+            if array.count > 1 {
+                newKanji.kunReading = KanjiKenteiMapper().getTypeValue(array[1])
+                newKanji.onReading = KanjiKenteiMapper().getTypeValue(array[0])
+                result.append(newKanji)
+            } else {
+                let row = KanjiKenteiMapper().getTypeValue(array[0])
+                if let firstChar = row.first?.value.first {
+                    if kana.contains(where: { $0.hiragana == String(firstChar)}) {
+                        newKanji.kunReading = row
+                    } else {
+                        newKanji.onReading = row
+                    }
+                    result.append(newKanji)
+                }
+            }
+        }
+        return result
     }
 }
 

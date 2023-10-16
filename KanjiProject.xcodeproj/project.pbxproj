@@ -283,8 +283,8 @@
 				AF728D9A2ADD12EC0098765D /* KanjiKenteiStore.swift */,
 				AF5600782AA46E9B00F0123C /* YojijukugoStore.swift */,
 				AF4F2AA12AB1C67000F38EE9 /* GiseigoStore.swift */,
-				AF1EB0552A972E4B00850A3B /* Store.swift */,
 				AF9D2BD02AC4D3F900257D82 /* BunpouStore.swift */,
+				AF1EB0552A972E4B00850A3B /* Store.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";

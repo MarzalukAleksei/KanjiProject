@@ -77,11 +77,16 @@ struct MainView: View {
     func setJSONFile() {
         let refactorStores = RefactoredStores()
 //        refactorStores.kanjiKenteiStore.getAll().count
-        let kanjiKentei = refactorStores.kanjiKenteiStore.getAll().filter { $0.oldKanji != "" }
-        for row in kanjiKentei.enumerated() {
-            print(row.element.body, "--->", row.element.examples, row.element.kenteiLevel, row.offset, "OLD ---> \(row.element.oldKanji)")
+        let kanjiKentei = refactorStores.kanjiKenteiStore.getAll().filter { $0.kenteiLevel == 5 }
+        
+        for i in kanjiKentei {
+            print(i)
             print("")
         }
+//        for row in kanjiKentei.enumerated() {
+//            print(row.element.body, "--->", row.element.examples, row.element.kenteiLevel, row.offset, "OLD ---> \(row.element.oldKanji)")
+//            print("")
+//        }
 //        JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(kanji: refactorStores.kanjiStore.getAll()), fileName: .kanji)
 //        JSON.methoods.saveJSONToFile(data: JSON.methoods.encodeToJSON(dictionary: refactorStores.dictionaryStore.getAll()), fileName: .dictionary)
 //        JSON.methoods.saveJSONToFile(JSON.methoods.encodeToJSON(refactorStores.yojijukugoStore.getAll()), fileName: .yojijukugo)
