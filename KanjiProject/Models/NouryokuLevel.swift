@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Level: Int, CaseIterable, Codable {
+enum NouryokuLevel: Int, CaseIterable, Codable {
     case another = 0
     case N1 = 1
     case N2, N3, N4, N5
