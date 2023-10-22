@@ -21,7 +21,7 @@ final class Store: ObservableObject {
         kanaStore.updateAll(data: JSONManager.methoods.getKana())
         yojijukugoStore.updateAll(data: JSONManager.methoods.getYojijukugo())
         giseigo.updateAll(data: JSONManager.methoods.getGiseigo())
-//        kanjiKentei.updateAll(data: )
+        kanjiKentei.updateAll(data: JSONManager.methoods.getKanjiKentei())
     }
     
     

@@ -40,7 +40,7 @@ class RefactoredStores {
             giseigoStore.updateAll(data: giseigo)
             bunpouStore.updateAll(data: bunpou)
 //            kanjiKenteiStore.updateAll(data: kanjiKentei)
-            kanjiKenteiStore.updateAll(data: separateReading(kana: kana, kanjiKentei: kanjiKentei))
+            kanjiKenteiStore.updateAll(data: updateKanji(kana: kana, kanjiKentei: kanjiKentei))
             
         } catch {
             print(error)
@@ -64,7 +64,8 @@ class RefactoredStores {
         return []
     }
     
-    private func separateReading(kana: [KanaModel], kanjiKentei: [KanjiKenteiModel]) -> [KanjiKenteiModel] {
+    /// Устанавливаем Кун и Он чтения для каждого кандзи
+    private func updateKanji(kana: [KanaModel], kanjiKentei: [KanjiKenteiModel]) -> [KanjiKenteiModel] {
         var result: [KanjiKenteiModel] = []
         for kanji in kanjiKentei {
             let array = kanji.defaultReading.components(separatedBy: "    ")

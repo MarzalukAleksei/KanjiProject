@@ -91,7 +91,7 @@ struct KanjiView: View {
                     }
                 }
 
-// MARK: Список разделенный на ечейки
+// MARK: Список разделенный на ячейки
                 ScrollView(showsIndicators: false) {
                     LazyVStack(spacing: Settings.paddingBetweenElements) {
                         let separate = separateKanji(store.kanjiStore.getData(selectedLevel))
@@ -146,7 +146,7 @@ struct KanjiView: View {
         }
         return false
     }
-//MARK: Разделение массива на указанное количество элементов
+// MARK: Разделение массива на указанное количество элементов
     func separateKanji(_ kanjiArray: [KanjiModel]) -> [[KanjiModel]] {
         var result: [[KanjiModel]] = []
         var array: [KanjiModel] = []

@@ -63,13 +63,15 @@ struct MainView: View {
             print("Kanji - ", store.kanjiStore.getAll().count)
             print("kana - ", store.kanaStore.getAll().count)
             print("giseigo - ", store.giseigo.getAll().count)
+            print("KanjiKentei - ", store.kanjiKentei.getAll().count)
+            print(store.kanjiKentei.getAll().randomElement())
             
             
 //            CoreDataManager.shared.deleteAllUsersKanjiData(context: viewContext)
             
             
             
-            setJSONFile()
+//            setJSONFile()
             
         }
     }
@@ -77,12 +79,6 @@ struct MainView: View {
     func setJSONFile() {
         let refactorStores = RefactoredStores()
 //        refactorStores.kanjiKenteiStore.getAll().count
-        let kanjiKentei = refactorStores.kanjiKenteiStore.getAll().filter { $0.kenteiLevel == 5 }
-        
-        for i in kanjiKentei {
-            print(i)
-            print("")
-        }
 //        for row in kanjiKentei.enumerated() {
 //            print(row.element.body, "--->", row.element.examples, row.element.kenteiLevel, row.offset, "OLD ---> \(row.element.oldKanji)")
 //            print("")
@@ -92,16 +88,7 @@ struct MainView: View {
 //        JSON.methoods.saveJSONToFile(JSON.methoods.encodeToJSON(refactorStores.yojijukugoStore.getAll()), fileName: .yojijukugo)
 //        print(refactorStores.giseigoStore.getAll().randomElement())
 //    JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.giseigoStore.getAll()), fileName: .giseigo)
-        
-//        let array = refactorStores.bunpouStore.getAll()[0].points
-//        for element in array {
-//            print(element)
-//            print("")
-////            for i in element {
-////                print(i)
-////            }
-//        }
-//        print(refactorStores.bunpouStore.getAll()[0])
+        JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.kanjiKenteiStore.getAll()), fileName: .kanjiKentei)
     }
     
 }

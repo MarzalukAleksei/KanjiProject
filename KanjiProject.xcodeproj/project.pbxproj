@@ -97,8 +97,11 @@
 		AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF810329D9E801002B9921 /* KanjiMapper.swift */; };
 		AFB32FE92A93825F00934C09 /* WordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB32FE82A93825F00934C09 /* WordDetailView.swift */; };
 		AFBA6FF929F3640F008E11BB /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBA6FF829F3640F008E11BB /* CustomFonts.swift */; };
+		AFBE93C02ADDFF6B001CE03A /* KanjiKentei.json in Resources */ = {isa = PBXBuildFile; fileRef = AFBE93BF2ADDFF6A001CE03A /* KanjiKentei.json */; };
 		AFC3CB9C2A8587AA00DD59D4 /* LearningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3CB9B2A8587AA00DD59D4 /* LearningCell.swift */; };
 		AFC3CB9E2A85B78500DD59D4 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3CB9D2A85B78500DD59D4 /* DismissButton.swift */; };
+		AFCA6F542AE3D6FF003464EC /* kanjiKenteiRowWithReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCA6F532AE3D6FF003464EC /* kanjiKenteiRowWithReadingView.swift */; };
+		AFCA6F562AE5270E003464EC /* TextAndReadingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCA6F552AE5270E003464EC /* TextAndReadingModel.swift */; };
 		AFCC213B2AC550A700F1E37D /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC213A2AC550A700F1E37D /* Links.swift */; };
 		AFCC213D2AC550C100F1E37D /* MoveTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC213C2AC550C100F1E37D /* MoveTo.swift */; };
 		AFCC213F2AC550EE00F1E37D /* ModalViewButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC213E2AC550EE00F1E37D /* ModalViewButtons.swift */; };
@@ -212,8 +215,11 @@
 		AFAF810329D9E801002B9921 /* KanjiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiMapper.swift; sourceTree = "<group>"; };
 		AFB32FE82A93825F00934C09 /* WordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailView.swift; sourceTree = "<group>"; };
 		AFBA6FF829F3640F008E11BB /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
+		AFBE93BF2ADDFF6A001CE03A /* KanjiKentei.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KanjiKentei.json; sourceTree = "<group>"; };
 		AFC3CB9B2A8587AA00DD59D4 /* LearningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCell.swift; sourceTree = "<group>"; };
 		AFC3CB9D2A85B78500DD59D4 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
+		AFCA6F532AE3D6FF003464EC /* kanjiKenteiRowWithReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kanjiKenteiRowWithReadingView.swift; sourceTree = "<group>"; };
+		AFCA6F552AE5270E003464EC /* TextAndReadingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAndReadingModel.swift; sourceTree = "<group>"; };
 		AFCC213A2AC550A700F1E37D /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		AFCC213C2AC550C100F1E37D /* MoveTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveTo.swift; sourceTree = "<group>"; };
 		AFCC213E2AC550EE00F1E37D /* ModalViewButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewButtons.swift; sourceTree = "<group>"; };
@@ -373,6 +379,7 @@
 				AFEF744F2ABB043C002AB67D /* SearchViewWordRow.swift */,
 				AF17F93B2A44844200D5631D /* TabBarButton.swift */,
 				AFCC213E2AC550EE00F1E37D /* ModalViewButtons.swift */,
+				AFCA6F532AE3D6FF003464EC /* kanjiKenteiRowWithReadingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -463,6 +470,7 @@
 				AF30EB1029EB0A0C00E5B7A9 /* NouryokuLevel.swift */,
 				AF728DB72ADD3A170098765D /* KenteiLevel.swift */,
 				AF960B482A85734100A33373 /* KanjiFlow.swift */,
+				AFCA6F552AE5270E003464EC /* TextAndReadingModel.swift */,
 				AF2D7FB12AC45E1200642B48 /* BunpouModel.swift */,
 				AF4F2A9F2AB1C13400F38EE9 /* GiseigoModel.swift */,
 				AF5600762AA46C9400F0123C /* YojijukugoModel.swift */,
@@ -570,6 +578,7 @@
 				AF1EB0772A994DDD00850A3B /* Dictionary.json */,
 				AF1EB0672A977E3D00850A3B /* Kana.json */,
 				AFD0B3C12AA47A0F0045C0D0 /* Yojijukugo.json */,
+				AFBE93BF2ADDFF6A001CE03A /* KanjiKentei.json */,
 				AF4F2AA32AB1CB4200F38EE9 /* Giseigo.json */,
 			);
 			path = Files;
@@ -684,6 +693,7 @@
 				AF728DAC2ADD35A30098765D /* 04級.txt in Resources */,
 				AF728DAB2ADD35A30098765D /* 01級.txt in Resources */,
 				AF728DB32ADD35A30098765D /* 02準.txt in Resources */,
+				AFBE93C02ADDFF6B001CE03A /* KanjiKentei.json in Resources */,
 				AFD0B3C22AA47A0F0045C0D0 /* Yojijukugo.json in Resources */,
 				AF4F2AA42AB1CB4200F38EE9 /* Giseigo.json in Resources */,
 				AFAF80E129D9C647002B9921 /* Preview Assets.xcassets in Resources */,
@@ -716,6 +726,7 @@
 				AF0070962A9DC1FE001A4084 /* IdiomViewHeader.swift in Sources */,
 				AF1EB0562A972E4B00850A3B /* Store.swift in Sources */,
 				AF17F94D2A44ABC500D5631D /* DictionaryStore.swift in Sources */,
+				AFCA6F542AE3D6FF003464EC /* kanjiKenteiRowWithReadingView.swift in Sources */,
 				AF960B4B2A8578D400A33373 /* LearningFrontSideView.swift in Sources */,
 				AFEF744C2ABA60B1002AB67D /* SearchView.swift in Sources */,
 				AF17F9412A4486A100D5631D /* FrontSideVIew.swift in Sources */,
@@ -741,6 +752,7 @@
 				AF1EB0602A9775A800850A3B /* KanaMapper.swift in Sources */,
 				AF960B492A85734100A33373 /* KanjiFlow.swift in Sources */,
 				AFC3CB9C2A8587AA00DD59D4 /* LearningCell.swift in Sources */,
+				AFCA6F562AE5270E003464EC /* TextAndReadingModel.swift in Sources */,
 				AF728D9B2ADD12EC0098765D /* KanjiKenteiStore.swift in Sources */,
 				AF2D7FB22AC45E1200642B48 /* BunpouModel.swift in Sources */,
 				AF17F9472A449B1700D5631D /* DictionaryModel.swift in Sources */,
