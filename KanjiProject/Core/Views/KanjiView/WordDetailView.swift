@@ -108,6 +108,7 @@ struct WordDetailView: View {
             let height = (ElementSize.modalViewButtonHeight + (Settings.paddingBetweenText * 2)) * CGFloat(links.words.count)
             ModalViewButtons(links: links, moveTo: $moveTo)
                 .padding(.vertical, Settings.paddingBetweenText)
+            // устанавливает высоту модального вью
                 .presentationDetents([.height(height)])
             
         }

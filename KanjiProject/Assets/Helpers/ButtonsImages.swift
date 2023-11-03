@@ -60,4 +60,13 @@ class ButtonsImages {
     static var list: Image {
         Image(systemName: "square.fill.text.grid.1x2")
     }
+    
+    static var delete: Image {
+        Image(systemName: "arrow.counterclockwise")
+    }
+    
+    static var pencil: Image {
+//        Image(systemName: "pencil.and.scribble")
+        Image(systemName: "square.and.pencil")
+    }
 }

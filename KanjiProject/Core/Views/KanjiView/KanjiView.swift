@@ -49,7 +49,6 @@ struct KanjiView: View {
                     
                 }
                 .padding(.bottom, 0)
-                
 // MARK:  Кнопки уровней
                 ScrollViewReader { proxy in
                     ScrollView(.horizontal, showsIndicators: false) {

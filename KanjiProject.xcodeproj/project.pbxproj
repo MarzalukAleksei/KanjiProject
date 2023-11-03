@@ -52,6 +52,8 @@
 		AF4F2AA22AB1C67000F38EE9 /* GiseigoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F2AA12AB1C67000F38EE9 /* GiseigoStore.swift */; };
 		AF4F2AA42AB1CB4200F38EE9 /* Giseigo.json in Resources */ = {isa = PBXBuildFile; fileRef = AF4F2AA32AB1CB4200F38EE9 /* Giseigo.json */; };
 		AF52678D2A950B2F00A14CCD /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF52678C2A950B2F00A14CCD /* Json.swift */; };
+		AF52CDBE2AF508DD00C2D493 /* CoreMLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF52CDBD2AF508DD00C2D493 /* CoreMLManager.swift */; };
+		AF52CDC22AF5200F00C2D493 /* KanjiClassificator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AF52CDC12AF5200F00C2D493 /* KanjiClassificator.mlmodel */; };
 		AF5600732AA46B4B00F0123C /* Yojijukugo.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF5600722AA46B4B00F0123C /* Yojijukugo.csv */; };
 		AF5600752AA46C2500F0123C /* YojijukugoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5600742AA46C2500F0123C /* YojijukugoMapper.swift */; };
 		AF5600772AA46C9400F0123C /* YojijukugoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5600762AA46C9400F0123C /* YojijukugoModel.swift */; };
@@ -97,6 +99,7 @@
 		AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF810329D9E801002B9921 /* KanjiMapper.swift */; };
 		AFB32FE92A93825F00934C09 /* WordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB32FE82A93825F00934C09 /* WordDetailView.swift */; };
 		AFBA6FF929F3640F008E11BB /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBA6FF829F3640F008E11BB /* CustomFonts.swift */; };
+		AFBD4C842AF4606000E6873D /* DrawModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBD4C832AF4606000E6873D /* DrawModalView.swift */; };
 		AFBE93C02ADDFF6B001CE03A /* KanjiKentei.json in Resources */ = {isa = PBXBuildFile; fileRef = AFBE93BF2ADDFF6A001CE03A /* KanjiKentei.json */; };
 		AFC3CB9C2A8587AA00DD59D4 /* LearningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3CB9B2A8587AA00DD59D4 /* LearningCell.swift */; };
 		AFC3CB9E2A85B78500DD59D4 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3CB9D2A85B78500DD59D4 /* DismissButton.swift */; };
@@ -106,6 +109,7 @@
 		AFCC213D2AC550C100F1E37D /* MoveTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC213C2AC550C100F1E37D /* MoveTo.swift */; };
 		AFCC213F2AC550EE00F1E37D /* ModalViewButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC213E2AC550EE00F1E37D /* ModalViewButtons.swift */; };
 		AFD0B3C22AA47A0F0045C0D0 /* Yojijukugo.json in Resources */ = {isa = PBXBuildFile; fileRef = AFD0B3C12AA47A0F0045C0D0 /* Yojijukugo.json */; };
+		AFE4D21D2AF11AE000D97DE4 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4D21C2AF11AE000D97DE4 /* DrawView.swift */; };
 		AFEF74452AB4B1B5002AB67D /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF74442AB4B1B5002AB67D /* UserListView.swift */; };
 		AFEF74492AB5C6B4002AB67D /* View + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF74482AB5C6B4002AB67D /* View + Extension.swift */; };
 		AFEF744C2ABA60B1002AB67D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF744B2ABA60B1002AB67D /* SearchView.swift */; };
@@ -169,6 +173,8 @@
 		AF4F2AA12AB1C67000F38EE9 /* GiseigoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiseigoStore.swift; sourceTree = "<group>"; };
 		AF4F2AA32AB1CB4200F38EE9 /* Giseigo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Giseigo.json; sourceTree = "<group>"; };
 		AF52678C2A950B2F00A14CCD /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		AF52CDBD2AF508DD00C2D493 /* CoreMLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLManager.swift; sourceTree = "<group>"; };
+		AF52CDC12AF5200F00C2D493 /* KanjiClassificator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = KanjiClassificator.mlmodel; sourceTree = "<group>"; };
 		AF5600722AA46B4B00F0123C /* Yojijukugo.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Yojijukugo.csv; sourceTree = "<group>"; };
 		AF5600742AA46C2500F0123C /* YojijukugoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YojijukugoMapper.swift; sourceTree = "<group>"; };
 		AF5600762AA46C9400F0123C /* YojijukugoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YojijukugoModel.swift; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 		AFAF810329D9E801002B9921 /* KanjiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiMapper.swift; sourceTree = "<group>"; };
 		AFB32FE82A93825F00934C09 /* WordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailView.swift; sourceTree = "<group>"; };
 		AFBA6FF829F3640F008E11BB /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
+		AFBD4C832AF4606000E6873D /* DrawModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawModalView.swift; sourceTree = "<group>"; };
 		AFBE93BF2ADDFF6A001CE03A /* KanjiKentei.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KanjiKentei.json; sourceTree = "<group>"; };
 		AFC3CB9B2A8587AA00DD59D4 /* LearningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCell.swift; sourceTree = "<group>"; };
 		AFC3CB9D2A85B78500DD59D4 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
@@ -224,6 +231,7 @@
 		AFCC213C2AC550C100F1E37D /* MoveTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveTo.swift; sourceTree = "<group>"; };
 		AFCC213E2AC550EE00F1E37D /* ModalViewButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewButtons.swift; sourceTree = "<group>"; };
 		AFD0B3C12AA47A0F0045C0D0 /* Yojijukugo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Yojijukugo.json; sourceTree = "<group>"; };
+		AFE4D21C2AF11AE000D97DE4 /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		AFEF74442AB4B1B5002AB67D /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		AFEF74482AB5C6B4002AB67D /* View + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Extension.swift"; sourceTree = "<group>"; };
 		AFEF744B2ABA60B1002AB67D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -321,6 +329,15 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		AF52CDBA2AF5078600C2D493 /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+				AF52CDBD2AF508DD00C2D493 /* CoreMLManager.swift */,
+				AF52CDC12AF5200F00C2D493 /* KanjiClassificator.mlmodel */,
+			);
+			path = CoreML;
+			sourceTree = "<group>";
+		};
 		AF6A2E0929E7358800D7C1A9 /* ViewObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +397,8 @@
 				AF17F93B2A44844200D5631D /* TabBarButton.swift */,
 				AFCC213E2AC550EE00F1E37D /* ModalViewButtons.swift */,
 				AFCA6F532AE3D6FF003464EC /* kanjiKenteiRowWithReadingView.swift */,
+				AFE4D21C2AF11AE000D97DE4 /* DrawView.swift */,
+				AFBD4C832AF4606000E6873D /* DrawModalView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -429,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				AFAF80D929D9C646002B9921 /* KanjiProjectApp.swift */,
+				AF52CDBA2AF5078600C2D493 /* CoreML */,
 				AF78E6B92A49BC1300D43ED7 /* Components */,
 				AF6A2E0A29E735BD00D7C1A9 /* Core */,
 				AF52678B2A950B0F00A14CCD /* JSON */,
@@ -719,6 +739,7 @@
 				AFEF744E2ABA6305002AB67D /* SearchNavigationBar.swift in Sources */,
 				AF17F9492A44A1C600D5631D /* DictionaryMapper.swift in Sources */,
 				AFFC08C22A829E3E0043B741 /* KanjiRow.swift in Sources */,
+				AFBD4C842AF4606000E6873D /* DrawModalView.swift in Sources */,
 				AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */,
 				AF728D992ADD0D8D0098765D /* KanjiKenteiModel.swift in Sources */,
 				AF5600752AA46C2500F0123C /* YojijukugoMapper.swift in Sources */,
@@ -747,6 +768,7 @@
 				AFA6704D2A4B23BB00ED639D /* CoreDataManager.swift in Sources */,
 				AF6A2E0129E62CDA00D7C1A9 /* RefactoredStores.swift in Sources */,
 				AFCC213D2AC550C100F1E37D /* MoveTo.swift in Sources */,
+				AFE4D21D2AF11AE000D97DE4 /* DrawView.swift in Sources */,
 				AF17F94B2A44A1E000D5631D /* IDataMapper.swift in Sources */,
 				AF17F9432A4486AC00D5631D /* BackSideView.swift in Sources */,
 				AF1EB0602A9775A800850A3B /* KanaMapper.swift in Sources */,
@@ -770,6 +792,7 @@
 				AF2D7FB02AC45DD600642B48 /* BunpouMapper.swift in Sources */,
 				AFEF74492AB5C6B4002AB67D /* View + Extension.swift in Sources */,
 				AF5600772AA46C9400F0123C /* YojijukugoModel.swift in Sources */,
+				AF52CDBE2AF508DD00C2D493 /* CoreMLManager.swift in Sources */,
 				AF728D972ADD0D6D0098765D /* KanjiKenteiMapper.swift in Sources */,
 				AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */,
 				AFFC08B42A823EAB0043B741 /* LevelButton.swift in Sources */,
@@ -787,6 +810,7 @@
 				AF4F2AA22AB1C67000F38EE9 /* GiseigoStore.swift in Sources */,
 				AFFC08C62A82CE4D0043B741 /* ProgressIndicatorLine.swift in Sources */,
 				AF6A2DF229E5AF5100D7C1A9 /* BackgroundView.swift in Sources */,
+				AF52CDC22AF5200F00C2D493 /* KanjiClassificator.mlmodel in Sources */,
 				AF30EB0229EAB7DF00E5B7A9 /* OpenScrollView.swift in Sources */,
 				AF1EB0662A97796600850A3B /* KanaStore.swift in Sources */,
 				AFB32FE92A93825F00934C09 /* WordDetailView.swift in Sources */,
@@ -935,6 +959,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -965,6 +991,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

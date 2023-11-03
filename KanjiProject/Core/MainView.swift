@@ -66,7 +66,7 @@ struct MainView: View {
             print("KanjiKentei - ", store.kanjiKentei.getAll().count)
             print(store.kanjiKentei.getAll().randomElement())
             
-            
+//            CoreMLManager().getPrediction()
 //            CoreDataManager.shared.deleteAllUsersKanjiData(context: viewContext)
             
             

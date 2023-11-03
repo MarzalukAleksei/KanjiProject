@@ -17,9 +17,12 @@ struct KanjiProjectApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .preferredColorScheme(.light)
+                .statusBarHidden()
                 .environment(\.managedObjectContext, CoreDataManager.shared.container.viewContext)
                 .environmentObject(store)
                 .environmentObject(taBarState)
+//            DrawView(size: CGSize(width: 300, height: 300))
                 
         }
         .onChange(of: scenePhase) { phase in
