@@ -8,29 +8,18 @@
 import SwiftUI
 
 struct LevelButton: View {
-    @EnvironmentObject var store: Store
-    var nouryokuLevelTitle: NouryokuLevel?
-    var kankenLevelTitle: KankenLevel?
-    var nouryokuKanjiArray: [KanjiModel]?
-    var kanjiKankenArray: [KanjiKankenModel]?
+    let level: Any
+    let kanjiArray: [Any]
     let size: CGSize
     let color: Color
     let colors: [Color] = [.red, .green, .white]
     var values: [Double] {
-        if nouryokuKanjiArray != nil {
-            return nouryokuProgress()
-        } 
-        if kanjiKankenArray != nil {
-            return kankenProgress()
-        }
-        return []
+        getAngles()
     }
-    
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-//                .frame(width: size.width, height: size.height)
             let text = buttonText()
             Text(text)
                 .foregroundColor(.white)
@@ -39,7 +28,6 @@ struct LevelButton: View {
                 Spacer()
                 Text("\(elementCount())")
                     .font(.system(size: 8))
-//                    .foregroundColor(.init(red: 139, green: 148, blue: 141))
                     .foregroundColor(.white)
                     .padding(.bottom, 15)
             }
@@ -59,7 +47,7 @@ struct LevelButton: View {
     }
     
     private func nouryokuProgress() -> [Double] {
-        guard let nouryokuKanjiArray = nouryokuKanjiArray else { return [] }
+        guard let nouryokuKanjiArray = kanjiArray as? [KanjiModel] else { return [] }
         
         let inArray = Double(nouryokuKanjiArray.count)
         let red = Double(nouryokuKanjiArray.filter { $0.lastAnswerRight == false }.count)
@@ -72,7 +60,7 @@ struct LevelButton: View {
     }
     
     private func kankenProgress() -> [Double] {
-        guard let kanjiKankenArray = kanjiKankenArray else { return [] }
+        guard let kanjiKankenArray = kanjiArray as? [KanjiKankenModel] else { return [] }
         
         let inArray = Double(kanjiKankenArray.count)
         let red = Double(kanjiKankenArray.filter { $0.lastAnswer == false }.count)
@@ -85,32 +73,40 @@ struct LevelButton: View {
     }
     
     private func buttonText() -> String {
-        if let nouryokuLevelTitle = nouryokuLevelTitle {
-            return String(nouryokuLevelTitle.rawValue)
-        }
-        if let kankenLevelTitle = kankenLevelTitle {
-            var text = kankenLevelTitle.rawValue
+        switch level {
+        case is NouryokuLevel:
+            guard let level = level as? NouryokuLevel else { return "" }
+            return String(level.rawValue)
+        case is KankenLevel:
+            guard let level = level as? KankenLevel else { return "" }
+            var text = level.rawValue
             if text.first == "0" {
                 text = String(text.dropFirst())
             }
             return text
+        case _: break
         }
         return ""
     }
     
     private func elementCount() -> Int {
-        if let nouryokuKanjiArray = nouryokuKanjiArray {
-            return nouryokuKanjiArray.count
+        return kanjiArray.count
+    }
+    
+    func getAngles() -> [Double] {
+        switch kanjiArray {
+        case is [KanjiModel]:
+            return nouryokuProgress()
+        case is [KanjiKankenModel]:
+            return kankenProgress()
+        case _: break
         }
-        if let kanjiKankenArray = kanjiKankenArray {
-            return kanjiKankenArray.count
-        }
-        return 0
+        return []
     }
 }
 
 struct LevelButton_Previews: PreviewProvider {
     static var previews: some View {
-        LevelButton(nouryokuLevelTitle: .another, nouryokuKanjiArray: [.MOCK_KANJI, .MOCK_KANJI], size: CGSize(width: 100, height: 100), color: .black)
+        LevelButton(level: NouryokuLevel.N5, kanjiArray: [KanjiModel.MOCK_KANJI, KanjiModel.MOCK_KANJI], size: CGSize(width: 100, height: 100), color: .black)
     }
 }

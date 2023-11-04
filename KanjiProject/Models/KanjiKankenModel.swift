@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ExampleType: String, Codable, CaseIterable {
+enum SchoolLevel: String, Codable, CaseIterable {
     case easy = "［小］"
     case middle = "［中］"
     case hight = "［高］"
@@ -17,10 +17,11 @@ enum ExampleType: String, Codable, CaseIterable {
 struct KanjiKankenModel: Codable, Hashable {
     let body: String
     let defaultReading: String
-    var kunReading: [ExampleType: String]
-    var onReading: [ExampleType: String]
-    let examples: [ExampleType: String]
-    let examplesWithReading: [ExampleType: String]
+    var kunReading: [SchoolLevel: String]
+    var onReading: [SchoolLevel: String]
+    let examples: [SchoolLevel: String]
+    let examplesWithReading: [SchoolLevel: [[TextAndReading]]]
+    var translateExapmles: [SchoolLevel: [String]] = [:]
     let meaning: String
     let keys: String
     let kankenLevel: KankenLevel
@@ -30,14 +31,21 @@ struct KanjiKankenModel: Codable, Hashable {
 }
 
 extension KanjiKankenModel {
-    static let MOCK_KANJIKENTEI = KanjiKankenModel(body: "舞",
-                                            defaultReading: "［中］ブ ［外］ム    ［中］まい、ま（う） ［外］もてあそ（ぶ）",
-                                            kunReading: [.exception: "もてあそ（ぶ）"],
-                                            onReading: [.middle: "ブ"],
-                                            examples: [.middle: "舞う・舞・舞姫・舞台・舞踏・見舞う・歌舞伎・見舞い"],
-                                            examplesWithReading: [.middle: "舞まう・舞まい・舞まい姫ひめ・舞ぶ台たい・舞ぶ踏とう・見み舞まう・歌か舞ぶ伎き・見み舞まい"],
-                                            meaning: "① まう。踊る。 ② まわす。はげます。奮い立たせる。 ③ もてあそぶ。思いのままにあつかう。",
-                                            keys: "舛",
-                                            kankenLevel: .級04,
+    static let MOCK_KANJIKENTEI = KanjiKankenModel(body: "踞",
+                                            defaultReading: "［外］キョ、コ    ［外］うずくま（る）、おご（る）",
+                                            kunReading: [KanjiProject.SchoolLevel.exception: "うずくま（る）、おご（る）"],
+                                            onReading: [KanjiProject.SchoolLevel.exception: "キョ、コ"],
+                                            examples: [KanjiProject.SchoolLevel.exception: "踞る（１）・踞る（２）・箕踞・蹲踞・踞座・蟠踞・虎踞竜蟠・竜蟠虎踞"],
+                                            examplesWithReading: [KanjiProject.SchoolLevel.exception: [[KanjiProject.TextAndReading(text: "踞る（１）", reading: "うずくま")], [KanjiProject.TextAndReading(text: "踞る（２）", reading: "おご")], [KanjiProject.TextAndReading(text: "箕", reading: "き"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")], [KanjiProject.TextAndReading(text: "蹲", reading: "そん"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")], [KanjiProject.TextAndReading(text: "踞", reading: "きょ"), KanjiProject.TextAndReading(text: "座", reading: "ざ")], [KanjiProject.TextAndReading(text: "蟠", reading: "ばん"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")], [KanjiProject.TextAndReading(text: "虎", reading: "こ"), KanjiProject.TextAndReading(text: "踞", reading: "きょ"), KanjiProject.TextAndReading(text: "竜", reading: "りょう"), KanjiProject.TextAndReading(text: "蟠", reading: "ばん")], [KanjiProject.TextAndReading(text: "竜", reading: "りょう"), KanjiProject.TextAndReading(text: "蟠", reading: "ばん"), KanjiProject.TextAndReading(text: "虎", reading: "こ"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")]]],
+                                            meaning: "① しゃがむ。うずくまる。ひざを立てて座る。 ② 腰掛ける。よりかかる。 ③ おごる。おごりたかぶる。",
+                                            keys: "足",
+                                            kankenLevel: .級01,
                                             stroke: 15)
+}
+
+extension KanjiKankenModel {
+    
+    mutating func translateExamples() async {
+        self.translateExapmles = [:]
+    }
 }

@@ -59,25 +59,46 @@ struct MainView: View {
                 
         }
         .onAppear {
-            print("Dictionary - ", store.dictionaryStore.getAll().count)
-            print("Kanji - ", store.kanjiStore.getAll().count)
-            print("kana - ", store.kanaStore.getAll().count)
-            print("giseigo - ", store.giseigo.getAll().count)
-            print("KanjiKentei - ", store.kanjiKanken.getAll().count)
-//            print(store.kanjiKentei.getAll().randomElement())
-            
+            Task {
+                await setTranslateTask()
+            }
 //            CoreMLManager().getPrediction()
 //            CoreDataManager.shared.deleteAllUsersKanjiData(context: viewContext)
-            
-            
-            
 //            setJSONFile()
-            
         }
     }
     
+    func setTranslateTask() async {
+        let kanjiKankenArray = await withTaskGroup(of: [(key: String, value: String)].self, returning: [KanjiKankenModel].self) { taskGroup in
+            for word in store.kanjiKanken.getAll() {
+                taskGroup.addTask {
+                    await findWords(word.body)
+                }
+            }
+            var results: [KanjiKankenModel] = store.kanjiKanken.getAll()
+            
+            for await result in taskGroup {
+                
+            }
+            return results
+        }
+        
+    }
+    
+    func findWords(_ text: String) async -> [(key: String, value: String)] {
+        let dictionary = store.dictionaryStore.getAll()
+        let filtered = dictionary.filter { $0.body.contains(text) }
+        var result: [(key: String, value: String)] = []
+        for dictionaryWord in filtered {
+            result.append((key: dictionaryWord.body, value: dictionaryWord.reading))
+        }
+        return result
+    }
+    
     func setJSONFile() {
-        let refactorStores = RefactoredStores()
+//        let refactorStores = RefactoredStores()
+//        let rand = refactorStores.kanjiKankenStore.getAll().randomElement()
+//        print(rand)
 //        refactorStores.kanjiKenteiStore.getAll().count
 //        for row in kanjiKentei.enumerated() {
 //            print(row.element.body, "--->", row.element.examples, row.element.kenteiLevel, row.offset, "OLD ---> \(row.element.oldKanji)")
@@ -88,7 +109,7 @@ struct MainView: View {
 //        JSON.methoods.saveJSONToFile(JSON.methoods.encodeToJSON(refactorStores.yojijukugoStore.getAll()), fileName: .yojijukugo)
 //        print(refactorStores.giseigoStore.getAll().randomElement())
 //    JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.giseigoStore.getAll()), fileName: .giseigo)
-        JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.kanjiKenteiStore.getAll()), fileName: .kanjiKanken)
+//        JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.kanjiKankenStore.getAll()), fileName: .kanjiKanken)
     }
     
 }

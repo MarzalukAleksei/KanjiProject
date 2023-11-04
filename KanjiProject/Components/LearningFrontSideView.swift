@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LearningFrontSideView: View {
     let index: Int
-    let kanji: KanjiModel
+    let kanji: Any
     let number: Int
     let count: Int
     let type: String
@@ -34,7 +34,7 @@ struct LearningFrontSideView: View {
                     Spacer()
                 }
                 VStack {
-                    Text(kanji.body)
+                    Text(getBody())
                         .font(.system(size: geo.size.height / 3))
                     .bold()
                     
@@ -44,11 +44,23 @@ struct LearningFrontSideView: View {
             }
         }
     }
+    private func getBody() -> String {
+        switch kanji {
+        case is KanjiModel:
+            guard let kanji = kanji as? KanjiModel else { return "" }
+            return kanji.body
+        case is KanjiKankenModel:
+            guard let kanji = kanji as? KanjiKankenModel else { return "" }
+            return kanji.body
+        case _: break
+        }
+        return ""
+    }
 }
 
 struct LearningFrontSideView_Previews: PreviewProvider {
     static var previews: some View {
-        LearningFrontSideView(index: 32, kanji: .MOCK_KANJI, number: 3, count: 20, type: "漢")
+        LearningFrontSideView(index: 32, kanji: KanjiModel.MOCK_KANJI, number: 3, count: 20, type: "漢")
             .frame(width: 380, height: 250)
             .background(Color.black)
             

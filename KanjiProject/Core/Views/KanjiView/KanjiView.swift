@@ -14,7 +14,8 @@ struct KanjiView: View {
     @AppStorage("selectedNouryokuLevel") var selectedNouryokuLevel: NouryokuLevel = .N5
     @AppStorage("selectedKankenLevel") var selectedKankenLevel: KankenLevel = .級10
     @AppStorage("selectedRow") var selectedRow: Data?
-    @AppStorage("testType") var toggle: Bool = false
+    @AppStorage("kanjiTypeSlider") var toggleInStorage: Bool = false
+    @State var toggle = false // Используется 2 свойства вместо 1 из-за того, что при использовании только AppStorage пропадает анимация
     
     @FetchRequest(entity: UsersKanji.entity(),
                   sortDescriptors: []) private var kanji: FetchedResults<UsersKanji>
@@ -42,7 +43,7 @@ struct KanjiView: View {
                         Text(toggle ? "KANKEN 漢検": "JLPT 日本語能力試験" )
                             .font(CustomFont.scroll(size: 20))
                     }
-                    
+// MARK: Custom Toggle
                     HStack {
                         CustomSlider(toggle: $toggle, title: ("", ""))
                             .frame(width: ElementSize.customtoggleSize.width,
@@ -50,7 +51,6 @@ struct KanjiView: View {
                         Spacer()
                     }
                     .padding(.leading, Settings.padding)
-                    
                 }
                 .padding(.bottom, 0)
 // MARK:  Кнопки уровней
@@ -65,25 +65,6 @@ struct KanjiView: View {
                 }
 
 // MARK: Список разделенный на ячейки
-//                ScrollView(showsIndicators: false) {
-//                    LazyVStack(spacing: Settings.paddingBetweenElements) {
-//                        let separate = separateKanji(store.kanjiStore.getData(selectedNouryokuLevel))
-//                        let selectedRow = getSelectedRow()
-//                            ForEach(Array(separate.enumerated()), id: \.element) { (index, array) in
-//                                
-//                                NavigationLink(value: KanjiFlow(index: index + 1, kanji: array, type: toggle ? "漢" : "問")) {
-//                                    if !toggle {
-//                                        KanjiRow(kanji: array, number: index + 1, current: isCurrentRow(selectedRow, index))
-//                                    } else {
-//                                        KanjiRow(kanji: array, number: index + 1, current: isCurrentRow(selectedRow, index))
-//                                    }
-//                                }
-//                                .buttonStyle(.plain)
-//                            }
-//                    }
-//                    .padding(.top, Settings.paddingBetweenElements)
-//                    .padding(.horizontal, Settings.padding)
-//                }
                 if toggle {
                     KankenScrollListView()
                 } else {
@@ -92,13 +73,18 @@ struct KanjiView: View {
             }
             .onAppear {
                 tabBarState.tabBarIsHidden = false
+                toggle = toggleInStorage
             }
+            .onChange(of: toggle) { value in
+                toggleInStorage = value
+            }
+            
 // MARK: Destinations
             .navigationDestination(for: KanjiFlow.self) { flow in
-                LearningView(kanjiFlow: flow)
+                NouryokuKanjiLearningView(kanjiFlow: flow)
             }
             .navigationDestination(for: KankenFlow.self) { flow in
-                
+                KankenKanjiLearningView(kankenFlow: flow)
             }
             
             Spacer()

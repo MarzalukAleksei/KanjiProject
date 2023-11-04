@@ -16,23 +16,25 @@ struct LevelSelectorView: View {
     
     
     var body: some View {
-        ScrollViewReader { proxy in
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: Settings.paddingBetweenElements) {
-                    
-                    if !toggle {
-                        NouryokuButtons(proxy: proxy, store: store, selectedLevel: $selectedNouryokuLevel)
-                    } else {
-                        KankenButtons(proxy: proxy, store: store, selectedKankenLevel: $selectedKankenLevel)
+        VStack {
+            ScrollViewReader { proxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: Settings.paddingBetweenElements) {
+                        
+                        if !toggle {
+                            NouryokuButtons(proxy: proxy, store: store, selectedLevel: $selectedNouryokuLevel)
+                        } else {
+                            KankenButtons(proxy: proxy, store: store, selectedKankenLevel: $selectedKankenLevel)
+                        }
                     }
+                    .padding(.horizontal, Settings.padding)
                 }
-                .padding(.horizontal, Settings.padding)
-            }
-            .onAppear {
-                withAnimation(Settings.animation) {
-                    scrollTo(proxy: proxy)
+                .onAppear {
+                    withAnimation(Settings.animation) {
+                        scrollTo(proxy: proxy)
+                    }
+                    
                 }
-                
             }
         }
     }
@@ -49,8 +51,8 @@ fileprivate struct NouryokuButtons: View {
         ForEach(NouryokuLevel.allCases.reversed(), id: \.self) { level in
             if level != .another {
                 let kanjiArray = store.kanjiStore.getData(level)
-                LevelButton(nouryokuLevelTitle: level,
-                            nouryokuKanjiArray: kanjiArray,
+                LevelButton(level: level,
+                            kanjiArray: kanjiArray,
                             size: CGSize(width: ElementSize.levelButtonSize.width,
                                          height: ElementSize.levelButtonSize.height),
                             color: selectedLevel == level ? .secondary : .black)
@@ -75,9 +77,9 @@ fileprivate struct KankenButtons: View {
     @Binding var selectedKankenLevel: KankenLevel
     var body: some View {
         ForEach(KankenLevel.allCases.reversed(), id: \.self) { level in
-            let kankenArray = store.kanjiKanken.getAll().filter { $0.kankenLevel == level }
-            LevelButton(kankenLevelTitle: level,
-                        kanjiKankenArray: kankenArray,
+            let kankenArray = store.kanjiKanken.get(level: level)
+            LevelButton(level: level,
+                        kanjiArray: kankenArray,
                         size: CGSize(width: ElementSize.levelButtonSize.width,
                                      height: ElementSize.levelButtonSize.height),
                         color: selectedKankenLevel == level ? .secondary : .black)

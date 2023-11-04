@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TextAndReading: Hashable {
+struct TextAndReading: Hashable, Codable {
     var text: String
     var reading: String
 }

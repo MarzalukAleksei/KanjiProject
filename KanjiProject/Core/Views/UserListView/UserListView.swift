@@ -54,7 +54,7 @@ struct UserListView: View {
                     listEditButtonPressed = false
                 }
             })
-            .navigationTitle(listEditButtonPressed ? "Какие убираем?" : "")
+            .navigationTitle(listEditButtonPressed ? "Какие убираем?" : "Избранное")
             .navigationBarTitleDisplayMode(.inline)
             
             .toolbar {
