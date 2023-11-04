@@ -18,7 +18,7 @@ class JSONManager {
         case kana = "Kana"
         case yojijukugo = "Yojijukugo"
         case giseigo = "Giseigo"
-        case kanjiKentei = "KanjiKentei"
+        case kanjiKanken = "KanjiKanken"
     }
     
     func encodeToJSON<T: Encodable>(_ model: T) -> Data {
@@ -124,10 +124,10 @@ class JSONManager {
         return result
     }
     
-    func getKanjiKentei() -> [KanjiKenteiModel] {
-        guard let url = Bundle.main.url(forResource: FileName.kanjiKentei.rawValue, withExtension: "json"),
+    func getKanjiKanken() -> [KanjiKankenModel] {
+        guard let url = Bundle.main.url(forResource: FileName.kanjiKanken.rawValue, withExtension: "json"),
               let data = try? Data(contentsOf: url),
-              let result: [KanjiKenteiModel] = decodeToModel(data) else {
+              let result: [KanjiKankenModel] = decodeToModel(data) else {
             print("KanjiKentei Json File Not Exist")
             return []
         }

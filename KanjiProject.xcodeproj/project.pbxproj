@@ -41,11 +41,18 @@
 		AF30EB0229EAB7DF00E5B7A9 /* OpenScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EB0129EAB7DF00E5B7A9 /* OpenScrollView.swift */; };
 		AF30EB0729EAC3E200E5B7A9 /* unaojapon-p-2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF30EB0629EAC3E200E5B7A9 /* unaojapon-p-2.ttf */; };
 		AF30EB1129EB0A0C00E5B7A9 /* NouryokuLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EB1029EB0A0C00E5B7A9 /* NouryokuLevel.swift */; };
+		AF362A742AF59443006DF143 /* LevelSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF362A732AF59443006DF143 /* LevelSelectorView.swift */; };
+		AF362A762AF5948C006DF143 /* KanjiTestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF362A752AF5948C006DF143 /* KanjiTestType.swift */; };
+		AF362A7A2AF5BAFB006DF143 /* KanjiKanken.json in Resources */ = {isa = PBXBuildFile; fileRef = AF362A792AF5BAFB006DF143 /* KanjiKanken.json */; };
 		AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */; };
 		AF3A72B82A7D1C3000A5513C /* ScrollPartsModifires.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B72A7D1C3000A5513C /* ScrollPartsModifires.swift */; };
 		AF3A72BA2A7D4AD500A5513C /* CloseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B92A7D4AD500A5513C /* CloseScrollView.swift */; };
 		AF3A72BC2A7E4AC500A5513C /* ElementSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72BB2A7E4AC500A5513C /* ElementSize.swift */; };
 		AF3A72C22A80512800A5513C /* PartialRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */; };
+		AF3FEB9C2AF63F3300D40B23 /* KanjiScrollListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3FEB9B2AF63F3300D40B23 /* KanjiScrollListView.swift */; };
+		AF3FEB9E2AF6419600D40B23 /* KankenScrollListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3FEB9D2AF6419600D40B23 /* KankenScrollListView.swift */; };
+		AF3FEBA02AF6423900D40B23 /* SelectedKankenRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3FEB9F2AF6423800D40B23 /* SelectedKankenRow.swift */; };
+		AF3FEBA22AF64EFC00D40B23 /* KakkenFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3FEBA12AF64EFC00D40B23 /* KakkenFlow.swift */; };
 		AF4F2A9C2AB1C09C00F38EE9 /* Giseigo.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF4F2A9B2AB1C09C00F38EE9 /* Giseigo.csv */; };
 		AF4F2A9E2AB1C0EA00F38EE9 /* GiseigoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F2A9D2AB1C0EA00F38EE9 /* GiseigoMapper.swift */; };
 		AF4F2AA02AB1C13400F38EE9 /* GiseigoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F2A9F2AB1C13400F38EE9 /* GiseigoModel.swift */; };
@@ -64,8 +71,8 @@
 		AF6A2E0429E721BE00D7C1A9 /* KanjiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */; };
 		AF6A2E0629E7267400D7C1A9 /* IStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0529E7267400D7C1A9 /* IStore.swift */; };
 		AF728D972ADD0D6D0098765D /* KanjiKenteiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF728D962ADD0D6D0098765D /* KanjiKenteiMapper.swift */; };
-		AF728D992ADD0D8D0098765D /* KanjiKenteiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF728D982ADD0D8D0098765D /* KanjiKenteiModel.swift */; };
-		AF728D9B2ADD12EC0098765D /* KanjiKenteiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF728D9A2ADD12EC0098765D /* KanjiKenteiStore.swift */; };
+		AF728D992ADD0D8D0098765D /* KanjiKankenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF728D982ADD0D8D0098765D /* KanjiKankenModel.swift */; };
+		AF728D9B2ADD12EC0098765D /* KanjiKankenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF728D9A2ADD12EC0098765D /* KanjiKankenStore.swift */; };
 		AF728DAB2ADD35A30098765D /* 01級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728D9F2ADD35A20098765D /* 01級.txt */; };
 		AF728DAC2ADD35A30098765D /* 04級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA02ADD35A20098765D /* 04級.txt */; };
 		AF728DAD2ADD35A30098765D /* 07級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA12ADD35A20098765D /* 07級.txt */; };
@@ -78,7 +85,7 @@
 		AF728DB42ADD35A30098765D /* 05級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA82ADD35A30098765D /* 05級.txt */; };
 		AF728DB52ADD35A30098765D /* 06級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DA92ADD35A30098765D /* 06級.txt */; };
 		AF728DB62ADD35A30098765D /* 09級.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF728DAA2ADD35A30098765D /* 09級.txt */; };
-		AF728DB82ADD3A170098765D /* KenteiLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF728DB72ADD3A170098765D /* KenteiLevel.swift */; };
+		AF728DB82ADD3A170098765D /* KankenLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF728DB72ADD3A170098765D /* KankenLevel.swift */; };
 		AF960B412A83C70600A33373 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF960B402A83C70500A33373 /* CustomSlider.swift */; };
 		AF960B432A855DD000A33373 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF960B422A855DD000A33373 /* LearningView.swift */; };
 		AF960B472A8563C200A33373 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF960B462A8563C200A33373 /* Modifiers.swift */; };
@@ -100,7 +107,6 @@
 		AFB32FE92A93825F00934C09 /* WordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB32FE82A93825F00934C09 /* WordDetailView.swift */; };
 		AFBA6FF929F3640F008E11BB /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBA6FF829F3640F008E11BB /* CustomFonts.swift */; };
 		AFBD4C842AF4606000E6873D /* DrawModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBD4C832AF4606000E6873D /* DrawModalView.swift */; };
-		AFBE93C02ADDFF6B001CE03A /* KanjiKentei.json in Resources */ = {isa = PBXBuildFile; fileRef = AFBE93BF2ADDFF6A001CE03A /* KanjiKentei.json */; };
 		AFC3CB9C2A8587AA00DD59D4 /* LearningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3CB9B2A8587AA00DD59D4 /* LearningCell.swift */; };
 		AFC3CB9E2A85B78500DD59D4 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3CB9D2A85B78500DD59D4 /* DismissButton.swift */; };
 		AFCA6F542AE3D6FF003464EC /* kanjiKenteiRowWithReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCA6F532AE3D6FF003464EC /* kanjiKenteiRowWithReadingView.swift */; };
@@ -162,11 +168,18 @@
 		AF30EB0129EAB7DF00E5B7A9 /* OpenScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScrollView.swift; sourceTree = "<group>"; };
 		AF30EB0629EAC3E200E5B7A9 /* unaojapon-p-2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "unaojapon-p-2.ttf"; sourceTree = "<group>"; };
 		AF30EB1029EB0A0C00E5B7A9 /* NouryokuLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NouryokuLevel.swift; sourceTree = "<group>"; };
+		AF362A732AF59443006DF143 /* LevelSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectorView.swift; sourceTree = "<group>"; };
+		AF362A752AF5948C006DF143 /* KanjiTestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTestType.swift; sourceTree = "<group>"; };
+		AF362A792AF5BAFB006DF143 /* KanjiKanken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KanjiKanken.json; sourceTree = "<group>"; };
 		AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupView.swift; sourceTree = "<group>"; };
 		AF3A72B72A7D1C3000A5513C /* ScrollPartsModifires.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPartsModifires.swift; sourceTree = "<group>"; };
 		AF3A72B92A7D4AD500A5513C /* CloseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseScrollView.swift; sourceTree = "<group>"; };
 		AF3A72BB2A7E4AC500A5513C /* ElementSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementSize.swift; sourceTree = "<group>"; };
 		AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialRoundedRectangle.swift; sourceTree = "<group>"; };
+		AF3FEB9B2AF63F3300D40B23 /* KanjiScrollListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiScrollListView.swift; sourceTree = "<group>"; };
+		AF3FEB9D2AF6419600D40B23 /* KankenScrollListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KankenScrollListView.swift; sourceTree = "<group>"; };
+		AF3FEB9F2AF6423800D40B23 /* SelectedKankenRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedKankenRow.swift; sourceTree = "<group>"; };
+		AF3FEBA12AF64EFC00D40B23 /* KakkenFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakkenFlow.swift; sourceTree = "<group>"; };
 		AF4F2A9B2AB1C09C00F38EE9 /* Giseigo.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Giseigo.csv; sourceTree = "<group>"; };
 		AF4F2A9D2AB1C0EA00F38EE9 /* GiseigoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiseigoMapper.swift; sourceTree = "<group>"; };
 		AF4F2A9F2AB1C13400F38EE9 /* GiseigoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiseigoModel.swift; sourceTree = "<group>"; };
@@ -185,8 +198,8 @@
 		AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiStore.swift; sourceTree = "<group>"; };
 		AF6A2E0529E7267400D7C1A9 /* IStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStore.swift; sourceTree = "<group>"; };
 		AF728D962ADD0D6D0098765D /* KanjiKenteiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiKenteiMapper.swift; sourceTree = "<group>"; };
-		AF728D982ADD0D8D0098765D /* KanjiKenteiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiKenteiModel.swift; sourceTree = "<group>"; };
-		AF728D9A2ADD12EC0098765D /* KanjiKenteiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiKenteiStore.swift; sourceTree = "<group>"; };
+		AF728D982ADD0D8D0098765D /* KanjiKankenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiKankenModel.swift; sourceTree = "<group>"; };
+		AF728D9A2ADD12EC0098765D /* KanjiKankenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiKankenStore.swift; sourceTree = "<group>"; };
 		AF728D9F2ADD35A20098765D /* 01級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "01級.txt"; sourceTree = "<group>"; };
 		AF728DA02ADD35A20098765D /* 04級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "04級.txt"; sourceTree = "<group>"; };
 		AF728DA12ADD35A20098765D /* 07級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "07級.txt"; sourceTree = "<group>"; };
@@ -199,7 +212,7 @@
 		AF728DA82ADD35A30098765D /* 05級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "05級.txt"; sourceTree = "<group>"; };
 		AF728DA92ADD35A30098765D /* 06級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "06級.txt"; sourceTree = "<group>"; };
 		AF728DAA2ADD35A30098765D /* 09級.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "09級.txt"; sourceTree = "<group>"; };
-		AF728DB72ADD3A170098765D /* KenteiLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KenteiLevel.swift; sourceTree = "<group>"; };
+		AF728DB72ADD3A170098765D /* KankenLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KankenLevel.swift; sourceTree = "<group>"; };
 		AF960B402A83C70500A33373 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		AF960B422A855DD000A33373 /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 		AF960B462A8563C200A33373 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
@@ -222,7 +235,6 @@
 		AFB32FE82A93825F00934C09 /* WordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailView.swift; sourceTree = "<group>"; };
 		AFBA6FF829F3640F008E11BB /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
 		AFBD4C832AF4606000E6873D /* DrawModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawModalView.swift; sourceTree = "<group>"; };
-		AFBE93BF2ADDFF6A001CE03A /* KanjiKentei.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KanjiKentei.json; sourceTree = "<group>"; };
 		AFC3CB9B2A8587AA00DD59D4 /* LearningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCell.swift; sourceTree = "<group>"; };
 		AFC3CB9D2A85B78500DD59D4 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		AFCA6F532AE3D6FF003464EC /* kanjiKenteiRowWithReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kanjiKenteiRowWithReadingView.swift; sourceTree = "<group>"; };
@@ -294,7 +306,7 @@
 				AF6A2E0329E721BE00D7C1A9 /* KanjiStore.swift */,
 				AF17F94C2A44ABC500D5631D /* DictionaryStore.swift */,
 				AF1EB0652A97796600850A3B /* KanaStore.swift */,
-				AF728D9A2ADD12EC0098765D /* KanjiKenteiStore.swift */,
+				AF728D9A2ADD12EC0098765D /* KanjiKankenStore.swift */,
 				AF5600782AA46E9B00F0123C /* YojijukugoStore.swift */,
 				AF4F2AA12AB1C67000F38EE9 /* GiseigoStore.swift */,
 				AF9D2BD02AC4D3F900257D82 /* BunpouStore.swift */,
@@ -399,6 +411,9 @@
 				AFCA6F532AE3D6FF003464EC /* kanjiKenteiRowWithReadingView.swift */,
 				AFE4D21C2AF11AE000D97DE4 /* DrawView.swift */,
 				AFBD4C832AF4606000E6873D /* DrawModalView.swift */,
+				AF362A732AF59443006DF143 /* LevelSelectorView.swift */,
+				AF3FEB9B2AF63F3300D40B23 /* KanjiScrollListView.swift */,
+				AF3FEB9D2AF6419600D40B23 /* KankenScrollListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -448,11 +463,11 @@
 			isa = PBXGroup;
 			children = (
 				AFAF80D929D9C646002B9921 /* KanjiProjectApp.swift */,
+				AF6A2E0A29E735BD00D7C1A9 /* Core */,
+				AFA6704B2A4B23A500ED639D /* CoreData */,
 				AF52CDBA2AF5078600C2D493 /* CoreML */,
 				AF78E6B92A49BC1300D43ED7 /* Components */,
-				AF6A2E0A29E735BD00D7C1A9 /* Core */,
 				AF52678B2A950B0F00A14CCD /* JSON */,
-				AFA6704B2A4B23A500ED639D /* CoreData */,
 				AFAF80FC29D9E329002B9921 /* Assets */,
 				AFAF80DF29D9C647002B9921 /* Preview Content */,
 				AFAF80EC29D9CEB0002B9921 /* Models */,
@@ -488,16 +503,19 @@
 				AFAF80ED29D9CEBF002B9921 /* KanjiModel.swift */,
 				AF1EB0632A97760C00850A3B /* KanaModel.swift */,
 				AF30EB1029EB0A0C00E5B7A9 /* NouryokuLevel.swift */,
-				AF728DB72ADD3A170098765D /* KenteiLevel.swift */,
+				AF728DB72ADD3A170098765D /* KankenLevel.swift */,
 				AF960B482A85734100A33373 /* KanjiFlow.swift */,
+				AF3FEBA12AF64EFC00D40B23 /* KakkenFlow.swift */,
 				AFCA6F552AE5270E003464EC /* TextAndReadingModel.swift */,
 				AF2D7FB12AC45E1200642B48 /* BunpouModel.swift */,
 				AF4F2A9F2AB1C13400F38EE9 /* GiseigoModel.swift */,
 				AF5600762AA46C9400F0123C /* YojijukugoModel.swift */,
 				AFF528362AB2F71200CC5453 /* SelectedKanjiListRow.swift */,
+				AF3FEB9F2AF6423800D40B23 /* SelectedKankenRow.swift */,
 				AFCC213A2AC550A700F1E37D /* Links.swift */,
 				AFCC213C2AC550C100F1E37D /* MoveTo.swift */,
-				AF728D982ADD0D8D0098765D /* KanjiKenteiModel.swift */,
+				AF728D982ADD0D8D0098765D /* KanjiKankenModel.swift */,
+				AF362A752AF5948C006DF143 /* KanjiTestType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -596,9 +614,9 @@
 			children = (
 				AF1EB06B2A98E97800850A3B /* Kanji.json */,
 				AF1EB0772A994DDD00850A3B /* Dictionary.json */,
+				AF362A792AF5BAFB006DF143 /* KanjiKanken.json */,
 				AF1EB0672A977E3D00850A3B /* Kana.json */,
 				AFD0B3C12AA47A0F0045C0D0 /* Yojijukugo.json */,
-				AFBE93BF2ADDFF6A001CE03A /* KanjiKentei.json */,
 				AF4F2AA32AB1CB4200F38EE9 /* Giseigo.json */,
 			);
 			path = Files;
@@ -713,7 +731,6 @@
 				AF728DAC2ADD35A30098765D /* 04級.txt in Resources */,
 				AF728DAB2ADD35A30098765D /* 01級.txt in Resources */,
 				AF728DB32ADD35A30098765D /* 02準.txt in Resources */,
-				AFBE93C02ADDFF6B001CE03A /* KanjiKentei.json in Resources */,
 				AFD0B3C22AA47A0F0045C0D0 /* Yojijukugo.json in Resources */,
 				AF4F2AA42AB1CB4200F38EE9 /* Giseigo.json in Resources */,
 				AFAF80E129D9C647002B9921 /* Preview Assets.xcassets in Resources */,
@@ -721,6 +738,7 @@
 				AFAF80DE29D9C647002B9921 /* Assets.xcassets in Resources */,
 				AF2D7FAE2AC45D9E00642B48 /* Bunpou.csv in Resources */,
 				AF728DAD2ADD35A30098765D /* 07級.txt in Resources */,
+				AF362A7A2AF5BAFB006DF143 /* KanjiKanken.json in Resources */,
 				AF30EB0729EAC3E200E5B7A9 /* unaojapon-p-2.ttf in Resources */,
 				AF30EAFE29E9FE1C00E5B7A9 /* ZeroGothic.otf in Resources */,
 			);
@@ -741,7 +759,7 @@
 				AFFC08C22A829E3E0043B741 /* KanjiRow.swift in Sources */,
 				AFBD4C842AF4606000E6873D /* DrawModalView.swift in Sources */,
 				AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */,
-				AF728D992ADD0D8D0098765D /* KanjiKenteiModel.swift in Sources */,
+				AF728D992ADD0D8D0098765D /* KanjiKankenModel.swift in Sources */,
 				AF5600752AA46C2500F0123C /* YojijukugoMapper.swift in Sources */,
 				AF9D2BD12AC4D3F900257D82 /* BunpouStore.swift in Sources */,
 				AF0070962A9DC1FE001A4084 /* IdiomViewHeader.swift in Sources */,
@@ -753,12 +771,14 @@
 				AF17F9412A4486A100D5631D /* FrontSideVIew.swift in Sources */,
 				AFAF810029D9E690002B9921 /* FileMapper.swift in Sources */,
 				AFEF74502ABB043C002AB67D /* SearchViewWordRow.swift in Sources */,
-				AF728DB82ADD3A170098765D /* KenteiLevel.swift in Sources */,
+				AF728DB82ADD3A170098765D /* KankenLevel.swift in Sources */,
 				AF0070942A9DC199001A4084 /* IdiomView.swift in Sources */,
 				AFAF80F129D9DC5F002B9921 /* IFileManager.swift in Sources */,
 				AF17F93F2A4485BF00D5631D /* LearningCardView.swift in Sources */,
+				AF362A742AF59443006DF143 /* LevelSelectorView.swift in Sources */,
 				AF1EB05C2A97618A00850A3B /* WordRowView.swift in Sources */,
 				AFEF74452AB4B1B5002AB67D /* UserListView.swift in Sources */,
+				AF3FEBA02AF6423900D40B23 /* SelectedKankenRow.swift in Sources */,
 				AF17F93C2A44844200D5631D /* TabBarButton.swift in Sources */,
 				AF1EB0642A97760C00850A3B /* KanaModel.swift in Sources */,
 				AF00708D2A9CEC0E001A4084 /* LinesView.swift in Sources */,
@@ -769,13 +789,15 @@
 				AF6A2E0129E62CDA00D7C1A9 /* RefactoredStores.swift in Sources */,
 				AFCC213D2AC550C100F1E37D /* MoveTo.swift in Sources */,
 				AFE4D21D2AF11AE000D97DE4 /* DrawView.swift in Sources */,
+				AF362A762AF5948C006DF143 /* KanjiTestType.swift in Sources */,
 				AF17F94B2A44A1E000D5631D /* IDataMapper.swift in Sources */,
 				AF17F9432A4486AC00D5631D /* BackSideView.swift in Sources */,
 				AF1EB0602A9775A800850A3B /* KanaMapper.swift in Sources */,
 				AF960B492A85734100A33373 /* KanjiFlow.swift in Sources */,
 				AFC3CB9C2A8587AA00DD59D4 /* LearningCell.swift in Sources */,
+				AF3FEB9C2AF63F3300D40B23 /* KanjiScrollListView.swift in Sources */,
 				AFCA6F562AE5270E003464EC /* TextAndReadingModel.swift in Sources */,
-				AF728D9B2ADD12EC0098765D /* KanjiKenteiStore.swift in Sources */,
+				AF728D9B2ADD12EC0098765D /* KanjiKankenStore.swift in Sources */,
 				AF2D7FB22AC45E1200642B48 /* BunpouModel.swift in Sources */,
 				AF17F9472A449B1700D5631D /* DictionaryModel.swift in Sources */,
 				AF17F94F2A478D1400D5631D /* SelectLevel.swift in Sources */,
@@ -807,6 +829,7 @@
 				AF0070882A9B65D9001A4084 /* WordExampleView.swift in Sources */,
 				AFAF80FE29D9E59C002B9921 /* IFileMapper.swift in Sources */,
 				AF3A72BC2A7E4AC500A5513C /* ElementSize.swift in Sources */,
+				AF3FEBA22AF64EFC00D40B23 /* KakkenFlow.swift in Sources */,
 				AF4F2AA22AB1C67000F38EE9 /* GiseigoStore.swift in Sources */,
 				AFFC08C62A82CE4D0043B741 /* ProgressIndicatorLine.swift in Sources */,
 				AF6A2DF229E5AF5100D7C1A9 /* BackgroundView.swift in Sources */,
@@ -819,6 +842,7 @@
 				AFBA6FF929F3640F008E11BB /* CustomFonts.swift in Sources */,
 				AFFC08B02A8234980043B741 /* CustomNavigationBarView.swift in Sources */,
 				AFAF80DA29D9C646002B9921 /* KanjiProjectApp.swift in Sources */,
+				AF3FEB9E2AF6419600D40B23 /* KankenScrollListView.swift in Sources */,
 				AFFC08C42A82A6840043B741 /* Settings.swift in Sources */,
 				AF1EB06A2A98E12A00850A3B /* KanjiToUserListView.swift in Sources */,
 				AF9CCE6829F3C12F006B17F3 /* MainView.swift in Sources */,

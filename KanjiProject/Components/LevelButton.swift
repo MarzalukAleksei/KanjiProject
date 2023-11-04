@@ -9,20 +9,21 @@ import SwiftUI
 
 struct LevelButton: View {
     @EnvironmentObject var store: Store
-    let levelTitle: NouryokuLevel
-    let kanjiArray: [KanjiModel]
+    var nouryokuLevelTitle: NouryokuLevel?
+    var kankenLevelTitle: KankenLevel?
+    var nouryokuKanjiArray: [KanjiModel]?
+    var kanjiKankenArray: [KanjiKankenModel]?
     let size: CGSize
     let color: Color
     let colors: [Color] = [.red, .green, .white]
     var values: [Double] {
-        let inArray = Double(kanjiArray.count)
-        let red = Double(kanjiArray.filter { $0.lastAnswerRight == false }.count)
-        let green = Double(kanjiArray.filter { $0.lastAnswerRight == true }.count)
-        let white = Double(kanjiArray.filter { $0.lastAnswerRight == nil }.count)
-        let redValue = red / inArray
-        let greenValue = green / inArray
-        let whiteValue = white / inArray
-        return [redValue, greenValue, whiteValue]
+        if nouryokuKanjiArray != nil {
+            return nouryokuProgress()
+        } 
+        if kanjiKankenArray != nil {
+            return kankenProgress()
+        }
+        return []
     }
     
     
@@ -30,12 +31,13 @@ struct LevelButton: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
 //                .frame(width: size.width, height: size.height)
-            Text("\(levelTitle.rawValue)")
+            let text = buttonText()
+            Text(text)
                 .foregroundColor(.white)
-                .font(CustomFont.scroll(size: 35))
+                .font(CustomFont.scroll(size: text.count > 1 ? 30 : 35))
             VStack {
                 Spacer()
-                Text("\(kanjiArray.count)")
+                Text("\(elementCount())")
                     .font(.system(size: 8))
 //                    .foregroundColor(.init(red: 139, green: 148, blue: 141))
                     .foregroundColor(.white)
@@ -55,10 +57,60 @@ struct LevelButton: View {
         .frame(width: size.width, height: size.height)
         .foregroundColor(color)
     }
+    
+    private func nouryokuProgress() -> [Double] {
+        guard let nouryokuKanjiArray = nouryokuKanjiArray else { return [] }
+        
+        let inArray = Double(nouryokuKanjiArray.count)
+        let red = Double(nouryokuKanjiArray.filter { $0.lastAnswerRight == false }.count)
+        let green = Double(nouryokuKanjiArray.filter { $0.lastAnswerRight == true }.count)
+        let white = Double(nouryokuKanjiArray.filter { $0.lastAnswerRight == nil }.count)
+        let redValue = red / inArray
+        let greenValue = green / inArray
+        let whiteValue = white / inArray
+        return [redValue, greenValue, whiteValue]
+    }
+    
+    private func kankenProgress() -> [Double] {
+        guard let kanjiKankenArray = kanjiKankenArray else { return [] }
+        
+        let inArray = Double(kanjiKankenArray.count)
+        let red = Double(kanjiKankenArray.filter { $0.lastAnswer == false }.count)
+        let green = Double(kanjiKankenArray.filter { $0.lastAnswer == true }.count)
+        let white = Double(kanjiKankenArray.filter { $0.lastAnswer == nil }.count)
+        let redValue = red / inArray
+        let greenValue = green / inArray
+        let whiteValue = white / inArray
+        return [redValue, greenValue, whiteValue]
+    }
+    
+    private func buttonText() -> String {
+        if let nouryokuLevelTitle = nouryokuLevelTitle {
+            return String(nouryokuLevelTitle.rawValue)
+        }
+        if let kankenLevelTitle = kankenLevelTitle {
+            var text = kankenLevelTitle.rawValue
+            if text.first == "0" {
+                text = String(text.dropFirst())
+            }
+            return text
+        }
+        return ""
+    }
+    
+    private func elementCount() -> Int {
+        if let nouryokuKanjiArray = nouryokuKanjiArray {
+            return nouryokuKanjiArray.count
+        }
+        if let kanjiKankenArray = kanjiKankenArray {
+            return kanjiKankenArray.count
+        }
+        return 0
+    }
 }
 
 struct LevelButton_Previews: PreviewProvider {
     static var previews: some View {
-        LevelButton(levelTitle: .another, kanjiArray: [.MOCK_KANJI, .MOCK_KANJI], size: CGSize(width: 100, height: 100), color: .black)
+        LevelButton(nouryokuLevelTitle: .another, nouryokuKanjiArray: [.MOCK_KANJI, .MOCK_KANJI], size: CGSize(width: 100, height: 100), color: .black)
     }
 }

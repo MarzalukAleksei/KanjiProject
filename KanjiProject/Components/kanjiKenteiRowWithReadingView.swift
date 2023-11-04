@@ -9,7 +9,7 @@ import SwiftUI
 
 private struct FuriganaAndKanji: View {
     let kanji: [TextAndReading]
-    let kanjiKentei: KanjiKenteiModel
+    let kanjiKentei: KanjiKankenModel
     var body: some View {
         HStack(spacing: 0) {
             ForEach(kanji, id: \.self) { word in
@@ -33,7 +33,7 @@ private struct FuriganaAndKanji: View {
 
 struct kanjiKenteiRowWithReadingView: View {
     @EnvironmentObject var store: Store
-    let kanjiKentei: KanjiKenteiModel
+    let kanjiKentei: KanjiKankenModel
     
     var body: some View {
         let array = getRowWithReadingAndText()
@@ -172,7 +172,7 @@ struct kanjiKenteiRowWithReadingView: View {
         for separatedArrayElement in array {
             var array: [String] = []
             for character in separatedArrayElement {
-                for kanji in store.kanjiKentei.getAll() where String(character) == kanji.body {
+                for kanji in store.kanjiKanken.getAll() where String(character) == kanji.body {
                     array.append(kanji.body)
                 }
             }

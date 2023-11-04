@@ -16,7 +16,7 @@ class RefactoredStores {
     var yojijukugoStore = YojijukugoStore()
     var giseigoStore = GiseigoStore()
     var bunpouStore = BunpouStore()
-    var kanjiKenteiStore = KanjiKenteiStore()
+    var kanjiKenteiStore = KanjiKankenStore()
 //    let bushu = Bushu() // ключи
     
     init() {
@@ -47,15 +47,15 @@ class RefactoredStores {
         }
     }
     
-    private func loadKanjiKentei() -> [KanjiKenteiModel]{
-        var result: [KanjiKenteiModel] = []
-        for name in KenteiLevel.allCases {
+    private func loadKanjiKentei() -> [KanjiKankenModel]{
+        var result: [KanjiKankenModel] = []
+        for name in KankenLevel.allCases {
             result += getKanjiKentei(name: name.rawValue)
         }
         return result
     }
     
-    private func getKanjiKentei(name: String) -> [KanjiKenteiModel] {
+    private func getKanjiKentei(name: String) -> [KanjiKankenModel] {
         do {
             return KanjiKenteiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: name, fileType: .txt)))
         } catch {
@@ -65,8 +65,8 @@ class RefactoredStores {
     }
     
     /// Устанавливаем Кун и Он чтения для каждого кандзи
-    private func updateKanji(kana: [KanaModel], kanjiKentei: [KanjiKenteiModel]) -> [KanjiKenteiModel] {
-        var result: [KanjiKenteiModel] = []
+    private func updateKanji(kana: [KanaModel], kanjiKentei: [KanjiKankenModel]) -> [KanjiKankenModel] {
+        var result: [KanjiKankenModel] = []
         for kanji in kanjiKentei {
             let array = kanji.defaultReading.components(separatedBy: "    ")
             var newKanji = kanji

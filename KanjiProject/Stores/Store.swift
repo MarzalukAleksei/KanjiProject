@@ -13,7 +13,7 @@ final class Store: ObservableObject {
     @Published var kanaStore = KanaStore()
     @Published var yojijukugoStore = YojijukugoStore()
     @Published var giseigo = GiseigoStore()
-    @Published var kanjiKentei = KanjiKenteiStore()
+    @Published var kanjiKanken = KanjiKankenStore()
     
     init() {
         kanjiStore.updateAll(data: JSONManager.methoods.getKanji())
@@ -21,7 +21,7 @@ final class Store: ObservableObject {
         kanaStore.updateAll(data: JSONManager.methoods.getKana())
         yojijukugoStore.updateAll(data: JSONManager.methoods.getYojijukugo())
         giseigo.updateAll(data: JSONManager.methoods.getGiseigo())
-        kanjiKentei.updateAll(data: JSONManager.methoods.getKanjiKentei())
+        kanjiKanken.updateAll(data: JSONManager.methoods.getKanjiKanken())
     }
     
     

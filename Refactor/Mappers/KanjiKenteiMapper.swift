@@ -8,12 +8,12 @@
 import Foundation
 
 class KanjiKenteiMapper: IDataMapper {
-    typealias Result = [KanjiKenteiModel]
+    typealias Result = [KanjiKankenModel]
     
     typealias Entity = [String]
     
-    func gettingData(entity: [String]) -> [KanjiKenteiModel] {
-        var result: [KanjiKenteiModel] = []
+    func gettingData(entity: [String]) -> [KanjiKankenModel] {
+        var result: [KanjiKankenModel] = []
         var entity = entity[0].components(separatedBy: "\n")
 // убираем пробелы
         entity = entity.map { element in
@@ -49,7 +49,7 @@ class KanjiKenteiMapper: IDataMapper {
             var exampleWithReading: [ExampleType : String] = [:]
             var meaning = ""
             var keys = ""
-            var kenteiLevel = 0
+            var kenteiLevel: KankenLevel = .級10
             var stroke = 0
             var oldKanji = ""
             
@@ -60,7 +60,7 @@ class KanjiKenteiMapper: IDataMapper {
 //                onReading = getTypeValue(element[1].components(separatedBy: "    ")[0])
                 meaning = element[2]
                 keys = element[4]
-                kenteiLevel = getNumber(element[5])
+                kenteiLevel = getKankeiLevel(element[5])
                 stroke = getNumber(element[6])
             } else if element.count == 9 {
                 body = element[0]
@@ -71,7 +71,7 @@ class KanjiKenteiMapper: IDataMapper {
 //                onReading = getTypeValue(element[3].components(separatedBy: "    ")[0])
                 meaning = element[4]
                 keys = element[6]
-                kenteiLevel = getNumber(element[7])
+                kenteiLevel = getKankeiLevel(element[7])
                 stroke = getNumber(element[8])
             } else if element.count == 11 {
                 body = element[0]
@@ -83,13 +83,13 @@ class KanjiKenteiMapper: IDataMapper {
 //                onReading = getTypeValue(element[5].components(separatedBy: "    ")[0])
                 meaning = element[6]
                 keys = element[8]
-                kenteiLevel = getNumber(element[9])
+                kenteiLevel = getKankeiLevel(element[9])
                 stroke = getNumber(element[10])
             } else {
-                body = element[0]
+//                body = element[0]
             }
             
-            result.append(KanjiKenteiModel(body: body,
+            result.append(KanjiKankenModel(body: body,
                                            defaultReading: defaultReading,
                                            kunReading: [:],
                                            onReading: [:],
@@ -97,7 +97,7 @@ class KanjiKenteiMapper: IDataMapper {
                                            examplesWithReading: exampleWithReading,
                                            meaning: meaning,
                                            keys: keys,
-                                           kenteiLevel: kenteiLevel,
+                                           kankenLevel: kenteiLevel,
                                            stroke: stroke,
                                            oldKanji: oldKanji))
         }
@@ -127,5 +127,24 @@ class KanjiKenteiMapper: IDataMapper {
             result = result * 10 + (Int("\(character)") ?? 0)
         }
         return result
+    }
+    
+    private func getKankeiLevel(_ string: String) -> KankenLevel {
+        var result: String = ""
+        for character in string where character.isNumber {
+            result += String(character)
+        }
+        if string.contains("準") {
+            result += "準"
+        } else {
+            result += "級"
+        }
+        for level in KankenLevel.allCases where result.count < 3 {
+            let result = "0" + result
+            if level.rawValue == result {
+                return level
+            }
+        }
+        return KankenLevel.級10
     }
 }

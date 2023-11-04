@@ -63,8 +63,8 @@ struct MainView: View {
             print("Kanji - ", store.kanjiStore.getAll().count)
             print("kana - ", store.kanaStore.getAll().count)
             print("giseigo - ", store.giseigo.getAll().count)
-            print("KanjiKentei - ", store.kanjiKentei.getAll().count)
-            print(store.kanjiKentei.getAll().randomElement())
+            print("KanjiKentei - ", store.kanjiKanken.getAll().count)
+//            print(store.kanjiKentei.getAll().randomElement())
             
 //            CoreMLManager().getPrediction()
 //            CoreDataManager.shared.deleteAllUsersKanjiData(context: viewContext)
@@ -88,7 +88,7 @@ struct MainView: View {
 //        JSON.methoods.saveJSONToFile(JSON.methoods.encodeToJSON(refactorStores.yojijukugoStore.getAll()), fileName: .yojijukugo)
 //        print(refactorStores.giseigoStore.getAll().randomElement())
 //    JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.giseigoStore.getAll()), fileName: .giseigo)
-        JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.kanjiKenteiStore.getAll()), fileName: .kanjiKentei)
+        JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.kanjiKenteiStore.getAll()), fileName: .kanjiKanken)
     }
     
 }

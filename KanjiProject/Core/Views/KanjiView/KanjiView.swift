@@ -10,16 +10,20 @@ import SwiftUI
 struct KanjiView: View {
     
     @EnvironmentObject var store: Store
-    @AppStorage("selectedLevel") var selectedLevel: NouryokuLevel = .N5
+//    @AppStorage("selectedLevel") var selectedLevel: NouryokuLevel = .N5
+    @AppStorage("selectedNouryokuLevel") var selectedNouryokuLevel: NouryokuLevel = .N5
+    @AppStorage("selectedKankenLevel") var selectedKankenLevel: KankenLevel = .級10
     @AppStorage("selectedRow") var selectedRow: Data?
+    @AppStorage("testType") var toggle: Bool = false
     
     @FetchRequest(entity: UsersKanji.entity(),
                   sortDescriptors: []) private var kanji: FetchedResults<UsersKanji>
     @State var isPresented = false
-    @State private var toggle = false
     @EnvironmentObject var tabBarState: TabBarState
     
     @Environment(\.managedObjectContext) var viewContext
+    
+//    @State private var selectedType: KanjiTestType = .nouryoku
     
     var body: some View {
         NavigationStack() {
@@ -35,12 +39,12 @@ struct KanjiView: View {
                             .modifier(Modifiers.roundedRectTopRightBlackPart)
                     }
                     VStack {
-                        Text("Выберите уровень")
+                        Text(toggle ? "KANKEN 漢検": "JLPT 日本語能力試験" )
                             .font(CustomFont.scroll(size: 20))
                     }
                     
                     HStack {
-                        CustomSlider(toggle: $toggle, title: ("問", "漢"))
+                        CustomSlider(toggle: $toggle, title: ("", ""))
                             .frame(width: ElementSize.customtoggleSize.width,
                                    height: ElementSize.customtoggleSize.height)
                         Spacer()
@@ -50,37 +54,7 @@ struct KanjiView: View {
                 }
                 .padding(.bottom, 0)
 // MARK:  Кнопки уровней
-                ScrollViewReader { proxy in
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: Settings.paddingBetweenElements) {
-                            
-                            ForEach(NouryokuLevel.allCases.reversed(), id: \.self) { level in
-                                if level != .another {
-                                    let kanjiArray = store.kanjiStore.getData(level)
-                                    LevelButton(levelTitle: level,
-                                                kanjiArray: kanjiArray,
-                                                size: CGSize(width: ElementSize.levelButtonSize.width,
-                                                             height: ElementSize.levelButtonSize.height),
-                                                color: selectedLevel == level ? .secondary : .black)
-                                    .onTapGesture {
-                                        withAnimation(Settings.animation) {
-                                            selectedLevel = level
-                                            scrollTo(proxy: proxy)
-                                        }
-                                }
-                                }
-                                
-                            }
-                        }
-                        .padding(.horizontal, Settings.padding)
-                    }
-                    .onAppear {
-                        withAnimation(Settings.animation) {
-                            scrollTo(proxy: proxy)
-                        }
-                        
-                    }
-                }
+                LevelSelectorView(toggle: $toggle)
                 .padding(.bottom, Settings.paddingBetweenElements)
                 
 // MARK: Тестовые данные для кордаты
@@ -91,37 +65,40 @@ struct KanjiView: View {
                 }
 
 // MARK: Список разделенный на ячейки
-                ScrollView(showsIndicators: false) {
-                    LazyVStack(spacing: Settings.paddingBetweenElements) {
-                        let separate = separateKanji(store.kanjiStore.getData(selectedLevel))
-                        let selectedRow = getSelectedRow()
-                            ForEach(Array(separate.enumerated()), id: \.element) { (index, array) in
-                                
-                                NavigationLink(value: KanjiFlow(index: index + 1, kanji: array, type: toggle ? "漢" : "問")) {
-                                    if !toggle {
-                                        KanjiRow(kanji: array, number: index + 1, cellTitle: "問", current: isCurrentRow(selectedRow, index))
-                                    } else {
-                                        KanjiRow(kanji: array, number: index + 1, cellTitle: "漢", current: isCurrentRow(selectedRow, index))
-                                    }
-                                }
-                                .buttonStyle(.plain)
-                            }
-                    }
-                    .padding(.top, Settings.paddingBetweenElements)
-                    .padding(.horizontal, Settings.padding)
+//                ScrollView(showsIndicators: false) {
+//                    LazyVStack(spacing: Settings.paddingBetweenElements) {
+//                        let separate = separateKanji(store.kanjiStore.getData(selectedNouryokuLevel))
+//                        let selectedRow = getSelectedRow()
+//                            ForEach(Array(separate.enumerated()), id: \.element) { (index, array) in
+//                                
+//                                NavigationLink(value: KanjiFlow(index: index + 1, kanji: array, type: toggle ? "漢" : "問")) {
+//                                    if !toggle {
+//                                        KanjiRow(kanji: array, number: index + 1, current: isCurrentRow(selectedRow, index))
+//                                    } else {
+//                                        KanjiRow(kanji: array, number: index + 1, current: isCurrentRow(selectedRow, index))
+//                                    }
+//                                }
+//                                .buttonStyle(.plain)
+//                            }
+//                    }
+//                    .padding(.top, Settings.paddingBetweenElements)
+//                    .padding(.horizontal, Settings.padding)
+//                }
+                if toggle {
+                    KankenScrollListView()
+                } else {
+                    KanjiScrollListView()
                 }
-                
             }
             .onAppear {
                 tabBarState.tabBarIsHidden = false
             }
-// MARK: Destination
+// MARK: Destinations
             .navigationDestination(for: KanjiFlow.self) { flow in
-                if !toggle {
-                    LearningView(kanjiFlow: flow)
-                } else {
-                    
-                }
+                LearningView(kanjiFlow: flow)
+            }
+            .navigationDestination(for: KankenFlow.self) { flow in
+                
             }
             
             Spacer()
@@ -140,7 +117,7 @@ struct KanjiView: View {
     
     func isCurrentRow(_ selectedRow: SelectedKanjiRow?, _ index: Int) -> Bool {
         guard let selectedRow = selectedRow else { return false }
-        if selectedLevel.rawValue == selectedRow.level, selectedRow.row == index + 1 {
+        if selectedNouryokuLevel.rawValue == selectedRow.level, selectedRow.row == index + 1 {
             return true
         }
         return false
@@ -168,7 +145,7 @@ struct KanjiView: View {
     }
     
     func scrollTo(proxy: ScrollViewProxy) {
-        proxy.scrollTo(selectedLevel, anchor: .center)
+        proxy.scrollTo(selectedNouryokuLevel, anchor: .center)
     }
 }
 
