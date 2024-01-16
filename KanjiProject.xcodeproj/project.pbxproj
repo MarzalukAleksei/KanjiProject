@@ -54,7 +54,6 @@
 		AF3FEBA22AF64EFC00D40B23 /* KankenFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3FEBA12AF64EFC00D40B23 /* KankenFlow.swift */; };
 		AF3FEBA42AF65AFB00D40B23 /* KankenKanjiLearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3FEBA32AF65AFB00D40B23 /* KankenKanjiLearningView.swift */; };
 		AF3FEBA62AF66A4F00D40B23 /* KankenReplacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3FEBA52AF66A4F00D40B23 /* KankenReplacer.swift */; };
-		AF3FEBA92AF67DE300D40B23 /* KanjiKanken.json in Resources */ = {isa = PBXBuildFile; fileRef = AF3FEBA82AF67DE300D40B23 /* KanjiKanken.json */; };
 		AF4F2A9C2AB1C09C00F38EE9 /* Giseigo.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF4F2A9B2AB1C09C00F38EE9 /* Giseigo.csv */; };
 		AF4F2A9E2AB1C0EA00F38EE9 /* GiseigoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F2A9D2AB1C0EA00F38EE9 /* GiseigoMapper.swift */; };
 		AF4F2AA02AB1C13400F38EE9 /* GiseigoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F2A9F2AB1C13400F38EE9 /* GiseigoModel.swift */; };
@@ -133,6 +132,7 @@
 		AFFC08C42A82A6840043B741 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08C32A82A6840043B741 /* Settings.swift */; };
 		AFFC08C62A82CE4D0043B741 /* ProgressIndicatorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08C52A82CE4D0043B741 /* ProgressIndicatorLine.swift */; };
 		AFFF94B92B52F80400DD01EB /* TextSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF94B82B52F80400DD01EB /* TextSizes.swift */; };
+		AFFF94BD2B56D64B00DD01EB /* KanjiKanken.json in Resources */ = {isa = PBXBuildFile; fileRef = AFFF94BC2B56D64B00DD01EB /* KanjiKanken.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,7 +183,6 @@
 		AF3FEBA12AF64EFC00D40B23 /* KankenFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KankenFlow.swift; sourceTree = "<group>"; };
 		AF3FEBA32AF65AFB00D40B23 /* KankenKanjiLearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KankenKanjiLearningView.swift; sourceTree = "<group>"; };
 		AF3FEBA52AF66A4F00D40B23 /* KankenReplacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KankenReplacer.swift; sourceTree = "<group>"; };
-		AF3FEBA82AF67DE300D40B23 /* KanjiKanken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KanjiKanken.json; sourceTree = "<group>"; };
 		AF4F2A9B2AB1C09C00F38EE9 /* Giseigo.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Giseigo.csv; sourceTree = "<group>"; };
 		AF4F2A9D2AB1C0EA00F38EE9 /* GiseigoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiseigoMapper.swift; sourceTree = "<group>"; };
 		AF4F2A9F2AB1C13400F38EE9 /* GiseigoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiseigoModel.swift; sourceTree = "<group>"; };
@@ -263,6 +262,7 @@
 		AFFC08C32A82A6840043B741 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		AFFC08C52A82CE4D0043B741 /* ProgressIndicatorLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorLine.swift; sourceTree = "<group>"; };
 		AFFF94B82B52F80400DD01EB /* TextSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSizes.swift; sourceTree = "<group>"; };
+		AFFF94BC2B56D64B00DD01EB /* KanjiKanken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KanjiKanken.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -628,8 +628,8 @@
 			children = (
 				AF1EB06B2A98E97800850A3B /* Kanji.json */,
 				AF1EB0772A994DDD00850A3B /* Dictionary.json */,
-				AF3FEBA82AF67DE300D40B23 /* KanjiKanken.json */,
 				AF1EB0672A977E3D00850A3B /* Kana.json */,
+				AFFF94BC2B56D64B00DD01EB /* KanjiKanken.json */,
 				AFD0B3C12AA47A0F0045C0D0 /* Yojijukugo.json */,
 				AF4F2AA32AB1CB4200F38EE9 /* Giseigo.json */,
 			);
@@ -752,7 +752,7 @@
 				AFAF80DE29D9C647002B9921 /* Assets.xcassets in Resources */,
 				AF2D7FAE2AC45D9E00642B48 /* Bunpou.csv in Resources */,
 				AF728DAD2ADD35A30098765D /* 07級.txt in Resources */,
-				AF3FEBA92AF67DE300D40B23 /* KanjiKanken.json in Resources */,
+				AFFF94BD2B56D64B00DD01EB /* KanjiKanken.json in Resources */,
 				AF30EB0729EAC3E200E5B7A9 /* unaojapon-p-2.ttf in Resources */,
 				AF30EAFE29E9FE1C00E5B7A9 /* ZeroGothic.otf in Resources */,
 			);

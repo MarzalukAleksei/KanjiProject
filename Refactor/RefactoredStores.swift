@@ -40,7 +40,7 @@ class RefactoredStores {
             giseigoStore.updateAll(data: giseigo)
             bunpouStore.updateAll(data: bunpou)
             
-//            kanjiKankenStore.updateAll(data: updateKanji(kana: kana, kanjiKentei: createKanjiKankenArray(allKanji: kanjiReplacer)))
+            kanjiKankenStore.updateAll(data: updateKanji(kana: kana, kanjiKentei: createKanjiKankenArray(allKanji: kanjiReplacer)))
             
         } catch {
             print(error)

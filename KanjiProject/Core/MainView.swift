@@ -59,31 +59,31 @@ struct MainView: View {
                 
         }
         .onAppear {
-            Task {
-                await setTranslateTask()
-            }
+//            Task {
+//                await setTranslateTask()
+//            }
 //            CoreMLManager().getPrediction()
 //            CoreDataManager.shared.deleteAllUsersKanjiData(context: viewContext)
 //            setJSONFile()
         }
     }
     
-    func setTranslateTask() async {
-        let kanjiKankenArray = await withTaskGroup(of: [(key: String, value: String)].self, returning: [KanjiKankenModel].self) { taskGroup in
-            for word in store.kanjiKanken.getAll() {
-                taskGroup.addTask {
-                    await findWords(word.body)
-                }
-            }
-            var results: [KanjiKankenModel] = store.kanjiKanken.getAll()
-            
-            for await result in taskGroup {
-                
-            }
-            return results
-        }
-        
-    }
+//    func setTranslateTask() async {
+//        let kanjiKankenArray = await withTaskGroup(of: [(key: String, value: String)].self, returning: [KanjiKankenModel].self) { taskGroup in
+//            for word in store.kanjiKanken.getAll() {
+//                taskGroup.addTask {
+//                    await findWords(word.body)
+//                }
+//            }
+//            var results: [KanjiKankenModel] = store.kanjiKanken.getAll()
+//            
+//            for await result in taskGroup {
+//                
+//            }
+//            return results
+//        }
+//        
+//    }
     
     func findWords(_ text: String) async -> [(key: String, value: String)] {
         let dictionary = store.dictionaryStore.getAll()
