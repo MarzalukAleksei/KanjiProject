@@ -14,21 +14,27 @@ struct KankenExamplesRowView: View {
     var body: some View {
         ForEach(SchoolLevel.allCases, id: \.self) { level in
             if let row = currentKankenKanji.examplesWithReading[level] {
-                VStack(spacing: 0) {
+                VStack(/*alignment: .leading, */spacing: 0) {
                     HStack {
                         Text(level.rawValue)
                         Spacer()
                     }
                         let tDA = createTDA(row)
-                    VStack {
-                        HStack {
-                            ForEach(tDA, id: \.self) { section in
-                                ForEach(section, id: \.self) { word in
+                    VStack(alignment: .leading, spacing: Settings.paddingBetweenText) {
+                        ForEach(tDA, id: \.self) { section in
+                            HStack(spacing: TextSizes.spacingBetweenWords) {
+                                ForEach(section, id: \.self) { row in
+                                    MarkKanjiInRow(word: row, currentKanji: currentKankenKanji, readingIsHidden: false)
                                     VStack {
-                                        
-                                            
+                                        Text("")
+                                            .font(.system(size: TextSizes.kanjiBody))
+                                        Circle()
+                                            .frame(width: TextSizes.deviderCircle.width,
+                                                   height: TextSizes.deviderCircle.height)
+                                            .opacity(row == tDA.last?.last ? 0 : 1)
                                     }
                                 }
+                                Spacer()
                             }
                         }
                     }
@@ -40,34 +46,50 @@ struct KankenExamplesRowView: View {
         .padding(.horizontal, 20)
     }
     
-    func createTDA(_ row: [[TextAndReading]]) -> [[Int]] {
-        guard let bound = UIScreen.current?.bounds.width else { return [] }
-        let screenWidth = bound - Settings.padding * 2
-        var avalWidth = screenWidth
-        var result: [[Int]] = []
-        var allElementsWidth: [CGFloat] = []
-        for part in row {
-            var currentWordWidth: CGFloat = 0
-            for kanji in part {
-                currentWordWidth += findWidth(kanji)
+    func createTDA(_ row: [[TextAndReading]]) -> [[[TextAndReading]]] {
+        // метод возвращает кортеж в виде ширины и массива из которого состоит слово
+        func getWordAndSize() -> [(width: CGFloat, word: [TextAndReading])] {
+            var allElements: [(width: CGFloat, word: [TextAndReading])] = []
+            for part in row {
+                var currentWordWidth: CGFloat = 0
+                var currentWord: [TextAndReading] = []
+                for kanji in part {
+                    // размер символа + размер кружка и отступы
+                    currentWordWidth += findWidth(kanji) + TextSizes.deviderCircle.width + TextSizes.spacingBetweenWords
+                    currentWord.append(kanji)
+                }
+                allElements.append((currentWordWidth, currentWord))
             }
-            allElementsWidth.append(currentWordWidth)
+            return allElements
         }
         
-        var words: [Int] = []
-        for element in allElementsWidth.enumerated() {
-            avalWidth -= element.element
-            if avalWidth >= 0 {
-                words.append(element.offset)
-//                result[section].append(element.offset)
-            } else {
-                avalWidth = screenWidth - element.element
-                result.append(words)
-                words = [element.offset]
+        // метод возвращает двумерный массив, состоящий из массива компонентов слова в виде
+        // [ section: [row: [[TextAndReading]] ]
+        func getArray() -> [[[TextAndReading]]] {
+            guard let bound = UIScreen.current?.bounds.width else {
+                print("Error in Recongnize Screen")
+                return []
             }
-            result.append(words)
+            var result: [[[TextAndReading]]] = []
+            let screenWidth = bound - Settings.padding * 2
+            var avalWidth = screenWidth
+            var currentRow: [[TextAndReading]] = []
+            for element in getWordAndSize() {
+                avalWidth -= element.width
+                if avalWidth > 0 {
+                    currentRow.append(element.word)
+                } else {
+                    result.append(currentRow)
+                    avalWidth = screenWidth - element.width
+                    currentRow = []
+                    currentRow.append(element.word)
+                }
+            }
+            result.append(currentRow)
+            
+            return result
         }
-        
+        let result = getArray()
         return result
     }
     
@@ -86,7 +108,8 @@ fileprivate struct MarkKanjiInRow: View {
             HStack(spacing: 0) {
                 ForEach(word, id: \.self) { part in
                 VStack {
-                    if currentKanji.body == part.text {
+                    if currentKanji.body.contains(part.text) {
+//                    if String(currentKanji.body.first!) == part.text {
                         Text(part.reading)
                             .font(.system(size: TextSizes.kanjiReading))
                             .foregroundStyle(.red)
