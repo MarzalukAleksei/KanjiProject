@@ -26,4 +26,5 @@ class KankenFlow: Hashable {
 }
 extension KankenFlow {
     static let MOCK: KankenFlow = KankenFlow(index: 1, kanji: [.MOCK_KANJIKENTEI, .MOCK_KANJIKENTEI, .MOCK_KANJIKENTEI])
+    static let ANOTHER_MOCK: KankenFlow = KankenFlow(index: 1, kanji: [.ANOTHER_MOCK_KANKENKANJI, .ANOTHER_MOCK_KANKENKANJI, .ANOTHER_MOCK_KANKENKANJI])
 }

@@ -69,4 +69,12 @@ class ButtonsImages {
 //        Image(systemName: "pencil.and.scribble")
         Image(systemName: "square.and.pencil")
     }
+    
+    static var arrowForward: Image {
+        Image(systemName: "arrow.forward")
+    }
+    
+    static var arrowBackward: Image {
+        Image(systemName: "arrow.backward")
+    }
 }

@@ -14,9 +14,10 @@ struct KankenExamplesRowView: View {
     var body: some View {
         ForEach(SchoolLevel.allCases, id: \.self) { level in
             if let row = currentKankenKanji.examplesWithReading[level] {
-                VStack(/*alignment: .leading, */spacing: 0) {
+                VStack(spacing: Settings.paddingBetweenText) {
                     HStack {
                         Text(level.rawValue)
+                            .font(.system(size: TextSizes.kanjiBody))
                         Spacer()
                     }
                         let tDA = createTDA(row)
@@ -31,7 +32,7 @@ struct KankenExamplesRowView: View {
                                         Circle()
                                             .frame(width: TextSizes.deviderCircle,
                                                    height: TextSizes.deviderCircle)
-                                            .opacity(row == tDA.last?.last ? 0 : 0.7)
+                                            .opacity(row == tDA.last?.last ? 0 : 0.65)
                                     }
                                 }
                                 Spacer()
@@ -123,6 +124,11 @@ fileprivate struct MarkKanjiInRow: View {
             }
         }
     }
+}
+
+#Preview {
+    KankenExamplesRowView(currentKankenKanji: .ANOTHER_MOCK_KANKENKANJI)
+        .environmentObject(Store())
 }
 
 #Preview {

@@ -20,4 +20,6 @@ final class TextSizes {
     
     static let spacingBetweenWords: CGFloat = 5
     
+    static let scloolLevelLabel: CGFloat = 25
+    
 }

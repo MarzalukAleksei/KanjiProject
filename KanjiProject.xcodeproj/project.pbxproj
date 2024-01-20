@@ -133,6 +133,8 @@
 		AFFC08C62A82CE4D0043B741 /* ProgressIndicatorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08C52A82CE4D0043B741 /* ProgressIndicatorLine.swift */; };
 		AFFF94B92B52F80400DD01EB /* TextSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF94B82B52F80400DD01EB /* TextSizes.swift */; };
 		AFFF94BD2B56D64B00DD01EB /* KanjiKanken.json in Resources */ = {isa = PBXBuildFile; fileRef = AFFF94BC2B56D64B00DD01EB /* KanjiKanken.json */; };
+		AFFF94BF2B5C1D4000DD01EB /* KankenReadingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF94BE2B5C1D4000DD01EB /* KankenReadingRowView.swift */; };
+		AFFF94C12B5C2CC700DD01EB /* BackForwardClearButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF94C02B5C2CC700DD01EB /* BackForwardClearButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -263,6 +265,8 @@
 		AFFC08C52A82CE4D0043B741 /* ProgressIndicatorLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorLine.swift; sourceTree = "<group>"; };
 		AFFF94B82B52F80400DD01EB /* TextSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSizes.swift; sourceTree = "<group>"; };
 		AFFF94BC2B56D64B00DD01EB /* KanjiKanken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KanjiKanken.json; sourceTree = "<group>"; };
+		AFFF94BE2B5C1D4000DD01EB /* KankenReadingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KankenReadingRowView.swift; sourceTree = "<group>"; };
+		AFFF94C02B5C2CC700DD01EB /* BackForwardClearButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackForwardClearButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,6 +431,8 @@
 				AF3FEB9B2AF63F3300D40B23 /* KanjiScrollListView.swift */,
 				AF3FEB9D2AF6419600D40B23 /* KankenScrollListView.swift */,
 				AF98D6142AF7E8AE005B350B /* KankenExamplesRowView.swift */,
+				AFFF94BE2B5C1D4000DD01EB /* KankenReadingRowView.swift */,
+				AFFF94C02B5C2CC700DD01EB /* BackForwardClearButtons.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -696,7 +702,7 @@
 					New,
 				);
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					AFAF80D529D9C646002B9921 = {
 						CreatedOnToolsVersion = 14.2;
@@ -813,8 +819,10 @@
 				AFCA6F562AE5270E003464EC /* TextAndReadingModel.swift in Sources */,
 				AF728D9B2ADD12EC0098765D /* KanjiKankenStore.swift in Sources */,
 				AF2D7FB22AC45E1200642B48 /* BunpouModel.swift in Sources */,
+				AFFF94C12B5C2CC700DD01EB /* BackForwardClearButtons.swift in Sources */,
 				AF17F9472A449B1700D5631D /* DictionaryModel.swift in Sources */,
 				AF17F94F2A478D1400D5631D /* SelectLevel.swift in Sources */,
+				AFFF94BF2B5C1D4000DD01EB /* KankenReadingRowView.swift in Sources */,
 				AF6A2E0629E7267400D7C1A9 /* IStore.swift in Sources */,
 				AFAF80EE29D9CEBF002B9921 /* KanjiModel.swift in Sources */,
 				AFCC213B2AC550A700F1E37D /* Links.swift in Sources */,

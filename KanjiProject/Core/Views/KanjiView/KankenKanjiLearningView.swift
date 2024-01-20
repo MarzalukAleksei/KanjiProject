@@ -10,10 +10,10 @@ import SwiftUI
 struct KankenKanjiLearningView: View {
     @EnvironmentObject private var tabBarState: TabBarState
     @AppStorage("selectedRow") var selectedRow: Data?
-    @State private var currentKanjiIndex = 0
+    @State private var currentIndex = 0
     let kankenFlow: KankenFlow
     var currentKanji: KanjiKankenModel {
-        kankenFlow.kanji[currentKanjiIndex]
+        kankenFlow.kanji[currentIndex]
     }
     var body: some View {
         VStack {
@@ -22,35 +22,39 @@ struct KankenKanjiLearningView: View {
                                         cornerRadius: Settings.learningViewCornerRadius,
                                         heigh: ElementSize.learningViewNavigationBarHeght)
                 LearningFrontSideView(index: kankenFlow.index,
-                                      kanji: kankenFlow.kanji[currentKanjiIndex],
-                                      number: currentKanjiIndex + 1,
+                                      kanji: kankenFlow.kanji[currentIndex],
+                                      number: currentIndex + 1,
                                       count: kankenFlow.kanji.count,
                                       type: "")
+                BackForwardClearButtons(currentIndex: $currentIndex, kanji: kankenFlow.kanji)
+                
             }
             .frame(maxHeight: ElementSize.learningViewNavigationBarHeght)
+            
             ScrollView {
-                ForEach(SchoolLevel.allCases, id: \.self) { type in
-                    if let row = getKunReading(type) {
-                        Text(type.rawValue)
-                            .font(.system(size: 30))
-                        Text(row)
+                VStack(spacing: Settings.paddingBetweenText) {
+                    ForEach(SchoolLevel.allCases, id: \.self) { type in
+                        if let row = getKunReading(type) {
+                            KankenReadingRowView(row: row, type: type)
+                        }
+                    }
+                    
+                    ForEach(SchoolLevel.allCases, id: \.self) { type in
+                        if let row = getOnReading(type) {
+                            KankenReadingRowView(row: row, type: type)
+                        }
                     }
                 }
+                .padding(.bottom, Settings.paddingBetweenElements)
                 
-                ForEach(SchoolLevel.allCases, id: \.self) { type in
-                    if let row = getOnReading(type) {
-                        Text(type.rawValue)
-                            .font(.system(size: 30))
-                        Text(row)
-                    }
-                }
-                
-                KankenExamplesRowView(currentKankenKanji: kankenFlow.kanji[currentKanjiIndex])
+                KankenExamplesRowView(currentKankenKanji: kankenFlow.kanji[currentIndex])
             }
             
             Spacer()
+            
             DismissButton()
         }
+        
         .onAppear {
             tabBarState.tabBarIsHidden = true
             selectedRow = encodeData(kankenFlow.kanji, row: kankenFlow.index) // Сохранение в памяти какая ячейка была открыта
@@ -65,12 +69,17 @@ struct KankenKanjiLearningView: View {
     }
     
     func getKunReading(_ type: SchoolLevel) -> String? {
-        return kankenFlow.kanji[currentKanjiIndex].kunReading[type]
+        return kankenFlow.kanji[currentIndex].kunReading[type]
     }
     
     func getOnReading(_ type: SchoolLevel) -> String? {
-        return kankenFlow.kanji[currentKanjiIndex].onReading[type]
+        return kankenFlow.kanji[currentIndex].onReading[type]
     }
+}
+
+#Preview {
+    KankenKanjiLearningView(kankenFlow: .ANOTHER_MOCK)
+        .environmentObject(TabBarState())
 }
 
 #Preview {

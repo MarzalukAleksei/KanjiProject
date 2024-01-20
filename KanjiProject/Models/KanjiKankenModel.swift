@@ -49,3 +49,18 @@ extension KanjiKankenModel {
         self.translateExapmles = [:]
     }
 }
+
+extension KanjiKankenModel {
+    static let ANOTHER_MOCK_KANKENKANJI = KanjiKankenModel(body: "亢",
+                                                           defaultReading: "［外］コウ    ［外］あ（がる）、あ（たる）、きわ（める）、たか（い）、たかぶ（る）、のど",
+                                                           kunReading: [KanjiProject.SchoolLevel.exception: "あ（がる）、あ（たる）、きわ（める）、たか（い）、たかぶ（る）、のど"],
+                                                           onReading: [KanjiProject.SchoolLevel.exception: "コウ"],
+                                                           examples: [KanjiProject.SchoolLevel.exception: "亢い・亢る・亢たる・亢がる・亢める・亢（１）・亢（２）・亢進・亢竜・心悸亢進・亢竜有悔・亢竜、悔いあり"],
+                                                           examplesWithReading: [KanjiProject.SchoolLevel.exception: [[KanjiProject.TextAndReading(text: "亢い", reading: "たか")], [KanjiProject.TextAndReading(text: "亢る", reading: "たかぶ")], [KanjiProject.TextAndReading(text: "亢たる", reading: "あ")], [KanjiProject.TextAndReading(text: "亢がる", reading: "あ")], [KanjiProject.TextAndReading(text: "亢める", reading: "きわ")], [KanjiProject.TextAndReading(text: "亢（１）", reading: "こう")], [KanjiProject.TextAndReading(text: "亢（２）", reading: "のど")], [KanjiProject.TextAndReading(text: "亢", reading: "こう"), KanjiProject.TextAndReading(text: "進", reading: "しん")], [KanjiProject.TextAndReading(text: "亢", reading: "こう"), KanjiProject.TextAndReading(text: "竜", reading: "りょう")], [KanjiProject.TextAndReading(text: "心", reading: "しん"), KanjiProject.TextAndReading(text: "悸", reading: "き"), KanjiProject.TextAndReading(text: "亢", reading: "こう"), KanjiProject.TextAndReading(text: "進", reading: "しん")], [KanjiProject.TextAndReading(text: "亢", reading: "こう"), KanjiProject.TextAndReading(text: "竜", reading: "りょう"), KanjiProject.TextAndReading(text: "有", reading: "ゆう"), KanjiProject.TextAndReading(text: "悔", reading: ""), KanjiProject.TextAndReading(text: "悔", reading: "かい")], [KanjiProject.TextAndReading(text: "亢", reading: "こう"), KanjiProject.TextAndReading(text: "竜、", reading: "りょう"), KanjiProject.TextAndReading(text: "悔", reading: ""), KanjiProject.TextAndReading(text: "悔いあり", reading: "く")]]],
+                                                           translateExapmles: [:], meaning: "【A】コウ のど。くび。くびすじ。 【B】コウ ① あがる。あげる。高く上がる。 ② あたる。匹敵する。対等である。 ③ きわめる。きわまる。 ④ たかい。たかぶる。 ⑤ 二十八宿の一つ。あみぼし。",
+                                                           keys: "亠",
+                                                           kankenLevel: KanjiProject.KankenLevel.級01,
+                                                           stroke: 4,
+                                                           oldKanji: "",
+                                                           lastAnswer: nil)
+}
