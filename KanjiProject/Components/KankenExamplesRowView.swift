@@ -29,7 +29,7 @@ struct KankenExamplesRowView: View {
                                     VStack {
                                         Text("")
                                             .font(.system(size: TextSizes.kanjiBody))
-                                        if row != tDA.last?.last {
+                                        if row != tDA.last?.last, row.last?.wasDivided == nil {
                                             Circle()
                                                 .frame(width: TextSizes.deviderCircle,
                                                        height: TextSizes.deviderCircle)
@@ -84,6 +84,26 @@ struct KankenExamplesRowView: View {
                 avalWidth -= element.width
                 if avalWidth > 0 + TextSizes.deviderCircle + TextSizes.spacingBetweenWords * 2 {
                     currentRow.append(element.word)
+                    // Данное условие вызвается если слово длиннее чем экран
+                    // Определяется величина ширины выходящей за рамки,а с конца извлекаются элемены до того моменка как строка будет подходящей длинны
+                } else if screenWidth < element.width {
+                    var extra = screenWidth - element.width
+                    var parts = element.word
+                    var secondRow: [TextAndReading] = []
+                    while extra < 0 {
+                        let part = parts.removeLast()
+                        secondRow.append(part)
+                        extra += part.width()
+                    }
+                    var last = parts.removeLast()
+                    last.wasDivided = true
+                    parts.append(last)
+                    currentRow.append(parts)
+                    result.append(currentRow)
+                    secondRow.reverse()
+                    currentRow = []
+                    currentRow.append(secondRow)
+                    avalWidth = screenWidth - sumWidth(secondRow) - TextSizes.deviderCircle - TextSizes.spacingBetweenWords * 2
                 } else {
                     result.append(currentRow)
                     avalWidth = screenWidth - element.width
@@ -95,6 +115,15 @@ struct KankenExamplesRowView: View {
             
             return result
         }
+        
+        func sumWidth(_ parts: [TextAndReading]) -> CGFloat {
+            var width: CGFloat = 0
+            for element in parts {
+                width += element.width()
+            }
+            return width
+        }
+        
         let result = getArray()
         return result
     }

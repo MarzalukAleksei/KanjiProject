@@ -20,4 +20,7 @@ extension TextAndReading {
         let kanjiBodyWidth = CGFloat(self.text.removeAll(after: "（").count) * TextSizes.kanjiBody * 0.945
         return readingWidth > kanjiBodyWidth ? readingWidth : kanjiBodyWidth
     }
+    mutating func devided() {
+        wasDivided = true
+    }
 }
