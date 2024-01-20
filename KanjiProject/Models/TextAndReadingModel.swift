@@ -7,15 +7,17 @@
 
 import Foundation
 
-struct TextAndReading: Hashable, Codable {
+struct TextAndReading: Identifiable, Hashable, Codable {
+    var id = UUID()
     var text: String
     var reading: String
+    var wasDivided: Bool?
 }
 
 extension TextAndReading {
     func width() -> CGFloat {
-        let readingWidth = CGFloat(self.reading.count) * TextSizes.kanjiReading
-        let kanjiBodyWidth = CGFloat(self.text.removeAll(after: "（").count) * TextSizes.kanjiBody
+        let readingWidth = CGFloat(self.reading.count) * TextSizes.kanjiReading * 0.945
+        let kanjiBodyWidth = CGFloat(self.text.removeAll(after: "（").count) * TextSizes.kanjiBody * 0.945
         return readingWidth > kanjiBodyWidth ? readingWidth : kanjiBodyWidth
     }
 }

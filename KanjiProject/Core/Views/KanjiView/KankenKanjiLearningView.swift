@@ -45,7 +45,8 @@ struct KankenKanjiLearningView: View {
                         }
                     }
                 }
-                .padding(.bottom, Settings.paddingBetweenElements)
+                
+                Divider()
                 
                 KankenExamplesRowView(currentKankenKanji: kankenFlow.kanji[currentIndex])
             }

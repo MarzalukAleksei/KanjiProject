@@ -13,7 +13,7 @@ struct KankenExamplesRowView: View {
     
     var body: some View {
         ForEach(SchoolLevel.allCases, id: \.self) { level in
-            if let row = currentKankenKanji.examplesWithReading[level] {
+            if let row = currentKankenKanji.getExamplesWithReading(level) {
                 VStack(spacing: Settings.paddingBetweenText) {
                     HStack {
                         Text(level.rawValue)
@@ -29,10 +29,15 @@ struct KankenExamplesRowView: View {
                                     VStack {
                                         Text("")
                                             .font(.system(size: TextSizes.kanjiBody))
-                                        Circle()
-                                            .frame(width: TextSizes.deviderCircle,
-                                                   height: TextSizes.deviderCircle)
-                                            .opacity(row == tDA.last?.last ? 0 : 0.65)
+                                        if row != tDA.last?.last {
+                                            Circle()
+                                                .frame(width: TextSizes.deviderCircle,
+                                                       height: TextSizes.deviderCircle)
+                                        }
+//                                        Circle()
+//                                            .frame(width: TextSizes.deviderCircle,
+//                                                   height: TextSizes.deviderCircle)
+//                                            .opacity(row == tDA.last?.last ? 0 : 0.65)
                                     }
                                 }
                                 Spacer()
@@ -77,7 +82,7 @@ struct KankenExamplesRowView: View {
             var currentRow: [[TextAndReading]] = []
             for element in getWordAndSize() {
                 avalWidth -= element.width
-                if avalWidth > 0 {
+                if avalWidth > 0 + TextSizes.deviderCircle + TextSizes.spacingBetweenWords * 2 {
                     currentRow.append(element.word)
                 } else {
                     result.append(currentRow)
@@ -109,9 +114,19 @@ fileprivate struct MarkKanjiInRow: View {
                             .font(.system(size: TextSizes.kanjiReading))
                             .foregroundStyle(.red)
                             .opacity(readingIsHidden ? 0 : 1)
-                        Text(part.text.removeAll(after: "（"))
-                            .font(.system(size: TextSizes.kanjiBody))
-                            .foregroundStyle(.red)
+//                        let text = part.text.removeAll(after: "（").map { String($0) }
+                        let text = sep(part)
+                        HStack(spacing: 0) {
+                            ForEach(text, id: \.self) { char in
+                                if char == currentKanji.body {
+                                    Text(char)
+                                        .foregroundStyle(.red)
+                                } else {
+                                    Text(char)
+                                }
+                            }
+                        }
+                        .font(.system(size: TextSizes.kanjiBody))
                     } else {
                         Text(part.reading)
                             .font(.system(size: TextSizes.kanjiReading))
@@ -123,6 +138,15 @@ fileprivate struct MarkKanjiInRow: View {
                 .frame(width: part.width())
             }
         }
+    }
+    
+    func sep(_ part: TextAndReading) -> [String] {
+        var result: [String] = []
+        var array = part.text.removeAll(after: "（").map { String($0) }
+        result.append(array.removeFirst())
+        result.append(array.joined())
+        
+        return result
     }
 }
 

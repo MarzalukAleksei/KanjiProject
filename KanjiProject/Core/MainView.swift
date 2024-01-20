@@ -96,7 +96,7 @@ struct MainView: View {
     }
     
     func setJSONFile() {
-//        let refactorStores = RefactoredStores()
+        let refactorStores = RefactoredStores()
 //        let rand = refactorStores.kanjiKankenStore.getAll().randomElement()
 //        print(rand)
 //        refactorStores.kanjiKenteiStore.getAll().count
@@ -109,7 +109,7 @@ struct MainView: View {
 //        JSON.methoods.saveJSONToFile(JSON.methoods.encodeToJSON(refactorStores.yojijukugoStore.getAll()), fileName: .yojijukugo)
 //        print(refactorStores.giseigoStore.getAll().randomElement())
 //    JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.giseigoStore.getAll()), fileName: .giseigo)
-//        JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.kanjiKankenStore.getAll()), fileName: .kanjiKanken)
+        JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.kanjiKankenStore.getAll()), fileName: .kanjiKanken)
     }
     
 }

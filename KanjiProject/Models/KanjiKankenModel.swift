@@ -20,14 +20,57 @@ struct KanjiKankenModel: Codable, Hashable {
     var kunReading: [SchoolLevel: String]
     var onReading: [SchoolLevel: String]
     let examples: [SchoolLevel: String]
-    let examplesWithReading: [SchoolLevel: [[TextAndReading]]]
-    var translateExapmles: [SchoolLevel: [String]] = [:]
+    private let examplesWithReading: [SchoolLevel: [[TextAndReading]]]
+    var translateExapmles: [SchoolLevel: [String]]
     let meaning: String
     let keys: String
     let kankenLevel: KankenLevel
     let stroke: Int
     var oldKanji = ""
     var lastAnswer: Bool? = nil
+    
+    init(body: String, defaultReading: String, kunReading: [SchoolLevel : String], onReading: [SchoolLevel : String], examples: [SchoolLevel : String], examplesWithReading: [SchoolLevel : [[TextAndReading]]], translateExapmles: [SchoolLevel : [String]] = [:], meaning: String, keys: String, kankenLevel: KankenLevel, stroke: Int, oldKanji: String = "", lastAnswer: Bool? = nil) {
+        self.body = body
+        self.defaultReading = defaultReading
+        self.kunReading = kunReading
+        self.onReading = onReading
+        self.examples = examples
+        self.examplesWithReading = examplesWithReading
+        self.translateExapmles = translateExapmles
+        self.meaning = meaning
+        self.keys = keys
+        self.kankenLevel = kankenLevel
+        self.stroke = stroke
+        self.oldKanji = oldKanji
+        self.lastAnswer = lastAnswer
+    }
+    
+    func getExamplesWithReading() -> [SchoolLevel: [[TextAndReading]]] {
+        return examplesWithReading
+    }
+    
+    func getExamplesWithReading(_ level: SchoolLevel) -> [[TextAndReading]]? {
+//        return examplesWithReading[level]
+        return removeEmpty()[level]
+    }
+    
+    private func removeEmpty(_ level: SchoolLevel? = nil) -> [SchoolLevel: [[TextAndReading]]] {
+        var result = examplesWithReading
+        for level in result {
+            var newArray: [[TextAndReading]] = []
+            for word in level.value {
+                var currentWord: [TextAndReading] = []
+                for part in word {
+                    if part.reading != "" {
+                        currentWord.append(part)
+                    }
+                }
+                newArray.append(currentWord)
+            }
+            result[level.key] = newArray
+        }
+        return result
+    }
 }
 
 extension KanjiKankenModel {
@@ -36,7 +79,7 @@ extension KanjiKankenModel {
                                             kunReading: [KanjiProject.SchoolLevel.exception: "うずくま（る）、おご（る）"],
                                             onReading: [KanjiProject.SchoolLevel.exception: "キョ、コ"],
                                             examples: [KanjiProject.SchoolLevel.exception: "踞る（１）・踞る（２）・箕踞・蹲踞・踞座・蟠踞・虎踞竜蟠・竜蟠虎踞"],
-                                            examplesWithReading: [KanjiProject.SchoolLevel.exception: [[KanjiProject.TextAndReading(text: "踞る（１）", reading: "うずくま")], [KanjiProject.TextAndReading(text: "踞る（２）", reading: "おご")], [KanjiProject.TextAndReading(text: "箕", reading: "き"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")], [KanjiProject.TextAndReading(text: "蹲", reading: "そん"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")], [KanjiProject.TextAndReading(text: "踞", reading: "きょ"), KanjiProject.TextAndReading(text: "座", reading: "ざ")], [KanjiProject.TextAndReading(text: "蟠", reading: "ばん"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")], [KanjiProject.TextAndReading(text: "虎", reading: "こ"), KanjiProject.TextAndReading(text: "踞", reading: "きょ"), KanjiProject.TextAndReading(text: "竜", reading: "りょう"), KanjiProject.TextAndReading(text: "蟠", reading: "ばん")], [KanjiProject.TextAndReading(text: "竜", reading: "りょう"), KanjiProject.TextAndReading(text: "蟠", reading: "ばん"), KanjiProject.TextAndReading(text: "虎", reading: "こ"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")]]],
+                                                   examplesWithReading: [KanjiProject.SchoolLevel.exception: [[KanjiProject.TextAndReading(text: "踞る（１）", reading: "うずくま")], [KanjiProject.TextAndReading(text: "踞る（２）", reading: "おご")], [KanjiProject.TextAndReading(text: "箕", reading: "き"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")], [KanjiProject.TextAndReading(text: "蹲", reading: "そん"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")], [KanjiProject.TextAndReading(text: "踞", reading: "きょ"), KanjiProject.TextAndReading(text: "座", reading: "ざ")], [KanjiProject.TextAndReading(text: "蟠", reading: "ばん"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")], [KanjiProject.TextAndReading(text: "虎", reading: "こ"), KanjiProject.TextAndReading(text: "踞", reading: "きょ"), KanjiProject.TextAndReading(text: "竜", reading: "りょう"), KanjiProject.TextAndReading(text: "蟠", reading: "ばん")], [KanjiProject.TextAndReading(text: "竜", reading: "りょう"), KanjiProject.TextAndReading(text: "蟠", reading: "ばん"), KanjiProject.TextAndReading(text: "虎", reading: "こ"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")]]],
                                             meaning: "① しゃがむ。うずくまる。ひざを立てて座る。 ② 腰掛ける。よりかかる。 ③ おごる。おごりたかぶる。",
                                             keys: "足",
                                             kankenLevel: .級01,
