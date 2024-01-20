@@ -16,8 +16,8 @@ final class TextSizes {
     
     static let translate: CGFloat = 20
     
-    static let deviderCircle: CGSize = CGSize(width: 4, height: 4)
+    static let deviderCircle: CGFloat = 6
     
-    static let spacingBetweenWords: CGFloat = 3
+    static let spacingBetweenWords: CGFloat = 5
     
 }

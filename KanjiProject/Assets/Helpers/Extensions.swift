@@ -165,12 +165,12 @@ extension View {
 }
 
 extension String {
-    func removeBrackets() -> String {
-        guard let endIndex = self.firstIndex(of: "（") else {
+    func removeAll(after char: Character) -> String {
+        guard let endIndex = self.firstIndex(of: char) else {
             return self
         }
-            let result = self[self.startIndex..<endIndex]
-            return String(result)
+        let result = self[self.startIndex..<endIndex]
+        return String(result)
     }
 }
 

@@ -29,9 +29,9 @@ struct KankenExamplesRowView: View {
                                         Text("")
                                             .font(.system(size: TextSizes.kanjiBody))
                                         Circle()
-                                            .frame(width: TextSizes.deviderCircle.width,
-                                                   height: TextSizes.deviderCircle.height)
-                                            .opacity(row == tDA.last?.last ? 0 : 1)
+                                            .frame(width: TextSizes.deviderCircle,
+                                                   height: TextSizes.deviderCircle)
+                                            .opacity(row == tDA.last?.last ? 0 : 0.7)
                                     }
                                 }
                                 Spacer()
@@ -50,20 +50,20 @@ struct KankenExamplesRowView: View {
         // метод возвращает кортеж в виде ширины и массива из которого состоит слово
         func getWordAndSize() -> [(width: CGFloat, word: [TextAndReading])] {
             var allElements: [(width: CGFloat, word: [TextAndReading])] = []
-            for part in row {
+            for parts in row {
                 var currentWordWidth: CGFloat = 0
                 var currentWord: [TextAndReading] = []
-                for kanji in part {
+                for part in parts {
                     // размер символа + размер кружка и отступы
-                    currentWordWidth += findWidth(kanji) + TextSizes.deviderCircle.width + TextSizes.spacingBetweenWords
-                    currentWord.append(kanji)
+                    currentWordWidth += part.width() + TextSizes.deviderCircle + TextSizes.spacingBetweenWords
+                    currentWord.append(part)
                 }
                 allElements.append((currentWordWidth, currentWord))
             }
             return allElements
         }
         
-        // метод возвращает двумерный массив, состоящий из массива компонентов слова в виде
+        // метод возвращает двумерный массив, состоящий из массива компонентов слова
         // [ section: [row: [[TextAndReading]] ]
         func getArray() -> [[[TextAndReading]]] {
             guard let bound = UIScreen.current?.bounds.width else {
@@ -92,12 +92,6 @@ struct KankenExamplesRowView: View {
         let result = getArray()
         return result
     }
-    
-    private func findWidth(_ kanji: TextAndReading) -> CGFloat {
-        let readingWidth = CGFloat(kanji.reading.count) * TextSizes.kanjiReading
-        let kanjiBodyWidth = CGFloat(kanji.text.removeBrackets().count) * TextSizes.kanjiBody
-        return readingWidth > kanjiBodyWidth ? readingWidth : kanjiBodyWidth
-    }
 }
 
 fileprivate struct MarkKanjiInRow: View {
@@ -108,32 +102,26 @@ fileprivate struct MarkKanjiInRow: View {
             HStack(spacing: 0) {
                 ForEach(word, id: \.self) { part in
                 VStack {
-                    if currentKanji.body.contains(part.text) {
+                    if part.text.contains(currentKanji.body) {
 //                    if String(currentKanji.body.first!) == part.text {
                         Text(part.reading)
                             .font(.system(size: TextSizes.kanjiReading))
                             .foregroundStyle(.red)
                             .opacity(readingIsHidden ? 0 : 1)
-                        Text(part.text)
+                        Text(part.text.removeAll(after: "（"))
                             .font(.system(size: TextSizes.kanjiBody))
                             .foregroundStyle(.red)
                     } else {
                         Text(part.reading)
                             .font(.system(size: TextSizes.kanjiReading))
                             .opacity(readingIsHidden ? 0 : 1)
-                        Text(part.text.removeBrackets())
+                        Text(part.text.removeAll(after: "（"))
                             .font(.system(size: TextSizes.kanjiBody))
                     }
                 }
-                .frame(width: findWidth(part))
+                .frame(width: part.width())
             }
         }
-    }
-    
-    private func findWidth(_ part: TextAndReading) -> CGFloat {
-        let readingWidth = CGFloat(part.reading.count) * TextSizes.kanjiReading
-        let kanjiBodyWidth = CGFloat(part.text.removeBrackets().count) * TextSizes.kanjiBody
-        return readingWidth > kanjiBodyWidth ? readingWidth : kanjiBodyWidth
     }
 }
 
