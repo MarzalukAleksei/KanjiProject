@@ -16,8 +16,8 @@ struct TextAndReading: Identifiable, Hashable, Codable {
 
 extension TextAndReading {
     func width() -> CGFloat {
-        let readingWidth = CGFloat(self.reading.count) * TextSizes.kanjiReading * 0.945
-        let kanjiBodyWidth = CGFloat(self.text.removeAll(after: "（").count) * TextSizes.kanjiBody * 0.945
+        let readingWidth = CGFloat(self.reading.count) * TextSizes.kanjiReading/* * 0.945*/
+        let kanjiBodyWidth = CGFloat(self.text.removeAll(after: "（").count) * TextSizes.kanjiBody/* * 0.945*/
         return readingWidth > kanjiBodyWidth ? readingWidth : kanjiBodyWidth
     }
     mutating func devided() {

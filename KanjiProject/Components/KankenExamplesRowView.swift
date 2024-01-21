@@ -25,11 +25,20 @@ struct KankenExamplesRowView: View {
                         ForEach(tDA, id: \.self) { section in
                             HStack(spacing: TextSizes.spacingBetweenWords) {
                                 ForEach(section, id: \.self) { row in
-                                    MarkKanjiInRow(word: row, currentKanji: currentKankenKanji, readingIsHidden: false)
+                                    if elementCount(row) < 5 {
+                                        Button(action: {
+                                            
+                                        }, label: {
+                                            MarkKanjiInRow(word: row, currentKanji: currentKankenKanji, readingIsHidden: false)
+                                        })
+                                        .foregroundStyle(.black)
+                                    } else {
+                                        MarkKanjiInRow(word: row, currentKanji: currentKankenKanji, readingIsHidden: false)
+                                    }
                                     VStack {
                                         Text("")
                                             .font(.system(size: TextSizes.kanjiBody))
-                                        if row != tDA.last?.last, row.last?.wasDivided == nil {
+                                        if row != tDA.last?.last, row.last?.wasDivided != true {
                                             Circle()
                                                 .frame(width: TextSizes.deviderCircle,
                                                        height: TextSizes.deviderCircle)
@@ -82,13 +91,19 @@ struct KankenExamplesRowView: View {
             var currentRow: [[TextAndReading]] = []
             for element in getWordAndSize() {
                 avalWidth -= element.width
-                if avalWidth > 0 + TextSizes.deviderCircle + TextSizes.spacingBetweenWords * 2 {
+                if avalWidth > 0 + TextSizes.deviderCircle * 2 {
                     currentRow.append(element.word)
                     // Данное условие вызвается если слово длиннее чем экран
                     // Определяется величина ширины выходящей за рамки,а с конца извлекаются элемены до того моменка как строка будет подходящей длинны
                 } else if screenWidth < element.width {
-                    var extra = screenWidth - element.width
+//                    var extra = screenWidth - element.width
+                    var extra = avalWidth - element.width
                     var parts = element.word
+                    if extra + element.width < 0 {
+                        result.append(currentRow)
+                        currentRow = []
+                        extra = screenWidth - element.width
+                    }
                     var secondRow: [TextAndReading] = []
                     while extra < 0 {
                         let part = parts.removeLast()
@@ -96,7 +111,7 @@ struct KankenExamplesRowView: View {
                         extra += part.width()
                     }
                     var last = parts.removeLast()
-                    last.wasDivided = true
+                    last.devided()
                     parts.append(last)
                     currentRow.append(parts)
                     result.append(currentRow)
@@ -126,6 +141,14 @@ struct KankenExamplesRowView: View {
         
         let result = getArray()
         return result
+    }
+    
+    func elementCount(_ word: [TextAndReading]) -> Int {
+        var count = 0
+        for part in word {
+            count += part.text.count
+        }
+        return count
     }
 }
 
