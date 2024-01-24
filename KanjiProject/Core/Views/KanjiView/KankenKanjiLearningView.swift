@@ -16,7 +16,7 @@ struct KankenKanjiLearningView: View {
         kankenFlow.kanji[currentIndex]
     }
     var body: some View {
-        VStack {
+        VStack(/*alignment: .leading*/) {
             ZStack {
                 CustomNavigationBarView(corners: [.bottomLeft, .bottomRight],
                                         cornerRadius: Settings.learningViewCornerRadius,
@@ -30,6 +30,12 @@ struct KankenKanjiLearningView: View {
                 
             }
             .frame(maxHeight: ElementSize.learningViewNavigationBarHeght)
+            
+            Button("Print current") {
+                print(currentKanji.examples)
+                print(" ")
+                print(currentKanji.getExamplesWithReading()[.外])
+            }
             
             ScrollView {
                 VStack(spacing: Settings.paddingBetweenText) {
@@ -45,6 +51,14 @@ struct KankenKanjiLearningView: View {
                         }
                     }
                 }
+                
+                Divider()
+                
+                HStack {
+                    Text(currentKanji.meaning)
+                    Spacer()
+                }
+                .padding(.horizontal, Settings.padding)
                 
                 Divider()
                 

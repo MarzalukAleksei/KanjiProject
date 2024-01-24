@@ -10,6 +10,7 @@ import SwiftUI
 struct KanjiView: View {
     
     @EnvironmentObject var store: Store
+    @EnvironmentObject var tabBarState: TabBarState
 //    @AppStorage("selectedLevel") var selectedLevel: NouryokuLevel = .N5
     @AppStorage("selectedNouryokuLevel") var selectedNouryokuLevel: NouryokuLevel = .N5
     @AppStorage("selectedKankenLevel") var selectedKankenLevel: KankenLevel = .級10
@@ -20,7 +21,6 @@ struct KanjiView: View {
     @FetchRequest(entity: UsersKanji.entity(),
                   sortDescriptors: []) private var kanji: FetchedResults<UsersKanji>
     @State var isPresented = false
-    @EnvironmentObject var tabBarState: TabBarState
     
     @Environment(\.managedObjectContext) var viewContext
     

@@ -58,15 +58,22 @@ struct MainView: View {
             }
                 
         }
+//        .task {
+//            await setJSONFile()
+//        }
         .onAppear {
 //            Task {
 //                await setTranslateTask()
 //            }
 //            CoreMLManager().getPrediction()
 //            CoreDataManager.shared.deleteAllUsersKanjiData(context: viewContext)
-//            setJSONFile()
+            
+//            Task {
+//                await setJSONFile()
+//            }
         }
     }
+    
     
 //    func setTranslateTask() async {
 //        let kanjiKankenArray = await withTaskGroup(of: [(key: String, value: String)].self, returning: [KanjiKankenModel].self) { taskGroup in
@@ -95,8 +102,8 @@ struct MainView: View {
         return result
     }
     
-    func setJSONFile() {
-        let refactorStores = RefactoredStores()
+    func setJSONFile() async {
+        let refactorStores = await RefactoredStores()
 //        let rand = refactorStores.kanjiKankenStore.getAll().randomElement()
 //        print(rand)
 //        refactorStores.kanjiKenteiStore.getAll().count

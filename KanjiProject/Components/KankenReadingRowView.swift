@@ -25,5 +25,5 @@ struct KankenReadingRowView: View {
 }
 
 #Preview {
-    KankenReadingRowView(row: "よ（む）", type: .easy)
+    KankenReadingRowView(row: "よ（む）", type: .小)
 }

@@ -19,11 +19,11 @@ class RefactoredStores {
     var kanjiKankenStore = KanjiKankenStore()
 //    let bushu = Bushu() // ключи
     
-    init() {
-        loadData()
+    init() async {
+        await loadData()
     }
     
-    private func loadData() {
+    private func loadData() async {
         do {
             let kanji = KanjiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Kanji", fileType: .csv)))
             let dictionary = DictionaryMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "warodai", fileType: .txt)))
@@ -31,7 +31,8 @@ class RefactoredStores {
             let yojijukugo = YojijukugoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Yojijukugo", fileType: .csv)))
             let giseigo = GiseigoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Giseigo", fileType: .csv)))
             let bunpou = BunpouMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Bunpou", fileType: .csv)))
-            let kanjiReplacer = loadKankenReplacer()
+//            let kanjiReplacer = loadKankenReplacer()
+            let kanjiKanken = await loadAllKanken()
             
             kanjiStore.updateAll(data: kanji)
             dictionaryStore.updateAll(data: dictionary)
@@ -39,55 +40,81 @@ class RefactoredStores {
             yojijukugoStore.updateAll(data: yojijukugo)
             giseigoStore.updateAll(data: giseigo)
             bunpouStore.updateAll(data: bunpou)
-            
-            kanjiKankenStore.updateAll(data: updateKanji(kana: kana, kanjiKentei: createKanjiKankenArray(allKanji: kanjiReplacer)))
+            kanjiKankenStore.updateAll(data: kanjiKanken.sorted { $0.id < $1.id} )
+//            kanjiKankenStore.updateAll(data: updateKanji(kana: kana, kanjiKentei: createKanjiKankenArray(allKanji: kanjiReplacer)))
             
         } catch {
             print(error)
         }
     }
     
-    private func loadKankenReplacer() -> [KankenReplacer]{
-        var result: [KankenReplacer] = []
-        for name in KankenLevel.allCases {
-            result += getKanjiKentei(name: name.rawValue)
-        }
-        return result
-    }
-    
-    private func getKanjiKentei(name: String) -> [KankenReplacer] {
-        do {
-            return KankenReplacerMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: name, fileType: .txt)))
-        } catch {
-            print("\(name)")
-        }
-        return []
-    }
-    
-    /// Устанавливаем Кун и Он чтения для каждого кандзи
-    private func updateKanji(kana: [KanaModel], kanjiKentei: [KanjiKankenModel]) -> [KanjiKankenModel] {
-        var result: [KanjiKankenModel] = []
-        for kanji in kanjiKentei {
-            let array = kanji.defaultReading.components(separatedBy: "    ")
-            var newKanji = kanji
-            if array.count > 1 {
-                newKanji.kunReading = KankenReplacerMapper().getTypeValue(array[1])
-                newKanji.onReading = KankenReplacerMapper().getTypeValue(array[0])
-                result.append(newKanji)
-            } else {
-                let row = KankenReplacerMapper().getTypeValue(array[0])
-                if let firstChar = row.first?.value.first {
-                    if kana.contains(where: { $0.hiragana == String(firstChar)}) {
-                        newKanji.kunReading = row
-                    } else {
-                        newKanji.onReading = row
+    func loadAllKanken() async -> [KanjiKankenModel] {
+        let result = await withTaskGroup(of: [KanjiKankenModel].self, returning: [KanjiKankenModel].self) { taskGroup in
+            for level in KankenLevel.allCases {
+                taskGroup.addTask {
+                    do {
+                        let task = KankenReplacerMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: level.rawValue, fileType: .txt)))
+                        return task
+                    } catch {
+                        print(error)
+                        return []
                     }
-                    result.append(newKanji)
                 }
             }
+            
+            var finalResult: [KanjiKankenModel] = []
+            
+            for await partialResult in taskGroup {
+                finalResult.append(contentsOf: partialResult)
+            }
+            
+            return finalResult
         }
+        
         return result
     }
+    
+//    private func loadKankenReplacer() -> [KankenReplacer]{
+//        var result: [KankenReplacer] = []
+//        for name in KankenLevel.allCases {
+//            result += getKanjiKentei(name: name.rawValue)
+//        }
+//        return result
+//    }
+    
+//    private func getKanjiKentei(name: String) -> [KankenReplacer] {
+//        do {
+//            return KankenReplacerMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: name, fileType: .txt)))
+//        } catch {
+//            print("\(name)")
+//        }
+//        return []
+//    }
+    
+    /// Устанавливаем Кун и Он чтения для каждого кандзи
+//    private func updateKanji(kana: [KanaModel], kanjiKentei: [KanjiKankenModel]) -> [KanjiKankenModel] {
+//        var result: [KanjiKankenModel] = []
+//        for kanji in kanjiKentei {
+//            let array = kanji.defaultReading.components(separatedBy: "    ")
+//            var newKanji = kanji
+//            if array.count > 1 {
+//                newKanji.kunReading = KankenReplacerMapper().getTypeValue(array[1])
+//                newKanji.onReading = KankenReplacerMapper().getTypeValue(array[0])
+//                result.append(newKanji)
+//            } else {
+//                let row = KankenReplacerMapper().getTypeValue(array[0])
+//                if let firstChar = row.first?.value.first {
+//                    if kana.contains(where: { $0.hiragana == String(firstChar)}) {
+//                        newKanji.kunReading = row
+//                    } else {
+//                        newKanji.onReading = row
+//                    }
+//                    result.append(newKanji)
+//                }
+//            }
+//        }
+//        return result
+//    }
 }
 
 extension RefactoredStores: ObservableObject {
@@ -97,7 +124,8 @@ extension RefactoredStores: ObservableObject {
         for (index, currentKanji) in allKanji.enumerated() {
             print("\(index + 1), -- \(allKanji.count)")
             let textAndReadings = getRowWithReadingAndText(allKanji: allKanji, currentKanji: currentKanji)
-            result.append(KanjiKankenModel(body: currentKanji.body,
+            result.append(KanjiKankenModel(id: 0,
+                                           body: currentKanji.body,
                                            defaultReading: currentKanji.defaultReading,
                                            kunReading: currentKanji.kunReading,
                                            onReading: currentKanji.onReading,
@@ -106,7 +134,7 @@ extension RefactoredStores: ObservableObject {
                                            meaning: currentKanji.meaning,
                                            keys: currentKanji.keys,
                                            kankenLevel: currentKanji.kankenLevel,
-                                           stroke: currentKanji.stroke))
+                                           stroke: currentKanji.stroke, link: ""))
         }
         return result
     }
