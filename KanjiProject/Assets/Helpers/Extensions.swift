@@ -191,3 +191,22 @@ extension UIScreen {
         UIWindow.current?.screen
     }
 }
+
+extension String {
+    func between(_ first: Character, and second: Character) -> String {
+        guard let firstIndex = self.firstIndex(of: first),
+              let secondIndex = self.firstIndex(of: second) else { return "" }
+        return String(self[self.index(after: firstIndex)...self.index(before: secondIndex)])
+    }
+    
+    func after(_ number: Int) -> String {
+        if self.count < 1 {
+            return ""
+        }
+        let start = self.index(self.startIndex, offsetBy: number)
+        let end = self.endIndex
+        let result = self[start..<end]
+        
+        return String(result)
+    }
+}

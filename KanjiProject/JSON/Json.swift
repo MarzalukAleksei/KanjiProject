@@ -62,7 +62,7 @@ class JSONManager {
               let data = try? Data(contentsOf: url),
               let result: [DictionaryModel] = decodeToModel(data) else {
             
-            print("Dictionary Json file not exist")
+            print("Dictionary JSON file not exist")
             return []
         }
         
@@ -73,7 +73,7 @@ class JSONManager {
         guard let url = Bundle.main.url(forResource: FileName.kanji.rawValue, withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let result: [KanjiModel] = decodeToModel(data) else {
-            print("Kanji file not exist")
+            print("Kanji JSON file not exist")
             return []
         }
         
@@ -84,7 +84,7 @@ class JSONManager {
         guard let url = Bundle.main.url(forResource: FileName.yojijukugo.rawValue, withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let result: [YojijukugoModel] = decodeToModel(data) else {
-            print("Yojijukugo Json file not exist")
+            print("Yojijukugo JSON file not exist")
             return []
         }
         
@@ -95,7 +95,7 @@ class JSONManager {
         guard let url = Bundle.main.url(forResource: FileName.kana.rawValue, withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let result: [KanaModel] = decodeToModel(data) else {
-            print("Kana Json file not exist")
+            print("Kana JSON file not exist")
             return []
         }
         
@@ -117,7 +117,7 @@ class JSONManager {
         guard let url = Bundle.main.url(forResource: FileName.giseigo.rawValue, withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let result: [GiseigoModel] = decodeToModel(data) else {
-            print("Giseigo Json File Not Exist")
+            print("Giseigo JSON File Not Exist")
             return []
         }
         
@@ -128,7 +128,7 @@ class JSONManager {
         guard let url = Bundle.main.url(forResource: FileName.kanjiKanken.rawValue, withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let result: [KanjiKankenModel] = decodeToModel(data) else {
-            print("KanjiKentei Json File Not Exist")
+            print("KanjiKentei JSON File Not Exist")
             return []
         }
         

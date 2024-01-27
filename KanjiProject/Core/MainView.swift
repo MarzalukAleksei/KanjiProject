@@ -71,6 +71,9 @@ struct MainView: View {
 //            Task {
 //                await setJSONFile()
 //            }
+//            Task {
+//                await saveImage(array:store.kanjiKanken.get(level: .級10))
+//            }
         }
     }
     

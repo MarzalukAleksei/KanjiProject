@@ -7,7 +7,7 @@
 
 import Foundation
 
-class KankenReplacerMapper: IDataMapper {
+class KankenMapper: IDataMapper {
     typealias Result = [KanjiKankenModel]
     
     typealias Entity = [String]

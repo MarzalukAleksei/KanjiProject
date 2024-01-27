@@ -26,26 +26,26 @@ final class Store: ObservableObject {
     
     
     /// Обновляем существующий кандзи
-    func updateKanji(_ kanji: KanjiModel) {
-        
-//        DispatchQueue.global(qos: .background).async { [self] in
+//    func updateKanji(_ kanji: KanjiModel) {
+//        
+////        DispatchQueue.global(qos: .background).async { [self] in
+////            var newKanjiStore = kanjiStore.getAll()
+////            
+////            for (index, value) in kanjiStore.getAll().enumerated() where value.id == kanji.id {
+////                newKanjiStore[index] = kanji
+////            }
+////            kanjiStore.updateAll(data: newKanjiStore)
+////        }
+//        Task {
 //            var newKanjiStore = kanjiStore.getAll()
 //            
 //            for (index, value) in kanjiStore.getAll().enumerated() where value.id == kanji.id {
 //                newKanjiStore[index] = kanji
 //            }
+//            
 //            kanjiStore.updateAll(data: newKanjiStore)
 //        }
-        Task {
-            var newKanjiStore = kanjiStore.getAll()
-            
-            for (index, value) in kanjiStore.getAll().enumerated() where value.id == kanji.id {
-                newKanjiStore[index] = kanji
-            }
-            
-            kanjiStore.updateAll(data: newKanjiStore)
-        }
-    }
+//    }
     
 }
 

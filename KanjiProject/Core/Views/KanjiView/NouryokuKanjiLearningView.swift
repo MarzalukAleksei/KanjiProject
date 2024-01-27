@@ -37,7 +37,7 @@ struct NouryokuKanjiLearningView: View {
                 kanji.lastAnswerRight = true
                 withAnimation(Settings.animation) {
                     addIndex()
-                    store.updateKanji(kanji)
+//                    store.updateKanji(kanji)
                 }
 //                reduceIndex()
             }

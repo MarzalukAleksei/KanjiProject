@@ -53,7 +53,7 @@ class RefactoredStores {
             for level in KankenLevel.allCases {
                 taskGroup.addTask {
                     do {
-                        let task = KankenReplacerMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: level.rawValue, fileType: .txt)))
+                        let task = KankenMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: level.rawValue, fileType: .txt)))
                         return task
                     } catch {
                         print(error)

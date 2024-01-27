@@ -11,6 +11,8 @@ struct KankenKanjiLearningView: View {
     @EnvironmentObject private var tabBarState: TabBarState
     @AppStorage("selectedRow") var selectedRow: Data?
     @State private var currentIndex = 0
+//    @State var image: AsyncImage<Image>?
+    
     let kankenFlow: KankenFlow
     var currentKanji: KanjiKankenModel {
         kankenFlow.kanji[currentIndex]
@@ -26,16 +28,25 @@ struct KankenKanjiLearningView: View {
                                       number: currentIndex + 1,
                                       count: kankenFlow.kanji.count,
                                       type: "")
+              
                 BackForwardClearButtons(currentIndex: $currentIndex, kanji: kankenFlow.kanji)
                 
             }
             .frame(maxHeight: ElementSize.learningViewNavigationBarHeght)
+                    
             
-            Button("Print current") {
-                print(currentKanji.examples)
-                print(" ")
-                print(currentKanji.getExamplesWithReading()[.外])
-            }
+//            Button("Print current") {
+////                print(currentKanji.examples)
+////                print(" ")
+////                print(currentKanji.getExamplesWithReading()[.外])
+//                Task {
+//                    let parse = Parse(kanji: currentKanji)
+//                    let url = URL(string: await parse.kanjiImageLink())
+//                    image = AsyncImage(url: url)
+////                    let UIImage = UIImage(data: <#T##Data#>)
+//////                    CacheImage().saveImage(image: UI, fileName: <#T##String#>)
+//                }
+//            }
             
             ScrollView {
                 VStack(spacing: Settings.paddingBetweenText) {
@@ -63,6 +74,10 @@ struct KankenKanjiLearningView: View {
                 Divider()
                 
                 KankenExamplesRowView(currentKankenKanji: kankenFlow.kanji[currentIndex])
+                
+                Divider()
+                
+                KanjiImageVIew(kanjiArray: kankenFlow.kanji, currentIndex: $currentIndex)
             }
             
             Spacer()
