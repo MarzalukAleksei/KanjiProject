@@ -199,9 +199,10 @@ extension String {
         return String(self[self.index(after: firstIndex)...self.index(before: secondIndex)])
     }
     
+    /// Возвращает строку после указанного номера символа
     func after(_ number: Int) -> String {
         if self.count < 1 {
-            return ""
+            return self
         }
         let start = self.index(self.startIndex, offsetBy: number)
         let end = self.endIndex

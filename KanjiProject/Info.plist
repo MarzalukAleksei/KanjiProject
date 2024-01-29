@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>NotoSerifJP-Regular.otf</string>
 		<string>ZeroGothic.otf</string>
 		<string>unaojapon-p-2.ttf</string>
 	</array>

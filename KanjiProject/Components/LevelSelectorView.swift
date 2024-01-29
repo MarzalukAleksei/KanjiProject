@@ -9,8 +9,8 @@ import SwiftUI
 
 struct LevelSelectorView: View {
 //    @Binding var selectedType: KanjiTestType
-    @AppStorage("selectedNouryokuLevel") var selectedNouryokuLevel: NouryokuLevel = .N5
     @AppStorage("selectedKankenLevel") var selectedKankenLevel: KankenLevel = .級10
+    @AppStorage("selectedNouryokuLevel") var selectedNouryokuLevel: NouryokuLevel = .N5
     @EnvironmentObject private var store: Store
     @Binding var toggle: Bool
     
@@ -29,17 +29,27 @@ struct LevelSelectorView: View {
                     }
                     .padding(.horizontal, Settings.padding)
                 }
-                .onAppear {
+//                .onAppear {
+//                    withAnimation(Settings.animation) {
+//                        scrollTo(proxy: proxy)
+//                    }
+//                    
+//                }
+                .onChange(of: toggle, perform: { value in
                     withAnimation(Settings.animation) {
                         scrollTo(proxy: proxy)
                     }
-                    
-                }
+                })
             }
         }
     }
     func scrollTo(proxy: ScrollViewProxy) {
-        proxy.scrollTo(selectedNouryokuLevel, anchor: .center)
+//        proxy.scrollTo(selectedNouryokuLevel, anchor: .center)
+        if !toggle {
+            proxy.scrollTo(selectedNouryokuLevel, anchor: .center)
+        } else {
+            proxy.scrollTo(selectedKankenLevel, anchor: .center)
+        }
     }
 }
 

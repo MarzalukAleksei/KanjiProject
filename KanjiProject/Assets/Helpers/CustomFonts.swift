@@ -21,6 +21,9 @@ class CustomFont {
         return Font.custom("UNAO-JAPON-pro--new--", size: size)
     }
     
+    static func main(size: CGFloat) -> Font {
+        return Font.custom("NotoSerifJP-Regular", size: size)
+    }
 }
 
 

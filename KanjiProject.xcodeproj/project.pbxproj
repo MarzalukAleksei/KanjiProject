@@ -83,6 +83,7 @@
 		AF98D6152AF7E8AE005B350B /* KankenExamplesRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98D6142AF7E8AE005B350B /* KankenExamplesRowView.swift */; };
 		AF9CCE6829F3C12F006B17F3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9CCE6729F3C12F006B17F3 /* MainView.swift */; };
 		AF9D2BD12AC4D3F900257D82 /* BunpouStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9D2BD02AC4D3F900257D82 /* BunpouStore.swift */; };
+		AFA2BE9F2B67C5FB00BAC9EB /* NotoSerifJP-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AFA2BE9C2B67C41200BAC9EB /* NotoSerifJP-Regular.otf */; };
 		AFA6704D2A4B23BB00ED639D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6704C2A4B23BB00ED639D /* CoreDataManager.swift */; };
 		AFAF80DA29D9C646002B9921 /* KanjiProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAF80D929D9C646002B9921 /* KanjiProjectApp.swift */; };
 		AFAF80DE29D9C647002B9921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFAF80DD29D9C647002B9921 /* Assets.xcassets */; };
@@ -219,6 +220,7 @@
 		AF98D6142AF7E8AE005B350B /* KankenExamplesRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KankenExamplesRowView.swift; sourceTree = "<group>"; };
 		AF9CCE6729F3C12F006B17F3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AF9D2BD02AC4D3F900257D82 /* BunpouStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunpouStore.swift; sourceTree = "<group>"; };
+		AFA2BE9C2B67C41200BAC9EB /* NotoSerifJP-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifJP-Regular.otf"; sourceTree = "<group>"; };
 		AFA6704C2A4B23BB00ED639D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		AFAF80D629D9C646002B9921 /* KanjiProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanjiProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFAF80D929D9C646002B9921 /* KanjiProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiProjectApp.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 			children = (
 				AF30EAFD29E9FE1C00E5B7A9 /* ZeroGothic.otf */,
 				AF30EB0629EAC3E200E5B7A9 /* unaojapon-p-2.ttf */,
+				AFA2BE9C2B67C41200BAC9EB /* NotoSerifJP-Regular.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -786,6 +789,7 @@
 				AF2D7FAE2AC45D9E00642B48 /* Bunpou.csv in Resources */,
 				AF30EB0729EAC3E200E5B7A9 /* unaojapon-p-2.ttf in Resources */,
 				AFFF94DF2B600B0700DD01EB /* 10級.txt in Resources */,
+				AFA2BE9F2B67C5FB00BAC9EB /* NotoSerifJP-Regular.otf in Resources */,
 				AFFF94EC2B612ED900DD01EB /* KanjiKanken.json in Resources */,
 				AFFF94DB2B600AED00DD01EB /* 07級.txt in Resources */,
 				AF30EAFE29E9FE1C00E5B7A9 /* ZeroGothic.otf in Resources */,

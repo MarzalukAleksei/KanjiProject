@@ -35,7 +35,7 @@ struct LearningFrontSideView: View {
                 }
                 VStack {
                     Text(getBody())
-                        .font(.system(size: geo.size.height / 3))
+                        .font(CustomFont.main(size: geo.size.height / 2.5))
                     .bold()
                     
                     // отступ от нижней границы

@@ -130,9 +130,9 @@ struct KanjiView: View {
         return result
     }
     
-    func scrollTo(proxy: ScrollViewProxy) {
-        proxy.scrollTo(selectedNouryokuLevel, anchor: .center)
-    }
+//    func scrollTo(proxy: ScrollViewProxy) {
+//        proxy.scrollTo(selectedNouryokuLevel, anchor: .center)
+//    }
 }
 
 

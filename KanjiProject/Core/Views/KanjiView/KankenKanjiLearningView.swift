@@ -33,53 +33,44 @@ struct KankenKanjiLearningView: View {
                 
             }
             .frame(maxHeight: ElementSize.learningViewNavigationBarHeght)
-                    
             
-//            Button("Print current") {
-////                print(currentKanji.examples)
-////                print(" ")
-////                print(currentKanji.getExamplesWithReading()[.外])
-//                Task {
-//                    let parse = Parse(kanji: currentKanji)
-//                    let url = URL(string: await parse.kanjiImageLink())
-//                    image = AsyncImage(url: url)
-////                    let UIImage = UIImage(data: <#T##Data#>)
-//////                    CacheImage().saveImage(image: UI, fileName: <#T##String#>)
-//                }
-//            }
-            
-            ScrollView {
-                VStack(spacing: Settings.paddingBetweenText) {
-                    ForEach(SchoolLevel.allCases, id: \.self) { type in
-                        if let row = getKunReading(type) {
-                            KankenReadingRowView(row: row, type: type)
+            ScrollViewReader { proxy in
+                ScrollView {
+                    VStack(spacing: Settings.paddingBetweenText) {
+                        ForEach(SchoolLevel.allCases, id: \.self) { type in
+                            if let row = getKunReading(type) {
+                                KankenReadingRowView(row: row, type: type)
+                            }
+                        }
+                        
+                        ForEach(SchoolLevel.allCases, id: \.self) { type in
+                            if let row = getOnReading(type) {
+                                KankenReadingRowView(row: row, type: type)
+                            }
                         }
                     }
+                    .id(0)
                     
-                    ForEach(SchoolLevel.allCases, id: \.self) { type in
-                        if let row = getOnReading(type) {
-                            KankenReadingRowView(row: row, type: type)
-                        }
+                    Divider()
+                    
+                    HStack {
+                        Text(currentKanji.meaning)
+                        Spacer()
                     }
+                    .padding(.horizontal, Settings.padding)
+                    
+                    Divider()
+                    
+                    KankenExamplesRowView(currentKankenKanji: kankenFlow.kanji[currentIndex])
+                    
+                    Divider()
+                    
+                    KanjiImageVIew(kanjiArray: kankenFlow.kanji, currentIndex: $currentIndex)
                 }
-                
-                Divider()
-                
-                HStack {
-                    Text(currentKanji.meaning)
-                    Spacer()
-                }
-                .padding(.horizontal, Settings.padding)
-                
-                Divider()
-                
-                KankenExamplesRowView(currentKankenKanji: kankenFlow.kanji[currentIndex])
-                
-                Divider()
-                
-                KanjiImageVIew(kanjiArray: kankenFlow.kanji, currentIndex: $currentIndex)
+                .onChange(of: currentIndex, perform: { _ in
+                    scrollTo(proxy: proxy)
+                })
             }
-            
             Spacer()
             
             DismissButton()
@@ -104,6 +95,12 @@ struct KankenKanjiLearningView: View {
     
     func getOnReading(_ type: SchoolLevel) -> String? {
         return kankenFlow.kanji[currentIndex].onReading[type]
+    }
+    
+    func scrollTo(proxy: ScrollViewProxy) {
+        withAnimation(Settings.animation) {
+            proxy.scrollTo(0, anchor: .top)
+        }
     }
 }
 
