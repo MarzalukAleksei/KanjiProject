@@ -26,6 +26,7 @@ struct KankenScrollListView: View {
                     .buttonStyle(.plain)
                 }
             }
+            .padding(.vertical, 1)
             .padding(.horizontal, Settings.padding)
         }
         .padding(.top, Settings.paddingBetweenElements)

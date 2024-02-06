@@ -16,7 +16,7 @@ struct KanjiScrollListView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             LazyVStack(spacing: Settings.paddingBetweenElements) {
-                let separate = separateKanji(store.kanjiStore.getData(selectedNouryokuLevel))
+                let separate = separateKanji(store.kanjiStore.get(selectedNouryokuLevel))
                 let selectedRow = getSelectedRow()
                     ForEach(Array(separate.enumerated()), id: \.element) { (index, array) in
                         NavigationLink(value: KanjiFlow(index: index + 1, kanji: array, type: "")) {

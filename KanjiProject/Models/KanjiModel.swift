@@ -14,7 +14,7 @@ struct KanjiModel: Hashable, Identifiable {
     let on: String
     let translate: String
     let number: Int
-    let level: Int
+    let level: NouryokuLevel
     var examples: [String] = []
     var rightAnwers = 0
     var wrongAnswers = 0
@@ -27,12 +27,7 @@ extension KanjiModel: Codable {
                                                    on: "シ",
                                                    translate: "Использовать",
                                                    number: 0,
-                                                   level: 4,
+                                                   level: .N4,
                                                    lastAnswerRight: true)
-    
-}
-
-extension KanjiModel {
-    
     
 }

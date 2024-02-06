@@ -14,6 +14,7 @@ final class Store: ObservableObject {
     @Published var yojijukugoStore = YojijukugoStore()
     @Published var giseigo = GiseigoStore()
     @Published var kanjiKanken = KanjiKankenStore()
+    @Published var baseWords = WordsStore()
     
     init() {
         kanjiStore.updateAll(data: JSONManager.methoods.getKanji())
@@ -22,30 +23,31 @@ final class Store: ObservableObject {
         yojijukugoStore.updateAll(data: JSONManager.methoods.getYojijukugo())
         giseigo.updateAll(data: JSONManager.methoods.getGiseigo())
         kanjiKanken.updateAll(data: JSONManager.methoods.getKanjiKanken())
+        baseWords.updateAll(data: JSONManager.methoods.getBaseWords())
     }
     
     
     /// Обновляем существующий кандзи
-//    func updateKanji(_ kanji: KanjiModel) {
-//        
-////        DispatchQueue.global(qos: .background).async { [self] in
-////            var newKanjiStore = kanjiStore.getAll()
-////            
-////            for (index, value) in kanjiStore.getAll().enumerated() where value.id == kanji.id {
-////                newKanjiStore[index] = kanji
-////            }
-////            kanjiStore.updateAll(data: newKanjiStore)
-////        }
-//        Task {
+    func updateKanji(_ kanji: KanjiModel) {
+        
+//        DispatchQueue.global(qos: .background).async { [self] in
 //            var newKanjiStore = kanjiStore.getAll()
 //            
 //            for (index, value) in kanjiStore.getAll().enumerated() where value.id == kanji.id {
 //                newKanjiStore[index] = kanji
 //            }
-//            
 //            kanjiStore.updateAll(data: newKanjiStore)
 //        }
-//    }
+        Task {
+            var newKanjiStore = kanjiStore.getAll()
+            
+            for (index, value) in kanjiStore.getAll().enumerated() where value.id == kanji.id {
+                newKanjiStore[index] = kanji
+            }
+            
+            kanjiStore.updateAll(data: newKanjiStore)
+        }
+    }
     
 }
 

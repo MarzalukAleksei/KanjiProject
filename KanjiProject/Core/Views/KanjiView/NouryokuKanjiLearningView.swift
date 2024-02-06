@@ -37,6 +37,7 @@ struct NouryokuKanjiLearningView: View {
                 kanji.lastAnswerRight = true
                 withAnimation(Settings.animation) {
                     addIndex()
+                    store.kanjiStore.update(kanji: kanji)
 //                    store.updateKanji(kanji)
                 }
 //                reduceIndex()
@@ -92,7 +93,7 @@ struct NouryokuKanjiLearningView: View {
     
     func encodeData(_ kanji: [KanjiModel], row: Int) -> Data {
         guard let kanji = kanji.first,
-              let result = try? JSONEncoder().encode(SelectedKanjiRow(level: kanji.level, row: kanjiFlow.index)) else { return Data() }
+              let result = try? JSONEncoder().encode(SelectedKanjiRow(level: kanji.level.rawValue, row: kanjiFlow.index)) else { return Data() }
         return result
     }
     

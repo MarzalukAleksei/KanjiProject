@@ -24,10 +24,22 @@ class KanjiMapper: IDataMapper {
             let on = elements[2]
             let kun = elements[3]
             let number = Int(elements[4]) ?? 0
-            let level = Int(elements[5]) ?? 0
-            result.append(KanjiModel(body: body, kun: kun, on: on, translate: translate, number: number, level: level))
+            let level = elements[5]
+            result.append(KanjiModel(body: body, 
+                                     kun: kun,
+                                     on: on,
+                                     translate: translate,
+                                     number: number, 
+                                     level: setLevel(level)))
         }
         
         return result
+    }
+    
+    func setLevel(_ row: String) -> NouryokuLevel {
+        for level in NouryokuLevel.allCases where Int(row) == level.rawValue {
+            return level
+        }
+        return .another
     }
 }

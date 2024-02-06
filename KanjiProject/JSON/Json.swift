@@ -19,6 +19,7 @@ class JSONManager {
         case yojijukugo = "Yojijukugo"
         case giseigo = "Giseigo"
         case kanjiKanken = "KanjiKanken"
+        case baseWords = "BaseWords"
     }
     
     func encodeToJSON<T: Encodable>(_ model: T) -> Data {
@@ -128,6 +129,17 @@ class JSONManager {
         guard let url = Bundle.main.url(forResource: FileName.kanjiKanken.rawValue, withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let result: [KanjiKankenModel] = decodeToModel(data) else {
+            print("KanjiKentei JSON File Not Exist")
+            return []
+        }
+        
+        return result
+    }
+    
+    func getBaseWords() -> [WordModel] {
+        guard let url = Bundle.main.url(forResource: FileName.baseWords.rawValue, withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let result: [WordModel] = decodeToModel(data) else {
             print("KanjiKentei JSON File Not Exist")
             return []
         }

@@ -37,21 +37,22 @@ struct KanjiImageVIew: View {
             }
         }
         .onAppear {
-            
-            if CacheImage().loadImage(fileName: kanjiArray[currentIndex].body) == nil {
-                Task {
-                    await loadAllBlockImages()
-                }
-            }
             loadImage()
+            if CacheImage().loadImage(fileName: kanjiArray[currentIndex].body) == nil {
+                loadAllBlockImages()
+            }
         }
         .onChange(of: currentIndex, perform: { value in
-            loadImage()
+            withAnimation(Settings.animation) {
+                loadImage()
+            }
         })
     }
     
-    func loadAllBlockImages() async {
-        await CacheImage().saveImages(array: kanjiArray)
+    func loadAllBlockImages() {
+        Task {
+            await CacheImage().saveImages(array: kanjiArray)
+        }
     }
     
     func loadImage() {
@@ -62,13 +63,13 @@ struct KanjiImageVIew: View {
                 await parse()
             }
         }
-    }
-    
-    func setImage() {
-        if let uiImage = CacheImage().loadImage(fileName: kanjiArray[currentIndex].body) {
-            self.image = Image(uiImage: uiImage)
-        } else {
-            self.image = nil
+        
+        func setImage() {
+            if let uiImage = CacheImage().loadImage(fileName: kanjiArray[currentIndex].body) {
+                self.image = Image(uiImage: uiImage)
+            } else {
+                self.image = nil
+            }
         }
     }
     

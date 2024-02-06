@@ -30,6 +30,9 @@ struct KankenKanjiLearningView: View {
                                       type: "")
               
                 BackForwardClearButtons(currentIndex: $currentIndex, kanji: kankenFlow.kanji)
+                    .readSize { size in
+                        print(size.width, size.height)
+                    }
                 
             }
             .frame(maxHeight: ElementSize.learningViewNavigationBarHeght)
@@ -48,11 +51,12 @@ struct KankenKanjiLearningView: View {
                                 KankenReadingRowView(row: row, type: type)
                             }
                         }
-                    }
-                    .id(0)
+                    } 
+                    .id(0) // MARK: Устанавливаем id для скроллинга
                     
                     Divider()
                     
+                    // MARK: Значание на японском
                     HStack {
                         Text(currentKanji.meaning)
                         Spacer()
@@ -61,10 +65,12 @@ struct KankenKanjiLearningView: View {
                     
                     Divider()
                     
+                    // MARK: Примеры
                     KankenExamplesRowView(currentKankenKanji: kankenFlow.kanji[currentIndex])
                     
                     Divider()
                     
+                    // MARK: Изображение, подгружаемое из сети
                     KanjiImageVIew(kanjiArray: kankenFlow.kanji, currentIndex: $currentIndex)
                 }
                 .onChange(of: currentIndex, perform: { _ in
@@ -98,7 +104,7 @@ struct KankenKanjiLearningView: View {
     }
     
     func scrollTo(proxy: ScrollViewProxy) {
-        withAnimation(Settings.animation) {
+        withAnimation(Settings.scrollAnimation) {
             proxy.scrollTo(0, anchor: .top)
         }
     }

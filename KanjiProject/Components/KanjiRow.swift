@@ -39,18 +39,16 @@ struct KanjiRow: View {
                         .font(Font.system(size: 37))
                         .foregroundColor(.white)
                     }
-                    VStack(alignment: .leading, spacing: 5) {
-                        Spacer()
-    //                    Text("Title")
-    //                        .font(.headline)
+                    VStack(alignment: .leading, spacing: 0) {
                         Text("Пройдено \(rightAnswers()) из \(kanji.count)")
                             .font(.subheadline)
                             .opacity(0.5)
+                            .padding(.top, Settings.paddingBetweenElements + Settings.paddingBetweenText)
                         
                         Spacer()
                         
-                        ProgressIndicatorLine(answers: CGFloat(kanji.count), rightAnswers: CGFloat(rightAnswers()))
-                            .padding(.vertical, 5)
+                        ProgressIndicatorBar(answers: CGFloat(kanji.count), rightAnswers: CGFloat(rightAnswers()))
+                            .padding(.bottom, Settings.paddingBetweenElements + Settings.paddingBetweenText)
                     }
                     Spacer()
                 }

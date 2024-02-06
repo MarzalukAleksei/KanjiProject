@@ -9,7 +9,8 @@ import SwiftUI
 
 enum TabBarElements: String, CaseIterable {
     case kanji = "Кандзи"
-    case yojijukugo = "Идиомы"
+//    case yojijukugo = "Идиомы"
+    case words = "Слова"
     case card = "Карточки"
     case search = "Поиск"
 }
@@ -33,8 +34,10 @@ struct MainView: View {
             TabView(selection: $currentTab) {
                 KanjiView()
                     .tag(TabBarElements.kanji)
-                IdiomView()
-                    .tag(TabBarElements.yojijukugo)
+//                IdiomView()
+//                    .tag(TabBarElements.yojijukugo)
+                WordsView()
+                    .tag(TabBarElements.words)
                 UserListView()
                     .tag(TabBarElements.card)
                 SearchView()
@@ -74,6 +77,10 @@ struct MainView: View {
 //            Task {
 //                await saveImage(array:store.kanjiKanken.get(level: .級10))
 //            }
+//            for i in store.kanjiStore.getData(.N5) {
+//                print(i.lastAnswerRight)
+//            }
+            print(store.baseWords.get(level: .N5).count)
         }
     }
     
@@ -119,17 +126,11 @@ struct MainView: View {
 //        JSON.methoods.saveJSONToFile(JSON.methoods.encodeToJSON(refactorStores.yojijukugoStore.getAll()), fileName: .yojijukugo)
 //        print(refactorStores.giseigoStore.getAll().randomElement())
 //    JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.giseigoStore.getAll()), fileName: .giseigo)
-        JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.kanjiKankenStore.getAll()), fileName: .kanjiKanken)
+//        JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.kanjiKankenStore.getAll()), fileName: .kanjiKanken)
+        
+//    JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.wordsStore.getAll()), fileName: .baseWords)
     }
     
-}
-
-private struct CustomImage: View {
-    var body: some View {
-        ZStack {
-            
-        }
-    }
 }
 
 struct MainTabView_Previews: PreviewProvider {

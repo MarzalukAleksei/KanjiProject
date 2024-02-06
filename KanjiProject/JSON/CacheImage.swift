@@ -49,7 +49,7 @@ class CacheImage {
             let image: UIImage
         }
         
-        let _: () = await withTaskGroup(of: Pair.self) { taskGroup in
+        await withTaskGroup(of: Pair.self) { taskGroup in
             for kanji in array {
                 taskGroup.addTask {
                     let parse = Parse(kanji: kanji)
