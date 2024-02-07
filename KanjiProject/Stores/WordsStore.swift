@@ -35,4 +35,12 @@ class WordsStore: IStore {
         return result
     }
     
+    func update(set word: WordModel) {
+        if let index = data.firstIndex(where: { $0.id == word.id }) {
+            data[index] = word
+        } else {
+            print("Cant find word")
+        }
+    }
+    
 }

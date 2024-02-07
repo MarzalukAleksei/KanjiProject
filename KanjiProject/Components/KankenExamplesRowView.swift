@@ -29,11 +29,11 @@ struct KankenExamplesRowView: View {
                                         Button(action: {
                                             
                                         }, label: {
-                                            MarkKanjiInRow(word: row, currentKanji: currentKankenKanji, readingIsHidden: false)
+                                            WordWithFuriganaView(word: row, currentKanji: currentKankenKanji, readingIsHidden: false)
                                         })
                                         .foregroundStyle(.black)
                                     } else {
-                                        MarkKanjiInRow(word: row, currentKanji: currentKankenKanji, readingIsHidden: false)
+                                        WordWithFuriganaView(word: row, currentKanji: currentKankenKanji, readingIsHidden: false)
                                     }
                                     VStack {
                                         Text("")
@@ -152,62 +152,12 @@ struct KankenExamplesRowView: View {
     }
 }
 
-fileprivate struct MarkKanjiInRow: View {
-    let word: [TextAndReading]
-    let currentKanji: KanjiKankenModel
-    let readingIsHidden: Bool
-    var body: some View {
-            HStack(spacing: 0) {
-                ForEach(word, id: \.self) { part in
-                VStack {
-                    if part.text.contains(currentKanji.body) {
-//                    if String(currentKanji.body.first!) == part.text {
-                        Text(part.reading)
-                            .font(.system(size: TextSizes.kanjiReading))
-                            .foregroundStyle(.red)
-                            .opacity(readingIsHidden ? 0 : 1)
-//                        let text = part.text.removeAll(after: "（").map { String($0) }
-                        let text = sep(part)
-                        HStack(spacing: 0) {
-                            ForEach(text, id: \.self) { char in
-                                if char == currentKanji.body {
-                                    Text(char)
-                                        .foregroundStyle(.red)
-                                } else {
-                                    Text(char)
-                                }
-                            }
-                        }
-                        .font(.system(size: TextSizes.kanjiBody))
-                    } else {
-                        Text(part.reading)
-                            .font(.system(size: TextSizes.kanjiReading))
-                            .opacity(readingIsHidden ? 0 : 1)
-                        Text(part.text.removeAll(after: "（"))
-                            .font(.system(size: TextSizes.kanjiBody))
-                    }
-                }
-                .frame(width: part.width())
-            }
-        }
-    }
-    
-    func sep(_ part: TextAndReading) -> [String] {
-        var result: [String] = []
-        var array = part.text.removeAll(after: "（").map { String($0) }
-        result.append(array.removeFirst())
-        result.append(array.joined())
-        
-        return result
-    }
-}
-
 #Preview {
     KankenExamplesRowView(currentKankenKanji: .ANOTHER_MOCK_KANKENKANJI)
         .environmentObject(Store())
 }
 
 #Preview {
-    KankenExamplesRowView(currentKankenKanji: .MOCK_KANJIKENTEI)
+    KankenExamplesRowView(currentKankenKanji: .MOCK_KANJIKANKEN)
         .environmentObject(Store())
 }

@@ -137,6 +137,17 @@ class JSONManager {
     }
     
     func getBaseWords() -> [WordModel] {
+        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(FileName.baseWords.rawValue).json")
+        guard let data = try? Data(contentsOf: url),
+              let result: [WordModel] = decodeToModel(data) else {
+            print("Words load from base file")
+            return getBaseWordsFromBundle()
+        }
+        print("load new file")
+        return result
+    }
+    
+    private func getBaseWordsFromBundle() -> [WordModel] {
         guard let url = Bundle.main.url(forResource: FileName.baseWords.rawValue, withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let result: [WordModel] = decodeToModel(data) else {

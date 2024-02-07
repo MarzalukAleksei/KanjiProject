@@ -80,7 +80,15 @@ struct MainView: View {
 //            for i in store.kanjiStore.getData(.N5) {
 //                print(i.lastAnswerRight)
 //            }
-            print(store.baseWords.get(level: .N5).count)
+//            var data = store.baseWords.getAll()
+//            data = data.map { word in
+//                var word = word
+//                word.id = UUID()
+//                return word
+//            }
+//            store.baseWords.updateAll(data: data)
+            print(store.baseWords.get(level: .N3).first(where: { $0.body == "此の"}))
+            print(store.baseWords.getAll().randomElement())
         }
     }
     

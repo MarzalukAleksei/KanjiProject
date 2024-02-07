@@ -83,5 +83,5 @@ struct KanjiImageVIew: View {
 }
 
 #Preview {
-    KanjiImageVIew(kanjiArray: [.MOCK_KANJIKENTEI, .ANOTHER_MOCK_KANKENKANJI], currentIndex: .constant(0))
+    KanjiImageVIew(kanjiArray: [.MOCK_KANJIKANKEN, .ANOTHER_MOCK_KANKENKANJI], currentIndex: .constant(0))
 }

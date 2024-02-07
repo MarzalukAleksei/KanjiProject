@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct KanjiKankenModel: Identifiable, Codable, Hashable {
+struct KanjiKankenModel: Identifiable, Codable, Hashable, IAnswers {
+    
     let id: Int
     let body: String
     let defaultReading: String
@@ -21,7 +22,7 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
     let kankenLevel: KankenLevel
     let stroke: Int
     var oldKanji = ""
-    var lastAnswer: Bool? = nil
+    private var lastAnswerRight: Bool?
     let link: String
     
     init(id: Int, body: String, defaultReading: String, kunReading: [SchoolLevel : String], onReading: [SchoolLevel : String], examples: [SchoolLevel : String], examplesWithReading: [SchoolLevel : [[TextAndReading]]], translateExapmles: [SchoolLevel : [String]] = [:], meaning: String, keys: String, kankenLevel: KankenLevel, stroke: Int, oldKanji: String = "", lastAnswer: Bool? = nil, link: String) {
@@ -38,8 +39,16 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
         self.kankenLevel = kankenLevel
         self.stroke = stroke
         self.oldKanji = oldKanji
-        self.lastAnswer = lastAnswer
+        self.lastAnswerRight = lastAnswer
         self.link = link
+    }
+    
+    func lastAnswer() -> Bool? {
+        lastAnswerRight
+    }
+    
+    mutating func answer(set answer: Bool?) {
+        self.lastAnswerRight = answer
     }
     
     func getExamplesWithReading() -> [SchoolLevel: [[TextAndReading]]] {
@@ -72,7 +81,7 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
 }
 
 extension KanjiKankenModel {
-    static let MOCK_KANJIKENTEI = KanjiKankenModel(id: 0 ,
+    static let MOCK_KANJIKANKEN = KanjiKankenModel(id: 0 ,
                                                    body: "踞",
                                             defaultReading: "［外］キョ、コ    ［外］うずくま（る）、おご（る）",
                                             kunReading: [KanjiProject.SchoolLevel.外: "うずくま（る）、おご（る）"],
@@ -107,4 +116,19 @@ extension KanjiKankenModel {
                                                            stroke: 4,
                                                            oldKanji: "",
                                                            lastAnswer: nil, link: "")
+}
+
+extension KanjiKankenModel {
+    static let empty = KanjiKankenModel(id: 0,
+                                        body: "",
+                                        defaultReading: "",
+                                        kunReading: [:],
+                                        onReading: [:],
+                                        examples: [:],
+                                        examplesWithReading: [:],
+                                        meaning: "",
+                                        keys: "",
+                                        kankenLevel: .級10,
+                                        stroke: 0,
+                                        link: "")
 }

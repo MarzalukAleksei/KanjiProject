@@ -64,10 +64,10 @@ struct KanjiRow: View {
         switch kanji {
         case is [KanjiModel]: 
             guard let kanji = kanji as? [KanjiModel] else { return 0 }
-            return kanji.filter { $0.lastAnswerRight == true }.count
+            return kanji.filter { $0.lastAnswer() == true }.count
         case is [KanjiKankenModel]:
             guard let kanji = kanji as? [KanjiKankenModel] else { return 0 }
-            return kanji.filter { $0.lastAnswer == true }.count
+            return kanji.filter { $0.lastAnswer() == true }.count
         case _: break
         }
         return 0

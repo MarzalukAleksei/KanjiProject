@@ -63,5 +63,5 @@ struct BackForwardClearButtons: View {
 }
 
 #Preview {
-    BackForwardClearButtons(currentIndex: .constant(0), kanji: [.MOCK_KANJIKENTEI, .MOCK_KANJIKENTEI, .MOCK_KANJIKENTEI])
+    BackForwardClearButtons(currentIndex: .constant(0), kanji: [.MOCK_KANJIKANKEN, .MOCK_KANJIKANKEN, .MOCK_KANJIKANKEN])
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LevelButton: View {
     let level: Any
-    let kanjiArray: [Any]
+    let array: [Any]
     let size: CGSize
     let color: Color
     let colors: [Color] = [.red, .green, .white]
@@ -47,28 +47,32 @@ struct LevelButton: View {
     }
     
     private func nouryokuProgress() -> [Double] {
-        guard let nouryokuKanjiArray = kanjiArray as? [KanjiModel] else { return [] }
+        guard let nouryokuKanjiArray = array as? [KanjiModel] else { return [] }
         
-        let inArray = Double(nouryokuKanjiArray.count)
-        let red = Double(nouryokuKanjiArray.filter { $0.lastAnswerRight == false }.count)
-        let green = Double(nouryokuKanjiArray.filter { $0.lastAnswerRight == true }.count)
-        let white = Double(nouryokuKanjiArray.filter { $0.lastAnswerRight == nil }.count)
-        let redValue = red / inArray
-        let greenValue = green / inArray
-        let whiteValue = white / inArray
-        return [redValue, greenValue, whiteValue]
+        return progress(nouryokuKanjiArray)
     }
     
     private func kankenProgress() -> [Double] {
-        guard let kanjiKankenArray = kanjiArray as? [KanjiKankenModel] else { return [] }
+        guard let kanjiKankenArray = array as? [KanjiKankenModel] else { return [] }
         
-        let inArray = Double(kanjiKankenArray.count)
-        let red = Double(kanjiKankenArray.filter { $0.lastAnswer == false }.count)
-        let green = Double(kanjiKankenArray.filter { $0.lastAnswer == true }.count)
-        let white = Double(kanjiKankenArray.filter { $0.lastAnswer == nil }.count)
+        return progress(kanjiKankenArray)
+    }
+    
+    private func wordProgress() -> [Double] {
+        guard let wordArray = array as? [WordModel] else { return [] }
+        
+        return progress(wordArray)
+    }
+    
+    private func progress(_ array: [IAnswers]) -> [Double] {
+        let inArray = Double(array.count)
+        let red = Double(array.filter { $0.lastAnswer() == false }.count)
+        let green = Double(array.filter { $0.lastAnswer() == true }.count)
+        let white = Double(array.filter { $0.lastAnswer() == nil }.count)
         let redValue = red / inArray
         let greenValue = green / inArray
         let whiteValue = white / inArray
+        
         return [redValue, greenValue, whiteValue]
     }
     
@@ -90,15 +94,17 @@ struct LevelButton: View {
     }
     
     private func elementCount() -> Int {
-        return kanjiArray.count
+        return array.count
     }
     
     func getAngles() -> [Double] {
-        switch kanjiArray {
+        switch array {
         case is [KanjiModel]:
             return nouryokuProgress()
         case is [KanjiKankenModel]:
             return kankenProgress()
+        case is [WordModel]:
+            return wordProgress()
         case _: break
         }
         return []
@@ -107,6 +113,6 @@ struct LevelButton: View {
 
 struct LevelButton_Previews: PreviewProvider {
     static var previews: some View {
-        LevelButton(level: NouryokuLevel.N5, kanjiArray: [KanjiModel.MOCK_KANJI, KanjiModel.MOCK_KANJI], size: CGSize(width: 100, height: 100), color: .black)
+        LevelButton(level: NouryokuLevel.N5, array: [KanjiModel.MOCK_KANJI, KanjiModel.MOCK_KANJI], size: CGSize(width: 100, height: 100), color: .black)
     }
 }

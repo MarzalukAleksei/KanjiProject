@@ -32,7 +32,7 @@ class KanjiStore: IStore {
     
     func update(kanji: KanjiModel) {
         if let index = data.firstIndex(where: { $0.body == kanji.body }) {
-            data[index].lastAnswerRight = kanji.lastAnswerRight
+            data[index].answer(set: kanji.lastAnswer())
         }
     }
 }
