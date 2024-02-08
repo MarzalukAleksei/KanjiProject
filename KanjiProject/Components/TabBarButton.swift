@@ -42,7 +42,8 @@ struct TabBarButton: View {
         switch tab {
         case .kanji:
             return ButtonsImages.mainScreen
-        case .yojijukugo:
+//        case .yojijukugo:
+        case .words:
             return ButtonsImages.brain
         case .card:
             return ButtonsImages.list

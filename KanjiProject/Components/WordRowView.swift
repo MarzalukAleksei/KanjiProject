@@ -47,7 +47,7 @@ struct WordRowView: View {
                         Spacer()
                         VStack {
                             Spacer()
-                            Text("N \(kanji.level)")
+                            Text("N \(kanji.level.rawValue)")
                             Spacer()
                         }
                     }

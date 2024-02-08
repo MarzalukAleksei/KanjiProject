@@ -38,6 +38,8 @@ extension DictionaryModel {
 }
 
 extension DictionaryModel {
+    
+    // MARK: Метод рекурсии, дающий в результат только в том случае если строка не пуста
     static func getFirstExample(word: DictionaryModel) -> String {
         var result = ""
         var word = word

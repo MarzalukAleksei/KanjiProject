@@ -8,36 +8,26 @@
 import SwiftUI
 
 struct LevelButton: View {
-    @EnvironmentObject var store: Store
-    let levelTitle: Level
-    let kanjiArray: [KanjiModel]
+    let level: Any
+    let array: [Any]
     let size: CGSize
     let color: Color
     let colors: [Color] = [.red, .green, .white]
     var values: [Double] {
-        let inArray = Double(kanjiArray.count)
-        let red = Double(kanjiArray.filter { $0.lastAnswerRight == false }.count)
-        let green = Double(kanjiArray.filter { $0.lastAnswerRight == true }.count)
-        let white = Double(kanjiArray.filter { $0.lastAnswerRight == nil }.count)
-        let redValue = red / inArray
-        let greenValue = green / inArray
-        let whiteValue = white / inArray
-        return [redValue, greenValue, whiteValue]
+        getAngles()
     }
-    
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-//                .frame(width: size.width, height: size.height)
-            Text("\(levelTitle.rawValue)")
+            let text = buttonText()
+            Text(text)
                 .foregroundColor(.white)
-                .font(CustomFont.scroll(size: 35))
+                .font(CustomFont.scroll(size: text.count > 1 ? 30 : 35))
             VStack {
                 Spacer()
-                Text("\(kanjiArray.count)")
+                Text("\(elementCount())")
                     .font(.system(size: 8))
-//                    .foregroundColor(.init(red: 139, green: 148, blue: 141))
                     .foregroundColor(.white)
                     .padding(.bottom, 15)
             }
@@ -55,10 +45,74 @@ struct LevelButton: View {
         .frame(width: size.width, height: size.height)
         .foregroundColor(color)
     }
+    
+    private func nouryokuProgress() -> [Double] {
+        guard let nouryokuKanjiArray = array as? [KanjiModel] else { return [] }
+        
+        return progress(nouryokuKanjiArray)
+    }
+    
+    private func kankenProgress() -> [Double] {
+        guard let kanjiKankenArray = array as? [KanjiKankenModel] else { return [] }
+        
+        return progress(kanjiKankenArray)
+    }
+    
+    private func wordProgress() -> [Double] {
+        guard let wordArray = array as? [WordModel] else { return [] }
+        
+        return progress(wordArray)
+    }
+    
+    private func progress(_ array: [IAnswers]) -> [Double] {
+        let inArray = Double(array.count)
+        let red = Double(array.filter { $0.lastAnswer() == false }.count)
+        let green = Double(array.filter { $0.lastAnswer() == true }.count)
+        let white = Double(array.filter { $0.lastAnswer() == nil }.count)
+        let redValue = red / inArray
+        let greenValue = green / inArray
+        let whiteValue = white / inArray
+        
+        return [redValue, greenValue, whiteValue]
+    }
+    
+    private func buttonText() -> String {
+        switch level {
+        case is NouryokuLevel:
+            guard let level = level as? NouryokuLevel else { return "" }
+            return String(level.rawValue)
+        case is KankenLevel:
+            guard let level = level as? KankenLevel else { return "" }
+            var text = level.rawValue
+            if text.first == "0" {
+                text = String(text.dropFirst())
+            }
+            return text
+        case _: break
+        }
+        return ""
+    }
+    
+    private func elementCount() -> Int {
+        return array.count
+    }
+    
+    func getAngles() -> [Double] {
+        switch array {
+        case is [KanjiModel]:
+            return nouryokuProgress()
+        case is [KanjiKankenModel]:
+            return kankenProgress()
+        case is [WordModel]:
+            return wordProgress()
+        case _: break
+        }
+        return []
+    }
 }
 
 struct LevelButton_Previews: PreviewProvider {
     static var previews: some View {
-        LevelButton(levelTitle: .another, kanjiArray: [.MOCK_KANJI, .MOCK_KANJI], size: CGSize(width: 100, height: 100), color: .black)
+        LevelButton(level: NouryokuLevel.N5, array: [KanjiModel.MOCK_KANJI, KanjiModel.MOCK_KANJI], size: CGSize(width: 100, height: 100), color: .black)
     }
 }

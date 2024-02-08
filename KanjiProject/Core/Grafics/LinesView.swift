@@ -13,7 +13,6 @@ struct LinesView: Shape {
         let width = rect.width
         let height = rect.height
         
-//        path.move(to: CGPoint(x: width, y: height * 0.05))
         path.move(to: CGPoint(x: width, y: -70))
         
         path.addCurve(to: CGPoint(x: width * 0.8,
@@ -53,6 +52,5 @@ struct LinesView_Previews: PreviewProvider {
     static var previews: some View {
         LinesView()
             .frame(width: 300, height: 300)
-//            .foregroundColor(.blue)
     }
 }

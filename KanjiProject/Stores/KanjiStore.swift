@@ -12,40 +12,27 @@ class KanjiStore: IStore {
     typealias Entity = [KanjiModel]
     
 //    private var data: [KanjiModel] = []
-    private var data: [Level: [KanjiModel]] = [:]
+    private var data: [KanjiModel] = []
     
-//    func getData() -> [KanjiModel] {
-//        return data
-//    }
-    
-    func getData(_ level: Level) -> [KanjiModel] {
-        guard let data = data[level] else { return [] }
-        return data
+    func get(_ level: NouryokuLevel) -> [KanjiModel] {
+        data.filter { $0.level == level }
     }
     
     func getAll() -> [KanjiModel] {
-        var result: [KanjiModel] = []
-        for i in data {
-            result.append(contentsOf: i.value)
-        }
-        return result
-    }
-    
-//    func update(data: [KanjiModel]) {
-//        self.data = data
-//    }
-    
-    func update(_ level: Level, data: [KanjiModel]) {
-        self.data[level] = data
+        data
     }
     
     func updateAll(data: [KanjiModel]) {
-        for level in Level.allCases {
-            self.data[level] = data.filter { $0.level == level.rawValue }
-        }
+        self.data = data.sorted(by: { $0.number < $1.number })
     }
     
     func clearAll() {
         data.removeAll()
+    }
+    
+    func update(kanji: KanjiModel) {
+        if let index = data.firstIndex(where: { $0.body == kanji.body }) {
+            data[index].answer(set: kanji.lastAnswer())
+        }
     }
 }

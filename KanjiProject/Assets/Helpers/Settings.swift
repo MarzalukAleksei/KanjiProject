@@ -22,6 +22,8 @@ class Settings {
     
     static let animation = Animation.easeInOut(duration: 0.5)
     
+    static let scrollAnimation = Animation.easeInOut(duration: 2)
+    
     static let paddingBetweenElements: CGFloat = 10
     
     static let tabBarButtonImageSize = CGSize(width: 20, height: 22)
@@ -32,5 +34,9 @@ class Settings {
     
     static let cornerRadius: CGFloat = 20
     
+    static let modalViewButtonCornerRadius: CGFloat = 10
+    
     static let spacingBetweenIdiomHeaderAndElements: CGFloat = -10
+    
+    static let progressBarHeight: CGFloat = 7
 }

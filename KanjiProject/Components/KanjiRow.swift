@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct KanjiRow: View {
-    let kanji: [KanjiModel]
+    let kanji: [Any]
     let number: Int
-    let cellTitle: String
     let current: Bool
     
     var body: some View {
@@ -32,49 +31,54 @@ struct KanjiRow: View {
                             .clipShape(PartialRoundedRectangle(cornerRadius: 15,
                                                                corners: [.bottomLeft, .topLeft]))
                         HStack(spacing: 1) {
-                            Text(cellTitle)
                             if number < 10 {
-                                Text(" ")
+                                Text("")
                             }
                             Text("\(number)")
                         }
                         .font(Font.system(size: 37))
                         .foregroundColor(.white)
                     }
-                    VStack(alignment: .leading, spacing: 5) {
-                        Spacer()
-    //                    Text("Title")
-    //                        .font(.headline)
+                    VStack(alignment: .leading, spacing: 0) {
                         Text("Пройдено \(rightAnswers()) из \(kanji.count)")
                             .font(.subheadline)
                             .opacity(0.5)
+                            .padding(.top, Settings.paddingBetweenElements + Settings.paddingBetweenText)
                         
                         Spacer()
                         
-                        ProgressIndicatorLine(answers: CGFloat(kanji.count), rightAnswers: CGFloat(rightAnswers()))
-                            .padding(.vertical, 5)
+                        ProgressIndicatorBar(answers: CGFloat(kanji.count), rightAnswers: CGFloat(rightAnswers()))
+                            .padding(.bottom, Settings.paddingBetweenElements + Settings.paddingBetweenText)
                     }
                     Spacer()
                 }
     //            .frame(maxWidth: .infinity)
             }
             .frame(height: ElementSize.customRowRectangleSize)
-        .shadow(radius: 2.5, x: 0, y: 5)
+            .shadow(radius: 2.5, x: 0, y: 5)
         }
         
     }
     
     func rightAnswers() -> Int {
-        
-        return kanji.filter { $0.lastAnswerRight == true }.count
+        switch kanji {
+        case is [KanjiModel]: 
+            guard let kanji = kanji as? [KanjiModel] else { return 0 }
+            return kanji.filter { $0.lastAnswer() == true }.count
+        case is [KanjiKankenModel]:
+            guard let kanji = kanji as? [KanjiKankenModel] else { return 0 }
+            return kanji.filter { $0.lastAnswer() == true }.count
+        case _: break
+        }
+        return 0
     }
 }
 
 struct KanjiRow_Previews: PreviewProvider {
     static var previews: some View {
-        KanjiRow(kanji: [.MOCK_KANJI], number: 1, cellTitle: "問", current: true)
+        KanjiRow(kanji: [KanjiModel.MOCK_KANJI], number: 1, current: true)
             .frame(width: 300, height: 100)
-        KanjiRow(kanji: [.MOCK_KANJI], number: 1, cellTitle: "問", current: false)
+        KanjiRow(kanji: [KanjiModel.MOCK_KANJI], number: 1, current: false)
             .frame(width: 300, height: 100)
     }
 }

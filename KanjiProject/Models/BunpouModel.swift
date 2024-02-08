@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct BunpouModel {
+    let body: String
+    let connections: [String]
+    let points: [String]
+    let meaning: [String]
+    let translate: [String]
+    let examples: [String]
+    let level: NouryokuLevel
+}

@@ -11,3 +11,4 @@ struct SelectedKanjiRow: Codable {
     var level: Int
     var row: Int
 }
+

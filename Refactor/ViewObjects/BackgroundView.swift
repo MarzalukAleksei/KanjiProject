@@ -112,7 +112,7 @@ struct BackgroundView: View {
 
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView(array: [KanjiModel(body: "漢", kun: "", on: "", translate: "", number: 0, level: 0)])
+        BackgroundView(array: [KanjiModel.MOCK_KANJI])
 //        BackgroundView(array: [HiraganaModel(kana: "あ"), HiraganaModel(kana: "しゃ")])
     }
 }

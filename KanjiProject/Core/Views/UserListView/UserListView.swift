@@ -14,7 +14,7 @@ struct UserListView: View {
     var kanji: [KanjiModel] {
         return CoreDataManager.shared.getKanjiModel(userKanji)
     }
-    @State private var editinButtonPressed = false
+    @State private var listEditButtonPressed = false
     @State private var selectedRow: [KanjiModel] = []
     @State private var allertPresent = false
 
@@ -30,7 +30,7 @@ struct UserListView: View {
                             WordRowView(kanji: kanji)
                                 .foregroundColor(selectedRow.contains(kanji) ? .pink : .black)
                         }
-                        .disabled(editinButtonPressed ? false : true)
+                        .disabled(listEditButtonPressed ? false : true)
                     }
                     .padding(.top, Settings.padding)
                     .padding(.horizontal, Settings.padding - 1)
@@ -42,17 +42,19 @@ struct UserListView: View {
                 Color.gray.ignoresSafeArea()
                     .modifier(Modifiers.tabBarSize)
             }
+// MARK: Всплывающее окно с запросом на удаление сохраненных в CoreData данных
             .alert("Убираем выбранные?", isPresented: $allertPresent, actions: {
                 Button("Отменить все") {
-                    editinButtonPressed = false
+                    listEditButtonPressed = false
                     selectedRow = []
                 }
                 
                 Button("Да") {
                     delete()
+                    listEditButtonPressed = false
                 }
             })
-            .navigationTitle(editinButtonPressed ? "Какие убираем?" : "")
+            .navigationTitle(listEditButtonPressed ? "Какие убираем?" : "Избранное")
             .navigationBarTitleDisplayMode(.inline)
             
             .toolbar {
@@ -82,7 +84,9 @@ struct UserListView: View {
     
     func delete() {
         for kanji in selectedRow {
-            CoreDataManager.shared.delete(kanji, userKanji, context: viewContext)
+            Task {
+                CoreDataManager.shared.delete(kanji, userKanji, context: viewContext)
+            }
         }
         selectedRow = []
     }
@@ -96,14 +100,14 @@ struct UserListView: View {
     }
     
     func editButtonAction() {
-        if !editinButtonPressed {
-            editinButtonPressed = true
-        } else if editinButtonPressed, !selectedRow.isEmpty {
+        if !listEditButtonPressed {
+            listEditButtonPressed = true
+        } else if listEditButtonPressed, !selectedRow.isEmpty {
             // действие с выбранными элементами
             allertPresent = true
             
         } else {
-            editinButtonPressed = false
+            listEditButtonPressed = false
         }
     }
 }

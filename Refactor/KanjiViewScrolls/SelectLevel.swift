@@ -15,7 +15,7 @@ struct SelectLevel: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(Level.allCases, id: \.self) { level in
+                ForEach(NouryokuLevel.allCases, id: \.self) { level in
                     NavigationLink("\(level.rawValue)", value: level)
                     
                 }

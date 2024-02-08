@@ -44,6 +44,19 @@ class CoreDataManager: ObservableObject {
         save(context: context)
     }
     
+    func add(kanji: KanjiModel, context: NSManagedObjectContext, _ object: FetchedResults<UsersKanji>) {
+        if getKanjiModel(object).contains(where: { $0.body == kanji.body }) {
+            return
+        }
+        
+        let kanjiEntity = UsersKanji(context: context)
+        let data = JSONManager.methoods.encodeToJSON(kanji)
+        kanjiEntity.kanji = String(data: data, encoding: .utf8)
+        kanjiEntity.timeStamp = Date()
+        save(context: context)
+        
+    }
+    
     private func decodeKanjiModel(coreDataString: String?) -> KanjiModel? {
         guard let coreDataString = coreDataString,
               let data = coreDataString.data(using: .utf8) else { return nil }
@@ -98,7 +111,8 @@ class CoreDataManager: ObservableObject {
     }
     
     func delete(_ kanji: KanjiModel, _ usersKanji: FetchedResults<UsersKanji>, context: NSManagedObjectContext) {
-        if let object = usersKanji.filter({ kanji == CoreDataManager.shared.decodeKanjiModel(coreDataString: $0.kanji) }).first {
+        
+        if let object = usersKanji/*.filter({ kanji == CoreDataManager.shared.decodeKanjiModel(coreDataString: $0.kanji) }).first*/.first(where: { kanji == CoreDataManager.shared.decodeKanjiModel(coreDataString: $0.kanji) }) {
             context.delete(object)
         }
         
