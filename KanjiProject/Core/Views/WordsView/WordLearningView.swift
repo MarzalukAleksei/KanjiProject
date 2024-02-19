@@ -16,6 +16,7 @@ struct WordLearningView: View {
     @State var currentWord: WordModel
     @State var meaningInRussian: String = ""
     @State var presentAlert = false
+    @State var presentDeleteAlert = false
     
     var body: some View {
         VStack {
@@ -29,22 +30,29 @@ struct WordLearningView: View {
                 .foregroundStyle(.blue)
                 .padding(.horizontal, 20)
             
-            TextField("Ввести значение самостоятельно", text: $meaningInRussian)
-                .textFieldStyle(.roundedBorder)
-                .padding()
+            HStack(spacing: 5) {
+                TextField("Ввести значение самостоятельно", text: $meaningInRussian)
+                    .textFieldStyle(.roundedBorder)
+                Button {
+                    presentDeleteAlert = true
+                } label: {
+                    ButtonsImages.trashImage
+                        .frame(width: 20, height: 20)
+                }
+
+            }
+            .padding()
+            .alert("Точно удаляем?", isPresented: $presentDeleteAlert) {
+                
+                Button(role: .destructive) {
+                        deleteAction()
+                    } label: {
+                        Text("ДА")
+                    }
+            }
             
             Button(action: {
-                var word = currentWord
-                word.meaningInRussian = meaningInRussian
-                store.baseWords.update(set: word)
-                Task {
-                    await save()
-                }
-                    do {
-                        try nextWord()
-                    } catch {
-                        presentAlert = true
-                    }
+                saveAction()
             }, label: {
                 Text("СОХРАНИТЬ ЗНАЧЕНИЕ СЛОВА")
                     .frame(maxWidth: .infinity, maxHeight: 50)
@@ -56,8 +64,12 @@ struct WordLearningView: View {
             List(findTranslate(), id: \.self) { word in
                 ZStack(alignment: .leading) {
                     VStack(alignment: .leading) {
-                        Text(word.body)
-                            .foregroundStyle(.red)
+                        HStack {
+                            Text(word.body)
+                                .foregroundStyle(.red)
+                            Text(word.reading)
+                                .foregroundStyle(.brown)
+                        }
                         ForEach(word.translate, id: \.self) { row in
                             Text(row)
                         }
@@ -82,10 +94,12 @@ struct WordLearningView: View {
             Spacer()
             
             Button(action: {
-                do {
-                    try nextWord()
-                } catch {
-                    presentAlert = true
+                Task {
+                    do {
+                        try await nextWord()
+                    } catch {
+                        presentAlert = true
+                    }
                 }
             }, label: {
                 Text("СЛЕДУЮЩЕЕ СЛОВО")
@@ -103,13 +117,43 @@ struct WordLearningView: View {
         .onAppear {
             tabBar.tabBarIsHidden = true
             print(store.baseWords.get(level: level).filter { $0.meaningInRussian == "" }.count)
+            Task {
+                do {
+                    try await nextWord()
+                } catch {
+                    presentAlert = true
+                }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+    }
+    
+    func deleteAction() {
+        let currentWord = currentWord
+        print("current word deleted")
+        Task {
+            await store.baseWords.delete(currentWord)
+            await save()
             do {
-                try nextWord()
+                try await nextWord()
             } catch {
                 presentAlert = true
             }
         }
-        .navigationBarBackButtonHidden(true)
+    }
+    
+    func saveAction() {
+        var word = currentWord
+        word.meaningInRussian = meaningInRussian
+        store.baseWords.update(set: word)
+        Task {
+            await save()
+            do {
+                try await nextWord()
+            } catch {
+                presentAlert = true
+            }
+        }
     }
     
     func save() async {
@@ -117,7 +161,7 @@ struct WordLearningView: View {
         JSONManager.methoods.saveJSONToFile(data, fileName: .baseWords)
     }
     
-    func nextWord() throws {
+    func nextWord() async throws {
         let allWords = store.baseWords.get(level: level)
         let words = allWords.filter { $0.meaningInRussian == "" }
         meaningInRussian = ""

@@ -43,4 +43,8 @@ class WordsStore: IStore {
         }
     }
     
+    func delete(_ word: WordModel) async {
+        data.removeAll(where: { $0.id == word.id })
+        
+    }
 }

@@ -65,10 +65,16 @@ struct KanjiView: View {
                 }
 
 // MARK: Список разделенный на ячейки
-                if toggle {
-                    KankenScrollListView()
-                } else {
-                    KanjiScrollListView()
+                GeometryReader { geo in
+                    ZStack {
+                            KankenScrollListView()
+                            .offset(x: toggle ? 0 : geo.size.width)
+                            .opacity(toggle ? 1 : 0)
+                            KanjiScrollListView()
+                            .offset(x: toggle ? -geo.size.width : 0)
+                            .opacity(toggle ? 0 : 1)
+                        
+                    }
                 }
             }
             .onAppear {

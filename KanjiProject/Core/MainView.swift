@@ -89,6 +89,10 @@ struct MainView: View {
 //            store.baseWords.updateAll(data: data)
             print(store.baseWords.get(level: .N3).first(where: { $0.body == "此の"}))
             print(store.baseWords.getAll().randomElement())
+//                NihongoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "日本語", fileType: .txt)))
+//            } catch {
+//                
+//            }
         }
     }
     
