@@ -12,18 +12,28 @@ final class Store: ObservableObject {
     @Published var dictionaryStore = DictionaryStore()
     @Published var kanaStore = KanaStore()
     @Published var yojijukugoStore = YojijukugoStore()
-    @Published var giseigo = GiseigoStore()
-    @Published var kanjiKanken = KanjiKankenStore()
-    @Published var baseWords = WordsStore()
+    @Published var giseigoStore = GiseigoStore()
+    @Published var kanjiKankenStore = KanjiKankenStore()
+    @Published var baseWordsStore = WordsStore()
     
     init() {
-        kanjiStore.updateAll(data: JSONManager.methoods.getKanji())
-        dictionaryStore.updateAll(data: JSONManager.methoods.getDictionary())
-        kanaStore.updateAll(data: JSONManager.methoods.getKana())
-        yojijukugoStore.updateAll(data: JSONManager.methoods.getYojijukugo())
-        giseigo.updateAll(data: JSONManager.methoods.getGiseigo())
-        kanjiKanken.updateAll(data: JSONManager.methoods.getKanjiKanken())
-        baseWords.updateAll(data: JSONManager.methoods.getBaseWords())
+//        kanjiStore.updateAll(data: JSONManager.manager.getKanji())
+//        dictionaryStore.updateAll(data: JSONManager.manager.getDictionary())
+//        kanaStore.updateAll(data: JSONManager.manager.getKana())
+//        yojijukugoStore.updateAll(data: JSONManager.manager.getYojijukugo())
+//        giseigoStore.updateAll(data: JSONManager.manager.getGiseigo())
+//        kanjiKankenStore.updateAll(data: JSONManager.manager.getKanjiKanken())
+//        baseWordsStore.updateAll(data: JSONManager.manager.getBaseWords())
+    }
+    
+    func updateAll(store: Store) {
+        kanjiStore = store.kanjiStore
+        dictionaryStore = store.dictionaryStore
+        kanaStore = store.kanaStore
+        yojijukugoStore = store.yojijukugoStore
+        giseigoStore = store.giseigoStore
+        kanjiKankenStore = store.kanjiKankenStore
+        baseWordsStore = store.baseWordsStore
     }
     
     

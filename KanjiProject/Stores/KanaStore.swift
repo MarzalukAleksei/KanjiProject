@@ -25,4 +25,9 @@ class KanaStore: IStore {
     func clearAll() {
         self.data.removeAll()
     }
+    
+    func saveInFileManager() async {
+        let data = JSONManager.manager.encodeToJSON(data)
+        JSONManager.manager.saveJSONToFile(data, fileName: .kana)
+    }
 }

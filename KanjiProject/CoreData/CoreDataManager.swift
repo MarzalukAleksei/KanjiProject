@@ -38,7 +38,7 @@ class CoreDataManager: ObservableObject {
     
     func add(kanji: KanjiModel, context: NSManagedObjectContext) {
         let kanjiEntity = UsersKanji(context: context)
-        let data = JSONManager.methoods.encodeToJSON(kanji)
+        let data = JSONManager.manager.encodeToJSON(kanji)
         kanjiEntity.kanji = String(data: data, encoding: .utf8)
         kanjiEntity.timeStamp = Date()
         save(context: context)
@@ -50,7 +50,7 @@ class CoreDataManager: ObservableObject {
         }
         
         let kanjiEntity = UsersKanji(context: context)
-        let data = JSONManager.methoods.encodeToJSON(kanji)
+        let data = JSONManager.manager.encodeToJSON(kanji)
         kanjiEntity.kanji = String(data: data, encoding: .utf8)
         kanjiEntity.timeStamp = Date()
         save(context: context)
@@ -60,7 +60,7 @@ class CoreDataManager: ObservableObject {
     private func decodeKanjiModel(coreDataString: String?) -> KanjiModel? {
         guard let coreDataString = coreDataString,
               let data = coreDataString.data(using: .utf8) else { return nil }
-        let result: KanjiModel? = JSONManager.methoods.decodeToModel(data)
+        let result: KanjiModel? = JSONManager.manager.decodeToModel(data)
         return result
     }
     

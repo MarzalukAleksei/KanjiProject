@@ -10,7 +10,7 @@ import SwiftUI
 
 class JSONManager {
     
-    static let methoods = JSONManager()
+    static let manager = JSONManager()
     
     enum FileName: String {
         case kanji = "Kanji"

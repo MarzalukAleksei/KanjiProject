@@ -18,12 +18,19 @@ struct WordsView: View {
                 BaseWordsSelectLevelView(currentLevel: $currentLevel)
                 Divider()
                 NavigationLink("To Learn") {
-                    if let word = store.baseWords.get(level: currentLevel).randomElement() {
+                    if let word = store.baseWordsStore.get(level: currentLevel).randomElement() {
                         WordLearningView(level: currentLevel, currentWord: word)
                     } else {
                         EmptyView()
                     }
                 }
+                
+                NavigationLink {
+                    SearchWordView()
+                } label: {
+                    Text("Find Word")
+                }
+
                 
                 Spacer()
                 

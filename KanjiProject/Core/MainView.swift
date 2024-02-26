@@ -45,8 +45,6 @@ struct MainView: View {
             }
             .padding(.bottom, 0) // поставил 0 вместо 53 так как здесь тернарный оператор не работает
             
-            
-//            if !tabBarIsHidden {
             if !tabBarState.tabBarIsHidden {
                 HStack {
                     Spacer()
@@ -61,58 +59,11 @@ struct MainView: View {
             }
                 
         }
-//        .task {
-//            await setJSONFile()
-//        }
         .onAppear {
-//            Task {
-//                await setTranslateTask()
-//            }
-//            CoreMLManager().getPrediction()
-//            CoreDataManager.shared.deleteAllUsersKanjiData(context: viewContext)
             
-//            Task {
-//                await setJSONFile()
-//            }
-//            Task {
-//                await saveImage(array:store.kanjiKanken.get(level: .級10))
-//            }
-//            for i in store.kanjiStore.getData(.N5) {
-//                print(i.lastAnswerRight)
-//            }
-//            var data = store.baseWords.getAll()
-//            data = data.map { word in
-//                var word = word
-//                word.id = UUID()
-//                return word
-//            }
-//            store.baseWords.updateAll(data: data)
-            print(store.baseWords.get(level: .N3).first(where: { $0.body == "此の"}))
-            print(store.baseWords.getAll().randomElement())
-//                NihongoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "日本語", fileType: .txt)))
-//            } catch {
-//                
-//            }
         }
     }
     
-    
-//    func setTranslateTask() async {
-//        let kanjiKankenArray = await withTaskGroup(of: [(key: String, value: String)].self, returning: [KanjiKankenModel].self) { taskGroup in
-//            for word in store.kanjiKanken.getAll() {
-//                taskGroup.addTask {
-//                    await findWords(word.body)
-//                }
-//            }
-//            var results: [KanjiKankenModel] = store.kanjiKanken.getAll()
-//            
-//            for await result in taskGroup {
-//                
-//            }
-//            return results
-//        }
-//        
-//    }
     
     func findWords(_ text: String) async -> [(key: String, value: String)] {
         let dictionary = store.dictionaryStore.getAll()

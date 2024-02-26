@@ -26,4 +26,8 @@ class YojijukugoStore: IStore {
         return data
     }
     
+    func saveInFileManager() async {
+        let data = JSONManager.manager.encodeToJSON(data)
+        JSONManager.manager.saveJSONToFile(data, fileName: .yojijukugo)
+    }
 }

@@ -5,9 +5,9 @@
 //  Created by ブラック狼 on 2024/02/06.
 //
 
-import Foundation
+import SwiftUI
 
-struct WordModel: Codable, Hashable, IAnswers {
+struct WordModel: Codable, Hashable, Identifiable, IAnswers {
     var id: UUID?
     var body: String
     let meaningInEnglish: String
@@ -40,4 +40,14 @@ struct WordModel: Codable, Hashable, IAnswers {
 
 extension WordModel {
     static var MOCK = WordModel(body: "生長", meaningInEnglish: "growth (of a plant)", meaningInRussian: "", reading: "生長[せいちょう]", type: "Noun, Suru verb, Intransitive verb", levels: ["jlpt-n2"], levelInTag: [KanjiProject.NouryokuLevel.N2], lastAnswerRight: nil)
+}
+
+extension WordModel {
+    static var empty = WordModel(body: "",
+                                 meaningInEnglish: "",
+                                 meaningInRussian: "",
+                                 reading: "",
+                                 type: "",
+                                 levels: [],
+                                 levelInTag: [])
 }

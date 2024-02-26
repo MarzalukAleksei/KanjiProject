@@ -29,5 +29,8 @@ class BunpouStore: IStore {
         data.removeAll()
     }
     
-    
+    func saveInFileManager() async {
+//        let data = JSONManager.manager.encodeToJSON(data)
+//        JSONManager.manager.saveJSONToFile(data, fileName: .baseWords)
+    }
 }

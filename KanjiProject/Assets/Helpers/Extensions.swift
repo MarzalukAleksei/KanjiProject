@@ -232,3 +232,21 @@ private struct SizePreferenceKey: PreferenceKey {
         value = nextValue()
     }
 }
+
+extension URL {
+    static func myFileUrl(_ fileName: JSONManager.FileName) -> URL? {
+        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("\(fileName.rawValue).json")
+        return url
+    }
+}
+
+extension Data {
+    static func myFile(_ fileName: JSONManager.FileName) -> Data? {
+        let url = URL.myFileUrl(fileName)
+        if let url = url {
+            let data = try? Data(contentsOf: url)
+            return data
+        }
+        return nil
+    }
+}

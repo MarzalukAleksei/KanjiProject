@@ -15,7 +15,7 @@ struct KankenScrollListView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: Settings.paddingBetweenElements) {
-                let separate = separate(store.kanjiKanken.get(level: selectedKankenLevel))
+                let separate = separate(store.kanjiKankenStore.get(level: selectedKankenLevel))
                 let selectedRow = getSelectedRow()
                 ForEach(Array(separate.enumerated()), id: \.element) { (index, array) in
                     NavigationLink(value: KankenFlow(index: index + 1, kanji: array)) {

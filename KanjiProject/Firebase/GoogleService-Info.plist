@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCaPUiiS8pDfEWhuR0NyXmSLm4agHyW4c4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>370858000728</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>MyOwnProject.KanjiProject</string>
+	<key>PROJECT_ID</key>
+	<string>myjapaneseproject</string>
+	<key>STORAGE_BUCKET</key>
+	<string>myjapaneseproject.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:370858000728:ios:08032d01a883ef79d7e52d</string>
+	<key>DATABASE_URL</key>
+	<string>https://myjapaneseproject-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>

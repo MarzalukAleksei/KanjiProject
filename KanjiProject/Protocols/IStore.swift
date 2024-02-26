@@ -18,4 +18,5 @@ protocol IStore {
 //    func getData(_ level: Level) -> Result
     func getAll() -> Result
     func clearAll()
+    func saveInFileManager() async
 }

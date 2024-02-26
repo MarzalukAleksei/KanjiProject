@@ -6,6 +6,15 @@
 //
 
 import SwiftUI
+import FirebaseCore
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+    return true
+  }
+}
 
 @main
 struct KanjiProjectApp: App {
@@ -13,16 +22,25 @@ struct KanjiProjectApp: App {
     @Environment(\.scenePhase) var scenePhase
     @ObservedObject var store = Store()
     @ObservedObject var taBarState = TabBarState()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @ObservedObject var loading = Loading()
     
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .preferredColorScheme(.light)
-                .statusBarHidden()
-                .environment(\.managedObjectContext, CoreDataManager.shared.container.viewContext)
-                .environmentObject(store)
-                .environmentObject(taBarState)
-//            DrawView(size: CGSize(width: 300, height: 300))
+            if loading.complete {
+                MainView()
+                    .preferredColorScheme(.light)
+                    .statusBarHidden()
+                    .environment(\.managedObjectContext, CoreDataManager.shared.container.viewContext)
+                    .environmentObject(store)
+                    .environmentObject(taBarState)
+                //            DrawView(size: CGSize(width: 300, height: 300))
+            } else {
+                LoadingView()
+                    .onAppear {
+                        loading.load()
+                    }
+            }
                 
         }
         .onChange(of: scenePhase) { phase in
@@ -35,7 +53,18 @@ struct KanjiProjectApp: App {
                 break
             }
         }
-        
+        .onChange(of: loading.complete) { res in
+            if res {
+                loading.with { result in
+                    switch result {
+                    case .success(let store):
+                        self.store.updateAll(store: store)
+                    case .failure(_):
+                        break
+                    }
+                }
+            }
+        }
     }
     
     init() {
@@ -53,8 +82,8 @@ struct KanjiProjectApp: App {
     
     func background() {
 //        if let data = JSON.methoods.encodeToJSON(store.kanjiStore.getAll()) {
-        let data = JSONManager.methoods.encodeToJSON(store.kanjiStore.getAll())
-            JSONManager.methoods.saveJSONToFile(data, fileName: .kanji)
+        let data = JSONManager.manager.encodeToJSON(store.kanjiStore.getAll())
+            JSONManager.manager.saveJSONToFile(data, fileName: .kanji)
 //        }
     }
 }

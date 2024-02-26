@@ -116,10 +116,14 @@ struct WordLearningView: View {
         })
         .onAppear {
             tabBar.tabBarIsHidden = true
-            print(store.baseWords.get(level: level).filter { $0.meaningInRussian == "" }.count)
+            print(store.baseWordsStore.get(level: level).filter { $0.meaningInRussian == "" }.count)
             Task {
                 do {
-                    try await nextWord()
+                    if level != .another {
+                        try await nextWord()
+                    } else {
+                        meaningInRussian = currentWord.meaningInRussian
+                    }
                 } catch {
                     presentAlert = true
                 }
@@ -132,7 +136,7 @@ struct WordLearningView: View {
         let currentWord = currentWord
         print("current word deleted")
         Task {
-            await store.baseWords.delete(currentWord)
+            await store.baseWordsStore.delete(currentWord)
             await save()
             do {
                 try await nextWord()
@@ -145,11 +149,15 @@ struct WordLearningView: View {
     func saveAction() {
         var word = currentWord
         word.meaningInRussian = meaningInRussian
-        store.baseWords.update(set: word)
+        store.baseWordsStore.update(set: word)
         Task {
             await save()
             do {
-                try await nextWord()
+                if level != .another {
+                    try await nextWord()
+                } else {
+                    dismiss()
+                }
             } catch {
                 presentAlert = true
             }
@@ -157,12 +165,17 @@ struct WordLearningView: View {
     }
     
     func save() async {
-        let data = JSONManager.methoods.encodeToJSON(store.baseWords.getAll())
-        JSONManager.methoods.saveJSONToFile(data, fileName: .baseWords)
+        let data = JSONManager.manager.encodeToJSON(store.baseWordsStore.getAll())
+        JSONManager.manager.saveJSONToFile(data, fileName: .baseWords)
     }
     
     func nextWord() async throws {
-        let allWords = store.baseWords.get(level: level)
+        var allWords: [WordModel] = []
+        if level != .another {
+            allWords = store.baseWordsStore.get(level: level)
+        } else {
+            allWords = store.baseWordsStore.getAll()
+        }
         let words = allWords.filter { $0.meaningInRussian == "" }
         meaningInRussian = ""
         if let word = words.randomElement() {
@@ -208,7 +221,7 @@ struct WordLearningView: View {
 
 #Preview {
     WordLearningView(level: .N5,
-                     currentWord: Store().baseWords.get(level: .N5).randomElement() ?? .MOCK)
+                     currentWord: Store().baseWordsStore.get(level: .N5).randomElement() ?? .MOCK)
         .environmentObject(TabBarState())
         .environmentObject(Store())
 }

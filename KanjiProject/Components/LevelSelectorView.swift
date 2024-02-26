@@ -87,7 +87,7 @@ fileprivate struct KankenButtons: View {
     @Binding var selectedKankenLevel: KankenLevel
     var body: some View {
         ForEach(KankenLevel.allCases.reversed(), id: \.self) { level in
-            let kankenArray = store.kanjiKanken.get(level: level)
+            let kankenArray = store.kanjiKankenStore.get(level: level)
             LevelButton(level: level,
                         array: kankenArray,
                         size: CGSize(width: ElementSize.levelButtonSize.width,
