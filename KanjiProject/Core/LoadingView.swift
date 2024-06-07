@@ -19,6 +19,7 @@ struct LoadingView: View {
                     .foregroundStyle(.black)
                 ProgressView()
                     .foregroundStyle(.black)
+                    .tint(.black)
             }
         }
     }

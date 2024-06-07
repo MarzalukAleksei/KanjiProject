@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct QuestionMarkButtonView: View {
+    @State var showQuestionMarkMessage = false
+    private var massage = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(systemName: "questionmark.circle")
+            .resizable()
+            .frame(width: 25, height: 25)
+            .foregroundStyle(.secondary)
+            .onTapGesture {
+                showQuestionMarkMessage = true
+            }
+            .alert(massage, isPresented: $showQuestionMarkMessage) {
+                Button("OK") { }
+            }
+    }
+    
+//    func massage(_ massage: String) -> Self {
+//        var fnc = self
+//        fnc.massage = massage
+//        return fnc
+//    }
+    
+    init(_ massage: String = "") {
+        self.massage = massage
     }
 }
 

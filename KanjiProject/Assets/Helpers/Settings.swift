@@ -39,4 +39,8 @@ class Settings {
     static let spacingBetweenIdiomHeaderAndElements: CGFloat = -10
     
     static let progressBarHeight: CGFloat = 7
+    
+    static let selectedColor: Color = .secondary
+    
+    static let diselectedColor: Color = .black
 }

@@ -74,8 +74,8 @@ struct KanjiImageVIew: View {
     }
     
     func parse() async {
-        let parse = Parse(kanji: kanjiArray[currentIndex])
-        guard let url = await URL(string: parse.kanjiImageLink()) else { return }
+        let parse = Parse()
+        guard let url = await URL(string: parse.kanjiImageLink(kanji: kanjiArray[currentIndex])) else { return }
         self.url = url
         let uiImage = await UIImage(data: parse.getUIImageData(url))
         CacheImage().saveImage(image: uiImage, fileName: kanjiArray[currentIndex].body)

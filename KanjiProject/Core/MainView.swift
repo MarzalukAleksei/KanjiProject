@@ -60,10 +60,99 @@ struct MainView: View {
                 
         }
         .onAppear {
+            var words: [String] = []
+            for word in store.kanjiKankenStore.getAll() where word.nouryokuLevel != nil {
+                for example in word.examples {
+                    let array = example.value.components(separatedBy: "・")
+                    words.append(contentsOf: array)
+                }
+            }
+            print(Set(words).randomElement())
             
+//            Task {
+////                await Parse().wordsExamples("https://www.weblio.jp/content/容貌")
+//                let result = await Parse().wordsExamples("https://www.weblio.jp/content/陸屋根")
+//                print(result)
+//            
+//                
+//            }
+            
+//            Task {
+//               await setJSONFile()
+//            }
+//            clear()
+//            jlptLevelSet()
+//            setTranslate()
+//            print(store.kanjiKankenStore.getAll().filter { $0.nouryokuLevel != nil }.count)
+//            removeEng()
+//        findCopy()
+//            let arr = store.kanjiKankenStore.getAll().filter { $0.body == "社"}
+//            for i in arr {
+//                print(i.body, i.kankenLevel, i.id, i.link)
+//            }
         }
     }
     
+    func findCopy() {
+        var result: [KanjiKankenModel] = []
+        let array = store.kanjiKankenStore.getAll()
+        for mainKanji in array {
+            for kanji in array {
+                if mainKanji.body == kanji.body, mainKanji.id != kanji.id {
+                    result.append(mainKanji)
+                    result.append(kanji)
+                }
+            }
+        }
+        for res in result {
+            print(res.body, res.kankenLevel)
+        }
+    }
+    
+    func removeEng() {
+        let string = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+        let kankenArray = store.kanjiKankenStore.getAll().filter { $0.nouryokuLevel != nil }
+        for kanji in kankenArray {
+            for char in string {
+                if let meaningInRus = kanji.meaningInRussion {
+                    if meaningInRus.contains(char) || meaningInRus == "—" {
+                        var kanji = kanji
+                        kanji.meaningInEng = meaningInRus
+                        kanji.meaningInRussion = nil
+                        store.kanjiKankenStore.update(set: kanji)
+                    }
+                }
+            }
+        }
+        Task {
+            await store.kanjiKankenStore.saveInFileManager()
+        }
+    }
+    
+    func setTranslate() {
+        let kankenArray = store.kanjiKankenStore.getAll().filter { $0.nouryokuLevel != nil }
+        for jlptKanji in store.kanjiStore.getAll() {
+            var kanji = kankenArray.first(where: { $0.body == jlptKanji.body })
+            kanji?.meaningInRussion = jlptKanji.translate
+            if let kanji = kanji {
+                store.kanjiKankenStore.update(set: kanji)
+            }
+            
+        }
+        Task {
+            await store.kanjiKankenStore.saveInFileManager()
+        }
+    }
+    
+    func clear() {
+        let array = store.kanjiKankenStore.getAll().map { kanji in
+            var kanji = kanji
+            kanji.meaningInRussion = nil
+            kanji.nouryokuLevel = nil
+            return kanji
+        }
+        store.kanjiKankenStore.updateAll(data: array)
+    }
     
     func findWords(_ text: String) async -> [(key: String, value: String)] {
         let dictionary = store.dictionaryStore.getAll()
@@ -77,6 +166,10 @@ struct MainView: View {
     
     func setJSONFile() async {
         let refactorStores = await RefactoredStores()
+        let arr = refactorStores.kanjiKankenStore.getAll().filter { $0.body == "社"}
+        for i in arr {
+            print(i.body, i.id, i.link)
+        }
 //        let rand = refactorStores.kanjiKankenStore.getAll().randomElement()
 //        print(rand)
 //        refactorStores.kanjiKenteiStore.getAll().count
@@ -92,6 +185,8 @@ struct MainView: View {
 //        JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.kanjiKankenStore.getAll()), fileName: .kanjiKanken)
         
 //    JSONManager.methoods.saveJSONToFile(JSONManager.methoods.encodeToJSON(refactorStores.wordsStore.getAll()), fileName: .baseWords)
+        
+//        JSONManager.manager.saveJSONToFile(JSONManager.manager.encodeToJSON(refactorStores.bushuStore.getAll()), fileName: .bushu)
     }
     
 }

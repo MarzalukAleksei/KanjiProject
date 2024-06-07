@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WordModel: Codable, Hashable, Identifiable, IAnswers {
+struct WordModel: Codable, Hashable, Identifiable {
     var id: UUID?
     var body: String
     let meaningInEnglish: String
@@ -28,7 +28,9 @@ struct WordModel: Codable, Hashable, Identifiable, IAnswers {
         self.levelInTag = levelInTag
         self.lastAnswerRight = lastAnswerRight
     }
-    
+}
+
+extension WordModel: IAnswers {
     func lastAnswer() -> Bool? {
         return lastAnswerRight
     }

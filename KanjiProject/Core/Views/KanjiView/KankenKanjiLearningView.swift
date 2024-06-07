@@ -54,6 +54,15 @@ struct KankenKanjiLearningView: View {
                     } 
                     .id(0) // MARK: Устанавливаем id для скроллинга
                     
+                    // MARK: Отображение значения кандзи на русском
+                    if let meaningInRussion = currentKanji.meaningInRussion {
+                        Divider()
+                        
+                        Text(meaningInRussion.uppercased())
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, Settings.padding)
+                    }
+                    
                     Divider()
                     
                     // MARK: Значание на японском
@@ -70,12 +79,22 @@ struct KankenKanjiLearningView: View {
                     
                     Divider()
                     
+                    // MARK: Пишет сообщение о уровне JLPT
+                    if let nouryokuLevel = currentKanji.nouryokuLevel {
+                        Text("Данный кандзи входит в список JLPT \(nouryokuLevel)")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, Settings.padding)
+                        
+                        Divider()
+                    }
+                    
                     // MARK: Изображение, подгружаемое из сети
                     KanjiImageVIew(kanjiArray: kankenFlow.kanji, currentIndex: $currentIndex)
                 }
                 .onChange(of: currentIndex, perform: { _ in
                     scrollTo(proxy: proxy)
                 })
+                .scrollIndicators(.hidden)
             }
             Spacer()
             

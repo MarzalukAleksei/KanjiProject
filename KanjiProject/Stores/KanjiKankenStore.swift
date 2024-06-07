@@ -21,8 +21,12 @@ class KanjiKankenStore: IStore {
         return data
     }
     
-    func get(level: KankenLevel) -> [KanjiKankenModel] {
+    func get(kankenLevel level: KankenLevel) -> [KanjiKankenModel] {
         return data.filter { $0.kankenLevel == level }
+    }
+    
+    func get(nouryokuLevel level: NouryokuLevel) -> [KanjiKankenModel] {
+        return data.filter { $0.nouryokuLevel == level }
     }
     
     func clearAll() {
@@ -32,5 +36,13 @@ class KanjiKankenStore: IStore {
     func saveInFileManager() async {
         let data = JSONManager.manager.encodeToJSON(data)
         JSONManager.manager.saveJSONToFile(data, fileName: .kanjiKanken)
+    }
+    
+    func update(set kanji: KanjiKankenModel) {
+        if let index = data.firstIndex(where: { $0.body == kanji.body }) {
+            data[index] = kanji
+        } else {
+            print("Check input Kanji")
+        }
     }
 }

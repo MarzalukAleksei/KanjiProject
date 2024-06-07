@@ -18,8 +18,11 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable, IAnswers {
     private let examplesWithReading: [SchoolLevel: [[TextAndReading]]]
     var translateExapmles: [SchoolLevel: [String]]
     let meaning: String
+    var meaningInRussion: String?
+    var meaningInEng: String?
     let keys: String
     let kankenLevel: KankenLevel
+    var nouryokuLevel: NouryokuLevel?
     let stroke: Int
     var oldKanji = ""
     private var lastAnswerRight: Bool?
@@ -58,7 +61,7 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable, IAnswers {
     
     func getExamplesWithReading(_ level: SchoolLevel) -> [[TextAndReading]]? {
         return examplesWithReading[level]
-//        return removeEmpty()[level]
+//        return removeEmpty()[labelName]
     }
     
     private func removeEmpty(_ level: SchoolLevel? = nil) -> [SchoolLevel: [[TextAndReading]]] {

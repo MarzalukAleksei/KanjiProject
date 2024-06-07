@@ -133,7 +133,7 @@ struct WordDetailView: View {
                     continue
                 }
                 // ВРЕМЕННАЯ ЗАТЫЧКА
-//                result.append(KanjiModel(body: String(char), kun: "Данный кандзи не входит в 2000 основных кандзи", on: "", translate: "", number: 0, level: 0))
+//                result.append(KanjiModel(body: String(char), kun: "Данный кандзи не входит в 2000 основных кандзи", on: "", translate: "", number: 0, labelName: 0))
             }
             
         }

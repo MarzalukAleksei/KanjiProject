@@ -9,8 +9,9 @@ import SwiftUI
 
 struct LevelSelectorView: View {
 //    @Binding var selectedType: KanjiTestType
-    @AppStorage("selectedKankenLevel") var selectedKankenLevel: KankenLevel = .級10
+    @AppStorage("selectedKankenLevel") var selectedKankenLevel: KankenLevel = .none
     @AppStorage("selectedNouryokuLevel") var selectedNouryokuLevel: NouryokuLevel = .N5
+    @AppStorage("bushuuSelected") var isBushuSelected: Bool = false
     @EnvironmentObject private var store: Store
     @Binding var toggle: Bool
     
@@ -24,7 +25,9 @@ struct LevelSelectorView: View {
                         if !toggle {
                             NouryokuButtons(proxy: proxy, store: store, selectedLevel: $selectedNouryokuLevel)
                         } else {
-                            KankenButtons(proxy: proxy, store: store, selectedKankenLevel: $selectedKankenLevel)
+                            BushuButton(store: store, isBushuSelected: $isBushuSelected, selectedKankenLevel: $selectedKankenLevel)
+                            
+                            KankenButtons(proxy: proxy, store: store, selectedKankenLevel: $selectedKankenLevel, isBushuSelected: $isBushuSelected)
                         }
                     }
                     .padding(.horizontal, Settings.padding)
@@ -53,6 +56,26 @@ struct LevelSelectorView: View {
     }
 }
 
+fileprivate struct BushuButton: View {
+    let store: Store
+    @Binding var isBushuSelected: Bool
+    @Binding var selectedKankenLevel: KankenLevel
+    var body: some View {
+        Text("")
+        LevelButton(labelName: "部首",
+                    array: store.bushuStore.getAll(),
+                    size: CGSize(width: ElementSize.levelButtonSize.width,
+                                 height: ElementSize.levelButtonSize.height),
+                    color: isBushuSelected == true ? Settings.selectedColor : Settings.diselectedColor)
+        .onTapGesture {
+            withAnimation(Settings.animation) {
+                isBushuSelected = true
+                selectedKankenLevel = .none
+            }
+        }
+    }
+}
+
 fileprivate struct NouryokuButtons: View {
     let proxy: ScrollViewProxy
     let store: Store
@@ -61,11 +84,11 @@ fileprivate struct NouryokuButtons: View {
         ForEach(NouryokuLevel.allCases.reversed(), id: \.self) { level in
             if level != .another {
                 let kanjiArray = store.kanjiStore.get(level)
-                LevelButton(level: level,
+                LevelButton(labelName: level,
                             array: kanjiArray,
                             size: CGSize(width: ElementSize.levelButtonSize.width,
                                          height: ElementSize.levelButtonSize.height),
-                            color: selectedLevel == level ? .secondary : .black)
+                            color: selectedLevel == level ? Settings.selectedColor : Settings.diselectedColor)
                 .onTapGesture {
                     withAnimation(Settings.animation) {
                         selectedLevel = level
@@ -85,20 +108,24 @@ fileprivate struct KankenButtons: View {
     let proxy: ScrollViewProxy
     let store: Store
     @Binding var selectedKankenLevel: KankenLevel
+    @Binding var isBushuSelected: Bool
     var body: some View {
         ForEach(KankenLevel.allCases.reversed(), id: \.self) { level in
-            let kankenArray = store.kanjiKankenStore.get(level: level)
-            LevelButton(level: level,
-                        array: kankenArray,
-                        size: CGSize(width: ElementSize.levelButtonSize.width,
-                                     height: ElementSize.levelButtonSize.height),
-                        color: selectedKankenLevel == level ? .secondary : .black)
-            .onTapGesture {
-                withAnimation(Settings.animation) {
-                    selectedKankenLevel = level
-                    scrollTo(proxy: proxy)
+            if level != .none {
+                let kankenArray = store.kanjiKankenStore.get(kankenLevel: level)
+                LevelButton(labelName: level,
+                            array: kankenArray,
+                            size: CGSize(width: ElementSize.levelButtonSize.width,
+                                         height: ElementSize.levelButtonSize.height),
+                            color: selectedKankenLevel == level ? Settings.selectedColor : Settings.diselectedColor)
+                .onTapGesture {
+                    withAnimation(Settings.animation) {
+                        selectedKankenLevel = level
+                        scrollTo(proxy: proxy)
+                        isBushuSelected = false
+                    }
                 }
-        }
+            }
         }
     }
     func scrollTo(proxy: ScrollViewProxy) {

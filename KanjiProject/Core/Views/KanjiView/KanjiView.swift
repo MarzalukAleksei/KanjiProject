@@ -73,7 +73,7 @@ struct KanjiView: View {
                             KanjiScrollListView()
                             .offset(x: toggle ? -geo.size.width : 0)
                             .opacity(toggle ? 0 : 1)
-                        
+                            
                     }
                 }
             }

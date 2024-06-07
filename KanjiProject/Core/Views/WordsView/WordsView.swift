@@ -30,7 +30,13 @@ struct WordsView: View {
                 } label: {
                     Text("Find Word")
                 }
-
+                
+                NavigationLink {
+                    SetKankenKnajiTranslateView()
+                } label : {
+                    Text("SET KANKEN KANJI TRANSLATE")
+                }
+                .padding(.top, 50)
                 
                 Spacer()
                 

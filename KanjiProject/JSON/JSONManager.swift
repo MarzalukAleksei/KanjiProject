@@ -20,6 +20,8 @@ class JSONManager {
         case giseigo = "Giseigo"
         case kanjiKanken = "KanjiKanken"
         case baseWords = "BaseWords"
+        case bushu = "Bushu"
+        case wordsForKanjiExamples = "WordsForKanjiExamples"
     }
     
     func encodeToJSON<T: Encodable>(_ model: T) -> Data {
@@ -40,7 +42,7 @@ class JSONManager {
         return nil
     }
     
-    ///   - МЕТОД ТОЛЬКО ДЛЯ СОЗДАНИЯ ФАЙЛА. В ЗОНЕ CТАНДАРТНОЙ РАБОТЫ ПРИЛОЖЕНИЯ НЕ ПРИМЕНЯТЬ
+    ///   - МЕТОД ДЛЯ СОЗДАНИЯ ФАЙЛА. 
     ///   -
     ///   - ДОСТУП К ФАЙЛУ:  Finder -> (menu) go+option button -> Library -> остальной адрес можно увидеть в консоли)
     ///   -
@@ -58,103 +60,4 @@ class JSONManager {
         }
     }
     
-    func getDictionary() -> [DictionaryModel] {
-        guard let url = Bundle.main.url(forResource: FileName.dictionary.rawValue, withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let result: [DictionaryModel] = decodeToModel(data) else {
-            
-            print("Dictionary JSON file not exist")
-            return []
-        }
-        
-        return result
-    }
-    
-    private func getKanjiFromRootBundle() -> [KanjiModel] {
-        guard let url = Bundle.main.url(forResource: FileName.kanji.rawValue, withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let result: [KanjiModel] = decodeToModel(data) else {
-            print("Kanji JSON file not exist")
-            return []
-        }
-        
-        return result
-    }
-    
-    func getYojijukugo() -> [YojijukugoModel] {
-        guard let url = Bundle.main.url(forResource: FileName.yojijukugo.rawValue, withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let result: [YojijukugoModel] = decodeToModel(data) else {
-            print("Yojijukugo JSON file not exist")
-            return []
-        }
-        
-        return result
-    }
-    
-    func getKana() -> [KanaModel] {
-        guard let url = Bundle.main.url(forResource: FileName.kana.rawValue, withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let result: [KanaModel] = decodeToModel(data) else {
-            print("Kana JSON file not exist")
-            return []
-        }
-        
-        return result
-    }
-    
-    func getKanji() -> [KanjiModel] {
-        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(FileName.kanji.rawValue).json")
-        guard let data = try? Data(contentsOf: url),
-              let result: [KanjiModel] = decodeToModel(data) else {
-            
-            return getKanjiFromRootBundle()
-        }
-        
-        return result
-    }
-    
-    func getGiseigo() -> [GiseigoModel] {
-        guard let url = Bundle.main.url(forResource: FileName.giseigo.rawValue, withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let result: [GiseigoModel] = decodeToModel(data) else {
-            print("Giseigo JSON File Not Exist")
-            return []
-        }
-        
-        return result
-    }
-    
-    func getKanjiKanken() -> [KanjiKankenModel] {
-        guard let url = Bundle.main.url(forResource: FileName.kanjiKanken.rawValue, withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let result: [KanjiKankenModel] = decodeToModel(data) else {
-            print("KanjiKentei JSON File Not Exist")
-            return []
-        }
-        
-        return result
-    }
-    
-    func getBaseWords() -> [WordModel] {
-        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(FileName.baseWords.rawValue).json")
-        guard let data = try? Data(contentsOf: url),
-              let result: [WordModel] = decodeToModel(data) else {
-            print("Words load from base file")
-            return getBaseWordsFromBundle()
-        }
-        print("load new file")
-        return result
-    }
-    
-    private func getBaseWordsFromBundle() -> [WordModel] {
-        guard let url = Bundle.main.url(forResource: FileName.baseWords.rawValue, withExtension: "json"),
-              let data = try? Data(contentsOf: url),
-              let result: [WordModel] = decodeToModel(data) else {
-            print("KanjiKentei JSON File Not Exist")
-            return []
-        }
-        
-        return result
-    }
 }

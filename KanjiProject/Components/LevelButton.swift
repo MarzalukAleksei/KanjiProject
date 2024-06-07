@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LevelButton: View {
-    let level: Any
+    let labelName: Any
     let array: [Any]
     let size: CGSize
     let color: Color
@@ -64,6 +64,12 @@ struct LevelButton: View {
         return progress(wordArray)
     }
     
+    private func bushuProgress() -> [Double] {
+        guard let bushuArray = array as? [BushuModel] else { return [] }
+        
+        return progress(bushuArray)
+    }
+    
     private func progress(_ array: [IAnswers]) -> [Double] {
         let inArray = Double(array.count)
         let red = Double(array.filter { $0.lastAnswer() == false }.count)
@@ -77,17 +83,19 @@ struct LevelButton: View {
     }
     
     private func buttonText() -> String {
-        switch level {
+        switch labelName {
         case is NouryokuLevel:
-            guard let level = level as? NouryokuLevel else { return "" }
+            guard let level = labelName as? NouryokuLevel else { return "" }
             return String(level.rawValue)
         case is KankenLevel:
-            guard let level = level as? KankenLevel else { return "" }
+            guard let level = labelName as? KankenLevel else { return "" }
             var text = level.rawValue
             if text.first == "0" {
                 text = String(text.dropFirst())
             }
             return text
+        case is String:
+            return labelName as? String ?? ""
         case _: break
         }
         return ""
@@ -105,6 +113,8 @@ struct LevelButton: View {
             return kankenProgress()
         case is [WordModel]:
             return wordProgress()
+        case is [BushuModel]:
+            return bushuProgress()
         case _: break
         }
         return []
@@ -113,6 +123,6 @@ struct LevelButton: View {
 
 struct LevelButton_Previews: PreviewProvider {
     static var previews: some View {
-        LevelButton(level: NouryokuLevel.N5, array: [KanjiModel.MOCK_KANJI, KanjiModel.MOCK_KANJI], size: CGSize(width: 100, height: 100), color: .black)
+        LevelButton(labelName: NouryokuLevel.N5, array: [KanjiModel.MOCK_KANJI, KanjiModel.MOCK_KANJI], size: CGSize(width: 100, height: 100), color: .black)
     }
 }

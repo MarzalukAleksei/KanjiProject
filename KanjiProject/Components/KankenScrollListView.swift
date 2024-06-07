@@ -10,20 +10,43 @@ import SwiftUI
 struct KankenScrollListView: View {
     @EnvironmentObject private var store: Store
     @AppStorage("selectedRow") var selectedRow: Data?
-    @AppStorage("selectedKankenLevel") var selectedKankenLevel: KankenLevel = .級10
+    @AppStorage("selectedKankenLevel") var selectedKankenLevel: KankenLevel = .none
+    @AppStorage("bushuuSelected") var isBushuSelected: Bool = true
+    @State private var showQuestionMarkMessage = false
     
     var body: some View {
         ScrollView {
             LazyVStack(spacing: Settings.paddingBetweenElements) {
-                let separate = separate(store.kanjiKankenStore.get(level: selectedKankenLevel))
+                let separate = separate(store.kanjiKankenStore.get(kankenLevel: selectedKankenLevel))
                 let selectedRow = getSelectedRow()
-                ForEach(Array(separate.enumerated()), id: \.element) { (index, array) in
-                    NavigationLink(value: KankenFlow(index: index + 1, kanji: array)) {
-                        KanjiRow(kanji: array,
-                                 number: index + 1,
-                                 current: isCurrentRow(selectedRow, index))
+                
+    // MARK: Список
+                if isBushuSelected {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            QuestionMarkButtonView(store.bushuStore.whatIsIt)
+                        }
+                        
+                        Text("Ключи")
+                        
+                        ForEach(store.bushuStore.getAll()) { row in
+                            HStack(spacing: 10) {
+                                Text(row.body)
+                                Text(row.name)
+                                Spacer()
+                            }
+                        }
                     }
-                    .buttonStyle(.plain)
+                } else {
+                    ForEach(Array(separate.enumerated()), id: \.element) { (index, array) in
+                        NavigationLink(value: KankenFlow(index: index + 1, kanji: array)) {
+                            KanjiRow(kanji: array,
+                                     number: index + 1,
+                                     current: isCurrentRow(selectedRow, index))
+                        }
+                        .buttonStyle(.plain)
+                    }
                 }
             }
             .padding(.vertical, 1)

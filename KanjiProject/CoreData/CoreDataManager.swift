@@ -76,7 +76,7 @@ class CoreDataManager: ObservableObject {
 //        kan.kun = kanji.kun
 //        kan.on = kanji.on
 //        kan.translate = kanji.translate
-//        kan.level = kanji.level
+//        kan.labelName = kanji.labelName
 //        kan.examples = kanji.examples
 //        kan.number = kanji.number
 //        kan.rightAnswers = kanji.rightAnwers

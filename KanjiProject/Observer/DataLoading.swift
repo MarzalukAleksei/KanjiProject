@@ -53,6 +53,7 @@ final class DataLoading: ObservableObject {
         store.kanaStore.updateAll(data: kana)
         store.kanjiStore.updateAll(data: kanji)
         store.yojijukugoStore.updateAll(data: yojijukugo)
+        store.bushuStore.updateAll(data: bushu)
         
         completion(.success(store))
     }

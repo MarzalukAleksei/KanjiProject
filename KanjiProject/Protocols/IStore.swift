@@ -13,9 +13,9 @@ protocol IStore {
     
 //    func update(data: Entity)
 //    func getData() -> Result
-//    func update(_ level: Level, data: Entity)
+//    func update(_ labelName: Level, data: Entity)
     func updateAll(data: Entity)
-//    func getData(_ level: Level) -> Result
+//    func getData(_ labelName: Level) -> Result
     func getAll() -> Result
     func clearAll()
     func saveInFileManager() async

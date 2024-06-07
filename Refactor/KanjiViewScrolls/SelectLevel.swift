@@ -20,15 +20,15 @@ struct SelectLevel: View {
                     
                 }
             }
-//            .navigationDestination(for: Level.self) { level in
-//                let array = data(level: level)
+//            .navigationDestination(for: Level.self) { labelName in
+//                let array = data(labelName: labelName)
 //                LearningCardView(currentLearning: array, curentKanji: array.first ?? .MOCK_KANJI)
 //            }
         }
     }
     
-//    func data(level: Level) -> [KanjiModel] {
-//        let result = Kanji.transformToKanjiModel(kanji: kanji, level)
+//    func data(labelName: Level) -> [KanjiModel] {
+//        let result = Kanji.transformToKanjiModel(kanji: kanji, labelName)
 //
 //        return result
 //    }

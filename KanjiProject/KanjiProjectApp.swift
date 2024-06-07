@@ -23,7 +23,7 @@ struct KanjiProjectApp: App {
     @ObservedObject var store = Store()
     @ObservedObject var taBarState = TabBarState()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @ObservedObject var loading = Loading()
+    @ObservedObject var loading = DataLoading()
     
     var body: some Scene {
         WindowGroup {
@@ -47,7 +47,8 @@ struct KanjiProjectApp: App {
             switch phase {
             case .active: break
             case .background:
-                background()
+//                background()
+                break
             case .inactive: break
             @unknown default:
                 break
@@ -55,7 +56,7 @@ struct KanjiProjectApp: App {
         }
         .onChange(of: loading.complete) { res in
             if res {
-                loading.with { result in
+                loading.data { result in
                     switch result {
                     case .success(let store):
                         self.store.updateAll(store: store)

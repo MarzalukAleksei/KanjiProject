@@ -18,37 +18,39 @@ class RefactoredStores {
     var bunpouStore = BunpouStore()
     var kanjiKankenStore = KanjiKankenStore()
     var wordsStore = WordsStore()
-//    let bushu = Bushu() // ключи
+    var bushuStore = BushuStore()
     
     init() async {
         await loadData()
     }
     
     private func loadData() async {
-        do {
-            let kanji = KanjiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Kanji", fileType: .csv)))
-            let dictionary = DictionaryMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "warodai", fileType: .txt)))
-            let kana = KanaMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Kana", fileType: .csv)))
-            let yojijukugo = YojijukugoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Yojijukugo", fileType: .csv)))
-            let giseigo = GiseigoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Giseigo", fileType: .csv)))
-            let bunpou = BunpouMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Bunpou", fileType: .csv)))
-//            let kanjiReplacer = loadKankenReplacer()
-            let kanjiKanken = await loadAllKanken()
-            let words = await loadAllWords()
-            
-            kanjiStore.updateAll(data: kanji)
-            dictionaryStore.updateAll(data: dictionary)
-            kanaStore.updateAll(data: kana)
-            yojijukugoStore.updateAll(data: yojijukugo)
-            giseigoStore.updateAll(data: giseigo)
-            bunpouStore.updateAll(data: bunpou)
-            kanjiKankenStore.updateAll(data: kanjiKanken.sorted { $0.id < $1.id } )
-            wordsStore.updateAll(data: words)
+//        do {
+//            let kanji = KanjiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Kanji", fileType: .csv)))
+//            let dictionary = DictionaryMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "warodai", fileType: .txt)))
+//            let kana = KanaMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Kana", fileType: .csv)))
+//            let yojijukugo = YojijukugoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Yojijukugo", fileType: .csv)))
+//            let giseigo = GiseigoMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Giseigo", fileType: .csv)))
+//            let bunpou = BunpouMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Bunpou", fileType: .csv)))
+//            let bushu = BushuMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Bushu", fileType: .csv)))
+////            let kanjiReplacer = loadKankenReplacer()
+//            let kanjiKanken = await loadAllKanken()
+//            let words = await loadAllWords()
+//            
+//            kanjiStore.updateAll(data: kanji)
+//            dictionaryStore.updateAll(data: dictionary)
+//            kanaStore.updateAll(data: kana)
+//            yojijukugoStore.updateAll(data: yojijukugo)
+//            giseigoStore.updateAll(data: giseigo)
+//            bunpouStore.updateAll(data: bunpou)
+//            kanjiKankenStore.updateAll(data: kanjiKanken.sorted { $0.id < $1.id } )
+//            wordsStore.updateAll(data: words)
+//            bushuStore.updateAll(data: bushu)
 //            kanjiKankenStore.updateAll(data: updateKanji(kana: kana, kanjiKentei: createKanjiKankenArray(allKanji: kanjiReplacer)))
-            
-        } catch {
-            print(error)
-        }
+//            
+//        } catch {
+//            print(error)
+//        }
     }
     
     private func loadAllKanken() async -> [KanjiKankenModel] {

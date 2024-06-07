@@ -52,8 +52,8 @@ class CacheImage {
         await withTaskGroup(of: Pair.self) { taskGroup in
             for kanji in array {
                 taskGroup.addTask {
-                    let parse = Parse(kanji: kanji)
-                    guard let url = await URL(string: parse.kanjiImageLink()),
+                    let parse = Parse(/*kanji: kanji*/)
+                    guard let url = await URL(string: parse.kanjiImageLink(kanji: kanji)),
                           let uiImage = await UIImage(data: parse.getUIImageData(url)) else {
                         return Pair(body: "", image: UIImage())
                     }
