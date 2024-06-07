@@ -1,5 +1,5 @@
 //
-//  Loading.swift
+//  DataLoading.swift
 //  KanjiProject
 //
 //  Created by ブラック狼 on 2024/02/26.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Loading: ObservableObject {
+final class DataLoading: ObservableObject {
     @Published var baseWords: [WordModel] = []
     @Published var kanjiKanken: [KanjiKankenModel] = []
     @Published var dictionary: [DictionaryModel] = []
@@ -15,6 +15,8 @@ final class Loading: ObservableObject {
     @Published var kana: [KanaModel] = []
     @Published var kanji: [KanjiModel] = []
     @Published var yojijukugo: [YojijukugoModel] = []
+    @Published var bushu: [BushuModel] = []
+    
     
     var complete: Bool {
         if !baseWords.isEmpty,
@@ -23,7 +25,8 @@ final class Loading: ObservableObject {
            !giseigo.isEmpty,
            !kana.isEmpty,
            !kanji.isEmpty,
-           !yojijukugo.isEmpty {
+           !yojijukugo.isEmpty,
+           !bushu.isEmpty {
             return true
         }
         return false
@@ -38,9 +41,10 @@ final class Loading: ObservableObject {
         loadKana()
         loadKanji()
         loadYojijukugo()
+        loadBushu()
     }
     
-    func with(completion: (Result<Store, Error>) -> Void) {
+    func data(with completion: (Result<Store, Error>) -> Void) {
         let store = Store()
         store.baseWordsStore.updateAll(data: baseWords)
         store.kanjiKankenStore.updateAll(data: kanjiKanken)
@@ -62,6 +66,11 @@ final class Loading: ObservableObject {
                 case .success(let data):
                     guard let words: [WordModel] = JSONManager.manager.decodeToModel(data) else { return }
                     self.baseWords = words
+                    Task {
+                        let baseWordStore = WordsStore()
+                        baseWordStore.updateAll(data: words)
+                        await baseWordStore.saveInFileManager()
+                    }
                 case .failure(let error):
                     print(error)
                 }
@@ -80,6 +89,11 @@ final class Loading: ObservableObject {
                 case .success(let data):
                     guard let kanken: [KanjiKankenModel] = JSONManager.manager.decodeToModel(data) else { return }
                     self.kanjiKanken = kanken
+                    Task {
+                        let kanjiKankenStore = KanjiKankenStore()
+                        kanjiKankenStore.updateAll(data: kanken)
+                        await kanjiKankenStore.saveInFileManager()
+                    }
                 case .failure(let error):
                     print(error)
                 }
@@ -98,6 +112,11 @@ final class Loading: ObservableObject {
                 case .success(let data):
                     guard let dictionary: [DictionaryModel] = JSONManager.manager.decodeToModel(data) else { return }
                     self.dictionary = dictionary
+                    Task {
+                        let dictionaryStore = DictionaryStore()
+                        dictionaryStore.updateAll(data: dictionary)
+                        await dictionaryStore.saveInFileManager()
+                    }
                 case .failure(let error):
                     print(error)
                 }
@@ -116,6 +135,11 @@ final class Loading: ObservableObject {
                 case .success(let data):
                     guard let giseigo: [GiseigoModel] = JSONManager.manager.decodeToModel(data) else { return }
                     self.giseigo = giseigo
+                    Task {
+                        let giseigoStore = GiseigoStore()
+                        giseigoStore.updateAll(data: giseigo)
+                        await giseigoStore.saveInFileManager()
+                    }
                 case .failure(let error):
                     print(error)
                 }
@@ -134,6 +158,11 @@ final class Loading: ObservableObject {
                 case .success(let data):
                     guard let kana: [KanaModel] = JSONManager.manager.decodeToModel(data) else { return }
                     self.kana = kana
+                    Task {
+                        let kanaStore = KanaStore()
+                        kanaStore.updateAll(data: kana)
+                        await kanaStore.saveInFileManager()
+                    }
                 case .failure(let error):
                     print(error)
                 }
@@ -152,6 +181,11 @@ final class Loading: ObservableObject {
                 case .success(let data):
                     guard let kanji: [KanjiModel] = JSONManager.manager.decodeToModel(data) else { return }
                     self.kanji = kanji
+                    Task {
+                        let kanjiStore = KanjiStore()
+                        kanjiStore.updateAll(data: kanji)
+                        await kanjiStore.saveInFileManager()
+                    }
                 case .failure(let error):
                     print(error)
                 }
@@ -170,6 +204,11 @@ final class Loading: ObservableObject {
                 case .success(let data):
                     guard let yojijukugo: [YojijukugoModel] = JSONManager.manager.decodeToModel(data) else { return }
                     self.yojijukugo = yojijukugo
+                    Task {
+                        let yojijukuStore = YojijukugoStore()
+                        yojijukuStore.updateAll(data: yojijukugo)
+                        await yojijukuStore.saveInFileManager()
+                    }
                 case .failure(let error):
                     print(error)
                 }
@@ -177,6 +216,35 @@ final class Loading: ObservableObject {
         } else {
             self.yojijukugo = yojijukugo
         }
+    }
+    
+    private func loadBushu() {
+        var bushu = getBushu()
+        
+        if bushu.isEmpty {
+            FirebaseManager.manager.downloadBushu { result in
+                switch result {
+                case .success(let data):
+                    guard let bushu: [BushuModel] = JSONManager.manager.decodeToModel(data) else { return }
+                    self.bushu = bushu
+                    Task {
+                        let bushuStore = BushuStore()
+                        bushuStore.updateAll(data: bushu)
+                        await bushuStore.saveInFileManager()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        } else {
+            self.bushu = bushu
+        }
+    }
+    
+    private func getBushu() -> [BushuModel] {
+        guard let data = Data.myFile(.bushu),
+              let result: [BushuModel] = JSONManager.manager.decodeToModel(data) else { return [] }
+        return result
     }
     
     private func getBaseWord() -> [WordModel] {
