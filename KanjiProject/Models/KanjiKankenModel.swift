@@ -26,6 +26,8 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable, IAnswers {
     let stroke: Int
     var oldKanji = ""
     private var lastAnswerRight: Bool?
+    var rightAnwers: Int?
+    var wrongAnswers: Int?
     let link: String
     
     init(id: Int, body: String, defaultReading: String, kunReading: [SchoolLevel : String], onReading: [SchoolLevel : String], examples: [SchoolLevel : String], examplesWithReading: [SchoolLevel : [[TextAndReading]]], translateExapmles: [SchoolLevel : [String]] = [:], meaning: String, keys: String, kankenLevel: KankenLevel, stroke: Int, oldKanji: String = "", lastAnswer: Bool? = nil, link: String) {

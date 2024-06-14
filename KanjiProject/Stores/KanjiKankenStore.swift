@@ -7,11 +7,11 @@
 
 import Foundation
 
-class KanjiKankenStore: IStore {
+class KanjiKankenStore: IStore, ObservableObject {
     typealias Result = [KanjiKankenModel]
     typealias Entity = [KanjiKankenModel]
     
-    private var data: [KanjiKankenModel] = []
+    @Published private var data: [KanjiKankenModel] = []
     
     func updateAll(data: [KanjiKankenModel]) {
         self.data = data
@@ -38,6 +38,29 @@ class KanjiKankenStore: IStore {
         JSONManager.manager.saveJSONToFile(data, fileName: .kanjiKanken)
     }
     
+    func getAllKanji(below level: NouryokuLevel) -> [KanjiKankenModel] {
+        var allCurrentLEvelKanji: [KanjiKankenModel] = []
+        switch level {
+        case .another:
+            return []
+        case .N1:
+            allCurrentLEvelKanji.append(contentsOf: get(nouryokuLevel: .N1))
+            fallthrough
+        case .N2:
+            allCurrentLEvelKanji.append(contentsOf: get(nouryokuLevel: .N2))
+            fallthrough
+        case .N3:
+            allCurrentLEvelKanji.append(contentsOf: get(nouryokuLevel: .N3))
+            fallthrough
+        case .N4:
+            allCurrentLEvelKanji.append(contentsOf: get(nouryokuLevel: .N4))
+            fallthrough
+        case .N5:
+            allCurrentLEvelKanji.append(contentsOf: get(nouryokuLevel: .N5))
+        }
+        return allCurrentLEvelKanji
+    }
+    
     func update(set kanji: KanjiKankenModel) {
         if let index = data.firstIndex(where: { $0.body == kanji.body }) {
             data[index] = kanji
@@ -45,4 +68,12 @@ class KanjiKankenStore: IStore {
             print("Check input Kanji")
         }
     }
+    
+//    func update(set kanji: KanjiKankenModel) async {
+//        if let index = data.firstIndex(where: { $0.body == kanji.body }) {
+//            data[index] = kanji
+//        } else {
+//            print("Check input Kanji")
+//        }
+//    }
 }

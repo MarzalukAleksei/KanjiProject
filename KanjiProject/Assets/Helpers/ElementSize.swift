@@ -35,4 +35,6 @@ class ElementSize {
     static let modalViewButtonHeight: CGFloat = 30
     
     static let pencilButtonSize = CGSize(width: 25, height: 25)
+    
+    static let xmarkSize = CGSize(width: 35, height: 35)
 }

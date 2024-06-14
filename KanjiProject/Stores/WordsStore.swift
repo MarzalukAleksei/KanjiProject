@@ -57,3 +57,10 @@ class WordsStore: IStore {
         JSONManager.manager.saveJSONToFile(data, fileName: .baseWords)
     }
 }
+
+extension WordsStore {
+    func saveInFileManager(fileName: JSONManager.FileName) async {
+        let data = JSONManager.manager.encodeToJSON(data)
+        JSONManager.manager.saveJSONToFile(data, fileName: fileName)
+    }
+}

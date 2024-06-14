@@ -29,13 +29,13 @@ struct MainView: View {
     }
     
     var body: some View {
-
+        
         ZStack(alignment: .bottom) {
             TabView(selection: $currentTab) {
                 KanjiView()
                     .tag(TabBarElements.kanji)
-//                IdiomView()
-//                    .tag(TabBarElements.yojijukugo)
+                //                IdiomView()
+                //                    .tag(TabBarElements.yojijukugo)
                 WordsView()
                     .tag(TabBarElements.words)
                 UserListView()
@@ -49,7 +49,7 @@ struct MainView: View {
                 HStack {
                     Spacer()
                     ForEach(TabBarElements.allCases, id: \.self) { tab in
-                            TabBarButton(tab: tab, currentTab: $currentTab)
+                        TabBarButton(tab: tab, currentTab: $currentTab)
                         Spacer()
                     }
                 }
@@ -57,40 +57,43 @@ struct MainView: View {
                 .frame(maxWidth: .infinity)
                 .background(Color.gray)
             }
-                
+            
         }
         .onAppear {
-            var words: [String] = []
-            for word in store.kanjiKankenStore.getAll() where word.nouryokuLevel != nil {
-                for example in word.examples {
-                    let array = example.value.components(separatedBy: "・")
-                    words.append(contentsOf: array)
-                }
-            }
-            print(Set(words).randomElement())
-            
-//            Task {
-////                await Parse().wordsExamples("https://www.weblio.jp/content/容貌")
-//                let result = await Parse().wordsExamples("https://www.weblio.jp/content/陸屋根")
-//                print(result)
-//            
-//                
-//            }
-            
-//            Task {
-//               await setJSONFile()
-//            }
-//            clear()
-//            jlptLevelSet()
-//            setTranslate()
-//            print(store.kanjiKankenStore.getAll().filter { $0.nouryokuLevel != nil }.count)
-//            removeEng()
-//        findCopy()
-//            let arr = store.kanjiKankenStore.getAll().filter { $0.body == "社"}
-//            for i in arr {
-//                print(i.body, i.kankenLevel, i.id, i.link)
-//            }
+            let exampleData = WordExamplesTranslateMapper().getData()
+            getWords(exampleData)
+            print(exampleData.count, "Current examples count")
         }
+    }
+    
+    func getWords(_ exampleData: [WordModel]) {
+        var kanjiKankenExamplesTranslation = DataLoading().getkanjiKankenExamplesTranslation()
+        print(kanjiKankenExamplesTranslation.count)
+        kanjiKankenExamplesTranslation = kanjiKankenExamplesTranslation.sorted { m1, m2 in
+            m1.body < m2.body
+        }
+        var tdmWordsArray: [[String]] = []
+        var words: [String] = []
+        var wordsWithoutTranslate = 0
+        for word in kanjiKankenExamplesTranslation where !exampleData.contains(where: { $0.body == word.body }) {
+            wordsWithoutTranslate += 1
+            if words.count < 300 {
+                words.append(word.body)
+            }
+            if words.count == 300 {
+                tdmWordsArray.append(words)
+                words = []
+                words.append(word.body)
+            }
+        }
+        if words.count > 0 {
+            tdmWordsArray.append(words)
+        }
+        if let first = tdmWordsArray.first {
+            print(first)
+        }
+        
+        print(wordsWithoutTranslate)
     }
     
     func findCopy() {
@@ -188,7 +191,6 @@ struct MainView: View {
         
 //        JSONManager.manager.saveJSONToFile(JSONManager.manager.encodeToJSON(refactorStores.bushuStore.getAll()), fileName: .bushu)
     }
-    
 }
 
 struct MainTabView_Previews: PreviewProvider {
@@ -196,5 +198,98 @@ struct MainTabView_Previews: PreviewProvider {
         MainView()
             .environmentObject(Store())
             .environmentObject(TabBarState())
+    }
+}
+
+class FindOperation {
+    let store: Store
+    
+    init(store: Store) {
+        self.store = store
+    }
+    
+    private class RemoveCopy: Hashable {
+        let word: String
+        let withReading: String
+        
+        init(word: String, withReading: String) {
+            self.word = word
+            self.withReading = withReading
+        }
+        
+        static func == (lhs: RemoveCopy, rhs: RemoveCopy) -> Bool {
+            lhs.word == rhs.word
+        }
+        
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(word)
+    //        hasher.combine(withReading)
+        }
+    }
+    
+    func getTextWithReading() -> [WordModel] {
+        let res = getExamplesFromKanji()
+        var words = Set(res.map { RemoveCopy(word: $0.word, withReading: $0.withReading) })
+        print(words.count)
+        
+        for word in words {
+            if store.baseWordsStore.getAll().contains(where: { storedWord in
+                return word.word == storedWord.body
+            }) {
+                words.remove(word)
+                continue
+            }
+        }
+        print(words.count)
+        let result = words.map { word in
+            
+            return WordModel(body: word.word,
+                             meaningInEnglish: "",
+                             meaningInRussian: "",
+                             reading: word.withReading,
+                             type: "",
+                             levels: [],
+                             levelInTag: [])
+        }
+        return result
+    }
+    
+    private func getExamplesFromKanji() -> [RemoveCopy] {
+        var result: [RemoveCopy] = []
+        for kanji in store.kanjiKankenStore.getAll() where kanji.nouryokuLevel != nil {
+            var wordsWithReading: [RemoveCopy] = []
+            for level in SchoolLevel.allCases {
+                if let tdm = kanji.getExamplesWithReading(level) {
+                    let currentWordSWithReading = getWordWithReading(tdm: tdm)
+                    for wordsWithRead in currentWordSWithReading {
+                        wordsWithReading.append(RemoveCopy(word: wordsWithRead.word,
+                                                           withReading: wordsWithRead.wordWithReading))
+                    }
+                }
+            }
+            let baseWordsStore = store.baseWordsStore.getAll()
+            for i in wordsWithReading {
+                let word = i.word
+                    result.append(i)
+            }
+            result.append(contentsOf: wordsWithReading)
+        }
+        
+        return result
+    }
+    
+    private func getWordWithReading(tdm: [[TextAndReading]]) -> [(word: String, wordWithReading: String)] {
+        var result: [(word: String, wordWithReading: String)] = []
+        for currentWord in tdm {
+            var word = ""
+            var wordWithReading = ""
+            for part in currentWord {
+                word += part.text
+                wordWithReading += "\(part.text)(\(part.reading))"
+            }
+            result.append((word, wordWithReading))
+        }
+        
+        return result
     }
 }

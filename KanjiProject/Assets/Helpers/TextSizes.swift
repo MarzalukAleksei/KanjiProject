@@ -22,4 +22,5 @@ final class TextSizes {
     
     static let scloolLevelLabel: CGFloat = 25
     
+    static let kanjiSize: CGFloat = 50
 }

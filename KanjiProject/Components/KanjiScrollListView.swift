@@ -9,7 +9,7 @@ import SwiftUI
 
 struct KanjiScrollListView: View {
     @EnvironmentObject private var store: Store
-    @AppStorage("selectedNouryokuLevel") var selectedNouryokuLevel: NouryokuLevel = .N5
+    @AppStorage("selectedNouryokuLevel") var selectedNouryokuLevel: NouryokuLevel = .another
     @AppStorage("selectedRow") var selectedRow: Data?
 //    @AppStorage("testType") var toggle: Bool = false
     

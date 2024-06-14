@@ -7,27 +7,27 @@
 
 import SwiftUI
 
-struct KanjiImageVIew: View {
-    let kanjiArray: [KanjiKankenModel]
-    @Binding var currentIndex: Int
-    @State var image: Image?
-    @State var url: URL?
+struct KanjiImageView: View {
+    let currentKanji: KanjiKankenModel
+    @State private var image: Image?
+    @State private var url: URL?
+
     var body: some View {
         ZStack {
             if let image = image {
                 image
                     .resizable()
-                    .frame(width: (UIScreen.current?.bounds.width ?? 0) - Settings.padding * 2, height: (UIScreen.current?.bounds.width ?? 0) - Settings.padding * 2)
+                    .frame(width: UIScreen.main.bounds.width - Settings.padding * 2, height: UIScreen.main.bounds.width - Settings.padding * 2)
             } else {
                 AsyncImage(url: url) { phase in
                     switch phase {
                     case .empty:
                         ProgressView()
-                            .frame(width: (UIScreen.current?.bounds.width ?? 0) - Settings.padding * 2, height: (UIScreen.current?.bounds.width ?? 0) - Settings.padding * 2)
+                            .frame(width: UIScreen.main.bounds.width - Settings.padding * 2, height: UIScreen.main.bounds.width - Settings.padding * 2)
                     case .success(let image):
                         image
                             .resizable()
-                            .frame(width: (UIScreen.current?.bounds.width ?? 0) - Settings.padding * 2, height: (UIScreen.current?.bounds.width ?? 0) - Settings.padding * 2)
+                            .frame(width: UIScreen.main.bounds.width - Settings.padding * 2, height: UIScreen.main.bounds.width - Settings.padding * 2)
                     case .failure(_):
                         EmptyView()
                     @unknown default:
@@ -38,50 +38,44 @@ struct KanjiImageVIew: View {
         }
         .onAppear {
             loadImage()
-            if CacheImage().loadImage(fileName: kanjiArray[currentIndex].body) == nil {
-                loadAllBlockImages()
-            }
         }
-        .onChange(of: currentIndex, perform: { value in
-            withAnimation(Settings.animation) {
-                loadImage()
-            }
-        })
-    }
-    
-    func loadAllBlockImages() {
-        Task {
-            await CacheImage().saveImages(array: kanjiArray)
+        .onChange(of: currentKanji) { newKanji in
+            loadImage(for: newKanji)
         }
     }
-    
-    func loadImage() {
+
+    private func loadImage(for kanji: KanjiKankenModel? = nil) {
+        let kanjiToLoad = kanji ?? currentKanji
         url = nil
-        setImage()
+        setImage(for: kanjiToLoad)
         if image == nil {
             Task {
-                await parse()
-            }
-        }
-        
-        func setImage() {
-            if let uiImage = CacheImage().loadImage(fileName: kanjiArray[currentIndex].body) {
-                self.image = Image(uiImage: uiImage)
-            } else {
-                self.image = nil
+                await parse(for: kanjiToLoad)
             }
         }
     }
-    
-    func parse() async {
+
+    private func setImage(for kanji: KanjiKankenModel) {
+        if let uiImage = CacheImage().loadImage(fileName: kanji.body) {
+            self.image = Image(uiImage: uiImage)
+        } else {
+            self.image = nil
+        }
+    }
+
+    private func parse(for kanji: KanjiKankenModel) async {
         let parse = Parse()
-        guard let url = await URL(string: parse.kanjiImageLink(kanji: kanjiArray[currentIndex])) else { return }
+        guard let url = await URL(string: parse.kanjiImageLink(kanji: kanji)) else { return }
         self.url = url
-        let uiImage = await UIImage(data: parse.getUIImageData(url))
-        CacheImage().saveImage(image: uiImage, fileName: kanjiArray[currentIndex].body)
+        if let uiImage = await UIImage(data: parse.getUIImageData(url)) {
+            CacheImage().saveImage(image: uiImage, fileName: kanji.body)
+            Task {
+                self.image = Image(uiImage: uiImage)
+            }
+        }
     }
 }
 
 #Preview {
-    KanjiImageVIew(kanjiArray: [.MOCK_KANJIKANKEN, .ANOTHER_MOCK_KANKENKANJI], currentIndex: .constant(0))
+    KanjiImageView(currentKanji: .MOCK_KANJIKANKEN)
 }

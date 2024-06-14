@@ -25,7 +25,7 @@ enum KankenLevel: String, CaseIterable, Codable {
 
 extension KankenLevel {
     
-    func whatIsIt() -> String {
+    static func whatIsIt() -> String {
         """
         В японской системе обучения используется система 漢検(Kanken).
         Она разделена на 10 уровней, где 10 - это уровень первого класса начальной школы, а 2 - последний год старшей школы.

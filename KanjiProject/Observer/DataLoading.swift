@@ -289,4 +289,10 @@ final class DataLoading: ObservableObject {
               let result: [YojijukugoModel] = JSONManager.manager.decodeToModel(data) else { return [] }
         return result
     }
+    
+    func getkanjiKankenExamplesTranslation() -> [WordModel] {
+        guard let data = Data.myFile(.kanjiKankenExamplesTranslation),
+              let result: [WordModel] = JSONManager.manager.decodeToModel(data) else { return [] }
+        return result
+    }
 }

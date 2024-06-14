@@ -16,13 +16,16 @@ struct KanjiView: View {
     @AppStorage("selectedKankenLevel") var selectedKankenLevel: KankenLevel = .級10
     @AppStorage("selectedRow") var selectedRow: Data?
     @AppStorage("kanjiTypeSlider") var toggleInStorage: Bool = false
-    @State var toggle = false // Используется 2 свойства вместо 1 из-за того, что при использовании только AppStorage пропадает анимация
+    @State var toggle = false // true - Kanken, false - JLPT
+    @State private var showLearningView = false
+    @State private var reloadView = true
     
     @FetchRequest(entity: UsersKanji.entity(),
                   sortDescriptors: []) private var kanji: FetchedResults<UsersKanji>
     @State var isPresented = false
     
     @Environment(\.managedObjectContext) var viewContext
+    @StateObject private var kanjiKankenStore = KanjiKankenStore()
     
 //    @State private var selectedType: KanjiTestType = .nouryoku
     
@@ -63,17 +66,20 @@ struct KanjiView: View {
                         CoreDataManager.shared.add(kanji: store.kanjiStore.getAll().randomElement() ?? .MOCK_KANJI, context: viewContext, kanji)
                     }
                 }
-
+                
+// MARK: Кнопки повторения и изучения
+                LearningOrRememberSelectButtonsView(showLearningView: $showLearningView)
+                
 // MARK: Список разделенный на ячейки
                 GeometryReader { geo in
                     ZStack {
-                            KankenScrollListView()
+                        KankenScrollListView()
                             .offset(x: toggle ? 0 : geo.size.width)
                             .opacity(toggle ? 1 : 0)
-                            KanjiScrollListView()
+                        KanjiScrollListView()
                             .offset(x: toggle ? -geo.size.width : 0)
                             .opacity(toggle ? 0 : 1)
-                            
+                        
                     }
                 }
             }
@@ -98,6 +104,15 @@ struct KanjiView: View {
             Color.gray.ignoresSafeArea()
                 .modifier(Modifiers.tabBarSize)
         }
+        .fullScreenCover(isPresented: $showLearningView) {
+            KanjiLearningView(selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
+                .onDisappear {
+                    let kanjiStore = store.kanjiKankenStore.getAll()
+//                    self.kanjiKankenStore.clearAll()
+                    self.kanjiKankenStore.updateAll(data: kanjiStore)
+                }
+        }
+
     }
     
 // MARK: последняя выбранная ячейка сохраненная в памяти приложения

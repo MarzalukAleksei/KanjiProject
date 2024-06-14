@@ -14,9 +14,6 @@ struct KankenKanjiLearningView: View {
 //    @State var image: AsyncImage<Image>?
     
     let kankenFlow: KankenFlow
-    var currentKanji: KanjiKankenModel {
-        kankenFlow.kanji[currentIndex]
-    }
     var body: some View {
         VStack(/*alignment: .leading*/) {
             ZStack {
@@ -37,69 +34,16 @@ struct KankenKanjiLearningView: View {
             }
             .frame(maxHeight: ElementSize.learningViewNavigationBarHeght)
             
-            ScrollViewReader { proxy in
-                ScrollView {
-                    VStack(spacing: Settings.paddingBetweenText) {
-                        ForEach(SchoolLevel.allCases, id: \.self) { type in
-                            if let row = getKunReading(type) {
-                                KankenReadingRowView(row: row, type: type)
-                            }
-                        }
-                        
-                        ForEach(SchoolLevel.allCases, id: \.self) { type in
-                            if let row = getOnReading(type) {
-                                KankenReadingRowView(row: row, type: type)
-                            }
-                        }
-                    } 
-                    .id(0) // MARK: Устанавливаем id для скроллинга
-                    
-                    // MARK: Отображение значения кандзи на русском
-                    if let meaningInRussion = currentKanji.meaningInRussion {
-                        Divider()
-                        
-                        Text(meaningInRussion.uppercased())
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, Settings.padding)
-                    }
-                    
-                    Divider()
-                    
-                    // MARK: Значание на японском
-                    HStack {
-                        Text(currentKanji.meaning)
-                        Spacer()
-                    }
-                    .padding(.horizontal, Settings.padding)
-                    
-                    Divider()
-                    
-                    // MARK: Примеры
-                    KankenExamplesRowView(currentKankenKanji: kankenFlow.kanji[currentIndex])
-                    
-                    Divider()
-                    
-                    // MARK: Пишет сообщение о уровне JLPT
-                    if let nouryokuLevel = currentKanji.nouryokuLevel {
-                        Text("Данный кандзи входит в список JLPT \(nouryokuLevel)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, Settings.padding)
-                        
-                        Divider()
-                    }
-                    
-                    // MARK: Изображение, подгружаемое из сети
-                    KanjiImageVIew(kanjiArray: kankenFlow.kanji, currentIndex: $currentIndex)
-                }
-                .onChange(of: currentIndex, perform: { _ in
-                    scrollTo(proxy: proxy)
-                })
-                .scrollIndicators(.hidden)
-            }
+            // MARK: KanjiDetail
+            KanjiDetailView(currentKanji: setCurrentKanji())
+            
             Spacer()
             
             DismissButton()
         }
+//        .onChange(of: currentIndex, perform: { value in
+//            currentKanji = setCurrentKanji()
+//        })
         
         .onAppear {
             tabBarState.tabBarIsHidden = true
@@ -114,19 +58,10 @@ struct KankenKanjiLearningView: View {
         return result
     }
     
-    func getKunReading(_ type: SchoolLevel) -> String? {
-        return kankenFlow.kanji[currentIndex].kunReading[type]
+    func setCurrentKanji() -> KanjiKankenModel {
+        kankenFlow.kanji[currentIndex]
     }
     
-    func getOnReading(_ type: SchoolLevel) -> String? {
-        return kankenFlow.kanji[currentIndex].onReading[type]
-    }
-    
-    func scrollTo(proxy: ScrollViewProxy) {
-        withAnimation(Settings.scrollAnimation) {
-            proxy.scrollTo(0, anchor: .top)
-        }
-    }
 }
 
 #Preview {
@@ -138,3 +73,5 @@ struct KankenKanjiLearningView: View {
     KankenKanjiLearningView(kankenFlow: .MOCK)
         .environmentObject(TabBarState())
 }
+
+

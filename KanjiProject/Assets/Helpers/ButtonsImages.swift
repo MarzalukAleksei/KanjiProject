@@ -77,4 +77,12 @@ class ButtonsImages {
     static var arrowBackward: Image {
         Image(systemName: "arrow.backward")
     }
+    
+    static var wordListImage: Image {
+        Image(systemName: "list.bullet.rectangle")
+    }
+    
+    static var checkmark: Image {
+        Image(systemName: "checkmark")
+    }
 }

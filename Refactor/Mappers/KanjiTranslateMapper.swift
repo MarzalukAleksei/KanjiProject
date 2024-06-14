@@ -15,8 +15,12 @@ class KanjiTranslateMapper: IDataMapper {
     func gettingData(entity: [String]) -> [(kanjiBody: String, meaning: String)] {
         var result: [(kanjiBody: String, meaning: String)] = []
         for row in entity {
-            guard let index = row.firstIndex(of: "-") else { continue }
-            let afterIndex = row.index(index, offsetBy: 2)
+            var row = row
+//            guard let openBracketIndex = row.firstIndex(of: "("),
+//                  let closeBracketIndex = row.firstIndex(of: ")") else { continue }
+            row = row.removeBetween("(", and: ")")
+            guard let dashIndex = row.firstIndex(of: "-") else { continue }
+            let afterIndex = row.index(dashIndex, offsetBy: 2)
             let meaning = String(row[afterIndex..<row.endIndex])
             result.append((String(row.first ?? "E"), meaning))
         }

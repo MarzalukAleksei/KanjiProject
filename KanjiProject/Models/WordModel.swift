@@ -18,7 +18,7 @@ struct WordModel: Codable, Hashable, Identifiable {
     let levelInTag: [NouryokuLevel]
     private var lastAnswerRight: Bool?
     
-    init(body: String, meaningInEnglish: String, meaningInRussian: String, reading: String, type: String, levels: [String], levelInTag: [NouryokuLevel], lastAnswerRight: Bool? = nil) {
+    init(id: UUID? = UUID(), body: String, meaningInEnglish: String, meaningInRussian: String, reading: String, type: String, levels: [String], levelInTag: [NouryokuLevel], lastAnswerRight: Bool? = nil) {
         self.body = body
         self.meaningInEnglish = meaningInEnglish
         self.meaningInRussian = meaningInRussian
