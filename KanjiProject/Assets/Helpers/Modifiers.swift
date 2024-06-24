@@ -27,6 +27,29 @@ class Modifiers {
     static let edittingButton = EdittingButtonModifier()
     
     static let trashButton = TrashButtonModifier()
+    
+    static let learningNextButton = BottomButtonModifier(color: ElementsColors.learningNextButton, 
+                                                         height: ElementSize.bottomButtonImage.height + Settings.padding)
+    
+    static let inListButton = BottomButtonModifier(color: ElementsColors.inListButton,
+                                                   height: ElementSize.bottomButtonImage.height + Settings.padding)
+    
+    static let skipButton = BottomButtonModifier(color: ElementsColors.skipButton,
+                                                 height: ElementSize.bottomButtonImage.height + Settings.padding)
+}
+
+struct BottomButtonModifier: ViewModifier {
+    let color: Color
+    let height: CGFloat
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity, maxHeight: height)
+            .foregroundStyle(.black)
+            .background {
+                color
+                    .ignoresSafeArea()
+            }
+    }
 }
 
 struct TabBarsizeModifier: ViewModifier {

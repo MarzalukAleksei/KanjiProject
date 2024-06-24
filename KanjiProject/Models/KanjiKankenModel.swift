@@ -28,9 +28,10 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable, IAnswers {
     private var lastAnswerRight: Bool?
     var rightAnwers: Int?
     var wrongAnswers: Int?
+    private var inList: Bool?
     let link: String
     
-    init(id: Int, body: String, defaultReading: String, kunReading: [SchoolLevel : String], onReading: [SchoolLevel : String], examples: [SchoolLevel : String], examplesWithReading: [SchoolLevel : [[TextAndReading]]], translateExapmles: [SchoolLevel : [String]] = [:], meaning: String, keys: String, kankenLevel: KankenLevel, stroke: Int, oldKanji: String = "", lastAnswer: Bool? = nil, link: String) {
+    init(id: Int, body: String, defaultReading: String, kunReading: [SchoolLevel : String], onReading: [SchoolLevel : String], examples: [SchoolLevel : String], examplesWithReading: [SchoolLevel : [[TextAndReading]]], translateExapmles: [SchoolLevel : [String]] = [:], meaning: String, keys: String, kankenLevel: KankenLevel, nouryokuLevel: NouryokuLevel? = nil, stroke: Int, oldKanji: String = "", lastAnswer: Bool? = nil, link: String) {
         self.id = id
         self.body = body
         self.defaultReading = defaultReading
@@ -42,10 +43,19 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable, IAnswers {
         self.meaning = meaning
         self.keys = keys
         self.kankenLevel = kankenLevel
+        self.nouryokuLevel = nouryokuLevel
         self.stroke = stroke
         self.oldKanji = oldKanji
         self.lastAnswerRight = lastAnswer
         self.link = link
+    }
+    
+    func inLearningList() -> Bool {
+        inList ?? false
+    }
+    
+    mutating func learning() {
+        inList = true
     }
     
     func lastAnswer() -> Bool? {
@@ -54,6 +64,15 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable, IAnswers {
     
     mutating func answer(set answer: Bool?) {
         self.lastAnswerRight = answer
+    }
+    
+    mutating func rightAnswer() {
+        if self.rightAnwers == nil {
+            self.rightAnwers = 1
+        } else {
+            guard let rightAnwers = self.rightAnwers else { return }
+            self.rightAnwers = rightAnwers + 1
+        }
     }
     
     func getExamplesWithReading() -> [SchoolLevel: [[TextAndReading]]] {
@@ -95,7 +114,8 @@ extension KanjiKankenModel {
                                                    examplesWithReading: [KanjiProject.SchoolLevel.外: [[KanjiProject.TextAndReading(text: "踞る（１）", reading: "うずくま")], [KanjiProject.TextAndReading(text: "踞る（２）", reading: "おご")], [KanjiProject.TextAndReading(text: "箕", reading: "き"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")], [KanjiProject.TextAndReading(text: "蹲", reading: "そん"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")], [KanjiProject.TextAndReading(text: "踞", reading: "きょ"), KanjiProject.TextAndReading(text: "座", reading: "ざ")], [KanjiProject.TextAndReading(text: "蟠", reading: "ばん"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")], [KanjiProject.TextAndReading(text: "虎", reading: "こ"), KanjiProject.TextAndReading(text: "踞", reading: "きょ"), KanjiProject.TextAndReading(text: "竜", reading: "りょう"), KanjiProject.TextAndReading(text: "蟠", reading: "ばん")], [KanjiProject.TextAndReading(text: "竜", reading: "りょう"), KanjiProject.TextAndReading(text: "蟠", reading: "ばん"), KanjiProject.TextAndReading(text: "虎", reading: "こ"), KanjiProject.TextAndReading(text: "踞", reading: "きょ")]]],
                                             meaning: "① しゃがむ。うずくまる。ひざを立てて座る。 ② 腰掛ける。よりかかる。 ③ おごる。おごりたかぶる。",
                                             keys: "足",
-                                            kankenLevel: .級01,
+                                                   kankenLevel: .級01,
+                                                   nouryokuLevel: .N3,
                                                    stroke: 15,
                                                    link: "")
 }
@@ -118,6 +138,7 @@ extension KanjiKankenModel {
                                                            translateExapmles: [:], meaning: "【A】コウ のど。くび。くびすじ。 【B】コウ ① あがる。あげる。高く上がる。 ② あたる。匹敵する。対等である。 ③ きわめる。きわまる。 ④ たかい。たかぶる。 ⑤ 二十八宿の一つ。あみぼし。",
                                                            keys: "亠",
                                                            kankenLevel: KanjiProject.KankenLevel.級01,
+                                                           nouryokuLevel: .N4,
                                                            stroke: 4,
                                                            oldKanji: "",
                                                            lastAnswer: nil, link: "")

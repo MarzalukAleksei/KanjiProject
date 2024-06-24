@@ -11,23 +11,41 @@ struct KanjiImageView: View {
     let currentKanji: KanjiKankenModel
     @State private var image: Image?
     @State private var url: URL?
+    private let width: CGFloat
+    private let height: CGFloat
+    
+    init(currentKanji: KanjiKankenModel, image: Image? = nil, url: URL? = nil) {
+        self.currentKanji = currentKanji
+        self.image = image
+        self.url = url
+        self.width = UIScreen.main.bounds.width - Settings.padding * 2
+        self.height = UIScreen.main.bounds.width - Settings.padding * 2
+    }
+    
+    private init(currentKanji: KanjiKankenModel, image: Image? = nil, url: URL? = nil, width: CGFloat, height: CGFloat) {
+        self.currentKanji = currentKanji
+        self.image = image
+        self.url = url
+        self.width = width
+        self.height = height
+    }
 
     var body: some View {
         ZStack {
             if let image = image {
                 image
                     .resizable()
-                    .frame(width: UIScreen.main.bounds.width - Settings.padding * 2, height: UIScreen.main.bounds.width - Settings.padding * 2)
+                    .frame(width: width, height: height)
             } else {
                 AsyncImage(url: url) { phase in
                     switch phase {
                     case .empty:
                         ProgressView()
-                            .frame(width: UIScreen.main.bounds.width - Settings.padding * 2, height: UIScreen.main.bounds.width - Settings.padding * 2)
+                            .frame(width: width, height: height)
                     case .success(let image):
                         image
                             .resizable()
-                            .frame(width: UIScreen.main.bounds.width - Settings.padding * 2, height: UIScreen.main.bounds.width - Settings.padding * 2)
+                            .frame(width: width, height: height)
                     case .failure(_):
                         EmptyView()
                     @unknown default:
@@ -43,7 +61,11 @@ struct KanjiImageView: View {
             loadImage(for: newKanji)
         }
     }
-
+    
+    func frameSize(width: CGFloat, height: CGFloat) -> some View {
+        KanjiImageView(currentKanji: currentKanji, width: width, height: height)
+    }
+    
     private func loadImage(for kanji: KanjiKankenModel? = nil) {
         let kanjiToLoad = kanji ?? currentKanji
         url = nil

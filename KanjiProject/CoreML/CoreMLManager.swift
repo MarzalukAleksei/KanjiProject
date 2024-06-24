@@ -17,16 +17,18 @@ class CoreMLManager {
         let uiImage =  UIGraphicsImageRenderer(size: size).image { ctx in
             UIColor.white.setFill()
             ctx.fill(CGRect(origin: .zero, size: size))
-            UIColor.red.setStroke()
+            UIColor.black.setStroke()
             ctx.cgContext.setLineWidth(5)
             ctx.cgContext.addPath(path.cgPath)
             ctx.cgContext.strokePath()
         }
 //        return Image(uiImage: uiImage)
+//        CacheImage().saveImageAsJpeg(image: uiImage, fileName: "1")
         return uiImage
     }
     
     func getPrediction(path: Path) {
+        // MARK: название файла
         if let model = try? KanjiClassificator(configuration: .init()) {
             // Теперь у вас есть экземпляр модели, готовый для выполнения предсказаний
             print("Sucsess")

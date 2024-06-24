@@ -10,3 +10,5 @@ import Foundation
 enum RandomWordError: Error {
     case noWordsLeft
 }
+
+//enum 

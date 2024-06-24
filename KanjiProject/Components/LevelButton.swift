@@ -9,10 +9,12 @@ import SwiftUI
 
 struct LevelButton: View {
     let labelName: Any
-    let array: [Any]
+    let array: [IAnswers]
     let size: CGSize
     let color: Color
-    let colors: [Color] = [.red, .green, .white]
+    let colors: [Color] = [ElementsColors.levelButtonWrongAnswer,
+                           ElementsColors.levelButtonRightAnswer,
+                           ElementsColors.levelButtonUnknownAnswer]
     var values: [Double] {
         getAngles()
     }
@@ -26,7 +28,7 @@ struct LevelButton: View {
                 .font(CustomFont.scroll(size: text.count > 1 ? 30 : 35))
             VStack {
                 Spacer()
-                Text("\(elementCount())")
+                Text("\(inArray())")
                     .font(.system(size: 8))
                     .foregroundColor(.white)
                     .padding(.bottom, 15)
@@ -34,7 +36,7 @@ struct LevelButton: View {
             
             ForEach(0..<3) { index in
                 Circle()
-                    .trim(from: index == 0 ? 0 : values[0..<index].reduce(0, +),
+                    .trim(from: /*index == 0 ? 0 : */values[0..<index].reduce(0, +),
                           to: values[0...index].reduce(0, +))
                     .stroke(lineWidth: 5)
                     .frame(width: size.width - 20, height: size.height - 20)
@@ -46,40 +48,20 @@ struct LevelButton: View {
         .foregroundColor(color)
     }
     
-    private func nouryokuProgress() -> [Double] {
-        guard let nouryokuKanjiArray = array as? [KanjiModel] else { return [] }
-        
-        return progress(nouryokuKanjiArray)
-    }
-    
-    private func kankenProgress() -> [Double] {
-        guard let kanjiKankenArray = array as? [KanjiKankenModel] else { return [] }
-        
-        return progress(kanjiKankenArray)
-    }
-    
-    private func wordProgress() -> [Double] {
-        guard let wordArray = array as? [WordModel] else { return [] }
-        
-        return progress(wordArray)
-    }
-    
-    private func bushuProgress() -> [Double] {
-        guard let bushuArray = array as? [BushuModel] else { return [] }
-        
-        return progress(bushuArray)
+    private func getAngles() -> [Double] {
+        return progress(array)
     }
     
     private func progress(_ array: [IAnswers]) -> [Double] {
         let inArray = Double(array.count)
-        let red = Double(array.filter { $0.lastAnswer() == false }.count)
-        let green = Double(array.filter { $0.lastAnswer() == true }.count)
-        let white = Double(array.filter { $0.lastAnswer() == nil }.count)
-        let redValue = red / inArray
-        let greenValue = green / inArray
-        let whiteValue = white / inArray
+        let wrongAnswer = Double(array.filter { $0.lastAnswer() == false }.count)
+        let rightAnswer = Double(array.filter { $0.lastAnswer() == true }.count)
+        let unknownAnswer = Double(array.filter { $0.lastAnswer() == nil }.count)
+        let wrongValue = wrongAnswer / inArray
+        let rightValue = rightAnswer / inArray
+        let unknownValue = unknownAnswer / inArray
         
-        return [redValue, greenValue, whiteValue]
+        return [wrongValue, rightValue, unknownValue]
     }
     
     private func buttonText() -> String {
@@ -96,29 +78,16 @@ struct LevelButton: View {
             return text
         case is String:
             return labelName as? String ?? ""
-        case _: break
+        case _:
+            return ""
         }
-        return ""
     }
     
-    private func elementCount() -> Int {
+    private func inArray() -> Int {
         return array.count
     }
     
-    func getAngles() -> [Double] {
-        switch array {
-        case is [KanjiModel]:
-            return nouryokuProgress()
-        case is [KanjiKankenModel]:
-            return kankenProgress()
-        case is [WordModel]:
-            return wordProgress()
-        case is [BushuModel]:
-            return bushuProgress()
-        case _: break
-        }
-        return []
-    }
+    
 }
 
 struct LevelButton_Previews: PreviewProvider {

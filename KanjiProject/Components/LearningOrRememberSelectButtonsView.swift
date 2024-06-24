@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LearningOrRememberSelectButtonsView: View {
     @Binding var showLearningView: Bool
+    @Binding var showCheckView: Bool
     
     var body: some View {
         VStack {
@@ -24,8 +25,17 @@ struct LearningOrRememberSelectButtonsView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             })
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                showCheckView = true
+            }, label: {
                 Text("Проверить")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: ElementSize.modalViewButtonHeight)
+                    .background {
+                        Color.purple
+                            .opacity(0.3)
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
             })
 //            Spacer()
         }
@@ -34,5 +44,6 @@ struct LearningOrRememberSelectButtonsView: View {
 }
 
 #Preview {
-    LearningOrRememberSelectButtonsView(showLearningView: .constant(false))
+    LearningOrRememberSelectButtonsView(showLearningView: .constant(false),
+                                        showCheckView: .constant(false))
 }

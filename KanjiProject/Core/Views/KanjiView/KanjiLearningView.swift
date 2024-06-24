@@ -2,15 +2,17 @@
 //  KanjiLearningView.swift
 //  KanjiProject
 //
-//  Created by ブラック狼 on 2024/06/14.
+//  Created by ブラック狼 on 2024/06/18.
 //
 
 import SwiftUI
 
 struct KanjiLearningView: View {
     @EnvironmentObject private var store: Store
+    @EnvironmentObject private var globalChanging: GlobalChanging
     @Environment(\.dismiss) private var dismiss
     @State var currentKanji: KanjiKankenModel?
+    @State private var showWordDetail = false
     let selectedKanken: Bool
     let nouryokuLevel: NouryokuLevel
     let kankenLevel: KankenLevel
@@ -18,43 +20,26 @@ struct KanjiLearningView: View {
     var body: some View {
         VStack {
             VStack {
-                HStack {
-                    Button(action: {
-                        Task {
-                            await store.kanjiKankenStore.saveInFileManager()
-                        }
-                        dismiss()
-                    }, label: {
-                        ButtonsImages.dismissButtonImage
-                            .resizable()
-                            .frame(width: ElementSize.xmarkSize.width,
-                                   height: ElementSize.xmarkSize.height)
-                            .foregroundStyle(.black)
-                            .opacity(0.4)
-                    })
-                    Spacer()
-                }
+                CloseButton()
                 
                 if let currentKanji = currentKanji {
-                    HStack {
+                    HStack(spacing: 50) {
                         Text(currentKanji.body)
                             .font(.system(size: TextSizes.kanjiSize))
-                            .padding(.horizontal, 5)
+                            .padding(.horizontal, TextSizes.kanjiSize * 0.3 / 2)
                             .border(Color.black, width: 1)
                             .padding(.leading, Settings.padding)
+                        
                         Spacer()
                     }
                     KanjiDetailView(currentKanji: currentKanji, showImage: .constant(false))
                 } else {
                     ProgressView()
                         .onAppear {
-//                            let kanjiStore = store.kanjiKankenStore.getAll().map { kanji in
-//                                var kanji = kanji
-//                                kanji.answer(set: nil)
-//                                return kanji
-//                            }
-//                            store.kanjiKankenStore.updateAll(data: kanjiStore)
                             setCurrentKanji()
+                            Task {
+                                print("\nОсталось изучить \(findExpectedKanjiArray().count) Кандзи")
+                            }
                         }
                 }
                 Spacer()
@@ -62,66 +47,56 @@ struct KanjiLearningView: View {
             }
             .padding([.horizontal, .top], Settings.padding)
             .ignoresSafeArea(.container, edges: .top)
-        }
-        
-        HStack(spacing: 0) {
+            
             Button(action: {
-                
-            }, label: {
-                    HStack {
-                        ButtonsImages.wordListImage
-                        Text("Записать")
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: 40)
-                    .foregroundStyle(.black)
-                    .background {
-                        Color.cyan
-                            .ignoresSafeArea()
-                            .opacity(0.35)
-                    }
-                })
-                
-            Button(action: {
-                knowingButton()
-                
+                setCurrentKanji()
+                globalChanging.exampleWord = nil
             }, label: {
                 HStack {
-                    ButtonsImages.checkmark
-                    Text("Знаю")
+                    ButtonsImages.updateImage
+                        .resizable()
+                        .frame(width: ElementSize.bottomButtonImage.width,
+                               height: ElementSize.bottomButtonImage.height)
                 }
-                .frame(maxWidth: .infinity, maxHeight: 40)
-                .foregroundStyle(.black)
-                .background {
-                    Color.green
-                        .ignoresSafeArea()
-                        .opacity(0.35)
-                }
+                .modifier(Modifiers.learningNextButton)
             })
-                
-            }
             .font(.title2)
-    }
-    func knowingButton() {
-        guard var currentKanji = currentKanji  else { return }
-        currentKanji.answer(set: true)
-        self.currentKanji = currentKanji
-        store.kanjiKankenStore.update(set: currentKanji)
+            
+        }
+        .overlay {
+            if showWordDetail {
+                SelectedWordDetailView()
+            }
+        }
+        .onReceive(globalChanging.$exampleWord, perform: { word in
+            if word != nil {
+                showWordDetail = true
+            } else {
+                showWordDetail = false
+            }
+        })
         
-        setCurrentKanji()
     }
     
-    func setCurrentKanji() {
+    private func setCurrentKanji() {
         currentKanji = getKanji()
     }
     
-    func getKanji() -> KanjiKankenModel? {
+    private func getKanji() -> KanjiKankenModel? {
+        return findExpectedKanjiArray().randomElement()
+    }
+    
+    private func findExpectedKanjiArray() -> [KanjiKankenModel] {
         var allCurrentLevelKanji = store.kanjiKankenStore.getAllKanji(below: nouryokuLevel)
-        allCurrentLevelKanji = allCurrentLevelKanji.filter { !($0.lastAnswer() ?? false) }
-        return allCurrentLevelKanji.randomElement()
+        allCurrentLevelKanji = allCurrentLevelKanji
+            .filter { !($0.lastAnswer() ?? false) }
+            .filter { $0.inLearningList() }
+        return allCurrentLevelKanji
     }
 }
 
 #Preview {
-    KanjiLearningView(currentKanji: .MOCK_KANJIKANKEN, selectedKanken: false, nouryokuLevel: .another, kankenLevel: .none)
+    KanjiLearningView(currentKanji: .MOCK_KANJIKANKEN, selectedKanken: false, nouryokuLevel: .N5, kankenLevel: .none)
         .environmentObject(Store())
+        .environmentObject(GlobalChanging())
 }

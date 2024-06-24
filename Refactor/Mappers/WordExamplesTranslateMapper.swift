@@ -16,6 +16,7 @@ class WordExamplesTranslateMapper: IDataMapper {
         
         for row in entity {
             var row = row
+            row = row.replacingOccurrences(of: "–", with: "-")
             if !row.contains("-") {
                 continue
             }
@@ -27,7 +28,10 @@ class WordExamplesTranslateMapper: IDataMapper {
             let divideRow = row.components(separatedBy: "***")
             row = divideRow[0]
             guard let dashAfterIndex = row.firstIndex(of: "-"),
-                  let firstSpaceIndex = row.firstIndex(of: " ") else { continue }
+                  var firstSpaceIndex = row.firstIndex(of: " ") else { continue }
+            if let closeJapBracketIndex = row.firstIndex(of: "）") {
+                firstSpaceIndex = row.index(closeJapBracketIndex, offsetBy: 1)
+            }
             let body = String(row[row.startIndex..<firstSpaceIndex])
             let meaningInRussion = String(row[row.index(dashAfterIndex, offsetBy: 2)..<row.endIndex])
             result.append(WordModel(body: body,
@@ -38,6 +42,7 @@ class WordExamplesTranslateMapper: IDataMapper {
                                     levels: [],
                                     levelInTag: []))
         }
+        
         return result
     }
     

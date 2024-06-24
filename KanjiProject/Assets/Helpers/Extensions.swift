@@ -220,9 +220,9 @@ extension View {
                     .preference(key: SizePreferenceKey.self, value: geo.size)
             }
         }
-        .onPreferenceChange(SizePreferenceKey.self, perform: { value in
+        .onPreferenceChange(SizePreferenceKey.self) { value in
             onChange(value)
-        })
+        }
     }
 }
 

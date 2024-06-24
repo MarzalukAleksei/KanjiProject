@@ -16,10 +16,10 @@ struct KanjiScrollListView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             LazyVStack(spacing: Settings.paddingBetweenElements) {
-                let separate = separateKanji(store.kanjiStore.get(selectedNouryokuLevel))
+                let separate = separateKanji(selectedNouryokuLevel)
                 let selectedRow = getSelectedRow()
                     ForEach(Array(separate.enumerated()), id: \.element) { (index, array) in
-                        NavigationLink(value: KanjiFlow(index: index + 1, kanji: array, type: "")) {
+                        NavigationLink(value: KankenFlow(index: index + 1, kanji: array)) {
                             KanjiRow(kanji: array,
                                      number: index + 1,
                                      current: isCurrentRow(selectedRow, index))
@@ -47,11 +47,11 @@ struct KanjiScrollListView: View {
             return false
         }
     // MARK: Разделение массива на указанное количество элементов
-    func separateKanji(_ kanjiArray: [KanjiModel]) -> [[KanjiModel]] {
-        var result: [[KanjiModel]] = []
-        var array: [KanjiModel] = []
+    func separateKanji(_ level: NouryokuLevel) -> [[KanjiKankenModel]] {
+        var result: [[KanjiKankenModel]] = []
+        var array: [KanjiKankenModel] = []
         
-        for kanji in kanjiArray {
+        for kanji in store.kanjiKankenStore.get(nouryokuLevel: level) {
             if array.count < Settings.elementsInRow {
                 array.append(kanji)
             } else {

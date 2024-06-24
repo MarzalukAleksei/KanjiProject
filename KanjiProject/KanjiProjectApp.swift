@@ -22,6 +22,7 @@ struct KanjiProjectApp: App {
     @Environment(\.scenePhase) var scenePhase
     @ObservedObject var store = Store()
     @ObservedObject var taBarState = TabBarState()
+    @ObservedObject var globalChanging = GlobalChanging()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @ObservedObject var loading = DataLoading()
     
@@ -34,6 +35,7 @@ struct KanjiProjectApp: App {
                     .environment(\.managedObjectContext, CoreDataManager.shared.container.viewContext)
                     .environmentObject(store)
                     .environmentObject(taBarState)
+                    .environmentObject(globalChanging)
                 //            DrawView(size: CGSize(width: 300, height: 300))
             } else {
                 LoadingView()

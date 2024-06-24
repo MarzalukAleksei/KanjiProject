@@ -83,7 +83,8 @@ fileprivate struct NouryokuButtons: View {
     var body: some View {
         ForEach(NouryokuLevel.allCases.reversed(), id: \.self) { level in
             if level != .another {
-                let kanjiArray = store.kanjiStore.get(level)
+//                let kanjiArray = store.kanjiStore.get(level)
+                let kanjiArray = store.kanjiKankenStore.get(nouryokuLevel: level)
                 LevelButton(labelName: level,
                             array: kanjiArray,
                             size: CGSize(width: ElementSize.levelButtonSize.width,

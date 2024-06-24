@@ -16,7 +16,7 @@ final class DataLoading: ObservableObject {
     @Published var kanji: [KanjiModel] = []
     @Published var yojijukugo: [YojijukugoModel] = []
     @Published var bushu: [BushuModel] = []
-    
+    @Published var kanjiKankenExamplesTranslations: [WordModel] = []
     
     var complete: Bool {
         if !baseWords.isEmpty,
@@ -26,7 +26,8 @@ final class DataLoading: ObservableObject {
            !kana.isEmpty,
            !kanji.isEmpty,
            !yojijukugo.isEmpty,
-           !bushu.isEmpty {
+           !bushu.isEmpty,
+           !kanjiKankenExamplesTranslations.isEmpty {
             return true
         }
         return false
@@ -42,6 +43,7 @@ final class DataLoading: ObservableObject {
         loadKanji()
         loadYojijukugo()
         loadBushu()
+        loadKanjiKankenExamplesTranslations()
     }
     
     func data(with completion: (Result<Store, Error>) -> Void) {
@@ -54,6 +56,7 @@ final class DataLoading: ObservableObject {
         store.kanjiStore.updateAll(data: kanji)
         store.yojijukugoStore.updateAll(data: yojijukugo)
         store.bushuStore.updateAll(data: bushu)
+        store.kanjiKankenExamplesTranslationsStore.updateAll(data: kanjiKankenExamplesTranslations)
         
         completion(.success(store))
     }
@@ -242,6 +245,35 @@ final class DataLoading: ObservableObject {
         }
     }
     
+    private func loadKanjiKankenExamplesTranslations() {
+        var translations = getLoadKanjiKankenExamplesTranslations()
+        
+        if translations.isEmpty {
+            FirebaseManager.manager.downloadKanjiKankenExamplesTranslations { result in
+                switch result {
+                case .success(let data):
+                    guard let translations: [WordModel] = JSONManager.manager.decodeToModel(data) else { return }
+                    self.kanjiKankenExamplesTranslations = translations
+                    Task {
+                        let translationsStore = KanjiKankenExamplesTranslationsStore()
+                        translationsStore.updateAll(data: translations)
+                        await translationsStore.saveInFileManager()
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        } else {
+            self.kanjiKankenExamplesTranslations = translations
+        }
+    }
+    
+    /*private*/ func getLoadKanjiKankenExamplesTranslations() -> [WordModel] {
+        guard let data = Data.myFile(.kanjiKankenExamplesTranslations),
+              let result: [WordModel] = JSONManager.manager.decodeToModel(data) else { return [] }
+        return result
+    }
+    
     private func getBushu() -> [BushuModel] {
         guard let data = Data.myFile(.bushu),
               let result: [BushuModel] = JSONManager.manager.decodeToModel(data) else { return [] }
@@ -287,12 +319,6 @@ final class DataLoading: ObservableObject {
     private func getYojijukugo() -> [YojijukugoModel] {
         guard let data = Data.myFile(.yojijukugo),
               let result: [YojijukugoModel] = JSONManager.manager.decodeToModel(data) else { return [] }
-        return result
-    }
-    
-    func getkanjiKankenExamplesTranslation() -> [WordModel] {
-        guard let data = Data.myFile(.kanjiKankenExamplesTranslation),
-              let result: [WordModel] = JSONManager.manager.decodeToModel(data) else { return [] }
         return result
     }
 }

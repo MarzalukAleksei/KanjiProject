@@ -16,6 +16,7 @@ final class Store: ObservableObject {
     @Published var kanjiKankenStore = KanjiKankenStore()
     @Published var baseWordsStore = WordsStore()
     @Published var bushuStore = BushuStore()
+    @Published var kanjiKankenExamplesTranslationsStore = KanjiKankenExamplesTranslationsStore()
     
     init() {
 //        kanjiStore.updateAll(data: JSONManager.manager.getKanji())
@@ -27,6 +28,10 @@ final class Store: ObservableObject {
 //        baseWordsStore.updateAll(data: JSONManager.manager.getBaseWords())
     }
     
+    func getAllWords() -> [WordModel] {
+        baseWordsStore.getAll() + kanjiKankenExamplesTranslationsStore.getAll()
+    }
+    
     func updateAll(store: Store) {
         kanjiStore = store.kanjiStore
         dictionaryStore = store.dictionaryStore
@@ -36,6 +41,7 @@ final class Store: ObservableObject {
         kanjiKankenStore = store.kanjiKankenStore
         baseWordsStore = store.baseWordsStore
         bushuStore = store.bushuStore
+        kanjiKankenExamplesTranslationsStore = store.kanjiKankenExamplesTranslationsStore
     }
     
     

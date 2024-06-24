@@ -35,6 +35,23 @@ class CacheImage {
         
     }
     
+    func saveImageAsJpeg(image: UIImage?, fileName: String) {
+        let url = fileDirectory(directoryName: "CacheImages")
+        guard let image = image,
+              let data = image.jpegData(compressionQuality: 1.0),
+              let fileURL = url else { return }
+            do {
+                try FileManager.default.createDirectory(at: fileURL, withIntermediateDirectories: true, attributes: nil)
+                let file = fileURL.appendingPathComponent(fileName, conformingTo: .jpeg)
+
+                print(fileURL)
+                try data.write(to: file)
+            } catch {
+                print("Ошибка при сохранении изображения: \(error)")
+            }
+        
+    }
+    
     func loadImage(fileName: String) -> UIImage? {
         let url = fileDirectory(directoryName: "CacheImages")
         guard let fileURL = url else { return nil }

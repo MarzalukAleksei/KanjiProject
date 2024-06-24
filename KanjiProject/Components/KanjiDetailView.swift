@@ -61,7 +61,7 @@ struct KanjiDetailView: View {
                 Divider()
                 
                 // MARK: Примеры
-                KankenExamplesRowView(currentKankenKanji: currentKanji)
+                KanjiExamplesRowView(currentKankenKanji: currentKanji)
                 
                 Divider()
                 

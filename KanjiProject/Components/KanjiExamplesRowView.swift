@@ -1,5 +1,5 @@
 //
-//  KankenExamplesRowView.swift
+//  KanjiExamplesRowView.swift
 //  KanjiProject
 //
 //  Created by ブラック狼 on 2023/11/05.
@@ -7,9 +7,12 @@
 
 import SwiftUI
 
-struct KankenExamplesRowView: View {
+struct KanjiExamplesRowView: View {
     @EnvironmentObject var store: Store
+    @EnvironmentObject var globalChanging: GlobalChanging
     let currentKankenKanji: KanjiKankenModel
+    @State var wordButtonTapped = false
+//    @State var selectedWord: WordModel?
     
     var body: some View {
         ForEach(SchoolLevel.allCases, id: \.self) { level in
@@ -25,16 +28,18 @@ struct KankenExamplesRowView: View {
                         ForEach(tDA, id: \.self) { section in
                             HStack(spacing: TextSizes.spacingBetweenWords) {
                                 ForEach(section, id: \.self) { row in
-                                    if elementCount(row) < 5 {
+                                    
+                                    // MARK: Отвечает за слова и нажатия
+//                                    if elementCount(row) < 5 {
                                         Button(action: {
-                                            
+                                            wordPressed(row)
                                         }, label: {
                                             WordWithFuriganaView(word: row, currentKanji: currentKankenKanji, readingIsHidden: false)
                                         })
                                         .foregroundStyle(.black)
-                                    } else {
-                                        WordWithFuriganaView(word: row, currentKanji: currentKankenKanji, readingIsHidden: false)
-                                    }
+//                                    } else {
+//                                        WordWithFuriganaView(word: row, currentKanji: currentKankenKanji, readingIsHidden: false)
+//                                    }
                                     VStack {
                                         Text("")
                                             .font(.system(size: TextSizes.kanjiBody))
@@ -43,10 +48,6 @@ struct KankenExamplesRowView: View {
                                                 .frame(width: TextSizes.deviderCircle,
                                                        height: TextSizes.deviderCircle)
                                         }
-//                                        Circle()
-//                                            .frame(width: TextSizes.deviderCircle,
-//                                                   height: TextSizes.deviderCircle)
-//                                            .opacity(row == tDA.last?.last ? 0 : 0.65)
                                     }
                                 }
                                 Spacer()
@@ -59,6 +60,18 @@ struct KankenExamplesRowView: View {
             }
         }
         .padding(.horizontal, 20)
+        
+    }
+    
+    // MARK: Нажатие на слово
+    func wordPressed(_ row: [TextAndReading]) {
+        let words = store.getAllWords()
+        let word = row.reduce("") { partialResult, arrayElement in
+            return partialResult + arrayElement.text
+        }
+//        selectedWord = words.first { $0.body == word }
+        globalChanging.exampleWord = words.first { $0.body == word }!
+//        wordButtonTapped = true
     }
     
     func createTDA(_ row: [[TextAndReading]]) -> [[[TextAndReading]]] {
@@ -153,11 +166,13 @@ struct KankenExamplesRowView: View {
 }
 
 #Preview {
-    KankenExamplesRowView(currentKankenKanji: .ANOTHER_MOCK_KANKENKANJI)
+    KanjiExamplesRowView(currentKankenKanji: .ANOTHER_MOCK_KANKENKANJI)
         .environmentObject(Store())
+        .environmentObject(GlobalChanging())
 }
 
 #Preview {
-    KankenExamplesRowView(currentKankenKanji: .MOCK_KANJIKANKEN)
+    KanjiExamplesRowView(currentKankenKanji: .MOCK_KANJIKANKEN)
         .environmentObject(Store())
+        .environmentObject(GlobalChanging())
 }

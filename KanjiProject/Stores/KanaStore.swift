@@ -26,6 +26,21 @@ class KanaStore: IStore {
         self.data.removeAll()
     }
     
+    func getJoinedAll() -> String {
+        var result: String = ""
+        for i in data {
+            var row = ""
+            row += i.hiragana
+            row += i.katakana
+            row += i.yaCombination
+            row += i.yuCombination
+            row += i.yoCombination
+            result += row
+        }
+        result += "ー"
+        return result
+    }
+    
     func saveInFileManager() async {
         let data = JSONManager.manager.encodeToJSON(data)
         JSONManager.manager.saveJSONToFile(data, fileName: .kana)

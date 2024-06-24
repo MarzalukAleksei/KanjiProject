@@ -85,4 +85,8 @@ class ButtonsImages {
     static var checkmark: Image {
         Image(systemName: "checkmark")
     }
+    
+    static var updateImage: Image {
+        Image(systemName: "arrow.circlepath")
+    }
 }
