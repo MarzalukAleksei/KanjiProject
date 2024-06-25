@@ -148,9 +148,9 @@ struct WordLearningView: View {
     
     func saveAction() {
         var word = currentWord
-        word.meaningInRussian = meaningInRussian
-        store.baseWordsStore.update(set: word)
         Task {
+            await store.baseWordsStore.update(set: word)
+            word.meaningInRussian = meaningInRussian
             await save()
             do {
                 if level != .another {

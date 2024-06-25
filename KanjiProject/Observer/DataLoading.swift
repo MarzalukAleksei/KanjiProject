@@ -223,7 +223,7 @@ final class DataLoading: ObservableObject {
     }
     
     private func loadBushu() {
-        var bushu = getBushu()
+        let bushu = getBushu()
         
         if bushu.isEmpty {
             FirebaseManager.manager.downloadBushu { result in
@@ -246,7 +246,7 @@ final class DataLoading: ObservableObject {
     }
     
     private func loadKanjiKankenExamplesTranslations() {
-        var translations = getLoadKanjiKankenExamplesTranslations()
+        let translations = getLoadKanjiKankenExamplesTranslations()
         
         if translations.isEmpty {
             FirebaseManager.manager.downloadKanjiKankenExamplesTranslations { result in

@@ -16,7 +16,7 @@ class Settings {
     
     static let opacity: CGFloat = 0.3
     
-    static let padding: CGFloat = 20
+    static let padding: CGFloat = 15
     
     static let learningViewCornerRadius: CGFloat = 40
     
@@ -43,4 +43,6 @@ class Settings {
     static let selectedColor: Color = .secondary
     
     static let diselectedColor: Color = .black
+    
+    static let closeButtonPadding: CGFloat = padding + 10
 }

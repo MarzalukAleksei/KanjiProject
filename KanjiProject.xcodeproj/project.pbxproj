@@ -60,6 +60,8 @@
 		AF3D53B82C24CE46005B495F /* SelectedWordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D53B72C24CE46005B495F /* SelectedWordDetailView.swift */; };
 		AF3D53BA2C24E7F3005B495F /* GlobalChanging.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D53B92C24E7F3005B495F /* GlobalChanging.swift */; };
 		AF3D53BC2C29B0B0005B495F /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D53BB2C29B0B0005B495F /* CloseButton.swift */; };
+		AF3D53BE2C2A1584005B495F /* EditWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D53BD2C2A1584005B495F /* EditWordView.swift */; };
+		AF3D53C02C2A2B17005B495F /* CheckmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D53BF2C2A2B16005B495F /* CheckmarkButton.swift */; };
 		AF3FEB9C2AF63F3300D40B23 /* KanjiScrollListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3FEB9B2AF63F3300D40B23 /* KanjiScrollListView.swift */; };
 		AF3FEB9E2AF6419600D40B23 /* KankenScrollListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3FEB9D2AF6419600D40B23 /* KankenScrollListView.swift */; };
 		AF3FEBA02AF6423900D40B23 /* SelectedKankenRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3FEB9F2AF6423800D40B23 /* SelectedKankenRow.swift */; };
@@ -235,6 +237,8 @@
 		AF3D53B72C24CE46005B495F /* SelectedWordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedWordDetailView.swift; sourceTree = "<group>"; };
 		AF3D53B92C24E7F3005B495F /* GlobalChanging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalChanging.swift; sourceTree = "<group>"; };
 		AF3D53BB2C29B0B0005B495F /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		AF3D53BD2C2A1584005B495F /* EditWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWordView.swift; sourceTree = "<group>"; };
+		AF3D53BF2C2A2B16005B495F /* CheckmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkButton.swift; sourceTree = "<group>"; };
 		AF3FEB9B2AF63F3300D40B23 /* KanjiScrollListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiScrollListView.swift; sourceTree = "<group>"; };
 		AF3FEB9D2AF6419600D40B23 /* KankenScrollListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KankenScrollListView.swift; sourceTree = "<group>"; };
 		AF3FEB9F2AF6423800D40B23 /* SelectedKankenRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedKankenRow.swift; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 				AFB1FE152C1C957E00498A8F /* KanjiCheckView.swift */,
 				AF3D53B12C21D7C0005B495F /* KanjiLearningView.swift */,
 				AF3D53B72C24CE46005B495F /* SelectedWordDetailView.swift */,
+				AF3D53BD2C2A1584005B495F /* EditWordView.swift */,
 			);
 			path = KanjiView;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				AF1EB05B2A97618A00850A3B /* WordRowView.swift */,
 				AF8122B62B7272A200CCE83A /* WordWithFuriganaView.swift */,
 				AF3D53BB2C29B0B0005B495F /* CloseButton.swift */,
+				AF3D53BF2C2A2B16005B495F /* CheckmarkButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -883,7 +889,7 @@
 					New,
 				);
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					AFAF80D529D9C646002B9921 = {
 						CreatedOnToolsVersion = 14.2;
@@ -980,6 +986,7 @@
 				AF1EB0562A972E4B00850A3B /* Store.swift in Sources */,
 				AF17F94D2A44ABC500D5631D /* DictionaryStore.swift in Sources */,
 				AF960B4B2A8578D400A33373 /* LearningFrontSideView.swift in Sources */,
+				AF3D53BE2C2A1584005B495F /* EditWordView.swift in Sources */,
 				AFEF744C2ABA60B1002AB67D /* SearchView.swift in Sources */,
 				AF56217A2B8CEB7C0067F87D /* DataLoading.swift in Sources */,
 				AF17F9412A4486A100D5631D /* FrontSideVIew.swift in Sources */,
@@ -1035,6 +1042,7 @@
 				AF17F9472A449B1700D5631D /* DictionaryModel.swift in Sources */,
 				AF17F94F2A478D1400D5631D /* SelectLevel.swift in Sources */,
 				AFB1FE142C1C8F0500498A8F /* LearningOrRememberSelectButtonsView.swift in Sources */,
+				AF3D53C02C2A2B17005B495F /* CheckmarkButton.swift in Sources */,
 				AFFF94BF2B5C1D4000DD01EB /* KankenReadingRowView.swift in Sources */,
 				AF6A2E0629E7267400D7C1A9 /* IStore.swift in Sources */,
 				AFDC36592C13068E00B602A9 /* KanjiTranslateMapper.swift in Sources */,
@@ -1227,6 +1235,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"KanjiProject/Preview Content\"";
 				DEVELOPMENT_TEAM = 3KF52TUDQF;
 				ENABLE_PREVIEWS = YES;
@@ -1262,6 +1271,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"KanjiProject/Preview Content\"";
 				DEVELOPMENT_TEAM = 3KF52TUDQF;
 				ENABLE_PREVIEWS = YES;

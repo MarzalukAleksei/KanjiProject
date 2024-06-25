@@ -20,7 +20,9 @@ struct KanjiLearningView: View {
     var body: some View {
         VStack {
             VStack {
-                CloseButton()
+                CloseButton {
+                    globalChanging.exampleWord = nil
+                }
                 
                 if let currentKanji = currentKanji {
                     HStack(spacing: 50) {
@@ -45,7 +47,7 @@ struct KanjiLearningView: View {
                 Spacer()
                 
             }
-            .padding([.horizontal, .top], Settings.padding)
+            .padding([.horizontal, .top], Settings.closeButtonPadding)
             .ignoresSafeArea(.container, edges: .top)
             
             Button(action: {

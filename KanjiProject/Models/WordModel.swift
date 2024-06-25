@@ -12,7 +12,7 @@ struct WordModel: Codable, Hashable, Identifiable {
     var body: String
     let meaningInEnglish: String
     var meaningInRussian: String
-    let reading: String
+    var reading: String
     let type: String
     let levels: [String]
     let levelInTag: [NouryokuLevel]

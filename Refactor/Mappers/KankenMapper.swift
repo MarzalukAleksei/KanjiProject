@@ -14,7 +14,7 @@ class KankenMapper: IDataMapper {
     
     func gettingData(entity: [String]) -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
-        var entity = entity[0].components(separatedBy: "\n")
+        let entity = entity[0].components(separatedBy: "\n")
         
         for row in entity {
             let components = row.components(separatedBy: "\t")

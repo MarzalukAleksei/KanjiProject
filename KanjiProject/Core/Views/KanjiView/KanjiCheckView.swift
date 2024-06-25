@@ -19,21 +19,11 @@ struct KanjiCheckView: View {
     var body: some View {
         VStack {
             VStack {
-                HStack {
-                    Button(action: {
-                        Task {
-                            await store.kanjiKankenStore.saveInFileManager()
-                        }
-                        dismiss()
-                    }, label: {
-                        ButtonsImages.dismissButtonImage
-                            .resizable()
-                            .frame(width: ElementSize.xmarkSize.width,
-                                   height: ElementSize.xmarkSize.height)
-                            .foregroundStyle(.black)
-                            .opacity(0.4)
-                    })
-                    Spacer()
+                CloseButton {
+                    globalChanging.exampleWord = nil
+                    Task {
+                        await store.kanjiKankenStore.saveInFileManager()
+                    }
                 }
                 
                 if let currentKanji = currentKanji {
@@ -65,7 +55,7 @@ struct KanjiCheckView: View {
                 Spacer()
                 
             }
-            .padding([.horizontal, .top], Settings.padding)
+            .padding([.horizontal, .top], Settings.closeButtonPadding)
             .ignoresSafeArea(.container, edges: .top)
         }
         

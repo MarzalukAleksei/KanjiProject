@@ -14,7 +14,7 @@ class WordMapper: IDataMapper {
     
     func gettingData(entity: [String]) -> [WordModel] {
         var result: [WordModel] = []
-        var entity = entity[0].components(separatedBy: "\n")
+        let entity = entity[0].components(separatedBy: "\n")
         
         for row in entity {
             let components = row.components(separatedBy: "\t")

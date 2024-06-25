@@ -107,7 +107,7 @@ struct CreateWordView: View {
     
     func findTranslate() -> [DictionaryModel] {
         let dictionary = store.dictionaryStore.getAll()
-        var word = _body
+        let word = _body
         
         let filtered = dictionary.filter { $0.body.contains(word) }
         return filtered

@@ -10,11 +10,4 @@ import Foundation
 class GlobalChanging: ObservableObject {
     @Published var exampleWord: WordModel?
     
-    
-//    func getWord() throws -> WordModel {
-//        guard let exampleWord = exampleWord else {
-//            throw 
-//        }
-//        return exampleWord
-//    }
 }

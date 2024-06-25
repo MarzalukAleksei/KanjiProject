@@ -25,4 +25,6 @@ final class TextSizes {
     static let kanjiSize: CGFloat = 65
     
     static let bottomButtonsText: CGFloat = 30
+    
+    static let wordEdit: CGFloat = 25
 }

@@ -11,35 +11,65 @@ struct SelectedWordDetailView: View {
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var globalChanging: GlobalChanging
     @State private var kanjiSize: CGFloat = 0
-    let screenSize = UIScreen.current?.bounds
+    @State private var editButtonPressed = false
+
     var body: some View {
         GeometryReader { geo in
-                ZStack {
-                    Color.clear.ignoresSafeArea()
-                    ZStack {
-                        GeometryReader { recSize in
-                            RoundedRectangle(cornerRadius: 25)
-                                .foregroundStyle(.white)
-                            RoundedRectangle(cornerRadius: 25)
-                                .strokeBorder(lineWidth: 1.5)
-                                .shadow(radius: 10)
-                            VStack(spacing: 1) {
-//                                RectData(kanji: [.ANOTHER_MOCK_KANKENKANJI, .MOCK_KANJIKANKEN], size: recSize.size)
-//                                ScrollView {
-                                    RectData(kanji: getKanji(), word: globalChanging.exampleWord, store: store, size: recSize.size)
-//                                }
-                            }
-                            .padding(Settings.padding)
-                        }
-                    }
-                    .frame(width: geo.size.width - Settings.padding * 5,
-                           height: geo.size.height - Settings.padding * 9)
+            ZStack {
+                Color.clear
+                    .ignoresSafeArea()
+                    .contentShape(Rectangle())
                     .onTapGesture {
                         globalChanging.exampleWord = nil
                     }
+                ZStack {
+                    RoundedRectangle(cornerRadius: 25)
+                        .foregroundStyle(.white)
+                    RoundedRectangle(cornerRadius: 25)
+                        .strokeBorder(lineWidth: 1.5)
+                        .shadow(radius: 10)
+                    VStack {
+                        ScrollView {
+                            RectData(kanji: getKanji(), word: $globalChanging.exampleWord, store: store, size: geo.size.width - 80)
+                        }
+                        .padding(Settings.padding)
+                        
+                        Button(action: {
+                            editButtonPressed = true
+                        }, label: {
+                            Text("Исправить")
+                                .frame(maxWidth: .infinity)
+                                .font(.title)
+                                .background(Color.gray)
+                                .foregroundStyle(.white)
+                                .clipShape(PartialRoundedRectangle(cornerRadius: 24, corners: [.bottomLeft, .bottomRight]))
+                        })
+                        .padding(.bottom, 1.5)
+                        .padding(.horizontal, 1.5)
+//                        .padding(.leading, 0.4)
+                    }
                 }
+                .padding(.horizontal, Settings.padding * 2.5)
+                .padding(.vertical, Settings.padding * 5)
+                .onTapGesture {
+                    globalChanging.exampleWord = nil
+                }
+                
             }
+            .fullScreenCover(isPresented: $editButtonPressed, content: {
+                EditWordView(word: getWord())
+                    .environmentObject(globalChanging)
+                    .environmentObject(store)
+            })
         }
+    }
+    
+    func getWord() -> WordModel {
+        if let word = globalChanging.exampleWord {
+            return word
+        }
+        return .empty
+    }
     
     func getKanji() -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
@@ -61,74 +91,76 @@ struct SelectedWordDetailView: View {
 
 private struct RectData: View {
     let kanji: [KanjiKankenModel]
-    let word: WordModel?
+    @Binding var word: WordModel?
     let store: Store
-    let size: CGSize
+    let size: CGFloat
     var body: some View {
-        ForEach(kanji) { kanji in
-            HStack {
-                Text(kanji.body)
-                    .font(.system(size: setKanjiSize()))
-                VStack(alignment: .leading) {
-                    if let meaning = kanji.meaningInRussion {
-                        Text(meaning)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.bottom, Settings.paddingBetweenText / 2)
-                    }
-                    
-                    ForEach(SchoolLevel.allCases, id: \.self) { level in
-                        if let reading = kanji.kunReading[level] {
-                            HStack(alignment: .top) {
-                                Text(level.rawValue)
-                                Text(reading)
+        VStack(spacing: 0) {
+            ForEach(kanji) { kanji in
+                HStack {
+                    Text(kanji.body)
+                        .font(.system(size: setKanjiSize()))
+                    VStack(alignment: .leading) {
+                        if let meaning = kanji.meaningInRussion {
+                            Text(meaning)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom, Settings.paddingBetweenText / 2)
+                        }
+                        
+                        ForEach(SchoolLevel.allCases, id: \.self) { level in
+                            if let reading = kanji.kunReading[level] {
+                                HStack(alignment: .top) {
+                                    Text(level.rawValue)
+                                    Text(reading)
+                                }
+                            }
+                        }
+                        
+                        ForEach(SchoolLevel.allCases, id: \.self) { level in
+                            if let reading = kanji.onReading[level] {
+                                HStack(alignment: .top) {
+                                    Text(level.rawValue)
+                                    Text(reading)
+                                }
                             }
                         }
                     }
+                    .font(.system(size: setReadingsSize()))
                     
-                    ForEach(SchoolLevel.allCases, id: \.self) { level in
-                        if let reading = kanji.onReading[level] {
-                            HStack(alignment: .top) {
-                                Text(level.rawValue)
-                                Text(reading)
-                            }
-                        }
+                    Spacer()
+                    
+                    if let nouryokuLevel = kanji.nouryokuLevel, nouryokuLevel != .another {
+                        Text("\(nouryokuLevel)")
                     }
                 }
-                .font(.system(size: setReadingsSize()))
-                
-                Spacer()
-                
-                if let nouryokuLevel = kanji.nouryokuLevel, nouryokuLevel != .another {
-                    Text("\(nouryokuLevel)")
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            Divider()
-        }
-        .padding(.bottom, Settings.paddingBetweenText)
-        
-        let ar = TextAndReading.setTRArray(getWord())
-        WordWithFuriganaView(word: ar, currentKanji: .empty, readingIsHidden: false)
-            .setFontSize(kanjiSize: 30, readingSize: 20)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .frame(maxWidth: .infinity)
-        
-        let word = setWord()
-        let translates = findTranslate(word).components(separatedBy: "・")
-        ForEach(translates, id: \.self) { translate in
-            Text(translate)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                Divider()
+            }
+            .padding(.bottom, Settings.paddingBetweenText)
+            
+            let ar = TextAndReading.setTRArray(getWord())
+            WordWithFuriganaView(word: ar, currentKanji: .empty, readingIsHidden: false)
+                .setFontSize(kanjiSize: 30, readingSize: 20)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity)
+            
+            let word = setWord()
+            let translates = findTranslate(word).components(separatedBy: "・")
+            ForEach(translates, id: \.self) { translate in
+                Text(translate)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
         }
     }
     
     func findTranslate(_ word: String) -> String {
         let words = Set(store.getAllWords())
         guard let translate = words.first(where: { $0.body == word }) else { return "Перевод не обнаружен" }
-            return translate.meaningInRussian
+        return translate.meaningInRussian
     }
     
     func setKanjiSize() -> CGFloat {
-        return size.width / 12
+        return size / 15
     }
     
     func setReadingsSize() -> CGFloat {

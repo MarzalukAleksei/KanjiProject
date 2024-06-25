@@ -60,13 +60,7 @@ struct MainView: View {
             
         }
         .onAppear {
-//            if var word = store.getAllWords().first(where: { $0.body == "律法" }) {
-//                word.meaningInRussian = "Законы (древние).・Буддийские (церковные) законы"
-//                Task {
-//                    await store.kanjiKankenExamplesTranslationsStore.updateWord(word)
-//                    await store.kanjiKankenExamplesTranslationsStore.saveInFileManager()
-//                }
-//            }
+            
         }
     }
 }

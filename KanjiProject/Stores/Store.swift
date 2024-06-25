@@ -28,6 +28,14 @@ final class Store: ObservableObject {
 //        baseWordsStore.updateAll(data: JSONManager.manager.getBaseWords())
     }
     
+    func updateWord(_ word: WordModel) async {
+        if kanjiKankenExamplesTranslationsStore.getAll().contains(where: { $0.id == word.id }) {
+            await kanjiKankenExamplesTranslationsStore.updateWord(word)
+        } else {
+            await baseWordsStore.update(set: word)
+        }
+    }
+    
     func getAllWords() -> [WordModel] {
         baseWordsStore.getAll() + kanjiKankenExamplesTranslationsStore.getAll()
     }

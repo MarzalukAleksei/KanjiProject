@@ -35,7 +35,7 @@ class WordsStore: IStore {
         return result
     }
     
-    func update(set word: WordModel) {
+    func update(set word: WordModel) async{
         if let index = data.firstIndex(where: { $0.id == word.id }) {
             data[index] = word
         } else {

@@ -1,41 +1,40 @@
 //
-//  CloseButton.swift
+//  CheckmarkButton.swift
 //  KanjiProject
 //
-//  Created by ブラック狼 on 2024/06/24.
+//  Created by ブラック狼 on 2024/06/25.
 //
 
 import SwiftUI
 
-struct CloseButton: View {
+struct CheckmarkButton: View {
     @Environment(\.dismiss) var dismiss
-//    @EnvironmentObject private var globalChanging: GlobalChanging
     private var action: () -> Void
     
-    init(action: @escaping () -> Void = {}) {
+    init(action: @escaping () -> Void) {
         self.action = action
     }
-    
     var body: some View {
         HStack {
+            Spacer()
+            
             Button(action: {
-                dismiss()
-//                globalChanging.exampleWord = nil
                 action()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    dismiss()
+                }
             }, label: {
-                ButtonsImages.dismissButtonImage
+                ButtonsImages.checkmark
                     .resizable()
                     .frame(width: ElementSize.xmarkSize.width,
                            height: ElementSize.xmarkSize.height)
-                    .foregroundStyle(.black)
+                //                .foregroundStyle(.black)
                     .opacity(0.4)
             })
-            Spacer()
         }
     }
 }
 
 #Preview {
-    CloseButton()
-        .environmentObject(GlobalChanging())
+    CheckmarkButton(action: {})
 }
