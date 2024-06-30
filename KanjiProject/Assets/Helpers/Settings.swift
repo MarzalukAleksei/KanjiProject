@@ -16,7 +16,7 @@ class Settings {
     
     static let opacity: CGFloat = 0.3
     
-    static let padding: CGFloat = 15
+    static let padding: CGFloat = 10
     
     static let learningViewCornerRadius: CGFloat = 40
     

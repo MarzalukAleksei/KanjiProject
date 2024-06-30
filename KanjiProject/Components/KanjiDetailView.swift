@@ -11,38 +11,46 @@ struct KanjiDetailView: View {
     let currentKanji: KanjiKankenModel
 //    @State private var mockIndex: Int = 0
     @Binding var showImage: Bool
+    var action: (_ hideReadings: Bool) -> Void
+    @State var hideKanjiReadings: Bool
+    let tapEnable: Bool
     
-    init(currentKanji: KanjiKankenModel, showImage: Binding<Bool> = .constant(true)) {
+    init(currentKanji: KanjiKankenModel, showImage: Binding<Bool> = .constant(true), action: @escaping (_ hideReadings: Bool) -> Void ) {
         self.currentKanji = currentKanji
         self._showImage = showImage
+        self.hideKanjiReadings = true
+        self.action = action
+        self.tapEnable = true
     }
     
-//    init(currentKanji: KanjiKankenModel) {
-//        self.currentKanji = currentKanji
-//        self._showImage = .constant(true)
-//    }
+    init(currentKanji: KanjiKankenModel, showImage: Binding<Bool> = .constant(true) ) {
+        self.currentKanji = currentKanji
+        self._showImage = showImage
+        self.hideKanjiReadings = false
+        self.action = { _ in }
+        self.tapEnable = false
+    }
     
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView {
-                VStack(spacing: Settings.paddingBetweenText) {
-                    ForEach(SchoolLevel.allCases, id: \.self) { type in
-                        if let row = getKunReading(type) {
-                            KankenReadingRowView(row: row, type: type)
+                KanjiReadings(currentKanji: currentKanji, hideKanjiReadings: $hideKanjiReadings)
+                .overlay(content: {
+                    Color.clear
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            // MARK: Сначала происходит смена значения, а после только передается.
+                            if tapEnable {
+                                hideKanjiReadings.toggle()
+                                action(hideKanjiReadings)
+                            }
                         }
-                    }
-                    
-                    ForEach(SchoolLevel.allCases, id: \.self) { type in
-                        if let row = getOnReading(type) {
-                            KankenReadingRowView(row: row, type: type)
-                        }
-                    }
-                }
+                })
                 .id(0) // MARK: Устанавливаем id для скроллинга
                 
                 // MARK: Отображение значения кандзи на русском
                 if let meaningInRussion = currentKanji.meaningInRussion {
-                    Divider()
+//                    Divider()
                     
                     Text(meaningInRussion.uppercased())
                         .frame(maxWidth: .infinity, alignment: .leading)

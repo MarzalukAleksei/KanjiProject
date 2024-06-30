@@ -62,6 +62,7 @@ struct MainView: View {
         .onAppear {
             
         }
+        
     }
 }
 

@@ -53,3 +53,30 @@ extension WordModel {
                                  levels: [],
                                  levelInTag: [])
 }
+
+extension WordModel {
+    init(components: [TextAndReading]) {
+        self.body = ""
+        self.meaningInEnglish = ""
+        self.meaningInRussian = ""
+        self.reading = ""
+        self.type = ""
+        self.levels = []
+        self.levelInTag = []
+        
+        let transformed = transformToWord(with: components)
+        self.body = transformed.body
+        self.reading = transformed.reading
+    }
+    
+    private func transformToWord(with components: [TextAndReading]) -> (body: String, reading: String) {
+        var body = ""
+        var reading = ""
+        
+        for component in components {
+            body += component.text
+            reading += "\(component.text)[\(component.reading)]"
+        }
+        return (body, reading)
+    }
+}

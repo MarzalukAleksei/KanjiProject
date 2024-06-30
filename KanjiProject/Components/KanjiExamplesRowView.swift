@@ -54,14 +54,33 @@ struct KanjiExamplesRowView: View {
                             }
                         }
                     }
-                        
                     .frame(maxWidth: .infinity)
+                    
+                    // MARK: Новое отображение
+//                    GeometryReader { geo in
+//                        VStack {
+////                            ForEach()
+//                        }
+//                    }
                 }
             }
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, Settings.padding)
         
     }
+    
+    // MARK: расчеты для нового отображения
+//    func computeRows(words: [[TextAndReading]], maxWidth: CGFloat) -> [[[TextAndReading]]] {
+//        var result: [[[TextAndReading]]] = []
+//        var currentRow: Int = 0
+//        var currentWidth: CGFloat = 0
+//        
+//        for word in words {
+//            
+//        }
+//        
+//        return result
+//    }
     
     // MARK: Нажатие на слово
     func wordPressed(_ row: [TextAndReading]) {

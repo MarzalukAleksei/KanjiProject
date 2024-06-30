@@ -10,6 +10,7 @@ import SwiftUI
 struct LearningOrRememberSelectButtonsView: View {
     @Binding var showLearningView: Bool
     @Binding var showCheckView: Bool
+    @Binding var showLearnigByWord: Bool
     
     var body: some View {
         VStack {
@@ -37,7 +38,19 @@ struct LearningOrRememberSelectButtonsView: View {
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             })
-//            Spacer()
+            
+            Button(action: {
+                showLearnigByWord = true
+            }, label: {
+                Text("Учить по словам")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: ElementSize.modalViewButtonHeight)
+                    .background {
+                        Color.purple
+                            .opacity(0.3)
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            })
         }
         .padding(.horizontal, Settings.padding)
     }
@@ -45,5 +58,6 @@ struct LearningOrRememberSelectButtonsView: View {
 
 #Preview {
     LearningOrRememberSelectButtonsView(showLearningView: .constant(false),
-                                        showCheckView: .constant(false))
+                                        showCheckView: .constant(false), 
+                                        showLearnigByWord: .constant(false))
 }

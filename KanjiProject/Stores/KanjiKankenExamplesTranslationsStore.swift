@@ -30,7 +30,19 @@ class KanjiKankenExamplesTranslationsStore: IStore {
         JSONManager.manager.saveJSONToFile(data, fileName: .kanjiKankenExamplesTranslations)
     }
     
+    func saveInFileManager() {
+        let data = JSONManager.manager.encodeToJSON(data)
+        JSONManager.manager.saveJSONToFile(data, fileName: .kanjiKankenExamplesTranslations)
+    }
+    
     func updateWord(_ word: WordModel) async {
+        let index = data.firstIndex(where: { $0.id == word.id })
+        if let index = index {
+            data[index] = word
+        }
+    }
+    
+    func updateWord(_ word: WordModel) {
         let index = data.firstIndex(where: { $0.id == word.id })
         if let index = index {
             data[index] = word

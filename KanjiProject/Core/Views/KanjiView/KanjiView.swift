@@ -19,6 +19,7 @@ struct KanjiView: View {
     @State var toggle = false // true - Kanken, false - JLPT
     @State private var showLearningView = false
     @State private var showCheckView = false
+    @State private var showLearningByWord = false
     @State private var reloadView = true
     
     @FetchRequest(entity: UsersKanji.entity(),
@@ -69,7 +70,7 @@ struct KanjiView: View {
 //                }
                 
 // MARK: Кнопки повторения и изучения
-                LearningOrRememberSelectButtonsView(showLearningView: $showLearningView, showCheckView: $showCheckView)
+                LearningOrRememberSelectButtonsView(showLearningView: $showLearningView, showCheckView: $showCheckView, showLearnigByWord: $showLearningByWord)
                 
 // MARK: Список разделенный на ячейки
                 GeometryReader { geo in
@@ -118,6 +119,14 @@ struct KanjiView: View {
 //                .onDisappear {
 //                    
 //                }
+        }
+        .fullScreenCover(isPresented: $showLearningByWord) {
+            LearningByWordView(nouryokuLevel: selectedNouryokuLevel)
+                .onDisappear {
+                    let kanjiStore = store.kanjiKankenStore.getAll()
+//                    self.kanjiKankenStore.clearAll()
+                    self.kanjiKankenStore.updateAll(data: kanjiStore)
+                }
         }
 
     }

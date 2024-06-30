@@ -30,6 +30,7 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable, IAnswers {
     var wrongAnswers: Int?
     private var inList: Bool?
     let link: String
+    private var dateStamp: Date?
     
     init(id: Int, body: String, defaultReading: String, kunReading: [SchoolLevel : String], onReading: [SchoolLevel : String], examples: [SchoolLevel : String], examplesWithReading: [SchoolLevel : [[TextAndReading]]], translateExapmles: [SchoolLevel : [String]] = [:], meaning: String, keys: String, kankenLevel: KankenLevel, nouryokuLevel: NouryokuLevel? = nil, stroke: Int, oldKanji: String = "", lastAnswer: Bool? = nil, link: String) {
         self.id = id
@@ -157,4 +158,44 @@ extension KanjiKankenModel {
                                         kankenLevel: .級10,
                                         stroke: 0,
                                         link: "")
+}
+
+extension KanjiKankenModel {
+    
+    func getDate() -> Date? {
+        dateStamp
+    }
+    
+    private func minutesPassed() -> Int {
+        if let date = getDate() {
+            let interval = Int(Date().timeIntervalSince(date)) / 60
+            return interval
+        }
+        return -1
+    }
+    
+    func showKanji(after minutes: Int = 5) -> Bool {
+        if minutesPassed() >= minutes || minutesPassed() == -1 {
+            return true
+        }
+        
+        return false
+    }
+    
+    mutating func setCurrentDate() {
+        dateStamp = Date()
+    }
+    
+    mutating func resetDate() {
+        dateStamp = nil
+    }
+    
+    mutating func removeFromList() {
+        inList = false
+    }
+    
+    mutating func addInLearningList() {
+        inList = true
+        answer(set: false)
+    }
 }

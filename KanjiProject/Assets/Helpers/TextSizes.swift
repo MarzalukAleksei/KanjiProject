@@ -27,4 +27,8 @@ final class TextSizes {
     static let bottomButtonsText: CGFloat = 30
     
     static let wordEdit: CGFloat = 25
+    
+    static let learningWordBody: CGFloat = 50
+    
+    static let learningWordReading: CGFloat = 30
 }

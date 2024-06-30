@@ -17,7 +17,7 @@ struct CloseButton: View {
     }
     
     var body: some View {
-        HStack {
+//        HStack {
             Button(action: {
                 dismiss()
 //                globalChanging.exampleWord = nil
@@ -30,8 +30,8 @@ struct CloseButton: View {
                     .foregroundStyle(.black)
                     .opacity(0.4)
             })
-            Spacer()
-        }
+//            Spacer()
+//        }
     }
 }
 

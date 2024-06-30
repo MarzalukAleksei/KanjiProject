@@ -35,7 +35,15 @@ class WordsStore: IStore {
         return result
     }
     
-    func update(set word: WordModel) async{
+    func update(set word: WordModel) async {
+        if let index = data.firstIndex(where: { $0.id == word.id }) {
+            data[index] = word
+        } else {
+            print("Cant find word")
+        }
+    }
+    
+    func update(set word: WordModel) {
         if let index = data.firstIndex(where: { $0.id == word.id }) {
             data[index] = word
         } else {
@@ -53,6 +61,11 @@ class WordsStore: IStore {
     }
     
     func saveInFileManager() async {
+        let data = JSONManager.manager.encodeToJSON(data)
+        JSONManager.manager.saveJSONToFile(data, fileName: .baseWords)
+    }
+    
+    func saveInFileManager() {
         let data = JSONManager.manager.encodeToJSON(data)
         JSONManager.manager.saveJSONToFile(data, fileName: .baseWords)
     }

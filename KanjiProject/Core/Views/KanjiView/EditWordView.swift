@@ -13,24 +13,32 @@ struct EditWordView: View {
     @EnvironmentObject private var global: GlobalChanging
     @State private var showInfo = false
     @State private var showMassage = false
+    private var constantWord: WordModel
+
+    init(word: WordModel) {
+        self.word = word
+        self.constantWord = word
+        self.constantWord = toNewLine(word)
+    }
     
     var body: some View {
         VStack(spacing: 0) {
-            Group {
+            HStack {
+                CloseButton()
+                
+                Spacer()
+                
                 if isDataChanged() {
                     CheckmarkButton {
                         withAnimation(.easeOut(duration: 0.15)) {
                             showMassage = true
                         }
-                        replacePointLine()
                         Task {
-                            await store.updateWord(word)
+                            await store.updateWord(origin())
                             global.exampleWord = word
                         }
                     }
                     .foregroundStyle(.green)
-                } else {
-                    CloseButton()
                 }
             }
             .padding([.horizontal, .top], Settings.closeButtonPadding)
@@ -75,7 +83,7 @@ struct EditWordView: View {
                     .font(.system(size: TextSizes.wordEdit))
                 
                 if showInfo {
-                    Text("Для корректного отображения, чтение, отображаемое в верхней части, должно быть записано в квадратных скобках. Может быть записано как для всего слова, так и для кажного кандзи по отдельности.")
+                    Text(Massages.wordReadingEdit)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .opacity(0.5)
                 }
@@ -101,8 +109,8 @@ struct EditWordView: View {
         
         .ignoresSafeArea(.container, edges: .top)
         .onAppear {
-            global.exampleWord = word
-            replaceNLine()
+            word = toNewLine(word)
+//            global.exampleWord = word
         }
     }
     
@@ -111,8 +119,7 @@ struct EditWordView: View {
     }
     
     func isDataChanged() -> Bool {
-        guard let globalWord = global.exampleWord else { return false }
-        if globalWord.reading != word.reading || globalWord.meaningInRussian != word.meaningInRussian {
+        if constantWord.reading != word.reading || constantWord.meaningInRussian != word.meaningInRussian {
             return true
         }
         return false
@@ -125,13 +132,16 @@ struct EditWordView: View {
         return .zero
     }
     
-    func replaceNLine() {
+    func toNewLine(_ word: WordModel) -> WordModel {
+        var word = word
         word.meaningInRussian = word.meaningInRussian.replacingOccurrences(of: "・", with: "\n")
+        return word
     }
     
-    func replacePointLine() {
+    func origin() -> WordModel {
+        var word = word
         word.meaningInRussian = word.meaningInRussian.replacingOccurrences(of: "\n", with: "・")
-        
+        return word
     }
 }
 

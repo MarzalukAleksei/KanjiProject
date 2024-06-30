@@ -24,7 +24,7 @@ final class DataLoading: ObservableObject {
            !dictionary.isEmpty,
            !giseigo.isEmpty,
            !kana.isEmpty,
-           !kanji.isEmpty,
+//           !kanji.isEmpty,
            !yojijukugo.isEmpty,
            !bushu.isEmpty,
            !kanjiKankenExamplesTranslations.isEmpty {
@@ -40,7 +40,7 @@ final class DataLoading: ObservableObject {
         loadDictionary()
         loadGiseigo()
         loadKana()
-        loadKanji()
+//        loadKanji()
         loadYojijukugo()
         loadBushu()
         loadKanjiKankenExamplesTranslations()

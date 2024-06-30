@@ -8,23 +8,47 @@
 import SwiftUI
 
 struct WordWithFuriganaView: View {
-    let word: [TextAndReading]
-    let currentKanji: KanjiKankenModel
-    let readingIsHidden: Bool
-    var kanjiBody = TextSizes.kanjiBody
-    var kanjiReading = TextSizes.kanjiReading
+    private var word: [TextAndReading]
+    private let currentKanji: KanjiKankenModel
+    private let readingIsHidden: Bool
+    private var kanjiBody = TextSizes.kanjiBody
+    private var kanjiReading = TextSizes.kanjiReading
+    
+    init(word: [TextAndReading], currentKanji: KanjiKankenModel, readingIsHidden: Bool, kanjiBody: CGFloat = TextSizes.kanjiBody, kanjiReading: CGFloat = TextSizes.kanjiReading) {
+        self.word = word
+        self.currentKanji = currentKanji
+        self.readingIsHidden = readingIsHidden
+        self.kanjiBody = kanjiBody
+        self.kanjiReading = kanjiReading
+    }
+    
+    init(word: WordModel, currentKanji: KanjiKankenModel, readingIsHidden: Bool, kanjiBody: CGFloat = TextSizes.kanjiBody, kanjiReading: CGFloat = TextSizes.kanjiReading) {
+        self.word = []
+        self.currentKanji = currentKanji
+        self.readingIsHidden = readingIsHidden
+        self.kanjiBody = kanjiBody
+        self.kanjiReading = kanjiReading
+        
+        self.word = transformWordModel(word)
+    }
+    
     var body: some View {
             HStack(spacing: 0) {
                 ForEach(word, id: \.self) { part in
-                VStack {
+                    VStack(spacing: 0) {
                     if part.text.contains(currentKanji.body) {
-                        HStack {
-                            Text(part.reading)
-                                .font(.system(size: kanjiReading))
-                                .foregroundStyle(.red)
-                                .opacity(readingIsHidden ? 0 : 1)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.leading, part.reading.count == 1 ? kanjiReading / 2.5 : 0)
+                        HStack(alignment: .bottom) {
+                            if part.reading != "" {
+                                Text(part.reading)
+                                    .font(.system(size: kanjiReading))
+                                    .foregroundStyle(.red)
+                                    .opacity(readingIsHidden ? 0 : 1)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, part.reading.count == 1 ? kanjiReading / 2.5 : 0)
+                            } else {
+                                Color.clear
+                                    .frame(height: kanjiBody * 0.8)
+                            }
                         }
                         let text = sep(part)
                         HStack(spacing: 0) {
@@ -32,6 +56,7 @@ struct WordWithFuriganaView: View {
                                 if char == currentKanji.body {
                                     Text(char)
                                         .foregroundStyle(ElementsColors.currentKanjiInExample)
+                                        .frame(maxHeight: .infinity, alignment: .bottom)
                                 } else {
                                     Text(char)
                                 }
@@ -39,11 +64,16 @@ struct WordWithFuriganaView: View {
                         }
                         .font(.system(size: kanjiBody))
                     } else {
-                        Text(part.reading)
-                            .font(.system(size: kanjiReading))
-                            .opacity(readingIsHidden ? 0 : 1)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, part.reading.count == 1 ? kanjiReading / 2.5 : 0)
+                        if part.reading != "" {
+                            Text(part.reading)
+                                .font(.system(size: kanjiReading))
+                                .opacity(readingIsHidden ? 0 : 1)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, part.reading.count == 1 ? kanjiReading / 2.5 : 0)
+                        } else {
+                            Color.clear
+                                .frame(height: kanjiBody * 0.8)
+                        }
                         Text(part.text.removeAll(after: "（"))
                             .font(.system(size: kanjiBody))
                     }
@@ -60,6 +90,23 @@ struct WordWithFuriganaView: View {
         return view
     }
     
+    private func transformWordModel(_ word: WordModel) -> [TextAndReading] {
+        var word = word
+        word.reading = word.reading.replacingOccurrences(of: "[", with: "(")
+        word.reading = word.reading.replacingOccurrences(of: "]", with: ")")
+        var result: [TextAndReading] = []
+        let array = word.reading.components(separatedBy: ")")
+        for element in array where element != "" {
+            let parts = element.components(separatedBy: "(")
+            if parts.count > 1 {
+                result.append(.init(text: parts[0], reading: parts[1]))
+            } else {
+                result.append(.init(text: parts[0], reading: ""))
+            }
+        }
+        return result
+    }
+    
     private func sep(_ part: TextAndReading) -> [String] {
         var result: [String] = []
         var array = part.text.removeAll(after: "（").map { String($0) }
@@ -73,4 +120,5 @@ struct WordWithFuriganaView: View {
 #Preview {
     WordWithFuriganaView(word: [TextAndReading(text: "漢", reading: "かん"), TextAndReading(text: "字", reading: "じ")], currentKanji: .init(id: 0, body: "字", defaultReading: "", kunReading: [:], onReading: [:], examples: [:], examplesWithReading: [:], meaning: "", keys: "", kankenLevel: .none, stroke: 0, link: ""), readingIsHidden: false)
         .setFontSize(kanjiSize: 40, readingSize: 30)
+        .frame(height: 60)
 }

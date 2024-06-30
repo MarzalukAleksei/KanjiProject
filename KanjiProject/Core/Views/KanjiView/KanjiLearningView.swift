@@ -13,15 +13,24 @@ struct KanjiLearningView: View {
     @Environment(\.dismiss) private var dismiss
     @State var currentKanji: KanjiKankenModel?
     @State private var showWordDetail = false
+    @State private var showDeleteWarning = false
     let selectedKanken: Bool
     let nouryokuLevel: NouryokuLevel
     let kankenLevel: KankenLevel
+    let min = 25
     
     var body: some View {
         VStack {
             VStack {
-                CloseButton {
-                    globalChanging.exampleWord = nil
+                HStack {
+                    CloseButton {
+                        globalChanging.exampleWord = nil
+                        Task {
+                            await store.kanjiKankenStore.saveInFileManager()
+                        }
+                    }
+                    
+                    Spacer()
                 }
                 
                 if let currentKanji = currentKanji {
@@ -31,17 +40,21 @@ struct KanjiLearningView: View {
                             .padding(.horizontal, TextSizes.kanjiSize * 0.3 / 2)
                             .border(Color.black, width: 1)
                             .padding(.leading, Settings.padding)
+                            .onTapGesture {
+                                showDeleteWarning = true
+                            }
                         
                         Spacer()
                     }
-                    KanjiDetailView(currentKanji: currentKanji, showImage: .constant(false))
+                    KanjiDetailView(currentKanji: currentKanji, showImage: .constant(false)) { hideReadings in
+                        if hideReadings {
+                            reButtonAction()
+                        }
+                    }
                 } else {
                     ProgressView()
                         .onAppear {
                             setCurrentKanji()
-                            Task {
-                                print("\nОсталось изучить \(findExpectedKanjiArray().count) Кандзи")
-                            }
                         }
                 }
                 Spacer()
@@ -51,8 +64,7 @@ struct KanjiLearningView: View {
             .ignoresSafeArea(.container, edges: .top)
             
             Button(action: {
-                setCurrentKanji()
-                globalChanging.exampleWord = nil
+                reButtonAction()
             }, label: {
                 HStack {
                     ButtonsImages.updateImage
@@ -65,10 +77,17 @@ struct KanjiLearningView: View {
             .font(.title2)
             
         }
+        .alert("Вы точно хотите удалить этот кандзи из списка?", isPresented: $showDeleteWarning, actions: {
+            Button("Нет") {}
+            Button("Да") {
+                removeKanjiFromList()
+            }
+        })
         .overlay {
             if showWordDetail {
                 SelectedWordDetailView()
             }
+            
         }
         .onReceive(globalChanging.$exampleWord, perform: { word in
             if word != nil {
@@ -80,12 +99,40 @@ struct KanjiLearningView: View {
         
     }
     
+    private func removeKanjiFromList() {
+        if var currentKanji = currentKanji {
+//            showDeleteWarning = true
+            currentKanji.removeFromList()
+            store.kanjiKankenStore.update(set: currentKanji)
+//            Task {
+//                try await Task.sleep(nanoseconds: 100)
+                setCurrentKanji()
+//                showDeleteWarning = false
+//            }
+        }
+    }
+    
+    private func reButtonAction() {
+        currentKanji?.setCurrentDate()
+        if let currentKanji = currentKanji {
+            store.kanjiKankenStore.update(set: currentKanji)
+        }
+        setCurrentKanji()
+    }
+    
     private func setCurrentKanji() {
         currentKanji = getKanji()
+//        currentKanji?.setCurrentDate()
+        Task {
+            print("\nОсталось изучить \(showAfter(min).count) Кандзи")
+        }
     }
     
     private func getKanji() -> KanjiKankenModel? {
-        return findExpectedKanjiArray().randomElement()
+//        return findExpectedKanjiArray().randomElement()
+        let result = Set(showAfter(min)).randomElement()
+//        return showAfter(min).randomElement()
+        return result
     }
     
     private func findExpectedKanjiArray() -> [KanjiKankenModel] {
@@ -94,6 +141,10 @@ struct KanjiLearningView: View {
             .filter { !($0.lastAnswer() ?? false) }
             .filter { $0.inLearningList() }
         return allCurrentLevelKanji
+    }
+    
+    func showAfter(_ min: Int) -> [KanjiKankenModel] {
+        return findExpectedKanjiArray().filter { $0.showKanji(after: min) }
     }
 }
 

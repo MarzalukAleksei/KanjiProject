@@ -50,7 +50,10 @@ struct KanjiProjectApp: App {
             case .active: break
             case .background:
 //                background()
-                break
+                Task {
+                    await store.kanjiKankenStore.saveInFileManager()
+                }
+//                break
             case .inactive: break
             @unknown default:
                 break

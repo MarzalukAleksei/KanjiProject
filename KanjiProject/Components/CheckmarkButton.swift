@@ -15,8 +15,8 @@ struct CheckmarkButton: View {
         self.action = action
     }
     var body: some View {
-        HStack {
-            Spacer()
+//        HStack {
+//            Spacer()
             
             Button(action: {
                 action()
@@ -31,7 +31,7 @@ struct CheckmarkButton: View {
                 //                .foregroundStyle(.black)
                     .opacity(0.4)
             })
-        }
+//        }
     }
 }
 

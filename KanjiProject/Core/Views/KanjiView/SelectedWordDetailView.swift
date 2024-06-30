@@ -96,46 +96,7 @@ private struct RectData: View {
     let size: CGFloat
     var body: some View {
         VStack(spacing: 0) {
-            ForEach(kanji) { kanji in
-                HStack {
-                    Text(kanji.body)
-                        .font(.system(size: setKanjiSize()))
-                    VStack(alignment: .leading) {
-                        if let meaning = kanji.meaningInRussion {
-                            Text(meaning)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.bottom, Settings.paddingBetweenText / 2)
-                        }
-                        
-                        ForEach(SchoolLevel.allCases, id: \.self) { level in
-                            if let reading = kanji.kunReading[level] {
-                                HStack(alignment: .top) {
-                                    Text(level.rawValue)
-                                    Text(reading)
-                                }
-                            }
-                        }
-                        
-                        ForEach(SchoolLevel.allCases, id: \.self) { level in
-                            if let reading = kanji.onReading[level] {
-                                HStack(alignment: .top) {
-                                    Text(level.rawValue)
-                                    Text(reading)
-                                }
-                            }
-                        }
-                    }
-                    .font(.system(size: setReadingsSize()))
-                    
-                    Spacer()
-                    
-                    if let nouryokuLevel = kanji.nouryokuLevel, nouryokuLevel != .another {
-                        Text("\(nouryokuLevel)")
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                Divider()
-            }
+            ListOfKanjiInGivenWordView(kanji: kanji, size: size)
             .padding(.bottom, Settings.paddingBetweenText)
             
             let ar = TextAndReading.setTRArray(getWord())
@@ -159,13 +120,7 @@ private struct RectData: View {
         return translate.meaningInRussian
     }
     
-    func setKanjiSize() -> CGFloat {
-        return size / 15
-    }
     
-    func setReadingsSize() -> CGFloat {
-        return setKanjiSize() / 1.7
-    }
     
     func setWord() -> String {
         if let word = word {

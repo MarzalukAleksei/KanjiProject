@@ -28,11 +28,15 @@ final class Store: ObservableObject {
 //        baseWordsStore.updateAll(data: JSONManager.manager.getBaseWords())
     }
     
+    /// This methood update word in store, than save in file
+    /// - Parameter word: given word
     func updateWord(_ word: WordModel) async {
         if kanjiKankenExamplesTranslationsStore.getAll().contains(where: { $0.id == word.id }) {
             await kanjiKankenExamplesTranslationsStore.updateWord(word)
+            await kanjiKankenExamplesTranslationsStore.saveInFileManager()
         } else {
             await baseWordsStore.update(set: word)
+            await baseWordsStore.saveInFileManager()
         }
     }
     
@@ -77,4 +81,13 @@ final class Store: ObservableObject {
     
 }
 
-
+extension Store {
+    func findWordInBase(with components: [TextAndReading]) -> WordModel? {
+        var word = ""
+        for component in components {
+            word += component.text
+        }
+        let result = getAllWords().first(where: { $0.body == word })
+        return result
+    }
+}
