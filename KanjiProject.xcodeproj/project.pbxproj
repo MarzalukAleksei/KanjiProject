@@ -88,6 +88,9 @@
 		AF5621752B8CE79E0067F87D /* CreatingWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5621742B8CE79E0067F87D /* CreatingWordView.swift */; };
 		AF5621772B8CE8460067F87D /* SearchWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5621762B8CE8460067F87D /* SearchWordView.swift */; };
 		AF56217A2B8CEB7C0067F87D /* DataLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5621792B8CEB7C0067F87D /* DataLoading.swift */; };
+		AF56AB5A2C4166C8000C1A31 /* GoiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF56AB592C4166C8000C1A31 /* GoiMapper.swift */; };
+		AF56AB5C2C4168F8000C1A31 /* 語彙N2.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF56AB5B2C4168F8000C1A31 /* 語彙N2.csv */; };
+		AF56AB5E2C41BF27000C1A31 /* GoiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF56AB5D2C41BF27000C1A31 /* GoiStore.swift */; };
 		AF69CE712A001739009C7B92 /* ButtonsImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69CE702A001739009C7B92 /* ButtonsImages.swift */; };
 		AF6A2DF229E5AF5100D7C1A9 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */; };
 		AF6A2E0129E62CDA00D7C1A9 /* RefactoredStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0029E62CDA00D7C1A9 /* RefactoredStores.swift */; };
@@ -270,6 +273,9 @@
 		AF5621742B8CE79E0067F87D /* CreatingWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingWordView.swift; sourceTree = "<group>"; };
 		AF5621762B8CE8460067F87D /* SearchWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWordView.swift; sourceTree = "<group>"; };
 		AF5621792B8CEB7C0067F87D /* DataLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoading.swift; sourceTree = "<group>"; };
+		AF56AB592C4166C8000C1A31 /* GoiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoiMapper.swift; sourceTree = "<group>"; };
+		AF56AB5B2C4168F8000C1A31 /* 語彙N2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "語彙N2.csv"; sourceTree = "<group>"; };
+		AF56AB5D2C41BF27000C1A31 /* GoiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoiStore.swift; sourceTree = "<group>"; };
 		AF69CE702A001739009C7B92 /* ButtonsImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsImages.swift; sourceTree = "<group>"; };
 		AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		AF6A2E0029E62CDA00D7C1A9 /* RefactoredStores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactoredStores.swift; sourceTree = "<group>"; };
@@ -440,6 +446,7 @@
 				AFA2BEB62B71984600BAC9EB /* WordsStore.swift */,
 				AFC9DACA2C04D1C5006A7ED0 /* BushuStore.swift */,
 				AF3D53B52C2450AC005B495F /* KanjiKankenExamplesTranslationsStore.swift */,
+				AF56AB5D2C41BF27000C1A31 /* GoiStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -754,6 +761,7 @@
 				AFC9DACE2C04D41B006A7ED0 /* BushuMapper.swift */,
 				AFDC36582C13068E00B602A9 /* KanjiTranslateMapper.swift */,
 				AF91B8CC2C14E95E001A1E85 /* WordExamplesTranslateMapper.swift */,
+				AF56AB592C4166C8000C1A31 /* GoiMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -788,6 +796,7 @@
 				AFC9DAD62C04E2F7006A7ED0 /* Bushu.csv */,
 				AF1EB05D2A97756600850A3B /* Kana.csv */,
 				AF4F2A9B2AB1C09C00F38EE9 /* Giseigo.csv */,
+				AF56AB5B2C4168F8000C1A31 /* 語彙N2.csv */,
 				AF5600722AA46B4B00F0123C /* Yojijukugo.csv */,
 			);
 			path = CSVFiles;
@@ -964,6 +973,7 @@
 				AFA2BEAD2B718A9000BAC9EB /* Core Japanese Vocabulary__JLPT N4.txt in Resources */,
 				AFFF94CB2B5FE31900DD01EB /* 09級.txt in Resources */,
 				AFA2BEB12B718CCC00BAC9EB /* Core Japanese Vocabulary__JLPT N1.txt in Resources */,
+				AF56AB5C2C4168F8000C1A31 /* 語彙N2.csv in Resources */,
 				AFAF80E129D9C647002B9921 /* Preview Assets.xcassets in Resources */,
 				AFAF80DE29D9C647002B9921 /* Assets.xcassets in Resources */,
 				AF2D7FAE2AC45D9E00642B48 /* Bunpou.csv in Resources */,
@@ -1033,6 +1043,7 @@
 				AF3A72C22A80512800A5513C /* PartialRoundedRectangle.swift in Sources */,
 				AFA6704D2A4B23BB00ED639D /* CoreDataManager.swift in Sources */,
 				AF6A2E0129E62CDA00D7C1A9 /* RefactoredStores.swift in Sources */,
+				AF56AB5E2C41BF27000C1A31 /* GoiStore.swift in Sources */,
 				AFCC213D2AC550C100F1E37D /* MoveTo.swift in Sources */,
 				AFD2F6062B80194D00F95424 /* Answers.swift in Sources */,
 				AFE4D21D2AF11AE000D97DE4 /* DrawView.swift in Sources */,
@@ -1071,6 +1082,7 @@
 				AFFC08AD2A822AF60043B741 /* KanjiView.swift in Sources */,
 				AF3A72B82A7D1C3000A5513C /* ScrollPartsModifires.swift in Sources */,
 				AF1EB07A2A99693200850A3B /* Extensions.swift in Sources */,
+				AF56AB5A2C4166C8000C1A31 /* GoiMapper.swift in Sources */,
 				AF960B412A83C70600A33373 /* CustomSlider.swift in Sources */,
 				AF8122B32B7255E500CCE83A /* IAnswers.swift in Sources */,
 				AF960B472A8563C200A33373 /* Modifiers.swift in Sources */,

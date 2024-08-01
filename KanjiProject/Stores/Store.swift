@@ -17,6 +17,7 @@ final class Store: ObservableObject {
     @Published var baseWordsStore = WordsStore()
     @Published var bushuStore = BushuStore()
     @Published var kanjiKankenExamplesTranslationsStore = KanjiKankenExamplesTranslationsStore()
+    @Published var goiStore = GoiStore()
     
     init() {
 //        kanjiStore.updateAll(data: JSONManager.manager.getKanji())
@@ -54,6 +55,7 @@ final class Store: ObservableObject {
         baseWordsStore = store.baseWordsStore
         bushuStore = store.bushuStore
         kanjiKankenExamplesTranslationsStore = store.kanjiKankenExamplesTranslationsStore
+        goiStore = store.goiStore
     }
     
     

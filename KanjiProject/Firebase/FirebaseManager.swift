@@ -19,6 +19,7 @@ class FirebaseManager {
         case kanji = "BaseJsonFiles/Kanji.json"
         case bushu = "BaseJsonFiles/Bushu.json"
         case kanjiKankenExamplesTranslations = "BaseJsonFiles/KanjiKankenExamplesTranslations.json"
+        case goi = "Goi.json"
     }
     
     static let manager = FirebaseManager()
@@ -28,6 +29,13 @@ class FirebaseManager {
     
     init() {
         self.storageRef = storage.reference()
+    }
+    
+    func downloadGoi(completion: @escaping (Result<Data, Error>) -> Void) {
+        let baseGoiRef = storageRef.child(Links.goi.rawValue)
+        baseGoiRef.loadData { result in
+            completion(result)
+        }
     }
     
     func baseWord(completion: @escaping (Result<Data, Error>) -> Void) {

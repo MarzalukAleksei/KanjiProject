@@ -17,6 +17,7 @@ final class DataLoading: ObservableObject {
     @Published var yojijukugo: [YojijukugoModel] = []
     @Published var bushu: [BushuModel] = []
     @Published var kanjiKankenExamplesTranslations: [WordModel] = []
+    @Published var goi: [WordModel] = []
     
     var complete: Bool {
         if !baseWords.isEmpty,
@@ -27,6 +28,7 @@ final class DataLoading: ObservableObject {
 //           !kanji.isEmpty,
            !yojijukugo.isEmpty,
            !bushu.isEmpty,
+//           !goi.isEmpty,
            !kanjiKankenExamplesTranslations.isEmpty {
             return true
         }
@@ -44,6 +46,7 @@ final class DataLoading: ObservableObject {
         loadYojijukugo()
         loadBushu()
         loadKanjiKankenExamplesTranslations()
+        loadGoi()
     }
     
     func data(with completion: (Result<Store, Error>) -> Void) {
@@ -266,6 +269,36 @@ final class DataLoading: ObservableObject {
         } else {
             self.kanjiKankenExamplesTranslations = translations
         }
+    }
+    
+    private func loadGoi() {
+        let goi = getGoi()
+        
+        if goi.isEmpty {
+            FirebaseManager.manager.downloadGoi { result in
+                switch result {
+                case .success(let data):
+                    guard let goi: [WordModel] = JSONManager.manager.decodeToModel(data) else { return }
+                    self.goi = goi
+                    Task {
+                        let goiStore = GoiStore()
+                        goiStore.updateAll(data: goi)
+                        await goiStore.saveInFileManager()
+                    }
+                case .failure(let error):
+                    print(error)
+//                    break
+                }
+            }
+        } else {
+            self.goi = goi
+        }
+    }
+    
+    private func getGoi() -> [WordModel] {
+        guard let data = Data.myFile(.goi),
+              let result: [WordModel] = JSONManager.manager.decodeToModel(data) else { return [] }
+        return result
     }
     
     /*private*/ func getLoadKanjiKankenExamplesTranslations() -> [WordModel] {

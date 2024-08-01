@@ -22,6 +22,7 @@ class JSONManager {
         case baseWords = "BaseWords"
         case bushu = "Bushu"
         case kanjiKankenExamplesTranslations = "KanjiKankenExamplesTranslations"
+        case goi = "Goi"
     }
     
     func encodeToJSON<T: Encodable>(_ model: T) -> Data {
