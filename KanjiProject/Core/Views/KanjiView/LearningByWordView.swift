@@ -17,6 +17,8 @@ struct LearningByWordView: View {
     @State private var showEdit = false
     let nouryokuLevel: NouryokuLevel
     let minute = 5
+    let databaseOperation: DatabaseOperations
+    @State var availableKanji: [KanjiKankenModel] = []
     
     var body: some View {
         VStack {
@@ -98,17 +100,17 @@ struct LearningByWordView: View {
                     .onTapGesture {
                         hideReadings.toggle()
                         if hideReadings {
-                            saveAndreloadAction()
+                            saveAndReloadAction()
                             setCurrentWord()
                         }
                     }
             }
         }
         .padding(Settings.padding)
-        .onAppear {
+        .task {
+            await availableKanji = databaseOperation.getAllSuitableKanji()
             setCurrentKanji()
             setCurrentWord()
-//            currentKanji = .MOCK_KANJIKANKEN
         }
         .fullScreenCover(isPresented: $showEdit, content: {
             if let currentWord = globalChanging.exampleWord {
@@ -126,47 +128,14 @@ struct LearningByWordView: View {
     
     // MARK: Получает слово, если оно имеется в группе, соответствующей уровню
     private func getWord() -> WordModel? {
-        guard let currentKanji = currentKanji else { return nil }
-        var componentsArray: [[TextAndReading]] = []
-        
-        for level in SchoolLevel.allCases where checkLevel().contains(level) {
-            if let arr = currentKanji.getExamplesWithReading()[level] {
-                componentsArray += arr
-            }
-        }
-        var words: Set<WordModel> = []
-        for components in componentsArray {
-            if let word = store.findWordInBase(with: components) {
-                words.insert(word)
-            }
-        }
-        return words.randomElement()
-    }
-    
-    private func checkLevel() -> [SchoolLevel] {
-        var result: [SchoolLevel] = []
-        switch nouryokuLevel {
-        case .another:
-            result.append(.外)
-            fallthrough
-        case .N1:
-            result.append(.高)
-            fallthrough
-        case .N2:
-            result.append(.中)
-            fallthrough
-        case .N3, .N4, .N5:
-            result.append(.小)
-        }
-        return result
+        databaseOperation.loadWord(for: currentKanji)
     }
     
     private func getMeaning(_ word: WordModel) -> [String] {
-        let result = word.meaningInRussian.components(separatedBy: "・")
-        return result
+        word.getSeparatedMeaning()
     }
     
-    private func saveAndreloadAction() {
+    private func saveAndReloadAction() {
         currentKanji?.setCurrentDate()
         if let currentKanji = currentKanji {
             store.kanjiKankenStore.update(set: currentKanji)
@@ -174,33 +143,25 @@ struct LearningByWordView: View {
         setCurrentKanji()
     }
     
-    private func setCurrentKanji() {
+    func setCurrentKanji() {
         currentKanji = getKanji()
-        Task {
-            print("\nОсталось изучить \(showAfter(minute).count) Кандзи")
+        availableKanji.removeAll(where: { $0.id == currentKanji?.id })
+        
+        if currentKanji != nil {
+            print("\nОсталось изучить \(availableKanji.count + 1) Кандзи")
+        } else {
+            print("Все изучено")
         }
     }
     
     private func getKanji() -> KanjiKankenModel? {
-        let result = Set(showAfter(minute)).randomElement()
+        let result = Set(availableKanji).randomElement()
         return result
-    }
-    
-    private func findExpectedKanjiArray() -> [KanjiKankenModel] {
-        var allCurrentLevelKanji = store.kanjiKankenStore.getAllKanji(below: nouryokuLevel)
-        allCurrentLevelKanji = allCurrentLevelKanji
-            .filter { !($0.lastAnswer() ?? false) }
-            .filter { $0.inLearningList() }
-        return allCurrentLevelKanji
-    }
-    
-    func showAfter(_ min: Int) -> [KanjiKankenModel] {
-        return findExpectedKanjiArray().filter { $0.showKanji(after: min) }
     }
 }
 
 #Preview {
-    LearningByWordView(nouryokuLevel: .N5)
+    LearningByWordView(nouryokuLevel: .N5, databaseOperation: .init(store: Store(), chosenLevel: .N5))
         .environmentObject(Store())
         .environmentObject(GlobalChanging())
 }

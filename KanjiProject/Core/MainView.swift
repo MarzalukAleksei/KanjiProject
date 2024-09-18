@@ -60,31 +60,49 @@ struct MainView: View {
             
         }
         .onAppear {
-            do {
-                var n2GoiWords = GoiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "語彙N2", fileType: .csv)), level: .N2)
-                var findedCount = 0
-                for word in n2GoiWords {
-                    var word = word
-                    if let inDatabase = store.baseWordsStore.getAll().first(where: { $0.body == word.body }) {
-                        word.reading = inDatabase.reading
-                        word.meaningInRussian = inDatabase.meaningInRussian
-                        if let arIndex = n2GoiWords.firstIndex(where: { $0.body == word.body }) {
-                            n2GoiWords[arIndex] = word
-                            findedCount += 1
-                        }
-                    }
-                }
-                
-                for i in n2GoiWords {
-                    print(i)
-                    print("")
-                }
-                print("AllWords \(n2GoiWords.count), where finded in Database \(findedCount)")
-            } catch {
-                print(error)
-            }
+//            goiSetting()
+            
+//            for kanji in store.kanjiKankenStore.getAll() {
+//                var kanji = kanji
+////                if let answer = kanji.lastAnswer() {
+////                    if answer == true {
+////                        kanji.removeFromList()
+////                    } else if answer == false {
+////                        kanji.addInLearningList()
+////                    }
+////                }
+//                kanji.wrongAnswer()
+//                store.kanjiKankenStore.update(set: kanji)
+//            }
+            
         }
         
+    }
+    
+    func goiSetting() {
+        do {
+            var n2GoiWords = GoiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "語彙N2", fileType: .csv)), level: .N2)
+            var findedCount = 0
+            for word in n2GoiWords {
+                var word = word
+                if let inDatabase = store.baseWordsStore.getAll().first(where: { $0.body == word.body }) {
+                    word.reading = inDatabase.reading
+                    word.meaningInRussian = inDatabase.meaningInRussian
+                    if let arIndex = n2GoiWords.firstIndex(where: { $0.body == word.body }) {
+                        n2GoiWords[arIndex] = word
+                        findedCount += 1
+                    }
+                }
+            }
+            
+            for i in n2GoiWords {
+                print(i)
+                print("")
+            }
+            print("AllWords \(n2GoiWords.count), where finded in Database \(findedCount)")
+        } catch {
+            print(error)
+        }
     }
 }
 

@@ -17,8 +17,9 @@ struct WordModel: Codable, Hashable, Identifiable {
     let levels: [String]
     let levelInTag: [NouryokuLevel]
     private var lastAnswerRight: Bool?
+    private var _rightAnswersInRow: Int?
     
-    init(body: String, meaningInEnglish: String, meaningInRussian: String, reading: String, type: String, levels: [String], levelInTag: [NouryokuLevel], lastAnswerRight: Bool? = nil) {
+    init(body: String, meaningInEnglish: String, meaningInRussian: String, reading: String, type: String, levels: [String], levelInTag: [NouryokuLevel], lastAnswerRight: Bool? = nil, rightAnswersInRow: Int? = nil) {
         self.id = UUID()
         self.body = body
         self.meaningInEnglish = meaningInEnglish
@@ -28,7 +29,9 @@ struct WordModel: Codable, Hashable, Identifiable {
         self.levels = levels
         self.levelInTag = levelInTag
         self.lastAnswerRight = lastAnswerRight
+        self._rightAnswersInRow = rightAnswersInRow
     }
+    
     init(body: String, meaningInEnglish: String, level: NouryokuLevel) {
         self.id = UUID()
         self.body = body
@@ -49,6 +52,27 @@ extension WordModel: IAnswers {
     
     mutating func answer(set answer: Bool?) {
         lastAnswerRight = answer
+        setRightAnswer(answer)
+    }
+}
+
+extension WordModel {
+    func rightAnswersInRow() -> Int {
+        guard let rightAnswersInRow = _rightAnswersInRow else { return 0 }
+        return rightAnswersInRow
+    }
+    
+    private mutating func setRightAnswer(_ answer: Bool?) {
+        if answer == true {
+            if var rightAnswersInRow = _rightAnswersInRow { // if non Optional
+                rightAnswersInRow += 1
+                self._rightAnswersInRow = rightAnswersInRow
+            } else { // if Optional
+                _rightAnswersInRow = 1
+            }
+        } else {
+            _rightAnswersInRow = 0
+        }
     }
 }
 
@@ -90,5 +114,10 @@ extension WordModel {
             reading += "\(component.text)[\(component.reading)]"
         }
         return (body, reading)
+    }
+    
+    func getSeparatedMeaning() -> [String] {
+        let result = meaningInRussian.components(separatedBy: "・")
+        return result
     }
 }

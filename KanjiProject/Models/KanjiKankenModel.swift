@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct KanjiKankenModel: Identifiable, Codable, Hashable, IAnswers {
+struct KanjiKankenModel: Identifiable, Codable, Hashable {
     
     let id: Int
     let body: String
@@ -22,11 +22,11 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable, IAnswers {
     var meaningInEng: String?
     let keys: String
     let kankenLevel: KankenLevel
-    var nouryokuLevel: NouryokuLevel?
+    private(set) var nouryokuLevel: NouryokuLevel?
     let stroke: Int
     var oldKanji = ""
     private var lastAnswerRight: Bool?
-    var rightAnwers: Int?
+    private(set) var rightAnwers: Int?
     var wrongAnswers: Int?
     private var inList: Bool?
     let link: String
@@ -51,20 +51,16 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable, IAnswers {
         self.link = link
     }
     
-    func inLearningList() -> Bool {
-        inList ?? false
+    func isInLearningList() -> Bool? {
+        inList
     }
     
     mutating func learning() {
         inList = true
     }
     
-    func lastAnswer() -> Bool? {
-        lastAnswerRight
-    }
-    
-    mutating func answer(set answer: Bool?) {
-        self.lastAnswerRight = answer
+    mutating func wrongAnswer() {
+        self.rightAnwers = 0
     }
     
     mutating func rightAnswer() {
@@ -102,6 +98,16 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable, IAnswers {
             result[level.key] = newArray
         }
         return result
+    }
+}
+
+extension KanjiKankenModel: IAnswers {
+    func lastAnswer() -> Bool? {
+        lastAnswerRight
+    }
+    
+    mutating func answer(set answer: Bool?) {
+        self.lastAnswerRight = answer
     }
 }
 
@@ -164,6 +170,11 @@ extension KanjiKankenModel {
     
     func getDate() -> Date? {
         dateStamp
+    }
+    
+    func getDate() -> Date {
+        guard let dateStamp = dateStamp else { return Date() /*- 60 * 16*/ }
+        return dateStamp
     }
     
     private func minutesPassed() -> Int {

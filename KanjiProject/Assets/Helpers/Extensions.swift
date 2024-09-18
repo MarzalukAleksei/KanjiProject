@@ -250,3 +250,10 @@ extension Data {
         return nil
     }
 }
+
+extension Date {
+    static func minutesPassed(from date: Date) -> Int {
+        let interval = Int(Date().timeIntervalSince(date)) / 60
+        return interval
+    }
+}

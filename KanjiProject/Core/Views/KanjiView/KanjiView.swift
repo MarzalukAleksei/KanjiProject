@@ -121,7 +121,7 @@ struct KanjiView: View {
 //                }
         }
         .fullScreenCover(isPresented: $showLearningByWord) {
-            LearningByWordView(nouryokuLevel: selectedNouryokuLevel)
+            LearningByWordView(nouryokuLevel: selectedNouryokuLevel, databaseOperation: .init(store: store, chosenLevel: selectedNouryokuLevel))
                 .onDisappear {
                     let kanjiStore = store.kanjiKankenStore.getAll()
 //                    self.kanjiKankenStore.clearAll()

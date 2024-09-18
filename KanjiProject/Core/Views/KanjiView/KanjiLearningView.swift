@@ -139,7 +139,7 @@ struct KanjiLearningView: View {
         var allCurrentLevelKanji = store.kanjiKankenStore.getAllKanji(below: nouryokuLevel)
         allCurrentLevelKanji = allCurrentLevelKanji
             .filter { !($0.lastAnswer() ?? false) }
-            .filter { $0.inLearningList() }
+            .filter { $0.isInLearningList() ?? false }
         return allCurrentLevelKanji
     }
     
