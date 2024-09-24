@@ -14,6 +14,8 @@ struct KanjiLearningView: View {
     @State var currentKanji: KanjiKankenModel?
     @State private var showWordDetail = false
     @State private var showDeleteWarning = false
+    @State private var hideReadings: Bool = true
+    
     let selectedKanken: Bool
     let nouryokuLevel: NouryokuLevel
     let kankenLevel: KankenLevel
@@ -46,11 +48,8 @@ struct KanjiLearningView: View {
                         
                         Spacer()
                     }
-                    KanjiDetailView(currentKanji: currentKanji, showImage: .constant(false)) { hideReadings in
-                        if hideReadings {
-                            reButtonAction()
-                        }
-                    }
+                    
+                    KanjiDetailView(currentKanji: currentKanji, showImage: .constant(false), hideKanji: $hideReadings)
                 } else {
                     ProgressView()
                         .onAppear {
@@ -63,8 +62,14 @@ struct KanjiLearningView: View {
             .padding([.horizontal, .top], Settings.closeButtonPadding)
             .ignoresSafeArea(.container, edges: .top)
             
+            // MARK: Нижняя кнопка
             Button(action: {
-                reButtonAction()
+                if hideReadings {
+                    hideReadings = false
+                } else {
+                    hideReadings = true
+                    reloadAction()
+                }
             }, label: {
                 HStack {
                     ButtonsImages.updateImage
@@ -112,7 +117,7 @@ struct KanjiLearningView: View {
         }
     }
     
-    private func reButtonAction() {
+    private func reloadAction() {
         currentKanji?.setCurrentDate()
         if let currentKanji = currentKanji {
             store.kanjiKankenStore.update(set: currentKanji)

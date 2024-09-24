@@ -108,7 +108,7 @@ struct LearningByWordView: View {
         }
         .padding(Settings.padding)
         .task {
-            await availableKanji = databaseOperation.getAllSuitableKanji()
+            await availableKanji = databaseOperation.getAllSuitableKanjiArray()
             setCurrentKanji()
             setCurrentWord()
         }
@@ -122,6 +122,7 @@ struct LearningByWordView: View {
         })
     }
     
+    // MARK: Устанавливае слово в пример окружения
     private func setCurrentWord() {
         globalChanging.exampleWord = getWord()
     }
@@ -135,6 +136,9 @@ struct LearningByWordView: View {
         word.getSeparatedMeaning()
     }
     
+    // MARK: Устанавливает в текущем кандзи дату
+    /// Обновляет в Store.
+    /// Устанавливает новый кандзи.
     private func saveAndReloadAction() {
         currentKanji?.setCurrentDate()
         if let currentKanji = currentKanji {
@@ -143,6 +147,7 @@ struct LearningByWordView: View {
         setCurrentKanji()
     }
     
+    // MARK: Устанавливает текущий кандзи и удаляет его из массива
     func setCurrentKanji() {
         currentKanji = getKanji()
         availableKanji.removeAll(where: { $0.id == currentKanji?.id })
@@ -154,6 +159,7 @@ struct LearningByWordView: View {
         }
     }
     
+    // MARK: Извлекает кандзи из массива, или nil
     private func getKanji() -> KanjiKankenModel? {
         let result = Set(availableKanji).randomElement()
         return result

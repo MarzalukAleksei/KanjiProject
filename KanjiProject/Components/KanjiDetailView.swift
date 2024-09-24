@@ -12,13 +12,13 @@ struct KanjiDetailView: View {
 //    @State private var mockIndex: Int = 0
     @Binding var showImage: Bool
     var action: (_ hideReadings: Bool) -> Void
-    @State var hideKanjiReadings: Bool
+    @Binding var hideKanjiReadings: Bool
     let tapEnable: Bool
     
     init(currentKanji: KanjiKankenModel, showImage: Binding<Bool> = .constant(true), action: @escaping (_ hideReadings: Bool) -> Void ) {
         self.currentKanji = currentKanji
         self._showImage = showImage
-        self.hideKanjiReadings = true
+        self._hideKanjiReadings = .constant(true)
         self.action = action
         self.tapEnable = true
     }
@@ -26,7 +26,15 @@ struct KanjiDetailView: View {
     init(currentKanji: KanjiKankenModel, showImage: Binding<Bool> = .constant(true) ) {
         self.currentKanji = currentKanji
         self._showImage = showImage
-        self.hideKanjiReadings = false
+        self._hideKanjiReadings = .constant(false)
+        self.action = { _ in }
+        self.tapEnable = false
+    }
+    
+    init(currentKanji: KanjiKankenModel, showImage: Binding<Bool> = .constant(true), hideKanji: Binding<Bool>) {
+        self.currentKanji = currentKanji
+        self._showImage = showImage
+        self._hideKanjiReadings = hideKanji
         self.action = { _ in }
         self.tapEnable = false
     }
@@ -87,8 +95,8 @@ struct KanjiDetailView: View {
                     KanjiImageView(currentKanji: currentKanji)
 //                } else {
                 }
-                Color.black
-                    .frame(maxHeight: .infinity)
+//                Color.black
+//                    .frame(maxHeight: .infinity)
             }
             .scrollIndicators(.hidden)
             

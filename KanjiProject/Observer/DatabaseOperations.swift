@@ -36,7 +36,7 @@ class DatabaseOperations: ObservableObject {
         return words.randomElement()
     }
     
-    func getAllSuitableKanji() async -> [KanjiKankenModel] {
+    func getAllSuitableKanjiArray() async -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
         let kanjiWithSuitableLevel = store.kanjiKankenStore.getAllKanji(below: chosenLevel)
         let kanjiInLearningList = kanjiWithSuitableLevel.filter { $0.isInLearningList() == true }

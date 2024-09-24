@@ -511,9 +511,9 @@
 		AF5621782B8CEB670067F87D /* Observer */ = {
 			isa = PBXGroup;
 			children = (
+				AF5024842C93630B002633AA /* DatabaseOperations.swift */,
 				AF5621792B8CEB7C0067F87D /* DataLoading.swift */,
 				AF3D53B92C24E7F3005B495F /* GlobalChanging.swift */,
-				AF5024842C93630B002633AA /* DatabaseOperations.swift */,
 			);
 			path = Observer;
 			sourceTree = "<group>";
