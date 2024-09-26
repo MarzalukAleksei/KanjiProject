@@ -28,17 +28,26 @@ class Modifiers {
     
     static let trashButton = TrashButtonModifier()
     
-    static let learningNextButton = BottomButtonModifier(color: ElementsColors.learningNextButton, 
+    static let learningNextButton = ButtonModifier(color: ElementsColors.learningNextButton, 
                                                          height: ElementSize.bottomButtonImage.height + Settings.padding)
     
-    static let inListButton = BottomButtonModifier(color: ElementsColors.inListButton,
+    static let wrongAnsweButton = ButtonModifier(color: ElementsColors.wrongButton,
+                                                 height: ElementSize.bottomButtonImage.height + Settings.padding)
+    
+    static let learningNextButtonSecondVar = ButtonModifier(color: ElementsColors.learningNextButton,
+                                                         height: ElementSize.bottomButtonImage.height * 2 + Settings.padding)
+    
+    static let wrongAnsweButtonSecondVar = ButtonModifier(color: ElementsColors.wrongButton,
+                                                 height: ElementSize.bottomButtonImage.height * 2 + Settings.padding)
+    
+    static let inListButton = ButtonModifier(color: ElementsColors.inListButton,
                                                    height: ElementSize.bottomButtonImage.height + Settings.padding)
     
-    static let skipButton = BottomButtonModifier(color: ElementsColors.skipButton,
+    static let skipButton = ButtonModifier(color: ElementsColors.skipButton,
                                                  height: ElementSize.bottomButtonImage.height + Settings.padding)
 }
 
-struct BottomButtonModifier: ViewModifier {
+struct ButtonModifier: ViewModifier {
     let color: Color
     let height: CGFloat
     func body(content: Content) -> some View {

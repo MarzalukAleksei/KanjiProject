@@ -46,11 +46,11 @@ struct WordModel: Codable, Hashable, Identifiable {
 }
 
 extension WordModel: IAnswers {
-    func lastAnswer() -> Bool? {
+    func showlastAnswer() -> Bool? {
         return lastAnswerRight
     }
     
-    mutating func answer(set answer: Bool?) {
+    mutating func setAnswer(with answer: Bool?) {
         lastAnswerRight = answer
         setRightAnswer(answer)
     }

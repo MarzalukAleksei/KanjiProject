@@ -21,4 +21,6 @@ class ElementsColors {
     static let skipButton: Color = .green.opacity(0.35)
     
     static let currentKanjiInExample: Color = .red
+    
+    static let wrongButton: Color = .red.opacity(0.35)
 }

@@ -26,7 +26,7 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
     let stroke: Int
     var oldKanji = ""
     private var lastAnswerRight: Bool?
-    private(set) var rightAnwers: Int?
+    /*private(set)*/ var rightAnwers: Int?
     var wrongAnswers: Int?
     private var inList: Bool?
     let link: String
@@ -59,11 +59,12 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
         inList = true
     }
     
-    mutating func wrongAnswer() {
+    mutating func setWrongAnswer() {
         self.rightAnwers = 0
+        setAnswer(with: false)
     }
     
-    mutating func rightAnswer() {
+    mutating func setRightAnswer() {
         if self.rightAnwers == nil {
             self.rightAnwers = 1
         } else {
@@ -102,11 +103,11 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
 }
 
 extension KanjiKankenModel: IAnswers {
-    func lastAnswer() -> Bool? {
+    func showlastAnswer() -> Bool? {
         lastAnswerRight
     }
     
-    mutating func answer(set answer: Bool?) {
+    mutating func setAnswer(with answer: Bool?) {
         self.lastAnswerRight = answer
     }
 }
@@ -207,6 +208,6 @@ extension KanjiKankenModel {
     
     mutating func addInLearningList() {
         inList = true
-        answer(set: false)
+        setAnswer(with: false)
     }
 }

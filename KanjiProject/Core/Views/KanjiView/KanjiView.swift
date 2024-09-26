@@ -18,6 +18,7 @@ struct KanjiView: View {
     @AppStorage("kanjiTypeSlider") var toggleInStorage: Bool = false
     @State var toggle = false // true - Kanken, false - JLPT
     @State private var showLearningView = false
+    @State private var showLearningByKanjiSecondVar = false
     @State private var showCheckView = false
     @State private var showLearningByWord = false
     @State private var reloadView = true
@@ -70,7 +71,7 @@ struct KanjiView: View {
 //                }
                 
 // MARK: Кнопки повторения и изучения
-                LearningOrRememberSelectButtonsView(showLearningView: $showLearningView, showCheckView: $showCheckView, showLearnigByWord: $showLearningByWord)
+                LearningOrRememberSelectButtonsView(showLearningView: $showLearningView, showLearningByKanjiSecondVar: $showLearningByKanjiSecondVar, showCheckView: $showCheckView, showLearnigByWord: $showLearningByWord)
                 
 // MARK: Список разделенный на ячейки
                 GeometryReader { geo in
@@ -114,8 +115,11 @@ struct KanjiView: View {
                     self.kanjiKankenStore.updateAll(data: kanjiStore)
                 }
         }
+        .fullScreenCover(isPresented: $showLearningByKanjiSecondVar) {
+            KanjiLearningViewSecondVar(storeOperations: .init(store: store, chosenLevel: selectedNouryokuLevel), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
+        }
         .fullScreenCover(isPresented: $showLearningView) {
-            KanjiLearningView(selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
+            KanjiLearningView(storeOperations: .init(store: store, chosenLevel: selectedNouryokuLevel), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
 //                .onDisappear {
 //                    
 //                }
@@ -145,6 +149,7 @@ struct KanjiView: View {
         }
         return false
     }
+    
 // MARK: Разделение массива на указанное количество элементов
     func separateKanji(_ kanjiArray: [KanjiModel]) -> [[KanjiModel]] {
         var result: [[KanjiModel]] = []

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LearningOrRememberSelectButtonsView: View {
     @Binding var showLearningView: Bool
+    @Binding var showLearningByKanjiSecondVar: Bool
     @Binding var showCheckView: Bool
     @Binding var showLearnigByWord: Bool
     
@@ -17,7 +18,7 @@ struct LearningOrRememberSelectButtonsView: View {
             Button(action: {
                 showLearningView = true
             }, label: {
-                Text("Учить")
+                Text("Учить кандзи")
                     .frame(maxWidth: .infinity)
                     .frame(height: ElementSize.modalViewButtonHeight)
                     .background {
@@ -26,10 +27,23 @@ struct LearningOrRememberSelectButtonsView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             })
             
+            Button {
+                showLearningByKanjiSecondVar = true
+            } label: {
+                Text("Учить кандзи, второй вариант")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: ElementSize.modalViewButtonHeight)
+                    .background {
+                        Color.black
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+
+            
             Button(action: {
                 showCheckView = true
             }, label: {
-                Text("Проверить")
+                Text("Проверить слово")
                     .frame(maxWidth: .infinity)
                     .frame(height: ElementSize.modalViewButtonHeight)
                     .background {
@@ -57,7 +71,8 @@ struct LearningOrRememberSelectButtonsView: View {
 }
 
 #Preview {
-    LearningOrRememberSelectButtonsView(showLearningView: .constant(false),
-                                        showCheckView: .constant(false), 
+    LearningOrRememberSelectButtonsView(showLearningView: .constant(false), 
+                                        showLearningByKanjiSecondVar: .constant(false),
+                                        showCheckView: .constant(false),
                                         showLearnigByWord: .constant(false))
 }

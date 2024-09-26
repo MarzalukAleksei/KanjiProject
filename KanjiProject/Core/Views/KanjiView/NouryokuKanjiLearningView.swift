@@ -34,7 +34,7 @@ struct NouryokuKanjiLearningView: View {
             .frame(maxHeight: ElementSize.learningViewNavigationBarHeght)
             .onTapGesture {
                 var kanji = kanjiFlow.kanji[currentKanjiIndex]
-                kanji.answer(set: true)
+                kanji.setAnswer(with: true)
                 withAnimation(Settings.animation) {
                     addIndex()
                     store.kanjiStore.update(kanji: kanji)

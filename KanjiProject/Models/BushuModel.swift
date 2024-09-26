@@ -19,11 +19,11 @@ struct BushuModel: Codable, Identifiable {
 }
 
 extension BushuModel: IAnswers {
-    func lastAnswer() -> Bool? {
+    func showlastAnswer() -> Bool? {
         lastAnswerRight
     }
     
-    mutating func answer(set answer: Bool?) {
+    mutating func setAnswer(with answer: Bool?) {
         lastAnswerRight = answer
     }
     

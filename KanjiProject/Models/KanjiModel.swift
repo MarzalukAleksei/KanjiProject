@@ -34,11 +34,11 @@ struct KanjiModel: Hashable, Identifiable, IAnswers {
         self.lastAnswerRight = lastAnswerRight
     }
     
-    func lastAnswer() -> Bool? {
+    func showlastAnswer() -> Bool? {
         lastAnswerRight
     }
     
-    mutating func answer(set answer: Bool?) {
+    mutating func setAnswer(with answer: Bool?) {
         self.lastAnswerRight = answer
     }
 }

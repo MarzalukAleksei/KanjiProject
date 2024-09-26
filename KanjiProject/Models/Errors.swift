@@ -7,8 +7,9 @@
 
 import Foundation
 
-enum RandomWordError: Error {
+enum RandomWordError: String, Error {
     case noWordsLeft
+    case nilWord = "Отсутствует слово"
 }
 
 //enum 

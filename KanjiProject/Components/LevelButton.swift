@@ -54,9 +54,9 @@ struct LevelButton: View {
     
     private func progress(_ array: [IAnswers]) -> [Double] {
         let inArray = Double(array.count)
-        let wrongAnswer = Double(array.filter { $0.lastAnswer() == false }.count)
-        let rightAnswer = Double(array.filter { $0.lastAnswer() == true }.count)
-        let unknownAnswer = Double(array.filter { $0.lastAnswer() == nil }.count)
+        let wrongAnswer = Double(array.filter { $0.showlastAnswer() == false }.count)
+        let rightAnswer = Double(array.filter { $0.showlastAnswer() == true }.count)
+        let unknownAnswer = Double(array.filter { $0.showlastAnswer() == nil }.count)
         let wrongValue = wrongAnswer / inArray
         let rightValue = rightAnswer / inArray
         let unknownValue = unknownAnswer / inArray

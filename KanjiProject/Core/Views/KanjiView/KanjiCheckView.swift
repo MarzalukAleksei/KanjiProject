@@ -96,7 +96,7 @@ struct KanjiCheckView: View {
     private func addInList() {
         guard var currentKanji = currentKanji else { return }
         currentKanji.learning()
-        currentKanji.answer(set: false)
+        currentKanji.setAnswer(with: false)
         store.kanjiKankenStore.update(set: currentKanji)
         
         setCurrentKanji()
@@ -104,8 +104,8 @@ struct KanjiCheckView: View {
     
     private func knowingButton() {
         guard var currentKanji = currentKanji  else { return }
-        currentKanji.answer(set: true)
-        currentKanji.rightAnswer()
+        currentKanji.setAnswer(with: true)
+        currentKanji.setRightAnswer()
         self.currentKanji = currentKanji
         store.kanjiKankenStore.update(set: currentKanji)
         
@@ -119,7 +119,7 @@ struct KanjiCheckView: View {
     private func getKanji() -> KanjiKankenModel? {
         var allCurrentLevelKanji = store.kanjiKankenStore.getAllKanji(below: nouryokuLevel)
         allCurrentLevelKanji = allCurrentLevelKanji
-            .filter { !($0.lastAnswer() ?? false) }
+            .filter { !($0.showlastAnswer() ?? false) }
             .filter { !($0.isInLearningList() ?? false) }
 //        allCurrentLevelKanji = allCurrentLevelKanji.filter { !$0.inLearningList() }
         return allCurrentLevelKanji.randomElement()

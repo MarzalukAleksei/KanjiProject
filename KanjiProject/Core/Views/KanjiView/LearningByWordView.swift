@@ -17,7 +17,7 @@ struct LearningByWordView: View {
     @State private var showEdit = false
     let nouryokuLevel: NouryokuLevel
     let minute = 5
-    let databaseOperation: DatabaseOperations
+    let databaseOperation: StoreOperations
     @State var availableKanji: [KanjiKankenModel] = []
     
     var body: some View {

@@ -71,7 +71,7 @@ struct MainView: View {
 ////                        kanji.addInLearningList()
 ////                    }
 ////                }
-//                kanji.wrongAnswer()
+//                kanji.setWrongAnswer()
 //                store.kanjiKankenStore.update(set: kanji)
 //            }
             

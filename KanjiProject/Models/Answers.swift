@@ -12,7 +12,7 @@ enum Answers {
     case invisible(rightAnswers: Int, wrongAnswers: Int)
     
     /// Methood that set answer value
-    /// - Parameter answerWasRight: If true: rightAnswer += 1; If false: wrongAnswer += 1. oposit value not change.
+    /// - Parameter answerWasRight: If true: setRightAnswer += 1; If false: setWrongAnswer += 1. oposit value not change.
     mutating func setAnswer(_ answerWasRight: Bool) {
         let rightAnswer = answerWasRight ? 1 : 0
         let wrongAnswer = answerWasRight ? 0 : 1
