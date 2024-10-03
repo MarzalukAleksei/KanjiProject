@@ -65,12 +65,13 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
     }
     
     mutating func setRightAnswer() {
-        if self.rightAnwers == nil {
-            self.rightAnwers = 1
-        } else {
-            guard let rightAnwers = self.rightAnwers else { return }
-            self.rightAnwers = rightAnwers + 1
-        }
+//        if self.rightAnwers == nil {
+//            self.rightAnwers = 1
+//        } else {
+//            guard let rightAnwers = self.rightAnwers else { return }
+//            self.rightAnwers = rightAnwers + 1
+//        }
+        self.rightAnwers = (self.rightAnwers ?? 0) + 1
     }
     
     func getExamplesWithReading() -> [SchoolLevel: [[TextAndReading]]] {

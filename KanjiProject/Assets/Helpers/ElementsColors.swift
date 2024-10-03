@@ -14,7 +14,7 @@ class ElementsColors {
     
     static let levelButtonUnknownAnswer: Color = .white
     
-    static let learningNextButton: Color = .cyan.opacity(0.35)
+    static let learningNextButton: Color = .init("rightButtonColor").opacity(0.35)
     
     static let inListButton: Color = .cyan.opacity(0.35)
     

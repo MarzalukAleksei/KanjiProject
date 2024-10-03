@@ -68,8 +68,13 @@ struct KanjiLearningViewSecondVar: View {
                 Button {
                     wrongAnswerButtonAction()
                 } label: {
-                    Text("")
-                        .modifier(Modifiers.wrongAnsweButtonSecondVar)
+                    HStack {
+                        ButtonsImages.xmark
+                            .resizable()
+                            .frame(width: ElementSize.bottomButtonImage.width,
+                                   height: ElementSize.bottomButtonImage.height)
+                    }
+                    .modifier(Modifiers.wrongAnsweButtonSecondVar)
                 }
                 
                 // MARK: Кнопка обновления
@@ -77,7 +82,8 @@ struct KanjiLearningViewSecondVar: View {
                     reloadButtonAction()
                 }, label: {
                     HStack {
-                        ButtonsImages.updateImage
+//                        ButtonsImages.updateImage
+                        ButtonsImages.checkmark
                             .resizable()
                             .frame(width: ElementSize.bottomButtonImage.width,
                                    height: ElementSize.bottomButtonImage.height)
@@ -105,17 +111,21 @@ struct KanjiLearningViewSecondVar: View {
 //            })
 //        })
         .confirmationDialog("Хотите продолжить изучание?", isPresented: $showListOverWarning, actions: {
-            Button("Добавить") {
-                
+            Button("Повторить снова") {
+                repeatButton()
             }
             
-            Button("Вернусь позже", role: .cancel) {
+            Button("Добавить еще \(DatabaseOptions.maxLearningElementsCount) слов") {
+                addWordsButton()
+            }
+            
+            Button("Закрыть", role: .cancel) {
                 withAnimation(.none) {
                     dismiss()
                 }
             }
         }, message: {
-            Text("Вы хотите добавить дополнительные слова?")
+            Text("На сегодня слов больше нет.\nКак поступим?")
         })
         
         .overlay {
@@ -131,6 +141,16 @@ struct KanjiLearningViewSecondVar: View {
                 showWordDetail = false
             }
         })
+    }
+    
+    private func repeatButton() {
+        allKanji = storeOperations.addKanjiWromWithoutDataStamp()
+        setCurrentKanji()
+    }
+    
+    private func addWordsButton() {
+        allKanji = storeOperations.addNotLearnedKanji()
+        setCurrentKanji()
     }
     
     private func reloadButtonAction() {

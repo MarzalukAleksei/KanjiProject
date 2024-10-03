@@ -52,6 +52,7 @@
 		AF318A782C0CAE5800259386 /* QuestionMarkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF318A772C0CAE5800259386 /* QuestionMarkButtonView.swift */; };
 		AF34E55B2CA4A52A00DE530F /* DatabaseOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34E55A2CA4A52A00DE530F /* DatabaseOptions.swift */; };
 		AF34E55D2CA5672200DE530F /* KanjiLearningViewSecondVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34E55C2CA5672200DE530F /* KanjiLearningViewSecondVar.swift */; };
+		AF34E55F2CADC7C200DE530F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF34E55E2CADC7C200DE530F /* Colors.xcassets */; };
 		AF362A742AF59443006DF143 /* LevelSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF362A732AF59443006DF143 /* LevelSelectorView.swift */; };
 		AF362A762AF5948C006DF143 /* KanjiTestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF362A752AF5948C006DF143 /* KanjiTestType.swift */; };
 		AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */; };
@@ -240,6 +241,7 @@
 		AF318A772C0CAE5800259386 /* QuestionMarkButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionMarkButtonView.swift; sourceTree = "<group>"; };
 		AF34E55A2CA4A52A00DE530F /* DatabaseOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseOptions.swift; sourceTree = "<group>"; };
 		AF34E55C2CA5672200DE530F /* KanjiLearningViewSecondVar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiLearningViewSecondVar.swift; sourceTree = "<group>"; };
+		AF34E55E2CADC7C200DE530F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		AF362A732AF59443006DF143 /* LevelSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectorView.swift; sourceTree = "<group>"; };
 		AF362A752AF5948C006DF143 /* KanjiTestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTestType.swift; sourceTree = "<group>"; };
 		AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupView.swift; sourceTree = "<group>"; };
@@ -816,6 +818,7 @@
 				AFBA6FF729F363F7008E11BB /* Helpers */,
 				AF30EAF929E9F9D900E5B7A9 /* Fonts */,
 				AFAF80DD29D9C647002B9921 /* Assets.xcassets */,
+				AF34E55E2CADC7C200DE530F /* Colors.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -965,6 +968,7 @@
 				AF17F9452A449AAF00D5631D /* warodai.txt in Resources */,
 				AFFF94DA2B600AED00DD01EB /* 05級.txt in Resources */,
 				AF4F2A9C2AB1C09C00F38EE9 /* Giseigo.csv in Resources */,
+				AF34E55F2CADC7C200DE530F /* Colors.xcassets in Resources */,
 				AF5600732AA46B4B00F0123C /* Yojijukugo.csv in Resources */,
 				AFAF80FB29D9E1CA002B9921 /* Kanji.csv in Resources */,
 				AFC9DAD72C04E2F7006A7ED0 /* Bushu.csv in Resources */,

@@ -67,6 +67,35 @@ class StoreOperations {
         return words.randomElement()
     }
     
+    // MARK: Метод ля первой загрузки экрана изучения
+    /// Для первой загрузки
+    func firstKanjiLoading() async -> [KanjiKankenModel] {
+        var result: [KanjiKankenModel] = []
+        if countOfKanjiInLearningList() == 0 {
+            return await theFirstLoading()
+        }
+        if countOfKanjiInLearningList() < DatabaseOptions.maxLearningElementsCount {
+            result = getAllInLearningList()
+            result = addNotLearnedKanji(result)
+        }
+        return result
+    }
+    
+    /// Добавить слова из списка без учета даты
+    /// - ВАЖНО! Только если количество правильных ответов подряд мешьше чем константное значение
+    func addKanjiWromWithoutDataStamp() -> [KanjiKankenModel] {
+        return store.kanjiKankenStore.getAll().filter { $0.isInLearningList() == true }.filter(filterForAllInListWithoutData)
+    }
+    
+    /// Добавляет кандзи не находящиеся в списке
+    func addNotLearnedKanji(_ nowInList: [KanjiKankenModel] = []) -> [KanjiKankenModel] {
+        var result: [KanjiKankenModel] = nowInList
+        var currentLevel = currentJLPTLevel
+        var allKanjiForCurrentLevel = store.kanjiKankenStore.getAllKanji(below: currentLevel).filter { $0.isInLearningList() == nil }
+        find(result: &result, allKanjiForCurrentLevel: &allKanjiForCurrentLevel, level: &currentLevel)
+        return result
+    }
+    
     // MARK: Возвращает массив кандзи, для текущего уровня, если их в уровне ниже меньше константы, взять из следующего
     /// Метод возвращает массив для текущего и ниже уровня, в случае если элементов меньше константного значения, берет из уровня выше,
     func getKanjiArray() async -> [KanjiKankenModel] {
@@ -80,7 +109,7 @@ class StoreOperations {
         return result
     }
     
-    // MARK: Возвращает массив кандзи, с заданными параметрами
+    // MARK: Возвращает массив кандзи, с заданными параметрами без даты
     func getAllSuitableKanjiArray() async -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
         let kanjiWithSuitableLevel = store.kanjiKankenStore.getAllKanji(below: currentJLPTLevel)
@@ -88,7 +117,7 @@ class StoreOperations {
         var notYetLearned = Set(kanjiWithSuitableLevel.filter { $0.isInLearningList() == nil })
         var updatingKanji: [KanjiKankenModel] = []
         
-        result = kanjiInLearningList.filter(filterForAllSuitable)
+//        result = kanjiInLearningList.filter(filterForAllInListWithoutData)
         
         while result.count < DatabaseOptions.maxLearningElementsCount, !notYetLearned.isEmpty {
             var kanji = notYetLearned.removeFirst()
@@ -105,6 +134,21 @@ class StoreOperations {
 }
 
 extension StoreOperations {
+    private func getAllInLearningList() -> [KanjiKankenModel] {
+        let allKanjiForCurrentLevel = store.kanjiKankenStore.getAll().filter { $0.isInLearningList() == true }
+        return allKanjiForCurrentLevel.filter(filterAllKanjiForCurrentLevel)
+    }
+    
+    private func theFirstLoading() async -> [KanjiKankenModel] {
+        let result = await getKanjiArray()
+        return result
+    }
+    
+    private func countOfKanjiInLearningList() -> Int {
+        let withMark = store.kanjiKankenStore.getAll().filter { $0.isInLearningList() == true }
+        return withMark.count
+    }
+    
     // MARK: Заполняет массив result
     /// Метод заполняет result до тех пор, пока количество элементов будет мешьше чем установленная константа
     /// - В реализации использован inout
@@ -143,16 +187,16 @@ extension StoreOperations {
         return result
     }
     
-    private func filterForAllSuitable(kanji: KanjiKankenModel) -> Bool {
+    private func filterForAllInListWithoutData(kanji: KanjiKankenModel) -> Bool {
         let rightAnswers = kanji.rightAnwers ?? 0
-        let minutePassed = Date.minutesPassed(from: kanji.getDate())
         
-        if rightAnswers < DatabaseOptions.answersInRowFirst + 1,
-            minutePassed >= DatabaseOptions.minutesPassedFirst || kanji.getDate() == nil {
+        if rightAnswers < DatabaseOptions.answersInRowFirst + 1 {
             return true
         }
-        if rightAnswers < DatabaseOptions.answersInRowSecond + 1,
-            minutePassed >= DatabaseOptions.minutesPassedSecond {
+        if rightAnswers < DatabaseOptions.answersInRowSecond + 1 {
+            return true
+        }
+        if rightAnswers < DatabaseOptions.answersInRowThird + 1 {
             return true
         }
         

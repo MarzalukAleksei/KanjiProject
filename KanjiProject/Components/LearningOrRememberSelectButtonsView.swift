@@ -15,17 +15,17 @@ struct LearningOrRememberSelectButtonsView: View {
     
     var body: some View {
         VStack {
-            Button(action: {
-                showLearningView = true
-            }, label: {
-                Text("Учить кандзи")
-                    .frame(maxWidth: .infinity)
-                    .frame(height: ElementSize.modalViewButtonHeight)
-                    .background {
-                        Color.black
-                    }
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-            })
+//            Button(action: {
+//                showLearningView = true
+//            }, label: {
+//                Text("Учить кандзи")
+//                    .frame(maxWidth: .infinity)
+//                    .frame(height: ElementSize.modalViewButtonHeight)
+//                    .background {
+//                        Color.black
+//                    }
+//                    .clipShape(RoundedRectangle(cornerRadius: 10))
+//            })
             
             Button {
                 showLearningByKanjiSecondVar = true

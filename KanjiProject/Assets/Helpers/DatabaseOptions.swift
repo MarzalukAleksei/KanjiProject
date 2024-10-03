@@ -8,11 +8,11 @@
 import Foundation
 
 class DatabaseOptions {
-    static let minutesPassedFirst = 15
+    static let minutesPassedFirst = 60 * 24 // 1 day later
     
-    static let minutesPassedSecond = 60
+    static let minutesPassedSecond = 60 * 24 * 5 // 5 days later
     
-    static let minutesPassedThird = 100
+    static let minutesPassedThird = 60 * 24 * 10 // 10 days later
     
     static let answersInRowFirst = 5
     
