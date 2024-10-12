@@ -182,6 +182,7 @@
 		AFFC08C22A829E3E0043B741 /* KanjiRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08C12A829E3E0043B741 /* KanjiRow.swift */; };
 		AFFC08C42A82A6840043B741 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08C32A82A6840043B741 /* Settings.swift */; };
 		AFFC08C62A82CE4D0043B741 /* ProgressIndicatorBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08C52A82CE4D0043B741 /* ProgressIndicatorBar.swift */; };
+		AFFC4F8A2CBA783700DBDBA7 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC4F892CBA783700DBDBA7 /* UserSettings.swift */; };
 		AFFF94B92B52F80400DD01EB /* TextSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF94B82B52F80400DD01EB /* TextSizes.swift */; };
 		AFFF94BF2B5C1D4000DD01EB /* KankenReadingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF94BE2B5C1D4000DD01EB /* KankenReadingRowView.swift */; };
 		AFFF94C12B5C2CC700DD01EB /* BackForwardClearButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF94C02B5C2CC700DD01EB /* BackForwardClearButtons.swift */; };
@@ -371,6 +372,7 @@
 		AFFC08C12A829E3E0043B741 /* KanjiRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRow.swift; sourceTree = "<group>"; };
 		AFFC08C32A82A6840043B741 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		AFFC08C52A82CE4D0043B741 /* ProgressIndicatorBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorBar.swift; sourceTree = "<group>"; };
+		AFFC4F892CBA783700DBDBA7 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		AFFF94B82B52F80400DD01EB /* TextSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSizes.swift; sourceTree = "<group>"; };
 		AFFF94BE2B5C1D4000DD01EB /* KankenReadingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KankenReadingRowView.swift; sourceTree = "<group>"; };
 		AFFF94C02B5C2CC700DD01EB /* BackForwardClearButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackForwardClearButtons.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				AF5024842C93630B002633AA /* StoreOperations.swift */,
 				AF5621792B8CEB7C0067F87D /* DataLoading.swift */,
 				AF3D53B92C24E7F3005B495F /* GlobalChanging.swift */,
+				AFFC4F892CBA783700DBDBA7 /* UserSettings.swift */,
 			);
 			path = Observer;
 			sourceTree = "<group>";
@@ -1078,6 +1081,7 @@
 				AF8122B12B7251F000CCE83A /* BaseWordsSelectLevelView.swift in Sources */,
 				AF728D9B2ADD12EC0098765D /* KanjiKankenStore.swift in Sources */,
 				AF8122AF2B724BF200CCE83A /* WordsView.swift in Sources */,
+				AFFC4F8A2CBA783700DBDBA7 /* UserSettings.swift in Sources */,
 				AF044B302C2C8336000746AA /* Massages.swift in Sources */,
 				AF2D7FB22AC45E1200642B48 /* BunpouModel.swift in Sources */,
 				AFFF94C12B5C2CC700DD01EB /* BackForwardClearButtons.swift in Sources */,

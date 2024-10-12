@@ -138,13 +138,13 @@ struct KanjiLearningView: View {
             hideReadings = false
         } else {
             hideReadings = true
-            try? storeOperations.setAnswer(for: currentKanji, answer: true)
+            try? storeOperations.setAnswer(for: currentKanji, answer: .right)
             reloadView()
         }
     }
     
     private func wrongAnswerButtonAction() {
-        try? storeOperations.setAnswer(for: currentKanji, answer: false)
+        try? storeOperations.setAnswer(for: currentKanji, answer: .wrong)
         reloadView()
     }
     

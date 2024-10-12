@@ -33,18 +33,20 @@ class StoreOperations {
     ///  - Parameter kanji:
     ///  - Parameter answer:
     ///  - rightAnswers: Если  больше чем константное значение, то сохранить базе с пометкой true
-    func setAnswer(for kanji: KanjiKankenModel?, answer: Bool) throws {
+    func setAnswer(for kanji: KanjiKankenModel?, answer: Answer) throws {
         guard var kanji = kanji else { throw RandomWordError.nilWord }
         kanji.setCurrentDate()
         
-        if answer {
+        switch answer {
+        case .right:
             kanji.setRightAnswer()
             if kanji.rightAnwers ?? 0 > DatabaseOptions.answersInRowThird {
                 kanji.setAnswer(with: true)
             }
-        } else {
+        case .wrong:
             kanji.setWrongAnswer()
         }
+        
         store.kanjiKankenStore.update(set: kanji)
     }
     
@@ -134,6 +136,11 @@ class StoreOperations {
 }
 
 extension StoreOperations {
+    enum Answer {
+        case right
+        case wrong
+    }
+    
     private func getAllInLearningList() -> [KanjiKankenModel] {
         let allKanjiForCurrentLevel = store.kanjiKankenStore.getAll().filter { $0.isInLearningList() == true }
         return allKanjiForCurrentLevel.filter(filterAllKanjiForCurrentLevel)

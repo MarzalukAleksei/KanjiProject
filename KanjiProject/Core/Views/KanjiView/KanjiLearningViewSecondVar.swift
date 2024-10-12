@@ -33,67 +33,82 @@ struct KanjiLearningViewSecondVar: View {
                     Spacer()
                 }
                 
-                if let currentKanji = currentKanji {
-                    HStack(spacing: 50) {
-                        Text(currentKanji.body)
-                            .font(.system(size: TextSizes.kanjiSize))
-                            .padding(.horizontal, TextSizes.kanjiSize * 0.3 / 2)
-                            .border(Color.black, width: 1)
-                            .padding(.leading, Settings.padding)
-                            .onTapGesture {
-                                showDeleteWarning = true
-                            }
-                        
-                        Spacer()
-                    }
-                    
-                    KanjiDetailView(currentKanji: currentKanji, showImage: .constant(false), hideKanji: $hideReadings).opacity(!hideReadings ? 1 : 0)
-                } else {
-                    ProgressView()
-                        .opacity(showListOverWarning ? 0 : 1)
-                    // MARK: Выполняется при загрузке экрана, до тех пор, пока currentKanji = nil
-                        .task {
-                            await allKanji = storeOperations.getKanjiArray()
-                            setCurrentKanji()
+                Group {
+                    if let currentKanji = currentKanji {
+                        HStack(spacing: 50) {
+                            Text(currentKanji.body)
+                                .font(.system(size: TextSizes.kanjiSize))
+                                .padding(.horizontal, TextSizes.kanjiSize * 0.3 / 2)
+                                .border(Color.black, width: 1)
+                                .padding(.leading, Settings.padding)
+                                .onTapGesture {
+                                    showDeleteWarning = true
+                                }
+                            
+                            Spacer()
                         }
+                        
+                        KanjiDetailView(currentKanji: currentKanji, showImage: .constant(false), hideKanji: $hideReadings).opacity(!hideReadings ? 1 : 0)
+                    } else {
+                        ProgressView()
+                            .opacity(showListOverWarning ? 0 : 1)
+                        // MARK: Выполняется при загрузке экрана, до тех пор, пока currentKanji = nil
+                            .task {
+                                await allKanji = storeOperations.getKanjiArray()
+                                setCurrentKanji()
+                            }
+                    }
+                    Spacer()
                 }
-                Spacer()
-                
+                .overlay {
+                    if hideReadings {
+                        Color.clear
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                hideReadings.toggle()
+                            }
+                    }
+                }
             }
             .padding([.horizontal, .top], Settings.closeButtonPadding)
             .ignoresSafeArea(.container, edges: .top)
             
-            HStack(spacing: 0) {
-                // MARK: Кнопка неправильного ответа
-                Button {
-                    wrongAnswerButtonAction()
-                } label: {
-                    HStack {
-                        ButtonsImages.xmark
-                            .resizable()
-                            .frame(width: ElementSize.bottomButtonImage.width,
-                                   height: ElementSize.bottomButtonImage.height)
+            if !hideReadings {
+                HStack(spacing: 0) {
+                    // MARK: Кнопка неправильного ответа
+                    Button {
+                        wrongAnswerButtonAction()
+                    } label: {
+                        HStack {
+                            ButtonsImages.xmark
+                                .resizable()
+                                .frame(width: ElementSize.bottomButtonImage.width,
+                                       height: ElementSize.bottomButtonImage.height)
+                        }
+                        .modifier(Modifiers.wrongAnsweButtonSecondVar)
                     }
-                    .modifier(Modifiers.wrongAnsweButtonSecondVar)
+                    
+                    Rectangle()
+                        .frame(width: 1, height: ElementSize.bottomButtonImage.height * 2 + Settings.padding)
+                    
+                    // MARK: Кнопка обновления
+                    Button(action: {
+                        reloadButtonAction()
+                    }, label: {
+                        HStack {
+                            //                        ButtonsImages.updateImage
+                            ButtonsImages.checkmark
+                                .resizable()
+                                .frame(width: ElementSize.bottomButtonImage.width,
+                                       height: ElementSize.bottomButtonImage.height)
+                        }
+                        .modifier(Modifiers.learningNextButtonSecondVar)
+                    })
+                    .font(.title2)
                 }
-                
-                // MARK: Кнопка обновления
-                Button(action: {
-                    reloadButtonAction()
-                }, label: {
-                    HStack {
-//                        ButtonsImages.updateImage
-                        ButtonsImages.checkmark
-                            .resizable()
-                            .frame(width: ElementSize.bottomButtonImage.width,
-                                   height: ElementSize.bottomButtonImage.height)
-                    }
-                    .modifier(Modifiers.learningNextButtonSecondVar)
-                })
-                .font(.title2)
             }
-            
         }
+
         .alert("Вы точно хотите удалить этот кандзи из списка?", isPresented: $showDeleteWarning, actions: {
             Button("Нет") {}
             Button("Да") {
@@ -154,23 +169,15 @@ struct KanjiLearningViewSecondVar: View {
     }
     
     private func reloadButtonAction() {
-        if hideReadings {
-            hideReadings = false
-        } else {
-            hideReadings = true
-            try? storeOperations.setAnswer(for: currentKanji, answer: true)
-            reloadView()
-        }
+        hideReadings.toggle()
+        try? storeOperations.setAnswer(for: currentKanji, answer: .right)
+        reloadView()
     }
     
     private func wrongAnswerButtonAction() {
-        if hideReadings {
-            hideReadings = false
-        } else {
-            hideReadings = true
-            try? storeOperations.setAnswer(for: currentKanji, answer: false)
-            reloadView()
-        }
+        hideReadings.toggle()
+        try? storeOperations.setAnswer(for: currentKanji, answer: .wrong)
+        reloadView()
     }
     
     // MARK: Убирает кандзи из изучаемого списка
