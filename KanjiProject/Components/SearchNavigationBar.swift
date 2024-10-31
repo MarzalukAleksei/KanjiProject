@@ -27,13 +27,13 @@ struct SearchNavigationBar: View {
                         .padding(.bottom, 0)
                     .textInputAutocapitalization(.never)
                     
-                    Button {
-                        presentDrawView.toggle()
-                    } label: {
-                        ButtonsImages.pencil
-                            .resizable()
-                            .frame(width: ElementSize.pencilButtonSize.width, height: ElementSize.pencilButtonSize.height)
-                    }
+//                    Button {
+//                        presentDrawView.toggle()
+//                    } label: {
+//                        ButtonsImages.pencil
+//                            .resizable()
+//                            .frame(width: ElementSize.pencilButtonSize.width, height: ElementSize.pencilButtonSize.height)
+//                    }
                     .padding(.trailing, Settings.padding)
                     .foregroundStyle(.white)
                 }

@@ -31,6 +31,11 @@ struct KanjiLearningViewSecondVar: View {
                     }
                     
                     Spacer()
+                    
+                    Text(!allKanji.isEmpty ? "Осталось изучить \(allKanji.count + 1)" : "Последний")
+                        .opacity(currentKanji == nil ? 0 : 1)
+                    
+                    Spacer()
                 }
                 
                 Group {
@@ -71,7 +76,7 @@ struct KanjiLearningViewSecondVar: View {
                 }
             }
             .padding([.horizontal, .top], Settings.closeButtonPadding)
-            .ignoresSafeArea(.container, edges: .top)
+//            .ignoresSafeArea(.container, edges: .top)
             
             if !hideReadings {
                 HStack(spacing: 0) {
@@ -126,11 +131,15 @@ struct KanjiLearningViewSecondVar: View {
 //            })
 //        })
         .confirmationDialog("Хотите продолжить изучание?", isPresented: $showListOverWarning, actions: {
-            Button("Повторить снова") {
+            Button("Повторить все") {
                 repeatButton()
             }
             
-            Button("Добавить еще \(DatabaseOptions.maxLearningElementsCount) слов") {
+//            Button("Повторить с наихудшими ответами") {
+//                
+//            }
+            
+            Button("Добавить дополнительные \(DatabaseOptions.maxLearningElementsCount) кандзи") {
                 addWordsButton()
             }
             

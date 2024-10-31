@@ -60,7 +60,11 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
     }
     
     mutating func setWrongAnswer() {
-        self.rightAnwers = 0
+        if let rightAnwers = self.rightAnwers {
+            self.rightAnwers = rightAnwers > 1 ? (rightAnwers - 2) : 0
+        } else {
+            self.rightAnwers = 0
+        }
         setAnswer(with: false)
     }
     

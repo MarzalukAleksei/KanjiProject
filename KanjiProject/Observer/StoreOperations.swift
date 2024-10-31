@@ -106,7 +106,7 @@ class StoreOperations {
         let inLearningList = filterAndRemove(&allKanjiForCurrentLevel, inLearningList: true) // Добавить все, что находятся в списке на изучение
         result = inLearningList.filter(filterAllKanjiForCurrentLevel)
         
-        find(result: &result, allKanjiForCurrentLevel: &allKanjiForCurrentLevel, level: &currentJLPTLevel)
+//        find(result: &result, allKanjiForCurrentLevel: &allKanjiForCurrentLevel, level: &currentJLPTLevel)
         
         return result
     }
@@ -115,7 +115,7 @@ class StoreOperations {
     func getAllSuitableKanjiArray() async -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
         let kanjiWithSuitableLevel = store.kanjiKankenStore.getAllKanji(below: currentJLPTLevel)
-        let kanjiInLearningList = kanjiWithSuitableLevel.filter { $0.isInLearningList() == true }
+//        let kanjiInLearningList = kanjiWithSuitableLevel.filter { $0.isInLearningList() == true }
         var notYetLearned = Set(kanjiWithSuitableLevel.filter { $0.isInLearningList() == nil })
         var updatingKanji: [KanjiKankenModel] = []
         
@@ -159,7 +159,7 @@ extension StoreOperations {
     // MARK: Заполняет массив result
     /// Метод заполняет result до тех пор, пока количество элементов будет мешьше чем установленная константа
     /// - В реализации использован inout
-    /// - Parameter result: Заполняемый массив.
+    /// - Parameter result: Заполняемый массив. Количество элементов зависит от значения константы `DatabaseOptions.maxLearningElementsCount`
     /// - Parameter allKanjiForCurrentLevel: первоначальный массив
     /// - Parameter level: текущий уровень. Если в N1 не осталось элементов, прерывается.
     private func find(result: inout [KanjiKankenModel],

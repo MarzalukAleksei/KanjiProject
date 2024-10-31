@@ -20,5 +20,5 @@ class DatabaseOptions {
     
     static let answersInRowThird = 15
     
-    static let maxLearningElementsCount = 100
+    static let maxLearningElementsCount = 20
 }
