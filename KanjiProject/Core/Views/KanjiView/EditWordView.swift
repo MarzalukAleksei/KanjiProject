@@ -107,7 +107,7 @@ struct EditWordView: View {
                 .offset(x: showMassage ? .zero : screenWidth())
         }
         
-        .ignoresSafeArea(.container, edges: .top)
+//        .ignoresSafeArea(.container, edges: .top)
         .onAppear {
             word = toNewLine(word)
 //            global.exampleWord = word

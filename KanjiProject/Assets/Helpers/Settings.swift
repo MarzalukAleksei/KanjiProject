@@ -45,4 +45,6 @@ class Settings {
     static let diselectedColor: Color = .black
     
     static let closeButtonPadding: CGFloat = padding + 10
+    
+    static let buttonsCornerRadius: CGFloat = 10
 }

@@ -16,7 +16,7 @@ struct BaseWordsSelectLevelView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: Settings.paddingBetweenElements) {
                 ForEach(NouryokuLevel.allCases.reversed(), id: \.self) { level in
-                    if level != .another {
+//                    if level != .another {
                         LevelButton(labelName: level, array: store.baseWordsStore.get(level: level), size: ElementSize.levelButtonSize, color: currentLevel == level ? .gray : .black)
                             .onTapGesture {
                                 withAnimation(Settings.animation) {
@@ -24,7 +24,7 @@ struct BaseWordsSelectLevelView: View {
                                     currentLevel = level
                                 }
                             }
-                    }
+//                    }
                 }
             }
             .padding(.horizontal, Settings.padding)

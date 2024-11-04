@@ -76,7 +76,6 @@ struct KanjiLearningViewSecondVar: View {
                 }
             }
             .padding([.horizontal, .top], Settings.closeButtonPadding)
-//            .ignoresSafeArea(.container, edges: .top)
             
             if !hideReadings {
                 HStack(spacing: 0) {
@@ -101,7 +100,6 @@ struct KanjiLearningViewSecondVar: View {
                         reloadButtonAction()
                     }, label: {
                         HStack {
-                            //                        ButtonsImages.updateImage
                             ButtonsImages.checkmark
                                 .resizable()
                                 .frame(width: ElementSize.bottomButtonImage.width,
@@ -120,17 +118,7 @@ struct KanjiLearningViewSecondVar: View {
                 removeKanjiFromList()
             }
         })
-//        .alert("Хотите продолжить изучание?", isPresented: $showListOverWarning, actions: {
-//            Button(action: {
-//                dismiss()
-//            }, label: {
-//                Text("Вернусь позже")
-//            })
-//            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-//                Text("Продолжить")
-//            })
-//        })
-        .confirmationDialog("Хотите продолжить изучание?", isPresented: $showListOverWarning, actions: {
+        .confirmationDialog("Хотите продолжить изучeние?", isPresented: $showListOverWarning, actions: {
             Button("Повторить все") {
                 repeatButton()
             }
@@ -149,7 +137,10 @@ struct KanjiLearningViewSecondVar: View {
                 }
             }
         }, message: {
-            Text("На сегодня слов больше нет.\nКак поступим?")
+            Text("На сегодня слов больше нет.")
+                .frame(maxWidth: .infinity)
+            Text("Как поступим?")
+                .frame(maxWidth: .infinity)
         })
         
         .overlay {

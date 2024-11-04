@@ -12,6 +12,7 @@ struct SelectedWordDetailView: View {
     @EnvironmentObject private var globalChanging: GlobalChanging
     @State private var kanjiSize: CGFloat = 0
     @State private var editButtonPressed = false
+    @State private var printState = false
 
     var body: some View {
         GeometryReader { geo in
@@ -64,14 +65,14 @@ struct SelectedWordDetailView: View {
         }
     }
     
-    func getWord() -> WordModel {
+    private func getWord() -> WordModel {
         if let word = globalChanging.exampleWord {
             return word
         }
         return .empty
     }
     
-    func getKanji() -> [KanjiKankenModel] {
+    private func getKanji() -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
         guard let word = globalChanging.exampleWord else { return result }
         for element in word.body {
@@ -96,40 +97,52 @@ private struct RectData: View {
     let size: CGFloat
     var body: some View {
         VStack(spacing: 0) {
-            ListOfKanjiInGivenWordView(kanji: kanji, size: size)
-            .padding(.bottom, Settings.paddingBetweenText)
-            
             let ar = TextAndReading.setTRArray(getWord())
             WordWithFuriganaView(word: ar, currentKanji: .empty, readingIsHidden: false)
-                .setFontSize(kanjiSize: 30, readingSize: 20)
+                .setFontSize(kanjiSize: kanjiSize(), readingSize: furiganaSize())
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .frame(maxWidth: .infinity)
-            
             let word = setWord()
+            
             let translates = findTranslate(word).components(separatedBy: "・")
             ForEach(translates, id: \.self) { translate in
                 Text(translate)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.system(size: furiganaSize()))
             }
+            .padding(.horizontal, Settings.padding)
+            
+            Divider()
+                .padding(.vertical, Settings.paddingBetweenText)
+            
+            ListOfKanjiInGivenWordView(kanji: kanji, size: size)
+            .padding(.bottom, Settings.paddingBetweenText)
         }
+        .padding(.top, Settings.padding)
     }
     
-    func findTranslate(_ word: String) -> String {
+    private func kanjiSize() -> CGFloat {
+        size / 15 / 1.5
+    }
+    
+    private func furiganaSize() -> CGFloat {
+        kanjiSize() / 1.7
+    }
+    
+    private func findTranslate(_ word: String) -> String {
         let words = Set(store.getAllWords())
         guard let translate = words.first(where: { $0.body == word }) else { return "Перевод не обнаружен" }
         return translate.meaningInRussian
     }
     
-    
-    
-    func setWord() -> String {
+    private func setWord() -> String {
         if let word = word {
             return word.body
         }
         return ""
     }
     
-    func getWord() -> WordModel {
+    private func getWord() -> WordModel {
         if let word = word {
             return word
         }

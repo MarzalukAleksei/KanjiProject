@@ -36,7 +36,7 @@ struct LearningOrRememberSelectButtonsView: View {
                     .background {
                         Color.black
                     }
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .clipShape(RoundedRectangle(cornerRadius: Settings.buttonsCornerRadius))
             }
 
             

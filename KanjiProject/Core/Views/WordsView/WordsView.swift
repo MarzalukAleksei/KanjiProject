@@ -8,35 +8,52 @@
 import SwiftUI
 
 struct WordsView: View {
-    @EnvironmentObject var store: Store
-    @EnvironmentObject var tabBar: TabBarState
-    @AppStorage("baseWordLevel") var wordLevel: NouryokuLevel = .N5
-    @State var currentLevel: NouryokuLevel = .another
+    @EnvironmentObject private var store: Store
+    @EnvironmentObject private var tabBar: TabBarState
+    @AppStorage("baseWordLevel") private var wordLevel: NouryokuLevel = .N5
+    @State private var currentLevel: NouryokuLevel = .another
+    
     var body: some View {
         NavigationStack {
             VStack {
-                BaseWordsSelectLevelView(currentLevel: $currentLevel)
-                Divider()
-                NavigationLink("To Learn") {
-                    if let word = store.baseWordsStore.get(level: currentLevel).randomElement() {
-                        WordLearningView(level: currentLevel, currentWord: word)
-                    } else {
-                        EmptyView()
+                VStack {
+                    BaseWordsSelectLevelView(currentLevel: $currentLevel)
+                    Divider()
+                    
+                    NavigationLink {
+                        LearnWordView()
+                    } label: {
+                        Text("Учить слова")
+                            .frame(maxWidth: .infinity)
+                            .frame(height: ElementSize.modalViewButtonHeight)
+                            .background {
+                                Color.black
+                            }
+                            .clipShape(RoundedRectangle(cornerRadius: Settings.buttonsCornerRadius))
                     }
+                    
+                    NavigationLink("To Learn") {
+                        if let word = store.baseWordsStore.get(level: currentLevel).randomElement() {
+                            WordLearningView(level: currentLevel, currentWord: word)
+                        } else {
+                            EmptyView()
+                        }
+                    }
+                    
+                    NavigationLink {
+                        SearchWordView()
+                    } label: {
+                        Text("Find Word")
+                    }
+                    
+                    NavigationLink {
+                        SetKankenKnajiTranslateView()
+                    } label : {
+                        Text("SET KANKEN KANJI TRANSLATE")
+                    }
+                    .padding(.top, 50)
                 }
-                
-                NavigationLink {
-                    SearchWordView()
-                } label: {
-                    Text("Find Word")
-                }
-                
-                NavigationLink {
-                    SetKankenKnajiTranslateView()
-                } label : {
-                    Text("SET KANKEN KANJI TRANSLATE")
-                }
-                .padding(.top, 50)
+                .padding(.horizontal, Settings.padding)
                 
                 Spacer()
                 

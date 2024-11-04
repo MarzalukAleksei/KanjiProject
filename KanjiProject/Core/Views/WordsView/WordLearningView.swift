@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct WordLearningView: View {
-    @EnvironmentObject var tabBar: TabBarState
-    @EnvironmentObject var store: Store
-    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject private var tabBar: TabBarState
+    @EnvironmentObject private var store: Store
+    @Environment(\.dismiss) private var dismiss
 
     let level: NouryokuLevel
     @State var currentWord: WordModel
-    @State var meaningInRussian: String = ""
-    @State var presentAlert = false
-    @State var presentDeleteAlert = false
+    @State private var meaningInRussian: String = ""
+    @State private var presentAlert = false
+    @State private var presentDeleteAlert = false
     
     var body: some View {
         VStack {
@@ -148,16 +148,16 @@ struct WordLearningView: View {
     
     func saveAction() {
         var word = currentWord
+        word.meaningInRussian = meaningInRussian
         Task {
             await store.baseWordsStore.update(set: word)
-            word.meaningInRussian = meaningInRussian
             await save()
             do {
-                if level != .another {
+//                if level != .another {
                     try await nextWord()
-                } else {
-                    dismiss()
-                }
+//                } else {
+//                    dismiss()
+//                }
             } catch {
                 presentAlert = true
             }

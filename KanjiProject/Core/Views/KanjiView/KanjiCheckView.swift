@@ -19,11 +19,15 @@ struct KanjiCheckView: View {
     var body: some View {
         VStack {
             VStack {
-                CloseButton {
-                    globalChanging.exampleWord = nil
-                    Task {
-                        await store.kanjiKankenStore.saveInFileManager()
+                HStack {
+                    CloseButton {
+                        globalChanging.exampleWord = nil
+                        Task {
+                            await store.kanjiKankenStore.saveInFileManager()
+                        }
                     }
+                    
+                    Spacer()
                 }
                 
                 if let currentKanji = currentKanji {
@@ -56,7 +60,7 @@ struct KanjiCheckView: View {
                 
             }
             .padding([.horizontal, .top], Settings.closeButtonPadding)
-            .ignoresSafeArea(.container, edges: .top)
+//            .ignoresSafeArea(.container, edges: .top)
         }
         
         HStack(spacing: 0) {

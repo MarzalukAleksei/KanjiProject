@@ -30,7 +30,8 @@ class ButtonsImages {
     }
     
     static var dismissButtonImage: Image {
-        Image(systemName: "xmark")
+//        Image(systemName: "xmark")
+        Image(systemName: "arrow.left")
     }
     
     static var chevronLeft: Image {

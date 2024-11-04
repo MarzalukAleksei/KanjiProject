@@ -71,11 +71,13 @@ struct ListOfKanjiInGivenWordView: View {
     }
     
     func setReadingsSize() -> CGFloat {
-        return setKanjiSize() / 1.7
+//        return setKanjiSize() / 1.7
+        return setKanjiSize() / 1.7 / 1.5
     }
     
     func setKanjiSize() -> CGFloat {
-        return size / 15
+//        return size / 15
+        return size / 15 / 1.5
     }
 }
 
