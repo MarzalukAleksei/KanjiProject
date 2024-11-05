@@ -17,7 +17,7 @@ struct BaseWordsSelectLevelView: View {
             HStack(spacing: Settings.paddingBetweenElements) {
                 ForEach(NouryokuLevel.allCases.reversed(), id: \.self) { level in
 //                    if level != .another {
-                        LevelButton(labelName: level, array: store.baseWordsStore.get(level: level), size: ElementSize.levelButtonSize, color: currentLevel == level ? .gray : .black)
+                        LevelButton(labelName: level, array: store.baseWordsStore.getAll(for: level), size: ElementSize.levelButtonSize, color: currentLevel == level ? .gray : .black)
                             .onTapGesture {
                                 withAnimation(Settings.animation) {
                                     wordLevel = level

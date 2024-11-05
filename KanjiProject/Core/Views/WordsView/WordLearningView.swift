@@ -116,7 +116,7 @@ struct WordLearningView: View {
         })
         .onAppear {
             tabBar.tabBarIsHidden = true
-            print(store.baseWordsStore.get(level: level).filter { $0.meaningInRussian == "" }.count)
+            print(store.baseWordsStore.getAll(for: level).filter { $0.meaningInRussian == "" }.count)
             Task {
                 do {
                     if level != .another {
@@ -172,7 +172,7 @@ struct WordLearningView: View {
     func nextWord() async throws {
         var allWords: [WordModel] = []
         if level != .another {
-            allWords = store.baseWordsStore.get(level: level)
+            allWords = store.baseWordsStore.getAll(for: level)
         } else {
             allWords = store.baseWordsStore.getAll()
         }
@@ -181,7 +181,7 @@ struct WordLearningView: View {
         if let word = words.randomElement() {
             currentWord = word
         } else {
-            throw RandomWordError.noWordsLeft
+            throw MyErrors.noWordsLeft
         }
     }
     
@@ -221,7 +221,7 @@ struct WordLearningView: View {
 
 #Preview {
     WordLearningView(level: .N5,
-                     currentWord: Store().baseWordsStore.get(level: .N5).randomElement() ?? .MOCK)
+                     currentWord: Store().baseWordsStore.getAll(for: .N5).randomElement() ?? .MOCK)
         .environmentObject(TabBarState())
         .environmentObject(Store())
 }

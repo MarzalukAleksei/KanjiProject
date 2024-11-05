@@ -26,8 +26,8 @@ struct CheckmarkButton: View {
             }, label: {
                 ButtonsImages.checkmark
                     .resizable()
-                    .frame(width: ElementSize.xmarkSize.width,
-                           height: ElementSize.xmarkSize.height)
+                    .frame(width: ElementSize.closeButton.width,
+                           height: ElementSize.closeButton.height)
                 //                .foregroundStyle(.black)
                     .opacity(0.4)
             })

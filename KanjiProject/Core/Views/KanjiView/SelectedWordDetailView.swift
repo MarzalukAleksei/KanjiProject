@@ -13,6 +13,7 @@ struct SelectedWordDetailView: View {
     @State private var kanjiSize: CGFloat = 0
     @State private var editButtonPressed = false
     @State private var printState = false
+    let storeOperations: StoreOperations
 
     var body: some View {
         GeometryReader { geo in
@@ -31,7 +32,7 @@ struct SelectedWordDetailView: View {
                         .shadow(radius: 10)
                     VStack {
                         ScrollView {
-                            RectData(kanji: getKanji(), word: $globalChanging.exampleWord, store: store, size: geo.size.width - 80)
+                            RectData(kanji: storeOperations.getKanjiArray(from: globalChanging.exampleWord), word: $globalChanging.exampleWord, store: store, size: geo.size.width - 80)
                         }
                         .padding(Settings.padding)
                         
@@ -72,20 +73,20 @@ struct SelectedWordDetailView: View {
         return .empty
     }
     
-    private func getKanji() -> [KanjiKankenModel] {
-        var result: [KanjiKankenModel] = []
-        guard let word = globalChanging.exampleWord else { return result }
-        for element in word.body {
-            if let kanji = store.kanjiKankenStore.getAll().first(where: { $0.body == String(element)}) {
-                result.append(kanji)
-            }
-        }
-        return result
-    }
+//    private func getKanji() -> [KanjiKankenModel] {
+//        var result: [KanjiKankenModel] = []
+//        guard let word = globalChanging.exampleWord else { return result }
+//        for element in word.body {
+//            if let kanji = store.kanjiKankenStore.getAll().first(where: { $0.body == String(element)}) {
+//                result.append(kanji)
+//            }
+//        }
+//        return result
+//    }
 }
 
 #Preview {
-    SelectedWordDetailView()
+    SelectedWordDetailView(storeOperations: StoreOperations(store: Store(), chosenLevel: .N5))
         .environmentObject(Store())
         .environmentObject(GlobalChanging())
 }
@@ -99,7 +100,7 @@ private struct RectData: View {
         VStack(spacing: 0) {
             let ar = TextAndReading.setTRArray(getWord())
             WordWithFuriganaView(word: ar, currentKanji: .empty, readingIsHidden: false)
-                .setFontSize(kanjiSize: kanjiSize(), readingSize: furiganaSize())
+                .setFontSize(kanjiSize: ElementSize.kanjiSize(size), readingSize: ElementSize.furiganaSize(size))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .frame(maxWidth: .infinity)
             let word = setWord()
@@ -108,7 +109,7 @@ private struct RectData: View {
             ForEach(translates, id: \.self) { translate in
                 Text(translate)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.system(size: furiganaSize()))
+                    .font(.system(size: ElementSize.furiganaSize(size)))
             }
             .padding(.horizontal, Settings.padding)
             
@@ -119,14 +120,6 @@ private struct RectData: View {
             .padding(.bottom, Settings.paddingBetweenText)
         }
         .padding(.top, Settings.padding)
-    }
-    
-    private func kanjiSize() -> CGFloat {
-        size / 15 / 1.5
-    }
-    
-    private func furiganaSize() -> CGFloat {
-        kanjiSize() / 1.7
     }
     
     private func findTranslate(_ word: String) -> String {

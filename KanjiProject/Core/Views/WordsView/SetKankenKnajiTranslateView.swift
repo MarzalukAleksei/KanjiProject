@@ -129,8 +129,8 @@ struct SetKankenKnajiTranslateView: View {
     }
 }
 
-//#Preview {
-//    SetKankenKnajiTranslateView(currentKanji: .MOCK_KANJIKANKEN)
-//        .environmentObject(Store())
-//        .environmentObject(TabBarState())
-//}
+#Preview {
+    SetKankenKnajiTranslateView(currentKanji: .MOCK_KANJIKANKEN)
+        .environmentObject(Store())
+        .environmentObject(TabBarState())
+}

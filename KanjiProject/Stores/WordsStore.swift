@@ -25,7 +25,7 @@ class WordsStore: IStore {
         data.removeAll()
     }
     
-    func get(level: NouryokuLevel) -> [WordModel] {
+    func getAll(for level: NouryokuLevel) -> [WordModel] {
         let result = data.filter { word in
             for lv in word.levelInTag where lv == level {
                 return true

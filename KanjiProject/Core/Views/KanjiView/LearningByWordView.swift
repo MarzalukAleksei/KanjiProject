@@ -129,7 +129,7 @@ struct LearningByWordView: View {
     
     // MARK: Получает слово, если оно имеется в группе, соответствующей уровню
     private func getWord() -> WordModel? {
-        databaseOperation.loadWord(for: currentKanji)
+        databaseOperation.loadKanjiWordExample(for: currentKanji)
     }
     
     private func getMeaning(_ word: WordModel) -> [String] {

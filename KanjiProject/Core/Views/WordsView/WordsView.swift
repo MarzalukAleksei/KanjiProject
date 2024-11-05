@@ -33,7 +33,7 @@ struct WordsView: View {
                     }
                     
                     NavigationLink("To Learn") {
-                        if let word = store.baseWordsStore.get(level: currentLevel).randomElement() {
+                        if let word = store.baseWordsStore.getAll(for: currentLevel).randomElement() {
                             WordLearningView(level: currentLevel, currentWord: word)
                         } else {
                             EmptyView()

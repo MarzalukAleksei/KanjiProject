@@ -24,6 +24,29 @@ class StoreOperations {
         }
     }
     
+    /// Возвращает массив кандзи из переданного слова
+    func getKanjiArray(from word: WordModel?) -> [KanjiKankenModel] {
+        var result: [KanjiKankenModel] = []
+        guard let word = word else { return result }
+        for element in word.body {
+            if let kanji = store.kanjiKankenStore.getAll().first(where: { $0.body == String(element)}) {
+                result.append(kanji)
+            }
+        }
+        return result
+    }
+    
+    func learningWords(for level: NouryokuLevel) -> [WordModel] {
+        let words = store.baseWordsStore.getAll(for: level)
+        return words
+    }
+    
+    func getWord(from words: [WordModel]) throws -> WordModel {
+        guard let word = words.randomElement() else { throw MyErrors.nilWord }
+        return word
+    }
+    
+    /// Обновляет кандзи в Store
     func updKanji(_ kanji: KanjiKankenModel) {
         store.kanjiKankenStore.update(set: kanji)
     }
@@ -34,7 +57,7 @@ class StoreOperations {
     ///  - Parameter answer:
     ///  - rightAnswers: Если  больше чем константное значение, то сохранить базе с пометкой true
     func setAnswer(for kanji: KanjiKankenModel?, answer: Answer) throws {
-        guard var kanji = kanji else { throw RandomWordError.nilWord }
+        guard var kanji = kanji else { throw MyErrors.nilWord }
         kanji.setCurrentDate()
         
         switch answer {
@@ -51,7 +74,7 @@ class StoreOperations {
     }
     
     // MARK: Извлекает рандомное слово для конкретного кандзи из примеров
-    func loadWord(for currentKanji: KanjiKankenModel?) -> WordModel? {
+    func loadKanjiWordExample(for currentKanji: KanjiKankenModel?) -> WordModel? {
         guard let currentKanji = currentKanji else { return nil }
         var componentsArray: [[TextAndReading]] = []
         

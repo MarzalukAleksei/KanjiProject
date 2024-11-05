@@ -110,7 +110,7 @@
 		AF8122B32B7255E500CCE83A /* IAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8122B22B7255E500CCE83A /* IAnswers.swift */; };
 		AF8122B52B72677F00CCE83A /* WordLearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8122B42B72677F00CCE83A /* WordLearningView.swift */; };
 		AF8122B72B7272A200CCE83A /* WordWithFuriganaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8122B62B7272A200CCE83A /* WordWithFuriganaView.swift */; };
-		AF8122B92B72A58F00CCE83A /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8122B82B72A58F00CCE83A /* Errors.swift */; };
+		AF8122B92B72A58F00CCE83A /* MyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8122B82B72A58F00CCE83A /* MyErrors.swift */; };
 		AF8E84002CD3CB20009FE87C /* noryoku.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF8E83FF2CD3CB20009FE87C /* noryoku.txt */; };
 		AF8E84042CD3CB9D009FE87C /* NouryokuWordsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8E84032CD3CB9D009FE87C /* NouryokuWordsMapper.swift */; };
 		AF8E84062CD3CC0D009FE87C /* NouryokuWordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8E84052CD3CC0D009FE87C /* NouryokuWordModel.swift */; };
@@ -306,7 +306,7 @@
 		AF8122B22B7255E500CCE83A /* IAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnswers.swift; sourceTree = "<group>"; };
 		AF8122B42B72677F00CCE83A /* WordLearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLearningView.swift; sourceTree = "<group>"; };
 		AF8122B62B7272A200CCE83A /* WordWithFuriganaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordWithFuriganaView.swift; sourceTree = "<group>"; };
-		AF8122B82B72A58F00CCE83A /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		AF8122B82B72A58F00CCE83A /* MyErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyErrors.swift; sourceTree = "<group>"; };
 		AF8E83FF2CD3CB20009FE87C /* noryoku.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = noryoku.txt; sourceTree = "<group>"; };
 		AF8E84032CD3CB9D009FE87C /* NouryokuWordsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NouryokuWordsMapper.swift; sourceTree = "<group>"; };
 		AF8E84052CD3CC0D009FE87C /* NouryokuWordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NouryokuWordModel.swift; sourceTree = "<group>"; };
@@ -739,7 +739,7 @@
 				AF2D7FB12AC45E1200642B48 /* BunpouModel.swift */,
 				AFC9DACC2C04D20C006A7ED0 /* BushuModel.swift */,
 				AF17F9462A449B1700D5631D /* DictionaryModel.swift */,
-				AF8122B82B72A58F00CCE83A /* Errors.swift */,
+				AF8122B82B72A58F00CCE83A /* MyErrors.swift */,
 				AF4F2A9F2AB1C13400F38EE9 /* GiseigoModel.swift */,
 				AF1EB0632A97760C00850A3B /* KanaModel.swift */,
 				AF960B482A85734100A33373 /* KanjiFlow.swift */,
@@ -1053,7 +1053,7 @@
 				AF3D53B02C21C308005B495F /* VisionManager.swift in Sources */,
 				AFAF810029D9E690002B9921 /* FileMapper.swift in Sources */,
 				AFFF94EA2B6129F200DD01EB /* SchoolLevelModel.swift in Sources */,
-				AF8122B92B72A58F00CCE83A /* Errors.swift in Sources */,
+				AF8122B92B72A58F00CCE83A /* MyErrors.swift in Sources */,
 				AFA2BEB52B718EB900BAC9EB /* WordModel.swift in Sources */,
 				AFEF74502ABB043C002AB67D /* SearchViewWordRow.swift in Sources */,
 				AFF19A0D2B65660200465427 /* KanjiImageVIew.swift in Sources */,

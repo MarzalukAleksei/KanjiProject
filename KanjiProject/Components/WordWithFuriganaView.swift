@@ -14,6 +14,17 @@ struct WordWithFuriganaView: View {
     private var kanjiBody = TextSizes.kanjiBody
     private var kanjiReading = TextSizes.kanjiReading
     
+    init(word: [TextAndReading],
+         readingIsHidden: Bool,
+         kanjiBody: CGFloat = TextSizes.kanjiBody,
+         kanjiReading: CGFloat = TextSizes.kanjiReading) {
+        self.word = word
+        self.currentKanji = .empty
+        self.readingIsHidden = readingIsHidden
+        self.kanjiBody = kanjiBody
+        self.kanjiReading = kanjiReading
+    }
+    
     init(word: [TextAndReading], currentKanji: KanjiKankenModel, readingIsHidden: Bool, kanjiBody: CGFloat = TextSizes.kanjiBody, kanjiReading: CGFloat = TextSizes.kanjiReading) {
         self.word = word
         self.currentKanji = currentKanji

@@ -25,8 +25,8 @@ struct CloseButton: View {
             }, label: {
                 ButtonsImages.dismissButtonImage
                     .resizable()
-                    .frame(width: ElementSize.xmarkSize.width,
-                           height: ElementSize.xmarkSize.height)
+                    .frame(width: ElementSize.closeButton.width,
+                           height: ElementSize.closeButton.height)
                     .foregroundStyle(.black)
                     .opacity(0.4)
             })

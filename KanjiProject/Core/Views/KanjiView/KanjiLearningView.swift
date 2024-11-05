@@ -120,7 +120,7 @@ struct KanjiLearningView: View {
         
         .overlay {
             if showWordDetail {
-                SelectedWordDetailView()
+                SelectedWordDetailView(storeOperations: storeOperations)
             }
             
         }

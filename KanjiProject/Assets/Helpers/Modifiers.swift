@@ -45,14 +45,25 @@ class Modifiers {
     
     static let skipButton = ButtonModifier(color: ElementsColors.skipButton,
                                                  height: ElementSize.bottomButtonImage.height + Settings.padding)
+    
+    static let editWordButton = ButtonModifier(color: Color.clear,
+                                              height: ElementSize.closeButton.height,
+                                              width: ElementSize.closeButton.width)
 }
 
 struct ButtonModifier: ViewModifier {
     let color: Color
     let height: CGFloat
+    let width: CGFloat
+    
+    init(color: Color, height: CGFloat, width: CGFloat = .infinity) {
+        self.color = color
+        self.height = height
+        self.width = width
+    }
     func body(content: Content) -> some View {
         content
-            .frame(maxWidth: .infinity, maxHeight: height)
+            .frame(maxWidth: width, maxHeight: height)
             .foregroundStyle(.black)
             .background {
                 color

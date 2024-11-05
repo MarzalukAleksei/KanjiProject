@@ -93,3 +93,16 @@ extension Store {
         return result
     }
 }
+
+extension Store {
+    static let MOCK_STORE = setMockData()
+    
+    private static func setMockData() -> Store {
+        let store = Store()
+        store.kanjiKankenStore.updateAll(data: [.MOCK_KANJIKANKEN, .ANOTHER_MOCK_KANKENKANJI])
+        store.baseWordsStore.updateAll(data: [.MOCK, .MOCK])
+        store.kanjiKankenExamplesTranslationsStore.updateAll(data: [.MOCK, .MOCK])
+        
+        return store
+    }
+}

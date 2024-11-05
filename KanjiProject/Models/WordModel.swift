@@ -77,7 +77,7 @@ extension WordModel {
 }
 
 extension WordModel {
-    static var MOCK = WordModel(body: "生長", meaningInEnglish: "growth (of a plant)", meaningInRussian: "", reading: "生長[せいちょう]", type: "Noun, Suru verb, Intransitive verb", levels: ["jlpt-n2"], levelInTag: [KanjiProject.NouryokuLevel.N2], lastAnswerRight: nil)
+    static var MOCK = WordModel(body: "生長", meaningInEnglish: "growth (of a plant)", meaningInRussian: "", reading: "生[せい]長[ちょう]", type: "Noun, Suru verb, Intransitive verb", levels: ["jlpt-n2"], levelInTag: [KanjiProject.NouryokuLevel.N5], lastAnswerRight: nil)
 }
 
 extension WordModel {
@@ -119,5 +119,40 @@ extension WordModel {
     func getSeparatedMeaning() -> [String] {
         let result = meaningInRussian.components(separatedBy: "・")
         return result
+    }
+    
+    func getTextAndReading() -> [TextAndReading] {
+        var word = self
+        word.reading = word.reading.replacingOccurrences(of: "[", with: "(")
+        word.reading = word.reading.replacingOccurrences(of: "]", with: ")")
+        var result: [TextAndReading] = []
+        let array = word.reading.components(separatedBy: ")")
+        for element in array where element != "" {
+            let parts = element.components(separatedBy: "(")
+            if parts.count > 1 {
+                result.append(.init(text: parts[0], reading: parts[1]))
+            } else {
+                result.append(.init(text: parts[0], reading: ""))
+            }
+        }
+        return result
+//        var result: [TextAndReading] = []
+//        let components = self.reading.components(separatedBy: " ")
+//        for part in components {
+//            if part.contains("[") {
+//                guard let startIndex = part.firstIndex(of: "["),
+//                      let endIndex = part.firstIndex(of: "]") else { return [] }
+//                
+//                let text = String(part[part.startIndex..<startIndex] + part[part.index(after: endIndex)..<part.endIndex])
+//                let reading = String(part[part.index(after: startIndex)..<endIndex])
+//                
+//                result.append(TextAndReading(text: text, reading: reading))
+//            } else if components.count < 2 {
+//                result.append(TextAndReading(text: self.body, reading: self.reading))
+//            } else {
+//                result.append(TextAndReading(text: part, reading: ""))
+//            }
+//        }
+//        return result
     }
 }

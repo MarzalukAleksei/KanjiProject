@@ -36,9 +36,15 @@ class ElementSize {
     
     static let pencilButtonSize = CGSize(width: 25, height: 25)
     
-    static let xmarkSize = CGSize(width: 35, height: 35)
+    static let closeButton = CGSize(width: 35, height: 35)
     
     static let bottomButtonImage = CGSize(width: 40, height: 40)
     
+    static func kanjiSize(_ size: CGFloat, _ multiplier: CGFloat = 1.5) -> CGFloat {
+        size / 15 / multiplier
+    }
     
+    static func furiganaSize(_ size: CGFloat, _ multiplier: CGFloat = 1.5) -> CGFloat {
+        kanjiSize(size, multiplier) / 1.7
+    }
 }
