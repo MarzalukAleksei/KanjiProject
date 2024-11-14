@@ -11,8 +11,8 @@ enum TabBarElements: String, CaseIterable {
     case kanji = "Кандзи"
 //    case yojijukugo = "Идиомы"
     case words = "Слова"
-    case card = "Карточки"
-    case search = "Поиск"
+//    case card = "Карточки"
+//    case search = "Поиск"
 }
 
 struct MainView: View {
@@ -38,10 +38,10 @@ struct MainView: View {
                 //                    .tag(TabBarElements.yojijukugo)
                 WordsView()
                     .tag(TabBarElements.words)
-                UserListView()
-                    .tag(TabBarElements.card)
-                SearchView()
-                    .tag(TabBarElements.search)
+//                UserListView()
+//                    .tag(TabBarElements.card)
+//                SearchView()
+//                    .tag(TabBarElements.search)
             }
             .padding(.bottom, 0) // поставил 0 вместо 53 так как здесь тернарный оператор не работает
             

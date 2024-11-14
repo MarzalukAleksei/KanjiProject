@@ -13,7 +13,6 @@ struct LearnWordView: View {
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var tabBarState: TabBarState
     @EnvironmentObject private var global: GlobalChanging
-    @State private var currentWord: WordModel?
     @State private var words: [WordModel] = []
     @State private var showAllert = false
     @State private var hideReading = false
@@ -32,7 +31,7 @@ struct LearnWordView: View {
                     Spacer()
                     
                     Button {
-                        global.exampleWord = currentWord
+//                        global.wordToChange = currentWord
                         showEditView = true
                     } label: {
                         ButtonsImages.pencil
@@ -44,36 +43,38 @@ struct LearnWordView: View {
                 }
                 GeometryReader { geo in
                     ScrollView {
-                        if let currentWord {
+                        if let currentWord = global.wordToChange {
+                            //                        if let currentWord {
                             HStack {
                                 Spacer()
-                                WordWithFuriganaView(word: currentWord.getTextAndReading(),
+                                WordWithFuriganaView(word: currentWord.getTextAndReading() ,
                                                      readingIsHidden: hideReading,
                                                      kanjiBody: ElementSize.kanjiSize(geo.size.width, 1),
                                                      kanjiReading: ElementSize.furiganaSize(geo.size.width, 1))
+                                
                                 Spacer()
                             }
                             let translates = currentWord.getSeparatedMeaning()
-                                ForEach(translates, id: \.self) { row in
-                                    Text(row)
-                                        .frame(maxWidth: .infinity)
-                                        .font(.title)
-                                }
-                            let kanjiList = StoreOperations(store: store, chosenLevel: currentLevel).getKanjiArray(from: currentWord)
+                            
+                            ForEach(translates, id: \.self) { row in
+                                Text(row)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .font(.title)
+                            }
+                            
+                            Divider()
+                                .padding(.vertical, Settings.paddingBetweenText)
+                            
+                            let kanjiList = StoreOperations(store: store, chosenLevel: currentLevel).getKanjiArray(from: global.wordToChange)
                             ListOfKanjiInGivenWordView(kanji: kanjiList, size: geo.size.width)
                                 .padding(.bottom, Settings.paddingBetweenText)
+                            //                        }
                         }
                     }
                 }
                 Spacer()
             }
             .padding(Settings.padding)
-            GeometryReader { _ in
-                VStack {
-                    Text(currentWord?.body ?? "Check word")
-                    Text(currentWord?.reading ?? "Check reading")
-                }
-            }
             
             Spacer()
             
@@ -97,11 +98,11 @@ struct LearnWordView: View {
         //            }
         //        }
         .fullScreenCover(isPresented: $showEditView, content: {
-            if let currentWord {
-                EditWordView(word: currentWord)
+//            if let currentWord {
+            EditWordView(word: global.wordToChange ?? .empty)
                     .environmentObject(global)
                     .environmentObject(store)
-            }
+//            }
         })
     }
 
@@ -111,7 +112,8 @@ struct LearnWordView: View {
     
     func getWord() {
         do {
-            currentWord = try StoreOperations(store: store, chosenLevel: currentLevel).getWord(from: words)
+            global.wordToChange = try StoreOperations(store: store, chosenLevel: currentLevel).getWord(from: words)
+            let currentWord = global.wordToChange
             words.removeAll(where: { $0.id == currentWord?.id })
         } catch {
             showAllert = true

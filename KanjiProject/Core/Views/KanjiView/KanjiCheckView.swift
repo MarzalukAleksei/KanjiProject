@@ -21,7 +21,7 @@ struct KanjiCheckView: View {
             VStack {
                 HStack {
                     CloseButton {
-                        globalChanging.exampleWord = nil
+                        globalChanging.wordToChange = nil
                         Task {
                             await store.kanjiKankenStore.saveInFileManager()
                         }

@@ -35,7 +35,7 @@ struct EditWordView: View {
                         }
                         Task {
                             await store.updateWord(origin())
-                            global.exampleWord = word
+                            global.wordToChange = word
                         }
                     }
                     .foregroundStyle(.green)
@@ -110,7 +110,7 @@ struct EditWordView: View {
 //        .ignoresSafeArea(.container, edges: .top)
         .onAppear {
             word = toNewLine(word)
-//            global.exampleWord = word
+//            global.wordToChange = word
         }
     }
     

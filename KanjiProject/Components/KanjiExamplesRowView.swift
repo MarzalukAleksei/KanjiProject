@@ -89,7 +89,7 @@ struct KanjiExamplesRowView: View {
             return partialResult + arrayElement.text
         }
 //        selectedWord = words.first { $0.body == word }
-        globalChanging.exampleWord = words.first { $0.body == word }!
+        globalChanging.wordToChange = words.first { $0.body == word }!
 //        wordButtonTapped = true
     }
     

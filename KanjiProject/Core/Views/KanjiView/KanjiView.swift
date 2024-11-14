@@ -35,7 +35,7 @@ struct KanjiView: View {
     var body: some View {
         NavigationStack() {
             VStack(spacing: 0) {
-                CustomNavigationBarView(title: "漢字を勉強しよう",
+                CustomNavigationBarView(title: Texts.kanjiViewTitle,
                                         corners: .bottomLeft,
                                         cornerRadius: ElementSize.navigationCornerRadius,
                                         heigh: ElementSize.customNavigationBarHeight)

@@ -8,5 +8,5 @@
 import Foundation
  
 class GlobalChanging: ObservableObject {
-    @Published var exampleWord: WordModel?
+    @Published var wordToChange: WordModel?
 }

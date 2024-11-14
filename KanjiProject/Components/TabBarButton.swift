@@ -45,9 +45,9 @@ struct TabBarButton: View {
 //        case .yojijukugo:
         case .words:
             return ButtonsImages.brain
-        case .card:
-            return ButtonsImages.list
-        case .search:
+//        case .card:
+//            return ButtonsImages.list
+//        case .search:
 //            return tab == currentTab ? ButtonsImages.openBook : ButtonsImages.closeBook
             return ButtonsImages.magnifyingglass
         }
@@ -56,7 +56,7 @@ struct TabBarButton: View {
 
 struct TabBarButton_Preview: PreviewProvider {
     static var previews: some View {
-        TabBarButton(tab: .card, currentTab: .constant(.card))
+        TabBarButton(tab: .kanji, currentTab: .constant(.kanji))
             .background(Color.red)
     }
 }

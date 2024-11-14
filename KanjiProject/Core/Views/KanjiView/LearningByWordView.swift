@@ -24,7 +24,7 @@ struct LearningByWordView: View {
         VStack {
             HStack {
                 CloseButton() {
-                    globalChanging.exampleWord = nil
+                    globalChanging.wordToChange = nil
                 }
                 
                 Spacer()
@@ -44,7 +44,7 @@ struct LearningByWordView: View {
             
             // MARK: Область слова и его перевод
             Group {
-                if let word = globalChanging.exampleWord {
+                if let word = globalChanging.wordToChange {
                     Divider()
                     
                     HStack {
@@ -113,7 +113,7 @@ struct LearningByWordView: View {
             setCurrentWord()
         }
         .fullScreenCover(isPresented: $showEdit, content: {
-            if let currentWord = globalChanging.exampleWord {
+            if let currentWord = globalChanging.wordToChange {
                 EditWordView(word: currentWord)
 //                SelectedWordDetailView()
 //                    .environmentObject(globalChanging)
@@ -124,7 +124,7 @@ struct LearningByWordView: View {
     
     // MARK: Устанавливае слово в пример окружения
     private func setCurrentWord() {
-        globalChanging.exampleWord = getWord()
+        globalChanging.wordToChange = getWord()
     }
     
     // MARK: Получает слово, если оно имеется в группе, соответствующей уровню

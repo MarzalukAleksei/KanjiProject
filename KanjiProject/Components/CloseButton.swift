@@ -20,7 +20,7 @@ struct CloseButton: View {
 //        HStack {
             Button(action: {
                 dismiss()
-//                globalChanging.exampleWord = nil
+//                globalChanging.wordToChange = nil
                 action()
             }, label: {
                 ButtonsImages.dismissButtonImage

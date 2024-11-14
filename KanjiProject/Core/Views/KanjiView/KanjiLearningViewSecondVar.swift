@@ -26,7 +26,7 @@ struct KanjiLearningViewSecondVar: View {
             VStack {
                 HStack {
                     CloseButton {
-                        globalChanging.exampleWord = nil
+                        globalChanging.wordToChange = nil
                         storeOperations.updKanjiKankenFile()
                     }
                     
@@ -149,7 +149,7 @@ struct KanjiLearningViewSecondVar: View {
             }
             
         }
-        .onReceive(globalChanging.$exampleWord, perform: { word in
+        .onReceive(globalChanging.$wordToChange, perform: { word in
             if word != nil {
                 showWordDetail = true
             } else {

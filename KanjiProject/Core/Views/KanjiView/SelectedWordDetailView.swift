@@ -22,7 +22,7 @@ struct SelectedWordDetailView: View {
                     .ignoresSafeArea()
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        globalChanging.exampleWord = nil
+                        globalChanging.wordToChange = nil
                     }
                 ZStack {
                     RoundedRectangle(cornerRadius: 25)
@@ -32,7 +32,7 @@ struct SelectedWordDetailView: View {
                         .shadow(radius: 10)
                     VStack {
                         ScrollView {
-                            RectData(kanji: storeOperations.getKanjiArray(from: globalChanging.exampleWord), word: $globalChanging.exampleWord, store: store, size: geo.size.width - 80)
+                            RectData(kanji: storeOperations.getKanjiArray(from: globalChanging.wordToChange), word: $globalChanging.wordToChange, store: store, size: geo.size.width - 80)
                         }
                         .padding(Settings.padding)
                         
@@ -54,7 +54,7 @@ struct SelectedWordDetailView: View {
                 .padding(.horizontal, Settings.padding * 2.5)
                 .padding(.vertical, Settings.padding * 5)
                 .onTapGesture {
-                    globalChanging.exampleWord = nil
+                    globalChanging.wordToChange = nil
                 }
                 
             }
@@ -67,7 +67,7 @@ struct SelectedWordDetailView: View {
     }
     
     private func getWord() -> WordModel {
-        if let word = globalChanging.exampleWord {
+        if let word = globalChanging.wordToChange {
             return word
         }
         return .empty
@@ -75,7 +75,7 @@ struct SelectedWordDetailView: View {
     
 //    private func getKanji() -> [KanjiKankenModel] {
 //        var result: [KanjiKankenModel] = []
-//        guard let word = globalChanging.exampleWord else { return result }
+//        guard let word = globalChanging.wordToChange else { return result }
 //        for element in word.body {
 //            if let kanji = store.kanjiKankenStore.getAll().first(where: { $0.body == String(element)}) {
 //                result.append(kanji)
