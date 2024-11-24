@@ -12,22 +12,22 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
     let id: Int
     let body: String
     let defaultReading: String
-    var kunReading: [SchoolLevel: String]
-    var onReading: [SchoolLevel: String]
+    private(set) var kunReading: [SchoolLevel: String]
+    private(set) var onReading: [SchoolLevel: String]
     let examples: [SchoolLevel: String]
     private let examplesWithReading: [SchoolLevel: [[TextAndReading]]]
-    var translateExapmles: [SchoolLevel: [String]]
+    private(set) var translateExapmles: [SchoolLevel: [String]]
     let meaning: String
-    var meaningInRussion: String?
-    var meaningInEng: String?
+    private(set) var meaningInRussion: String?
+    private(set) var meaningInEng: String?
     let keys: String
     let kankenLevel: KankenLevel
     private(set) var nouryokuLevel: NouryokuLevel?
     let stroke: Int
-    var oldKanji = ""
+    private(set) var oldKanji = ""
     private var lastAnswerRight: Bool?
     /*private(set)*/ var rightAnwers: Int?
-    var wrongAnswers: Int?
+    private(set) var wrongAnswers: Int?
     private var inList: Bool?
     let link: String
     private var dateStamp: Date?
@@ -51,6 +51,10 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
         self.link = link
     }
     
+    mutating func setMeaningInRussian(_ value: String?) {
+        meaningInRussion = value
+    }
+    
     func isInLearningList() -> Bool? {
         inList
     }
@@ -65,6 +69,7 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
         } else {
             self.rightAnwers = 0
         }
+        self.lastAnswerRight = false
         setAnswer(with: false)
     }
     
@@ -76,6 +81,7 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
 //            self.rightAnwers = rightAnwers + 1
 //        }
         self.rightAnwers = (self.rightAnwers ?? 0) + 1
+        self.lastAnswerRight = true
     }
     
     func getExamplesWithReading() -> [SchoolLevel: [[TextAndReading]]] {
@@ -207,8 +213,15 @@ extension KanjiKankenModel {
         dateStamp = nil
     }
     
+    /// - Parameter inList: make inList = false
     mutating func removeFromList() {
         inList = false
+    }
+    
+    /// - Parameter inList: inList = false, setAnswer = true
+    mutating func removeFromListWithMark() {
+        inList = false
+        setAnswer(with: true)
     }
     
     mutating func addInLearningList() {

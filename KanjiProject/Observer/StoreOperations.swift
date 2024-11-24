@@ -69,7 +69,7 @@ class StoreOperations {
         case .wrong:
             kanji.setWrongAnswer()
         }
-        
+        kanji.learning()
         store.kanjiKankenStore.update(set: kanji)
     }
     
@@ -104,6 +104,11 @@ class StoreOperations {
             result = addNotLearnedKanji(result)
         }
         return result
+    }
+    
+    /// добавляет все с эелементы с ошибкой в последнем ответе из списка
+    func addWrongsInListWithoutDataStamp() -> [KanjiKankenModel] {
+        return store.kanjiKankenStore.getAll().filter { $0.isInLearningList() == true }.filter { $0.showlastAnswer() == false }
     }
     
     /// Добавить слова из списка без учета даты

@@ -33,7 +33,8 @@ class KanjiTranslateMapper: IDataMapper {
             for kanji in store.kanjiKankenStore.getAll() {
                 for translate in translates where translate.kanjiBody == kanji.body {
                     var kanji = kanji
-                    kanji.meaningInRussion = translate.meaning
+//                    kanji.meaningInRussion = translate.meaning
+                    kanji.setMeaningInRussian(translate.meaning)
                     store.kanjiKankenStore.update(set: kanji)
                 }
             }

@@ -106,9 +106,11 @@ struct SetKankenKnajiTranslateView: View {
     
     func saveAction() {
         if translate != "" {
-            currentKanji?.meaningInRussion = translate
+//            currentKanji?.meaningInRussion = translate
+            currentKanji?.setMeaningInRussian(translate)
         } else {
-            currentKanji?.meaningInRussion = nil
+//            currentKanji?.meaningInRussion = nil
+            currentKanji?.setMeaningInRussian(nil)
         }
         if let currentKanji = currentKanji, currentKanji.meaningInRussion != nil {
             store.kanjiKankenStore.update(set: currentKanji)

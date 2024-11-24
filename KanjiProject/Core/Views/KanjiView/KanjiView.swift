@@ -62,6 +62,9 @@ struct KanjiView: View {
 // MARK:  Кнопки уровней
                 LevelSelectorView(toggle: $toggle)
                 .padding(.bottom, Settings.paddingBetweenElements)
+                .onAppear {
+                    reloadView.toggle()
+                }
                 
 // MARK: Тестовые данные для кордаты
 //                Button("Add kanji for test Core Data") {

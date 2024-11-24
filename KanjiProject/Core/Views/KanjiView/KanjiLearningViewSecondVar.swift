@@ -95,9 +95,9 @@ struct KanjiLearningViewSecondVar: View {
                     Rectangle()
                         .frame(width: 1, height: ElementSize.bottomButtonImage.height * 2 + Settings.padding)
                     
-                    // MARK: Кнопка обновления
+                    // MARK: Кнопка правильного ответа
                     Button(action: {
-                        reloadButtonAction()
+                        rightButtonAction()
                     }, label: {
                         HStack {
                             ButtonsImages.checkmark
@@ -123,9 +123,9 @@ struct KanjiLearningViewSecondVar: View {
                 repeatButton()
             }
             
-//            Button("Повторить с наихудшими ответами") {
-//                
-//            }
+            Button("Повторить неверные") {
+                repeatWrongsButton()
+            }
             
             Button("Добавить дополнительные \(DatabaseOptions.maxLearningElementsCount) кандзи") {
                 addWordsButton()
@@ -158,6 +158,11 @@ struct KanjiLearningViewSecondVar: View {
         })
     }
     
+    private func repeatWrongsButton() {
+        allKanji = storeOperations.addWrongsInListWithoutDataStamp()
+        setCurrentKanji()
+    }
+    
     private func repeatButton() {
         allKanji = storeOperations.addKanjiWromWithoutDataStamp()
         setCurrentKanji()
@@ -168,7 +173,7 @@ struct KanjiLearningViewSecondVar: View {
         setCurrentKanji()
     }
     
-    private func reloadButtonAction() {
+    private func rightButtonAction() {
         hideReadings.toggle()
         try? storeOperations.setAnswer(for: currentKanji, answer: .right)
         reloadView()
@@ -185,8 +190,9 @@ struct KanjiLearningViewSecondVar: View {
     private func removeKanjiFromList() {
         if var currentKanji = currentKanji {
             //            showDeleteWarning = true
-            currentKanji.removeFromList()
+            currentKanji.removeFromListWithMark()
             storeOperations.updKanji(currentKanji)
+            hideReadings = true
             setCurrentKanji()
         }
     }
