@@ -22,6 +22,7 @@ struct KanjiView: View {
     @State private var showCheckView = false
     @State private var showLearningByWord = false
     @State private var reloadView = true
+    @State private var showInfoAlert = false
     
     @FetchRequest(entity: UsersKanji.entity(),
                   sortDescriptors: []) private var kanji: FetchedResults<UsersKanji>
@@ -35,7 +36,7 @@ struct KanjiView: View {
     var body: some View {
         NavigationStack() {
             VStack(spacing: 0) {
-                CustomNavigationBarView(title: Texts.kanjiViewTitle,
+                CustomNavigationBarView(title: InterfaceTexts.kanjiViewTitle,
                                         corners: .bottomLeft,
                                         cornerRadius: ElementSize.navigationCornerRadius,
                                         heigh: ElementSize.customNavigationBarHeight)
@@ -46,7 +47,7 @@ struct KanjiView: View {
                             .modifier(Modifiers.roundedRectTopRightBlackPart)
                     }
                     VStack {
-                        Text(toggle ? "KANKEN 漢検": "JLPT 日本語能力試験" )
+                        Text(toggle ? InterfaceTexts.kanjiKanken: InterfaceTexts.kanjiNouryoku )
                             .font(CustomFont.scroll(size: 20))
                     }
 // MARK: Custom Toggle
@@ -57,6 +58,23 @@ struct KanjiView: View {
                         Spacer()
                     }
                     .padding(.leading, Settings.padding)
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Button {
+                            showInfoAlert = true
+                        } label: {
+                            ButtonsImages.questionImage
+                                .resizable()
+                                .frame(width: ElementSize.questionMarkSize.width,
+                                       height: ElementSize.questionMarkSize.height)
+                                .foregroundStyle(Color.black)
+                        }
+
+                    }
+                    .padding(.trailing, Settings.padding * 2.5)
+                    .opacity(Settings.questionMarkButtonOpacity)
                 }
                 .padding(.bottom, 0)
 // MARK:  Кнопки уровней
@@ -125,7 +143,7 @@ struct KanjiView: View {
 //            //                }
 //        }
         .fullScreenCover(isPresented: $showLearningByKanjiSecondVar) {
-            KanjiLearningViewSecondVar(storeOperations: .init(store: store, chosenLevel: selectedNouryokuLevel), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
+            KanjiLearningView(storeOperations: .init(store: store, chosenLevel: selectedNouryokuLevel), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
         }
         .fullScreenCover(isPresented: $showLearningByWord) {
             LearningByWordView(nouryokuLevel: selectedNouryokuLevel, databaseOperation: .init(store: store, chosenLevel: selectedNouryokuLevel))
@@ -135,17 +153,29 @@ struct KanjiView: View {
                     self.kanjiKankenStore.updateAll(data: kanjiStore)
                 }
         }
+        .alert(allertTitle(), isPresented: $showInfoAlert) {
+            Button(InterfaceTexts.infoAlertButtonOnMainview) {}
+        }
 
     }
     
 // MARK: последняя выбранная ячейка сохраненная в памяти приложения
-    func getSelectedRow() -> SelectedKanjiRow? {
+    private func getSelectedRow() -> SelectedKanjiRow? {
         guard let data = selectedRow,
               let result = try? JSONDecoder().decode(SelectedKanjiRow.self, from: data) else { return nil }
         return result
     }
     
-    func isCurrentRow(_ selectedRow: SelectedKanjiRow?, _ index: Int) -> Bool {
+    private func allertTitle() -> String {
+        switch toggleInStorage {
+        case true:
+            return InterfaceTexts.infoAlertOnMainViewKanken(store.kanjiKankenStore.getAll().count)
+        case false:
+            return InterfaceTexts.infoAlertOnMainViewJLPT(store.kanjiKankenStore.getAllKanji(below: .N1).count)
+        }
+    }
+    
+    private func isCurrentRow(_ selectedRow: SelectedKanjiRow?, _ index: Int) -> Bool {
         guard let selectedRow = selectedRow else { return false }
         if selectedNouryokuLevel.rawValue == selectedRow.level, selectedRow.row == index + 1 {
             return true
@@ -154,7 +184,7 @@ struct KanjiView: View {
     }
     
 // MARK: Разделение массива на указанное количество элементов
-    func separateKanji(_ kanjiArray: [KanjiModel]) -> [[KanjiModel]] {
+    private func separateKanji(_ kanjiArray: [KanjiModel]) -> [[KanjiModel]] {
         var result: [[KanjiModel]] = []
         var array: [KanjiModel] = []
         

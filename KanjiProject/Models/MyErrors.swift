@@ -10,6 +10,5 @@ import Foundation
 enum MyErrors: String, Error {
     case noWordsLeft
     case nilWord = "Отсутствует слово"
+    case wrongBushu = "Нет соответстующего ключа"
 }
-
-//enum 

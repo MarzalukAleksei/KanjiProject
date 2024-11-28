@@ -12,7 +12,7 @@ struct BushuModel: Codable, Identifiable {
     let body: String
     let meaning: String
     let name: String
-    let variant: String
+    var variant: String
     let explanation: String
     let oftenUsed: Bool
     var lastAnswerRight: Bool?
@@ -23,7 +23,7 @@ extension BushuModel: IAnswers {
         lastAnswerRight
     }
     
-    mutating func setAnswer(with answer: Bool?) {
+    mutating func setLastAnswer(with answer: Bool?) {
         lastAnswerRight = answer
     }
     

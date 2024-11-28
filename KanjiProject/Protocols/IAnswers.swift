@@ -10,5 +10,5 @@ import Foundation
 protocol IAnswers {
     func showlastAnswer() -> Bool?
     
-    mutating func setAnswer(with answer: Bool?)
+    mutating func setLastAnswer(with answer: Bool?)
 }

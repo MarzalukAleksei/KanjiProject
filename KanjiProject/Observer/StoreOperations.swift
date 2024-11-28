@@ -24,6 +24,37 @@ class StoreOperations {
         }
     }
     
+    /// Для  правильной работы сначала ищет варианты, потом в основном теле и, если не нашло, то по всему тексту.
+    func getKeys(for currentKanji: KanjiKankenModel) throws -> [BushuModel] {
+        let currentKanjiKey = currentKanji.keys
+        let bushu = store.bushuStore.getAll().filter { $0.variant.contains(where: { String($0) == currentKanjiKey })}
+        if bushu.isEmpty {
+            return try getKeysBody(for: currentKanji)
+        }
+        return bushu
+    }
+    
+    private func getKeysBody(for currentKanji: KanjiKankenModel) throws -> [BushuModel] {
+        let bushu =  store.bushuStore.getAll().filter { $0.body == currentKanji.keys }
+        if bushu.isEmpty {
+            return try getKeysFromMeaning(for: currentKanji)
+        }
+        return bushu
+    }
+    
+    private func getKeysFromMeaning(for currentKanji: KanjiKankenModel) throws -> [BushuModel] {
+        let currentKanjiKey = currentKanji.keys
+        let bushu = store.bushuStore.getAll().filter { $0.explanation.contains(where: { String($0) == currentKanjiKey}) }
+        if bushu.isEmpty {
+            throw MyErrors.wrongBushu
+        }
+        return bushu
+    }
+    
+    func getAllWrongForCurentLevel() -> [KanjiKankenModel] {
+        store.kanjiKankenStore.get(nouryokuLevel: currentJLPTLevel).filter { $0.showlastAnswer() == false }
+    }
+    
     /// Возвращает массив кандзи из переданного слова
     func getKanjiArray(from word: WordModel?) -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
@@ -36,8 +67,8 @@ class StoreOperations {
         return result
     }
     
-    func learningWords(for level: NouryokuLevel) -> [WordModel] {
-        let words = store.baseWordsStore.getAll(for: level)
+    func learningWordsCurrentLevel() -> [WordModel] {
+        let words = store.baseWordsStore.getAll(for: currentJLPTLevel)
         return words
     }
     
@@ -64,7 +95,7 @@ class StoreOperations {
         case .right:
             kanji.setRightAnswer()
             if kanji.rightAnwers ?? 0 > DatabaseOptions.answersInRowThird {
-                kanji.setAnswer(with: true)
+                kanji.setLastAnswer(with: true)
             }
         case .wrong:
             kanji.setWrongAnswer()

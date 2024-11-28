@@ -124,7 +124,13 @@ private struct RectData: View {
     
     private func findTranslate(_ word: String) -> String {
         let words = Set(store.getAllWords())
-        guard let translate = words.first(where: { $0.body == word }) else { return "Перевод не обнаружен" }
+        let translate = words.first { main in
+            if main.body == word, !main.meaningInRussian.isEmpty {
+                return true
+            }
+            return false
+        }
+        guard let translate = translate else { return "Перевод не обнаружен" }
         return translate.meaningInRussian
     }
     

@@ -47,4 +47,6 @@ class ElementSize {
     static func furiganaSize(_ size: CGFloat, _ multiplier: CGFloat = 1.5) -> CGFloat {
         kanjiSize(size, multiplier) / 1.7
     }
+    
+    static let questionMarkSize = CGSize(width: 20, height: 20)
 }

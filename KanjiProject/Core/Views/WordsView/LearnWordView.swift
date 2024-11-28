@@ -107,7 +107,7 @@ struct LearnWordView: View {
     }
 
     func loadWords() {
-        words = StoreOperations(store: store, chosenLevel: currentLevel).learningWords(for: currentLevel)
+        words = StoreOperations(store: store, chosenLevel: currentLevel).learningWordsCurrentLevel()
     }
     
     func getWord() {

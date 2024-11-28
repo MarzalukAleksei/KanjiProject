@@ -100,7 +100,7 @@ struct KanjiCheckView: View {
     private func addInList() {
         guard var currentKanji = currentKanji else { return }
         currentKanji.learning()
-        currentKanji.setAnswer(with: false)
+        currentKanji.setLastAnswer(with: false)
         store.kanjiKankenStore.update(set: currentKanji)
         
         setCurrentKanji()
@@ -108,7 +108,7 @@ struct KanjiCheckView: View {
     
     private func knowingButton() {
         guard var currentKanji = currentKanji  else { return }
-        currentKanji.setAnswer(with: true)
+        currentKanji.setLastAnswer(with: true)
         currentKanji.setRightAnswer()
         self.currentKanji = currentKanji
         store.kanjiKankenStore.update(set: currentKanji)

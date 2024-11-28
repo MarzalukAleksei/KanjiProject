@@ -67,12 +67,12 @@ struct EditWordView: View {
                     }, label: {
                         ButtonsImages.questionImage
                             .resizable()
-                            .frame(width: 20, height: 20)
+                            .frame(width: ElementSize.questionMarkSize.width, height: ElementSize.questionMarkSize.height)
                     })
                     .foregroundStyle(.black)
                     
                 }
-                .opacity(0.5)
+                .opacity(Settings.questionMarkButtonOpacity)
                 
                 TextEditor(text: $word.reading)
                     .frame(maxHeight: wordReadingFrameHeight())

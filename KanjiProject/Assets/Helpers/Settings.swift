@@ -47,4 +47,6 @@ class Settings {
     static let closeButtonPadding: CGFloat = padding + 10
     
     static let buttonsCornerRadius: CGFloat = 10
+    
+    static let questionMarkButtonOpacity = 0.5
 }

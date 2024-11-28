@@ -70,7 +70,7 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
             self.rightAnwers = 0
         }
         self.lastAnswerRight = false
-        setAnswer(with: false)
+        setLastAnswer(with: false)
     }
     
     mutating func setRightAnswer() {
@@ -118,7 +118,7 @@ extension KanjiKankenModel: IAnswers {
         lastAnswerRight
     }
     
-    mutating func setAnswer(with answer: Bool?) {
+    mutating func setLastAnswer(with answer: Bool?) {
         self.lastAnswerRight = answer
     }
 }
@@ -221,11 +221,11 @@ extension KanjiKankenModel {
     /// - Parameter inList: inList = false, setAnswer = true
     mutating func removeFromListWithMark() {
         inList = false
-        setAnswer(with: true)
+        setLastAnswer(with: true)
     }
     
     mutating func addInLearningList() {
         inList = true
-        setAnswer(with: false)
+        setLastAnswer(with: false)
     }
 }

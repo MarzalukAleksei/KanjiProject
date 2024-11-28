@@ -50,7 +50,7 @@ extension WordModel: IAnswers {
         return lastAnswerRight
     }
     
-    mutating func setAnswer(with answer: Bool?) {
+    mutating func setLastAnswer(with answer: Bool?) {
         lastAnswerRight = answer
         setRightAnswer(answer)
     }

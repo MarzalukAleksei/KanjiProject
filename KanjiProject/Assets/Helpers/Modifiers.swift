@@ -49,6 +49,29 @@ class Modifiers {
     static let editWordButton = ButtonModifier(color: Color.clear,
                                               height: ElementSize.closeButton.height,
                                               width: ElementSize.closeButton.width)
+    
+    static let mainKanji = Kanjimodifier()
+    
+    static let keyModalViewText = KeyModalViewTextModifiers()
+}
+
+struct Kanjimodifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+        .font(.system(size: TextSizes.kanjiSize))
+        .foregroundStyle(Color.black)
+        .padding(.horizontal, TextSizes.kanjiSize * 0.3 / 2)
+        .border(Color.black, width: 1)
+        .padding(.leading, Settings.padding)
+    }
+}
+
+struct KeyModalViewTextModifiers: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.title)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
 }
 
 struct ButtonModifier: ViewModifier {
