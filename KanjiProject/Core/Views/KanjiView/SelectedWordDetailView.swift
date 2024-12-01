@@ -130,7 +130,8 @@ private struct RectData: View {
             }
             return false
         }
-        guard let translate = translate else { return "Перевод не обнаружен" }
+//        guard let translate = translate else { return "Перевод не обнаружен" }
+        guard let translate = translate else { return "" }
         return translate.meaningInRussian
     }
     

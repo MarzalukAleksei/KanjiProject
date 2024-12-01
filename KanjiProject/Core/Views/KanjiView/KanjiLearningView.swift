@@ -118,6 +118,7 @@ struct KanjiLearningView: View {
                 }
             }
         }
+        .blur(radius: showWordDetail ? Settings.blurEffectValue : 0)
 
         .alert("Вы точно хотите удалить этот кандзи из списка?", isPresented: $showDeleteWarning, actions: {
             Button("Нет") {}
@@ -157,10 +158,12 @@ struct KanjiLearningView: View {
             
         }
         .onReceive(globalChanging.$wordToChange, perform: { word in
-            if word != nil {
-                showWordDetail = true
-            } else {
-                showWordDetail = false
+            withAnimation(Settings.animation) {
+                if word != nil {
+                    showWordDetail = true
+                } else {
+                    showWordDetail = false
+                }
             }
         })
         .sheet(isPresented: $showKeysViewSheet) {

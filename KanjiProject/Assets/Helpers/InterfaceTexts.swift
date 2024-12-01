@@ -22,5 +22,41 @@ final class InterfaceTexts {
     }
     static let infoAlertButtonOnMainview = "Понятно!"
     
+    static func keyPesentaionStyle(_ key: BushuModel, _ showVariats: Bool) -> AttributedString {
+        let bodyName = "\(key.body) (\(key.name))"
+        let point = showVariats ? ", так же может иметь написание " : "."
+//        let alsoWrite = showVariats ? "так же может иметь написание " : ""
+        
+        let attributedString = AttributedString("Ключ \(bodyName)\(point)")
+        
+        return keyPresentation(attributedString, key, showVariats)
+    }
     
+}
+
+extension InterfaceTexts {
+    private static func keyPresentation(_ attributedString: AttributedString, _ key: BushuModel, _ showVar: Bool) -> AttributedString {
+        var attributedString = attributedString
+        let variants = key.variant.components(separatedBy: ",")
+        if showVar {
+            variants.forEach { comp in
+                attributedString.append(AttributedString(comp))
+                comp != variants.last ? attributedString.append(AttributedString(", ")) : attributedString.append(AttributedString("."))
+            }
+        }
+        let nameRange = attributedString.range(of: key.name)
+        let bodyRange = attributedString.range(of: key.body)
+        
+        guard let nameRange, let bodyRange else { return attributedString }
+        attributedString[bodyRange].foregroundColor = .red
+        attributedString[bodyRange].font = .largeTitle
+        attributedString[nameRange].foregroundColor = .red
+        
+        for variant in variants {
+            guard let variantRange = attributedString.range(of: variant) else { return attributedString }
+            attributedString[variantRange].foregroundColor = .red
+            attributedString[variantRange].font = .largeTitle
+        }
+        return attributedString
+    }
 }

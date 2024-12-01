@@ -32,16 +32,16 @@ struct ModalKeyDeteilView: View {
                 ForEach(keys) { key in
                     var key = key
                     let showVar = showVariants(&key)
-                    Text(attrStr(key, showVar))
+                    Text(InterfaceTexts.keyPesentaionStyle(key, showVar))
                         .modifier(Modifiers.keyModalViewText)
                     
                     Text(key.explanation)
                         .modifier(Modifiers.keyModalViewText)
                     
-//                    if key.id != keys.last?.id {
-//                        Divider()
-//                            .padding(.vertical, Settings.paddingBetweenText)
-//                    }
+                    if key.id != keys.last?.id {
+                        Divider()
+                            .padding(.vertical, Settings.paddingBetweenText)
+                    }
                 }
                 .padding(.horizontal, Settings.padding)
                 .padding(.vertical, Settings.paddingBetweenElements)
@@ -49,46 +49,27 @@ struct ModalKeyDeteilView: View {
             
         }
     }
-    private func attrStr(_ key: BushuModel, _ showVar: Bool) -> AttributedString {
-        let bodyName = "\(key.body) (\(key.name))"
-        let point = showVar ? ", " : "."
-        let alsoWrite = showVar ? "так же может иметь написание " : ""
-        let variant = showVar ? "\(key.variant)" : ""
-        let lastPoint = showVar ? "." : ""
-        
-        var attributedString = AttributedString("Ключ \(bodyName)\(point)\(alsoWrite)\(variant)\(lastPoint)")
-        let nameRange = attributedString.range(of: key.name)
-        let bodyRange = attributedString.range(of: key.body)
-        let variantRange = attributedString.range(of: variant)
-        
-        guard let nameRange, let bodyRange else { return attributedString }
-        attributedString[bodyRange].foregroundColor = .red
-        attributedString[bodyRange].font = .largeTitle
-        attributedString[nameRange].foregroundColor = .red
-        
-        guard let variantRange else { return attributedString }
-        attributedString[variantRange].foregroundColor = .red
-        
-        return attributedString
-    }
+    
     
     private func showVariants(_ key: inout BushuModel) -> Bool {
         if key.body == currentkanji.keys, key.variant.isEmpty {
             return false
-        } else if key.body != currentkanji.keys, !key.variant.contains(key.body), key.explanation.contains(where: { String($0) == currentkanji.keys }) {
-            key.variant += key.variant.isEmpty ? key.body : ", \(key.body)"
+        } else if key.body != currentkanji.keys,
+                  !key.variant.contains(currentkanji.keys),
+                  key.explanation.contains(where: { String($0) == currentkanji.keys }) {
+            key.variant += key.variant.isEmpty ? currentkanji.keys : ", \(currentkanji.keys)"
         }
         return true
     }
     
     private func keyButtonAction(_ currentKanji: KanjiKankenModel) -> [BushuModel] {
-//        if currentKanji.keys == "月" {
-//            print("keys")
-//        }
+        
         do {
-            return try storeOperations.getKeys(for: currentKanji)
+            let key = try storeOperations.getKeys(for: currentKanji)
+            return key
         } catch {
-            print(error.localizedDescription)
+            print(error)
+            print(currentKanji.keys)
         }
         return []
     }

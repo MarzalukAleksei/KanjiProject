@@ -49,4 +49,6 @@ class Settings {
     static let buttonsCornerRadius: CGFloat = 10
     
     static let questionMarkButtonOpacity = 0.5
+    
+    static let blurEffectValue: CGFloat = 5
 }
