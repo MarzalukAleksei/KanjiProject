@@ -9,25 +9,24 @@ import SwiftUI
 
 struct UserActivityView: View {
     let userActivity: [Date]
-    let rows: [GridItem] = .init(repeating: GridItem(.fixed(ElementSize.userActivityCellSize.width),
+    private let rows: [GridItem] = .init(repeating: GridItem(.fixed(ElementSize.userActivityCellSize.width),
                                                      spacing: Settings.paddingBetweenText - 1),
                                  count: Settings.userActivityIndicatorRows)
     
     var body: some View {
         ScrollViewReader { proxy in
-                ScrollView(.horizontal) {
-                    LazyHGrid(rows: rows) {
-                        ForEach(0..<Settings.elementsInUserActivityIndicator, id: \.self) { cell in
-                            let isSameDate = isSame(cell)
-                            Cell(sameDate: isSameDate)
-                                .frame(width: ElementSize.userActivityCellSize.width,
-                                       height: ElementSize.userActivityCellSize.height)
-                                .id(cell)
-                        }
+            ScrollView(.horizontal) {
+                LazyHGrid(rows: rows) {
+                    ForEach(0..<Settings.elementsInUserActivityIndicator, id: \.self) { cell in
+                        let isSameDate = isSame(cell)
+                        Cell(sameDate: isSameDate)
+                            .frame(width: ElementSize.userActivityCellSize.width,
+                                   height: ElementSize.userActivityCellSize.height)
+                            .id(cell)
                     }
-                    
                 }
-                .scrollIndicators(.hidden)
+            }
+            .scrollIndicators(.hidden)
             .onAppear {
                 scrollToLast(proxy: proxy)
             }
@@ -65,7 +64,6 @@ struct UserActivityView: View {
 private struct Cell: View {
     let sameDate: Bool
     var body: some View {
-        GeometryReader { geo in
             ZStack {
                 RoundedRectangle(cornerRadius: Settings.userActivityCellCornerRadius)
                     .foregroundStyle(sameDate ? Color.green.opacity(0.7) : Color.gray.opacity(0.5))
@@ -73,6 +71,5 @@ private struct Cell: View {
                     .stroke(lineWidth: 2)
             }
             .padding(1)
-        }
     }
 }
