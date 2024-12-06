@@ -51,4 +51,10 @@ class Settings {
     static let questionMarkButtonOpacity = 0.5
     
     static let blurEffectValue: CGFloat = 5
+    
+    static let userActivityIndicatorRows = 5
+    
+    static let userActivityCellCornerRadius: CGFloat = 5
+    
+    static let elementsInUserActivityIndicator = 365
 }

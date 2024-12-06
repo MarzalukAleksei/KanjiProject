@@ -49,4 +49,6 @@ class ElementSize {
     }
     
     static let questionMarkSize = CGSize(width: 20, height: 20)
+    
+    static let userActivityCellSize = CGSize(width: 30, height: 30)
 }

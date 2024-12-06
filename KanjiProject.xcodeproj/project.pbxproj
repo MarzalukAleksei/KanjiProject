@@ -24,6 +24,8 @@
 		AF10112E2B7982E6001EEB39 /* NihongoMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF10112D2B7982E6001EEB39 /* NihongoMapper.swift */; };
 		AF1011302B798999001EEB39 /* 日本語.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF10112F2B798999001EEB39 /* 日本語.txt */; };
 		AF17B5642CF8D0B600E436AB /* ModalKeyDeteilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17B5632CF8D0B600E436AB /* ModalKeyDeteilView.swift */; };
+		AF17B60A2D01013F00E436AB /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17B6092D01013F00E436AB /* UserActivity.swift */; };
+		AF17B60C2D0196F900E436AB /* UserActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17B60B2D0196F900E436AB /* UserActivityView.swift */; };
 		AF17F93C2A44844200D5631D /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17F93B2A44844200D5631D /* TabBarButton.swift */; };
 		AF17F93F2A4485BF00D5631D /* LearningCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17F93E2A4485BF00D5631D /* LearningCardView.swift */; };
 		AF17F9412A4486A100D5631D /* FrontSideVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17F9402A4486A100D5631D /* FrontSideVIew.swift */; };
@@ -220,6 +222,8 @@
 		AF10112D2B7982E6001EEB39 /* NihongoMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NihongoMapper.swift; sourceTree = "<group>"; };
 		AF10112F2B798999001EEB39 /* 日本語.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "日本語.txt"; sourceTree = "<group>"; };
 		AF17B5632CF8D0B600E436AB /* ModalKeyDeteilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalKeyDeteilView.swift; sourceTree = "<group>"; };
+		AF17B6092D01013F00E436AB /* UserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivity.swift; sourceTree = "<group>"; };
+		AF17B60B2D0196F900E436AB /* UserActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityView.swift; sourceTree = "<group>"; };
 		AF17F93B2A44844200D5631D /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		AF17F93E2A4485BF00D5631D /* LearningCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCardView.swift; sourceTree = "<group>"; };
 		AF17F9402A4486A100D5631D /* FrontSideVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontSideVIew.swift; sourceTree = "<group>"; };
@@ -621,6 +625,7 @@
 				AF044B332C2F6F33000746AA /* BorderedKanji.swift */,
 				AF4554912C315F74005D5030 /* ListOfKanjiInGivenWordView.swift */,
 				AF17B5632CF8D0B600E436AB /* ModalKeyDeteilView.swift */,
+				AF17B60B2D0196F900E436AB /* UserActivityView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -759,6 +764,7 @@
 				AFCA6F552AE5270E003464EC /* TextAndReadingModel.swift */,
 				AFA2BEB42B718EB900BAC9EB /* WordModel.swift */,
 				AF5600762AA46C9400F0123C /* YojijukugoModel.swift */,
+				AF17B6092D01013F00E436AB /* UserActivity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1114,6 +1120,7 @@
 				AF17F9472A449B1700D5631D /* DictionaryModel.swift in Sources */,
 				AF17F94F2A478D1400D5631D /* SelectLevel.swift in Sources */,
 				AFB1FE142C1C8F0500498A8F /* LearningOrRememberSelectButtonsView.swift in Sources */,
+				AF17B60A2D01013F00E436AB /* UserActivity.swift in Sources */,
 				AF3D53C02C2A2B17005B495F /* CheckmarkButton.swift in Sources */,
 				AFFF94BF2B5C1D4000DD01EB /* KankenReadingRowView.swift in Sources */,
 				AF6A2E0629E7267400D7C1A9 /* IStore.swift in Sources */,
@@ -1137,6 +1144,7 @@
 				AF5600772AA46C9400F0123C /* YojijukugoModel.swift in Sources */,
 				AF52CDBE2AF508DD00C2D493 /* CoreMLManager.swift in Sources */,
 				AF728D972ADD0D6D0098765D /* KankenMapper.swift in Sources */,
+				AF17B60C2D0196F900E436AB /* UserActivityView.swift in Sources */,
 				AF3FEBA62AF66A4F00D40B23 /* KankenReplacer.swift in Sources */,
 				AF3D53BC2C29B0B0005B495F /* CloseButton.swift in Sources */,
 				AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */,

@@ -1,0 +1,1551 @@
+成る	to become, to get, to grow, to turn, to reach, to attain	なる	Godan verb with ru ending, Intransitive verb	to result in, to turn out, to end up, to prove (to be); to consist of, to be composed of, to be made up of; to be completed, to be realized, to succeed, to be attained, to be accomplished; to change (into), to turn (into), to transform; to come (to do), to begin (to do), to grow (to do); to come to, to amount to, to add up to, to make; to play (the part of), to act as; to be used for, to be useful for, to serve as; to be promoted; to do ...		jlpt-n3 jlpt-n5usually_kana
+在る	to be, to exist, to live	ある	Godan verb with ru ending , Intransitive verb	to have; to be located; to be equipped with; to happen, to come about		jlpt-n2 jlpt-n3 jlpt-n5usually_kana
+其の	that, the	その	Pre-noun adjectival	"part (as in ""part two""); um ..., er ..., uh ..."		jlpt-n3 jlpt-n5usually_kana
+出来る	to be able (in a position) to do, to be up to the task	できる	Ichidan verb, Intransitive verb	to be ready, to be completed; to be made, to be built; to be good at, to be permitted (to do); to become intimate, to take up (with someone); to grow, to be raised; to become pregnant		jlpt-n3 jlpt-n5usually_kana
+此の	this	この	Pre-noun adjectival	"last (couple of years, etc.), these, past, this; you (as in ""you liar"")"		jlpt-n1 jlpt-n3 jlpt-n5usually_kana
+又	again, once more, once again, another time, some other time	また	Adverb	also, too, as well, likewise; on the other hand, while; and, in addition, besides, moreover, furthermore; or, otherwise; really, how, (what, why) on earth; indirect		jlpt-n3 jlpt-n5usually_kana
+余り	remainder, remnant, rest, balance, surplus, remains (of a meal), leftovers	あまり	"Noun, Noun which may take the genitive case particle 'no'"	(not) very, (not) much; too much, excessively, overly; extreme, great, severe, tremendous, terrible; more than, over		jlpt-n1 jlpt-n3 jlpt-n5usually_kana
+幾つ	how many	いくつ	Adverb	how old		jlpt-n3 jlpt-n5usually_kana
+其れ	that, it	それ	Pronoun	then, that point (in time), that time; there; you		jlpt-n1 jlpt-n3 jlpt-n5usually_kana
+何時も	always, all the time, at all times	いつも	Adverb	never; usual, regular, habitual, customary		jlpt-n1 jlpt-n3 jlpt-n5usually_kana
+掛かる	to take (a resource, e.g. time or money)	かかる	Godan verb with ru ending, Intransitive verb	to hang; to come into view, to arrive; to come under (a contract, a tax); to start (engines, motors); to attend, to deal with, to handle; to have started to, to be on the verge of; to overlap (e.g. information in a manual), to cover; to (come) at; to be fastened; to be covered (e.g. with dust, a table-cloth, etc.); to be caught in; to get a call; to depend on		jlpt-n3 jlpt-n5usually_kana
+付ける	to attach, to join, to add, to append, to affix, to stick, to glue, to fasten, to sew on, to apply (ointment)	つける	Ichidan verb, Transitive verb	to furnish (a house with); to wear, to put on; to keep a diary, to make an entry; to appraise, to set (a price); to allot, to budget, to assign; to bring alongside; to place (under guard or doctor); to follow, to shadow; to load, to give (courage to); to keep (an eye on); to establish (relations or understanding); to turn on (light); to produce flowers, to produce fruit		jlpt-n2 jlpt-n3 jlpt-n5usually_kana
+幾ら	how much	いくら	Noun, Adverb	something over, and something, -odd; however (much), no matter how		jlpt-n3 jlpt-n5usually_kana
+真っ直ぐ	straight (ahead), direct, upright, erect	まっすぐ	Na-adjective , Adverb , Noun	straightforward, honest, frank		jlpt-n3 jlpt-n5usually_kana
+等	et cetera, etc., and the like, and so forth	など	Particle	or something; the likes of; for example, for instance, for one		jlpt-n3 jlpt-n5usually_kana
+為る	to do, to carry out, to perform	する	Suru verb - included	"to cause to become, to make (into), to turn (into); to serve as, to act as, to work as; to wear (clothes, a facial expression, etc.); to judge as being, to view as being, to think of as, to treat as, to use as; to decide on, to choose; to be sensed (of a smell, noise, etc.); to be (in a state, condition, etc.); to be worth, to cost; to pass (of time), to elapse; to place, or raise, person A to a post or status B; to transform A to B, to make A into B, to exchange A for B; to make use of A for B, to view A as B, to handle A as if it were B; to feel A about B; verbalizing suffix (applies to nouns noted in this dictionary with the part of speech ""vs""); creates a humble verb (after a noun prefixed with ""o"" or ""go""); to be just about to, to be just starting to, to try to, to attempt to"		jlpt-n3 jlpt-n5usually_kana
+側	near, close, beside, vicinity, proximity, besides, while	そば	Noun	third person		jlpt-n3 jlpt-n5usually_kana
+否	no, nay	いいえ		"well, er, why; you're welcome, not at all, don't mention it"		jlpt-n1 jlpt-n3 jlpt-n5usually_kana
+此処	here, this place	ここ	Pronoun	this point, here, now; these past ... (e.g. three years), these last ...; the next ... (e.g. few days), these next ...		jlpt-n3 jlpt-n5usually_kana
+未だ	still, as yet, only	まだ	Adverb	(not) yet; more, (more) still; at least, comparatively, relatively; unfinished, incomplete, not yet done		jlpt-n1 jlpt-n3 jlpt-n5usually_kana
+然して	and, and then, thus, and now, and finally	そして	Conjunction			jlpt-n1 jlpt-n3 jlpt-n5usually_kana
+何れ	which (of three or more)	どれ	Pronoun	"well, now, c'mon"		jlpt-n1 jlpt-n3 jlpt-n5usually_kana
+大抵	mostly, ordinarily, usually, generally	たいてい	Na-adjective , Adverb , Noun	probably; most, almost all; ordinary; proper, appropriate, moderate		jlpt-n3 jlpt-n4usually_kana
+凄い	terrible, dreadful	すごい	I-adjective	amazing (e.g. of strength), great (e.g. of skills), wonderful, terrific; to a great extent, vast (in numbers); awfully, very, immensely		jlpt-n3 jlpt-n4usually_kana
+正直	honest, frank, candid, straightforward	正直[しょうじき]	Na-adjective , Noun	honestly, frankly		jlpt-n3
+一致	agreement, accord, correspondence, consistency, coincidence	一致[いっち]	Noun, Suru verb, Intransitive verb	union, unity, cooperation		jlpt-n3
+博物館	museum	博物館[はくぶつかん]	Noun			jlpt-n3
+皿	plate, dish, platter, disc	皿[さら]	Noun	serving, helping, course; kanji radical 108 (at the bottom)		jlpt-n3
+舞台	stage (of a theatre, concert hall, etc.), (stage) performance	舞台[ぶたい]	Noun	setting (of a story), scene; sphere (of activity), stage (e.g. political stage), scene, arena, world		jlpt-n3
+寄付	contribution, donation	寄付[きふ]	Noun, Suru verb, Transitive verb			jlpt-n3
+平等	equality, impartiality, evenness	平等[びょうどう]	"Noun, Na-adjective , Noun which may take the genitive case particle 'no'"			jlpt-n3
+金属	metal	金属[きんぞく]	Noun			jlpt-n3
+左右	left and right, right and left	左右[さゆう]	Noun, Suru verb	"(asserting) control, influence, domination; one's attendants, people accompanying one; (serving at someone's) side; equivocation"		jlpt-n3
+合図	sign, signal, cue	合図[あいず]	Noun, Suru verb, Transitive verb			jlpt-n3
+医師	doctor, physician	医師[いし]	Noun			jlpt-n3
+計算	calculation, reckoning, count	計算[けいさん]	Noun, Suru verb, Transitive verb	forecast		jlpt-n3
+宇宙	universe, cosmos, space	宇宙[うちゅう]	Noun			jlpt-n3
+銃	gun, rifle, small arms	銃[じゅう]	Noun			jlpt-n1 jlpt-n3
+禁煙	abstaining from smoking, quitting smoking	禁煙[きんえん]	Noun, Suru verb, Intransitive verb	prohibition of smoking; No Smoking, Smoking Prohibited		jlpt-n3
+握手	handshake	握手[あくしゅ]	Noun, Suru verb, Intransitive verb	reconciliation, joining hands, cooperation		jlpt-n3
+現実	reality, actuality, hard fact	現実[げんじつ]	Noun			jlpt-n3
+友情	friendship, fellowship, camaraderie	友情[ゆうじょう]	Noun			jlpt-n3
+訓練	training, drill, practice, discipline	訓練[くんれん]	Noun, Suru verb, Transitive verb			jlpt-n3
+方向	direction, orientation, bearing, way	方向[ほうこう]	Noun	course (e.g. of action)		jlpt-n3
+生物	living thing, organism, creature, life	生物[せいぶつ]	Noun	biology		jlpt-n3
+企業	enterprise, business, company, corporation	企業[きぎょう]	Noun			jlpt-n3
+香り	aroma, fragrance, scent, smell	香[かお]り	Noun			jlpt-n3
+攻撃	attack, assault, raid, onslaught, offensive	攻撃[こうげき]	Noun, Suru verb, Transitive verb	criticism, censure, denunciation, condemnation		jlpt-n3
+流れ	flow (of a fluid or gas), stream, current	流[なが]れ	Noun	flow (of people, things), passage (of time), tide, passing, (changing) trends, tendency; course (of events), (step-by-step) procedure, process; group of people who remain together after the end of an event; descent, ancestry, school; forfeiture, foreclosure; cancellation; drifting, wandering, roaming		jlpt-n3
+宗教	religion, religious affiliation, belief, faith, creed	宗教[しゅうきょう]	Noun	religious activity		jlpt-n3
+波	wave	波[なみ]	Noun	ups and downs		jlpt-n3
+羽	feather, plume, down	羽[はね]	Noun	wing; blade (of a fan, propeller, etc.); shuttlecock (in badminton); shuttlecock (in hanetsuki); arrow feathers		jlpt-n2 jlpt-n3
+芸術	art, the arts	芸術[げいじゅつ]	Noun			jlpt-n3
+服装	garments, attire	服装[ふくそう]	Noun			jlpt-n3
+広告	advertisement, advertising	広告[こうこく]	Noun, Suru verb, Transitive verb	announcement, notice		jlpt-n3
+署名	signature	署名[しょめい]	Noun, Suru verb, Intransitive verb			jlpt-n3
+個人	individual, private person, personal, private	個人[こじん]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+無料	free (of charge), gratuitous	無料[むりょう]	"Noun which may take the genitive case particle 'no', Noun"			jlpt-n3
+王様	king	王様[おうさま]	Noun		Honorific or respectful (sonkeigo) language	jlpt-n3
+駐車	parking (e.g. car)	駐車[ちゅうしゃ]	"Noun, Suru verb, Intransitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+現金	cash, ready money, money on hand, currency	現金[げんきん]	Noun	mercenary, self-interested, calculating		jlpt-n3
+宝石	gem, jewel, precious stone	宝石[ほうせき]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+証明	proof, testimony, demonstration, verification, certification	証明[しょうめい]	Noun, Suru verb, Transitive verb			jlpt-n3
+博士	expert, learned person	博士[はかせ]	Noun	doctor, PhD, Dr.; instructor at the imperial court (ritsuryō period); pitch and length marks (to accompany a Buddhist liturgical chant, etc.)		jlpt-n3
+塔	tower, steeple, spire	塔[とう]	Noun, Noun, used as a suffix	stupa, pagoda, dagoba		jlpt-n3
+芝居	play, drama	芝居[しばい]	Noun			jlpt-n3
+話題	topic, subject	話題[わだい]	Noun	much talked about, topical, in the news, hot		jlpt-n3
+出版	publication	出版[しゅっぱん]	Noun, Suru verb, Transitive verb			jlpt-n3
+競技	game, match, contest	競技[きょうぎ]	"Noun, Suru verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+保証	guarantee, security, assurance, pledge, warranty	保証[ほしょう]	Noun, Suru verb, Transitive verb			jlpt-n1 jlpt-n3
+投票	voting, ballot, poll, vote	投票[とうひょう]	Noun, Suru verb, Intransitive verb			jlpt-n3
+軍隊	armed forces, military, troops	軍隊[ぐんたい]	Noun			jlpt-n3
+診察	medical examination	診察[しんさつ]	Noun, Suru verb, Transitive verb			jlpt-n3
+離婚	divorce	離婚[りこん]	Noun, Suru verb, Intransitive verb			jlpt-n3
+販売	sales, selling, marketing	販売[はんばい]	Noun, Suru verb, Transitive verb			jlpt-n3
+年寄り	old person, elderly person, senior citizen	年寄[としよ]り	"Noun, Noun which may take the genitive case particle 'no'"	trustee of the Japan Sumo Association, retired high-ranking wrestler who is licensed to coach and receives retirement pay; senior statesman (of the Tokugawa shogunate); important local official (under the Tokugawa Shogunate)		jlpt-n1 jlpt-n3
+影	shadow, silhouette, figure, shape	影[かげ]	Noun	"reflection, image; ominous sign; light (stars, moon); trace, shadow (of one's former self)"		jlpt-n3
+心臓	heart	心臓[しんぞう]	Noun	guts, nerve, cheek, gall, spine; heart (of something), central part		jlpt-n3
+衝突	collision, crash, impact, running into	衝突[しょうとつ]	Noun, Suru verb, Intransitive verb	conflict, clash, discord, quarrel		jlpt-n3
+平均	average, mean	平均[へいきん]	Noun, Suru verb	balance, equilibrium		jlpt-n1 jlpt-n3
+輸出	export, exportation	輸出[ゆしゅつ]	Noun, Suru verb	efferent		jlpt-n3
+型	type, style, model, pattern	型[かた]	Noun, Noun, used as a suffix	mold, mould, model, pattern, template, impression; kata (set sequence of positions and movements in martial arts), style (in kabuki, noh, etc.), form; convention, tradition, (standard) form, formula, usage; (set) size, inch (in sizes of displays, disks, image sensors, etc.); (taxonomical) form		jlpt-n3
+永遠	eternity, perpetuity, permanence, immortality	永遠[えいえん]	"Noun, Noun which may take the genitive case particle 'no', Na-adjective"			jlpt-n3
+冒険	adventure, venture	冒険[ぼうけん]	Noun, Suru verb, Intransitive verb	venture which is unlikely to succeed, risky attempt, danger, hazard, risk		jlpt-n3
+未来	(distant) future	未来[みらい]	Noun	future existence, world beyond the grave, the world to come; future (tense)		jlpt-n3
+表情	facial expression, countenance	表情[ひょうじょう]	Noun	look, appearance, expression (vocal, etc.)		jlpt-n3
+小屋	hut, cabin, shed, (animal) pen	小屋[こや]	Noun	"small theatre (theater), temporary playhouse, circus tent, booth; one's own house"		jlpt-n3
+女王	queen	女王[じょおう]	Noun	female champion		jlpt-n3
+青年	youth, young man	青年[せいねん]	Noun			jlpt-n3
+虎	tiger (Panthera tigris)	虎[とら]	Noun	drunkard, drunk, sot		jlpt-n3
+胃	stomach	胃[い]	Noun	"Chinese ""stomach"" constellation (one of the 28 mansions)"		jlpt-n3
+制度	system, institution, organization, organisation	制度[せいど]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+畑	field (for growing wheat, fruit, vegetables, etc.), cultivated land, vegetable plot, kitchen garden, plantation	畑[はたけ]	Noun	field (of specialization), sphere, area, line; womb, birth, birthplace		jlpt-n3
+雷	lightning, thunder, thunderbolt	雷[かみなり]	Noun	god of thunder, god of lightning; anger, fit of anger		jlpt-n1 jlpt-n3
+鉄道	railroad, railway, rail transport	鉄道[てつどう]	Noun			jlpt-n3
+観客	audience, spectator, spectators	観客[かんきゃく]	Noun			jlpt-n3
+収穫	harvest, crop, ingathering	収穫[しゅうかく]	Noun, Suru verb, Transitive verb	"fruits (of one's labors), gain, result, returns"		jlpt-n3
+信号	signal, signalling, signaling	信号[しんごう]	Noun, Suru verb	traffic light, traffic signal		jlpt-n3
+文字	letter (of alphabet), character	文字[もじ]	Noun	writing		jlpt-n3
+中心	center, centre, middle, heart, core, focus, pivot, emphasis, balance	中心[ちゅうしん]	"Noun, Noun which may take the genitive case particle 'no'"	-centered, -centred, -focused, -oriented, centered on, focused on		jlpt-n3
+放送	broadcasting, broadcast, program, announcement	放送[ほうそう]	Noun, Suru verb, Transitive verb			jlpt-n3
+建設	construction, establishment	建設[けんせつ]	Noun, Suru verb, Transitive verb			jlpt-n3
+化学	chemistry	化学[かがく]	Noun			jlpt-n3
+袋	bag, sack, pouch	袋[ふくろ]	Noun	skin of an orange (and other like fruits); dead end; plot of land surrounded by water		jlpt-n3
+国家	state, country, nation	国家[こっか]	Noun			jlpt-n3
+睡眠	sleep	睡眠[すいみん]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+油	oil	油[あぶら]	Noun			jlpt-n3
+毒	poison, toxicant	毒[どく]	Noun	harm, evil influence; ill will, spite, malice; abusive language		jlpt-n3
+教科書	textbook, coursebook, schoolbook	教科書[きょうかしょ]	Noun			jlpt-n3
+座席	seat	座席[ざせき]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+単位	unit, denomination	単位[たんい]	Noun	"credit (in school); in units of (e.g. ""in thousands""), in amounts of"		jlpt-n3
+常識	common sense, good sense, common knowledge, general knowledge, common practice, accepted practice, social etiquette	常識[じょうしき]	Noun			jlpt-n3
+郵便	mail service, postal service, mail, post	郵便[ゆうびん]	Noun	mail, postal matter, postal items		jlpt-n3
+家事	housework, domestic chores	家事[かじ]	Noun	family affairs, household matters		jlpt-n3
+誕生	birth, creation, formation	誕生[たんじょう]	Noun, Suru verb			jlpt-n3
+労働	manual labor, manual labour, toil, work	労働[ろうどう]	"Noun, Suru verb, Intransitive verb, Noun which may take the genitive case particle 'no'"	Labour Party		jlpt-n3
+運	fortune, luck	運[うん]	Noun			jlpt-n3
+汗	sweat, perspiration	汗[あせ]	Noun	moisture, condensation; gulp, oops		jlpt-n3
+食欲	appetite (for food)	食欲[しょくよく]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+数字	numeral, figure, digit, numeric character	数字[すうじ]	Noun			jlpt-n3
+学習	study, learning, tutorial	学習[がくしゅう]	Noun, Suru verb, Transitive verb			jlpt-n3
+観光	sightseeing, tourism	観光[かんこう]	Noun, Suru verb, Transitive verb			jlpt-n3
+失業	unemployment	失業[しつぎょう]	Noun, Suru verb	"losing one's job, becoming unemployed"		jlpt-n3
+婚約	engagement, betrothal	婚約[こんやく]	"Noun, Suru verb, Intransitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+分析	analysis	分析[ぶんせき]	Noun, Suru verb, Transitive verb			jlpt-n3
+書斎	study, library, den, home office, reading room	書斎[しょさい]	Noun			jlpt-n3
+武器	weapon, arms, ordnance	武器[ぶき]	Noun	weapon (something used to gain an advantage), asset		jlpt-n3
+首都	capital city, metropolis	首都[しゅと]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+砂漠	desert	砂漠[さばく]	Noun			jlpt-n3
+引用	quotation, citation, reference	引用[いんよう]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+硬貨	coin	硬貨[こうか]	Noun	hard currency		jlpt-n3
+監督	supervision, control, superintendence, direction	監督[かんとく]	"Noun, Suru verb, Noun which may take the genitive case particle 'no'"	director, superintendent, supervisor, coach, foreman, manager, overseer, controller, boss		jlpt-n3
+位置	place, position, location	位置[いち]	Noun, Suru verb, Intransitive verb	position, standing, status, situation		jlpt-n1 jlpt-n3
+針	needle, pin	針[はり]	Noun	hook; stinger, thorn; hand (e.g. clock, etc.), pointer; staple (for a stapler); needlework, sewing; malice; counter for stitches		jlpt-n3
+笑い	laugh, laughter	笑[わら]い	Noun	smile; sneer; sex aids (e.g. dildos, pornographic books, erotic woodblock prints, etc.)		jlpt-n3
+異常	strangeness, abnormality, disorder	異常[いじょう]	Noun, Na-adjective			jlpt-n3
+舌	tongue	舌[した]	Noun	tongue-like object, clapper (of a bell), talon (of a lock)		jlpt-n3
+酸素	oxygen (O)	酸素[さんそ]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+穀物	grain, cereal, corn	穀物[こくもつ]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+予算	estimate (of costs), budget	予算[よさん]	Noun, Suru verb			jlpt-n3
+瞬間	moment, second, instant	瞬間[しゅんかん]	Noun, Adverb			jlpt-n3
+対象	target, object (of worship, study, etc.), subject (of taxation, etc.)	対象[たいしょう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+速度	speed, velocity, pace, rate	速度[そくど]	Noun	velocity		jlpt-n3
+絶滅	extinction, extermination	絶滅[ぜつめつ]	Noun, Suru verb	eradication, stamping out, wiping out		jlpt-n3
+拍手	clapping hands, applause	拍手[はくしゅ]	Noun, Suru verb, Intransitive verb			jlpt-n3
+逆	reverse, opposite	逆[ぎゃく]	"Noun which may take the genitive case particle 'no', Na-adjective , Noun"	converse (of a hypothesis, etc.); inverse (function)		jlpt-n3
+祭	festival, feast	祭[まつり]	Noun	"harassment by an Internet pitchfork mob, online shaming, flaming; galore (as in ""goals galore""), frenzy, mania"		jlpt-n3
+腰	lower back, waist, hips, lumbar region	腰[こし]	Noun	body (of hair, noodle, paper, etc.), resilience, spring		jlpt-n3
+物質	material, substance	物質[ぶっしつ]	Noun	matter		jlpt-n3
+奨学金	scholarship, stipend, bursary	奨学金[しょうがくきん]	Noun	student loan		jlpt-n3
+農業	agriculture	農業[のうぎょう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+泥	mud, slush, (wet) dirt, mire	泥[どろ]	"Noun, Noun which may take the genitive case particle 'no'"	thief		jlpt-n3
+谷	valley	谷[たに]	Noun			jlpt-n3
+安定	stability, steadiness, consistency, equilibrium, balance, composure	安定[あんてい]	Noun, Suru verb, Intransitive verb	stable		jlpt-n3
+巣	nest, rookery, breeding place, hive	巣[す]	Noun	"den; haunt; (spider's) web"		jlpt-n3
+批評	criticism, critique, review, commentary	批評[ひひょう]	Noun, Suru verb			jlpt-n3
+農家	farmer, farming family	農家[のうか]	Noun	farmhouse; School of Agrarianism (China), School of Agronomists		jlpt-n3
+独身	bachelorhood, single, unmarried, celibate	独身[どくしん]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+石炭	coal	石炭[せきたん]	Noun			jlpt-n3
+黒板	blackboard	黒板[こくばん]	Noun			jlpt-n3
+文明	civilization, civilisation, culture	文明[ぶんめい]	Noun	Bunmei era (1469.4.28-1487.7.20)		jlpt-n3
+建築	construction, architecture (of buildings)	建築[けんちく]	Noun, Suru verb, Transitive verb			jlpt-n3
+体温	temperature, body temperature (human, animal)	体温[たいおん]	Noun			jlpt-n3
+大陸	continent	大陸[たいりく]	"Noun, Noun which may take the genitive case particle 'no'"	continental Asia (esp. mainland China); continental Europe		jlpt-n3
+活用	practical use, application	活用[かつよう]	Noun, Suru verb, Transitive verb	conjugation, inflection		jlpt-n3
+吸収	absorption, suction, attraction	吸収[きゅうしゅう]	Noun, Suru verb, Transitive verb			jlpt-n3
+知事	prefectural governor	知事[ちじ]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+日付	date, dating	日付[ひづけ]	Noun			jlpt-n1 jlpt-n3
+金融	finance, financing, credit transacting, loaning of money, circulation of money	金融[きんゆう]	Noun	monetary, financial, credit		jlpt-n3
+消費	consumption, expenditure, spending	消費[しょうひ]	Noun, Suru verb, Transitive verb			jlpt-n3
+信仰	(religious) faith, belief, creed	信仰[しんこう]	Noun, Suru verb, Transitive verb			jlpt-n3
+大臣	cabinet minister	大臣[だいじん]	Noun			jlpt-n3
+外交	diplomacy	外交[がいこう]	Noun	selling (e.g. door-to-door), canvassing		jlpt-n3
+学期	school term, semester	学期[がっき]	Noun			jlpt-n3
+翼	wing	翼[つばさ]	Noun	"Chinese ""Wings"" constellation (one of the 28 mansions); counter for birds or bird wings"		jlpt-n3
+神経	nerve	神経[しんけい]	"Noun, Noun which may take the genitive case particle 'no'"	nerves, sensitivity		jlpt-n3
+助手	assistant, helper	助手[じょしゅ]	Noun	assistant (to a professor)		jlpt-n3
+理想	ideal, ideals	理想[りそう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+現状	present condition, existing state, status quo, current state	現状[げんじょう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+絵画	painting, picture	絵画[かいが]	Noun			jlpt-n3
+人種	race (of people)	人種[じんしゅ]	Noun	type of person		jlpt-n3
+営業	business, trade, operations	営業[えいぎょう]	Noun, Suru verb	sales		jlpt-n3
+筋肉	muscle	筋肉[きんにく]	Noun			jlpt-n3
+組合	association, union, guild	組合[くみあい]	Noun			jlpt-n3
+腹	abdomen, belly, stomach	腹[はら]	Noun	"womb; one's mind, one's real intentions, one's true motive; courage, nerve, willpower; generosity, magnanimity; feelings, emotions; wide middle part, bulging part; inside, interior, inner part; anti-node; counter for hard roe; counter for containers with bulging middles (pots, vases, etc.)"		jlpt-n3
+作業	work, operation, manufacturing, fatigue duty	作業[さぎょう]	Noun, Suru verb			jlpt-n3
+板	board, plank	板[いた]	Noun	sheet (of metal), plate (of glass), pane, slab; cutting board, chopping board; chef (esp. of high-end Japanese cuisine), cook; stage (i.e. at a theatre)		jlpt-n3
+悪魔	devil, demon, fiend	悪魔[あくま]	Noun	"Satan, the Devil; Māra, evil spirits or forces that hinder one's path to enlightenment"		jlpt-n3
+伝統	tradition, convention	伝統[でんとう]	Noun			jlpt-n3
+金庫	safe, strongbox, cashbox, vault, strongroom	金庫[きんこ]	Noun	depository, cash office, treasury, provider of funds		jlpt-n3
+旗	flag	旗[はた]	Noun	pataka (banner); banner (administrative division of Inner Mongolia)		jlpt-n3
+資源	resources	資源[しげん]	Noun			jlpt-n3
+現象	phenomenon	現象[げんしょう]	Noun			jlpt-n3
+食品	food, food products, foodstuffs	食品[しょくひん]	Noun			jlpt-n3
+岸	bank, coast, shore	岸[きし]	Noun			jlpt-n3
+恋人	lover, sweetheart, boyfriend, girlfriend	恋人[こいびと]	Noun			jlpt-n3
+炎	flame, blaze	炎[ほのお]	Noun	flames (of intense emotion, e.g. love, jealousy, anger), passion		jlpt-n3
+温度	temperature	温度[おんど]	Noun			jlpt-n3
+跡	trace, tracks, mark, sign	跡[あと]	Noun	site, remains, ruins; scar		jlpt-n3
+呼吸	breathing, respiration	呼吸[こきゅう]	Noun, Suru verb	knack, trick, secret (of doing something); harmony, balance, synchronization, accord; short interval, short pause		jlpt-n3
+哲学	philosophy	哲学[てつがく]	Noun			jlpt-n3
+知能	intelligence, intellect, brains	知能[ちのう]	Noun			jlpt-n3
+梅雨	rainy season (in Japan usu. from early June to mid-July)	梅雨[つゆ]	Noun	rain during the rainy season		jlpt-n3
+骨折	bone fracture	骨折[こっせつ]	Noun, Suru verb, Transitive verb			jlpt-n3
+憲法	constitution	憲法[けんぽう]	Noun	rules, regulation		jlpt-n3
+登山	mountain climbing, ascending a mountain, ascent	登山[とざん]	Noun, Suru verb, Intransitive verb			jlpt-n3
+代理	representation, agency, proxy	代理[だいり]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"	proxy, agent, representative, deputy, substitute, surrogate, stand-in		jlpt-n3
+裸	nakedness, nudity	裸[はだか]	"Noun, Noun which may take the genitive case particle 'no'"	bareness, nakedness, baldness, being uncovered; being penniless; concealing nothing, openness		jlpt-n3
+鬼	ogre, demon, oni	鬼[おに]	Noun	"spirit of a deceased person; ogre-like person (i.e. fierce, relentless, merciless, etc.); it (in a game of tag, hide-and-seek, etc.); Chinese ""ghost"" constellation (one of the 28 mansions); very, extremely, super-"		jlpt-n3
+印刷	printing	印刷[いんさつ]	Noun, Suru verb, Transitive verb			jlpt-n3
+相続	succession	相続[そうぞく]	Noun, Suru verb, Transitive verb	inheritance		jlpt-n3
+航空	aviation, flying	航空[こうくう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+渋滞	(traffic) congestion, traffic jam, gridlock	渋滞[じゅうたい]	Noun, Suru verb, Intransitive verb	delay, stagnation		jlpt-n3
+大使	ambassador	大使[たいし]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+銀	silver (Ag)	銀[ぎん]	"Noun, Noun which may take the genitive case particle 'no'"	silver coin, money; silver medal; silver colour, silver color; bank; silver general		jlpt-n3
+歩道	footpath, walkway, sidewalk, pavement	歩道[ほどう]	Noun			jlpt-n3
+模様	pattern, figure, design	模様[もよう]	Noun	state, condition; conjecture of the current situation, the way it seems; model, pattern, example; indicates that something seems likely (e.g. rain or storm); framework (in go), territorial framework, moyo		jlpt-n3
+免許	license, licence, permission, permit, certificate	免許[めんきょ]	Noun, Suru verb, Transitive verb			jlpt-n3
+芽	sprout, shoot, bud	芽[め]	Noun	germinal disk (in an egg)		jlpt-n3
+衛星	(natural) satellite, moon	衛星[えいせい]	Noun	(artificial) satellite		jlpt-n3
+医療	medical care, medical treatment	医療[いりょう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+栄養	nutrition, nourishment	栄養[えいよう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+会計	accounting, finance, account, reckoning	会計[かいけい]	"Noun, Noun which may take the genitive case particle 'no', Suru verb"	bill (at a restaurant), check; accountant, treasurer, paymaster, cashier; settlement (of a bill, fee, etc.), payment; economic condition		jlpt-n3
+議員	member of an assembly, member of the Diet, member of parliament, member of Congress	議員[ぎいん]	Noun			jlpt-n3
+地下	underground, below the ground	地下[ちか]	"Noun, Noun which may take the genitive case particle 'no'"	world of the dead, the grave; underground (activities, movement, etc.), secret, illegal, in hiding		jlpt-n3
+缶	can, tin	缶[かん]	Noun, Counter	canned food		jlpt-n3
+墓	gravesite, tomb	墓[はか]	Noun			jlpt-n3
+道徳	morals	道徳[どうとく]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+笛	flute, fife, pipe, recorder, flageolet, shakuhachi, clarinet	笛[ふえ]	Noun	whistle		jlpt-n3
+商人	merchant, trader, tradesman, dealer, shopkeeper	商人[しょうにん]	Noun			jlpt-n1 jlpt-n3
+国境	national border, provincial border	国境[こっきょう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n1 jlpt-n3
+集団	group, mass	集団[しゅうだん]	Noun			jlpt-n3
+根	root (of a plant)	根[ね]	Noun	"root (of a tooth, hair, etc.), center (of a pimple, etc.); root (of all evil, etc.), source, origin, cause, basis; one's true nature; (fishing) reef"		jlpt-n3
+鎖	chain, chains	鎖[くさり]	Noun			jlpt-n3
+時	time, hour, moment	時[とき]	Noun	occasion, case; chance, opportunity, season; the times, the age, the day; tense		jlpt-n3
+元	origin, source	元[もと]	Noun	"base, basis, foundation, root; cause; ingredient, material, base, mix, stock; (someone's) side, (someone's) location; original cost (or capital, principal, etc.); (plant) root, (tree) trunk; first section of a waka; counter for blades of grass, tree trunks, etc., and for falcons (in falconry); handle (chopsticks, brush, etc.), grip"		jlpt-n3
+計画	plan, project, schedule, scheme, program, programme	計画[けいかく]	Noun, Suru verb, Transitive verb			jlpt-n3
+少年	boy, juvenile, young boy, youth, lad	少年[しょうねん]	Noun			jlpt-n3
+列車	train, railway train	列車[れっしゃ]	Noun			jlpt-n3
+健康	health	健康[けんこう]	Noun	healthy, sound, fit, wholesome		jlpt-n3
+人間	human being, human, person, man, mankind, humankind	人間[にんげん]	Noun	character (of a person)		jlpt-n3
+結果	result, consequence, outcome, effect	結果[けっか]	Noun, Suru verb	coming to fruition, bearing fruit; as a result, consequently, therefore		jlpt-n3
+理解	understanding, comprehension, appreciation	理解[りかい]	Noun, Suru verb, Transitive verb	sympathy		jlpt-n3
+少女	little girl, maiden, young lady, female usually between 7 and 18 years old	少女[しょうじょ]	Noun	female between 17 and 20 years old (ritsuryō period)		jlpt-n1 jlpt-n3
+事実	fact, truth, reality	事実[じじつ]	Adverb , Noun			jlpt-n3
+食事	meal, dinner	食事[しょくじ]	Noun, Suru verb, Intransitive verb	diet		jlpt-n3
+人生	"(one's) life"	人生[じんせい]	Noun			jlpt-n3
+母親	mother	母親[ははおや]	Noun			jlpt-n3
+行動	action, conduct, behaviour, behavior, mobilization, mobilisation	行動[こうどう]	"Noun, Suru verb, Intransitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+父親	father	父親[ちちおや]	Noun			jlpt-n3
+太陽	Sun	太陽[たいよう]	Noun			jlpt-n3
+幸福	happiness, well-being, joy, welfare, blessedness	幸福[こうふく]	Noun, Na-adjective			jlpt-n3
+政府	government, administration, ministry	政府[せいふ]	Noun			jlpt-n3
+経験	experience	経験[けいけん]	Noun, Suru verb, Transitive verb			jlpt-n3
+責任	duty, responsibility (incl. supervision of staff)	責任[せきにん]	Noun	liability, onus		jlpt-n3
+我慢	endurance, patience, perseverance, bearing (with something)	我慢[がまん]	Noun, Suru verb	self-control, self-restraint		jlpt-n3
+噂	rumour, rumor, report, hearsay, gossip, common talk	噂[うわさ]	"Noun, Suru verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+道路	road, highway	道路[どうろ]	Noun			jlpt-n3
+機械	machine, mechanism	機械[きかい]	Noun	instrument, appliance, apparatus		jlpt-n2 jlpt-n3
+地球	Earth, the globe	地球[ちきゅう]	Noun			jlpt-n3
+偶然	coincidence, chance, accident, fortuity	偶然[ぐうぜん]	"Noun, Na-adjective , Noun which may take the genitive case particle 'no'"	by chance, unexpectedly, accidentally; contingency		jlpt-n3
+秘密	secret, secrecy, confidentiality, privacy	秘密[ひみつ]	"Noun, Na-adjective , Noun which may take the genitive case particle 'no'"	mystery; secret (e.g. to success); esoteric teachings		jlpt-n3
+情報	information, news, report, intelligence	情報[じょうほう]	Noun	information (data contained in characters, signals, code, etc.)		jlpt-n3
+現在	the present, present time, now	現在[げんざい]	"Noun, Adverb , Noun which may take the genitive case particle 'no'"	as of; present tense; this world, this life; to actually exist, to exist right now, to exist right in front of one		jlpt-n3
+昼食	lunch, midday meal	昼食[ちゅうしょく]	Noun	food served at a tea party (tea ceremony)		jlpt-n3
+期待	expectation, anticipation, hope	期待[きたい]	Noun, Suru verb	promising, rising, up-and-coming		jlpt-n3
+丘	hill, height, knoll, rising ground	丘[おか]	Noun	bonus points awarded to the winner at the end of a game		jlpt-n3
+嵐	storm, tempest	嵐[あらし]	Noun	uproar, hullabaloo, storm (e.g. of protest), winds (e.g. of change)		jlpt-n3
+運動	exercise, physical training, workout, sports, athletics	運動[うんどう]	Noun, Suru verb, Intransitive verb	appeal, campaign, drive, crusade, movement, lobbying; motion, movement		jlpt-n3
+大統領	president (of a nation)	大統領[だいとうりょう]	Noun	big man, boss, buddy, mate		jlpt-n3
+演説	speech, address	演説[えんぜつ]	Noun, Suru verb, Intransitive verb			jlpt-n3
+神	god, deity, divinity, spirit, kami	神[かみ]	Noun	incredible, fantastic, amazing; Emperor (of Japan); thunder		jlpt-n3
+馬	horse	馬[うま]	Noun	horse racing; promoted bishop		jlpt-n3
+読書	reading (a book)	読書[どくしょ]	Noun, Suru verb, Intransitive verb			jlpt-n3
+詩	poem, poetry, verse	詩[し]	Noun	Chinese poem		jlpt-n3
+知識	knowledge, information	知識[ちしき]	Noun			jlpt-n3
+収入	income, receipts, revenue	収入[しゅうにゅう]	Noun			jlpt-n3
+都市	town, city, municipal, urban	都市[とし]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+嘘	lie, fib, falsehood, untruth	嘘[うそ]	"Noun, Noun which may take the genitive case particle 'no'"	mistake, error; unwise move, bad decision; no way!, unbelievable!, really?!		jlpt-n3
+詩人	poet	詩人[しじん]	Noun			jlpt-n3
+涙	tear, tears, lachrymal secretion	涙[なみだ]	Noun	sympathy		jlpt-n3
+円	yen (Japanese monetary unit)	円[えん]	Noun	circle		jlpt-n3
+財産	property, fortune, assets	財産[ざいさん]	Noun			jlpt-n3
+酒	alcohol, sake	酒[さけ]	Noun			jlpt-n3
+発見	discovery, detection, finding	発見[はっけん]	Noun, Suru verb, Transitive verb			jlpt-n3
+勇気	courage, bravery, valour, valor, nerve, boldness	勇気[ゆうき]	Noun			jlpt-n3
+学者	scholar, academic, scientist	学者[がくしゃ]	Noun	learned person, person of learning		jlpt-n3
+解決	settlement, solution, resolution	解決[かいけつ]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+患者	patient	患者[かんじゃ]	Noun			jlpt-n3
+存在	existence, being	存在[そんざい]	"Noun, Suru verb, Intransitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+言語	language	言語[げんご]	Noun			jlpt-n3
+信頼	reliance, trust, faith, confidence	信頼[しんらい]	Noun, Suru verb, Transitive verb			jlpt-n3
+海外	foreign, abroad, overseas	海外[かいがい]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+作家	author, writer, novelist, artist	作家[さっか]	Noun			jlpt-n3
+平和	peace, harmony	平和[へいわ]	Na-adjective , Noun			jlpt-n3
+希望	hope, wish, aspiration	希望[きぼう]	Noun, Suru verb, Transitive verb	(bright) prospects, expectation		jlpt-n3
+調査	investigation, examination, inquiry, enquiry, survey	調査[ちょうさ]	Noun, Suru verb, Transitive verb			jlpt-n3
+地域	area, region	地域[ちいき]	Noun			jlpt-n3
+気候	climate	気候[きこう]	Noun			jlpt-n3
+愛	love, affection, care	愛[あい]	Noun, Noun, used as a suffix	attachment, craving, desire; agape; Ireland		jlpt-n3
+実験	experiment, experimentation	実験[じっけん]	Noun, Suru verb, Transitive verb			jlpt-n3
+国民	people (of a country), nation, citizen, national	国民[こくみん]	Noun	Democratic Party for the People		jlpt-n3
+騒音	noise, din	騒音[そうおん]	Noun			jlpt-n3
+義務	duty, obligation, responsibility	義務[ぎむ]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+釣り	fishing, angling	釣[つ]り	Noun	change (for a purchase); clickbaiting; trolling, writing deliberately inflammatory posts online		jlpt-n1 jlpt-n3
+胸	chest, breast	胸[むね]	Noun	breasts, bosom, bust; heart; lungs; stomach; heart, mind, feelings		jlpt-n3
+過去	the past, bygone days	過去[かこ]	"Noun, Adverb , Noun which may take the genitive case particle 'no'"	"one's past (that one would prefer remained secret); past (tense), preterit, preterite; previous life"		jlpt-n3
+物価	prices of commodities, prices (in general), cost-of-living	物価[ぶっか]	Noun			jlpt-n3
+利益	profit, gains	利益[りえき]	Noun	"benefit, advantage, good, interests (e.g. of society); grace (of God, Buddha, etc., esp. as attained through rightful actions, prayer, adherence to one's faith, etc.), blessing, miracle"		jlpt-n3
+植物	plant, vegetation	植物[しょくぶつ]	Noun			jlpt-n3
+教授	professor	教授[きょうじゅ]	Noun	teaching, instruction		jlpt-n3
+発明	invention	発明[はつめい]	Noun, Suru verb	intelligent, clever, smart; making sense (of something), understanding		jlpt-n3
+氷	ice	氷[こおり]	Noun	shaved ice (usually served with flavored simple syrup)		jlpt-n3
+石油	oil, petroleum	石油[せきゆ]	Noun	kerosene, paraffin		jlpt-n3
+痛み	pain, ache, soreness, grief, distress	痛[いた]み	Noun	damage, injury, wear, bruise, break		jlpt-n3
+進歩	progress, advance, improvement, development	進歩[しんぽ]	Noun, Suru verb, Intransitive verb			jlpt-n3
+物語	story, tale, narrative, account, fable, legend	物語[ものがたり]	Noun			jlpt-n3
+感情	emotion, feeling, feelings, sentiment	感情[かんじょう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+週	week	週[しゅう]	Noun, Noun, used as a suffix			jlpt-n3
+屋根	roof	屋根[やね]	Noun			jlpt-n3
+恐怖	fear, dread, dismay, terror, horror, scare, panic	恐怖[きょうふ]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+否定	denial, negation, repudiation, disavowal	否定[ひてい]	Noun, Suru verb	negation; NOT operation		jlpt-n3
+商品	commodity, article of commerce, goods, stock, merchandise	商品[しょうひん]	Noun			jlpt-n3
+費用	cost, expense	費用[ひよう]	Noun			jlpt-n3
+作品	work (e.g. book, film, composition, etc.), opus, performance, production	作品[さくひん]	Noun			jlpt-n3
+賞	prize, award	賞[しょう]	Noun, Noun, used as a suffix			jlpt-n3
+留学	studying abroad	留学[りゅうがく]	Noun, Suru verb	studying at a different school, etc. (usu. for a specific purpose)		jlpt-n3
+価格	price, value, cost	価格[かかく]	Noun			jlpt-n3
+城	castle	城[しろ]	Noun			jlpt-n3
+犯罪	crime, offence, offense	犯罪[はんざい]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+肩	shoulder	肩[かた]	Noun			jlpt-n3
+評価	valuation, appraisal, evaluation, assessment, estimation, rating, judging	評価[ひょうか]	Noun, Suru verb	appreciation, recognition, acknowledgement, rating highly, praising		jlpt-n3
+正午	noon, midday	正午[しょうご]	Noun, Adverb			jlpt-n3
+意志	will, volition, intention, intent, determination	意志[いし]	Noun			jlpt-n3
+家具	furniture	家具[かぐ]	Noun			jlpt-n3
+職業	occupation, profession, job, vocation, trade, calling, business	職業[しょくぎょう]	Noun			jlpt-n3
+劇場	theatre, theater, playhouse	劇場[げきじょう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+不安	anxiety, uneasiness, worry, apprehension, fear, insecurity, suspense	不安[ふあん]	Noun, Na-adjective			jlpt-n3
+首相	prime minister, chancellor (Germany, Austria, etc.), premier	首相[しゅしょう]	Noun			jlpt-n3
+自然	nature	自然[しぜん]	Noun	natural, spontaneous, automatic; naturally, spontaneously, automatically		jlpt-n3
+自殺	suicide	自殺[じさつ]	"Noun, Noun which may take the genitive case particle 'no', Suru verb"			jlpt-n3
+意識	consciousness	意識[いしき]	Noun, Suru verb	becoming aware (of), awareness, sense; mano-vijnana (mental consciousness, cognizer of sensory information)		jlpt-n3
+爆発	explosion, detonation, eruption	爆発[ばくはつ]	Noun, Suru verb	eruption (of discontent, etc.), outburst, outpouring		jlpt-n3
+逮捕	arrest, apprehension, capture	逮捕[たいほ]	Noun, Suru verb, Transitive verb			jlpt-n3
+論文	thesis, essay, treatise, paper, article	論文[ろんぶん]	Noun			jlpt-n3
+記録	record, minutes, document	記録[きろく]	Noun	record (e.g. in sports), results, score; to record, to document; to set a record (e.g. in sports), to show a result, to reach a value		jlpt-n3
+頭痛	headache	頭痛[ずつう]	Noun			jlpt-n3
+世紀	century	世紀[せいき]	Noun	era; of the century (e.g. fight of the century)		jlpt-n3
+契約	contract, compact, agreement	契約[けいやく]	Noun, Suru verb, Transitive verb			jlpt-n3
+精神	mind, spirit, soul, heart, ethos	精神[せいしん]	Noun	attitude, mentality, will, intention; spirit (of a matter), essence, fundamental significance		jlpt-n3
+牛	cattle (Bos taurus), cow, bull, ox, calf	牛[うし]	Noun	"beef; Chinese ""Ox"" constellation (one of the 28 mansions)"		jlpt-n3
+俳優	actor, actress, player, performer	俳優[はいゆう]	Noun			jlpt-n3
+優勝	overall victory, championship, winning the title	優勝[ゆうしょう]	Noun, Suru verb, Intransitive verb	(being in) heaven, bliss, perfect contentment		jlpt-n3
+記憶	memory, recollection, remembrance	記憶[きおく]	Noun, Suru verb, Transitive verb	memory, storage		jlpt-n3
+独立	"independence, self-reliance, supporting oneself, being on one's own"	独立[どくりつ]	Noun, Suru verb	independence (e.g. of a nation), freedom; separation, isolation		jlpt-n3
+州	state (US, Australia, India, Germany, etc.), province (e.g. Canada), canton (e.g. Switzerland), oblast (e.g. Russia), department (e.g. ancient China)	州[しゅう]	Noun, Noun, used as a suffix	continent; dear		jlpt-n3
+額	(picture) frame, framed picture	額[がく]	Noun	amount (esp. of money), sum		jlpt-n3
+公平	fairness, impartiality, justice, objectivity	公平[こうへい]	Noun, Na-adjective			jlpt-n3
+生命	life, existence	生命[せいめい]	Noun	"(one's) working life, career; life force, lifeblood, soul, essence"		jlpt-n3
+強盗	robber, mugger	強盗[ごうとう]	Noun	robbery, burglary		jlpt-n3
+霧	fog, mist	霧[きり]	Noun	spray		jlpt-n3
+記事	article, news story, report, account	記事[きじ]	Noun			jlpt-n3
+命令	order, command, decree, directive	命令[めいれい]	Noun, Suru verb, Transitive verb	(software) instruction, statement		jlpt-n3
+輸入	import, importation, introduction	輸入[ゆにゅう]	Noun, Suru verb, Transitive verb	afferent		jlpt-n3
+辺り	(in the) neighbourhood, neighborhood, vicinity, nearby, surroundings	辺[あた]り	Noun, Noun, used as a suffix, Adverb	around, about, or thereabouts; for instance, say, such as		jlpt-n1 jlpt-n3
+歌手	singer	歌手[かしゅ]	Noun			jlpt-n3
+冗談	joke, jest, funny story	冗談[じょうだん]	Noun			jlpt-n3
+能力	ability, faculty	能力[のうりょく]	Noun			jlpt-n3
+才能	talent, ability	才能[さいのう]	Noun			jlpt-n3
+敵	opponent, rival, adversary	敵[てき]	Noun	menace, danger, threat, enemy		jlpt-n3
+自慢	pride, boast	自慢[じまん]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+選手	player (of a sport), athlete, team member	選手[せんしゅ]	Noun			jlpt-n3
+欠点	fault, defect, flaw, weak point, weakness, shortcoming, drawback	欠点[けってん]	Noun	failure (in an examination), failing grade		jlpt-n3
+一体	(what) the heck, (why) in the world, (who) on earth	一体[いったい]	Adverb	one object, one body, unity; one form, one style; one Buddhist image (or carving, etc.); generally, in general		jlpt-n3
+素敵	lovely, wonderful, nice, great, fantastic, superb, cool	素敵[すてき]	Na-adjective			jlpt-n1 jlpt-n3
+熱心	zealous, enthusiastic, ardent, fervent, keen, eager	熱心[ねっしん]	Na-adjective , Noun			jlpt-n3
+回復	restoration, rehabilitation, recovery, return, replevin, improvement	回復[かいふく]	Noun, Suru verb	recovery (from an illness), recuperation, convalescence		jlpt-n3
+判断	judgment, judgement, decision, conclusion, adjudication	判断[はんだん]	Noun, Suru verb, Transitive verb	divination; judgement		jlpt-n3
+訪問	call, visit	訪問[ほうもん]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+注文	order (for an item)	注文[ちゅうもん]	Noun, Suru verb	request, demand, condition		jlpt-n3
+給料	salary, wages, pay	給料[きゅうりょう]	Noun			jlpt-n3
+態度	attitude, manner, behaviour, demeanour, bearing	態度[たいど]	Noun	attitude (towards an issue, etc.), position, stance, stand		jlpt-n3
+次第	depending on	次第[しだい]	Noun, used as a suffix	"as soon as, immediately after, upon; as (e.g. ""as one is told"", ""as one wishes""), whatever (e.g. ""whatever is at hand""); order, program, programme, precedence; circumstances, course of events, state of things; reason"		jlpt-n3
+決定	decision, determination	決定[けってい]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+影響	influence, effect, impact	影響[えいきょう]	Noun, Suru verb, Intransitive verb			jlpt-n3
+年齢	age, years	年齢[ねんれい]	Noun			jlpt-n3
+正確	accurate, correct, precise, exact	正確[せいかく]	Na-adjective , Noun			jlpt-n3
+主張	claim, insistence, assertion, advocacy, emphasis, contention, opinion, tenet	主張[しゅちょう]	Noun, Suru verb, Transitive verb			jlpt-n3
+便り	news, tidings, information, correspondence, letter	便[たよ]り	Noun, Noun, used as a suffix, Suru verb			jlpt-n3
+信用	confidence, trust, faith, reputation	信用[しんよう]	Noun, Suru verb, Transitive verb	credit (finance)		jlpt-n3
+土地	plot of land, lot, soil	土地[とち]	Noun	locality, region, place		jlpt-n3
+延期	postponement, deferment, adjournment	延期[えんき]	Noun, Suru verb, Transitive verb			jlpt-n3
+旅	travel, trip, journey	旅[たび]	Noun, Suru verb			jlpt-n3
+商売	trade, business, commerce	商売[しょうばい]	Noun, Suru verb	occupation, calling, profession, job		jlpt-n3
+苦労	trouble, hardship, difficulty, labour, labor, toil, pains	苦労[くろう]	Noun, Suru verb	anxiety, worry, concern, cares		jlpt-n3
+奪う	to snatch away, to dispossess, to steal	奪[うば]う	Godan verb with u ending, Transitive verb			jlpt-n3
+喜び	joy, delight, rapture, pleasure, gratification, rejoicing, congratulations, felicitations	喜[よろこ]び	Noun			jlpt-n2 jlpt-n3
+提出	presentation (of documents), submission (of an application, report, etc.), production (e.g. of evidence), introduction (e.g. of a bill), filing, turning in	提出[ていしゅつ]	Noun, Suru verb, Transitive verb			jlpt-n3
+姿	figure, form, shape	姿[すがた]	Noun	appearance, dress, guise; state, condition, picture, image; form (of a waka); dressed in ..., wearing ...		jlpt-n3
+回	counter for occurrences	回[かい]	Counter	a time, an instance; inning (baseball), round, game; episode, chapter, instalment; Hui (people); Islam		jlpt-n3
+明らか	clear, obvious, evident, plain, definite	明[あき]らか	Na-adjective	bright, light		jlpt-n3
+状況	state of affairs, situation, conditions, circumstances	状況[じょうきょう]	Noun			jlpt-n3
+好む	to like, to prefer	好[この]む	Godan verb with mu ending, Transitive verb			jlpt-n3
+不足	insufficiency, deficiency, shortage, lack, scarcity, deficit	不足[ふそく]	Noun, Suru verb, Na-adjective	dissatisfaction, discontent, complaint		jlpt-n3
+追いつく	to catch up (with), to draw level, to pull even, to reach	追[お]いつく	Godan verb with ku ending, Intransitive verb	"to be compensated, to make up for one's losses"		jlpt-n3
+話し合う	to discuss, to talk together	話[はな]し 合[あ]う	Godan verb with u ending, Transitive verb			jlpt-n3
+万一	(unlikely event of) emergency, the worst(-case scenario), 10000 to 1	万一[まんいち]	Noun	(if) by some chance, by some possibility, in the unlikely event that		jlpt-n3
+単語	word, vocabulary	単語[たんご]	Noun			jlpt-n3
+変化	change, variation, alteration, mutation, transition, transformation, transfiguration, metamorphosis	変化[へんか]	Noun, Suru verb, Intransitive verb	variety, diversity; inflection, declension, conjugation; sidestepping		jlpt-n3
+書類	document, official papers	書類[しょるい]	Noun			jlpt-n3
+恐れる	to fear, to be afraid of	恐[おそ]れる	Ichidan verb, Transitive verb			jlpt-n3
+最高	best, supreme, wonderful, finest	最高[さいこう]	"Noun which may take the genitive case particle 'no', Na-adjective , Noun"	highest, maximum, most, uppermost, supreme		jlpt-n3
+越える	to cross over, to cross, to pass through, to pass over (out of), to go beyond, to go past	越[こ]える	Ichidan verb, Transitive verb	to exceed, to surpass, to be more (than)		jlpt-n2 jlpt-n3
+種類	variety, kind, type, category	種類[しゅるい]	Noun	counter for kinds, species, etc.		jlpt-n3
+事態	situation, (present) state of affairs, circumstances	事態[じたい]	Noun			jlpt-n3
+週間	week	週間[しゅうかん]	Noun			jlpt-n3
+幸運	good luck, fortune	幸運[こううん]	Noun, Na-adjective			jlpt-n3
+以来	since, henceforth	以来[いらい]	Noun, Adverb			jlpt-n3
+調子	tune, tone, key, pitch, time, rhythm	調子[ちょうし]	Noun	vein, mood, way, manner, style, knack; condition, state of health; impetus, spur of the moment, strain; trend		jlpt-n3
+得意	satisfaction, pride, triumph, elation	得意[とくい]	"Noun, Na-adjective , Noun which may take the genitive case particle 'no'"	"one's strong point, one's forte, one's specialty; regular customer, regular client, patron"		jlpt-n3
+状態	state, condition, situation, appearance, circumstances	状態[じょうたい]	Noun			jlpt-n3
+必ずしも	(not) always, (not) necessarily, (not) entirely, (not) all	必[かなら]ずしも	Adverb			jlpt-n3
+成長	growth, development, growing up, becoming an adult	成長[せいちょう]	Noun, Suru verb, Intransitive verb	growth (of a company, the economy, etc.)		jlpt-n3
+隠す	to hide, to conceal	隠[かく]す	Godan verb with su ending, Transitive verb			jlpt-n3
+光景	scene, spectacle, sight, view	光景[こうけい]	Noun			jlpt-n3
+頼る	to rely on, to depend on, to count on, to turn to (for help)	頼[たよ]る	Godan verb with ru ending, Intransitive verb, Transitive verb			jlpt-n3
+残す	to leave (behind)	残[のこ]す	Godan verb with su ending, Transitive verb	"to leave (undone), to not finish; to save, to set aside, to reserve; to leave (to someone, esp. after one's death), to bequeath; to stay (in the ring), to hold on"		jlpt-n3
+恐ろしい	terrible, dreadful, terrifying, frightening	恐[おそ]ろしい	I-adjective	surprising, startling, tremendous, amazing		jlpt-n3
+戦う	to make war (on), to wage war (against), to go to war (with), to fight (with), to do battle (against)	戦[たたか]う	Godan verb with u ending, Intransitive verb	to compete (against); to struggle (against adversities, etc.), to fight, to contend, to resist		jlpt-n3
+実は	as a matter of fact, by the way, to tell you the truth, to be honest, frankly	実[じつ]は	Expressions , Adverb			jlpt-n3
+誇り	pride, boast, credit (to)	誇[ほこ]り	Noun			jlpt-n3
+常に	always, constantly	常[つね]に	Adverb			jlpt-n3
+達する	to reach, to get to, to arrive at	達[たっ]する	Suru verb - special class			jlpt-n3
+一言	single word, a few words, brief comment	一言[ひとこと]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n1 jlpt-n3
+性格	character (of a person), personality, disposition, nature	性格[せいかく]	Noun	characteristics, nature (of a thing, event, etc.)		jlpt-n3
+容易	easy, simple, plain	容易[ようい]	Na-adjective , Noun			jlpt-n3
+中止	interruption, discontinuance, suspension, stoppage	中止[ちゅうし]	Noun, Suru verb, Transitive verb	cancellation (of a planned event), calling off		jlpt-n3
+借金	debt, loan, liabilities, borrowing money	借金[しゃっきん]	Noun, Suru verb, Transitive verb	number of games under the .500 mark		jlpt-n3
+天候	weather	天候[てんこう]	Noun			jlpt-n3
+罪	crime, sin, wrongdoing, indiscretion	罪[つみ]	"Noun, Na-adjective , Noun which may take the genitive case particle 'no'"	penalty, sentence, punishment; fault, responsibility, culpability; thoughtlessness, lack of consideration		jlpt-n3
+勝ち	win, victory	勝[か]ち	Noun			jlpt-n3
+地位	(social) position, status, standing	地位[ちい]	Noun	position (in a company, organization, etc.), post, rank		jlpt-n3
+乗客	passenger	乗客[じょうきゃく]	Noun			jlpt-n1 jlpt-n3
+備える	to furnish with, to equip with, to provide, to install	備[そな]える	Ichidan verb, Transitive verb	to prepare for, to make preparations for, to make provision for; to possess (all that is needed), to be endowed with, to be equipped with; to be born with, to have since birth		jlpt-n2 jlpt-n3
+立場	position, situation	立場[たちば]	Noun	viewpoint, standpoint, point of view		jlpt-n3
+再び	again, once more, a second time	再[ふたた]び	Adverb			jlpt-n3
+一層	much more, still more, all the more, more than ever	一層[いっそう]	"Adverb , Noun which may take the genitive case particle 'no'"	single layer (or storey, etc.); rather, sooner, preferably		jlpt-n3
+命	life, life force	命[いのち]	Noun	"lifetime, lifespan; most important thing, foundation, core; paired tattoos of the ""life"" kanji on the upper arms of a man and woman (indicating unwavering love); fate, destiny, karma"		jlpt-n3
+欠席	absence, non-attendance	欠席[けっせき]	Noun, Suru verb, Intransitive verb			jlpt-n3
+職	job, work, employment, occupation, position	職[しょく]	Noun, Noun, used as a suffix	duties; trade, skill		jlpt-n3
+傾向	tendency, trend, inclination	傾向[けいこう]	Noun			jlpt-n3
+環境	environment, circumstance	環境[かんきょう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+燃える	to burn, to get fired up	燃[も]える	Ichidan verb, Intransitive verb			jlpt-n3
+是非	certainly, without fail	是非[ぜひ]	Adverb	right and wrong, pros and cons		jlpt-n3
+出身	"one's origin (e.g. city, country, parentage, school)"	出身[しゅっしん]	Noun			jlpt-n3
+覆う	to cover, to hide, to conceal, to wrap, to disguise	覆[おお]う	Godan verb with u ending, Transitive verb			jlpt-n3
+知恵	wisdom, wit, sagacity, sense, intelligence	知恵[ちえ]	Noun	prajna (insight leading to enlightenment)		jlpt-n3
+鉄	iron (Fe)	鉄[てつ]	Noun	strong and hard (as iron); railway; railway enthusiast		jlpt-n3
+断る	to refuse, to reject, to dismiss, to turn down, to decline	断[ことわ]る	Godan verb with ru ending, Transitive verb	to inform, to give notice, to tell in advance; to ask leave, to excuse oneself (from)		jlpt-n3
+不幸	unhappiness, sorrow, misfortune, disaster, accident	不幸[ふこう]	Noun, Na-adjective	death (usu. of a relative), bereavement		jlpt-n3
+感動	being deeply moved emotionally, excitement, passion, inspiration, deep emotion, strong impression	感動[かんどう]	Noun, Suru verb, Intransitive verb			jlpt-n3
+乗せる	to place on (something)	乗[の]せる	Ichidan verb, Transitive verb	to give (someone) a ride, to give a lift, to pick up, to help on board; to load (luggage), to carry, to take on board; to send out (on the airwaves, etc.); to deceive, to take for a ride; to (sing) along with (musical accompaniment); to let (someone) take part; to excite (someone); to publish (an article), to run (an ad)		jlpt-n2 jlpt-n3
+感じ	feeling, sense, impression	感[かん]じ	Noun			jlpt-n3
+先日	the other day, a few days ago	先日[せんじつ]	Noun, Adverb			jlpt-n3
+表現	expression, presentation	表現[ひょうげん]	Noun, Suru verb	representation, notation		jlpt-n3
+無視	disregarding, ignoring	無視[むし]	Noun, Suru verb, Transitive verb			jlpt-n3
+閉じる	to close (e.g. book, eyes, meeting, etc.), to shut	閉[と]じる	Ichidan verb, Transitive verb, Intransitive verb			jlpt-n3
+奇妙	strange, odd, peculiar, queer, curious	奇妙[きみょう]	Na-adjective , Noun			jlpt-n3
+余裕	surplus, margin, leeway, room, space, time, allowance, flexibility, scope	余裕[よゆう]	Noun	composure, placidity, complacency, calm		jlpt-n3
+支払う	to pay	支払[しはら]う	Godan verb with u ending, Transitive verb			jlpt-n3
+明かり	light, illumination, glow, gleam	明[あ]かり	Noun	lamp, light		jlpt-n3
+変更	change, modification, alteration, revision, amendment	変更[へんこう]	Noun, Suru verb, Transitive verb			jlpt-n3
+違い	difference, distinction, discrepancy	違[ちが]い	Noun	mistake, error		jlpt-n3
+合わせる	to match (rhythm, speed, etc.)	合[あ]わせる	Ichidan verb, Transitive verb	to join together, to unite, to combine, to add up; to face, to be opposite (someone); to compare, to check with; to cause to meet (e.g. an unpleasant fate); to place together, to connect, to overlap; to mix, to combine; to put blade to blade, to fight		jlpt-n3
+美人	beautiful woman, (a) beauty	美人[びじん]	Noun			jlpt-n3
+実現	implementation (e.g. of a system), materialization, materialisation, realization, realisation, actualization, actualisation	実現[じつげん]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+成績	results, record, grades, marks	成績[せいせき]	Noun			jlpt-n3
+殺す	to kill, to slay, to murder, to slaughter	殺[ころ]す	Godan verb with su ending, Transitive verb	"to suppress, to block, to hamper, to destroy (e.g. talent), to eliminate (e.g. an odour), to spoil (e.g. a flavour), to kill (e.g. one's speed); to suppress (a voice, feelings, etc.), to hold back, to stifle (a yawn, laugh, etc.), to hold (one's breath); to put out (a runner); to pawn, to put in hock"		jlpt-n3
+無事	safety, security, peace, quiet	無事[ぶじ]	Noun, Na-adjective	safely, without incident, successfully; good health		jlpt-n3
+雇う	to employ	雇[やと]う	Godan verb with u ending, Transitive verb	to hire, to charter		jlpt-n3
+仲間	companion, fellow, friend, mate, comrade, partner, colleague, coworker, associate	仲間[なかま]	Noun	group, company, circle, set, gang; member of the same category (family, class)		jlpt-n3
+様々	various, varied, diverse, all sorts of	様々[さまざま]	Na-adjective , Noun			jlpt-n3
+発表	"announcement, publication, presenting, statement, communique, making known, breaking (news story), expressing (one's opinion), releasing, unveiling"	発表[はっぴょう]	Noun, Suru verb, Transitive verb			jlpt-n3
+製品	manufactured goods, finished goods, product	製品[せいひん]	Noun			jlpt-n3
+歓迎	welcome, reception	歓迎[かんげい]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+全体	whole, entirety, whatever (is the matter)	全体[ぜんたい]	Noun, Adverb			jlpt-n3
+許可	permission, approval, authorization, license	許可[きょか]	Noun, Suru verb, Transitive verb			jlpt-n3
+大部分	most part, greater part, majority	大部分[だいぶぶん]	Noun			jlpt-n3
+疑う	to doubt, to distrust, to be suspicious of, to suspect	疑[うたが]う	Godan verb with u ending, Transitive verb			jlpt-n3
+最終	last, final, closing	最終[さいしゅう]	"Noun which may take the genitive case particle 'no', Noun"	last train (bus, flight, etc.; of the day)		jlpt-n3
+通す	to stick through, to force through	通[とお]す	Godan verb with su ending, Transitive verb	"to spread throughout, to thoroughly diffuse; to make a path between two points; to proceed in a logical manner; to let pass, to allow through; to lead (someone) into (a house, room, etc.), to show in; to go through (a middleman); to (look, listen) through (a window, wall, etc.); to pass (a law, applicant, etc.); to force to accept, to force agreement; to continue (in a state), to persist in; to do to the entirety of, to cover all of, to span the whole ...; to do from beginning to end without a break; to convey (one's ideas, etc.) to the other party; to do to the end, to carry through, to complete"		jlpt-n3
+動かす	to move, to shift, to stir, to budge, to change position	動[うご]かす	Godan verb with su ending, Transitive verb	to inspire, to rouse, to move (e.g. feeling), to influence; to change, to alter, to deny; to operate, to set in motion, to get going; to mobilize (e.g. troops), to mobilise, to deploy; to manage (e.g. funds)		jlpt-n3
+完成	completion, perfection, accomplishment	完成[かんせい]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+女優	actress, female actor	女優[じょゆう]	Noun			jlpt-n3
+想像	imagination, supposition, guess	想像[そうぞう]	Noun, Suru verb, Transitive verb			jlpt-n3
+経営	management, administration, operation, running (a business), conducting	経営[けいえい]	Noun, Suru verb, Transitive verb			jlpt-n3
+増加	increase, rise, growth, addition, increment	増加[ぞうか]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+物事	things, everything	物事[ものごと]	Noun			jlpt-n3
+便	flight (e.g. airline flight), trip (e.g. train trip), service	便[びん]	Noun, Noun, used as a suffix	mail, post, letter; opportunity, chance		jlpt-n3
+唯一	only, sole, unique	唯一[ゆいいつ]	"Noun which may take the genitive case particle 'no', Noun, Adverb"			jlpt-n3
+救う	to rescue from, to help out of, to save	救[すく]う	Godan verb with u ending, Transitive verb			jlpt-n3
+関心	concern, interest	関心[かんしん]	Noun			jlpt-n3
+横断	crossing, traversing	横断[おうだん]	Noun, Suru verb	traversing horizontally, passing west to east (or east to west); cutting horizontally		jlpt-n3
+現代	present age, present day, today	現代[げんだい]	"Noun, Noun which may take the genitive case particle 'no'"	modern era, modern times		jlpt-n3
+際	on the occasion of, circumstances, juncture	際[さい]	Adverb , Noun			jlpt-n3
+育つ	to be raised (e.g. child), to be brought up, to grow (up)	育[そだ]つ	Godan verb with tsu ending, Intransitive verb			jlpt-n3
+支払い	payment	支払[しはら]い	Noun			jlpt-n3
+婦人	woman, lady, adult female	婦人[ふじん]	Noun			jlpt-n3
+相談	consultation, discussion, discussing, asking (someone) for advice	相談[そうだん]	Noun, Suru verb, Transitive verb			jlpt-n3
+考慮	consideration, taking into account	考慮[こうりょ]	Noun, Suru verb, Transitive verb			jlpt-n3
+活動	activity (of a person, organization, animal, volcano, etc.), action	活動[かつどう]	Noun, Suru verb			jlpt-n3
+貯金	putting money aside, savings, deposit (e.g. in a bank)	貯金[ちょきん]	Noun, Suru verb	accumulated surplus of wins, wins in the bank		jlpt-n3
+王	king, ruler, sovereign, monarch	王[おう]	Noun, Noun, used as a suffix	tycoon, magnate, champion, master; king (of the senior player)		jlpt-n3
+劇	drama, play	劇[げき]	Noun	powerful drug		jlpt-n3
+恋	(romantic) love	恋[こい]	Noun			jlpt-n3
+命じる	to order, to command	命[めい]じる	Ichidan verb, Transitive verb	to appoint		jlpt-n3
+結論	conclusion (of an argument, discussion, study, etc.)	結論[けつろん]	Noun, Suru verb, Intransitive verb	conclusion		jlpt-n3
+出来事	incident, affair, happening, event	出来事[できごと]	Noun			jlpt-n3
+文句	complaint, grumbling, objection	文句[もんく]	Noun	phrase, words, expression		jlpt-n3
+見送り	seeing (someone) off, send-off	見送[みおく]り	Noun	deferment, postponement, shelving; letting a pitch go by; wait-and-see attitude		jlpt-n3
+分ける	to divide (into), to split (into), to part, to separate, to divide up, to classify, to sort out, to divide out	分[わ]ける	Ichidan verb, Transitive verb	"to share, to distribute, to deal out, to dish out; to distinguish, to discriminate, to differentiate (between); to break up (a fight), to mediate; to call a draw, to tie; to push one's way through (a crowd); to sell"		jlpt-n3
+人類	mankind, humanity	人類[じんるい]	Noun			jlpt-n3
+桜	cherry tree, cherry blossom	桜[さくら]	Noun	fake buyer, paid audience, shill, seat filler; hired applauder; horse meat		jlpt-n3
+協力	cooperation, collaboration, help, support	協力[きょうりょく]	Noun, Suru verb, Intransitive verb			jlpt-n3
+人物	person, character, figure, personage, man, woman	人物[じんぶつ]	Noun	"one's character, one's personality; able person, talented person"		jlpt-n3
+望み	wish, desire, hope	望[のぞ]み	Noun	"prospect, expectation, (one's) hopes"		jlpt-n3
+食料	food	食料[しょくりょう]	Noun			jlpt-n3
+確かめる	to ascertain, to check, to make sure	確[たし]かめる	Ichidan verb, Transitive verb			jlpt-n3
+食物	food, foodstuff	食物[しょくもつ]	Noun			jlpt-n3
+加える	to add, to add up, to sum up, to append, to annex	加[くわ]える	Ichidan verb, Transitive verb	to increase, to gather (e.g. speed), to pick up; to include, to count in, to let join; to inflict (damage), to deal, to give		jlpt-n3
+一生	whole life, a lifetime, all through life, one existence, a generation, an age, the whole world, the era	一生[いっしょう]	"Noun, Noun which may take the genitive case particle 'no', Adverb"	"(the only, the greatest, etc.) of one's life"		jlpt-n3
+確認	confirmation, verification, validation, review, check, affirmation, identification	確認[かくにん]	Noun, Suru verb, Transitive verb			jlpt-n3
+使用	use, application, employment, utilization, utilisation	使用[しよう]	Noun, Suru verb, Transitive verb			jlpt-n3
+愛情	love, affection	愛情[あいじょう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+癖	habit (usu. a bad one), tendency	癖[くせ]	Noun	peculiarity, idiosyncrasy, mannerism, quirk; crease, wrinkle, curl, kink		jlpt-n3
+処理	processing, dealing with, treatment, disposition, disposal	処理[しょり]	Noun, Suru verb, Transitive verb			jlpt-n3
+部分	portion, section, part	部分[ぶぶん]	Noun			jlpt-n3
+同様	same, similar, (just) like, equal	同様[どうよう]	"Noun which may take the genitive case particle 'no', Na-adjective , Noun, Noun, used as a suffix"			jlpt-n3
+当てる	to hit	当[あ]てる	Ichidan verb, Transitive verb	to expose; to apply (e.g. patch), to put on, to put against, to hold on, to hold against; to allot, to call on someone (e.g. in class); to guess (an answer); to make a hit (e.g. in a lottery)		jlpt-n3
+日曜	Sunday	日曜[にちよう]	Adverb , Noun			jlpt-n3
+報告	report, information	報告[ほうこく]	Noun, Suru verb, Transitive verb			jlpt-n3
+眺める	to look at, to gaze at, to watch, to stare at	眺[なが]める	Ichidan verb, Transitive verb	to look out over, to get a view of, to admire (e.g. the scenery); to look on (from the sidelines), to stand by and watch, to observe		jlpt-n3
+可能	possible, potential, practicable, feasible	可能[かのう]	Na-adjective , Noun			jlpt-n3
+画家	painter, artist	画家[がか]	Noun			jlpt-n3
+直ちに	at once, immediately, right away, without delay	直[ただ]ちに	Adverb	directly (face, lead to, etc.), automatically (mean, result in, etc.)		jlpt-n3
+自身	"(one's) self, oneself"	自身[じしん]	Noun, Noun, used as a suffix			jlpt-n3
+高価	highly priced, expensive, valuable, costly	高価[こうか]	Na-adjective , Noun			jlpt-n3
+様子	state, state of affairs, situation, circumstances	様子[ようす]	Noun	appearance, look, aspect; sign, indication		jlpt-n3
+深刻	serious, severe, grave, acute	深刻[しんこく]	Na-adjective , Noun			jlpt-n3
+禁止	prohibition, inhibition, ban	禁止[きんし]	Noun, Suru verb, Transitive verb			jlpt-n3
+誘う	to invite, to ask (someone to do), to call (for), to take (someone) along	誘[さそ]う	Godan verb with u ending, Transitive verb	to tempt, to lure, to entice, to seduce; to induce (tears, laughter, sleepiness, etc.), to arouse (e.g. sympathy), to provoke		jlpt-n3
+専攻	major subject, special study	専攻[せんこう]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+警告	warning, advice	警告[けいこく]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+傷	wound, injury, cut, gash, bruise, scratch, scrape, scar	傷[きず]	Noun	"chip, crack, scratch, nick; flaw, defect, weakness, weak point; stain (on one's reputation), disgrace, dishonor, dishonour; (emotional) hurt, hurt feelings"		jlpt-n1 jlpt-n3
+誤解	misunderstanding	誤解[ごかい]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+夫婦	married couple, husband and wife, man and wife	夫婦[ふうふ]	Noun	his and hers, pair of objects, one larger (for man), one smaller (for woman)		jlpt-n3
+頂上	top, summit, peak	頂上[ちょうじょう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+穴	hole, opening, perforation	穴[あな]	Noun, Noun, used as a suffix	pit, hollow, hole (in the ground, etc.); burrow, den, lair, holt, hole; deficit, shortage, missing person (in a team, meeting, etc.); vacancy, opening; flaw; well-kept secret place; upset victory (with a large payoff); pit (of a theater); hiding place, hideout; underbelly (of society, etc.)		jlpt-n3
+手術	surgery, operation, procedure	手術[しゅじゅつ]	Noun, Suru verb			jlpt-n3
+被害	(suffering) damage, injury, harm	被害[ひがい]	Noun			jlpt-n3
+用いる	to use, to make use of, to utilize, to utilise	用[もち]いる	Ichidan verb, Transitive verb			jlpt-n3
+慎重	careful, cautious, prudent, discreet, deliberate	慎重[しんちょう]	Na-adjective , Noun			jlpt-n3
+差別	distinction, differentiation, discrimination	差別[さべつ]	Noun, Suru verb, Transitive verb	discrimination (against people)		jlpt-n3
+筋	muscle, tendon, sinew	筋[すじ]	Noun	vein, artery; fiber, fibre, string; line, stripe, streak; reason, logic; plot, storyline; lineage, descent; school (e.g. of scholarship or arts); aptitude, talent; source (of information, etc.), circle, channel; well-informed person (in a transaction); logical move (in go, shogi, etc.); ninth vertical line; seam on a helmet; gristly fish paste (made of muscle, tendons, skin, etc.); social position, status; on (a river, road, etc.), along; counter for long thin things, counter for roads or blocks when giving directions; (Edo period) counter for hundreds of mon (obsolete unit of currency)		jlpt-n3
+資本	funds, capital	資本[しほん]	Noun			jlpt-n3
+湾	bay, gulf, inlet	湾[わん]	Noun, Noun, used as a suffix			jlpt-n3
+国語	national language	国語[こくご]	Noun	"Japanese language (esp. as a school subject in Japan); one's native language, mother tongue; native Japanese words (as opposed to loanwords and Chinese-derived words)"		jlpt-n3
+礼	thanks, gratitude	礼[れい]	Noun	manners, etiquette; bow; reward, gift; ceremony, ritual; key money		jlpt-n3
+豆	legume (esp. edible legumes or their seeds, e.g. beans, peas, pulses), bean, pea	豆[まめ]	Noun	soya bean (Glycine max), soybean, soy; female genitalia (esp. the clitoris); kidney; small, miniature, baby, midget, small-scale; child		jlpt-n3
+体育	physical education, PE, gym (class)	体育[たいいく]	Noun			jlpt-n3
+筆	writing brush, paintbrush, pen	筆[ふで]	Noun	writing with a brush, drawing with a brush, penmanship, something drawn with a brush; writing (composing text), the written word; (land) lot, plot		jlpt-n3
+句	section (i.e. of text), sentence, passage, paragraph	句[く]	Noun, Noun, used as a suffix	phrase; verse (of 5 or 7 mora in Japanese poetry; of 4, 5, or 7 characters in Chinese poetry); haiku, first 17 morae of a renga, etc.; maxim, saying, idiom, expression		jlpt-n3
+粉	flour, meal, powder, dust	粉[こな]	Noun			jlpt-n3
+刀	sword (esp. Japanese single-edged), katana	刀[かたな]	Noun	scalpel; chisel, burin, graver; knife money (knife-shaped commodity money used in ancient China)		jlpt-n3
+茶	tea	茶[ちゃ]	Noun	tea plant (Camellia sinensis); tea preparation, making tea; brown; mockery		jlpt-n3
+土産	local specialty or souvenir bought as a gift while travelling	土産[みやげ]	Noun	present brought by a visitor; something unpleasant that one is given (e.g. an illness while on vacation), unwelcome gift, disservice		jlpt-n3
+作曲	composition (of music), setting, writing music	作曲[さっきょく]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+熱帯	tropics	熱帯[ねったい]	Noun			jlpt-n3
+電子	electron	電子[でんし]	Noun	electronic		jlpt-n3
+泡	bubble, foam, froth, suds, lather, head (on beer)	泡[あわ]	Noun			jlpt-n3
+菓子	confectionery, sweets, candy, cake	菓子[かし]	Noun			jlpt-n3
+梅	Japanese apricot (Prunus mume), Japanese plum, ume, Chinese plum	梅[うめ]	Noun	lowest (of a three-tier ranking system)		jlpt-n3
+飯	cooked rice	飯[めし]	Noun	"meal, food; one's living, livelihood"		jlpt-n3
+能	talent, gift, function	能[のう]	Noun	noh (theatre)		jlpt-n3
+月	Moon	月[つき]	Noun	month; moonlight; (a) moon, natural satellite		jlpt-n3
+退屈	tedium, boredom, dullness	退屈[たいくつ]	Noun, Na-adjective	to feel bored, to get bored with, to get tired of		jlpt-n3
+流れる	to stream, to flow (liquid, time, etc.), to run (ink)	流[なが]れる	Ichidan verb, Intransitive verb	to be washed away, to be carried; to drift, to float (e.g. clouds), to wander, to stray; to sweep (e.g. rumour, fire), to spread, to circulate; to be heard (e.g. music), to be played; to lapse (e.g. into indolence, despair); to pass, to elapse, to be transmitted; to be called off, to be forfeited; to disappear, to be removed		jlpt-n3
+暗記	memorization, memorisation, learning by heart	暗記[あんき]	Noun, Suru verb, Transitive verb			jlpt-n3
+膝	knee	膝[ひざ]	Noun	lap, knee and thigh (while sitting)		jlpt-n3
+頬	cheek (of face)	頬[ほお]	Noun			jlpt-n3
+餌	(animal) feed, fodder, pet food	餌[えさ]	Noun	bait, lure, enticement		jlpt-n3
+量	quantity, amount, volume, capacity, portion (of food)	量[りょう]	Noun, Noun, used as a suffix	generosity, magnanimity, tolerance; pramana, (in Indian philosophy) means by which one gains accurate and valid knowledge		jlpt-n3
+莫大	vast, huge, immense, enormous, colossal	莫大[ばくだい]	Na-adjective	malva nut (Sterculia lychnophora)		jlpt-n3
+式	equation, formula, expression	式[しき]	Noun, Noun, used as a suffix	ceremony; style; enforcement regulations (of the ritsuryō)		jlpt-n3
+連想	association (of ideas), being reminded (of something), suggestion	連想[れんそう]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+地平線	horizon (related to land)	地平線[ちへいせん]	Noun			jlpt-n3
+場	place, spot, space	場[ば]	Noun	field, discipline, sphere, realm; occasion, situation; scene (of a play, movie, etc.); session (of the stock market); field, table, area in which cards are laid out (in a card game); round (east, south, etc.); field; field		jlpt-n3
+動詞	verb	動詞[どうし]	Noun			jlpt-n3
+袖	sleeve	袖[そで]	Noun	wing (of a stage, desk, gate, etc.)		jlpt-n3
+灰	ash, ashes	灰[はい]	Noun			jlpt-n3
+秒	second (unit of time)	秒[びょう]	Noun	arc second		jlpt-n3
+県	prefecture (Japan), county (China, Taiwan, Norway, etc.), department (France), province (Italy, Spain, etc.)	県[けん]	Noun, Noun, used as a suffix			jlpt-n3
+帯	obi, kimono sash	帯[おび]	Noun	paper wrapper on books, CDs, etc.; band, belt, strip; cingulum; radio or television program broadcast in the same time slot on all or most days		jlpt-n3
+と	if, when	と	Particle, Conjunction	and; with; used for quoting (thoughts, speech, etc.); promoted pawn; indicates a question		jlpt-n1 jlpt-n3
+外出	"going out, outing, leaving (one's home, office, etc.)"	外出[がいしゅつ]	Noun, Suru verb, Intransitive verb			jlpt-n3
+当時	at that time, in those days	当時[とうじ]	Noun, Adverb			jlpt-n3
+案内	guidance, leading (the way), showing around	案内[あんない]	Noun, Suru verb	"information, notice, notification; announcement (of one's arrival); invitation; acquaintance, knowledge"		jlpt-n3
+地方	district, region, area, locality	地方[ちほう]	Noun	the country, countryside, the provinces, rural area		jlpt-n3
+一方	one (esp. of two), the other, one way, the other way, one direction, the other direction, one side, the other side, one party, the other party	一方[いっぽう]	Noun	on the one hand, on the other hand; whereas, although, but at the same time, meanwhile, in turn; just keeps, being inclined to ..., tending to be ..., tending to do ..., continuously ..., just keeps on ...ing, only		jlpt-n3
+発展	development, growth, expansion, extension, flourishing	発展[はってん]	Noun, Suru verb	development (of a situation, story, etc.), advancement, progression, unfolding; playing around, having an active sex life		jlpt-n3
+双子	twins, twin	双子[ふたご]	Noun			jlpt-n3
+団体	group, party, team	団体[だんたい]	Noun	organization, organisation, association, group, body, society		jlpt-n3
+夜中	middle of the night, dead of night	夜中[よなか]	Noun, Adverb			jlpt-n3
+中央	centre, center, middle, heart	中央[ちゅうおう]	"Noun, Noun which may take the genitive case particle 'no'"	capital, seat of government		jlpt-n3
+共同	cooperation, collaboration, association, partnership, (acting in) unison	共同[きょうどう]	"Noun, Suru verb, Intransitive verb, Noun which may take the genitive case particle 'no'"	community, communal use, common possession, sharing		jlpt-n3
+通り	avenue, street, way, road	通[とお]り	Adverb , Noun	coming and going, street traffic; flow (of water, air, etc.); transmission (of sound), reach (e.g. of voice); fame, reputation, popularity; the same status or way, as (e.g. as expected, as I said); understanding, comprehension; counter for sets of things, counter for methods, ways, types		jlpt-n3
+彼ら	they, them	彼[かれ]ら	Pronoun			jlpt-n3
+我々	we	我々[われわれ]	Pronoun			jlpt-n3
+成功	success, achievement	成功[せいこう]	Noun, Suru verb, Intransitive verb	succeeding (in life), (worldly) success, prosperity		jlpt-n3
+何か	something, some, any	何[なに]か	Pronoun	somehow, for some reason; (so) what (are you trying to say)?, what (do you mean)?		jlpt-n3
+尻	buttocks, behind, rump, bottom, hips	尻[しり]	Noun	undersurface, bottom; last place, end; consequence		jlpt-n3
+出発	departure, leaving, setting off	出発[しゅっぱつ]	Noun, Suru verb, Intransitive verb			jlpt-n3
+起こる	to occur, to happen	起[お]こる	Godan verb with ru ending, Intransitive verb			jlpt-n3
+考え	thinking, thought, view, opinion, concept	考[かんが]え	Noun	idea, notion, imagination; intention, plan, design; consideration, judgement, deliberation, reflection; wish, hope, expectation		jlpt-n3
+何も	(not) anything, (nothing) at all, (not) any, nothing	何[なに]も	Expressions	and everything else, and all; (not) at all, (not) in the least, (not) especially, (not) to that extent		jlpt-n1 jlpt-n3
+友人	friend	友人[ゆうじん]	Noun			jlpt-n3
+努力	effort, exertion, endeavour, endeavor, hard work, striving	努力[どりょく]	Noun, Suru verb, Intransitive verb			jlpt-n3
+終える	to finish	終[お]える	Ichidan verb, Transitive verb, Auxiliary verb	to graduate		jlpt-n3
+最も	most, extremely	最[もっと]も	Adverb			jlpt-n3
+素晴らしい	wonderful, splendid, magnificent	素晴[すば]らしい	I-adjective			jlpt-n3
+運転	operation (of a machine), running, working	運転[うんてん]	Noun, Suru verb, Transitive verb, Intransitive verb	driving (a vehicle); use (of capital, funds, etc.), management, investment		jlpt-n3
+重要	important, momentous, essential, principal, major	重要[じゅうよう]	Na-adjective , Noun			jlpt-n3
+助ける	to save, to rescue	助[たす]ける	Ichidan verb, Transitive verb	to help, to assist; to support (financially), to contribute (to), to provide aid; to facilitate, to stimulate, to promote, to contribute to		jlpt-n3
+幸せ	happiness, good fortune, luck, blessing	幸[しあわ]せ	Noun, Na-adjective			jlpt-n3
+心配	worry, concern, anxiety, uneasiness, fear	心配[しんぱい]	Noun, Suru verb, Transitive verb, Na-adjective	care, help, aid, assistance		jlpt-n3
+感じる	to feel, to sense, to experience	感[かん]じる	Ichidan verb			jlpt-n3
+提案	proposal, proposition, suggestion	提案[ていあん]	Noun, Suru verb, Transitive verb			jlpt-n3
+出席	attendance, presence, appearance	出席[しゅっせき]	Noun, Suru verb, Intransitive verb			jlpt-n3
+他人	another person, other people, others	他人[たにん]	Noun	unrelated person (i.e. not related by blood); outsider, stranger		jlpt-n1 jlpt-n3
+以前	ago, since, before, previous	以前[いぜん]	Noun, Adverb			jlpt-n3
+価値	value, worth, merit	価値[かち]	Noun			jlpt-n3
+間違い	mistake, error, blunder	間違[まちが]い	Noun	accident, mishap, trouble; improper conduct (e.g. between man and woman), indiscretion		jlpt-n3
+突然	abrupt, sudden, unexpected	突然[とつぜん]	"Noun which may take the genitive case particle 'no', Na-adjective , Adverb"			jlpt-n3
+賛成	approval, agreement, support, favour, favor	賛成[さんせい]	"Noun, Suru verb, Intransitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n1 jlpt-n3
+老人	old person, senior citizen, the aged, the elderly	老人[ろうじん]	Noun			jlpt-n3
+愛する	to love	愛[あい]する	Suru verb - special class, Transitive verb			jlpt-n3
+到着	arrival	到着[とうちゃく]	"Noun, Suru verb, Intransitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+満足	satisfaction, contentment, gratification	満足[まんぞく]	Noun, Na-adjective , Suru verb	sufficient, satisfactory, enough, adequate, proper, decent; satisfying (an equation)		jlpt-n3
+氏	Mr, Mrs, Ms, Miss	氏[し]	Suffix	clan; he, him; counter for people	Honorific or respectful (sonkeigo) language	jlpt-n3
+守る	to protect, to guard, to defend	守[まも]る	Godan verb with ru ending, Transitive verb	to keep (i.e. a promise), to abide (by the rules), to observe, to obey, to follow		jlpt-n3
+失う	to lose	失[うしな]う	Godan verb with u ending, Transitive verb	to miss (a change, opportunity); to lose (a loved one), to be bereaved of; to concede (goals, points, etc.)		jlpt-n3
+方法	method, process, manner, way, means, technique	方法[ほうほう]	Noun			jlpt-n3
+無駄	futility, waste, uselessness, pointlessness, idleness	無駄[むだ]	Noun, Na-adjective			jlpt-n3
+援助	assistance, aid, support	援助[えんじょ]	Noun, Suru verb, Transitive verb			jlpt-n3
+合格	passing (an exam), pass, success, passing grade	合格[ごうかく]	Noun, Suru verb, Intransitive verb	meeting (specifications, standards, etc.), passing (inspection), qualification, being found eligible		jlpt-n3
+許す	to permit, to allow, to approve, to consent to	許[ゆる]す	Godan verb with su ending, Transitive verb	"to forgive, to pardon, to excuse, to tolerate; to exempt (someone) from, to remit, to release, to let off; to acknowledge, to admit; to trust, to confide in, to let one's guard down; to give up (points in a game, distance in a race, etc.), to yield"		jlpt-n3
+世話	care, looking after, help, assistance, aid	世話[せわ]	Noun, Suru verb, Transitive verb	trouble, bother; good offices, recommendation, introduction; everyday life, everyday affairs, everyday language; sewamono (Edo-period drama about contemporary life)		jlpt-n3
+帰宅	returning home	帰宅[きたく]	Noun, Suru verb, Intransitive verb			jlpt-n3
+会合	meeting, assembly, gathering	会合[かいごう]	Noun, Suru verb, Intransitive verb	association; conjunction		jlpt-n3
+事件	event, affair, incident, case, plot, trouble, scandal	事件[じけん]	Noun			jlpt-n3
+お前	you	お 前[まえ]	Pronoun	presence (of a god, nobleman, etc.)		jlpt-n3
+議論	argument, discussion, dispute, controversy	議論[ぎろん]	Noun, Suru verb, Transitive verb			jlpt-n3
+困難	difficulty, hardship, trouble, distress	困難[こんなん]	Noun, Na-adjective	infeasibility, inability (to carry out)		jlpt-n3
+決心	determination, resolution	決心[けっしん]	Noun, Suru verb, Transitive verb			jlpt-n3
+要求	demand, firm request, requisition, requirement, desire	要求[ようきゅう]	Noun, Suru verb, Transitive verb			jlpt-n3
+受け取る	to receive, to get, to accept	受[う]け 取[と]る	Godan verb with ru ending, Transitive verb	to take, to interpret, to understand		jlpt-n3
+年間	(period of) a year	年間[ねんかん]	Noun, Adverb	during the era (of)		jlpt-n3
+休暇	holiday, day off, furlough, absence (from work)	休暇[きゅうか]	Noun			jlpt-n3
+結局	after all, in the end, ultimately, eventually	結局[けっきょく]	Adverb	conclusion, end; end of a game of go, shogi, etc.		jlpt-n3
+尊敬	respect, esteem, reverence, honour, honor	尊敬[そんけい]	Noun, Suru verb, Transitive verb			jlpt-n3
+激しい	violent, furious, tempestuous	激[はげ]しい	I-adjective	extreme, intense, fierce, strong; fervent, vehement; incessant, relentless; precipitous, steep		jlpt-n3
+大いに	very, much, greatly, a lot of	大[おお]いに	Adverb			jlpt-n3
+準備	preparation, arrangements, getting ready, provision, setup, reserving	準備[じゅんび]	Noun, Suru verb, Transitive verb			jlpt-n3
+滞在	stay, sojourn	滞在[たいざい]	Noun, Suru verb, Intransitive verb			jlpt-n3
+全然	(not) at all, (not) in the slightest	全然[ぜんぜん]	Adverb	wholly, entirely, completely, totally; extremely, very		jlpt-n3
+現れる	to appear, to come in sight, to become visible, to come out, to embody, to materialize, to materialise	現[あらわ]れる	Ichidan verb, Intransitive verb	to be expressed (e.g. emotions), to become apparent (e.g. trends, effects)		jlpt-n1 jlpt-n3
+扱う	to deal with (a person), to treat, to handle, to take care of, to entertain	扱[あつか]う	Godan verb with u ending, Transitive verb	to deal with (a problem), to handle, to manage; to operate (e.g. a machine), to handle, to work; to deal in, to sell; to cover (a topic), to treat, to discuss, to take up; to treat A as B; to mediate (an argument); to be too much for one, to find unmanageable; to gossip		jlpt-n3
+参加	participation, joining, entry	参加[さんか]	Noun, Suru verb, Intransitive verb			jlpt-n3
+離れる	to be separated, to be apart, to be distant	離[はな]れる	Ichidan verb, Intransitive verb	to leave, to go away; to leave (a job, etc.), to quit, to give up; to lose connection with, to drift away from		jlpt-n3
+実行	execution (e.g. of a plan), carrying out, practice, action, implementation, fulfillment, realization	実行[じっこう]	Noun, Suru verb, Transitive verb			jlpt-n3
+貧しい	poor, needy	貧[まず]しい	I-adjective	lacking (quantity and quality-wise), poor, scanty, skimpy, slight, inadequate		jlpt-n3
+偉大	great, grand, magnificent, outstanding, mighty	偉大[いだい]	Na-adjective			jlpt-n3
+望む	to desire	望[のぞ]む	Godan verb with mu ending, Transitive verb	to wish for, to expect; to see, to command (a view of)		jlpt-n3
+修理	repair, mending, fixing, servicing	修理[しゅうり]	Noun, Suru verb, Transitive verb			jlpt-n3
+誤り	error, mistake, slip, bug	誤[あやま]り	Noun			jlpt-n3
+目的	purpose, goal, aim, objective, intention	目的[もくてき]	Noun			jlpt-n3
+感謝	thanks, gratitude, appreciation, thankfulness	感謝[かんしゃ]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+示す	to (take out and) show, to demonstrate, to tell, to exemplify, to make apparent	示[しめ]す	Godan verb with su ending, Transitive verb	to point out (finger, clock hand, needle, etc.); to indicate, to show, to represent, to signify, to display		jlpt-n3
+相手	companion, partner, company	相手[あいて]	Noun	other party, addressee; opponent (sports, etc.)		jlpt-n3
+全員	all members, all hands, everyone, everybody, whole crew	全員[ぜんいん]	Noun, Adverb			jlpt-n3
+教師	teacher (classroom)	教師[きょうし]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+人気	popularity, public favor	人気[にんき]	"Noun, Noun which may take the genitive case particle 'no'"	condition (e.g. market), tone, character, nature		jlpt-n3
+招待	invitation	招待[しょうたい]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+黙る	to be silent, to say nothing	黙[だま]る	Godan verb with ru ending, Intransitive verb			jlpt-n3
+完全	perfect, complete	完全[かんぜん]	"Na-adjective , Noun which may take the genitive case particle 'no', Noun"			jlpt-n3
+出会う	to meet (by chance), to come across, to run across, to encounter, to happen upon	出会[であ]う	Godan verb with u ending, Intransitive verb	to meet (e.g. of rivers, highways, etc.); to emerge and engage (an enemy)		jlpt-n1 jlpt-n3
+実際	reality, actuality, truth, fact, actual conditions	実際[じっさい]	"Noun, Noun which may take the genitive case particle 'no'"	practice (as opposed to theory); truly, really, indeed, actually; bhutakoti (limit of reality)		jlpt-n3
+混乱	disorder, chaos, confusion, mayhem	混乱[こんらん]	Noun, Suru verb, Intransitive verb			jlpt-n3
+分野	field, sphere, realm, division, branch	分野[ぶんや]	Noun			jlpt-n3
+書物	book, volume	書物[しょもつ]	Noun			jlpt-n3
+就職	finding employment, getting a job	就職[しゅうしょく]	Noun, Suru verb, Intransitive verb			jlpt-n3
+印	mark, sign	印[しるし]	Noun	symbol, emblem; badge, crest, flag; evidence, proof; token (of gratitude, affection, etc.)		jlpt-n3
+永久	eternity, permanence, perpetuity	永久[えいきゅう]	"Noun, Na-adjective , Noun which may take the genitive case particle 'no'"	Eikyū era (1113.7.13-1118.4.3)		jlpt-n3
+衣服	clothes	衣服[いふく]	Noun			jlpt-n3
+時刻	time, (the) hour	時刻[じこく]	Noun	favourable time, opportunity, chance		jlpt-n3
+国会	National Diet, legislative assembly of Japan (1947-)	国会[こっかい]	Noun	Imperial Diet, legislative assembly of Japan (1889-1947); legislative assembly, parliament, congress		jlpt-n3
+主義	doctrine, rule, principle, -ism	主義[しゅぎ]	Noun			jlpt-n3
+記入	entry (in a form, register, diary, etc.), filling in, filling out	記入[きにゅう]	Noun, Suru verb, Transitive verb			jlpt-n3
+外す	to remove, to take off, to detach, to unfasten, to undo	外[はず]す	Godan verb with su ending, Transitive verb	"to drop (e.g. from a team), to remove (from a position), to exclude, to expel; to leave (e.g. one's seat), to go away from, to step out, to slip away; to dodge (a question, blow, etc.), to evade, to sidestep, to avoid (e.g. peak season); to miss (a target, chance, punch, etc.)"		jlpt-n3
+講演	lecture, address, speech	講演[こうえん]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+納得	consent, agreement, acceptance	納得[なっとく]	Noun, Suru verb	understanding, satisfaction (e.g. with an explanation), being convinced		jlpt-n3
+親友	close friend, bosom friend, buddy, crony, chum	親友[しんゆう]	Noun			jlpt-n3
+適用	applying (e.g. a technology), adoption	適用[てきよう]	Noun, Suru verb, Transitive verb			jlpt-n3
+合計	sum total, total amount	合計[ごうけい]	Noun, Suru verb, Transitive verb			jlpt-n3
+尊重	respect, esteem, regard	尊重[そんちょう]	Noun, Suru verb, Transitive verb			jlpt-n3
+質	quality, value	質[しつ]	Noun, Noun, used as a suffix	nature, inherent quality, character; logical quality		jlpt-n3
+大半	majority, more than half, most (of)	大半[たいはん]	"Noun, Noun which may take the genitive case particle 'no'"	mostly, largely, mainly, predominately, nearly		jlpt-n3
+布	cloth	布[ぬの]	Noun	bujian (spade-shaped bronze coin of ancient China)		jlpt-n3
+管理	control, management (e.g. of a business)	管理[かんり]	Noun, Suru verb, Transitive verb			jlpt-n3
+戻す	to put back, to return, to give back, to restore (to a previous state, e.g. defrosting, reconstituting, reconciling), to turn back (e.g. clock hand)	戻[もど]す	Godan verb with su ending, Transitive verb	to vomit, to throw up; to recover (of a market price)		jlpt-n3
+要素	component, factor, item (e.g. in list)	要素[ようそ]	Noun	element (e.g. in array), member (e.g. data structure)		jlpt-n3
+承知	knowledge, awareness	承知[しょうち]	Noun, Suru verb, Transitive verb	acceptance, consent, assent, agreement, compliance, acknowledgment, acknowledgement; forgiving, pardoning, excusing		jlpt-n3
+思い出	memories, recollections, reminiscence	思[おも]い 出[で]	Noun			jlpt-n3
+食卓	dining table	食卓[しょくたく]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+制限	restriction, restraint, limitation, limit	制限[せいげん]	Noun, Suru verb, Transitive verb			jlpt-n3
+身長	height (of body), stature	身長[しんちょう]	Noun			jlpt-n3
+苦痛	pain, agony, bitterness	苦痛[くつう]	"Na-adjective , Noun which may take the genitive case particle 'no', Noun"			jlpt-n3
+効果	effect, effectiveness, efficacy, result	効果[こうか]	"Noun, Noun which may take the genitive case particle 'no'"	effects (e.g. sound effects, visual effects, special effects)		jlpt-n3
+範囲	extent, scope, sphere, range, span	範囲[はんい]	Noun			jlpt-n3
+皮	skin, hide, pelt, fur	皮[かわ]	Noun	"rind, peel, husk, bark; shell, sheath, wrapping; mask (hiding one's true nature), seeming"		jlpt-n3
+別れ	parting, separation, farewell	別[わか]れ	Noun			jlpt-n3
+論争	dispute, controversy, debate, argument, taking issue	論争[ろんそう]	Noun, Suru verb, Intransitive verb			jlpt-n3
+感心	admiration, being impressed	感心[かんしん]	Noun, Suru verb	admirable, praiseworthy; astonishment, being appalled		jlpt-n3
+克服	conquest (of a difficulty, illness, handicap, etc.), overcoming, bringing under control, subjugation, victory over	克服[こくふく]	Noun, Suru verb, Transitive verb			jlpt-n3
+障害	obstacle, impediment, hindrance, barrier, difficulty	障害[しょうがい]	Noun, Suru verb, Transitive verb	disorder, defect, disability, handicap, impairment, dysfunction; steeplechase; obstacle race, steeplechase (athletics)		jlpt-n3
+肌	skin	肌[はだ]	Noun	body (in the context of intimate bodily contact); surface, grain (e.g. of wood), texture; disposition, temperament, character, type		jlpt-n3
+貢献	contribution (furthering a goal or cause), services (to a cause)	貢献[こうけん]	Noun, Suru verb, Intransitive verb			jlpt-n3
+年代	age, era, period, date	年代[ねんだい]	Noun			jlpt-n3
+試し	trial, test	試[ため]し	Noun			jlpt-n3
+明確	clear, precise, definite, distinct	明確[めいかく]	Na-adjective			jlpt-n3
+移動	movement, transfer, migration, removal, travel	移動[いどう]	Noun, Suru verb, Transitive verb, Intransitive verb	mobile, moving, traveling, travelling, roving		jlpt-n3
+脇	"armpit, under one's arm, side, flank"	脇[わき]	Noun	beside, close to, near, by; aside, to the side, away, out of the way; off-track, off-topic; deuteragonist, supporting role; second verse (in a linked series of poems)		jlpt-n3
+承認	recognition, acknowledgement, acknowledgment, approval, consent, agreement	承認[しょうにん]	Noun, Suru verb, Transitive verb			jlpt-n3
+科目	(school) subject, curriculum, course	科目[かもく]	Noun	item, heading, entry		jlpt-n3
+記者	reporter, journalist	記者[きしゃ]	Noun			jlpt-n3
+著者	author (usu. of a particular book), writer	著者[ちょしゃ]	Noun			jlpt-n3
+底	bottom, sole	底[そこ]	Noun			jlpt-n3
+陽気	cheerful, jovial, merry, lively	陽気[ようき]	Na-adjective , Noun	weather, season; spirit of yang		jlpt-n3
+順番	turn (in line), order of things, sequential order	順番[じゅんばん]	Noun			jlpt-n3
+緊張	tension, strain, nervousness, stress	緊張[きんちょう]	Noun, Suru verb, Intransitive verb	tensions (between countries, groups, etc.); tonus, muscle tone		jlpt-n3
+経由	going through, going via, going by way of	経由[けいゆ]	Noun, Suru verb, Intransitive verb			jlpt-n3
+要するに	in short, in a word, to sum up, to put it simply, to make a long story short, after all	要[よう]するに	Expressions , Adverb			jlpt-n3
+気温	air temperature	気温[きおん]	Noun			jlpt-n3
+共通	common, shared, mutual	共通[きょうつう]	"Noun which may take the genitive case particle 'no', Na-adjective , Noun"	to be common (to), to be shared (by); -wide		jlpt-n3
+軒	eaves	軒[のき]	Noun	narrow aisle surrounding the core of a temple building		jlpt-n3
+風景	scenery, scene, landscape, view, sight	風景[ふうけい]	"Noun, Noun which may take the genitive case particle 'no'"	scene (e.g. of a crime)		jlpt-n3
+保存	preservation, conservation, storage, maintenance	保存[ほぞん]	Noun, Suru verb, Transitive verb	saving (e.g. to disk)		jlpt-n3
+期間	period, term, interval	期間[きかん]	Noun			jlpt-n3
+独特	peculiarity, uniqueness, characteristic	独特[どくとく]	"Noun, Noun which may take the genitive case particle 'no', Na-adjective"	understood only by oneself		jlpt-n3
+引っ張る	to pull, to draw, to pull tight	引[ひ]っ 張[ぱ]る	Godan verb with ru ending, Transitive verb	"to string (lines), to run (cable), to stretch; to pull towards oneself (e.g. someone's sleeve); to drag, to haul, to tow; to lead (e.g. one's followers); to take someone somewhere (e.g. a suspect to the police); to tempt into joining, to strongly invite to join; to delay, to prolong; to lengthen the pronunciation (of a word); to quote, to cite, to reference; to pull the ball; to wear, to put on"		jlpt-n3
+巨大	huge, gigantic, enormous	巨大[きょだい]	Na-adjective , Noun			jlpt-n3
+代金	price, cost, charge, payment, bill, fee	代金[だいきん]	Noun			jlpt-n3
+家賃	rent	家賃[やちん]	Noun			jlpt-n3
+同僚	coworker, co-worker, colleague, associate	同僚[どうりょう]	Noun			jlpt-n3
+意思	intention, wish, purpose, mind (to do)	意思[いし]	Noun			jlpt-n3
+発達	development, growth	発達[はったつ]	Noun, Suru verb			jlpt-n3
+表面	surface, face	表面[ひょうめん]	"Noun, Noun which may take the genitive case particle 'no'"	outside, exterior; appearances, superficiality		jlpt-n3
+関連	relation, connection, relevance	関連[かんれん]	"Noun, Noun which may take the genitive case particle 'no', Suru verb, Suffix"			jlpt-n3
+日光	sunlight, sunshine, sunbeams	日光[にっこう]	Noun	Nikkō (city in Tochigi)		jlpt-n3
+見舞い	visiting ill or distressed people, writing get-well letters	見舞[みま]い	Noun, Suru verb	get-well gifts, get-well letters; expression of sympathy, expression of concern, enquiry, inquiry		jlpt-n1 jlpt-n3
+一般	general, universal	一般[いっぱん]	"Noun which may take the genitive case particle 'no', Na-adjective , Noun"	ordinary, average, common, non-celebrity; the same, no different, (just) as if		jlpt-n3
+引退	retirement	引退[いんたい]	Noun, Suru verb, Intransitive verb			jlpt-n3
+月曜	Monday	月曜[げつよう]	Noun, Adverb			jlpt-n3
+後者	the latter	後者[こうしゃ]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+付き合い	association, socializing, socialising, fellowship	付[つ]き 合[あ]い	Noun			jlpt-n3
+通過	passing through (a tunnel, station, town, etc.), passing by (e.g. of a typhoon), transit	通過[つうか]	Noun, Suru verb	passage (of a bill, e.g. through parliament), carriage; passing (an examination, inspection, etc.), clearing		jlpt-n3
+思わず	unconsciously, involuntarily, instinctively, reflexively, spontaneously, unintentionally, in spite of oneself	思[おも]わず	Adverb			jlpt-n3
+小麦	wheat	小麦[こむぎ]	Noun			jlpt-n3
+技師	engineer, technician	技師[ぎし]	Noun			jlpt-n3
+住民	inhabitant, resident, citizen, population	住民[じゅうみん]	Noun			jlpt-n3
+男子	boy	男子[だんし]	Noun	man, male		jlpt-n3
+差	difference, variation	差[さ]	Noun, Noun, used as a suffix	difference		jlpt-n3
+真っ赤	bright red, deep red, flushed (of face)	真[ま]っ 赤[か]	Na-adjective , Noun	downright (e.g. lie), complete, utter		jlpt-n3
+温暖	warm, mild, temperate	温暖[おんだん]	Na-adjective , Noun			jlpt-n3
+九	nine, 9	九[きゅう]	Numeric			jlpt-n3
+食糧	food (esp. staple food such as rice or wheat), provisions, rations, food supply	食糧[しょくりょう]	Noun			jlpt-n3
+泳ぎ	swimming	泳[およ]ぎ	Noun			jlpt-n3
+請求	claim, demand, charge, application, request, billing (for a service)	請求[せいきゅう]	Noun, Suru verb, Transitive verb			jlpt-n3
+化粧	make-up, makeup, cosmetics	化粧[けしょう]	Noun, Suru verb, Transitive verb, Intransitive verb	decoration, dressing, veneer		jlpt-n3
+供給	supply, provision	供給[きょうきゅう]	Noun, Suru verb, Transitive verb			jlpt-n3
+手段	means, way, measure	手段[しゅだん]	Noun			jlpt-n3
+学問	study, scholarship, learning, education, knowledge	学問[がくもん]	Noun, Suru verb	discipline, branch of learning, (a) science		jlpt-n3
+徹夜	staying up all night	徹夜[てつや]	"Noun, Suru verb, Intransitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+王子	prince	王子[おうじ]	Noun	subordinate Kumano shrine		jlpt-n3
+見解	opinion, point of view	見解[けんかい]	Noun			jlpt-n3
+単に	simply, merely, only, solely	単[たん]に	Adverb			jlpt-n3
+前進	advance, moving forward, progress	前進[ぜんしん]	Noun, Suru verb, Intransitive verb			jlpt-n3
+支度	preparation, arrangements	支度[したく]	Noun, Suru verb, Transitive verb			jlpt-n3
+予測	prediction, estimation	予測[よそく]	Noun, Suru verb, Transitive verb			jlpt-n3
+女子	woman, girl	女子[じょし]	Noun			jlpt-n1 jlpt-n3
+救助	relief, aid, rescue	救助[きゅうじょ]	Noun, Suru verb, Transitive verb			jlpt-n3
+単なる	mere, simple, sheer	単[たん]なる	Pre-noun adjectival			jlpt-n3
+虫歯	cavity, tooth decay, decayed tooth, dental caries	虫歯[むしば]	Noun			jlpt-n3
+抵抗	resistance, opposition, standing up to	抵抗[ていこう]	Noun, Suru verb	reluctance, repulsion, repugnance; resistance, drag, friction; electrical resistance; resistor		jlpt-n3
+単純	simple, plain, uncomplicated, straightforward, simple-minded, naive	単純[たんじゅん]	Na-adjective , Noun			jlpt-n3
+積極的	positive, assertive, active, proactive, aggressive	積極的[せっきょくてき]	Na-adjective			jlpt-n3
+破産	bankruptcy, insolvency	破産[はさん]	Noun, Suru verb			jlpt-n3
+疲れ	tiredness, fatigue	疲[つか]れ	Noun			jlpt-n3
+機能	function, facility, faculty, feature	機能[きのう]	Noun, Suru verb, Intransitive verb			jlpt-n3
+棒	pole, rod, stick, baton	棒[ぼう]	Noun	line, dash; spoken monotonously		jlpt-n3
+普段	usual, normal, everyday, habitual, ordinary	普段[ふだん]	"Noun which may take the genitive case particle 'no', Noun"	usually, normally, generally, habitually, always		jlpt-n3
+笑顔	smiling face, smile	笑顔[えがお]	Noun, Suru verb			jlpt-n3
+印象	impression	印象[いんしょう]	Noun			jlpt-n3
+適度	moderate (degree), proper (amount), temperate, suitable	適度[てきど]	"Na-adjective , Noun which may take the genitive case particle 'no', Noun"			jlpt-n3
+物理	laws of nature, physical laws	物理[ぶつり]	Noun	physics		jlpt-n3
+場面	scene, setting, place (where something happens), scenario, case	場面[ばめん]	Noun	scene (in a movie, play), shot; state of the market		jlpt-n3
+妙	strange, weird, odd, curious	妙[みょう]	Na-adjective , Noun	wonder, mystery, miracle, excellence; cleverness, adroitness, knack, skill		jlpt-n3
+宿泊	accommodation, lodging	宿泊[しゅくはく]	Noun, Suru verb, Intransitive verb			jlpt-n3
+刺激	stimulus, stimulation, irritation	刺激[しげき]	Noun, Suru verb, Transitive verb	impetus, impulse, stimulus, spur, incentive, encouragement, stimulation, motivation, provocation; excitement, thrill		jlpt-n3
+一瞬	instant, moment, for an instant	一瞬[いっしゅん]	Noun, Adverb			jlpt-n3
+前者	the former	前者[ぜんしゃ]	Noun			jlpt-n3
+指導	guidance, leadership, instruction, direction, coaching	指導[しどう]	Noun, Suru verb, Transitive verb	shido (disciplinary action for a minor infringement of the rules of judo)		jlpt-n3
+連続	continuation, succession, series	連続[れんぞく]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+倒す	to throw down, to bring down, to blow down, to fell, to knock down, to set (something) down on its side, to turn (something) on its side, to recline (e.g. a seat)	倒[たお]す	Godan verb with su ending, Transitive verb	to kill, to defeat, to beat; to overthrow, to trip up, to ruin; to leave unpaid, to cheat		jlpt-n3
+苦しい	painful, difficult, tough, hard	苦[くる]しい	I-adjective	distressing, (psychologically) difficult, stressful, awkward (e.g. position); straitened (circumstances), tight (financial situation), needy, struggling; strained (interpretation, explanation, etc.), lame (e.g. excuse), forced (e.g. smile), far-fetched; hard to do, unpleasant		jlpt-n3
+大会	mass meeting, convention, rally, conference, assembly, gathering	大会[たいかい]	Noun	tournament, competition, contest, meet; grand event		jlpt-n3
+実施	enforcement, implementation, putting into practice, carrying out, operation, working (e.g. working parameters), enactment	実施[じっし]	Noun, Suru verb, Transitive verb			jlpt-n3
+夜明け	dawn, daybreak	夜明[よあ]け	Noun			jlpt-n3
+両替	change, money exchange	両替[りょうがえ]	Noun, Suru verb, Transitive verb			jlpt-n3
+金額	amount of money, sum of money	金額[きんがく]	Noun			jlpt-n3
+雰囲気	atmosphere, mood, ambience, ambiance, aura, feel	雰囲気[ふんいき]	Noun	a certain air, presence, special aura, something (about someone)		jlpt-n3
+勤め	service, duty, business, responsibility, task	勤[つと]め	Noun	Buddhist religious services		jlpt-n3
+演技	acting, performance	演技[えんぎ]	Noun, Suru verb, Intransitive verb			jlpt-n3
+交際	company, friendship, association, society, acquaintance	交際[こうさい]	Noun, Suru verb, Intransitive verb	(romantic) involvement, dating		jlpt-n3
+設計	plan, design, layout	設計[せっけい]	Noun, Suru verb, Transitive verb			jlpt-n3
+粗末	crude, rough, plain, humble, shabby	粗末[そまつ]	Na-adjective , Noun			jlpt-n3
+欠陥	defect, fault, flaw, deformity, deficiency, shortage, gap	欠陥[けっかん]	Noun			jlpt-n3
+担当	being in charge (of an area of responsibility), being responsible (for a work role, etc.)	担当[たんとう]	Noun, Suru verb, Transitive verb			jlpt-n3
+限界	limit, bound	限界[げんかい]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+仲	relation, relationship	仲[なか]	Noun			jlpt-n3
+入場	entrance, admission, entering	入場[にゅうじょう]	Noun, Suru verb, Intransitive verb			jlpt-n3
+死亡	death, dying, mortality	死亡[しぼう]	Noun, Suru verb, Intransitive verb			jlpt-n3
+材料	materials, ingredients	材料[ざいりょう]	Noun	material (for a novel, experiment, etc.), subject matter; grounds (for a decision, judgement, etc.), basis, evidence, data; (market) factor		jlpt-n3
+支出	expenditure, disbursement, expenses	支出[ししゅつ]	Noun, Suru verb, Transitive verb			jlpt-n3
+主婦	housewife, mistress (of the house), homemaker	主婦[しゅふ]	Noun			jlpt-n3
+一時	"one o'clock"	一時[いちじ]	Noun, Adverb	once, at one time, formerly, before; for a time, for a while, for the time being, for the present, for the moment, temporarily; a time, one time, once		jlpt-n3
+清潔	clean, hygienic, sanitary	清潔[せいけつ]	Na-adjective , Noun	pure, virtuous, immaculate		jlpt-n3
+格好	shape, form, figure, posture, pose	格好[かっこう]	Noun	appearance; state, situation; suitable, fit, reasonable; about		jlpt-n3
+活気	energy, vigour, vigor, liveliness, spirit, life, animation	活気[かっき]	Noun			jlpt-n3
+特徴	feature, trait, characteristic, peculiarity, distinction	特徴[とくちょう]	Noun			jlpt-n3
+不正	injustice, unfairness, wrongdoing, iniquity, impropriety, irregularity, dishonesty, illegality, fraud	不正[ふせい]	"Noun, Na-adjective , Noun which may take the genitive case particle 'no'"			jlpt-n3
+委員	committee member	委員[いいん]	Noun			jlpt-n3
+農民	farmer, peasant	農民[のうみん]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+住宅	residence, housing, residential building	住宅[じゅうたく]	Noun			jlpt-n3
+進学	entering a higher-level school, esp. going on to university	進学[しんがく]	Noun, Suru verb, Intransitive verb			jlpt-n3
+修正	amendment, correction, revision, modification, alteration, retouching, update, fix	修正[しゅうせい]	Noun, Suru verb, Transitive verb			jlpt-n3
+急激	sudden, abrupt, rapid, sharp, drastic, radical	急激[きゅうげき]	Na-adjective			jlpt-n3
+最低	least, lowest, minimum	最低[さいてい]	"Noun which may take the genitive case particle 'no', Na-adjective , Noun"	worst; awful, horrible, nasty, disgusting; at the very least		jlpt-n3
+審判	judgement, judgment, decision, verdict, sentence	審判[しんぱん]	Noun, Suru verb, Transitive verb	refereeing, umpiring, judging; judgement (of God); referee, umpire, judge		jlpt-n1 jlpt-n3
+生き物	living thing, living creature, animal, life	生[い]き 物[もの]	Noun			jlpt-n3
+地区	district, section, sector	地区[ちく]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+完了	completion, conclusion	完了[かんりょう]	Noun, Suru verb	perfect (tense, form, aspect)		jlpt-n3
+支店	branch office, branch store	支店[してん]	Noun			jlpt-n3
+礼儀	manners, courtesy, etiquette	礼儀[れいぎ]	Noun			jlpt-n3
+生地	cloth, fabric, material, texture	生地[きじ]	Noun	"dough, batter; inherent quality, one's true character, one's true colours; unglazed pottery; skin with no make-up; uncoated metal"		jlpt-n3
+推薦	recommendation, referral, endorsement	推薦[すいせん]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+拡大	expansion, extension	拡大[かくだい]	Noun, Suru verb, Transitive verb, Intransitive verb	magnification, enlargement; escalation, spread		jlpt-n3
+支給	provision, supply, payment, allowance, grant	支給[しきゅう]	Noun, Suru verb, Transitive verb			jlpt-n3
+課	lesson	課[か]	Noun, Noun, used as a suffix	section (in an organization), division, department; counter for lessons and chapters (of a book)		jlpt-n3
+厄介	trouble, burden, nuisance, bother, worry	厄介[やっかい]	Na-adjective , Noun	care, dependence, support, kindness, obligation, staying (with a person)		jlpt-n3
+装置	equipment, device, installation, apparatus	装置[そうち]	Noun, Suru verb	stage setting		jlpt-n3
+整理	sorting, arrangement, organization, putting in order, adjustment, regulation	整理[せいり]	Noun, Suru verb, Transitive verb	liquidation, settlement, consolidation, clearance (e.g. debt), paying off; retrenchment, curtailment, cutting down, disposal		jlpt-n3
+刑事	(police) detective	刑事[けいじ]	Noun	criminal matter		jlpt-n3
+記念	commemoration, celebration, remembrance, memory, honoring the memory of	記念[きねん]	Noun, Suru verb, Transitive verb	memento, souvenir, keepsake		jlpt-n3
+収める	to pay (fees, taxes, etc.), to dedicate, to make an offering	収[おさ]める	Ichidan verb, Transitive verb	to supply; to put away (in), to keep, to store; to finish, to bring to a close; to restore (something to its place); to achieve (e.g. a result)		jlpt-n2 jlpt-n3
+基本	basics, fundamentals, basis, foundation	基本[きほん]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+予期	expectation, assume will happen, forecast	予期[よき]	Noun, Suru verb, Transitive verb			jlpt-n3
+設備	equipment, facilities, installation, accommodations, conveniences, arrangements	設備[せつび]	Noun, Suru verb, Transitive verb			jlpt-n3
+本人	the person in question, the person themselves, said person	本人[ほんにん]	Noun			jlpt-n3
+全国	the whole country	全国[ぜんこく]	Noun			jlpt-n3
+読み	reading	読[よ]み	Noun	reading (of a kanji, esp. kun reading); reading (e.g. of a situation), insight, judgment, interpretation, prediction, calculation		jlpt-n3
+手間	time, labour, labor	手間[てま]	Noun			jlpt-n3
+発行	publication, issue (of journal, newspaper, etc.)	発行[はっこう]	Noun, Suru verb	issue (of banknotes, bonds, passport, etc.); raising an event (software)		jlpt-n3
+土曜	Saturday	土曜[どよう]	Adverb , Noun			jlpt-n3
+正式	due form, official, formality	正式[せいしき]	"Na-adjective , Noun which may take the genitive case particle 'no', Noun"			jlpt-n3
+級	class (e.g. school), grade, rank	級[きゅう]	Noun, Noun, used as a suffix, Counter	kyū, kyu, junior rank in martial arts, go, shogi, etc.		jlpt-n3
+掲示	notice, bulletin, post, posting, placard	掲示[けいじ]	Noun, Suru verb, Transitive verb			jlpt-n3
+迎え	meeting, greeting, welcome	迎[むか]え	Noun			jlpt-n3
+微妙	subtle, delicate, fine	微妙[びみょう]	Na-adjective , Noun	difficult, complex, tricky, delicate (situation, position, etc.), close (e.g. decision); doubtful, questionable, dicey; not great, iffy		jlpt-n3
+券	ticket, coupon, bond, certificate	券[けん]	Noun, Noun, used as a suffix			jlpt-n3
+長期	long-term	長期[ちょうき]	"Noun which may take the genitive case particle 'no', Noun"			jlpt-n3
+豪華	extravagant, lavish, opulent, luxurious, magnificent, splendid, fancy, gorgeous	豪華[ごうか]	Na-adjective , Noun			jlpt-n3
+続き	continuation, rest (of the story, work, etc.), next installment, sequel	続[つづ]き	Noun	flow (e.g. of a piece of writing), pacing (of a story); succession (of), sequence, series, spell, stretch, streak, run		jlpt-n3
+年月	months and years	年月[としつき]	Noun			jlpt-n3
+決まり	rule, regulation	決[き]まり	"Noun, Noun which may take the genitive case particle 'no'"	settlement, conclusion, end, agreement, arrangement; habit, custom, habitual way; countenance in front of another person, face; love relationship between a customer and a prostitute		jlpt-n3
+抱える	"to hold in one's arms, to carry in one's arms, to carry under one's arm, to hold (one's head) in one's hands"	抱[かか]える	Ichidan verb, Transitive verb	"to have (problems, debts, etc.), to take on (a responsibility), to be burdened with (e.g. care of a family member), to have (children, etc.) to provide for; to employ, to have (on one's staff), to hire"		jlpt-n3
+評判	reputation, (public) estimation, popularity	評判[ひょうばん]	"Noun, Noun which may take the genitive case particle 'no'"	rumour, rumor, talk (e.g. of the town); fame, notoriety		jlpt-n3
+暮らし	(way of) life, living, livelihood, life circumstances	暮[く]らし	Noun, Noun, used as a suffix			jlpt-n3
+重大	serious, important, significant, grave, weighty	重大[じゅうだい]	Na-adjective , Noun			jlpt-n3
+繰り返す	to repeat, to do something over again	繰[く]り 返[かえ]す	Godan verb with su ending, Transitive verb, Intransitive verb			jlpt-n3
+味方	friend, ally, supporter	味方[みかた]	"Noun, Noun which may take the genitive case particle 'no'"	taking sides with, supporting, standing by, backing up		jlpt-n3
+犯人	offender, criminal, culprit	犯人[はんにん]	Noun			jlpt-n3
+瓶	bottle, jar, decanter, flagon, phial, vial	瓶[びん]	Noun			jlpt-n3
+夫人	wife, Mrs, madam	夫人[ふじん]	Noun	wife of a nobleman (aristocrat, etc.); consort of the emperor	Honorific or respectful (sonkeigo) language	jlpt-n3
+目標	goal, target, aim, objective	目標[もくひょう]	Noun	mark, sign, landmark		jlpt-n3
+損害	damage, injury, loss	損害[そんがい]	Noun, Suru verb			jlpt-n3
+交換	exchange, interchange, switching, reciprocity, barter, substitution, replacement, clearing (of checks, cheques)	交換[こうかん]	Noun, Suru verb, Transitive verb			jlpt-n3
+好み	liking, taste, choice	好[この]み	Noun			jlpt-n3
+今回	this time, now	今回[こんかい]	Noun, Adverb			jlpt-n3
+親しい	close (e.g. friend), familiar, friendly, intimate	親[した]しい	I-adjective	familiar (e.g. story), well-known (to one); close (relatives), closely related		jlpt-n3
+相当	corresponding to (in meaning, function, etc.), being equivalent to	相当[そうとう]	"Noun, Suru verb, Noun which may take the genitive case particle 'no'"	appropriate, suitable, befitting, proportionate; to be proportionate to, to be in keeping with, to be deserving of, to be worthy of; considerable, substantial; considerably, rather, quite, fairly, pretty		jlpt-n3
+演奏	musical performance	演奏[えんそう]	Noun, Suru verb, Transitive verb			jlpt-n3
+例	custom, practice, habit, usual	例[れい]	"Noun, Noun, used as a prefix, Noun which may take the genitive case particle 'no'"	said, aforementioned; instance, example, case, illustration, usage; precedent		jlpt-n3
+語る	to talk about, to speak of, to tell, to narrate	語[かた]る	Godan verb with ru ending, Transitive verb	to recite, to chant; to indicate, to show		jlpt-n3
+骨	bone	骨[ほね]	Noun	frame; outline, core; backbone, spirit, fortitude; laborious, troublesome, difficult		jlpt-n3
+限る	to restrict, to limit, to confine	限[かぎ]る	Godan verb with ru ending, Transitive verb	to be restricted to, to be limited to, to be confined to; to be best (for), to be the best plan, to be the only way (to)		jlpt-n3
+幸い	happiness, blessedness, luck, fortune, felicity	幸[さ]い	Na-adjective , Noun	luckily, fortunately		jlpt-n3
+料金	fee, charge, fare	料金[りょうきん]	Noun			jlpt-n3
+世の中	society, the world, the times	世[よ]の 中[なか]	Expressions , Noun			jlpt-n3
+有能	able, capable, competent, talented, efficient	有能[ゆうのう]	Na-adjective , Noun			jlpt-n3
+列	row, line, file, column, queue, rank, procession	列[れつ]	Noun	company (of someone), group, ranks; sequence; counter for rows		jlpt-n3
+事情	circumstances, conditions, situation, reasons, state of affairs	事情[じじょう]	Noun			jlpt-n3
+戦い	battle, war, conflict	戦[たたか]い	Noun	struggle, fight		jlpt-n3
+条件	condition, term, requirement, qualification, prerequisite	条件[じょうけん]	Noun			jlpt-n3
+内容	contents, content, substance, matter, detail, import	内容[ないよう]	Noun			jlpt-n3
+不自由	discomfort, inconvenience	不自由[ふじゆう]	Noun, Na-adjective , Suru verb	poverty, want, destitution; inability, disability, impairment (physical, mental, etc.), nonfluency (in a language)		jlpt-n3
+破る	to tear, to rip, to break, to destroy	破[やぶ]る	Godan verb with ru ending, Transitive verb	"to break through (cordon, opponent's defense, etc.), to breach; to defeat, to beat; to break (e.g. silence), to disturb (e.g. peace), to shatter (e.g. dream), to disrupt, to spoil; to violate (e.g. rule), to break (e.g. promise), to infringe; to break (a record)"		jlpt-n3
+有効	valid, effective	有効[ゆうこう]	Na-adjective , Noun	yuko (judo)		jlpt-n3
+減る	to decrease (in size or number), to diminish, to abate	減[へ]る	Godan verb with ru ending, Intransitive verb			jlpt-n2 jlpt-n3
+程度	degree, amount, grade, standard, of the order of (following a number), about, approximately	程度[ていど]	Noun, Adverb , Noun, used as a suffix			jlpt-n3
+役	role, assignment, responsibility, duty, function, job, service	役[やく]	Noun	position (of responsibility), post, office; part (in a play, film, etc.), role, character; scoring combination (in mahjong, card games, etc.), meld, hand, yaku		jlpt-n3
+本物	genuine article, real thing, real deal	本物[ほんもの]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+不満	dissatisfaction, discontent, displeasure, complaint, unhappiness	不満[ふまん]	Noun, Na-adjective			jlpt-n3
+次々	in succession, one by one	次々[つぎつぎ]	"Adverb , Adverb taking the 'to' particle, Noun"			jlpt-n3
+数える	to count, to enumerate	数[かぞ]える	Ichidan verb, Transitive verb			jlpt-n3
+岩	rock, boulder	岩[いわ]	Noun	crag, cliff; anchor		jlpt-n3
+芝生	lawn, grass	芝生[しばふ]	Noun			jlpt-n3
+会員	member, the membership	会員[かいいん]	Noun			jlpt-n3
+都会	city	都会[とかい]	"Noun, Noun which may take the genitive case particle 'no'"	Tokyo Metropolitan Assembly		jlpt-n3
+貴重	precious, valuable	貴重[きちょう]	Na-adjective , Noun			jlpt-n3
+組織	organization, organisation, formation	組織[そしき]	Noun, Suru verb	structure, construction, setup, constitution; system (e.g. railroad, transport, party, etc.); tissue; texture (of a rock); weave (of a fabric)		jlpt-n3
+計る	to measure, to weigh, to survey, to time (sound, gauge, estimate)	計[はか]る	Godan verb with ru ending, Transitive verb	to conjecture, to infer, to surmise		jlpt-n2 jlpt-n3
+失望	disappointment, despair	失望[しつぼう]	Noun, Suru verb, Intransitive verb			jlpt-n3
+面倒	trouble, bother	面倒[めんどう]	Noun, Na-adjective	trouble, difficulty; care, attention		jlpt-n3
+裏切る	to betray, to turn traitor to, to double-cross	裏切[うらぎ]る	Godan verb with ru ending, Transitive verb			jlpt-n3
+豊か	abundant, plentiful, rich, ample	豊[ゆた]か	Na-adjective , Suffix	rich, wealthy, affluent, well-off; open (mind), relaxed, easy; plump (e.g. breasts), full, ample; (well) over, (easily) in excess of		jlpt-n3
+急速	rapid (e.g. progress)	急速[きゅうそく]	Na-adjective , Noun			jlpt-n3
+新鮮	fresh	新鮮[しんせん]	Na-adjective			jlpt-n3
+加わる	to be added to, to be appended	加[くわ]わる	Godan verb with ru ending, Intransitive verb	to join in (e.g. a group of friends), to participate; to increase (e.g. heat), to gain in (e.g. influence), to grow, to gather (speed); to be applied (e.g. heat, pressure), to be exerted		jlpt-n3
+残り	remnant, residue, remaining, left-over	残[のこ]り	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+批判	criticism, judgement, judgment, comment	批判[ひはん]	Noun, Suru verb, Transitive verb			jlpt-n3
+製造	manufacture, production	製造[せいぞう]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+検査	inspection (e.g. customs, factory), examination, test, check, scan (e.g. MRI, PET), audit	検査[けんさ]	Noun, Suru verb, Transitive verb			jlpt-n3
+構う	to mind, to care about, to be concerned about, to have a regard for	構[かま]う	Godan verb with u ending	to be an issue, to matter, to create inconvenience; to keep company, to care for, to look after, to entertain, to pay attention to, to spend time with; to interfere with, to meddle in; to tease; to banish, to prohibit		jlpt-n3
+税金	tax, duty	税金[ぜいきん]	Noun			jlpt-n3
+塀	wall	塀[へい]	Noun	fence		jlpt-n3
+金	gold (metal)	金[きん]	Noun	gold (color); gold (medal), first place (prize); something of great value, something golden (e.g. silence); money, gold coin; sum (of money); Friday; karat (measure of purity of gold), carat; metal (fourth phase of Wu Xing); Jin dynasty (of China; 1115-1234), Chin dynasty, Jurchen dynasty; gold general; testicles		jlpt-n3
+手伝い	helper, assistant	手伝[てつだ]い	Noun	help, assistance		jlpt-n3
+ずっと	continuously in some state (for a long time, distance), throughout, all along, the whole time, all the way	ずっと	Adverb	much (better, etc.), by far, far and away; far away, long ago; direct, straight		jlpt-n2 jlpt-n3
+現場	actual spot, scene (of a crime, accident, etc.)	現場[げんば]	Noun	(on) site, (on) the ground, (in) the field, job site; filming location, (movie) set		jlpt-n1 jlpt-n3
+どんな	what kind of, what sort of, what	どんな	Pre-noun adjectival	no matter what (kind of), whatever, any, all		jlpt-n3
+株	stock, share	株[かぶ]	Noun, Counter	"stump; (clump of) roots, plant with attached roots or stem; strain (of bacteria, etc.); stock company, corporation, kabushiki kaisha, KK; goodwill (of a business), privilege (that comes with a role); reputation, standing, popularity; one's forte"		jlpt-n3
+実	fruit, nut	実[み]	Noun	seed; (in broth) pieces of meat, vegetable, etc.; content, substance		jlpt-n3
+有利	advantageous, favourable, better, stronger	有利[ゆうり]	Na-adjective , Noun	profitable, lucrative, gainful, paying		jlpt-n3
+どんなに	how, how much, to what extent	どんなに	Adverb	no matter how (much), however		jlpt-n3
+比較	comparison	比較[ひかく]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+滅多に	rarely, seldom	滅多[めった]に	Adverb			jlpt-n3
+少々	just a minute, small quantity	少々[しょうしょう]	Adverb , Noun			jlpt-n3
+ミルク	milk	ミルク	Noun			jlpt-n3
+願い	desire, wish, hope	願[ねが]い	Noun	request, entreaty, plea, appeal; prayer; (written) application		jlpt-n3
+こんなに	so, like this, in this way	こんなに	Adverb			jlpt-n3
+新た	new, fresh, novel	新[あら]た	Na-adjective , Noun			jlpt-n3
+がっかり	to be disappointed, to be dejected, to be downhearted, to lose heart, to feel let down	がっかり	Suru verb, Adverb	to feel exhausted, to feel drained		jlpt-n3
+豊富	abundant, plentiful, rich, ample	豊富[ほうふ]	Na-adjective , Noun			jlpt-n3
+きちんと	properly, accurately, exactly, precisely, regularly	きちんと	Adverb , Suru verb	neatly, tidily, orderly		jlpt-n3
+結ぶ	to tie, to bind, to link	結[むす]ぶ	Godan verb with bu ending, Transitive verb	to bear (fruit); to close (e.g. deal), to confirm, to conclude; to connect (two distant places); to close tightly, to purse (e.g. lips); to unite (with), to ally, to join hands		jlpt-n3
+スピーチ	speech	スピーチ	Noun			jlpt-n3
+息	breath, breathing	息[いき]	Noun	tone, mood		jlpt-n3
+バッグ	bag	バッグ	Noun			jlpt-n3
+快適	pleasant, agreeable, comfortable	快適[かいてき]	Na-adjective , Noun			jlpt-n3
+ですから	so, therefore, accordingly, consequently, on those grounds, that is why, for that reason	ですから	Conjunction		Polite (teineigo) language	jlpt-n3
+働き	work, labor, labour	働[はたら]き	Noun	achievement, performance, ability, talent; salary, income, earnings; action, activity, workings, function, operation, movement, motion; conjugation, inflection		jlpt-n1 jlpt-n3
+品	article, item, thing, goods, stock	品[しな]	Noun	quality; flirtatiousness, coquetry		jlpt-n3
+勘定	calculation, computation, counting, reckoning, count	勘定[かんじょう]	Noun, Suru verb, Transitive verb	bill, check, account, payment (of a bill), settlement (of an account); consideration, allowance		jlpt-n3
+ペンキ	paint	ペンキ	Noun			jlpt-n3
+構成	composition, construction, formation, makeup, structure, organization, organisation	構成[こうせい]	Noun, Suru verb, Transitive verb			jlpt-n3
+溺れる	to struggle in the water, to sink below the surface and become unable to breathe, to (nearly) drown	溺[おぼ]れる	Ichidan verb, Intransitive verb	"to indulge in, to lose one's head over something, to be addicted, to wallow in"		jlpt-n3
+直接	direct, immediate, personal, firsthand	直接[ちょくせつ]	"Na-adjective , Noun, Noun which may take the genitive case particle 'no', Adverb"			jlpt-n3
+ちゃんと	diligently, seriously, earnestly, reliably, steadily, legitimately	ちゃんと	Adverb , Suru verb	perfectly, properly, exactly, orderly, punctually, regularly, safely, in good condition; sufficiently, satisfactorily; quickly		jlpt-n3
+別に	(not) particularly, (not) especially, (not) specially	別[べつ]に	Adverb	separately, apart, additionally, extra		jlpt-n3
+たった	only, merely, but, no more than	たった	Noun or verb acting prenominally, Adverb			jlpt-n1 jlpt-n3
+追う	to chase, to run after, to pursue, to follow after	追[お]う	Godan verb with u ending, Transitive verb	to follow (a set order, a trend, etc.); to drive out, to get rid of, to oust, to expel; to drive (e.g. a herd); to be pressed (e.g. for time)		jlpt-n3
+きつい	tough, hard, severe, demanding, harsh	きつい	I-adjective	determined, strong-minded, forceful, formidable, fierce; strong (e.g. sunlight, alcohol), severe, intense; (too) tight, constricting, close; extreme, unusually strong		jlpt-n3
+絶対	absolutely, definitely, unconditionally	絶対[ぜったい]	Adverb	absolute, unconditional, unmistakable; absoluteness		jlpt-n3
+ぐっすり	soundly (sleeping), fast (asleep)	ぐっすり	"Adverb , Adverb taking the 'to' particle"			jlpt-n3
+解釈	interpretation, explanation, reading, construction	解釈[かいしゃく]	Noun, Suru verb, Transitive verb			jlpt-n3
+ぴったり	tightly, closely	ぴったり	"Adverb , Adverb taking the 'to' particle, Suru verb"	exactly, precisely; suddenly (stopping); perfectly (suited), ideally		jlpt-n3
+検討	consideration, examination, investigation, study, scrutiny, discussion, analysis, review	検討[けんとう]	Noun, Suru verb, Transitive verb			jlpt-n3
+さっぱり	feeling refreshed, feeling relieved	さっぱり	"Adverb , Adverb taking the 'to' particle, Suru verb"	neat, tidy, clean; frank, open-hearted, plain, simple, light; completely, entirely; not in the least (with neg. verb), not at all; nothing at all, completely useless, hopeless, awful		jlpt-n3
+刈る	to cut (grass, hair, etc.), to mow, to clip, to trim, to prune, to shear, to reap, to harvest	刈[か]る	Godan verb with ru ending, Transitive verb			jlpt-n3
+対	pair, couple, set	対[つい]	Noun	antithesis; counter for items that come in pairs; counter for sets (of clothes, small furniture, utensils, etc.)		jlpt-n3
+謎	riddle, puzzle, enigma, mystery	謎[なぞ]	Noun	enigmatic, mysterious		jlpt-n3
+メモ	note, memo, memorandum	メモ	Noun, Suru verb, Transitive verb			jlpt-n3
+囲む	to surround, to encircle, to enclose, to fence, to wall in	囲[かこ]む	Godan verb with mu ending, Transitive verb	to besiege, to lay siege to; to play (go, shogi, etc.)		jlpt-n3
+ハンサム	handsome	ハンサム	Na-adjective			jlpt-n3
+友	friend, companion, comrade, pal	友[とも]	Noun	accompaniment, companion (e.g. book), complement, accessory		jlpt-n3
+ざっと	roughly, approximately, round about, more or less	ざっと	Adverb	cursorily, briefly, quickly, lightly, roughly		jlpt-n3
+苦手	poor (at), weak (in), not very good (at)	苦手[にがて]	Na-adjective , Noun	"not one's cup of tea, not one's favorite"		jlpt-n3
+スイッチ	switch	スイッチ	Noun, Suru verb			jlpt-n3
+詳しい	detailed, full, minute	詳[くわ]しい	I-adjective	knowing very well, knowledgeable (about), well-acquainted (with), well-informed (about), familiar (with)		jlpt-n3
+たっぷり	full, in plenty, ample	たっぷり	"Adverb , Adverb taking the 'to' particle, Noun, Noun which may take the genitive case particle 'no', Na-adjective"			jlpt-n3
+飛び出す	to jump out, to rush out, to fly out	飛[と]び 出[だ]す	Godan verb with su ending, Intransitive verb	to appear (suddenly); to protrude, to project; to butt in; to run away (e.g. from home), to break away, to cut ties with (e.g. workplace)		jlpt-n3
+ダイヤ	diamond	ダイヤ	Noun	(railway) schedule, timetable; diagram		jlpt-n3
+需要	demand, request	需要[じゅよう]	Noun			jlpt-n3
+ぼんやり	dimly, faintly, indistinctly, vaguely	ぼんやり	"Adverb , Adverb taking the 'to' particle, Suru verb"	absentmindedly, vacantly, carelessly; idly, aimlessly; absence of mind, fool, blockhead, dunce		jlpt-n3
+減らす	to abate, to decrease, to diminish, to shorten	減[へ]らす	Godan verb with su ending, Transitive verb			jlpt-n3
+プラン	plan, scheme	プラン	Noun	(payment) plan, package, deal, offer		jlpt-n3
+確実	certain, sure, definite, reliable, sound, solid, safe, secure	確実[かくじつ]	Na-adjective , Noun			jlpt-n3
+プロ	professional	プロ	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+髪の毛	hair (of the head)	髪[かみ]の 毛[け]	Expressions , Noun			jlpt-n3
+のんびり	at leisure, in a relaxed manner, in a carefree manner, quietly, peacefully	のんびり	"Adverb , Adverb taking the 'to' particle, Suru verb"			jlpt-n3
+握る	to clasp, to grasp, to grip, to clutch	握[にぎ]る	Godan verb with ru ending, Transitive verb	"to hold (the answer), to have (e.g. the solution), to be the key, to be the reason; to seize (power), to hold (the reins), to dominate, to control; to make (nigirizushi, rice ball, etc.), to form (with one's hands), to press into shape, to mold, to mould"		jlpt-n3
+デモ	demonstration, protest	デモ	Noun	(giving a) demo, demonstration, presentation		jlpt-n3
+害	injury, harm, evil influence, damage	害[がい]	Noun			jlpt-n3
+ビデオ	video	ビデオ	Noun			jlpt-n3
+思想	thought, idea, ideology	思想[しそう]	Noun			jlpt-n3
+トップ	top	トップ	Noun	top position; senior management, senior bureaucrat; home page (of a website)		jlpt-n3
+魅力	charm, fascination, glamour, glamor, attraction, appeal	魅力[みりょく]	Noun			jlpt-n3
+ホーム	platform	ホーム	Noun	home; home base, home plate		jlpt-n3
+撃つ	to shoot, to fire	撃[う]つ	Godan verb with tsu ending, Transitive verb			jlpt-n2 jlpt-n3
+クリーム	cream	クリーム	Noun	ice cream		jlpt-n3
+選択	choice, selection, option	選択[せんたく]	Noun, Suru verb, Transitive verb			jlpt-n3
+スター	star (cinema, sports, etc.), celebrity, idol	スター	Noun	star symbol, asterisk; (celestial) star		jlpt-n3
+冷静	calmness, composure, coolness, serenity, presence of mind	冷静[れいせい]	Noun, Na-adjective			jlpt-n3
+ピン	pin (e.g. hairpin, bowling pin, golf pin, etc.)	ピン	Noun	one (on dice, in cards, etc.); beginning, best; kickback		jlpt-n3
+汚染	pollution, contamination	汚染[おせん]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+ボーイ	boy	ボーイ	Noun	bellboy, porter, waiter		jlpt-n3
+悩む	to be worried, to be troubled	悩[なや]む	Godan verb with mu ending			jlpt-n3
+クラシック	classical music	クラシック	Noun	classic, classical; classic (work), the classics		jlpt-n3
+悲しむ	to be sad, to mourn for, to regret	悲[かな]しむ	Godan verb with mu ending, Transitive verb			jlpt-n3
+マイク	mike, mic, microphone	マイク	Noun			jlpt-n3
+作物	crop, crops, (agricultural) produce, farm products	作物[さくもつ]	Noun			jlpt-n3
+空く	to become less crowded, to thin out, to get empty	空[す]く	Godan verb with ku ending, Intransitive verb	to be hungry		jlpt-n3
+時期	time, season, period, phase, stage	時期[じき]	Noun, Adverb			jlpt-n3
+仏	Buddha, Shakyamuni	仏[ほとけ]	Noun	Buddhist image, figure of Buddha; the dead, dead person, departed soul; merciful person		jlpt-n3
+適切	appropriate, suitable, fitting, apt, proper, right, pertinent, relevant	適切[てきせつ]	Na-adjective , Noun			jlpt-n3
+コード	code	コード	Noun	cord; chord		jlpt-n3
+支配	rule, domination, control	支配[しはい]	Noun, Suru verb, Transitive verb	"direction, management, guidance; control (of one's destiny, public opinion, etc.), governing, influence, sway; government"		jlpt-n3
+田	rice field	田[た]	Noun			jlpt-n3
+答案	examination paper, examination script, answer sheet	答案[とうあん]	Noun	answer (to an exam question)		jlpt-n3
+そっくり	all, altogether, entirely, completely	そっくり	Adverb	exactly like, just like, spitting image of		jlpt-n3
+覚悟	readiness, preparedness, resolution, resignation	覚悟[かくご]	Noun, Suru verb, Transitive verb			jlpt-n3
+いらっしゃい	come, go, stay	いらっしゃい		welcome	Honorific or respectful (sonkeigo) language	jlpt-n3
+観察	observation, survey, watching	観察[かんさつ]	Noun, Suru verb, Transitive verb			jlpt-n3
+にっこり	sweetly (smiling), broadly (grinning)	にっこり	"Adverb , Adverb taking the 'to' particle, Suru verb"			jlpt-n3
+祝う	to celebrate, to congratulate, to observe (a festival)	祝[いわ]う	Godan verb with u ending, Transitive verb	to present (a gift) in celebration, to drink in celebration; to wish for (a happy future, good fortune, etc.), to pray for		jlpt-n3
+だけど	however	だけど	Conjunction			jlpt-n3
+主要	chief, main, principal, major	主要[しゅよう]	Na-adjective , Noun			jlpt-n3
+だが	but, however, (and) yet, nevertheless, still, for all that	だが	Conjunction			jlpt-n3
+周囲	surroundings, environs	周囲[しゅうい]	"Noun, Noun which may take the genitive case particle 'no'"	circumference		jlpt-n3
+ノー	no	ノー		no, without, not needed, not allowed		jlpt-n3
+姉妹	sisters	姉妹[しまい]	Noun			jlpt-n1 jlpt-n3
+身	body	身[み]	Noun	"oneself; one's place, one's position; main part, meat (as opposed to bone, skin, etc.), wood (as opposed to bark), blade (as opposed to its handle), container (as opposed to its lid)"		jlpt-n3
+注目	notice, attention, observation	注目[ちゅうもく]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+叫ぶ	to shout, to cry, to scream, to shriek, to yell, to exclaim	叫[さけ]ぶ	Godan verb with bu ending, Intransitive verb	to clamor (for or against), to clamour (for or against)		jlpt-n3
+休憩	rest, break, recess, intermission	休憩[きゅうけい]	Noun, Suru verb, Intransitive verb			jlpt-n3
+徐々	slow, gradual, steady	徐々[じょじょ]	"'taru' adjective, Adverb taking the 'to' particle"	calm, composed, relaxed		jlpt-n3
+鋭い	sharp (blade), pointed	鋭[するど]い	I-adjective	sharp (pain), stabbing, cutting (remark), stinging, pointed (question or look), screeching (noise); perceptive, keen, quick (mind), astute, shrewd, discerning; nimble, agile, quick		jlpt-n3
+奥	"inner part, inside, interior, depths (e.g. of a forest), back (of a house, drawer, etc.), bottom (e.g. of one's heart), recesses, heart"	奥[おく]	Noun			jlpt-n3
+注ぐ	to pour (into)	注[そそ]ぐ	Godan verb with gu ending, Transitive verb	"to sprinkle on (from above), to water (e.g. plants), to pour onto, to spray; to shed (tears); to concentrate one's energy (strength, attention, etc.) on, to devote to, to fix (one's eyes) on; to flow into (e.g. of a river), to run into, to drain into; to fall (of rain, snow), to pour down"		jlpt-n3
+申し訳	apology, excuse	申[もう]し 訳[わけ]	Noun, Suru verb			jlpt-n3
+嫌う	to hate, to dislike, to loathe	嫌[きら]う	Godan verb with u ending, Transitive verb			jlpt-n3
+訓	native Japanese reading of a Chinese character	訓[くん]	Noun	"precept, lesson, one's teachings"		jlpt-n3
+贈る	to give (as a gift), to present	贈[おく]る	Godan verb with ru ending, Transitive verb	to confer, to bestow, to award		jlpt-n3
+正	(logical) true, regular	正[せい]	"Noun, Noun which may take the genitive case particle 'no'"	10^40, ten thousand undecillion; original; positive, greater than zero; thesis (in dialectics)		jlpt-n3
+代表	representation, representative, delegate, delegation	代表[だいひょう]	Noun, Suru verb, Transitive verb	exemplification, typification, being representative of, being typical of, representative example, exemplar, model; leader; switchboard number, main number		jlpt-n3
+暮れ	sunset, sundown, nightfall, dusk	暮[く]れ	"Noun, Adverb , Noun which may take the genitive case particle 'no', Noun, used as a suffix"	end, close; year-end, end of the year		jlpt-n3
+試す	to attempt, to test, to try out	試[ため]す	Godan verb with su ending, Transitive verb			jlpt-n3
+具体	concrete, tangible, material	具体[ぐたい]	Noun or verb acting prenominally			jlpt-n3
+疑問	doubt, question, suspicion, dubiousness	疑問[ぎもん]	Noun			jlpt-n3
+抱く	"to hold in one's arms (e.g. a baby), to embrace, to hug"	抱[いだ]く	Godan verb with ku ending, Transitive verb	to have (a thought or feeling), to hold, to harbour (suspicion, doubt, etc.), to harbor, to bear (a grudge, ill will, etc.), to entertain (hope, illusions, etc.), to cherish (e.g. an ambition)		jlpt-n3
+集中	"concentration (on a task), focusing one's attention"	集中[しゅうちゅう]	Noun, Suru verb, Transitive verb, Intransitive verb	concentration (of population, buildings, power, etc.), centralization, convergence, focus (of a debate, questions, etc.); within a collection of works		jlpt-n3
+吐く	to vomit, to throw up, to spit up	吐[は]く	Godan verb with ku ending, Transitive verb	to emit, to send forth, to breathe out; to give (an opinion), to make (a comment), to express, to tell; to confess		jlpt-n3
+換える	to replace	換[か]える	Ichidan verb, Transitive verb	to exchange, to interchange; to substitute		jlpt-n2 jlpt-n3
+対する	to face (each other), to be facing	対[たい]する	Suru verb - special class	to be directed toward (the future, etc.), to be in response to, to be related to; to receive (a client, etc.); to compare with, to contrast with, to be in opposition with, to be opposed to; to confront, to oppose, to compete with		jlpt-n3
+優秀	superior, excellent, brilliant, outstanding	優秀[ゆうしゅう]	Na-adjective , Noun			jlpt-n3
+あんなに	to that extent, to that degree, so much, so	あんなに	Adverb			jlpt-n3
+混雑	congestion, crush, crowding, jam	混雑[こんざつ]	Noun, Suru verb	confusion, disorder		jlpt-n3
+極	pole	極[きょく]	Noun	climax, extreme, extremity, culmination, height, zenith, nadir		jlpt-n3
+配達	delivery	配達[はいたつ]	Noun, Suru verb, Transitive verb			jlpt-n3
+ばったり	with a clash, with a thud, with a bang, with a flop, plump	ばったり	"Adverb , Adverb taking the 'to' particle"	unexpectedly (meeting someone); suddenly (ending), abruptly (coming to a halt)		jlpt-n3
+順調	favourable, favorable, doing well, OK, all right	順調[じゅんちょう]	Na-adjective , Noun			jlpt-n3
+けち	stinginess, miserliness, penny-pinching, miser, pinchpenny, skinflint, cheapskate, tightwad, niggard	けち	Noun, Na-adjective	shabby, cheap, mangy, poor, paltry; petty, narrow-minded, mean-spirited, small-minded; bad luck, ill omen, misfortune, jinx		jlpt-n1 jlpt-n3
+小包	parcel, package	小包[こづつみ]	Noun			jlpt-n3
+ライター	lighter	ライター	Noun			jlpt-n3
+軍	army, armed forces, troops	軍[ぐん]	Noun	military authorities; team, group, troupe		jlpt-n3
+バン	bun (hairstyle)	バン	Noun			jlpt-n3
+玉	ball, sphere, globe, orb	玉[たま]	Noun	bead (of sweat, dew, etc.), drop, droplet; ball (in sports); pile (of noodles, etc.); bullet; bulb (i.e. a light bulb); lens (of glasses, etc.); bead (of an abacus); ball (i.e. a testicle); gem, jewel (esp. spherical; sometimes used figuratively), pearl; female entertainer (e.g. a geisha); person (when commenting on their nature), character; item, funds or person used as part of a plot; egg; okonomiyaki; coin; precious, beautiful, excellent		jlpt-n3
+率土	face of the earth	率土[そっと]	Noun			jlpt-n3
+見事	splendid, magnificent, excellent, fine, superb, beautiful, admirable	見事[みごと]	Na-adjective , Adverb	utter (esp. defeat), total, complete; something worth seeing, sight, spectacle		jlpt-n3
+球	sphere, globe, ball, bulb	球[きゅう]	Noun	ball, sphere; counter for pitches		jlpt-n3
+一家	"a family, a household, a home, one's family, whole family"	一家[いっか]	Noun	"(one's own) style, school; gang, (yakuza) family"		jlpt-n3
+不	un-, non-, negative prefix	不[ふ]	Prefix			jlpt-n3
+景気	business conditions, the market, economic activity, economic climate	景気[けいき]	Noun	good (economic) times, prosperity, boom; liveliness, energy, vigour, vigor, spirit		jlpt-n3
+トラック	truck, lorry	トラック	Noun			jlpt-n3
+飼う	to keep (a pet or other animal), to have, to own, to raise, to rear, to feed	飼[か]う	Godan verb with u ending, Transitive verb			jlpt-n3
+カード	card (information, filing, etc.)	カード	Noun	card (greetings, congratulations, etc.); (Western) playing cards; credit card, debit card; match, game, grouping in a competition or tournament; dough scraper, spatula		jlpt-n3
+去る	to leave, to go away	去[さ]る	Godan verb with ru ending, Intransitive verb	"to pass, to elapse; to be distant; to send away, to drive off, to divorce; to (do) completely; last ... (e.g. ""last April"")"		jlpt-n3
+サイン	autograph, signature	サイン	Noun, Suru verb, Transitive verb, Intransitive verb	sign, signal, indication		jlpt-n3
+沈む	to sink, to go under, to submerge	沈[しず]む	Godan verb with mu ending, Intransitive verb	to go down (e.g. sun), to set, to descend; to feel depressed, to become subdued, to become somber		jlpt-n3
+ミス	mistake, error, blunder	ミス	Noun, Suru verb, Intransitive verb, Transitive verb			jlpt-n3
+輝く	to shine, to glitter, to sparkle	輝[かがや]く	Godan verb with ku ending			jlpt-n3
+グラス	glass (drinking vessel)	グラス	Noun	glass (material); glasses (eyewear)		jlpt-n3
+願う	to desire, to wish, to hope	願[ねが]う	Godan verb with u ending, Transitive verb	to beg, to request, to implore, to pray; to have something done for oneself		jlpt-n3
+ママ	mama, mamma, mom, mommy, mum, mummy, mother	ママ	Noun	female proprietress (of a bar, etc.)		jlpt-n3
+利口	clever, intelligent, wise, bright, sharp, sensible, smart, shrewd	利口[りこう]	Na-adjective , Noun	well-behaved (esp. children and pets), obedient, good; good (with words)		jlpt-n3
+直	straight	直[なお]	Na-adjective	ordinary, common; doing nothing		jlpt-n3
+取れる	to come off, to be removed	取[と]れる	Ichidan verb	to disappear (of pain, a fever, etc.); to be caught, to be harvested; to be interpreted (as), to be taken (as); to be attained (of balance, etc.); to be obtainable		jlpt-n3
+ト	7th in a sequence denoted by the iroha system	ト	Noun	7th note in the diatonic scale (used in key names, etc.), G		jlpt-n1 jlpt-n3
+叩く	"to strike, to hit, to beat, to knock, to pound, to bang, to slap, to spank, to tap, to pat, to clap (one's hands), to play (the drums)"	叩[たた]く	Godan verb with ku ending, Transitive verb	"to attack, to bash, to criticize, to censure, to flame (on the Internet); to sound out (someone's views); to pound (meat or fish), to chop into small pieces; to beat down the price; to talk (big, bad, idly, etc.); to call, to invoke (e.g. a function)"		jlpt-n3
+権利	right, privilege	権利[けんり]	Noun			jlpt-n3
+似合う	to suit, to match, to become, to be like	似合[にあ]う	Godan verb with u ending, Intransitive verb			jlpt-n3
+議長	chair, chairman, chairperson, speaker (of an assembly), president (of a council, senate, etc.)	議長[ぎちょう]	Noun			jlpt-n3
+匂い	odour, odor, scent, smell, stench	匂[にお]い	Noun	aura, whiff, smacks of ..., sense, flavour, flavor		jlpt-n3
+役割	part, assigning (allotment of) parts, role, duties	役割[やくわり]	Noun			jlpt-n3
+招く	to invite, to ask	招[まね]く	Godan verb with ku ending, Transitive verb	to beckon, to wave someone in, to gesture to; to call in, to send for, to summon; to bring on oneself, to cause, to incur, to lead to, to result in		jlpt-n3
+改善	betterment, improvement	改善[かいぜん]	"Noun, Suru verb, Noun which may take the genitive case particle 'no'"	kaizen (Japanese business philosophy of continuous improvement)		jlpt-n3
+割る	to divide	割[わ]る	Godan verb with ru ending, Transitive verb	to cut, to halve, to separate, to split, to rip; to break, to crack, to smash; to dilute; to fall below; to discount; to step over (a line, etc.)		jlpt-n3
+通学	commuting to school, school commute	通学[つうがく]	Noun, Suru verb, Intransitive verb			jlpt-n3
+任せる	to entrust (e.g. a task) to another, to leave to	任[まか]せる	Ichidan verb, Transitive verb	"to passively leave to someone else's facilities; to leave to take its natural course; to continue (something) in a natural fashion (without particular aim); to rely fully on one's (full strength, great ability, long time taken) to get something done"		jlpt-n3
+節約	economising, saving	節約[せつやく]	Noun, Suru verb, Transitive verb			jlpt-n3
+触れる	to touch, to feel	触[ふ]れる	Ichidan verb, Intransitive verb	to touch (with); to experience, to come in contact with, to perceive; to touch on (a subject), to allude to, to refer to, to mention, to bring up; to be in conflict with, to violate (law, copyright, etc.), to infringe; to proclaim, to make known, to spread (e.g. a rumour)		jlpt-n3
+毛布	blanket	毛布[もうふ]	Noun			jlpt-n3
+解ける	to be solved, to be resolved	解[と]ける	Ichidan verb, Intransitive verb	to loosen, to come untied, to come undone; to be removed (of restrictions), to be lifted (e.g. a ban), to be broken (spells, curses, etc.); to dissipate (of anger, tension, etc.), to melt away, to ease, to be appeased, to be resolved (of a dispute, misunderstanding, etc.), to be cleared up		jlpt-n3
+感覚	sense, sensation, feeling, intuition	感覚[かんかく]	Noun, Suru verb			jlpt-n3
+文	sentence	文[ぶん]	Noun	composition, text, writings; the literary arts (as opposed to the military arts), academia, literature; statement		jlpt-n3
+議会	congress, parliament, diet, legislative assembly	議会[ぎかい]	Noun			jlpt-n3
+不平	discontent, dissatisfaction, complaint, grievance	不平[ふへい]	"Noun, Noun which may take the genitive case particle 'no', Na-adjective"			jlpt-n3
+鍋	saucepan, pot	鍋[なべ]	Noun	stew, hot pot		jlpt-n3
+立ち上がる	to stand up, to get up	立[た]ち 上[あ]がる	Godan verb with ru ending, Intransitive verb	to rise; to recover; to take action, to start; to make the initial charge; to start up, to boot up		jlpt-n3
+居間	living room (Western style), sitting room	居間[いま]	Noun			jlpt-n3
+大した	considerable, great, important, significant, a big deal	大[たい]した	Pre-noun adjectival			jlpt-n3
+火災	conflagration, fire	火災[かさい]	Noun			jlpt-n3
+腐る	to rot, to go bad, to decay, to spoil, to fester, to decompose, to turn sour (e.g. milk)	腐[くさ]る	Godan verb with ru ending, Intransitive verb	to corrode, to weather, to crumble; to become useless, to blunt, to weaken (from lack of practice); to become depraved, to be degenerate, to be morally bankrupt, to be corrupt; to be depressed, to be dispirited, to feel discouraged, to feel down; to have the audacity to, to be bastard enough to; to lose a bet; to be drenched, to become sopping wet		jlpt-n3
+宝	treasure	宝[たから]	Noun			jlpt-n3
+伺う	to ask, to inquire, to hear, to be told	伺[うかが]う	Godan verb with u ending, Transitive verb	to implore (a god for an oracle), to seek direction (from your superior); to visit; to speak to (a large crowd at a theatre, etc.)	Humble (kenjougo) language	jlpt-n3
+弁当	bento, Japanese box lunch	弁当[べんとう]	Noun			jlpt-n3
+通じる	to be open (to traffic), to lead to, to communicate (with)	通[つう]じる	Ichidan verb, Intransitive verb	to flow (liquid, current), to pass, to get through to; to be understood, to be comprehended; to be honored, to be good; to be well versed in, to be well-informed; to communicate clandestinely, to keep in touch (e.g. with the enemy); to form a liaison, to be intimate; to spread widely, to disseminate		jlpt-n3
+邪魔	hindrance, obstacle, nuisance, disturbance, interruption, interference	邪魔[じゃま]	Noun, Na-adjective , Suru verb	"to visit (someone's home); demon who hinders Buddhist training, demon who obstructs sentient beings from maintaining moral behaviour"		jlpt-n3
+稼ぐ	to earn (income), to make (money)	稼[かせ]ぐ	Godan verb with gu ending, Transitive verb	"to score (points, victory), to gain (time), to play (for time); to work hard (at one's job), to labor, to labour, to toil"		jlpt-n3
+不思議	wonderful, marvelous, strange, incredible, amazing, curious, miraculous, mysterious	不思議[ふしぎ]	Na-adjective , Noun	strangely enough, oddly enough, for some reason, curiously		jlpt-n3
+微笑む	to smile	微笑[ほほえ]む	Godan verb with mu ending, Intransitive verb			jlpt-n3
+区別	distinction, differentiation, classification	区別[くべつ]	Noun, Suru verb, Transitive verb			jlpt-n3
+辞める	"to resign, to retire, to quit, to leave (one's job, etc.)"	辞[や]める	Ichidan verb, Transitive verb			jlpt-n3
+回す	to turn, to rotate, to spin, to twist, to gyrate	回[まわ]す	Godan verb with su ending, Transitive verb	"to pass around, to send around, to hand around, to circulate; to move (someone or something to where its needed), to send, to bring, to transfer, to forward, to direct, to submit; to turn (to a new use), to use (for something else); to turn on (something that turns or has a rotating part, e.g. a washing machine), to start up (e.g. an engine), to give (something) a spin; to put (someone in a position), to make (e.g. an enemy of); to ... around (e.g. chase, fool, play), to do all over, to do everywhere, to do completely; to surround (something) with, to enclose with; to put (an arm) around (e.g. someone's waist), to reach around; to invest (money), to lend; to dial (a telephone number); to gang-rape; to operate (e.g. business, shop)"		jlpt-n3
+含む	to contain, to comprise, to have, to hold, to include, to embrace	含[ふく]む	Godan verb with mu ending, Transitive verb	to hold in the mouth; to bear in mind, to understand, to harbor (grudge, etc.), to harbour; to express (emotion, etc.), to imply		jlpt-n3
+今後	from now on, hereafter	今後[こんご]	Noun, Adverb			jlpt-n3
+苦しむ	to suffer, to groan, to be worried	苦[くる]しむ	Godan verb with mu ending, Intransitive verb			jlpt-n3
+組む	to cross (legs or arms), to link (arms)	組[く]む	Godan verb with mu ending	to put together, to construct, to assemble, to produce (e.g. TV program); to braid, to plait; to grapple, to wrestle; to unite, to join, to link up, to form an alliance; to set (e.g. type); to issue (e.g. money order)		jlpt-n3
+種	seed (e.g. of a plant), pip, kernel, stone (e.g. of a peach)	種[たね]	Noun	progeny, offspring, issue, breed; paternal blood, lineage; sperm, semen, seed; cause, source, seed, origin; material (e.g. for an article), matter (e.g. of a story), subject (of discussion), theme, (news) copy, source (of a story); ingredient, main ingredient (of a piece of sushi), leaven; mechanism (of a magic trick, etc.), secret, trickery; 10-point card, tane, animal card		jlpt-n3
+応じる	to respond, to satisfy, to accept, to comply with, to apply for	応[おう]じる	Ichidan verb, Intransitive verb			jlpt-n3
+近頃	lately, recently, nowadays	近頃[ちかごろ]	Noun, Adverb			jlpt-n3
+不利	disadvantage, handicap, unfavorable position	不利[ふり]	Noun, Na-adjective			jlpt-n3
+勧める	to recommend (someone to do), to advise, to encourage, to urge	勧[すす]める	Ichidan verb, Transitive verb	to recommend (a book, someone for a position, etc.), to suggest; to offer (a drink, cigarette, seat, etc.)		jlpt-n3
+多少	a little, some, somewhat, slightly, to some degree, to some extent	多少[たしょう]	"Adverb , Noun which may take the genitive case particle 'no'"	amount, quantity, number		jlpt-n3
+基づく	to be based (on), to be founded (on), to be grounded (on), to be in accordance (with)	基[もと]づく	Godan verb with ku ending, Intransitive verb	to be due to, to come (from), to arise (from), to originate (in)		jlpt-n3
+維持	maintenance, preservation, improvement	維持[いじ]	Noun, Suru verb, Transitive verb			jlpt-n3
+責める	to condemn, to blame, to criticize, to criticise, to reproach, to accuse	責[せ]める	Ichidan verb, Transitive verb	to urge, to press, to pester; to torture, to torment, to persecute; to break in (a horse)		jlpt-n3
+穏やか	calm, quiet, gentle, peaceful, mild	穏[おだ]やか	Na-adjective	moderate, reasonable, amicable		jlpt-n3
+済ませる	to finish, to make an end of, to get through with, to let end	済[す]ませる	Ichidan verb, Transitive verb			jlpt-n3
+金銭	money, cash	金銭[きんせん]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+就く	to take (seat, position, course, office, etc.), to assume, to be hired, to be employed	就[つ]く	Godan verb with ku ending, Intransitive verb	to ascend (the throne), to accede; to start (on a journey), to commence, to depart; to study (under teacher), to be an apprentice		jlpt-n3
+損	loss, damage, harm, unprofitable	損[そん]	Noun, Na-adjective , Suru verb, Intransitive verb	disadvantage, handicap, drawback, unfavorable		jlpt-n3
+案	idea, plan, proposal, suggestion, (government) bill	案[あん]	Noun, Noun, used as a suffix	draft, rough copy; expectation; desk, stand		jlpt-n3
+開始	start, commencement, beginning, initiation	開始[かいし]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+面	face	面[めん]	Noun	mask, face guard; (in kendo) striking the head; surface (esp. a geometrical surface); page; aspect, facet, side; chamfer; counter for broad, flat objects, levels or stages, e.g. in a video game		jlpt-n3
+意外	unexpected, surprising	意外[いがい]	"Na-adjective , Adverb taking the 'to' particle, Noun"			jlpt-n3
+捕まる	to be caught, to be arrested	捕[つか]まる	Godan verb with ru ending, Intransitive verb	to hold on to, to grasp; to find (e.g. proof), to get (e.g. a taxi); to be detained by		jlpt-n3
+流す	to drain, to pour, to run, to let flow, to flush, to shed (blood, tears), to spill	流[なが]す	Godan verb with su ending, Transitive verb	to float (e.g. logs down a river), to set adrift; to wash away, to carry away, to sweep away; to broadcast, to play (e.g. music over a loudspeaker), to send (electricity through a wire); to circulate (a rumour, information, etc.), to spread, to distribute; to cruise (of a taxi), to stroll around (in search of customers, an audience, etc.), to go from place to place; to cancel (a plan, meeting, etc.), to call off, to reject (e.g. a bill); to forfeit (a pawn); to do leisurely (e.g. running, swimming), to do with ease, to do effortlessly; to exile, to banish; to hit (the ball) to the opposite field; to do inattentively, to do without concentrating, to put little effort into doing		jlpt-n3
+欠ける	to chip, to be chipped, to break (off), to be damaged	欠[か]ける	Ichidan verb, Intransitive verb	to be missing (from a set, team, etc.), to be absent, to become lost; to be lacking (in), to be short (of), to be deficient, to be wanting (in); to wane (of the moon), to go into eclipse		jlpt-n3
+重視	regarding as important, attaching importance to, taking a serious view of, putting emphasis on	重視[じゅうし]	Noun, Suru verb, Transitive verb			jlpt-n3
+向く	to turn toward, to look (up, down, etc.)	向[む]く	Godan verb with ku ending, Transitive verb, Intransitive verb	"to face (e.g. east) (of a building, window, etc.), to look out on, to front (on); to point (of an arrow, compass needle, etc.); to be suited to, to be fit for; to go towards, to turn to (of one's interests, feelings, etc.), to be inclined (to do)"		jlpt-n3
+操作	operation, management, handling	操作[そうさ]	Noun, Suru verb, Transitive verb	"manipulating (to one's benefit), manipulation, influencing"		jlpt-n3
+横切る	to cross (e.g. road), to traverse	横切[よこぎ]る	Godan verb with ru ending, Transitive verb			jlpt-n3
+成人	adult (esp. person 20 years old or over), grownup	成人[せいじん]	Noun	becoming an adult, coming of age, growing up (to be a man, woman)		jlpt-n3
+下ろす	to take down, to bring down, to lower (a hand, flag, shutter, etc.), to drop (an anchor, curtain, etc.), to let down (hair), to launch (a boat)	下[お]ろす	Godan verb with su ending, Transitive verb	to drop off (a passenger), to let off, to unload (goods, a truck, etc.), to offload, to discharge; to withdraw (money); to use for the first time, to wear for the first time; to cut off, to fillet (fish), to grate (e.g. radish), to prune (branches); to remove (someone from a position), to oust, to drop; to clear (the table), to remove (offerings from an altar), to pass down (e.g. old clothes), to hand down; to expel from the body (e.g. worms), to abort (a fetus); to invoke (a spirit), to call down		jlpt-n3
+悲劇	tragedy, tragic drama, tragic play	悲劇[ひげき]	Noun	tragedy, calamity, disaster		jlpt-n3
+転ぶ	to fall down, to fall over	転[ころ]ぶ	Godan verb with bu ending, Intransitive verb	to turn out, to play out; to abandon Christianity (and convert to Buddhism), to apostatize; to roll, to tumble; (for a geisha) to prostitute (herself) in secret		jlpt-n3
+半ば	middle, halfway, midway	半[なか]ば	Noun, Noun, used as a suffix	half (of), one half; half (e.g. done, jokingly), partly, in part, partially; mostly, almost, nearly		jlpt-n3
+強調	emphasis, stress, highlighting, underlining, underscoring	強調[きょうちょう]	Noun, Suru verb	accentuating (a feature or certain part), accenting; strong tone (of the market), firm tone		jlpt-n3
+症状	symptoms, condition (of a patient)	症状[しょうじょう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+生まれ	birth, birthplace	生[う]まれ	Noun	born in (country, month, imperial era, zodiac year, etc.)		jlpt-n3
+依頼	request, commission, entrusting (with a matter)	依頼[いらい]	Noun, Suru verb, Transitive verb	dependence, reliance		jlpt-n3
+生じる	to produce, to yield, to cause	生[しょう]じる	Ichidan verb, Transitive verb	to result from, to arise, to be generated		jlpt-n3
+幅	width, breadth	幅[はば]	Noun	freedom (e.g. of thought), latitude; gap, difference (e.g. in price), range (e.g. of voice)		jlpt-n3
+法	law, act, principle	法[ほう]	Noun, Noun, used as a suffix	method; mood; dharma, law		jlpt-n3
+党	party (political)	党[とう]	Noun, Noun, used as a suffix	person who is fond of, fan of		jlpt-n3
+劣る	to be inferior to, to be less good at, to fall behind	劣[おと]る	Godan verb with ru ending, Intransitive verb			jlpt-n3
+語学	study of foreign languages	語学[ごがく]	Noun	linguistics		jlpt-n3
+隠れる	to hide, to be hidden, to conceal oneself, to disappear	隠[かく]れる	Ichidan verb, Intransitive verb			jlpt-n3
+日常	everyday, daily, ordinary, usual, routine, regular	日常[にちじょう]	"Noun which may take the genitive case particle 'no', Noun, Adverb"			jlpt-n3
+度	degree (angle, temperature, scale, etc.)	度[ど]	Noun, Noun, used as a suffix	counter for occurrences; strength (of glasses), glasses prescription; alcohol content (percentage), alcohol by volume; extent, degree, limit; presence of mind, composure		jlpt-n3
+境	border, boundary	境[さかい]	Noun	turning point, watershed; area, region, spot, space, environment; psychological state, mental state; cognitive object, something perceptible by the sense organs or mind		jlpt-n3
+吠える	to bark, to howl, to bay, to bellow	吠[ほ]える	Ichidan verb, Intransitive verb	to howl (e.g. of the wind), to roar; to yell, to cry, to moan, to grunt		jlpt-n3
+届く	to reach, to touch, to get to, to carry (of sound)	届[とど]く	Godan verb with ku ending, Intransitive verb	to be delivered, to arrive; to be attentive, to be scrupulous, to be thorough; to be realized (of a desire), to be fulfilled, to get through (to someone), to be appreciated, to make an impression		jlpt-n3
+訴える	"to raise, to bring to (someone's attention)"	訴[うった]える	Ichidan verb, Transitive verb	"to appeal to (reason, emotions, etc.), to work on (one's emotions), to play on (one's sympathies); to complain; to sue (a person), to take someone to court; to resort to (e.g. arms, violence)"		jlpt-n3
+怠ける	to be idle, to slacken	怠[なま]ける	Ichidan verb, Intransitive verb	"to neglect (e.g. one's work)"		jlpt-n3
+震える	to shiver, to shake, to quake, to tremble, to quaver, to quiver	震[ふる]える	Ichidan verb, Intransitive verb			jlpt-n3
+伸びる	to stretch, to extend, to lengthen, to grow (of hair, height, grass, etc.)	伸[の]びる	Ichidan verb, Intransitive verb	to straighten out, to be flattened, to become smooth; to spread (of paint, cream, etc.); to stretch out (e.g. of a hand), to extend; to lose elasticity, to become slack, to become soggy (e.g. noodles); to make progress, to develop, to expand, to increase, to improve; to be exhausted, to be groggy, to pass out, to collapse; to be prolonged (meeting, life span, etc.), to be extended (e.g. deadline), to lengthen (e.g. of the days); to be postponed, to be delayed, to be put off		jlpt-n2 jlpt-n3
+凍る	to freeze, to be frozen over, to congeal	凍[こお]る	Godan verb with ru ending, Intransitive verb			jlpt-n3
+広がる	to spread (out), to extend, to stretch, to reach to, to get around, to fill (e.g. a space)	広[ひろ]がる	Godan verb with ru ending, Intransitive verb			jlpt-n3
+罰する	to punish, to penalize, to penalise	罰[ばっ]する	Suru verb - special class			jlpt-n3
+酔う	to get drunk, to become intoxicated	酔[よ]う	Godan verb with u ending, Intransitive verb	to feel sick (e.g. in a vehicle), to become nauseated; to be elated, to be exalted, to be spellbound, to be in raptures		jlpt-n3
+飽きる	to get tired of, to lose interest in, to be fed up with, to have enough	飽[あ]きる	Ichidan verb, Auxiliary verb, Intransitive verb			jlpt-n3
+濃い	deep (colour), dark	濃[こ]い	I-adjective	"strong (flavour, smell, etc.); thick (consistency), dense; strong (possibility, etc.); thick (i.e. ""as thick as thieves""), close, deep (love, etc.)"		jlpt-n3
+論じる	to discuss, to talk about, to deal with (a topic)	論[ろん]じる	Ichidan verb, Transitive verb	to argue, to dispute; to take into consideration, to make an issue of		jlpt-n3
+支える	to support, to prop, to sustain, to underlay, to hold up, to defend	支[ささ]える	Ichidan verb, Transitive verb	to hold at bay, to stem, to check		jlpt-n3
+除く	to remove, to eliminate, to eradicate	除[のぞ]く	Godan verb with ku ending, Transitive verb	to exclude, to except		jlpt-n3
+満ちる	to fill, to become full (of), to be filled (with), to brim (with)	満[み]ちる	Ichidan verb, Intransitive verb	to wax (of the moon); to rise (of the tide), to flow, to come in; to expire (of a period of time), to mature, to come to an end		jlpt-n3
+抜く	to pull out, to draw out, to extract, to unplug, to weed	抜[ぬ]く	Godan verb with ku ending, Transitive verb	"to omit, to leave out, to go without, to skip; to do to the end, to carry through; to let out (e.g. air from a tyre), to drain (e.g. water from a bath), to empty; to pick out, to choose, to select, to extract; to pilfer, to steal; to remove, to get rid of, to take out; to pass, to overtake, to outstrip, to get ahead of; to pierce, to break through, to go through; to cut out (a shape), to create (a pattern) by dying the surrounding area; to seize, to capture, to reduce; to scoop (a story); to take out (an opponent's stones; in go); to masturbate (of a male), to ejaculate (while masturbating); to take (a photo), to record (video)"		jlpt-n3
+真面目	serious, honest, sober, grave, earnest, steady	真面目[まじめ]	Na-adjective , Noun			jlpt-n3
+適する	to fit, to suit	適[てき]する	Suru verb - special class, Intransitive verb			jlpt-n3
+陰	shade, shadow	陰[かげ]	Noun	"behind (something), other side, back; background, behind the scenes, behind someone's back; gloom (in someone's expression, nature, etc.), darkness"		jlpt-n3
+臭い	stinking, smelly	臭[くさ]い	I-adjective	suspicious, fishy; clumsy, unskilled; smelling of; looking like, appearing like, smacking of, -ish		jlpt-n3
+通り過ぎる	to go past, to pass, to pass by	通[とお]り 過[す]ぎる	Ichidan verb, Intransitive verb			jlpt-n3
+振る	to wave, to shake, to swing	振[ふ]る	Godan verb with ru ending, Transitive verb	to sprinkle, to throw (dice); to cast (actor), to allocate (work); to turn down (someone), to reject, to jilt, to dump; to abandon, to give up, to ruin; to add kana indicating a reading of a word; to slightly change headings, to change directions; to extract by broiling, to prepare an infusion of, to decoct; to carry with great vigor (e.g. a portable shrine); to bring up a topic, to lead to a topic; to replace, to substitute; to set up a joke for someone else		jlpt-n3
+途端	just (now, at the moment, etc.), just as, in the act of, as soon as, at the moment that	途端[とたん]	Noun, Adverb			jlpt-n3
+真似	imitating, copying, mimicry	真似[まね]	Noun, Suru verb	behavior, behaviour, action, conduct		jlpt-n3
+幼い	very young, little	幼[おさな]い	I-adjective	childish, immature		jlpt-n3
+防ぐ	to defend against, to protect against	防[ふせ]ぐ	Godan verb with gu ending, Transitive verb	to prevent, to avert, to avoid		jlpt-n3
+行儀	manners, behavior, behaviour	行儀[ぎょうぎ]	Noun			jlpt-n3
+性	nature (of a person)	性[せい]	Noun	sex, gender; sex (i.e. sexual attraction, activity, etc.); gender; -ty, -ity, -ness, -cy		jlpt-n3
+物音	sounds	物音[ものおと]	Noun			jlpt-n3
+用心	care, precaution, guarding, caution	用心[ようじん]	Noun, Suru verb, Transitive verb, Intransitive verb			jlpt-n3
+抜ける	to come out, to fall out, to be omitted, to be missing, to escape, to come loose	抜[ぬ]ける	Ichidan verb, Intransitive verb	to fade, to discolour; to wear a hole (e.g. clothes); to leave (e.g. a meeting); to be clear, to be transparent (e.g. of the sky); to be stupid, to be absentminded, to be careless, to be inattentive; to exit (a program loop); to go through, to pass through, to give way, to collapse; to finish a round with more than 88 points (not counting points gained from scoring combinations)		jlpt-n3
+熱中	being enthusiastic about, being wild about, being absorbed in, being engrossed in, being devoted to	熱中[ねっちゅう]	Noun, Suru verb, Intransitive verb			jlpt-n3
+等しい	equal, identical, the same	等[ひと]しい	I-adjective	no different (to), just like, equivalent		jlpt-n3
+気の毒	pitiful, unfortunate, poor, miserable, wretched	気[き]の 毒[どく]	Na-adjective , Noun	unpardonable, regrettable		jlpt-n3
+譲る	to hand over, to transfer, to turn over, to assign, to convey, to bequeath	譲[ゆず]る	Godan verb with ru ending, Transitive verb	"to give up (e.g. one's seat), to give way; to yield, to concede, to give ground, to surrender; to sell; to postpone, to put off, to defer"		jlpt-n3
+取り上げる	to pick up	取[と]り 上[あ]げる	Ichidan verb, Transitive verb	to adopt (e.g. a proposal), to accept, to take up (a topic, complaint, etc.), to listen to, to deal with, to treat, to report (news), to cover, to feature; to take away, to confiscate, to deprive (someone) of, to revoke, to disqualify, to cancel; to deliver (a baby); to collect (taxes)		jlpt-n3
+放す	to release, to let go, to free, to set free, to let loose, to turn loose	放[はな]す	Godan verb with su ending, Transitive verb	to add (pieces of eggplant, potato, etc.) to water, broth, etc.		jlpt-n3
+省く	to omit, to leave out, to exclude, to eliminate	省[はぶ]く	Godan verb with ku ending, Transitive verb	to curtail, to save, to cut down, to economize, to economise		jlpt-n3
+上達	improvement (e.g. in skill, ability), advance, progress	上達[じょうたつ]	Noun, Suru verb, Intransitive verb	communication of opinions of the general populace to those of high rank		jlpt-n3
+眺め	scene, view, prospect, outlook	眺[なが]め	Noun			jlpt-n3
+逆らう	to go against, to oppose, to disobey, to defy	逆[さか]らう	Godan verb with u ending, Intransitive verb			jlpt-n3
+占める	to occupy, to hold	占[し]める	Ichidan verb, Transitive verb	to account for, to make up, to take up		jlpt-n3
+申し込む	to apply for, to make an application, to propose (marriage), to offer (mediation), to make an overture (of peace), to challenge, to lodge (objections), to request (an interview), to subscribe for, to book, to reserve	申[もう]し 込[こ]む	Godan verb with mu ending, Transitive verb			jlpt-n3
+非常	emergency	非常[ひじょう]	Noun	extreme, great, extraordinary, remarkable, unusual, terrible, severe		jlpt-n3
+上京	going (up) to the capital, going to Tokyo	上京[じょうきょう]	Noun, Suru verb, Intransitive verb			jlpt-n3
+詰める	to stuff into, to jam, to cram, to pack, to fill, to plug, to stop up	詰[つ]める	Ichidan verb, Transitive verb	"to shorten, to move closer together; to reduce (spending), to conserve; to focus intently on, to strain oneself to do; to go through thoroughly, to work out (details), to bring to a conclusion, to wind up; to be on duty, to be stationed; to corner (esp. an opponent's king in shogi), to trap, to checkmate; to cut off (one's finger as an act of apology), to catch (one's finger in a door, etc.); to do non-stop, to do continuously, to keep doing (without a break); to do completely, to do thoroughly; to force someone into a difficult situation by ..."		jlpt-n3
+一人一人	each (person), individually, one by one, one at a time, in turn	一人一人[ひとりひとり]	Adverb , Noun			jlpt-n3
+一度に	all at once	一度[いちど]に	Adverb			jlpt-n3
+札	banknote, bill, note, paper money	札[さつ]	Noun, Noun, used as a suffix			jlpt-n3
+頂戴	receiving, reception, getting, being given	頂戴[ちょうだい]	Noun, Suru verb	eating, drinking, having; please, please do for me	Humble (kenjougo) language	jlpt-n3
+狂う	"to go mad, to lose one's mind, to go crazy, to go insane"	狂[くる]う	Godan verb with u ending, Intransitive verb	to get out of order, to go amiss, to malfunction, to become imprecise; to go wrong (of a plan or expectation, etc.), to fall through, to get mixed up; to go crazy (over someone or something), to get enthusiastic, to go wild		jlpt-n3
+生	raw, uncooked, fresh	生[なま]	"Noun which may take the genitive case particle 'no', Noun"	natural, as it is, unedited, unprocessed; unprotected (sex); live (i.e. not recorded); inexperienced, unpolished, green, crude; impudence, sauciness; unpasteurized beer, draft beer, draught beer; blank (e.g. disk), unused; just a little, somehow, vaguely, partially, somewhat, half-, semi-; insufficient, incomplete, half-baked, half-hearted, perfunctory; cash; tipsiness		jlpt-n3
+売れる	to sell (well)	売[う]れる	Ichidan verb, Intransitive verb	to be well known, to be popular, to be famous		jlpt-n3
+真剣	serious, earnest	真剣[しんけん]	Na-adjective	real sword (as opposed to a wooden practice weapon)		jlpt-n3
+迷子	lost child, lost person, stray child, missing child	迷子[まいご]	Noun			jlpt-n3
+象	elephant (Elephantidae spp.)	象[ぞう]	Noun			jlpt-n3
+指す	to point	指[さ]す	Godan verb with su ending, Transitive verb	"to nominate, to select someone, to specify some person; to identify, to indicate, to point out; to play (a game of shogi), to move (a piece); to extend one's arm straight ahead (in dance)"		jlpt-n3
+飛ばす	to let fly, to make fly, to send flying, to blow off (e.g. in the wind), to launch, to fire, to hurl, to shoot	飛[と]ばす	Godan verb with su ending, Transitive verb	to skip over, to leave out, to omit, to drop (e.g. a stitch); to run fast, to drive fast, to gallop; to spray, to splash, to spatter; to say without reservation, to call out (e.g. a jeer), to rattle off (e.g. a joke); to spread (e.g. a rumour), to circulate, to send out (a message), to issue (e.g. an appeal); to transfer (to a less important post), to send away (e.g. to a provincial branch), to demote; to dispatch quickly (e.g. a reporter); to get rid of, to burn off (alcohol); to attack (e.g. with a leg manoeuvre); to do vigorously, to do roughly, to do energetically		jlpt-n3
+要点	gist, main point	要点[ようてん]	Noun			jlpt-n3
+食う	to eat	食[く]う	Godan verb with u ending, Transitive verb	to live, to make a living, to survive; to bite, to sting (as insects do); to tease, to torment, to taunt, to make light of, to make fun of; to encroach on, to eat into, to consume; to defeat a superior, to threaten a position; to consume time and-or resources; to receive something (usu. an unfavourable event); to have sexual relations with a woman, esp. for the first time		jlpt-n3
+贅沢	luxury, extravagance	贅沢[ぜいたく]	Noun, Na-adjective	to live in luxury, to indulge oneself; lavish (use of something), abundant, copious, wasteful; excessive (e.g. demands, expectations)		jlpt-n3
+至る	to arrive at (e.g. a decision), to reach (a stage), to attain	至[いた]る	Godan verb with ru ending, Intransitive verb	to lead to (a place), to get to; in the extreme case of; to come, to arrive, to result in		jlpt-n3
+発車	departure (of a train, car, etc.), starting, leaving	発車[はっしゃ]	Noun, Suru verb, Intransitive verb			jlpt-n3
+居眠り	nodding off (while sitting), dozing	居眠[いねむ]り	Noun, Suru verb, Intransitive verb			jlpt-n3
+最中	(in) the middle of, (in) the midst of, (in) the course of, (at) the height of	最中[さいちゅう]	Noun			jlpt-n3
+停留所	stop (bus, tram, etc.), station, stopping place	停留所[ていりゅうじょ]	Noun			jlpt-n3
+反抗	opposition, resistance, insubordination, defiance, hostility, rebellion	反抗[はんこう]	Noun, Suru verb, Intransitive verb			jlpt-n3
+余分	extra, excess, surplus	余分[よぶん]	Na-adjective , Noun			jlpt-n3
+親戚	relative, relation, kin	親戚[しんせき]	Noun			jlpt-n3
+進める	to advance, to move forward, to put (a clock, watch) forward	進[すす]める	Ichidan verb, Transitive verb	"to carry forward (plans, work, etc.), to proceed with, to make progress in, to further, to advance, to hasten, to speed up; to raise, to elevate, to promote, to develop, to stimulate (e.g. one's appetite)"		jlpt-n3
+上等	superior, first-class, excellent, top quality	上等[じょうとう]	"Noun which may take the genitive case particle 'no', Na-adjective , Noun"	"(that's) just fine!, bring it on!"		jlpt-n3
+今にも	at any moment (now), at any minute, on the verge of (doing), just about to	今[いま]にも	Adverb			jlpt-n3
+離す	to separate, to part, to divide, to keep apart	離[はな]す	Godan verb with su ending, Transitive verb			jlpt-n3
+越す	to cross over (e.g. mountain), to go across	越[こ]す	Godan verb with su ending	to get over (e.g. hardship); to pass time (e.g. a winter); to surpass, to be better than, to exceed; to move house; to go, to come		jlpt-n2 jlpt-n3
+包み	bundle, package, parcel	包[つつ]み	Noun	counter for wrapped objects		jlpt-n3
+手品	magic (illusion), conjuring, magic trick, conjuring trick, sleight of hand	手品[てじな]	Noun			jlpt-n3
+平ら	flat, level, even, smooth	平[たい]ら	Na-adjective	calm, tranquil, placid, composed, stable; relaxed (sitting posture), comfortable; plateau, tableland, plain		jlpt-n3
+積もる	to pile up, to accumulate	積[つ]もる	Godan verb with ru ending, Intransitive verb	to estimate		jlpt-n3
+覚める	to wake, to wake up	覚[さ]める	Ichidan verb, Intransitive verb	"to become sober, to sober up, to regain consciousness (e.g. after anaesthesia); to come to one's senses, to be disillusioned"		jlpt-n3
+率	rate, ratio, proportion, percentage	率[りつ]	Noun, Noun, used as a suffix			jlpt-n3
+哀れ	pity, sorrow, grief, misery, compassion, pathos	哀[あわ]れ	Noun	pitiable, pitiful, pathetic, miserable; alack, alas		jlpt-n3
+及ぼす	to exert (influence), to exercise, to cause (e.g. damage), to do (e.g. harm), to bring about (e.g. benefits), to extend, to have an effect (on)	及[およ]ぼす	Godan verb with su ending, Transitive verb			jlpt-n3
+綿	cotton	綿[めん]	Noun			jlpt-n3
+咳	cough, coughing, tussis	咳[せき]	Noun			jlpt-n3
+旧	old, former, ex-	旧[きゅう]	Prefix	"the old, old things, old customs; old times, bygone days; Japan's old (lunisolar) calendar"		jlpt-n3
+切れ	piece, slice, strip, scrap	切[き]れ	Noun	cloth; sharpness; agility; counter for scraps, pieces, etc.		jlpt-n3
+器用	skillful, skilful, adroit, dexterous, dextrous, deft, nimble, handy	器用[きよう]	Na-adjective , Noun	clever, shrewd, ingenious		jlpt-n3
+説	theory, doctrine	説[せつ]	Noun, Noun, used as a suffix	opinion, view; rumour, rumor, gossip, hearsay		jlpt-n3
+粗い	coarse, rough	粗[あら]い	I-adjective			jlpt-n2 jlpt-n3
+唸る	to groan, to moan	唸[うな]る	Godan verb with ru ending, Intransitive verb	to roar, to howl, to growl; to hum (engine, wind, etc.), to buzz, to whiz, to sough, to make a low, dull sound; to ooh and aah (in admiration); to sing in a strong, low voice (esp. traditional chant or recitation); to be about to burst, to overflow		jlpt-n1 jlpt-n3
+大屋	landlord, landlady	大屋[おおや]	Noun			jlpt-n3
+節	joint, knuckle	節[ふし]	Noun	tune, melody; node (of a plant stem), joint, knot (in wood), knob; (notable) point, part; node		jlpt-n3
+覚ます	to awaken, to arouse from sleep	覚[さ]ます	Godan verb with su ending, Transitive verb	"to bring to one's senses, to disabuse (someone of); to sober up; to dampen, to throw a damper on, to spoil"		jlpt-n3
+関する	to concern, to be related	関[かん]する	Suru verb - special class			jlpt-n3
+原	field, plain, prairie, tundra, moor, wilderness	原[はら]	Noun			jlpt-n3
+銅貨	copper coin	銅貨[どうか]	Noun			jlpt-n3
+違いない	sure, no mistaking it, for certain, without doubt	違[ちが]いない	Expressions , I-adjective			jlpt-n3
+急に	swiftly, rapidly, quickly, immediately, hastily, hurriedly	急[きゅう]に	Adverb	suddenly, abruptly, unexpectedly; sharply (of a slope, bend, etc.), steeply		jlpt-n3
+番	number (in a series)	番[ばん]	Noun, Noun, used as a suffix	"(one's) turn; watch, guard, lookout; rank, standing, position; bout, match; pieces (in a collection)"		jlpt-n3
+人ごみ	crowd of people	人[ひと]ごみ	Noun			jlpt-n3
+持ち上げる	to elevate, to raise, to lift up	持[も]ち 上[あ]げる	Ichidan verb, Transitive verb	to flatter, to extol, to praise to the sky		jlpt-n3
+お昼	lunch	お 昼[ひる]	Noun	noon, midday; daytime; waking up, getting up, rising	Polite (teineigo) language	jlpt-n3
+小	smallness, small item	小[しょう]	Noun, Noun, used as a prefix	short month (i.e. having fewer than 31 days); elementary school; smaller (of two things, places, etc. with the same name), inferior; younger (of two people with the same name), junior; unit of field area (approx. 400 sq m)		jlpt-n3
+男の人	man	男[おとこ]の 人[ひと]	Expressions , Noun			jlpt-n3
+だって	after all, because	だって	Conjunction	but; even; too, as well, also; they say, I hear, you mean		jlpt-n3
+ビール	beer	ビール	Noun			jlpt-n3
+メンバー	member, participant, attendee, lineup (sport)	メンバー	Noun			jlpt-n3
+ドラマ	(non-documentary) television series, TV drama, teledrama, play	ドラマ	Noun	drama, dramatic incident, spectacle, tragedy		jlpt-n3
+オーバー	overcoat	オーバー	Noun	exceeding, going over, going beyond; exaggerated, over the top, overdrawn, overreaction; over par; overexposure		jlpt-n3
+語	word	語[ご]	Noun, Noun, used as a suffix, Counter	language; speech		jlpt-n3
+市場	(town) market, (street) market, marketplace	市場[いちば]	Noun			jlpt-n3
+煙	smoke, fumes	煙[けむり]	Noun			jlpt-n3
+値	price, cost	値[あたい]	"Noun, Noun which may take the genitive case particle 'no'"	value, worth, merit; value		jlpt-n1 jlpt-n3
+善	good, goodness, right, virtue	善[ぜん]	Noun			jlpt-n3
+灯	light, lamp	灯[ひ]	Noun			jlpt-n1 jlpt-n3
+管	pipe, tube	管[かん]	Noun, Noun, used as a suffix			jlpt-n1 jlpt-n3
+チーム	team	チーム	Noun			jlpt-n3
+ドレス	dress	ドレス	Noun			jlpt-n3
+スキー	skiing	スキー	Noun	ski, skis		jlpt-n3
+ボール	ball	ボール	Noun	ball (pitch that falls outside of the strike zone); bowl; board (cardboard, pasteboard, etc.)		jlpt-n3
+ゲーム	game	ゲーム	Noun			jlpt-n3
+ピクニック	picnic	ピクニック	Noun	outing, hike		jlpt-n3
+ワイン	wine	ワイン	Noun			jlpt-n3
+スープ	(Western) soup	スープ	Noun			jlpt-n3
+ボート	boat, rowing boat	ボート	Noun			jlpt-n3
+クリスマス	Christmas	クリスマス	Noun			jlpt-n3
+グループ	group (usu. of people)	グループ	Noun			jlpt-n3
+エンジン	engine	エンジン	Noun			jlpt-n3
+まあ	"just (e.g. ""just wait here""), come now, now, now"	まあ	Adverb	tolerably, passably, moderately, reasonably, fairly, rather, somewhat; well..., I think..., it would seem..., you might say..., Hmmm, I guess so...; oh!, oh dear!, oh, my!, wow!, goodness gracious!, good heavens!		jlpt-n3
+エネルギー	energy	エネルギー	Noun	energy, strength, power, stamina, get-up-and-go; energy source, energy resource; food energy, calories		jlpt-n3
+ダンス	dance	ダンス	Noun, Suru verb			jlpt-n3
+サービス	service, help, assistance, care, concern	サービス	Noun, Suru verb	discount, discounted item; free service, freebie, gift; service, utility, amenity, resource; (after-sales) service, servicing, (product) maintenance; service (e.g. in tennis), serve		jlpt-n3
+ソファ	sofa, couch	ソファ	Noun			jlpt-n3
+ベンチ	bench	ベンチ	Noun			jlpt-n3
+バイオリン	violin	バイオリン	Noun			jlpt-n3
+デート	date (with someone), (social) outing (for two), date night	デート	Noun, Suru verb	date (day)		jlpt-n3
+チャンス	chance, opportunity	チャンス	Noun			jlpt-n3
+トランプ	(Western) playing cards	トランプ	Noun			jlpt-n3
+ユーモア	humor, humour	ユーモア	Noun			jlpt-n3
+チーズ	cheese	チーズ	Noun	tee (piping), T-joint; cheese (said when taking a photograph)		jlpt-n3
+パスポート	passport	パスポート	Noun			jlpt-n3
+インク	ink	インク	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n2 jlpt-n3
+スケート	skating (esp. ice), skate, skates	スケート	Noun, Suru verb			jlpt-n3
+ドライブ	drive, trip by car, driving	ドライブ	Noun	to (go for a) drive, to go on a trip by car; to drive (e.g. a car); to drive (innovation, change, etc.), to propel; drive		jlpt-n3
+ノック	knock, knocking	ノック	Noun, Suru verb	fungo hitting, hitting balls for fielding practice		jlpt-n3
+パーセント	percent, percentage	パーセント	Noun			jlpt-n3
+トンネル	tunnel	トンネル	Noun	"to tunnel (through a potential barrier); letting a grounder go through one's legs"		jlpt-n3
+キャンプ	camp, camping	キャンプ	Noun, Suru verb			jlpt-n3
+ヨット	yacht (esp. a sailing boat with one mast), sailing boat, sailboat	ヨット	Noun			jlpt-n3
+必死	frantic, frenetic, desperate	必死[ひっし]	"Na-adjective , Noun which may take the genitive case particle 'no'"	inevitable death; brinkmate (inevitable checkmate)		jlpt-n3
+敬意	respect, honour, honor	敬意[けいい]	Noun			jlpt-n3
+強力	powerful, strong	強力[きょうりょく]	Na-adjective , Noun			jlpt-n3
+大気	atmosphere, air	大気[たいき]	Noun	magnanimity, generosity		jlpt-n3
+裁判	trial, judgement, judgment	裁判[さいばん]	"Noun, Suru verb, Transitive verb, Noun which may take the genitive case particle 'no'"			jlpt-n3
+幕	curtain, bunting	幕[まく]	Noun	act (in play)		jlpt-n1 jlpt-n3
+向い	facing, opposite, across the street, other side	向[むか]い	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+迷惑	trouble, bother, annoyance, nuisance, inconvenience	迷惑[めいわく]	Noun, Na-adjective	to be troubled (by), to be bothered (by), to be inconvenienced (by)		jlpt-n3
+愉快	pleasant, delightful, enjoyable, joyful, cheerful, amusing, happy	愉快[ゆかい]	Na-adjective , Noun			jlpt-n3
+水準	level, standard	水準[すいじゅん]	Noun	water level		jlpt-n3
+図	drawing, picture, diagram, figure, illustration, chart, graph	図[ず]	Noun, Noun, used as a suffix	sight, scene		jlpt-n3
+予防	prevention, protection (against), precaution	予防[よぼう]	Noun, Suru verb, Transitive verb			jlpt-n3
+飛行	aviation, flight, flying	飛行[ひこう]	Noun	to fly, to take a flight		jlpt-n3
+出会い	meeting, rendezvous, encounter	出会[であ]い	Noun	confluence		jlpt-n3
+集まり	gathering, meeting, assembly, collection, attendance	集[あつ]まり	Noun			jlpt-n3
+年中	whole year, all year round, throughout the year	年中[ねんじゅう]	Noun	always, all the time, perpetually; during an era; middle class (of a nursery school, etc.)		jlpt-n3
+騒ぎ	uproar, disturbance	騒[さわ]ぎ	Noun, Noun, used as a suffix			jlpt-n3
+輪	ring, circle, loop	輪[わ]	Noun	hoop; wheel; circle (e.g. of friends); planetary ring		jlpt-n3
+組	class (of students)	組[くみ]	Noun, Noun, used as a suffix	group (of people), party, team, crew; lot, bunch, set; crime family, organized-crime syndicate; set (of items), assortment, deck (of cards), pack; typesetting, composition		jlpt-n3
+地	earth, ground, land, soil	地[ち]	Noun, Noun, used as a suffix	place; territory; bottom (of a package, book, etc.); earth (one of the five elements)		jlpt-n3
+盛り	height (e.g. of summer), peak (e.g. of cherry blossom season), (in) season, full bloom, full swing (of a party, etc.)	盛[さか]り	Noun, Noun, used as a suffix	"prime (of one's life), (one's) best days, bloom; (being in) heat, rut"		jlpt-n3
+孫	grandchild	孫[まご]	Noun			jlpt-n3
+陸	land, shore	陸[りく]	Noun			jlpt-n3
+係	charge, duty, person in charge, official, clerk	係[かかり]	Noun	connection, linking		jlpt-n1 jlpt-n3
+問い	question, query	問[と]い	Noun			jlpt-n3
+方々	people, (all) persons, everyone, ladies and gentlemen	方々[かたがた]	Noun	you (usu. plural)	Honorific or respectful (sonkeigo) language	jlpt-n3
+違反	violation, offense, offence, breach, transgression, infringement, contravention	違反[いはん]	Noun, Suru verb, Intransitive verb			jlpt-n3
+心理	state of mind, mentality, psychology	心理[しんり]	Noun			jlpt-n3
+中学	junior high school, middle school, lower secondary school	中学[ちゅうがく]	Noun			jlpt-n3
+通信	correspondence, communication, transmission, news, signal, telecommunications	通信[つうしん]	Noun, Suru verb			jlpt-n3
+負け	defeat, loss, losing (a game)	負[ま]け	Noun	"failing to live up to (one's name, looks, etc.); discount, loss (on a sale)"		jlpt-n3
+順	order, turn, sorting	順[じゅん]	Noun, Noun, used as a suffix	obedient, docile, submissive, meek		jlpt-n3
+勢い	force, vigor, vigour, energy, spirit, life	勢[いきお]い	Noun	influence, authority, power, might; impetus, momentum, course (of events); naturally, necessarily		jlpt-n3
+事務	office work, clerical work, administration, business, affairs	事務[じむ]	Noun			jlpt-n3
+稲	rice plant (Oryza sativa)	稲[いね]	Noun			jlpt-n3
+野	plain, field	野[の]	Noun	hidden (structural) member; wild; lacking a political post		jlpt-n3
+金曜	Friday	金曜[きんよう]	Noun, Adverb			jlpt-n3
+宿	lodging, inn, hotel	宿[やど]	Noun	"house, home, dwelling; home of a servant's parents (or guarantor, etc.)"		jlpt-n3
+候補	candidate, contender, prospect, pick, choice, list	候補[こうほ]	Noun	candidacy, candidature, nomination		jlpt-n3
+天然	nature, spontaneity	天然[てんねん]	"Noun, Noun which may take the genitive case particle 'no'"	natural airhead		jlpt-n3
+革	leather	革[かわ]	Noun			jlpt-n3
+予報	forecast, prediction	予報[よほう]	Noun, Suru verb, Transitive verb			jlpt-n3
+移す	to change, to swap, to substitute, to transfer	移[うつ]す	Godan verb with su ending, Transitive verb	"to change the object of one's interest or focus; to spend or take time; to infect; to permeate something with the smell or colour of something; to move on to the next or different stage of (a plan, etc.)"		jlpt-n3
+気味	sensation, feeling	気味[きみ]	Noun	tendency, propensity		jlpt-n3
+通行	passage (of people, traffic), passing	通行[つうこう]	Noun, Suru verb	common usage		jlpt-n3
+始まり	origin, beginning	始[はじ]まり	Noun			jlpt-n3
+近代	present day, modern times, recent times	近代[きんだい]	Noun	early modern period (in Japan, usu. from the Meiji Restoration until the end of World War II)		jlpt-n3
+徹底	thoroughness, completeness, consistency	徹底[てってい]	Noun, Suru verb, Transitive verb, Intransitive verb	thorough enforcement, seeing to it that a policy, etc. is carried out without exception		jlpt-n3
+沖	open sea	沖[おき]	Noun	Okinawa		jlpt-n3
+空き	space, room, gap, emptiness	空[あ]き	Noun	vacancy, opening, empty seat; free time, time to spare; disuse, unused thing		jlpt-n2 jlpt-n3
+互い	each other, one another	互[たが]い	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+名人	master, expert	名人[めいじん]	Noun			jlpt-n3
+恩	favour, favor, obligation, debt of gratitude	恩[おん]	Noun			jlpt-n3
+連れ	companion, company	連[つ]れ	Noun, Suru verb	tritagonist		jlpt-n3
+題	title, subject, theme, topic	題[だい]	Noun	problem (on a test), question; counter for questions (on a test)		jlpt-n3
+木曜	Thursday	木曜[もくよう]	Adverb , Noun			jlpt-n3
+自動	automatic	自動[じどう]	"Noun which may take the genitive case particle 'no', Noun"	intransitive verb		jlpt-n3
+注	annotation, explanatory note, comment	注[ちゅう]	Noun, Suru verb			jlpt-n3
+機関	engine	機関[きかん]	Noun	agency, organisation, organization, institution, organ, body; system, facility, facilities		jlpt-n3
+機嫌	humour, humor, temper, mood, spirits	機嫌[きげん]	Noun	"safety, health, well-being, one's situation; in a good mood, in high spirits, happy, cheery, merry, chipper"		jlpt-n3
+誠に	indeed, really, absolutely, truly, actually, very, quite	誠[まこと]に	Adverb			jlpt-n1 jlpt-n3
+束	bundle, bunch, sheaf	束[たば]	Noun, Noun, used as a suffix, Counter			jlpt-n3
+見当	estimate, guess, conjecture, aim	見当[けんとう]	Noun	direction, bearings; registration mark (printing); approximately, about, around		jlpt-n3
+縄	rope, cord	縄[なわ]	Noun	"policeman's rope"		jlpt-n3
+典型	type, pattern, model, epitome, exemplar, archetype, perfect example	典型[てんけい]	Noun			jlpt-n3
+学	learning, scholarship, study, erudition, knowledge, education	学[がく]	Noun	study of ..., -ology, -ics		jlpt-n3
+可	acceptable, satisfactory, allowed, permitted	可[か]	Noun, Noun, used as a suffix	approval, being in favour, (a) vote in favour, aye; Pass (grade), Fair, C, D		jlpt-n3
+中古	used, second-hand, old	中古[ちゅうこ]	"Noun which may take the genitive case particle 'no'"	Middle Ages (in Japan esp. Heian period)		jlpt-n3
+嫁	wife, bride	嫁[よめ]	Noun	"(one's) daughter-in-law"		jlpt-n3
+加減	degree, extent, amount, balance, state, condition	加減[かげん]	Noun, Noun, used as a suffix	(health) condition, state of health; adjustment, moderation, regulation; addition and subtraction; slight sign of ..., slight state of ...; just right for ...		jlpt-n3
+定期	fixed period, fixed term	定期[ていき]	Noun	regular, periodic, periodical; fixed-term commuter pass; fixed-term deposit; futures contracts		jlpt-n3
+作法	manners, etiquette, propriety	作法[さほう]	Noun	manner of production (esp. of prose, poetry, etc.), way of making		jlpt-n3
+参考	reference, consultation	参考[さんこう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+泉	spring, fountain	泉[いずみ]	Noun			jlpt-n3
+祝い	congratulation, congratulations, celebration, festival	祝[いわ]い	Noun	congratulatory gift, present		jlpt-n3
+高速	high-speed, rapid, express	高速[こうそく]	"Na-adjective , Noun which may take the genitive case particle 'no', Noun"	highway, freeway, expressway, motorway		jlpt-n3
+宅	house, home	宅[たく]	Noun, Noun, used as a suffix	"one's house, one's home; one's husband"		jlpt-n3
+火曜	Tuesday	火曜[かよう]	Adverb , Noun			jlpt-n3
+段	step, stair, (flight of) steps, (row of) stitches, columns (of print)	段[だん]	Noun	grade, rank, level; counter for breaks in written language (or speech, etc.); dan, senior rank in martial arts, go, shogi, etc.		jlpt-n3
+図書	books	図書[としょ]	Noun			jlpt-n3
+来	next (year, spring, etc.), coming	来[らい]	Prefix	since (e.g. last month), for (e.g. 20 years)		jlpt-n3
+同時	simultaneous, concurrent, same time, synchronous, together	同時[どうじ]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+不可	wrong, bad, improper, unjustifiable, inadvisable	不可[ふか]	"Noun which may take the genitive case particle 'no', Na-adjective , Noun, Noun, used as a suffix"	not allowed, not possible; failing grade		jlpt-n3
+現れ	embodiment, manifestation, materialization, materialisation, expression, indication	現[あらわ]れ	Noun			jlpt-n1 jlpt-n3
+局	bureau, department	局[きょく]	Noun, Noun, used as a suffix	office (e.g. post, telephone), broadcasting station (e.g. television, radio), channel, exchange; affair, situation; game (of go, shogi, etc.)		jlpt-n3
+大戦	great war, great battle	大戦[たいせん]	Noun	world war		jlpt-n3
+今に	before long, even now	今[いま]に	Adverb			jlpt-n3
+勘	perception, intuition, the sixth sense	勘[かん]	Noun			jlpt-n3
+下り	down-train, train heading toward the ending point of its route	下[くだ]り	Noun	down-slope, downward going; downbound (esp. away from Tokyo); downstream, downhill		jlpt-n3
+消防	fire fighting	消防[しょうぼう]	Noun, Suru verb	fire department, fire brigade		jlpt-n3
+老い	old age, old person, the old, the aged	老[お]い	Noun			jlpt-n3
+全く	really, truly, entirely, completely, wholly, perfectly	全[まった]く	"Adverb , Noun which may take the genitive case particle 'no'"	indeed; good grief		jlpt-n3
+履く	to put on (lower-body clothing, e.g. pants, skirt, footwear), to wear	履[は]く	Godan verb with ku ending, Transitive verb	"to affix (a sword to one's hip); to affix (a bowstring to a bow)"		jlpt-n3
+信じる	to believe, to believe in, to place trust in, to confide in, to have faith in	信[しん]じる	Ichidan verb, Transitive verb			jlpt-n3
+与える	to give (esp. to someone of lower status), to bestow, to grant, to confer, to present, to award	与[あた]える	Ichidan verb, Transitive verb	to provide, to afford, to offer, to supply; to assign; to cause; to pass (a variable to a function)		jlpt-n3
+分	part, portion, share	分[ぶん]	Noun, Noun, used as a suffix	"amount, worth (as in ""two days' worth""), enough (for); one's means, one's place, one's lot, one's social position; one's duty, one's part; condition, state (of affairs), extent, rate (as in ""at this rate""); in proportion to, just as much as, to the same degree; content (e.g. alcohol), percentage; equivalent to (e.g. an old brother)"		jlpt-n3
+知らせ	news, word, tidings, notice, notification, information	知[し]らせ	Noun	omen, foreboding, premonition		jlpt-n3
+求める	to want, to wish for	求[もと]める	Ichidan verb, Transitive verb	to request, to demand, to require, to ask for; to seek, to search for, to look for, to pursue (pleasure), to hunt (a job); to purchase, to buy		jlpt-n3
+得る	to get, to earn, to acquire, to procure, to gain, to secure, to attain, to obtain, to win	得[え]る	Ichidan verb, Transitive verb	to understand, to comprehend; to receive something undesirable (e.g. a punishment), to get (ill); to be able to ..., can ...		jlpt-n3
+者	person	者[もの]	Noun			jlpt-n3
+嬉しい	happy, glad, pleased, delighted, overjoyed	嬉[うれ]しい	I-adjective	joyful, delightful, gratifying, pleasant		jlpt-n3
+学ぶ	to study (in depth), to learn, to take lessons in	学[まな]ぶ	Godan verb with bu ending			jlpt-n3
+過ごす	to pass (time), to spend	過[す]ごす	Godan verb with su ending, Transitive verb	"to overdo (esp. of one's alcohol consumption), to drink (alcohol); to take care of, to support; to overdo, to do too much; to ... without acting on it"		jlpt-n3
+位	"throne, crown, (nobleman's) seat"	位[くらい]	Noun	government position, court rank; social standing, rank, class, echelon, rung; grade (of quality, etc.), level, tier, rank; position of a figure (e.g. tens, thousands), digit, (decimal) place; degree, extent, amount		jlpt-n3
+認める	to recognize, to recognise, to observe, to notice	認[みと]める	Ichidan verb, Transitive verb	to deem, to judge, to assess; to approve, to deem acceptable, to allow; to admit, to accept, to confess (to a charge); to watch steadily, to observe carefully; to renown, to give renown to, to appreciate, to acknowledge		jlpt-n3
+気付く	to notice, to recognize, to recognise, to become aware of, to perceive, to realize, to realise	気付[きづ]く	Godan verb with ku ending, Intransitive verb			jlpt-n3
+暮らす	to live, to get along	暮[く]らす	Godan verb with su ending, Intransitive verb	to spend (time)		jlpt-n3
+数	several, a number of	数[すう]	Prefix	quantity, amount; counting, figures, numbers; number, numeral, figure; number; destiny, fate, course of events, trend		jlpt-n3
+気に入る	"to like, to be pleased with, to be delighted with, to take a liking to, to suit one's fancy"	気[き]に 入[い]る	Expressions , Godan verb with ru ending			jlpt-n3
+解く	to untie, to unfasten, to unwrap, to undo, to unbind, to unpack	解[と]く	Godan verb with ku ending, Transitive verb	to unsew, to unstitch; to solve, to work out, to answer; to dispel (misunderstanding, etc.), to clear up, to remove (suspicion), to appease; to dissolve (a contract), to cancel, to remove (a prohibition), to lift (a ban), to raise (a siege); to release (from duty), to relieve, to dismiss; to comb (out), to card, to untangle (hair)		jlpt-n3
+優れる	to surpass, to outstrip, to excel	優[すぐ]れる	Ichidan verb, Intransitive verb			jlpt-n3
+遅刻	lateness, tardiness, arriving late	遅刻[ちこく]	Noun, Suru verb, Intransitive verb			jlpt-n3
+従う	to obey (an order, law, etc.), to abide by (a rule, custom, etc.), to follow, to observe, to conform to, to yield to	従[したが]う	Godan verb with u ending, Intransitive verb	to follow (a person), to accompany, to go with; to go alongside (e.g. a river), to follow (e.g. a sign); to serve (as), to engage in (work)		jlpt-n3
+例え	example	例[たと]え	Noun	simile, metaphor, allegory, fable, parable		jlpt-n1 jlpt-n3
+怪我	injury, wound	怪我[けが]	Noun, Suru verb	mistake, accident, loss		jlpt-n3
+回り	rotation	回[まわ]り	Noun	making the rounds; spreading; effect, efficacy; by way of, via; round, turn; size; 12-year period, 12-year age difference		jlpt-n3
+現す	to represent, to signify, to stand for	現[あらわ]す	Godan verb with su ending, Transitive verb	to reveal, to show, to display; to express; to make widely known		jlpt-n3
+少しも	(not) at all, (not) a bit, (not) in the least, (not) in the slightest	少[すこ]しも	Adverb			jlpt-n3
+描く	to draw, to paint, to sketch	描[えが]く	Godan verb with ku ending, Transitive verb	"to depict, to describe; to picture in one's mind, to imagine; to form a certain shape (e.g. path of an action, appearance of an object, etc.)"		jlpt-n3
+丸	circle	丸[まる]	Noun	"entirety, whole, full, complete; money, dough, moola; enclosure inside a castle's walls; soft-shelled turtle; suffix for ship names, suffix for names of people (esp. infants), suffix for names of swords, armour, musical instruments, etc., suffix for names of dogs, horses, etc."		jlpt-n3
+述べる	to state, to express, to say, to tell, to mention	述[の]べる	Ichidan verb, Transitive verb			jlpt-n3
+切れる	to break, to snap, to be cut, to split, to crack	切[き]れる	Ichidan verb, Intransitive verb	"to be injured; to wear out, to be worn out; to break, to burst, to collapse; to wear off, to stop working, to go dead; to expire (time limit, etc.), to run out, to become due; to run out (of stock, etc.), to be exhausted, to be used up, to be sold out, to be out of; to be broken off (e.g. of a relationship), to break up, to have severed ties, to be cut off, to be disconnected; to cut well, to be sharp; to be sharp-minded, to be keen, to be shrewd, to be quick-witted, to be able; to be short of, to drop under (a certain figure), to beat (e.g. a record time); to dry off; to curve, to veer; to shuffle (cards); to get angry, to snap, to blow one's top, to lose one's temper, to flip; to be able to do completely"		jlpt-n3
+当たる	to be hit, to strike	当[あ]たる	Godan verb with ru ending, Intransitive verb	to touch, to be in contact, to be affixed; to be equivalent to, to be applicable, to apply to; to be right on the money (of a prediction, criticism, etc.); to be selected (in a lottery, etc.), to win; to be successful, to go well, to be a hit; to face, to confront; to lie (in the direction of); to undertake, to be assigned; to be stricken (by food poisoning, heat, etc.), to be afflicted; to be called on (e.g. by a teacher); to treat (esp. harshly), to lash out at; to be unnecessary; to be hitting well, to be on a hitting streak; to feel a bite (in fishing); (of fruit, etc.) to be bruised, to spoil; to feel (something) out, to probe into, to check (i.e. by comparison); to shave; to be a relative of a person, to be a ... in relation to ..., to stand in a relationship		jlpt-n3
+会	meeting, assembly, party, gathering, conference, athletic meet	会[かい]	Noun, Noun, used as a suffix	society, association, club		jlpt-n3
+向ける	to turn towards, to point	向[む]ける	Ichidan verb, Transitive verb			jlpt-n3
+効く	to be effective, to take effect, to be good (for)	効[き]く	Godan verb with ku ending, Intransitive verb	to work, to function well; to be possible (to do, use, etc.), to be able to; to taste (alcohol), to try		jlpt-n3
+約	approximately, about	約[やく]	Adverb	promise, appointment, engagement; shortening, reduction, simplification; contraction (in phonetics)		jlpt-n3
+避ける	to avoid (physical contact with)	避[さ]ける	Ichidan verb, Transitive verb	to avoid (situation); to ward off, to avert; to put aside, to move out of the way		jlpt-n3
+賢い	wise, clever, smart	賢[かしこ]い	I-adjective	well-behaved (esp. children and pets), obedient, good		jlpt-n3
+経つ	to pass (of time), to elapse	経[た]つ	Godan verb with tsu ending, Intransitive verb			jlpt-n3
+夢中	absorbed in, immersed in, crazy about, obsessed with, devoted to	夢中[むちゅう]	"Na-adjective , Noun which may take the genitive case particle 'no', Noun"	forgetting oneself, daze, trance, ecstasy, delirium; within a dream, while dreaming		jlpt-n3
+諦める	to give up, to abandon (hope, plans), to resign oneself (to)	諦[あきら]める	Ichidan verb, Transitive verb			jlpt-n3
+床	floor	床[ゆか]	Noun	stage (for the narrator and the shamisen player); dining platform built across a river		jlpt-n3
+異なる	to differ, to vary, to disagree	異[こと]なる	Godan verb with ru ending, Intransitive verb			jlpt-n3
+伸ばす	to grow long (e.g. hair, nails)	伸[の]ばす	Godan verb with su ending, Transitive verb	to lengthen, to extend, to stretch; to reach out, to hold out; to straighten, to smooth out; to spread evenly (dough, cream, etc.); to dilute, to thin out; to postpone; to prolong; to strengthen, to develop, to expand		jlpt-n2 jlpt-n3
+増す	to increase, to grow	増[ま]す	Godan verb with su ending, Intransitive verb, Transitive verb			jlpt-n3
+可愛らしい	lovely, sweet	可愛[かわい]らしい	I-adjective			jlpt-n1 jlpt-n3
+ハイキング	hiking	ハイキング	Noun			jlpt-n3
+パイロット	pilot	パイロット	Noun			jlpt-n3
+スタイル	"(one's) figure, build, physique, shape"	スタイル	Noun	style		jlpt-n3
+アルバム	album	アルバム	Noun			jlpt-n3
+ラケット	racket, paddle (in table-tennis)	ラケット	Noun			jlpt-n3
+ウィスキー	whisky, whiskey	ウィスキー	Noun			jlpt-n3
+タイプライター	typewriter	タイプライター	Noun			jlpt-n3
+タオル	towel	タオル	Noun			jlpt-n3
+アイスクリーム	ice cream, icecream	アイスクリーム	Noun			jlpt-n3
+ロケット	rocket	ロケット	Noun	locket		jlpt-n3
+テント	tent	テント	Noun			jlpt-n3
+パイプ	pipe, tube	パイプ	Noun	channels, official or otherwise, (business) connections; tobacco pipe		jlpt-n3
+ブレーキ	brake	ブレーキ	Noun			jlpt-n3
+ジェット機	jet aeroplane, jet airplane	ジェット 機[き]	Noun			jlpt-n3
+コーチ	coach	コーチ	Noun, Suru verb, Transitive verb			jlpt-n3
+霜	frost	霜[しも]	Noun	white hair, grey hair, gray hair		jlpt-n3
+ベルト	belt (waist, seat, etc.), strap	ベルト	Noun	belt, zone, area; drive belt, machine belt		jlpt-n3
+ケース	case (e.g. receptacle, condition, event, legal action, letter style, etc.)	ケース	Noun	Computer-Aided Software Engineering, CASE		jlpt-n3
+ジュース	juice	ジュース	Noun	soft drink (usu. fruit-based), sweetened drink		jlpt-n3
+アイロン	iron (for pressing clothes)	アイロン	Noun	hair iron, hair tong, curling tong		jlpt-n3
+アウト	out (of a ball; in tennis, etc.), outside the line	アウト	Noun	out, putout; outer, external, outside; exit, exit here; front nine (golf); no good, unacceptable, out of line, over, finished, disqualified; check-out time		jlpt-n3
+プラス	plus, addition	プラス	Noun, Suru verb, Transitive verb, Conjunction, Prefix, Suffix	positive (number); plus sign, positive symbol; advantage, plus, asset, positive factor, positive effect; profit, gain; anode, plus terminal, positive pole; positive (test result)		jlpt-n3
+スタンド	stands, bleachers	スタンド	Noun	stand (e.g. newspaper stand), counter (e.g. lunch counter); stand (e.g. inkstand); desk lamp, floor lamp, standard lamp; station (e.g. gas station)		jlpt-n3
+日本	Japan	日本[にほん]	Noun			jlpt-n3
+オフィス	office	オフィス	Noun			jlpt-n3
+キャプテン	captain	キャプテン	Noun			jlpt-n3
+ジーンズ	jeans	ジーンズ	Noun	denim, jean		jlpt-n3
+マスター	to master (a skill)	マスター	Suru verb, Transitive verb	proprietor, manager, owner, barkeeper; leader, chief, head; master (of arts, science, etc.); master (recording); master (device)		jlpt-n3
+パス	passing (a test, examination, etc.)	パス	Noun, Suru verb	"pass (for admission, transport, etc.), ticket; pass (of a ball); (giving something a) pass, skipping (one's turn); path (file, directory, graphics)"		jlpt-n3
+カー	car	カー	Noun			jlpt-n3
+グランド	grand, large	グランド	Noun or verb acting prenominally			jlpt-n3
+日中	daytime, during the day	日中[にっちゅう]	Noun, Adverb	Japan and China		jlpt-n3
+ゴール	goal, basket (basketball), finishing line, winning post	ゴール	Noun, Suru verb	Gaul		jlpt-n3
+セット	set	セット	Noun, Suru verb	set meal, combo-meal, combo, combination meal; hairdo		jlpt-n3
+センター	centre, center	センター	Noun			jlpt-n3
+マーケット	market	マーケット	Noun			jlpt-n3
+名	name, given name	名[な]	Noun	title; fame, renown, reputation; pretext, pretense, justification, appearance		jlpt-n3
+楽	comfort, ease, relief, (at) peace, relaxation	楽[らく]	Noun, Na-adjective	easy, simple, without trouble, without hardships; (economically) comfortable; raku pottery; sukha (happiness)		jlpt-n3
+行き	the way there, outbound leg, outbound trip, departing leg	行[い]き	Noun	bound for ...; outbound ticket		jlpt-n3
+流行	fashion, trend, vogue, craze, fad, popularity	流行[りゅうこう]	"Noun, Suru verb, Intransitive verb, Noun which may take the genitive case particle 'no'"	prevalence (of a disease), epidemic		jlpt-n1 jlpt-n3
+台	stand, rack, table, bench, podium, pedestal, platform, stage	台[だい]	Noun, Noun, used as a suffix	"support, holder, rack; counter for machines, incl. vehicles; setting (e.g. in jewellery); level (e.g. price level), range (e.g. after physical units), period (of time, e.g. a decade of one's life); elevated area; viewing platform; dish tray; meal; tall building, tower"		jlpt-n3
+悪口	slander, bad-mouthing, abuse, insult, speaking ill (of)	悪口[わるぐち]	Noun, Suru verb			jlpt-n1 jlpt-n3
+お互い	each other, one another	お 互[たが]い	"Noun, Noun which may take the genitive case particle 'no', Adverb"		Polite (teineigo) language	jlpt-n3
+世間	world, society, people, the public	世間[せけん]	Noun			jlpt-n3
+預ける	"to leave (in someone's keeping), to put (in someone's care), to place (in someone's custody), to entrust (someone) with, to deposit"	預[あず]ける	Ichidan verb, Transitive verb	"to put (someone) in charge of, to leave (a matter) in someone's hands, to let (someone) decide; to lean on, to put one's weight on"		jlpt-n3
+主に	mainly, primarily	主[おも]に	Adverb			jlpt-n3
+一種	a kind, a sort, a variety, a species	一種[いっしゅ]	Noun	of sorts, something of a, a sort of; sort of, somewhat		jlpt-n3
+税	tax	税[ぜい]	Noun, Suffix			jlpt-n3
+末	end, tip, top	末[すえ]	Noun	end (of the year, month, etc.), close; youngest child; descendants, offspring, posterity; future; (finally) after, (at last) after, at the end of; trifles, trivialities; degenerate age		jlpt-n3
+同一	identical, same, one and the same, equal	同一[どういつ]	"Noun which may take the genitive case particle 'no', Na-adjective"	fair, equal treatment, without discrimination		jlpt-n3
+章	chapter, section	章[しょう]	Noun	medal, badge, insignia		jlpt-n3
+縁	rim, brim, edge, brink	縁[ふち]	Noun			jlpt-n3
+土	earth, soil, dirt, clay, mud	土[つち]	Noun	the earth (historically, esp. as opposed to the heavens), the ground, the land; low-quality torinoko-gami (containing mud); (period of) refraining from construction in the direction of the god of the earth (in Onmyōdō)		jlpt-n3
+無	nothing, naught, nought, nil, zero	無[む]	Noun	un-, non-		jlpt-n3
+人工	artificial, man-made, human work, human skill, artificiality	人工[じんこう]	"Noun, Noun which may take the genitive case particle 'no'"			jlpt-n3
+柄	pattern, design	柄[がら]	Noun, Noun, used as a suffix	body build, figure, physique; essential qualities, character, nature; appropriate to, fitting of, suitable for		jlpt-n3
+密	dense, thick, crowded	密[みつ]	Na-adjective , Noun	close (relationship), intimate; minute, fine, careful; secret; esoteric Buddhism, secret Buddhist teachings		jlpt-n3
+堀	moat, fosse	堀[ほり]	Noun	canal, ditch		jlpt-n2 jlpt-n3
+曜日	day of the week	曜日[ようび]	Noun			jlpt-n3
+松	pine tree (Pinus spp.)	松[まつ]	Noun	highest (of a three-tier ranking system)		jlpt-n3
+はあ	yes, indeed, well	はあ		ha!; what?, huh?; sigh		jlpt-n3

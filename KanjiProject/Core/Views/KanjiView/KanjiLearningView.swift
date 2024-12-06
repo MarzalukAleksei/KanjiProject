@@ -10,6 +10,7 @@ import SwiftUI
 struct KanjiLearningView: View {
     @EnvironmentObject private var globalChanging: GlobalChanging
     @Environment(\.dismiss) private var dismiss
+    @AppStorage("userActivity") private var userActivity: Data?
     @State private var currentKanji: KanjiKankenModel?
     @State private var showWordDetail = false
     @State private var showDeleteWarning = false
@@ -175,6 +176,13 @@ struct KanjiLearningView: View {
         }
     }
     
+    private func setUserActivity() async {
+        let activity = UserActivity(data: userActivity)
+        activity.newActivity()
+        print(activity.activity)
+        userActivity = activity.encode()
+    }
+    
     private func repeatWrongsButton() {
         allKanji = storeOperations.getAllWrongForCurentLevel()
         setCurrentKanji()
@@ -216,6 +224,10 @@ struct KanjiLearningView: View {
     
     private func reloadView() {
         setCurrentKanji()
+        
+        Task(priority: .background) {
+            await setUserActivity()
+        }
     }
     
     private func setCurrentKanji() {

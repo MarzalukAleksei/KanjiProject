@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct KanjiView: View {
-    
-    @EnvironmentObject var store: Store
-    @EnvironmentObject var tabBarState: TabBarState
+    @EnvironmentObject private var store: Store
+    @EnvironmentObject private var tabBarState: TabBarState
 //    @AppStorage("selectedLevel") var selectedLevel: NouryokuLevel = .N5
-    @AppStorage("selectedNouryokuLevel") var selectedNouryokuLevel: NouryokuLevel = .N5
-    @AppStorage("selectedKankenLevel") var selectedKankenLevel: KankenLevel = .級10
-    @AppStorage("selectedRow") var selectedRow: Data?
-    @AppStorage("kanjiTypeSlider") var toggleInStorage: Bool = false
-    @State var toggle = false // true - Kanken, false - JLPT
+    @AppStorage("selectedNouryokuLevel") private var selectedNouryokuLevel: NouryokuLevel = .N5
+    @AppStorage("selectedKankenLevel") private var selectedKankenLevel: KankenLevel = .級10
+    @AppStorage("selectedRow") private var selectedRow: Data?
+    @AppStorage("kanjiTypeSlider") private var toggleInStorage: Bool = false
+    @AppStorage("userActivity") private var userActivity: Data?
+    @State private var toggle = false // true - Kanken, false - JLPT
     @State private var showLearningView = false
     @State private var showLearningByKanjiSecondVar = false
     @State private var showCheckView = false
@@ -26,9 +26,9 @@ struct KanjiView: View {
     
     @FetchRequest(entity: UsersKanji.entity(),
                   sortDescriptors: []) private var kanji: FetchedResults<UsersKanji>
-    @State var isPresented = false
+    @State private var isPresented = false
     
-    @Environment(\.managedObjectContext) var viewContext
+    @Environment(\.managedObjectContext) private var viewContext
     @StateObject private var kanjiKankenStore = KanjiKankenStore() // Только для обновления вью
     
 //    @State private var selectedType: KanjiTestType = .nouryoku
@@ -95,17 +95,28 @@ struct KanjiView: View {
                 LearningOrRememberSelectButtonsView(showLearningView: $showLearningView, showLearningByKanjiSecondVar: $showLearningByKanjiSecondVar, showCheckView: $showCheckView, showLearnigByWord: $showLearningByWord)
                 
 // MARK: Список разделенный на ячейки
-                GeometryReader { geo in
-                    ZStack {
-                        KankenScrollListView()
-                            .offset(x: toggle ? 0 : geo.size.width)
-                            .opacity(toggle ? 1 : 0)
-                        KanjiScrollListView()
-                            .offset(x: toggle ? -geo.size.width : 0)
-                            .opacity(toggle ? 0 : 1)
-                        
-                    }
+//                GeometryReader { geo in
+//                    ZStack {
+//                        KankenScrollListView()
+//                            .offset(x: toggle ? 0 : geo.size.width)
+//                            .opacity(toggle ? 1 : 0)
+//                        KanjiScrollListView()
+//                            .offset(x: toggle ? -geo.size.width : 0)
+//                            .opacity(toggle ? 0 : 1)
+//                        
+//                    }
+//                }
+                
+// MARK: Активность пользователя
+                let dates = UserActivity(data: userActivity).activity
+                ForEach(dates, id: \.self) { n in
+                    Text("\(n)")
                 }
+                GeometryReader { gep in
+                    UserActivityView(userActivity: dates)
+                        .padding(.horizontal, Settings.padding)
+                }
+                
             }
             .onAppear {
                 tabBarState.tabBarIsHidden = false
