@@ -179,7 +179,6 @@ struct KanjiLearningView: View {
     private func setUserActivity() async {
         let activity = UserActivity(data: userActivity)
         activity.newActivity()
-        print(activity.activity)
         userActivity = activity.encode()
     }
     

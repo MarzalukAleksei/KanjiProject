@@ -15,7 +15,6 @@ struct UserActivityView: View {
     
     var body: some View {
         ScrollViewReader { proxy in
-            GeometryReader { geo in
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: rows) {
                         ForEach(0..<Settings.elementsInUserActivityIndicator, id: \.self) { cell in
@@ -29,7 +28,6 @@ struct UserActivityView: View {
                     
                 }
                 .scrollIndicators(.hidden)
-            }
             .onAppear {
                 scrollToLast(proxy: proxy)
             }
@@ -51,8 +49,8 @@ struct UserActivityView: View {
     
     private func setCellDate(id: Int) -> Date? {
         let calendar = Calendar.current
-        let lastYearDate = calendar.date(byAdding: .day, value: -365 + (id + 1), to: Date.now)
-        return lastYearDate
+        let searchedDate = calendar.date(byAdding: .day, value: -Settings.elementsInUserActivityIndicator + (id + 1), to: Date.now)
+        return searchedDate
     }
     
     private func scrollToLast(proxy: ScrollViewProxy) {

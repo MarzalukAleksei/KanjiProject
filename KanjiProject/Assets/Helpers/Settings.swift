@@ -16,20 +16,26 @@ class Settings {
     
     static let opacity: CGFloat = 0.3
     
-    static let padding: CGFloat = 10
+    /// Отступ от края View
+    static let padding: CGFloat = 15
     
     static let learningViewCornerRadius: CGFloat = 40
     
+    /// Длительность анимации
+    ///
+    /// Составляет 0.5 секунды
     static let animation = Animation.easeInOut(duration: 0.5)
     
     static let scrollAnimation = Animation.easeInOut(duration: 2)
     
+    /// Отступ между елементами интерфейса
     static let paddingBetweenElements: CGFloat = 10
     
     static let tabBarButtonImageSize = CGSize(width: 20, height: 22)
     
     static let dinamicResaiseblePartsCornerRadius: CGFloat = 8
     
+    /// Отступ между текстами интерфейса
     static let paddingBetweenText: CGFloat = 5
     
     static let cornerRadius: CGFloat = 20
@@ -52,9 +58,12 @@ class Settings {
     
     static let blurEffectValue: CGFloat = 5
     
+    /// Колличество строк в UserActivityView
     static let userActivityIndicatorRows = 5
     
+    /// CornerRadius для ячеек UserActivityView
     static let userActivityCellCornerRadius: CGFloat = 5
     
+    /// Kоличество элементов в UserActivityView
     static let elementsInUserActivityIndicator = 365
 }
