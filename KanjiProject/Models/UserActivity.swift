@@ -32,6 +32,12 @@ class UserActivity: Codable {
         let data = JSONManager.manager.encodeToJSON(self)
         return data
     }
+    
+    static func getDateComponents(for date: Date) -> DateComponents {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day, .month, .year], from: date)
+        return components
+    }
 }
 
 extension UserActivity {

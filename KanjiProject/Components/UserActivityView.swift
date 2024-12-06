@@ -19,7 +19,8 @@ struct UserActivityView: View {
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: rows) {
                         ForEach(0..<Settings.elementsInUserActivityIndicator, id: \.self) { cell in
-                            Cell(sameDate: .random())
+                            let isSameDate = isSame(cell)
+                            Cell(sameDate: isSameDate)
                                 .frame(width: ElementSize.userActivityCellSize.width,
                                        height: ElementSize.userActivityCellSize.height)
                                 .id(cell)
@@ -36,10 +37,22 @@ struct UserActivityView: View {
         .frame(height: ElementSize.userActivityCellSize.width * CGFloat(Settings.userActivityIndicatorRows) + Settings.paddingBetweenText * CGFloat(Settings.userActivityIndicatorRows))
     }
     
-    private func setCell() {
-        guard let lastDate = userActivity.last else { return }
+    private func isSame(_ id: Int) -> Bool {
+        guard let cellDate = setCellDate(id: id) else { return false }
+        let currentCellComponents = UserActivity.getDateComponents(for: cellDate)
+        for activity in userActivity {
+            let activityComp = UserActivity.getDateComponents(for: activity)
+            if currentCellComponents == activityComp {
+                return true
+            }
+        }
+        return false
+    }
+    
+    private func setCellDate(id: Int) -> Date? {
         let calendar = Calendar.current
-        
+        let lastYearDate = calendar.date(byAdding: .day, value: -365 + (id + 1), to: Date.now)
+        return lastYearDate
     }
     
     private func scrollToLast(proxy: ScrollViewProxy) {

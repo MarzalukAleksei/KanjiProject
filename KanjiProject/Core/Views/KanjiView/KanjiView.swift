@@ -108,12 +108,12 @@ struct KanjiView: View {
 //                }
                 
 // MARK: Активность пользователя
-                let dates = UserActivity(data: userActivity).activity
-                ForEach(dates, id: \.self) { n in
-                    Text("\(n)")
-                }
+                Text("Ваша активность")
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.vertical, Settings.paddingBetweenText)
+                    .padding(.horizontal, Settings.padding)
                 GeometryReader { gep in
-                    UserActivityView(userActivity: dates)
+                    UserActivityView(userActivity: UserActivity(data: userActivity).activity)
                         .padding(.horizontal, Settings.padding)
                 }
                 
