@@ -154,10 +154,10 @@ struct KanjiView: View {
 //            //                }
 //        }
         .fullScreenCover(isPresented: $showLearningByKanjiSecondVar) {
-            KanjiLearningView(storeOperations: .init(store: store, chosenLevel: selectedNouryokuLevel), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
+            KanjiLearningView(storeOperations: .init(store: store), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
         }
         .fullScreenCover(isPresented: $showLearningByWord) {
-            LearningByWordView(nouryokuLevel: selectedNouryokuLevel, databaseOperation: .init(store: store, chosenLevel: selectedNouryokuLevel))
+            LearningByWordView(currentLevel: selectedNouryokuLevel, databaseOperation: .init(store: store))
                 .onDisappear {
                     let kanjiStore = store.kanjiKankenStore.getAll()
 //                    self.kanjiKankenStore.clearAll()

@@ -45,6 +45,7 @@ struct ModalKeyDeteilView: View {
                 }
                 .padding(.horizontal, Settings.padding)
                 .padding(.vertical, Settings.paddingBetweenElements)
+                .scrollIndicators(.hidden)
             }
             
         }
@@ -75,5 +76,5 @@ struct ModalKeyDeteilView: View {
     }
 }
 #Preview {
-    ModalKeyDeteilView(currentkanji: .ANOTHER_MOCK_KANKENKANJI, storeOperations: StoreOperations(store: Store.MOCK_STORE, chosenLevel: .N5))
+    ModalKeyDeteilView(currentkanji: .ANOTHER_MOCK_KANKENKANJI, storeOperations: StoreOperations(store: Store.MOCK_STORE))
 }

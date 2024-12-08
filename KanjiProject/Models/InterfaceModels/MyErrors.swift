@@ -11,4 +11,5 @@ enum MyErrors: String, Error {
     case noWordsLeft
     case nilWord = "Отсутствует слово"
     case wrongBushu = "Нет соответстующего ключа"
+    case activityDecodeFaled = "Ошибка декодирования активности"
 }

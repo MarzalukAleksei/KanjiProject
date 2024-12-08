@@ -67,7 +67,7 @@ struct KanjiLearningView: View {
                             .opacity(showListOverWarning ? 0 : 1)
                         // MARK: Выполняется при загрузке экрана, до тех пор, пока currentKanji = nil
                             .task {
-                                await allKanji = storeOperations.getKanjiArray()
+                                await allKanji = storeOperations.getKanjiArray(for: nouryokuLevel)
                                 setCurrentKanji()
                             }
                     }
@@ -183,7 +183,7 @@ struct KanjiLearningView: View {
     }
     
     private func repeatWrongsButton() {
-        allKanji = storeOperations.getAllWrongForCurentLevel()
+        allKanji = storeOperations.getAllWrong(for: nouryokuLevel)
         setCurrentKanji()
     }
     
@@ -193,7 +193,7 @@ struct KanjiLearningView: View {
     }
     
     private func addWordsButton() {
-        allKanji = storeOperations.addNotLearnedKanji()
+        allKanji = storeOperations.addNotLearnedKanji(for: nouryokuLevel)
         setCurrentKanji()
     }
     
@@ -249,7 +249,7 @@ struct KanjiLearningView: View {
 }
 
 #Preview {
-    KanjiLearningView(storeOperations: .init(store: Store(), chosenLevel: .another), selectedKanken: false, nouryokuLevel: .N5, kankenLevel: .級10)
+    KanjiLearningView(storeOperations: .init(store: Store()), selectedKanken: false, nouryokuLevel: .N5, kankenLevel: .級10)
         .environmentObject(Store())
         .environmentObject(GlobalChanging())
 }

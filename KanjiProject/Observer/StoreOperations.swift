@@ -10,11 +10,9 @@ import Foundation
 /// Предназначен для работы с данными, чтобы избежать прямого обращения к Store и обеспечить переиспользование кода
 class StoreOperations {
     private let store: Store
-    private var currentJLPTLevel: NouryokuLevel
     
-    init(store: Store, chosenLevel: NouryokuLevel) {
+    init(store: Store) {
         self.store = store
-        self.currentJLPTLevel = chosenLevel
     }
     
     /// Обновление файла
@@ -24,7 +22,7 @@ class StoreOperations {
         }
     }
     
-    // MARK: Keys
+    // MARK: Bushu
     /// Для  правильной работы сначала ищет варианты, потом в основном теле и, если не нашло, то по всему тексту.
     func getKeys(for currentKanji: KanjiKankenModel) throws -> [BushuModel] {
         let currentKanjiKey = currentKanji.keys
@@ -35,8 +33,9 @@ class StoreOperations {
         return bushu
     }
     
-    func getAllWrongForCurentLevel() -> [KanjiKankenModel] {
-        store.kanjiKankenStore.get(nouryokuLevel: currentJLPTLevel).filter { $0.showlastAnswer() == false }
+    /// Возвращает все кандзи из передаваемого и ниже уровня с последним неверным ответом
+    func getAllWrong(for jlptLevel: NouryokuLevel) -> [KanjiKankenModel] {
+        store.kanjiKankenStore.getAllKanji(below: jlptLevel).filter { $0.showlastAnswer() == false }
     }
     
     /// Возвращает массив кандзи из переданного слова
@@ -51,7 +50,7 @@ class StoreOperations {
         return result
     }
     
-    func learningWordsCurrentLevel() -> [WordModel] {
+    func learningWords(for currentJLPTLevel: NouryokuLevel) -> [WordModel] {
         let words = store.baseWordsStore.getAll(for: currentJLPTLevel)
         return words
     }
@@ -89,11 +88,11 @@ class StoreOperations {
     }
     
     // MARK: Извлекает рандомное слово для конкретного кандзи из примеров
-    func loadKanjiWordExample(for currentKanji: KanjiKankenModel?) -> WordModel? {
+    func loadKanjiWordExample(for currentKanji: KanjiKankenModel?, currentJLPTLevel: NouryokuLevel) -> WordModel? {
         guard let currentKanji = currentKanji else { return nil }
         var componentsArray: [[TextAndReading]] = []
         
-        for level in SchoolLevel.allCases where availableWordLevels().contains(level) {
+        for level in SchoolLevel.allCases where availableWordLevels(for: currentJLPTLevel).contains(level) {
             if let arr = currentKanji.getExamplesWithReading()[level] {
                 componentsArray += arr
             }
@@ -109,14 +108,14 @@ class StoreOperations {
     
     // MARK: Метод ля первой загрузки экрана изучения
     /// Для первой загрузки
-    func firstKanjiLoading() async -> [KanjiKankenModel] {
+    func firstKanjiLoading(for currentJLPTLevel: NouryokuLevel) async -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
         if countOfKanjiInLearningList() == 0 {
-            return await theFirstLoading()
+            return await theFirstLoading(for: currentJLPTLevel)
         }
         if countOfKanjiInLearningList() < DatabaseOptions.maxLearningElementsCount {
             result = getAllInLearningList()
-            result = addNotLearnedKanji(result)
+            result = addNotLearnedKanji(for: currentJLPTLevel, result)
         }
         return result
     }
@@ -133,7 +132,7 @@ class StoreOperations {
     }
     
     /// Добавляет кандзи не находящиеся в списке
-    func addNotLearnedKanji(_ nowInList: [KanjiKankenModel] = []) -> [KanjiKankenModel] {
+    func addNotLearnedKanji(for currentJLPTLevel: NouryokuLevel, _ nowInList: [KanjiKankenModel] = []) -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = nowInList
         var currentLevel = currentJLPTLevel
         var allKanjiForCurrentLevel = store.kanjiKankenStore.getAllKanji(below: currentLevel).filter { $0.isInLearningList() == nil }
@@ -143,26 +142,22 @@ class StoreOperations {
     
     // MARK: Возвращает массив кандзи, для текущего уровня, если их в уровне ниже меньше константы, взять из следующего
     /// Метод возвращает массив для текущего и ниже уровня, в случае если элементов меньше константного значения, берет из уровня выше,
-    func getKanjiArray() async -> [KanjiKankenModel] {
+    func getKanjiArray(for currentJLPTLevel: NouryokuLevel) async -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
         var allKanjiForCurrentLevel = store.kanjiKankenStore.getAllKanji(below: currentJLPTLevel).filter { $0.isInLearningList() != false }
         let inLearningList = filterAndRemove(&allKanjiForCurrentLevel, inLearningList: true) // Добавить все, что находятся в списке на изучение
         result = inLearningList.filter(filterAllKanjiForCurrentLevel)
         
-//        find(result: &result, allKanjiForCurrentLevel: &allKanjiForCurrentLevel, level: &currentJLPTLevel)
-        
         return result
     }
     
     // MARK: Возвращает массив кандзи, с заданными параметрами без даты
-    func getAllSuitableKanjiArray() async -> [KanjiKankenModel] {
+    func getAllSuitableKanjiArray(for currentJLPTLevel: NouryokuLevel) async -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
         let kanjiWithSuitableLevel = store.kanjiKankenStore.getAllKanji(below: currentJLPTLevel)
 //        let kanjiInLearningList = kanjiWithSuitableLevel.filter { $0.isInLearningList() == true }
         var notYetLearned = Set(kanjiWithSuitableLevel.filter { $0.isInLearningList() == nil })
         var updatingKanji: [KanjiKankenModel] = []
-        
-//        result = kanjiInLearningList.filter(filterForAllInListWithoutData)
         
         while result.count < DatabaseOptions.maxLearningElementsCount, !notYetLearned.isEmpty {
             var kanji = notYetLearned.removeFirst()
@@ -170,8 +165,6 @@ class StoreOperations {
             updatingKanji.append(kanji)
             result.append(kanji)
         }
-        
-//        await updateKanji(array: updatingKanji)
         
         return result
     }
@@ -206,8 +199,8 @@ extension StoreOperations {
         return allKanjiForCurrentLevel.filter(filterAllKanjiForCurrentLevel)
     }
     
-    private func theFirstLoading() async -> [KanjiKankenModel] {
-        let result = await getKanjiArray()
+    private func theFirstLoading(for currentJLPTLevel: NouryokuLevel) async -> [KanjiKankenModel] {
+        let result = await getKanjiArray(for: currentJLPTLevel)
         return result
     }
     
@@ -304,9 +297,9 @@ extension StoreOperations {
     }
     
     // MARK: Возвращает все нандзи ниже текущего уровня
-    private func allKanji(below level: NouryokuLevel, _ array: [KanjiKankenModel]) -> [KanjiKankenModel] {
+    private func allKanji(below currentJLPTLevel: NouryokuLevel, _ array: [KanjiKankenModel]) -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
-        let allLevelsBelow = allLevelsBelowCurrentLevel()
+        let allLevelsBelow = allLevelsBelowCurrentLevel(for: currentJLPTLevel)
         if !allLevelsBelow.isEmpty {
             for element in array where allLevelsBelow.contains(element.nouryokuLevel ?? .another) {
                 result.append(element)
@@ -352,7 +345,7 @@ extension StoreOperations {
         }
     }
     
-    private func allLevelsBelowCurrentLevel() -> [NouryokuLevel] {
+    private func allLevelsBelowCurrentLevel(for currentJLPTLevel: NouryokuLevel) -> [NouryokuLevel] {
         var result: [NouryokuLevel] = []
         
         switch currentJLPTLevel {
@@ -378,7 +371,7 @@ extension StoreOperations {
         return result.filter { $0 != currentJLPTLevel }
     }
     
-    private func availableWordLevels() -> [SchoolLevel] {
+    private func availableWordLevels(for currentJLPTLevel: NouryokuLevel) -> [SchoolLevel] {
         var result: [SchoolLevel] = []
         switch currentJLPTLevel {
         case .another:
@@ -395,17 +388,4 @@ extension StoreOperations {
         }
         return result
     }
-    
-    // MARK: Обновляет все представленные кандзи
-//    private func updateKanji(array kanjiArray: [KanjiKankenModel]) async {
-//        await withTaskGroup(of: Void.self) { group in
-//            for kanji in kanjiArray {
-//                group.addTask { [self] in
-//                    await store.kanjiKankenStore.update(set: kanji)
-//                }
-//            }
-////            await group.waitForAll()
-//        }
-//        
-//    }
 }

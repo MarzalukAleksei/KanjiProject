@@ -65,7 +65,7 @@ struct LearnWordView: View {
                             Divider()
                                 .padding(.vertical, Settings.paddingBetweenText)
                             
-                            let kanjiList = StoreOperations(store: store, chosenLevel: currentLevel).getKanjiArray(from: global.wordToChange)
+                            let kanjiList = StoreOperations(store: store).getKanjiArray(from: global.wordToChange)
                             ListOfKanjiInGivenWordView(kanji: kanjiList, size: geo.size.width)
                                 .padding(.bottom, Settings.paddingBetweenText)
                             //                        }
@@ -107,12 +107,12 @@ struct LearnWordView: View {
     }
 
     func loadWords() {
-        words = StoreOperations(store: store, chosenLevel: currentLevel).learningWordsCurrentLevel()
+        words = StoreOperations(store: store).learningWords(for: currentLevel)
     }
     
     func getWord() {
         do {
-            global.wordToChange = try StoreOperations(store: store, chosenLevel: currentLevel).getWord(from: words)
+            global.wordToChange = try StoreOperations(store: store).getWord(from: words)
             let currentWord = global.wordToChange
             words.removeAll(where: { $0.id == currentWord?.id })
         } catch {

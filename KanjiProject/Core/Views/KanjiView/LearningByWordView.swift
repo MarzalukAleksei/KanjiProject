@@ -15,7 +15,7 @@ struct LearningByWordView: View {
     @State private var hideReadings = true
 //    @State private var currentWord: WordModel?
     @State private var showEdit = false
-    let nouryokuLevel: NouryokuLevel
+    let currentLevel: NouryokuLevel
     let minute = 5
     let databaseOperation: StoreOperations
     @State var availableKanji: [KanjiKankenModel] = []
@@ -108,7 +108,7 @@ struct LearningByWordView: View {
         }
         .padding(Settings.padding)
         .task {
-            await availableKanji = databaseOperation.getAllSuitableKanjiArray()
+            await availableKanji = databaseOperation.getAllSuitableKanjiArray(for: currentLevel)
             setCurrentKanji()
             setCurrentWord()
         }
@@ -129,7 +129,7 @@ struct LearningByWordView: View {
     
     // MARK: Получает слово, если оно имеется в группе, соответствующей уровню
     private func getWord() -> WordModel? {
-        databaseOperation.loadKanjiWordExample(for: currentKanji)
+        databaseOperation.loadKanjiWordExample(for: currentKanji, currentJLPTLevel: currentLevel)
     }
     
     private func getMeaning(_ word: WordModel) -> [String] {
@@ -167,7 +167,7 @@ struct LearningByWordView: View {
 }
 
 #Preview {
-    LearningByWordView(nouryokuLevel: .N5, databaseOperation: .init(store: Store(), chosenLevel: .N5))
+    LearningByWordView(currentLevel: .N5, databaseOperation: .init(store: Store()))
         .environmentObject(Store())
         .environmentObject(GlobalChanging())
 }

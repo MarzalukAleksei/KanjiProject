@@ -64,12 +64,12 @@ struct UserActivityView: View {
 private struct Cell: View {
     let sameDate: Bool
     var body: some View {
-            ZStack {
-                RoundedRectangle(cornerRadius: Settings.userActivityCellCornerRadius)
-                    .foregroundStyle(sameDate ? Color.green.opacity(0.7) : Color.gray.opacity(0.5))
-                RoundedRectangle(cornerRadius: Settings.userActivityCellCornerRadius)
-                    .stroke(lineWidth: 2)
-            }
-            .padding(1)
+        ZStack {
+            RoundedRectangle(cornerRadius: Settings.userActivityCellCornerRadius)
+                .foregroundStyle(sameDate ? Color.green.opacity(0.7) : Color.gray.opacity(0.5))
+            RoundedRectangle(cornerRadius: Settings.userActivityCellCornerRadius)
+                .stroke(lineWidth: 2)
+        }
+        .padding(1)
     }
 }
