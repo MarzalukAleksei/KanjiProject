@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SettingView: View {
-    @EnvironmentObject private var settings: UserSettings
+    @EnvironmentObject private var userSettings: UserSettings
+    @AppStorage("User Settings") private var settingsDatabase: Data?
+    @State var test: Int = 0
     
     var body: some View {
         VStack(spacing: 0) {
@@ -20,15 +22,22 @@ struct SettingView: View {
                     
                     Divider()
                     
-                    Cell(title: "Всегда показывать окно выбора",
-                         toggle: $settings.showConformationDialog)
+                    CellWithSlider(title: "Всегда показывать окно выбора",
+                                   toggle: $userSettings.showConformationDialog)
                     
                     Divider()
                     
-                    Cell(title: "Tолько из выбранного уроня",
-                         toggle: $settings.showCurrentLevelOnly)
+                    CellWithSlider(title: "Tолько из выбранного уроня",
+                                   toggle: $userSettings.showCurrentLevelOnly)
                     
                     Divider()
+                    
+                    SectionCell(title: "Общие настройки")
+                    
+                    CellWithPicker(title: "Добавлять элементов в список", basicValue: DatabaseOptions.maxLearningElementsCountBasicValue, selection: $userSettings.maxLearningElementsCount)
+                    
+                    Divider()
+                    
                 }
             }
             .padding(.vertical, Settings.paddingBetweenElements)
@@ -36,6 +45,14 @@ struct SettingView: View {
             
             Spacer()
         }
+        .onDisappear {
+            encodeUserSettings()
+        }
+    }
+    
+    func encodeUserSettings() {
+        let data = JSONManager.manager.encodeToJSON(userSettings)
+        settingsDatabase = data
     }
 }
 
@@ -55,7 +72,34 @@ private struct SectionCell: View {
     }
 }
 
-private struct Cell: View {
+private struct CellWithPicker: View {
+    let title: String
+    let basicValue: Int
+    @Binding var selection: Int
+    
+    var body: some View {
+        HStack {
+            Text(title)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Picker("", selection: $selection) {
+                ForEach(range(self.basicValue), id: \.self) { num in
+                    if num % 5 == 0 {
+                        Text("\(num)")
+                    }
+                }
+                .foregroundStyle(.black)
+            }
+            
+        }
+    }
+    
+    private func range(_ baseValue: Int) -> Range<Int> {
+        return baseValue..<101
+    }
+}
+
+private struct CellWithSlider: View {
     let title: String
     @Binding var toggle: Bool
     

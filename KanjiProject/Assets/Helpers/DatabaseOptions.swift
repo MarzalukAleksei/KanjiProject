@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Содержит базовые константные значения
 class DatabaseOptions {
     static let minutesPassedFirst = 60 * 24 // 1 day later
     
@@ -20,5 +21,5 @@ class DatabaseOptions {
     
     static let answersInRowThird = 15
     
-    static let maxLearningElementsCount = 20
+    static let maxLearningElementsCountBasicValue = 20
 }

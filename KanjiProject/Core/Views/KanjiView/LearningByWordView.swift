@@ -167,7 +167,9 @@ struct LearningByWordView: View {
 }
 
 #Preview {
-    LearningByWordView(currentLevel: .N5, databaseOperation: .init(store: Store()))
+    LearningByWordView(currentLevel: .N5,
+                       databaseOperation: .init(store: Store(),
+                                                userSettings: UserSettings()))
         .environmentObject(Store())
         .environmentObject(GlobalChanging())
 }

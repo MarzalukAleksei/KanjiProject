@@ -10,9 +10,11 @@ import Foundation
 /// Предназначен для работы с данными, чтобы избежать прямого обращения к Store и обеспечить переиспользование кода
 class StoreOperations {
     private let store: Store
+    private let userSettings: UserSettings
     
-    init(store: Store) {
+    init(store: Store, userSettings: UserSettings) {
         self.store = store
+        self.userSettings = userSettings
     }
     
     /// Обновление файла
@@ -118,7 +120,7 @@ class StoreOperations {
         if countOfKanjiInLearningList() == 0 {
             return await theFirstLoading(for: currentJLPTLevel)
         }
-        if countOfKanjiInLearningList() < DatabaseOptions.maxLearningElementsCount {
+        if countOfKanjiInLearningList() < userSettings.maxLearningElementsCount {
             result = getAllInLearningList()
             result = addNotLearnedKanji(for: currentJLPTLevel, result)
         }
@@ -164,7 +166,7 @@ class StoreOperations {
         var notYetLearned = Set(kanjiWithSuitableLevel.filter { $0.isInLearningList() == nil })
         var updatingKanji: [KanjiKankenModel] = []
         
-        while result.count < DatabaseOptions.maxLearningElementsCount, !notYetLearned.isEmpty {
+        while result.count < userSettings.maxLearningElementsCount, !notYetLearned.isEmpty {
             var kanji = notYetLearned.removeFirst()
             kanji.addInLearningList()
             updatingKanji.append(kanji)
@@ -223,12 +225,12 @@ extension StoreOperations {
     private func find(result: inout [KanjiKankenModel],
                       allKanjiForCurrentLevel: inout [KanjiKankenModel],
                       level: inout NouryokuLevel) {
-        while result.count < DatabaseOptions.maxLearningElementsCount, !allKanjiForCurrentLevel.isEmpty {
+        while result.count < userSettings.maxLearningElementsCount, !allKanjiForCurrentLevel.isEmpty {
             let kanji = allKanjiForCurrentLevel.remove(at: Int.random(in: 0..<allKanjiForCurrentLevel.count))
             result.append(kanji)
         }
         
-        if result.count < DatabaseOptions.maxLearningElementsCount, allKanjiForCurrentLevel.isEmpty {
+        if result.count < userSettings.maxLearningElementsCount, allKanjiForCurrentLevel.isEmpty {
             guard let currentlevel = nextLevel(level) else { return } // Ищет следующий уровень. Если nil, то завершить поиск
             level = currentlevel
             allKanjiForCurrentLevel = store.kanjiKankenStore.get(nouryokuLevel: level).filter { $0.isInLearningList() != false }

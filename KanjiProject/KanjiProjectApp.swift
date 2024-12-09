@@ -27,7 +27,7 @@ struct KanjiProjectApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @ObservedObject var loading = DataLoading()
     
-    @AppStorage("User Settings") private var settings: Data?
+    @AppStorage("User Settings") private var settingsDatabase: Data?
     
     var body: some Scene {
         WindowGroup {
@@ -57,7 +57,6 @@ struct KanjiProjectApp: App {
                 Task {
                     await store.kanjiKankenStore.saveInFileManager()
                 }
-                encodeUserSettings()
             case .inactive: break
             @unknown default:
                 break
@@ -99,13 +98,8 @@ struct KanjiProjectApp: App {
     }
     
     func decodeUserSettings() -> UserSettings {
-        guard let data = settings,
+        guard let data = settingsDatabase,
               let uSet: UserSettings = JSONManager.manager.decodeToModel(data) else { return UserSettings() }
         return uSet
-    }
-    
-    func encodeUserSettings() {
-        let data = JSONManager.manager.encodeToJSON(userSettings)
-        settings = data
     }
 }

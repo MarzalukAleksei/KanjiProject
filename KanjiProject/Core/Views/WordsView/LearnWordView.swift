@@ -17,6 +17,7 @@ struct LearnWordView: View {
     @State private var showAllert = false
     @State private var hideReading = false
     @State private var showEditView = false
+    let storeOperations: StoreOperations
     
     var body: some View {
         VStack {
@@ -64,7 +65,7 @@ struct LearnWordView: View {
                             Divider()
                                 .padding(.vertical, Settings.paddingBetweenText)
                             
-                            let kanjiList = StoreOperations(store: store).getKanjiArray(from: global.wordToChange)
+                            let kanjiList = storeOperations.getKanjiArray(from: global.wordToChange)
                             ListOfKanjiInGivenWordView(kanji: kanjiList, size: geo.size.width)
                                 .padding(.bottom, Settings.paddingBetweenText)
                         }
@@ -101,12 +102,12 @@ struct LearnWordView: View {
     }
 
     func loadWords() {
-        words = StoreOperations(store: store).learningWords(for: currentLevel)
+        words = storeOperations.learningWords(for: currentLevel)
     }
     
     func getWord() {
         do {
-            global.wordToChange = try StoreOperations(store: store).getWord(from: words)
+            global.wordToChange = try storeOperations.getWord(from: words)
             let currentWord = global.wordToChange
             words.removeAll(where: { $0.id == currentWord?.id })
         } catch {
@@ -116,7 +117,8 @@ struct LearnWordView: View {
 }
 
 #Preview {
-    LearnWordView()
+    LearnWordView(storeOperations: StoreOperations(store: Store(),
+                                                   userSettings: UserSettings()))
         .environmentObject(Store.MOCK_STORE)
         .environmentObject(TabBarState())
     

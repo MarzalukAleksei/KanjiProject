@@ -76,5 +76,5 @@ struct ModalKeyDeteilView: View {
     }
 }
 #Preview {
-    ModalKeyDeteilView(currentkanji: .ANOTHER_MOCK_KANKENKANJI, storeOperations: StoreOperations(store: Store.MOCK_STORE))
+    ModalKeyDeteilView(currentkanji: .ANOTHER_MOCK_KANKENKANJI, storeOperations: StoreOperations(store: Store.MOCK_STORE, userSettings: UserSettings()))
 }

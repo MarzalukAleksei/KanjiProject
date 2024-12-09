@@ -137,7 +137,7 @@ struct KanjiLearningView: View {
                 repeatWrongsButton()
             }
             
-            Button("Добавить дополнительные \(DatabaseOptions.maxLearningElementsCount) кандзи") {
+            Button("Добавить дополнительные \(userSettings.maxLearningElementsCount) кандзи") {
                 addWordsButton()
             }
             
@@ -250,7 +250,7 @@ struct KanjiLearningView: View {
 }
 
 #Preview {
-    KanjiLearningView(storeOperations: .init(store: Store()), selectedKanken: false, nouryokuLevel: .N5, kankenLevel: .級10)
+    KanjiLearningView(storeOperations: .init(store: Store(), userSettings: UserSettings()), selectedKanken: false, nouryokuLevel: .N5, kankenLevel: .級10)
         .environmentObject(Store())
         .environmentObject(GlobalChanging())
         .environmentObject(UserSettings())

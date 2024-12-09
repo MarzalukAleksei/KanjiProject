@@ -86,7 +86,7 @@ struct SelectedWordDetailView: View {
 }
 
 #Preview {
-    SelectedWordDetailView(storeOperations: StoreOperations(store: Store()))
+    SelectedWordDetailView(storeOperations: StoreOperations(store: Store(), userSettings: UserSettings()))
         .environmentObject(Store())
         .environmentObject(GlobalChanging())
 }

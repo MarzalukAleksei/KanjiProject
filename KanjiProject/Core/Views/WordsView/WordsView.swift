@@ -10,6 +10,7 @@ import SwiftUI
 struct WordsView: View {
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var tabBar: TabBarState
+    @EnvironmentObject private var userSettings: UserSettings
     @AppStorage("baseWordLevel") private var wordLevel: NouryokuLevel = .N5
     @State private var currentLevel: NouryokuLevel = .another
     
@@ -21,7 +22,8 @@ struct WordsView: View {
                     Divider()
                     
                     NavigationLink {
-                        LearnWordView()
+                        LearnWordView(storeOperations: StoreOperations(store: store,
+                                                                       userSettings: userSettings))
                     } label: {
                         Text("Учить слова")
                             .frame(maxWidth: .infinity)
@@ -73,4 +75,5 @@ struct WordsView: View {
     WordsView()
         .environmentObject(Store())
         .environmentObject(TabBarState())
+        .environmentObject(UserSettings())
 }

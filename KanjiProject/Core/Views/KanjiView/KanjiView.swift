@@ -10,6 +10,7 @@ import SwiftUI
 struct KanjiView: View {
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var tabBarState: TabBarState
+    @EnvironmentObject private var userSettings: UserSettings
 //    @AppStorage("selectedLevel") var selectedLevel: NouryokuLevel = .N5
     @AppStorage("selectedNouryokuLevel") private var selectedNouryokuLevel: NouryokuLevel = .N5
     @AppStorage("selectedKankenLevel") private var selectedKankenLevel: KankenLevel = .級10
@@ -154,10 +155,10 @@ struct KanjiView: View {
 //            //                }
 //        }
         .fullScreenCover(isPresented: $showLearningByKanjiSecondVar) {
-            KanjiLearningView(storeOperations: .init(store: store), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
+            KanjiLearningView(storeOperations: .init(store: store, userSettings: userSettings), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
         }
         .fullScreenCover(isPresented: $showLearningByWord) {
-            LearningByWordView(currentLevel: selectedNouryokuLevel, databaseOperation: .init(store: store))
+            LearningByWordView(currentLevel: selectedNouryokuLevel, databaseOperation: .init(store: store, userSettings: userSettings))
                 .onDisappear {
                     let kanjiStore = store.kanjiKankenStore.getAll()
 //                    self.kanjiKankenStore.clearAll()
@@ -227,5 +228,6 @@ struct KanjiView_Previews: PreviewProvider {
         KanjiView()
             .environmentObject(Store())
             .environmentObject(TabBarState())
+            .environmentObject(UserSettings())
     }
 }
