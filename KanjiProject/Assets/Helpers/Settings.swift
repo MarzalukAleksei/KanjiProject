@@ -66,4 +66,6 @@ class Settings {
     
     /// Kоличество элементов в UserActivityView
     static let elementsInUserActivityIndicator = 365
+    
+    static var sectionPadding: CGFloat { return padding * 1.5 }
 }

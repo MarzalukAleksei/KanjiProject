@@ -49,7 +49,9 @@ struct TabBarButton: View {
 //            return ButtonsImages.list
 //        case .search:
 //            return tab == currentTab ? ButtonsImages.openBook : ButtonsImages.closeBook
-            return ButtonsImages.magnifyingglass
+//            return ButtonsImages.magnifyingglass
+        case .settings:
+            return ButtonsImages.settingsImage
         }
     }
 }

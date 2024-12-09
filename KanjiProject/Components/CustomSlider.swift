@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomSlider: View {
-    @Namespace var namespace
+    @Namespace private var namespace
     @Binding var toggle: Bool
     var title: (left: String, right: String) = ("", "")
     

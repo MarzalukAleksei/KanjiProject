@@ -44,7 +44,6 @@ struct LearnWordView: View {
                 GeometryReader { geo in
                     ScrollView {
                         if let currentWord = global.wordToChange {
-                            //                        if let currentWord {
                             HStack {
                                 Spacer()
                                 WordWithFuriganaView(word: currentWord.getTextAndReading() ,
@@ -68,7 +67,6 @@ struct LearnWordView: View {
                             let kanjiList = StoreOperations(store: store).getKanjiArray(from: global.wordToChange)
                             ListOfKanjiInGivenWordView(kanji: kanjiList, size: geo.size.width)
                                 .padding(.bottom, Settings.paddingBetweenText)
-                            //                        }
                         }
                     }
                 }
@@ -92,17 +90,13 @@ struct LearnWordView: View {
             loadWords()
             getWord()
         }
-        //        .alert("Empty array", isPresented: $showAllert) {
-        //            Button("Close", role: .cancel) {
-        //                dismiss()
-        //            }
-        //        }
+        .onDisappear {
+            global.wordToChange = nil
+        }
         .fullScreenCover(isPresented: $showEditView, content: {
-//            if let currentWord {
             EditWordView(word: global.wordToChange ?? .empty)
                     .environmentObject(global)
                     .environmentObject(store)
-//            }
         })
     }
 

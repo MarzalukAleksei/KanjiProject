@@ -9,6 +9,7 @@ import SwiftUI
 
 struct KanjiLearningView: View {
     @EnvironmentObject private var globalChanging: GlobalChanging
+    @EnvironmentObject private var userSettings: UserSettings
     @Environment(\.dismiss) private var dismiss
     @AppStorage("userActivity") private var userActivity: Data?
     @State private var currentKanji: KanjiKankenModel?
@@ -127,7 +128,7 @@ struct KanjiLearningView: View {
                 removeKanjiFromList()
             }
         })
-        .confirmationDialog("Хотите продолжить изучeние?", isPresented: $showListOverWarning, actions: {
+        .alert("Хотите продолжить изучeние?", isPresented: $showListOverWarning, actions: {
             Button("Повторить все из списка") {
                 repeatButton()
             }
@@ -146,8 +147,8 @@ struct KanjiLearningView: View {
                 }
             }
         }, message: {
-            Text("На сегодня слов больше нет.")
-                .frame(maxWidth: .infinity)
+//            Text("На сегодня слов больше нет.")
+//                .frame(maxWidth: .infinity)
             Text("Как поступим?")
                 .frame(maxWidth: .infinity)
         })
@@ -183,7 +184,7 @@ struct KanjiLearningView: View {
     }
     
     private func repeatWrongsButton() {
-        allKanji = storeOperations.getAllWrong(for: nouryokuLevel)
+        allKanji = storeOperations.getAllWrong(below: nouryokuLevel)
         setCurrentKanji()
     }
     
@@ -252,4 +253,5 @@ struct KanjiLearningView: View {
     KanjiLearningView(storeOperations: .init(store: Store()), selectedKanken: false, nouryokuLevel: .N5, kankenLevel: .級10)
         .environmentObject(Store())
         .environmentObject(GlobalChanging())
+        .environmentObject(UserSettings())
 }

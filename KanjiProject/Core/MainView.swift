@@ -13,6 +13,7 @@ enum TabBarElements: String, CaseIterable {
     case words = "Слова"
 //    case card = "Карточки"
 //    case search = "Поиск"
+    case settings = "Параметры"
 }
 
 struct MainView: View {
@@ -42,6 +43,8 @@ struct MainView: View {
 //                    .tag(TabBarElements.card)
 //                SearchView()
 //                    .tag(TabBarElements.search)
+                SettingView()
+                    .tag(TabBarElements.settings)
             }
             .padding(.bottom, 0) // поставил 0 вместо 53 так как здесь тернарный оператор не работает
             
@@ -60,50 +63,6 @@ struct MainView: View {
             
         }
         .onAppear {
-//            var wordsFromKanji: [String: String] = [:]
-//            for kanji in store.kanjiKankenStore.getAll() {
-//                for schoolLevel in SchoolLevel.allCases {
-//                    if let words = kanji.getExamplesWithReading(schoolLevel) {
-//                        for wordParts in words {
-////                            print(wordParts)
-////                            print("loop End")
-//                            var word = ""
-//                            var wordWithReading = ""
-//                            for part in wordParts {
-//                                word += part.text
-//                                wordWithReading += "\(part.text)[\(part.reading)]"
-//                            }
-//                            wordsFromKanji[word] = wordWithReading
-//                        }
-//                    }
-//                }
-//            }
-//            let translates = store.baseWordsStore.getAll()
-//            let newVal = translates.map { word in
-//                var word = word
-//                if let created = wordsFromKanji[word.body], word.reading != created {
-////                    count += 1
-////                    print(word.body, word.reading)
-//                    word.reading = created
-//                }
-//                return word
-//            }
-//            store.baseWordsStore.updateAll(data: newVal)
-//            store.baseWordsStore.saveInFileManager()
-//            goiSetting()
-            
-//            for kanji in store.kanjiKankenStore.getAll() {
-//                var kanji = kanji
-////                if let answer = kanji.lastAnswer() {
-////                    if answer == true {
-////                        kanji.removeFromList()
-////                    } else if answer == false {
-////                        kanji.addInLearningList()
-////                    }
-////                }
-//                kanji.setWrongAnswer()
-//                store.kanjiKankenStore.update(set: kanji)
-//            }
             
         }
         

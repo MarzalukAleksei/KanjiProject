@@ -34,8 +34,13 @@ class StoreOperations {
     }
     
     /// Возвращает все кандзи из передаваемого и ниже уровня с последним неверным ответом
-    func getAllWrong(for jlptLevel: NouryokuLevel) -> [KanjiKankenModel] {
+    func getAllWrong(below jlptLevel: NouryokuLevel) -> [KanjiKankenModel] {
         store.kanjiKankenStore.getAllKanji(below: jlptLevel).filter { $0.showlastAnswer() == false }
+    }
+    
+    /// Возвращает все кандзи из передаваемого уровня с последним неверным ответом
+    func getAllWrong(for jlptLevel: NouryokuLevel) -> [KanjiKankenModel] {
+        store.kanjiKankenStore.get(nouryokuLevel: jlptLevel).filter { $0.showlastAnswer() == false }
     }
     
     /// Возвращает массив кандзи из переданного слова
@@ -299,7 +304,7 @@ extension StoreOperations {
     // MARK: Возвращает все нандзи ниже текущего уровня
     private func allKanji(below currentJLPTLevel: NouryokuLevel, _ array: [KanjiKankenModel]) -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
-        let allLevelsBelow = allLevelsBelowCurrentLevel(for: currentJLPTLevel)
+        let allLevelsBelow = allLevels(below: currentJLPTLevel)
         if !allLevelsBelow.isEmpty {
             for element in array where allLevelsBelow.contains(element.nouryokuLevel ?? .another) {
                 result.append(element)
@@ -345,7 +350,7 @@ extension StoreOperations {
         }
     }
     
-    private func allLevelsBelowCurrentLevel(for currentJLPTLevel: NouryokuLevel) -> [NouryokuLevel] {
+    private func allLevels(below currentJLPTLevel: NouryokuLevel) -> [NouryokuLevel] {
         var result: [NouryokuLevel] = []
         
         switch currentJLPTLevel {
@@ -369,6 +374,50 @@ extension StoreOperations {
         }
         
         return result.filter { $0 != currentJLPTLevel }
+    }
+    
+    private func allLevels(below currentLevel: KankenLevel) -> [KankenLevel] {
+        var result: [KankenLevel] = []
+        switch currentLevel {
+        case .級01:
+            result.append(.級01)
+            fallthrough
+        case .準01:
+            result.append(.準01)
+            fallthrough
+        case .級02:
+            result.append(.級02)
+            fallthrough
+        case .準02:
+            result.append(.準02)
+            fallthrough
+        case .級03:
+            result.append(.級03)
+            fallthrough
+        case .級04:
+            result.append(.級04)
+            fallthrough
+        case .級05:
+            result.append(.級05)
+            fallthrough
+        case .級06:
+            result.append(.級06)
+            fallthrough
+        case .級07:
+            result.append(.級07)
+            fallthrough
+        case .級08:
+            result.append(.級08)
+            fallthrough
+        case .級09:
+            result.append(.級09)
+            fallthrough
+        case .級10:
+            result.append(.級10)
+        case .none: break
+        }
+        
+        return result
     }
     
     private func availableWordLevels(for currentJLPTLevel: NouryokuLevel) -> [SchoolLevel] {

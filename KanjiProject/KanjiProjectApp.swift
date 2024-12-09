@@ -23,8 +23,11 @@ struct KanjiProjectApp: App {
     @ObservedObject var store = Store()
     @ObservedObject var tabBarState = TabBarState()
     @ObservedObject var globalChanging = GlobalChanging()
+    @ObservedObject var userSettings = UserSettings()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @ObservedObject var loading = DataLoading()
+    
+    @AppStorage("User Settings") private var settings: Data?
     
     var body: some Scene {
         WindowGroup {
@@ -36,6 +39,7 @@ struct KanjiProjectApp: App {
                     .environmentObject(store)
                     .environmentObject(tabBarState)
                     .environmentObject(globalChanging)
+                    .environmentObject(userSettings)
                 //            DrawView(size: CGSize(width: 300, height: 300))
             } else {
                 LoadingView()
@@ -53,7 +57,7 @@ struct KanjiProjectApp: App {
                 Task {
                     await store.kanjiKankenStore.saveInFileManager()
                 }
-//                break
+                encodeUserSettings()
             case .inactive: break
             @unknown default:
                 break
@@ -74,6 +78,7 @@ struct KanjiProjectApp: App {
     }
     
     init() {
+        userSettings = decodeUserSettings()
 //        checkFontTitle()
     }
     
@@ -91,5 +96,16 @@ struct KanjiProjectApp: App {
         let data = JSONManager.manager.encodeToJSON(store.kanjiStore.getAll())
             JSONManager.manager.saveJSONToFile(data, fileName: .kanji)
 //        }
+    }
+    
+    func decodeUserSettings() -> UserSettings {
+        guard let data = settings,
+              let uSet: UserSettings = JSONManager.manager.decodeToModel(data) else { return UserSettings() }
+        return uSet
+    }
+    
+    func encodeUserSettings() {
+        let data = JSONManager.manager.encodeToJSON(userSettings)
+        settings = data
     }
 }

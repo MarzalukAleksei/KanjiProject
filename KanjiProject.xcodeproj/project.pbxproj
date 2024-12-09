@@ -183,6 +183,8 @@
 		AFF34E872BDB1F0300CF7098 /* SetKankenKnajiTranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF34E862BDB1F0300CF7098 /* SetKankenKnajiTranslateView.swift */; };
 		AFF443A22A51B05100FF4404 /* SavedData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFF443A02A51B05100FF4404 /* SavedData.xcdatamodeld */; };
 		AFF528372AB2F71200CC5453 /* SelectedKanjiListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF528362AB2F71200CC5453 /* SelectedKanjiListRow.swift */; };
+		AFFA9DB02D064E53005423E8 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA9DAF2D064E53005423E8 /* SettingView.swift */; };
+		AFFA9DB22D06565D005423E8 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA9DB12D06565D005423E8 /* UserSettings.swift */; };
 		AFFBE7CB2B8CE22E0029481B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFBE7CA2B8CE22E0029481B /* FirebaseManager.swift */; };
 		AFFC08AD2A822AF60043B741 /* KanjiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08AC2A822AF60043B741 /* KanjiView.swift */; };
 		AFFC08B02A8234980043B741 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08AF2A8234980043B741 /* CustomNavigationBarView.swift */; };
@@ -190,7 +192,6 @@
 		AFFC08C22A829E3E0043B741 /* KanjiRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08C12A829E3E0043B741 /* KanjiRow.swift */; };
 		AFFC08C42A82A6840043B741 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08C32A82A6840043B741 /* Settings.swift */; };
 		AFFC08C62A82CE4D0043B741 /* ProgressIndicatorBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08C52A82CE4D0043B741 /* ProgressIndicatorBar.swift */; };
-		AFFC4F8A2CBA783700DBDBA7 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC4F892CBA783700DBDBA7 /* UserSettings.swift */; };
 		AFFF94B92B52F80400DD01EB /* TextSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF94B82B52F80400DD01EB /* TextSizes.swift */; };
 		AFFF94BF2B5C1D4000DD01EB /* KankenReadingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF94BE2B5C1D4000DD01EB /* KankenReadingRowView.swift */; };
 		AFFF94C12B5C2CC700DD01EB /* BackForwardClearButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFF94C02B5C2CC700DD01EB /* BackForwardClearButtons.swift */; };
@@ -382,6 +383,8 @@
 		AFF34E862BDB1F0300CF7098 /* SetKankenKnajiTranslateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetKankenKnajiTranslateView.swift; sourceTree = "<group>"; };
 		AFF443A12A51B05100FF4404 /* SavedData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedData.xcdatamodel; sourceTree = "<group>"; };
 		AFF528362AB2F71200CC5453 /* SelectedKanjiListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedKanjiListRow.swift; sourceTree = "<group>"; };
+		AFFA9DAF2D064E53005423E8 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		AFFA9DB12D06565D005423E8 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		AFFBE7CA2B8CE22E0029481B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		AFFC08AC2A822AF60043B741 /* KanjiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiView.swift; sourceTree = "<group>"; };
 		AFFC08AF2A8234980043B741 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
@@ -389,7 +392,6 @@
 		AFFC08C12A829E3E0043B741 /* KanjiRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiRow.swift; sourceTree = "<group>"; };
 		AFFC08C32A82A6840043B741 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		AFFC08C52A82CE4D0043B741 /* ProgressIndicatorBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorBar.swift; sourceTree = "<group>"; };
-		AFFC4F892CBA783700DBDBA7 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		AFFF94B82B52F80400DD01EB /* TextSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSizes.swift; sourceTree = "<group>"; };
 		AFFF94BE2B5C1D4000DD01EB /* KankenReadingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KankenReadingRowView.swift; sourceTree = "<group>"; };
 		AFFF94C02B5C2CC700DD01EB /* BackForwardClearButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackForwardClearButtons.swift; sourceTree = "<group>"; };
@@ -538,10 +540,9 @@
 		AF5621782B8CEB670067F87D /* Observer */ = {
 			isa = PBXGroup;
 			children = (
-				AF5024842C93630B002633AA /* StoreOperations.swift */,
 				AF5621792B8CEB7C0067F87D /* DataLoading.swift */,
 				AF3D53B92C24E7F3005B495F /* GlobalChanging.swift */,
-				AFFC4F892CBA783700DBDBA7 /* UserSettings.swift */,
+				AFFA9DB12D06565D005423E8 /* UserSettings.swift */,
 			);
 			path = Observer;
 			sourceTree = "<group>";
@@ -731,6 +732,7 @@
 		AFAF80E929D9C740002B9921 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AFFA9DAE2D064E3E005423E8 /* SettingsView */,
 				AF17F93D2A4485A500D5631D /* KanjiView */,
 				AF8122AD2B724BB800CCE83A /* WordsView */,
 				AF0070922A9DC17C001A4084 /* IdiomView */,
@@ -896,6 +898,7 @@
 		AFFA9DAC2D0553AA005423E8 /* LogicModels */ = {
 			isa = PBXGroup;
 			children = (
+				AF5024842C93630B002633AA /* StoreOperations.swift */,
 				AF728DB72ADD3A170098765D /* KankenLevel.swift */,
 				AF30EB1029EB0A0C00E5B7A9 /* NouryokuLevel.swift */,
 				AFFF94E92B6129F200DD01EB /* SchoolLevelModel.swift */,
@@ -917,6 +920,14 @@
 				AFCA6F552AE5270E003464EC /* TextAndReadingModel.swift */,
 			);
 			path = InterfaceModels;
+			sourceTree = "<group>";
+		};
+		AFFA9DAE2D064E3E005423E8 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				AFFA9DAF2D064E53005423E8 /* SettingView.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 		AFFC08AB2A8190E50043B741 /* Components */ = {
@@ -1083,6 +1094,7 @@
 				AF3D53BE2C2A1584005B495F /* EditWordView.swift in Sources */,
 				AFEF744C2ABA60B1002AB67D /* SearchView.swift in Sources */,
 				AF56217A2B8CEB7C0067F87D /* DataLoading.swift in Sources */,
+				AFFA9DB22D06565D005423E8 /* UserSettings.swift in Sources */,
 				AF17F9412A4486A100D5631D /* FrontSideVIew.swift in Sources */,
 				AF3D53B02C21C308005B495F /* VisionManager.swift in Sources */,
 				AFAF810029D9E690002B9921 /* FileMapper.swift in Sources */,
@@ -1136,7 +1148,6 @@
 				AF8122B12B7251F000CCE83A /* BaseWordsSelectLevelView.swift in Sources */,
 				AF728D9B2ADD12EC0098765D /* KanjiKankenStore.swift in Sources */,
 				AF8122AF2B724BF200CCE83A /* WordsView.swift in Sources */,
-				AFFC4F8A2CBA783700DBDBA7 /* UserSettings.swift in Sources */,
 				AF044B302C2C8336000746AA /* Massages.swift in Sources */,
 				AF2D7FB22AC45E1200642B48 /* BunpouModel.swift in Sources */,
 				AFFF94C12B5C2CC700DD01EB /* BackForwardClearButtons.swift in Sources */,
@@ -1211,6 +1222,7 @@
 				AFBA6FF929F3640F008E11BB /* CustomFonts.swift in Sources */,
 				AFFC08B02A8234980043B741 /* CustomNavigationBarView.swift in Sources */,
 				AFAF80DA29D9C646002B9921 /* KanjiProjectApp.swift in Sources */,
+				AFFA9DB02D064E53005423E8 /* SettingView.swift in Sources */,
 				AF3FEB9E2AF6419600D40B23 /* KankenScrollListView.swift in Sources */,
 				AFFC08C42A82A6840043B741 /* Settings.swift in Sources */,
 				AFFBE7CB2B8CE22E0029481B /* FirebaseManager.swift in Sources */,
