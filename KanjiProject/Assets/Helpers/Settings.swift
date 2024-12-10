@@ -68,4 +68,6 @@ class Settings {
     static let elementsInUserActivityIndicator = 365
     
     static var sectionPadding: CGFloat { return padding * 1.5 }
+    
+    static var paddingInUserActivity: CGFloat = 4
 }

@@ -234,10 +234,7 @@ struct KanjiLearningView: View {
         currentKanji = getKanji()
         allKanji.removeAll(where: { $0.id == currentKanji?.id })
         
-        if currentKanji != nil {
-            print("\nОсталось изучить \(allKanji.count + 1) Кандзи")
-        } else {
-            print("Все изучено!")
+        if currentKanji == nil {
             showListOverWarning = true
         }
     }

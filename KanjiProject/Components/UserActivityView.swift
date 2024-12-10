@@ -16,10 +16,11 @@ struct UserActivityView: View {
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView(.horizontal) {
-                LazyHGrid(rows: rows) {
+                LazyHGrid(rows: rows, spacing: Settings.paddingInUserActivity) {
+                    let dates = dates()
                     ForEach(0..<Settings.elementsInUserActivityIndicator, id: \.self) { cell in
-                        let isSameDate = isSame(cell)
-                        Cell(sameDate: isSameDate)
+                        let dateType = typeOfDate(of: dates, by: cell)
+                        Cell(dateType: dateType)
                             .frame(width: ElementSize.userActivityCellSize.width,
                                    height: ElementSize.userActivityCellSize.height)
                             .id(cell)
@@ -31,25 +32,40 @@ struct UserActivityView: View {
                 scrollToLast(proxy: proxy)
             }
         }
-        .frame(height: ElementSize.userActivityCellSize.width * CGFloat(Settings.userActivityIndicatorRows) + Settings.paddingBetweenText * CGFloat(Settings.userActivityIndicatorRows))
+        .frame(height: ElementSize.userActivityCellSize.width * CGFloat(Settings.userActivityIndicatorRows) + Settings.paddingInUserActivity * CGFloat(Settings.userActivityIndicatorRows))
     }
     
-    private func isSame(_ id: Int) -> Bool {
-        guard let cellDate = setCellDate(id: id) else { return false }
-        let currentCellComponents = UserActivity.getDateComponents(for: cellDate)
-        for activity in userActivity {
-            let activityComp = UserActivity.getDateComponents(for: activity)
-            if currentCellComponents == activityComp {
-                return true
-            }
+    private func dates(maxDay: Int = Settings.elementsInUserActivityIndicator) -> [Date] {
+        var result: [Date] = []
+        for day in 0..<maxDay {
+            guard let date = setCellDate(id: day) else { return result }
+            result.append(date)
         }
-        return false
+        return result
     }
     
     private func setCellDate(id: Int) -> Date? {
         let calendar = Calendar.current
         let searchedDate = calendar.date(byAdding: .day, value: -Settings.elementsInUserActivityIndicator + (id + 1), to: Date.now)
         return searchedDate
+    }
+    
+    private func typeOfDate(of dates: [Date], by index: Int) -> DateCondition {
+        let currentCellDate = dates[index]
+        let currentCellComponents = UserActivity.getDateComponents(for: currentCellDate)
+        
+        if currentCellDate < userActivity[0] {
+            return .dateBeforeFirstActivity
+        }
+        
+        for activity in userActivity {
+            let activityComp = UserActivity.getDateComponents(for: activity)
+            if currentCellComponents == activityComp {
+                return .confirmedActivity
+            }
+        }
+        
+        return .dateWithoutActivity
     }
     
     private func scrollToLast(proxy: ScrollViewProxy) {
@@ -62,14 +78,33 @@ struct UserActivityView: View {
 }
 
 private struct Cell: View {
-    let sameDate: Bool
+    let dateType: DateCondition
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: Settings.userActivityCellCornerRadius)
-                .foregroundStyle(sameDate ? Color.green.opacity(0.7) : Color.gray.opacity(0.5))
+                .foregroundStyle(setColor())
             RoundedRectangle(cornerRadius: Settings.userActivityCellCornerRadius)
                 .stroke(lineWidth: 2)
+                .opacity(dateType == .dateBeforeFirstActivity ? 0.3 : 1)
         }
         .padding(1)
     }
+    
+    private func setColor() -> Color {
+        switch dateType {
+        case .dateBeforeFirstActivity:
+            return .white
+        case .confirmedActivity:
+            return .green.opacity(0.7)
+        case .dateWithoutActivity:
+            return .gray.opacity(0.5)
+        }
+    }
+}
+
+private enum DateCondition {
+    case dateBeforeFirstActivity
+    case confirmedActivity
+    case dateWithoutActivity
 }

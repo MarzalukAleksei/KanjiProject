@@ -31,9 +31,7 @@ class UserSettings: ObservableObject, Codable {
     
     private var maxLearningElementsCountState: Int {
         get { maxLearningElementsCount }
-        set {
-            maxLearningElementsCount = newValue
-        }
+        set { maxLearningElementsCount = newValue }
     }
 
     private enum CodingKeys: String, CodingKey {

@@ -26,6 +26,7 @@
 		AF17B5642CF8D0B600E436AB /* ModalKeyDeteilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17B5632CF8D0B600E436AB /* ModalKeyDeteilView.swift */; };
 		AF17B60A2D01013F00E436AB /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17B6092D01013F00E436AB /* UserActivity.swift */; };
 		AF17B60C2D0196F900E436AB /* UserActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17B60B2D0196F900E436AB /* UserActivityView.swift */; };
+		AF17E2822D08636200165309 /* Bushu.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF17E2812D08636200165309 /* Bushu.csv */; };
 		AF17F93C2A44844200D5631D /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17F93B2A44844200D5631D /* TabBarButton.swift */; };
 		AF17F93F2A4485BF00D5631D /* LearningCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17F93E2A4485BF00D5631D /* LearningCardView.swift */; };
 		AF17F9412A4486A100D5631D /* FrontSideVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17F9402A4486A100D5631D /* FrontSideVIew.swift */; };
@@ -161,7 +162,6 @@
 		AFC9DACB2C04D1C5006A7ED0 /* BushuStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9DACA2C04D1C5006A7ED0 /* BushuStore.swift */; };
 		AFC9DACD2C04D20C006A7ED0 /* BushuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9DACC2C04D20C006A7ED0 /* BushuModel.swift */; };
 		AFC9DACF2C04D41B006A7ED0 /* BushuMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC9DACE2C04D41B006A7ED0 /* BushuMapper.swift */; };
-		AFC9DAD72C04E2F7006A7ED0 /* Bushu.csv in Resources */ = {isa = PBXBuildFile; fileRef = AFC9DAD62C04E2F7006A7ED0 /* Bushu.csv */; };
 		AFCA6F562AE5270E003464EC /* TextAndReadingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCA6F552AE5270E003464EC /* TextAndReadingModel.swift */; };
 		AFCC213B2AC550A700F1E37D /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC213A2AC550A700F1E37D /* Links.swift */; };
 		AFCC213D2AC550C100F1E37D /* MoveTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC213C2AC550C100F1E37D /* MoveTo.swift */; };
@@ -225,6 +225,7 @@
 		AF17B5632CF8D0B600E436AB /* ModalKeyDeteilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalKeyDeteilView.swift; sourceTree = "<group>"; };
 		AF17B6092D01013F00E436AB /* UserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivity.swift; sourceTree = "<group>"; };
 		AF17B60B2D0196F900E436AB /* UserActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityView.swift; sourceTree = "<group>"; };
+		AF17E2812D08636200165309 /* Bushu.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = Bushu.csv; sourceTree = "<group>"; };
 		AF17F93B2A44844200D5631D /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		AF17F93E2A4485BF00D5631D /* LearningCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCardView.swift; sourceTree = "<group>"; };
 		AF17F9402A4486A100D5631D /* FrontSideVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontSideVIew.swift; sourceTree = "<group>"; };
@@ -362,7 +363,6 @@
 		AFC9DACA2C04D1C5006A7ED0 /* BushuStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BushuStore.swift; sourceTree = "<group>"; };
 		AFC9DACC2C04D20C006A7ED0 /* BushuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BushuModel.swift; sourceTree = "<group>"; };
 		AFC9DACE2C04D41B006A7ED0 /* BushuMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BushuMapper.swift; sourceTree = "<group>"; };
-		AFC9DAD62C04E2F7006A7ED0 /* Bushu.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Bushu.csv; path = ../../../../Bushu.csv; sourceTree = "<group>"; };
 		AFCA6F552AE5270E003464EC /* TextAndReadingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAndReadingModel.swift; sourceTree = "<group>"; };
 		AFCC213A2AC550A700F1E37D /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		AFCC213C2AC550C100F1E37D /* MoveTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveTo.swift; sourceTree = "<group>"; };
@@ -812,13 +812,13 @@
 		AFAF80F929D9DE66002B9921 /* CSVFiles */ = {
 			isa = PBXGroup;
 			children = (
-				AFAF80FA29D9DE6F002B9921 /* Kanji.csv */,
 				AF2D7FAD2AC45D9E00642B48 /* Bunpou.csv */,
-				AFC9DAD62C04E2F7006A7ED0 /* Bushu.csv */,
-				AF1EB05D2A97756600850A3B /* Kana.csv */,
+				AF17E2812D08636200165309 /* Bushu.csv */,
 				AF4F2A9B2AB1C09C00F38EE9 /* Giseigo.csv */,
-				AF56AB5B2C4168F8000C1A31 /* 語彙N2.csv */,
+				AF1EB05D2A97756600850A3B /* Kana.csv */,
+				AFAF80FA29D9DE6F002B9921 /* Kanji.csv */,
 				AF5600722AA46B4B00F0123C /* Yojijukugo.csv */,
+				AF56AB5B2C4168F8000C1A31 /* 語彙N2.csv */,
 			);
 			path = CSVFiles;
 			sourceTree = "<group>";
@@ -1025,6 +1025,7 @@
 			files = (
 				AF1011302B798999001EEB39 /* 日本語.txt in Resources */,
 				AFFF94CF2B60099400DD01EB /* 01準.txt in Resources */,
+				AF17E2822D08636200165309 /* Bushu.csv in Resources */,
 				AFDC365F2C1309A000B602A9 /* kanjiN1Translate.txt in Resources */,
 				AFFF94D32B6009E100DD01EB /* 03級.txt in Resources */,
 				AFFF94D92B600AED00DD01EB /* 04級.txt in Resources */,
@@ -1036,7 +1037,6 @@
 				AF5600732AA46B4B00F0123C /* Yojijukugo.csv in Resources */,
 				AF8E84082CD3DCFB009FE87C /* Japanese-Russian.txt in Resources */,
 				AFAF80FB29D9E1CA002B9921 /* Kanji.csv in Resources */,
-				AFC9DAD72C04E2F7006A7ED0 /* Bushu.csv in Resources */,
 				AF1EB05E2A97756600850A3B /* Kana.csv in Resources */,
 				AFA2BEAF2B718CB300BAC9EB /* Core Japanese Vocabulary__JLPT N2.txt in Resources */,
 				AFFF94CD2B5FE8B300DD01EB /* 02準.txt in Resources */,

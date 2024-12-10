@@ -9,7 +9,7 @@ import Foundation
 
 /// Содержит базовые константные значения
 class DatabaseOptions {
-    static let minutesPassedFirst = 60 * 24 // 1 day later
+    static let minutesPassedFirst = 60 * 24 * 3 // 3 days later
     
     static let minutesPassedSecond = 60 * 24 * 5 // 5 days later
     
