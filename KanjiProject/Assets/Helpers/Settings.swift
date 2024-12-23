@@ -8,7 +8,7 @@
 import SwiftUI
 
 class Settings {
-    static let elementsInRow = 20
+    static let elementsInRow = 20 // Deprecated
     
     static let customToggleViewCornerRadius: CGFloat = 0.2
     
@@ -69,5 +69,5 @@ class Settings {
     
     static var sectionPadding: CGFloat { return padding * 1.5 }
     
-    static var paddingInUserActivity: CGFloat = 4
+    static let paddingInUserActivity: CGFloat = 4
 }

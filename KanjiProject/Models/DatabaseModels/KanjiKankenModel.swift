@@ -22,9 +22,10 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
     private(set) var meaningInEng: String?
     let keys: String
     let kankenLevel: KankenLevel
-    private(set) var nouryokuLevel: NouryokuLevel?
+    /*private(set)*/ var nouryokuLevel: NouryokuLevel?
     let stroke: Int
     private(set) var oldKanji = ""
+    var modernKanji: String?
     private var lastAnswerRight: Bool?
     /*private(set)*/ var rightAnwers: Int?
     private(set) var wrongAnswers: Int?

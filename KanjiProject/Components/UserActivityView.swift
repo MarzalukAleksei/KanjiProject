@@ -19,7 +19,7 @@ struct UserActivityView: View {
                 LazyHGrid(rows: rows, spacing: Settings.paddingInUserActivity) {
                     let dates = dates()
                     ForEach(0..<Settings.elementsInUserActivityIndicator, id: \.self) { cell in
-                        let dateType = typeOfDate(of: dates, by: cell)
+                        let dateType = typeOfDate(for: dates, by: cell)
                         Cell(dateType: dateType)
                             .frame(width: ElementSize.userActivityCellSize.width,
                                    height: ElementSize.userActivityCellSize.height)
@@ -27,11 +27,11 @@ struct UserActivityView: View {
                     }
                 }
             }
-            .scrollIndicators(.hidden)
             .onAppear {
                 scrollToLast(proxy: proxy)
             }
         }
+        .scrollIndicators(.never)
         .frame(height: ElementSize.userActivityCellSize.width * CGFloat(Settings.userActivityIndicatorRows) + Settings.paddingInUserActivity * CGFloat(Settings.userActivityIndicatorRows))
     }
     
@@ -50,11 +50,12 @@ struct UserActivityView: View {
         return searchedDate
     }
     
-    private func typeOfDate(of dates: [Date], by index: Int) -> DateCondition {
+    private func typeOfDate(for dates: [Date], by index: Int) -> DateCondition {
         let currentCellDate = dates[index]
         let currentCellComponents = UserActivity.getDateComponents(for: currentCellDate)
         
-        if currentCellDate < userActivity[0] {
+        guard let firstActivity = userActivity.first else { return .dateWithoutActivity }
+        if currentCellDate < firstActivity {
             return .dateBeforeFirstActivity
         }
         
@@ -86,7 +87,7 @@ private struct Cell: View {
                 .foregroundStyle(setColor())
             RoundedRectangle(cornerRadius: Settings.userActivityCellCornerRadius)
                 .stroke(lineWidth: 2)
-                .opacity(dateType == .dateBeforeFirstActivity ? 0.3 : 1)
+                .opacity(dateType == .dateBeforeFirstActivity ? Settings.opacity : 1)
         }
         .padding(1)
     }
@@ -96,9 +97,9 @@ private struct Cell: View {
         case .dateBeforeFirstActivity:
             return .white
         case .confirmedActivity:
-            return .green.opacity(0.7)
+            return .init(.activeIndicator)
         case .dateWithoutActivity:
-            return .gray.opacity(0.5)
+            return .init(.inActiveIndicator)
         }
     }
 }
