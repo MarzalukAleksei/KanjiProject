@@ -39,7 +39,11 @@ struct SearchWordView: View {
                 NavigationLink {
                     WordLearningView(level: .another, currentWord: word)
                 } label: {
-                    Text(word.body)
+                    HStack {
+                        Text(word.body)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        ButtonsImages.checkmark.opacity(word.isInList ? 1 : 0)
+                    }
                 }
 
             }

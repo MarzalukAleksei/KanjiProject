@@ -93,6 +93,16 @@ struct WordLearningView: View {
             
             Spacer()
             
+            Button {
+                addWordToLearningList()
+            } label: {
+                Text(currentWord.isInList ? "Убрать из списка" : "Добавить в список на изучение")
+                    .frame(maxWidth: .infinity, maxHeight: 50)
+                    .font(.system(size: 20))
+                    .background(currentWord.isInList ? .blue.opacity(0.7) : .purple.opacity(0.7))
+                    .foregroundStyle(.black)
+            }
+            
             Button(action: {
                 Task {
                     do {
@@ -132,12 +142,28 @@ struct WordLearningView: View {
         .navigationBarBackButtonHidden(true)
     }
     
-    func deleteAction() {
+    private func addWordToLearningList() {
+        if currentWord.isInList {
+            currentWord.removeFromList()
+        } else {
+            currentWord.addInList()
+        }
+        
+        Task {
+            await save(currentWord)
+        }
+    }
+    
+    private func isWordInList() -> Bool {
+        currentWord.isInList
+    }
+    
+    private func deleteAction() {
         let currentWord = currentWord
         print("current word deleted")
         Task {
-            await store.baseWordsStore.delete(currentWord)
-            await save()
+//            await store.baseWordsStore.delete(currentWord)
+            await save(currentWord)
             do {
                 try await nextWord()
             } catch {
@@ -146,12 +172,12 @@ struct WordLearningView: View {
         }
     }
     
-    func saveAction() {
+    private func saveAction() {
         var word = currentWord
         word.meaningInRussian = meaningInRussian
         Task {
-            await store.baseWordsStore.update(set: word)
-            await save()
+//            await store.baseWordsStore.update(set: word)
+            await save(word)
             do {
 //                if level != .another {
                     try await nextWord()
@@ -164,12 +190,15 @@ struct WordLearningView: View {
         }
     }
     
-    func save() async {
+//    private func
+    
+    private func save(_ word: WordModel) async {
+        await store.baseWordsStore.update(set: word)
         let data = JSONManager.manager.encodeToJSON(store.baseWordsStore.getAll())
         JSONManager.manager.saveJSONToFile(data, fileName: .baseWords)
     }
     
-    func nextWord() async throws {
+    private func nextWord() async throws {
         var allWords: [WordModel] = []
         if level != .another {
             allWords = store.baseWordsStore.getAll(for: level)
@@ -185,7 +214,7 @@ struct WordLearningView: View {
         }
     }
     
-    func findTranslate() -> [DictionaryModel] {
+    private func findTranslate() -> [DictionaryModel] {
         let dictionary = store.dictionaryStore.getAll()
         var word = currentWord
         
@@ -197,7 +226,7 @@ struct WordLearningView: View {
         return filtered
     }
     
-    func setTR() -> [TextAndReading] {
+    private func setTR() -> [TextAndReading] {
         var result: [TextAndReading] = []
         let components = currentWord.reading.components(separatedBy: " ")
         for part in components {

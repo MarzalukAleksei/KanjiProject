@@ -18,6 +18,7 @@ struct WordModel: Codable, Hashable, Identifiable {
     let levelInTag: [NouryokuLevel]
     private var lastAnswerRight: Bool?
     private var _rightAnswersInRow: Int?
+    private var inList: Bool?
     
     init(body: String, meaningInEnglish: String, meaningInRussian: String, reading: String, type: String, levels: [String], levelInTag: [NouryokuLevel], lastAnswerRight: Bool? = nil, rightAnswersInRow: Int? = nil) {
         self.id = UUID()
@@ -136,23 +137,20 @@ extension WordModel {
             }
         }
         return result
-//        var result: [TextAndReading] = []
-//        let components = self.reading.components(separatedBy: " ")
-//        for part in components {
-//            if part.contains("[") {
-//                guard let startIndex = part.firstIndex(of: "["),
-//                      let endIndex = part.firstIndex(of: "]") else { return [] }
-//                
-//                let text = String(part[part.startIndex..<startIndex] + part[part.index(after: endIndex)..<part.endIndex])
-//                let reading = String(part[part.index(after: startIndex)..<endIndex])
-//                
-//                result.append(TextAndReading(text: text, reading: reading))
-//            } else if components.count < 2 {
-//                result.append(TextAndReading(text: self.body, reading: self.reading))
-//            } else {
-//                result.append(TextAndReading(text: part, reading: ""))
-//            }
-//        }
-//        return result
+    }
+}
+
+extension WordModel {
+    mutating func addInList() {
+        inList = true
+    }
+    
+    mutating func removeFromList() {
+        inList = false
+    }
+    
+    var isInList: Bool {
+        guard let inList else { return false }
+        return inList
     }
 }
