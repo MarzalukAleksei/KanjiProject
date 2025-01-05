@@ -120,7 +120,7 @@ class StoreOperations {
         if countOfKanjiInLearningList() == 0 {
             return await theFirstLoading(for: currentJLPTLevel)
         }
-        if countOfKanjiInLearningList() < userSettings.maxLearningElementsCount {
+        if countOfKanjiInLearningList() < userSettings.newKanjiInConfirmationDialog {
             result = getAllInLearningList()
             result = addNotLearnedKanji(for: currentJLPTLevel, result)
         }
@@ -166,7 +166,7 @@ class StoreOperations {
         var notYetLearned = Set(kanjiWithSuitableLevel.filter { $0.isInLearningList() == nil })
         var updatingKanji: [KanjiKankenModel] = []
         
-        while result.count < userSettings.maxLearningElementsCount, !notYetLearned.isEmpty {
+        while result.count < userSettings.newKanjiInConfirmationDialog, !notYetLearned.isEmpty {
             var kanji = notYetLearned.removeFirst()
             kanji.addInLearningList()
             updatingKanji.append(kanji)
@@ -219,18 +219,18 @@ extension StoreOperations {
     // MARK: Заполняет массив result
     /// Метод заполняет result до тех пор, пока количество элементов будет мешьше чем установленная константа
     /// - В реализации использован inout
-    /// - Parameter result: Заполняемый массив. Количество элементов зависит от значения константы `DatabaseOptions.maxLearningElementsCount`
+    /// - Parameter result: Заполняемый массив. Количество элементов зависит от значения константы `DatabaseOptions.newKanjiInConfirmationDialog`
     /// - Parameter allKanjiForCurrentLevel: первоначальный массив
     /// - Parameter level: текущий уровень. Если в N1 не осталось элементов, прерывается.
     private func find(result: inout [KanjiKankenModel],
                       allKanjiForCurrentLevel: inout [KanjiKankenModel],
                       level: inout NouryokuLevel) {
-        while result.count < userSettings.maxLearningElementsCount, !allKanjiForCurrentLevel.isEmpty {
+        while result.count < userSettings.newKanjiInConfirmationDialog, !allKanjiForCurrentLevel.isEmpty {
             let kanji = allKanjiForCurrentLevel.remove(at: Int.random(in: 0..<allKanjiForCurrentLevel.count))
             result.append(kanji)
         }
         
-        if result.count < userSettings.maxLearningElementsCount, allKanjiForCurrentLevel.isEmpty {
+        if result.count < userSettings.newKanjiInConfirmationDialog, allKanjiForCurrentLevel.isEmpty {
             guard let currentlevel = nextLevel(level) else { return } // Ищет следующий уровень. Если nil, то завершить поиск
             level = currentlevel
             allKanjiForCurrentLevel = store.kanjiKankenStore.get(nouryokuLevel: level).filter { $0.isInLearningList() != false }

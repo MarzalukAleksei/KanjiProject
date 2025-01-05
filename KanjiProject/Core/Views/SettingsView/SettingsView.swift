@@ -1,5 +1,5 @@
 //
-//  SettingView.swift
+//  SettingsView.swift
 //  KanjiProject
 //
 //  Created by ブラック狼 on 2024/12/09.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingView: View {
+struct SettingsView: View {
     @EnvironmentObject private var userSettings: UserSettings
     @AppStorage("User Settings") private var settingsDatabase: Data?
     @State var test: Int = 0
@@ -20,10 +20,12 @@ struct SettingView: View {
                 VStack(spacing: Settings.paddingBetweenText) {
                     SectionCell(title: "Настройки отображения кандзи")
                     
+                    CellWithSlider(title: "Всегда показывать окно выбора",
+                                   toggle: $userSettings.showKanjiConformationDialog)
+                    
                     Divider()
                     
-                    CellWithSlider(title: "Всегда показывать окно выбора",
-                                   toggle: $userSettings.showConformationDialog)
+                    CellWithPicker(title: "Сколько кандзи добавлять в окне выбора", basicValue: DatabaseOptions.maxLearningElementsCountBasicValue, selection: $userSettings.newKanjiInConfirmationDialog)
                     
                     Divider()
                     
@@ -32,9 +34,13 @@ struct SettingView: View {
                     
                     Divider()
                     
+                    CellWithPicker(title: "Добавлять новых кандзи каждый день", basicValue: DatabaseOptions.newKanjiInDayConstantValue, maxLength: 20 ,selection: $userSettings.newKanjiInDay)
+                    
+                    Divider()
+                    
                     SectionCell(title: "Общие настройки")
                     
-                    CellWithPicker(title: "Добавлять элементов в список", basicValue: DatabaseOptions.maxLearningElementsCountBasicValue, selection: $userSettings.maxLearningElementsCount)
+                    CellWithPicker(title: "Добавлять новых слов каждый день", basicValue: DatabaseOptions.newWordsInDayConstantValue, selection: $userSettings.newWordsInDay)
                     
                     Divider()
                     
@@ -57,7 +63,7 @@ struct SettingView: View {
 }
 
 #Preview {
-    SettingView()
+    SettingsView()
         .environmentObject(UserSettings())
 }
 
@@ -75,6 +81,7 @@ private struct SectionCell: View {
 private struct CellWithPicker: View {
     let title: String
     let basicValue: Int
+    var maxLength = 100
     @Binding var selection: Int
     
     var body: some View {
@@ -95,7 +102,7 @@ private struct CellWithPicker: View {
     }
     
     private func range(_ baseValue: Int) -> Range<Int> {
-        return baseValue..<101
+        return baseValue..<maxLength + 1
     }
 }
 
@@ -107,9 +114,8 @@ private struct CellWithSlider: View {
         HStack {
             Text(title)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            CustomSlider(toggle: $toggle)
-                .frame(width: ElementSize.customtoggleSize.width,
-                       height: ElementSize.customtoggleSize.height)
+            CustomSlider(toggle: $toggle, title: ("×", "◯"))
+                .modifier(Modifiers.customSlider)
         }
     }
 }

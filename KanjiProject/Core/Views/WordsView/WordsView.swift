@@ -34,6 +34,18 @@ struct WordsView: View {
                             .clipShape(RoundedRectangle(cornerRadius: Settings.buttonsCornerRadius))
                     }
                     
+                    NavigationLink {
+                        CheckWordsView(storeOperations: .init(store: store,
+                                                              userSettings: userSettings))
+                    } label: {
+                        Text("ПРОВЕКА СЛОВ")
+                            .frame(maxWidth: .infinity)
+                            .background {
+                                Color.gray
+                            }
+                    }
+
+                    
                     NavigationLink("To Learn") {
                         if let word = store.baseWordsStore.getAll(for: currentLevel).randomElement() {
                             WordLearningView(level: currentLevel, currentWord: word)

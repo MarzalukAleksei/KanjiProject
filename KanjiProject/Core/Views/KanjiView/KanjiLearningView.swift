@@ -120,6 +120,7 @@ struct KanjiLearningView: View {
                 }
             }
         }
+        
         .blur(radius: showWordDetail ? Settings.blurEffectValue : 0)
 
         .alert("Вы точно хотите удалить этот кандзи из списка?", isPresented: $showDeleteWarning, actions: {
@@ -137,7 +138,7 @@ struct KanjiLearningView: View {
                 repeatWrongsButton()
             }
             
-            Button("Добавить дополнительные \(userSettings.maxLearningElementsCount) кандзи") {
+            Button("Добавить дополнительные \(userSettings.newKanjiInConfirmationDialog) кандзи") {
                 addWordsButton()
             }
             

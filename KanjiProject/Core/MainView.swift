@@ -43,7 +43,7 @@ struct MainView: View {
 //                    .tag(TabBarElements.card)
 //                SearchView()
 //                    .tag(TabBarElements.search)
-                SettingView()
+                SettingsView()
                     .tag(TabBarElements.settings)
             }
             .padding(.bottom, 0) // поставил 0 вместо 53 так как здесь тернарный оператор не работает

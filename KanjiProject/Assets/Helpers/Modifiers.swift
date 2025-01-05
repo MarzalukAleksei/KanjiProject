@@ -53,6 +53,16 @@ class Modifiers {
     static let mainKanji = Kanjimodifier()
     
     static let keyModalViewText = KeyModalViewTextModifiers()
+    
+    static let customSlider = CustomSlidermodifier()
+}
+
+struct CustomSlidermodifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: ElementSize.customtoggleSize.width,
+                   height: ElementSize.customtoggleSize.height)
+    }
 }
 
 struct Kanjimodifier: ViewModifier {

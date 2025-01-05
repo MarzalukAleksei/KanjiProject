@@ -59,6 +59,7 @@
 		AF34E55F2CADC7C200DE530F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF34E55E2CADC7C200DE530F /* Colors.xcassets */; };
 		AF362A742AF59443006DF143 /* LevelSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF362A732AF59443006DF143 /* LevelSelectorView.swift */; };
 		AF362A762AF5948C006DF143 /* KanjiTestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF362A752AF5948C006DF143 /* KanjiTestType.swift */; };
+		AF37E13F2D1C9AB700BC986B /* CheckWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37E13E2D1C9AB700BC986B /* CheckWordsView.swift */; };
 		AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */; };
 		AF3A72B82A7D1C3000A5513C /* ScrollPartsModifires.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B72A7D1C3000A5513C /* ScrollPartsModifires.swift */; };
 		AF3A72BA2A7D4AD500A5513C /* CloseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B92A7D4AD500A5513C /* CloseScrollView.swift */; };
@@ -183,7 +184,7 @@
 		AFF34E872BDB1F0300CF7098 /* SetKankenKnajiTranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF34E862BDB1F0300CF7098 /* SetKankenKnajiTranslateView.swift */; };
 		AFF443A22A51B05100FF4404 /* SavedData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFF443A02A51B05100FF4404 /* SavedData.xcdatamodeld */; };
 		AFF528372AB2F71200CC5453 /* SelectedKanjiListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF528362AB2F71200CC5453 /* SelectedKanjiListRow.swift */; };
-		AFFA9DB02D064E53005423E8 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA9DAF2D064E53005423E8 /* SettingView.swift */; };
+		AFFA9DB02D064E53005423E8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA9DAF2D064E53005423E8 /* SettingsView.swift */; };
 		AFFA9DB22D06565D005423E8 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA9DB12D06565D005423E8 /* UserSettings.swift */; };
 		AFFBE7CB2B8CE22E0029481B /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFBE7CA2B8CE22E0029481B /* FirebaseManager.swift */; };
 		AFFC08AD2A822AF60043B741 /* KanjiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC08AC2A822AF60043B741 /* KanjiView.swift */; };
@@ -258,6 +259,7 @@
 		AF34E55E2CADC7C200DE530F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		AF362A732AF59443006DF143 /* LevelSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectorView.swift; sourceTree = "<group>"; };
 		AF362A752AF5948C006DF143 /* KanjiTestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTestType.swift; sourceTree = "<group>"; };
+		AF37E13E2D1C9AB700BC986B /* CheckWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckWordsView.swift; sourceTree = "<group>"; };
 		AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupView.swift; sourceTree = "<group>"; };
 		AF3A72B72A7D1C3000A5513C /* ScrollPartsModifires.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPartsModifires.swift; sourceTree = "<group>"; };
 		AF3A72B92A7D4AD500A5513C /* CloseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseScrollView.swift; sourceTree = "<group>"; };
@@ -383,7 +385,7 @@
 		AFF34E862BDB1F0300CF7098 /* SetKankenKnajiTranslateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetKankenKnajiTranslateView.swift; sourceTree = "<group>"; };
 		AFF443A12A51B05100FF4404 /* SavedData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SavedData.xcdatamodel; sourceTree = "<group>"; };
 		AFF528362AB2F71200CC5453 /* SelectedKanjiListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedKanjiListRow.swift; sourceTree = "<group>"; };
-		AFFA9DAF2D064E53005423E8 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		AFFA9DAF2D064E53005423E8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AFFA9DB12D06565D005423E8 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		AFFBE7CA2B8CE22E0029481B /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		AFFC08AC2A822AF60043B741 /* KanjiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiView.swift; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 		AF5621782B8CEB670067F87D /* Observer */ = {
 			isa = PBXGroup;
 			children = (
+				AFEF74532ABBB586002AB67D /* TabBarState.swift */,
 				AF5621792B8CEB7C0067F87D /* DataLoading.swift */,
 				AF3D53B92C24E7F3005B495F /* GlobalChanging.swift */,
 				AFFA9DB12D06565D005423E8 /* UserSettings.swift */,
@@ -637,6 +640,7 @@
 			children = (
 				AF8122AE2B724BF200CCE83A /* WordsView.swift */,
 				AF807C5D2CD84CB800E56677 /* LearnWordView.swift */,
+				AF37E13E2D1C9AB700BC986B /* CheckWordsView.swift */,
 				AF5621742B8CE79E0067F87D /* CreatingWordView.swift */,
 				AF5621762B8CE8460067F87D /* SearchWordView.swift */,
 				AFF34E862BDB1F0300CF7098 /* SetKankenKnajiTranslateView.swift */,
@@ -843,7 +847,6 @@
 				AF3A72BB2A7E4AC500A5513C /* ElementSize.swift */,
 				AFFC08C32A82A6840043B741 /* Settings.swift */,
 				AF1EB0792A99693200850A3B /* Extensions.swift */,
-				AFEF74532ABBB586002AB67D /* TabBarState.swift */,
 				AFFF94B82B52F80400DD01EB /* TextSizes.swift */,
 				AFA967F52C1F3FE400E42EEC /* ElementsColors.swift */,
 				AF044B2F2C2C8335000746AA /* Massages.swift */,
@@ -925,7 +928,7 @@
 		AFFA9DAE2D064E3E005423E8 /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
-				AFFA9DAF2D064E53005423E8 /* SettingView.swift */,
+				AFFA9DAF2D064E53005423E8 /* SettingsView.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -989,7 +992,7 @@
 					New,
 				);
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					AFAF80D529D9C646002B9921 = {
 						CreatedOnToolsVersion = 14.2;
@@ -1184,6 +1187,7 @@
 				AF3D53BC2C29B0B0005B495F /* CloseButton.swift in Sources */,
 				AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */,
 				AFFC08B42A823EAB0043B741 /* LevelButton.swift in Sources */,
+				AF37E13F2D1C9AB700BC986B /* CheckWordsView.swift in Sources */,
 				AFA2BEB72B71984600BAC9EB /* WordsStore.swift in Sources */,
 				AF69CE712A001739009C7B92 /* ButtonsImages.swift in Sources */,
 				AF960B432A855DD000A33373 /* NouryokuKanjiLearningView.swift in Sources */,
@@ -1222,7 +1226,7 @@
 				AFBA6FF929F3640F008E11BB /* CustomFonts.swift in Sources */,
 				AFFC08B02A8234980043B741 /* CustomNavigationBarView.swift in Sources */,
 				AFAF80DA29D9C646002B9921 /* KanjiProjectApp.swift in Sources */,
-				AFFA9DB02D064E53005423E8 /* SettingView.swift in Sources */,
+				AFFA9DB02D064E53005423E8 /* SettingsView.swift in Sources */,
 				AF3FEB9E2AF6419600D40B23 /* KankenScrollListView.swift in Sources */,
 				AFFC08C42A82A6840043B741 /* Settings.swift in Sources */,
 				AFFBE7CB2B8CE22E0029481B /* FirebaseManager.swift in Sources */,
@@ -1238,6 +1242,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1299,6 +1304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

@@ -53,9 +53,8 @@ struct KanjiView: View {
                     }
 // MARK: Custom Toggle
                     HStack {
-                        CustomSlider(toggle: $toggle, title: ("", ""))
-                            .frame(width: ElementSize.customtoggleSize.width,
-                                   height: ElementSize.customtoggleSize.height)
+                        CustomSlider(toggle: $toggle)
+                            .modifier(Modifiers.customSlider)
                         Spacer()
                     }
                     .padding(.leading, Settings.padding)

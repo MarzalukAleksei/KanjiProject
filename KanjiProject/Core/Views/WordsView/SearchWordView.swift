@@ -31,7 +31,7 @@ struct SearchWordView: View {
                             .foregroundStyle(.white)
                     }
                 }
-                .padding(20)
+                .padding(Settings.padding)
             }
             .frame(height: 40)
             
@@ -81,7 +81,7 @@ struct SearchWordView: View {
         .environmentObject(TabBarState())
 }
 
-actor Words {
+private actor Words {
     let words: [WordModel]
     
     init(words: [WordModel]) {

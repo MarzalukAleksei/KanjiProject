@@ -57,6 +57,29 @@ struct EditWordView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 0.1)
                     }
+                
+                // MARK: УДАЛИТЬ ЭТОТ БЛОК ПОСЛЕ ОКОНЧАНИЯ РАБОТЫ СО СЛОВОМ
+                HStack {
+                    ForEach(NouryokuLevel.allCases.reversed(), id: \.self) { cell in
+                        if cell != .another {
+                            Button {
+                                setLevel(cell)
+                            } label: {
+                                let inTag = word.levelInTag
+                                Circle()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(inTag.contains(where: { $0 == cell }) ? .gray : .black)
+                                    .overlay {
+                                        Text("\(cell)")
+                                            .foregroundColor(.white)
+                                    }
+                                
+                            }
+                            
+                        }
+                    }
+                }
+                
                 HStack {
                     Text("Слово и его чтение:")
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -114,12 +137,29 @@ struct EditWordView: View {
         }
     }
     
+    // MARK: УДАЛИТЬ ПОСЛЕ ОКОНЧАНИЯ РАБОТЫ СО СЛОВОМ
+    func setLevel(_ level: NouryokuLevel) {
+        var inTag = word.levelInTag
+        if inTag.contains(level) {
+            inTag.removeAll(where: { $0 == level })
+        } else {
+            inTag.append(level)
+        }
+        word.setLevels(inTag)
+    }
+    
     func wordReadingFrameHeight() -> CGFloat {
         TextSizes.wordEdit * 3
     }
     
+//    func isDataChanged() -> Bool {
+//        if constantWord.reading != word.reading || constantWord.meaningInRussian != word.meaningInRussian {
+//            return true
+//        }
+//        return false
+//    }
     func isDataChanged() -> Bool {
-        if constantWord.reading != word.reading || constantWord.meaningInRussian != word.meaningInRussian {
+        if constantWord.reading != word.reading || constantWord.meaningInRussian != word.meaningInRussian || constantWord.levelInTag != word.levelInTag {
             return true
         }
         return false

@@ -8,9 +8,11 @@
 import Foundation
 
 class UserSettings: ObservableObject, Codable {
-    @Published var showConformationDialog = false
-    @Published var showCurrentLevelOnly = false
-    @Published var maxLearningElementsCount = DatabaseOptions.maxLearningElementsCountBasicValue
+    @Published var showKanjiConformationDialog = false // not used
+    @Published var showCurrentLevelOnly = false // not used
+    @Published var newKanjiInConfirmationDialog = DatabaseOptions.maxLearningElementsCountBasicValue
+    @Published var newKanjiInDay = DatabaseOptions.newKanjiInDayConstantValue // not used
+    @Published var newWordsInDay = DatabaseOptions.newWordsInDayConstantValue // not used
     
 //    @Published var answersInRowFirst = 5
 //    @Published var answersInRowSecond = 10
@@ -20,8 +22,8 @@ class UserSettings: ObservableObject, Codable {
 //    @Published var minutesPassedThird = 60 * 24 * 10 // 10 days later
     
     private var conformationDialogState: Bool {
-        get { showConformationDialog }
-        set { showConformationDialog = newValue }
+        get { showKanjiConformationDialog }
+        set { showKanjiConformationDialog = newValue }
     }
     
     private var showCurrentLevelOnlyState: Bool {
@@ -30,16 +32,29 @@ class UserSettings: ObservableObject, Codable {
     }
     
     private var maxLearningElementsCountState: Int {
-        get { maxLearningElementsCount }
-        set { maxLearningElementsCount = newValue }
+        get { newKanjiInConfirmationDialog }
+        set { newKanjiInConfirmationDialog = newValue }
+    }
+    
+    private var newKanjiInDayState: Int {
+        get { newKanjiInDay }
+        set { newKanjiInDay = newValue }
+    }
+    
+    private var newWordsInDayState: Int {
+        get { newWordsInDay }
+        set { newWordsInDay = newValue }
     }
 
     private enum CodingKeys: String, CodingKey {
         case showConformationDialog
         case showCurrentLevelOnly
         case maxLearningElementsCount
+        case newWordsInDay
+        case newKaniInDay
     }
     
+    /// Used for invironment
     init() {}
 
     required init(from decoder: Decoder) throws {
@@ -47,12 +62,17 @@ class UserSettings: ObservableObject, Codable {
         conformationDialogState = try container.decode(Bool.self, forKey: .showConformationDialog)
         showCurrentLevelOnlyState = try container.decode(Bool.self, forKey: .showCurrentLevelOnly)
         maxLearningElementsCountState = try container.decode(Int.self, forKey: .maxLearningElementsCount)
+        newWordsInDayState = try container.decode(Int.self, forKey: .newWordsInDay)
+        newKanjiInDayState = try container.decode(Int.self, forKey: .newKaniInDay)
     }
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(showConformationDialog, forKey: .showConformationDialog)
+        
+        try container.encode(showKanjiConformationDialog, forKey: .showConformationDialog)
         try container.encode(showCurrentLevelOnly, forKey: .showCurrentLevelOnly)
-        try container.encode(maxLearningElementsCount, forKey: .maxLearningElementsCount)
+        try container.encode(newKanjiInConfirmationDialog, forKey: .maxLearningElementsCount)
+        try container.encode(newKanjiInDay, forKey: .newKaniInDay)
+        try container.encode(newWordsInDay, forKey: .newWordsInDay)
     }
 }

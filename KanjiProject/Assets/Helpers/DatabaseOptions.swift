@@ -22,4 +22,8 @@ class DatabaseOptions {
     static let answersInRowThird = 15
     
     static let maxLearningElementsCountBasicValue = 20
+    
+    static let newKanjiInDayConstantValue = 0
+    
+    static let newWordsInDayConstantValue = 0
 }

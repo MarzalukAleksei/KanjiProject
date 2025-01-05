@@ -15,10 +15,24 @@ struct WordModel: Codable, Hashable, Identifiable {
     var reading: String
     let type: String
     let levels: [String]
-    let levelInTag: [NouryokuLevel]
+    private(set) var levelInTag: [NouryokuLevel]
     private var lastAnswerRight: Bool?
     private var _rightAnswersInRow: Int?
     private var inList: Bool?
+    
+    private(set) var thisWordWasChecked: Bool? // временное свойство. убрать после проверки всех слов в базе
+    
+    mutating func wordWasChecked() {
+        self.thisWordWasChecked = true
+    }
+    
+    mutating func checkItLater() {
+        self.thisWordWasChecked = false
+    }
+    
+    mutating func setLevels(_ levels: [NouryokuLevel]) {
+        levelInTag = levels
+    }
     
     init(body: String, meaningInEnglish: String, meaningInRussian: String, reading: String, type: String, levels: [String], levelInTag: [NouryokuLevel], lastAnswerRight: Bool? = nil, rightAnswersInRow: Int? = nil) {
         self.id = UUID()
