@@ -17,10 +17,17 @@ class StoreOperations {
         self.userSettings = userSettings
     }
     
-    /// Обновление файла
+    /// Обновление файл канкена
     func updKanjiKankenFile() {
         Task {
             await store.kanjiKankenStore.saveInFileManager()
+        }
+    }
+    
+    /// Обновить файл словаря
+    func updBaseWordFile() {
+        Task {
+            await store.baseWordsStore.saveInFileManager()
         }
     }
     

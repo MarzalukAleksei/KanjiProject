@@ -17,6 +17,8 @@ struct WordsView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                CustomNavigationBarView(title: "文字・語彙", corners: [], cornerRadius: ElementSize.navigationCornerRadius, heigh: ElementSize.customNavigationBarHeight)
+                
                 VStack {
                     BaseWordsSelectLevelView(currentLevel: $currentLevel)
                     Divider()
@@ -74,11 +76,13 @@ struct WordsView: View {
                 Color.gray.ignoresSafeArea()
                     .modifier(Modifiers.tabBarSize)
             }
-            
             .onAppear {
                 currentLevel = wordLevel
                 tabBar.tabBarIsHidden = false
-        }
+            }
+            .onChange(of: currentLevel) { newValue in
+                wordLevel = newValue
+            }
         }
     }
 }

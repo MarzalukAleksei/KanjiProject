@@ -49,8 +49,8 @@ struct LearnWordView: View {
                                 Spacer()
                                 WordWithFuriganaView(word: currentWord.getTextAndReading() ,
                                                      readingIsHidden: hideReading,
-                                                     kanjiBody: ElementSize.kanjiSize(geo.size.width, 1),
-                                                     kanjiReading: ElementSize.furiganaSize(geo.size.width, 1))
+                                                     kanjiBody: TextSizes.kanjiSize(geo.size.width, 1),
+                                                     kanjiReading: TextSizes.furiganaSize(geo.size.width, 1))
                                 
                                 Spacer()
                             }

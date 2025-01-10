@@ -100,7 +100,7 @@ private struct RectData: View {
         VStack(spacing: 0) {
             let ar = TextAndReading.setTRArray(getWord())
             WordWithFuriganaView(word: ar, currentKanji: .empty, readingIsHidden: false)
-                .setFontSize(kanjiSize: ElementSize.kanjiSize(size), readingSize: ElementSize.furiganaSize(size))
+                .setFontSize(kanjiSize: TextSizes.kanjiSize(size), readingSize: TextSizes.furiganaSize(size))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .frame(maxWidth: .infinity)
             let word = setWord()
@@ -109,7 +109,7 @@ private struct RectData: View {
             ForEach(translates, id: \.self) { translate in
                 Text(translate)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.system(size: ElementSize.furiganaSize(size)))
+                    .font(.system(size: TextSizes.furiganaSize(size)))
             }
             .padding(.horizontal, Settings.padding)
             

@@ -473,7 +473,6 @@
 				AF5600782AA46E9B00F0123C /* YojijukugoStore.swift */,
 				AF4F2AA12AB1C67000F38EE9 /* GiseigoStore.swift */,
 				AF9D2BD02AC4D3F900257D82 /* BunpouStore.swift */,
-				AF1EB0552A972E4B00850A3B /* Store.swift */,
 				AFA2BEB62B71984600BAC9EB /* WordsStore.swift */,
 				AFC9DACA2C04D1C5006A7ED0 /* BushuStore.swift */,
 				AF3D53B52C2450AC005B495F /* KanjiKankenExamplesTranslationsStore.swift */,
@@ -546,6 +545,7 @@
 				AF5621792B8CEB7C0067F87D /* DataLoading.swift */,
 				AF3D53B92C24E7F3005B495F /* GlobalChanging.swift */,
 				AFFA9DB12D06565D005423E8 /* UserSettings.swift */,
+				AF1EB0552A972E4B00850A3B /* Store.swift */,
 			);
 			path = Observer;
 			sourceTree = "<group>";
