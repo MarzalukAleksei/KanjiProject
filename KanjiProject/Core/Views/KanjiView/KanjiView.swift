@@ -112,10 +112,10 @@ struct KanjiView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.vertical, Settings.paddingBetweenText)
                     .padding(.horizontal, Settings.padding)
-                GeometryReader { gep in
+//                GeometryReader { geo in
                     UserActivityView(userActivity: UserActivity(data: userActivity).activity)
                         .padding(.horizontal, Settings.padding)
-                }
+//                }
                 
             }
             .onAppear {

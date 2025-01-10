@@ -40,15 +40,9 @@ class ElementSize {
     
     static let bottomButtonImage = CGSize(width: 40, height: 40)
     
-    static func kanjiSize(_ size: CGFloat, _ multiplier: CGFloat = 1.5) -> CGFloat {
-        size / 15 / multiplier
-    }
-    
-    static func furiganaSize(_ size: CGFloat, _ multiplier: CGFloat = 1.5) -> CGFloat {
-        kanjiSize(size, multiplier) / 1.7
-    }
-    
     static let questionMarkSize = CGSize(width: 20, height: 20)
     
     static let userActivityCellSize = CGSize(width: 30, height: 30)
+    
+    static let furiganaPropotions = 0.35
 }

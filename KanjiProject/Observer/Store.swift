@@ -29,7 +29,7 @@ final class Store: ObservableObject {
 //        baseWordsStore.updateAll(data: JSONManager.manager.getBaseWords())
     }
     
-    /// This methood update word in store, than save in file
+    /// This methood update word in store, than save a file
     /// - Parameter word: given word
     func updateWord(_ word: WordModel) async {
         if kanjiKankenExamplesTranslationsStore.getAll().contains(where: { $0.id == word.id }) {
@@ -57,7 +57,6 @@ final class Store: ObservableObject {
         kanjiKankenExamplesTranslationsStore = store.kanjiKankenExamplesTranslationsStore
         goiStore = store.goiStore
     }
-    
     
     /// Обновляем существующий кандзи
     func updateKanji(_ kanji: KanjiModel) {

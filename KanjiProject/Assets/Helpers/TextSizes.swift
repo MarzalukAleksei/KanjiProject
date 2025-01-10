@@ -31,4 +31,12 @@ final class TextSizes {
     static let learningWordBody: CGFloat = 50
     
     static let learningWordReading: CGFloat = 30
+    
+    static func kanjiSize(_ size: CGFloat, _ multiplier: CGFloat = 1.5) -> CGFloat {
+        size / 15 / multiplier
+    }
+    
+    static func furiganaSize(_ size: CGFloat, _ multiplier: CGFloat = 1.5) -> CGFloat {
+        kanjiSize(size, multiplier) * ElementSize.furiganaPropotions
+    }
 }

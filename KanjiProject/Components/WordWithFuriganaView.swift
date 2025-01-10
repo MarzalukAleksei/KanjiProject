@@ -11,13 +11,15 @@ struct WordWithFuriganaView: View {
     private var word: [TextAndReading]
     private let currentKanji: KanjiKankenModel
     private let readingIsHidden: Bool
-    private var kanjiBody = TextSizes.kanjiBody
-    private var kanjiReading = TextSizes.kanjiReading
+    private var kanjiBody: CGFloat
+    private var kanjiReading: CGFloat
     
+    /// Setup currentWord = .empty
     init(word: [TextAndReading],
          readingIsHidden: Bool,
          kanjiBody: CGFloat = TextSizes.kanjiBody,
-         kanjiReading: CGFloat = TextSizes.kanjiReading) {
+         kanjiReading: CGFloat = TextSizes.kanjiReading)
+    {
         self.word = word
         self.currentKanji = .empty
         self.readingIsHidden = readingIsHidden
@@ -25,7 +27,12 @@ struct WordWithFuriganaView: View {
         self.kanjiReading = kanjiReading
     }
     
-    init(word: [TextAndReading], currentKanji: KanjiKankenModel, readingIsHidden: Bool, kanjiBody: CGFloat = TextSizes.kanjiBody, kanjiReading: CGFloat = TextSizes.kanjiReading) {
+    init(word: [TextAndReading],
+         currentKanji: KanjiKankenModel,
+         readingIsHidden: Bool,
+         kanjiBody: CGFloat = TextSizes.kanjiBody,
+         kanjiReading: CGFloat = TextSizes.kanjiReading)
+    {
         self.word = word
         self.currentKanji = currentKanji
         self.readingIsHidden = readingIsHidden
@@ -33,7 +40,12 @@ struct WordWithFuriganaView: View {
         self.kanjiReading = kanjiReading
     }
     
-    init(word: WordModel, currentKanji: KanjiKankenModel, readingIsHidden: Bool, kanjiBody: CGFloat = TextSizes.kanjiBody, kanjiReading: CGFloat = TextSizes.kanjiReading) {
+    init(word: WordModel,
+         currentKanji: KanjiKankenModel,
+         readingIsHidden: Bool,
+         kanjiBody: CGFloat = TextSizes.kanjiBody,
+         kanjiReading: CGFloat = TextSizes.kanjiReading)
+    {
         self.word = []
         self.currentKanji = currentKanji
         self.readingIsHidden = readingIsHidden
@@ -56,6 +68,7 @@ struct WordWithFuriganaView: View {
                                     .opacity(readingIsHidden ? 0 : 1)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .padding(.leading, part.reading.count == 1 ? kanjiReading / 2.5 : 0)
+//                                    .padding(.leading, furiganaPadding(part))
                             } else {
                                 Color.clear
                                     .frame(height: kanjiBody * 0.8)
@@ -81,6 +94,7 @@ struct WordWithFuriganaView: View {
                                 .opacity(readingIsHidden ? 0 : 1)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.leading, part.reading.count == 1 ? kanjiReading / 2.5 : 0)
+//                                .padding(.leading, furiganaPadding(part))
                         } else {
                             Color.clear
                                 .frame(height: kanjiBody * 0.8)
@@ -92,6 +106,17 @@ struct WordWithFuriganaView: View {
                 .frame(width: part.width(kanjiReading: kanjiReading, kanjiBody: kanjiBody))
             }
         }
+    }
+    
+    // MARK: Поправить отступы
+    private func furiganaPadding(_ part: TextAndReading) -> CGFloat {
+        let partReadingCount = Double(part.reading.count)
+        let roundedPropotions = 1 / ElementSize.furiganaPropotions
+        if partReadingCount < roundedPropotions {
+            let result = kanjiBody - (kanjiReading * roundedPropotions.rounded(.down))
+            return result / partReadingCount.rounded(.up) - partReadingCount.rounded(.down)
+        }
+        return 0
     }
     
     func setFontSize(kanjiSize: CGFloat, readingSize: CGFloat) -> some View {
