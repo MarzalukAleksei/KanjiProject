@@ -20,6 +20,10 @@ struct SettingsView: View {
                 VStack(spacing: Settings.paddingBetweenText) {
                     SectionCell(title: "Настройки отображения кандзи")
                     
+                    CellWithSlider(title: "Отображать значние на английском", toggle: $userSettings.showEnglishMeaning)
+                    
+                    Divider()
+                    
                     CellWithSlider(title: "Всегда показывать окно выбора",
                                    toggle: $userSettings.showKanjiConformationDialog)
                     

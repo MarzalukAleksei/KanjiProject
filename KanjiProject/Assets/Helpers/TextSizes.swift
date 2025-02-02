@@ -8,7 +8,7 @@
 import Foundation
 
 final class TextSizes {
-    static let kanjiBody: CGFloat = 20
+    static let kanjiBody: CGFloat = 30
     
     static let kanjiReading: CGFloat = 12
     
@@ -21,8 +21,8 @@ final class TextSizes {
     static let spacingBetweenWords: CGFloat = 5
     
     static let scloolLevelLabel: CGFloat = 25
-    
-    static let kanjiSize: CGFloat = 65
+
+    static let kanjiSize: CGFloat = 100
     
     static let bottomButtonsText: CGFloat = 30
     

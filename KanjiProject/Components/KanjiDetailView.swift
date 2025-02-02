@@ -59,22 +59,48 @@ struct KanjiDetailView: View {
                 // MARK: Отображение значения кандзи на русском
                 if let meaningInRussion = currentKanji.meaningInRussion {
 //                    Divider()
-                    
-                    Text(meaningInRussion.uppercased())
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, Settings.padding)
+                    HStack(spacing: 5) {
+                        Text("[RU]")
+                            .font(.system(size: 20))
+                            .frame(maxHeight: .infinity, alignment: .top)
+                        
+                        Text(meaningInRussion.uppercased())
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, Settings.padding)
+                            .font(.system(size: 30))
+                    }
                 }
                 
                 Divider()
+                if let meaningInRussion = currentKanji.meaningInEng {
+//                    Divider()
+                    HStack(spacing: 5) {
+                        Text("[EN]")
+                            .font(.system(size: 20))
+                            .frame(maxHeight: .infinity, alignment: .top)
+                        
+                        Text(meaningInRussion.uppercased())
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, Settings.padding)
+                            .font(.system(size: 30))
+                    }
+                    
+                    Divider()
+                }
                 
                 // MARK: Значание на японском
                 HStack {
+                    Text("[JP]")
+                        .font(.system(size: 20))
+                        .frame(maxHeight: .infinity, alignment: .top)
+                    
                     Text(currentKanji.meaning)
+                        .font(.system(size: 25))
                     Spacer()
                 }
                 .padding(.horizontal, Settings.padding)
                 
-                Divider()
+                BoldDivider(depth: 3)
                 
                 // MARK: Примеры
                 KanjiExamplesRowView(currentKankenKanji: currentKanji)
@@ -121,4 +147,18 @@ struct KanjiDetailView: View {
 
 #Preview {
     KanjiDetailView(currentKanji: .MOCK_KANJIKANKEN)
+}
+
+private struct TranslateSection: View {
+    let groupName: String
+    let translate: String
+    
+    var body: some View {
+        HStack {
+            Text(groupName)
+                .frame(maxHeight: .infinity, alignment: .top)
+            
+            Text(translate)
+        }
+    }
 }

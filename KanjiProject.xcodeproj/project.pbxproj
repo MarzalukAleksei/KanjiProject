@@ -48,6 +48,7 @@
 		AF2D7FAE2AC45D9E00642B48 /* Bunpou.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF2D7FAD2AC45D9E00642B48 /* Bunpou.csv */; };
 		AF2D7FB02AC45DD600642B48 /* BunpouMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D7FAF2AC45DD600642B48 /* BunpouMapper.swift */; };
 		AF2D7FB22AC45E1200642B48 /* BunpouModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D7FB12AC45E1200642B48 /* BunpouModel.swift */; };
+		AF2EF3042D3403E800F9DECF /* BoldDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2EF3032D3403E800F9DECF /* BoldDivider.swift */; };
 		AF30EAFE29E9FE1C00E5B7A9 /* ZeroGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF30EAFD29E9FE1C00E5B7A9 /* ZeroGothic.otf */; };
 		AF30EB0029EAB79900E5B7A9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF30EAFF29EAB79900E5B7A9 /* Images.xcassets */; };
 		AF30EB0229EAB7DF00E5B7A9 /* OpenScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30EB0129EAB7DF00E5B7A9 /* OpenScrollView.swift */; };
@@ -99,6 +100,7 @@
 		AF56AB5A2C4166C8000C1A31 /* GoiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF56AB592C4166C8000C1A31 /* GoiMapper.swift */; };
 		AF56AB5C2C4168F8000C1A31 /* 語彙N2.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF56AB5B2C4168F8000C1A31 /* 語彙N2.csv */; };
 		AF56AB5E2C41BF27000C1A31 /* GoiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF56AB5D2C41BF27000C1A31 /* GoiStore.swift */; };
+		AF67723C2D4FF48700B55893 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67723B2D4FF48700B55893 /* ActivityModel.swift */; };
 		AF69CE712A001739009C7B92 /* ButtonsImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69CE702A001739009C7B92 /* ButtonsImages.swift */; };
 		AF6A2DF229E5AF5100D7C1A9 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */; };
 		AF6A2E0129E62CDA00D7C1A9 /* RefactoredStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A2E0029E62CDA00D7C1A9 /* RefactoredStores.swift */; };
@@ -248,6 +250,7 @@
 		AF2D7FAD2AC45D9E00642B48 /* Bunpou.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bunpou.csv; sourceTree = "<group>"; };
 		AF2D7FAF2AC45DD600642B48 /* BunpouMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunpouMapper.swift; sourceTree = "<group>"; };
 		AF2D7FB12AC45E1200642B48 /* BunpouModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunpouModel.swift; sourceTree = "<group>"; };
+		AF2EF3032D3403E800F9DECF /* BoldDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldDivider.swift; sourceTree = "<group>"; };
 		AF30EAFD29E9FE1C00E5B7A9 /* ZeroGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ZeroGothic.otf; sourceTree = "<group>"; };
 		AF30EAFF29EAB79900E5B7A9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AF30EB0129EAB7DF00E5B7A9 /* OpenScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenScrollView.swift; sourceTree = "<group>"; };
@@ -300,6 +303,7 @@
 		AF56AB592C4166C8000C1A31 /* GoiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoiMapper.swift; sourceTree = "<group>"; };
 		AF56AB5B2C4168F8000C1A31 /* 語彙N2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "語彙N2.csv"; sourceTree = "<group>"; };
 		AF56AB5D2C41BF27000C1A31 /* GoiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoiStore.swift; sourceTree = "<group>"; };
+		AF67723B2D4FF48700B55893 /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		AF69CE702A001739009C7B92 /* ButtonsImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsImages.swift; sourceTree = "<group>"; };
 		AF6A2DF129E5AF5100D7C1A9 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		AF6A2E0029E62CDA00D7C1A9 /* RefactoredStores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactoredStores.swift; sourceTree = "<group>"; };
@@ -631,6 +635,7 @@
 				AF4554912C315F74005D5030 /* ListOfKanjiInGivenWordView.swift */,
 				AF17B5632CF8D0B600E436AB /* ModalKeyDeteilView.swift */,
 				AF17B60B2D0196F900E436AB /* UserActivityView.swift */,
+				AF2EF3032D3403E800F9DECF /* BoldDivider.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -892,6 +897,7 @@
 				AF728D982ADD0D8D0098765D /* KanjiKankenModel.swift */,
 				AFAF80ED29D9CEBF002B9921 /* KanjiModel.swift */,
 				AF17B6092D01013F00E436AB /* UserActivity.swift */,
+				AF67723B2D4FF48700B55893 /* ActivityModel.swift */,
 				AFA2BEB42B718EB900BAC9EB /* WordModel.swift */,
 				AF5600762AA46C9400F0123C /* YojijukugoModel.swift */,
 			);
@@ -1182,6 +1188,7 @@
 				AF5600772AA46C9400F0123C /* YojijukugoModel.swift in Sources */,
 				AF52CDBE2AF508DD00C2D493 /* CoreMLManager.swift in Sources */,
 				AF728D972ADD0D6D0098765D /* KankenMapper.swift in Sources */,
+				AF2EF3042D3403E800F9DECF /* BoldDivider.swift in Sources */,
 				AF17B60C2D0196F900E436AB /* UserActivityView.swift in Sources */,
 				AF3FEBA62AF66A4F00D40B23 /* KankenReplacer.swift in Sources */,
 				AF3D53BC2C29B0B0005B495F /* CloseButton.swift in Sources */,
@@ -1213,6 +1220,7 @@
 				AFECE1772B64FE3C00ED2BE2 /* Parse.swift in Sources */,
 				AF7FBFBD2CE4CD4400FA1FA2 /* InterfaceTexts.swift in Sources */,
 				AF3D53BA2C24E7F3005B495F /* GlobalChanging.swift in Sources */,
+				AF67723C2D4FF48700B55893 /* ActivityModel.swift in Sources */,
 				AFF34E872BDB1F0300CF7098 /* SetKankenKnajiTranslateView.swift in Sources */,
 				AF4554922C315F74005D5030 /* ListOfKanjiInGivenWordView.swift in Sources */,
 				AFFF94B92B52F80400DD01EB /* TextSizes.swift in Sources */,

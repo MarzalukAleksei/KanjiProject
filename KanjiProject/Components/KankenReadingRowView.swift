@@ -17,6 +17,7 @@ struct KankenReadingRowView: View {
                     .font(.system(size: TextSizes.scloolLevelLabel))
                 Text(row)
                     .font(.system(size: TextSizes.kanjiBody))
+                    .bold()
             }
             Spacer()
         }

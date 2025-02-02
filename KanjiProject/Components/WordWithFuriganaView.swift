@@ -67,11 +67,11 @@ struct WordWithFuriganaView: View {
                                     .foregroundStyle(.red)
                                     .opacity(readingIsHidden ? 0 : 1)
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.leading, part.reading.count == 1 ? kanjiReading / 2.5 : 0)
-//                                    .padding(.leading, furiganaPadding(part))
+//                                    .padding(.leading, part.reading.count == 1 ? kanjiReading / 2.5 : 0)
+                                    .padding(.leading, furiganaPadding(part))
                             } else {
                                 Color.clear
-                                    .frame(height: kanjiBody * 0.8)
+                                    .frame(height: kanjiReading)
                             }
                         }
                         let text = sep(part)
@@ -93,11 +93,11 @@ struct WordWithFuriganaView: View {
                                 .font(.system(size: kanjiReading))
                                 .opacity(readingIsHidden ? 0 : 1)
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.leading, part.reading.count == 1 ? kanjiReading / 2.5 : 0)
-//                                .padding(.leading, furiganaPadding(part))
+//                                .padding(.leading, part.reading.count == 1 ? kanjiReading / 2.5 : 0)
+                                .padding(.leading, furiganaPadding(part))
                         } else {
                             Color.clear
-                                .frame(height: kanjiBody * 0.8)
+                                .frame(height: kanjiReading)
                         }
                         Text(part.text.removeAll(after: "（"))
                             .font(.system(size: kanjiBody))

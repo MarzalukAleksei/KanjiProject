@@ -9,6 +9,8 @@ import Foundation
 
 class UserActivity: IActivity {
     private(set) var activity: [Date]
+    private(set) var kanjiActivity: [ActivityModel]?
+    private(set) var wordsActivity: [ActivityModel]?
     
     required init(data: Data?) {
         activity = []

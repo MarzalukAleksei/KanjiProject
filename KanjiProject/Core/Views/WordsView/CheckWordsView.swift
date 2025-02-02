@@ -32,6 +32,10 @@ struct CheckWordsView: View { // ВРЕМЕННЫЙ ВЬЮ. УБРАТЬ ПОС�
                     
                     Spacer()
                     
+                    Text(global.wordToChange?.body ?? "")
+                    
+                    Spacer()
+                    
                     Button {
 //                        global.wordToChange = currentWord
                         showEditView = true

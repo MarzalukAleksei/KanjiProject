@@ -8,6 +8,7 @@
 import Foundation
 
 class UserSettings: ObservableObject, Codable {
+    @Published var showEnglishMeaning = true // not used
     @Published var showKanjiConformationDialog = false // not used
     @Published var showCurrentLevelOnly = false // not used
     @Published var newKanjiInConfirmationDialog = DatabaseOptions.maxLearningElementsCountBasicValue
@@ -45,6 +46,11 @@ class UserSettings: ObservableObject, Codable {
         get { newWordsInDay }
         set { newWordsInDay = newValue }
     }
+    
+    private var showEnglishMeaningState: Bool {
+        get { showEnglishMeaning }
+        set { showEnglishMeaning = newValue }
+    }
 
     private enum CodingKeys: String, CodingKey {
         case showConformationDialog
@@ -52,6 +58,7 @@ class UserSettings: ObservableObject, Codable {
         case maxLearningElementsCount
         case newWordsInDay
         case newKaniInDay
+        case showEnglishMeaning
     }
     
     /// Used for invironment
@@ -64,6 +71,7 @@ class UserSettings: ObservableObject, Codable {
         maxLearningElementsCountState = try container.decode(Int.self, forKey: .maxLearningElementsCount)
         newWordsInDayState = try container.decode(Int.self, forKey: .newWordsInDay)
         newKanjiInDayState = try container.decode(Int.self, forKey: .newKaniInDay)
+        showEnglishMeaningState = try container.decode(Bool.self, forKey: .showEnglishMeaning)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -74,5 +82,6 @@ class UserSettings: ObservableObject, Codable {
         try container.encode(newKanjiInConfirmationDialog, forKey: .maxLearningElementsCount)
         try container.encode(newKanjiInDay, forKey: .newKaniInDay)
         try container.encode(newWordsInDay, forKey: .newWordsInDay)
+        try container.encode(showEnglishMeaning, forKey: .showEnglishMeaning)
     }
 }

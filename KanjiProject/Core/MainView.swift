@@ -63,6 +63,11 @@ struct MainView: View {
             
         }
         .onAppear {
+            let all = store.baseWordsStore.getAll().filter { $0.reading.contains(" ")}
+            print(all.count)
+            for i in all {
+                print(i.body, i.reading)
+            }
 //            var result = store.kanjiKankenStore.getAll().map { $0.id }
 //            var missed: Set<Int> = []
 //            for i in result {
