@@ -70,4 +70,10 @@ class Settings {
     static var sectionPadding: CGFloat { return padding * 1.5 }
     
     static let paddingInUserActivity: CGFloat = 4
+    
+    /// Минимальное значение прозрачности для цвета ячейки активности
+    static let minActivityCellOpacity: CGFloat = 0.1
+    
+    ///
+    static let boldDividerDepth: CGFloat = 3
 }

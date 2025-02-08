@@ -8,7 +8,7 @@
 import Foundation
 
 class UserSettings: ObservableObject, Codable {
-    @Published var showEnglishMeaning = true // not used
+    @Published var showEnglishMeaning = true
     @Published var showKanjiConformationDialog = false // not used
     @Published var showCurrentLevelOnly = false // not used
     @Published var newKanjiInConfirmationDialog = DatabaseOptions.maxLearningElementsCountBasicValue

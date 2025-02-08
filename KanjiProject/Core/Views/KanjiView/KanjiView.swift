@@ -113,7 +113,7 @@ struct KanjiView: View {
                     .padding(.vertical, Settings.paddingBetweenText)
                     .padding(.horizontal, Settings.padding)
 //                GeometryReader { geo in
-                    UserActivityView(userActivity: UserActivity(data: userActivity).activity)
+                UserActivityView(userActivity: UserActivity(data: userActivity).kanjiActivity)
                         .padding(.horizontal, Settings.padding)
 //                }
                 

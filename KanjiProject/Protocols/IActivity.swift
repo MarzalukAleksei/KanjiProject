@@ -10,7 +10,7 @@ import Foundation
 protocol IActivity: Codable {
     init(data: Data?)
     
-    func newActivity()
+//    func newActivity()
 }
 
 extension IActivity {

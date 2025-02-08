@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct KanjiDetailView: View {
+    @EnvironmentObject var userSettings: UserSettings
     let currentKanji: KanjiKankenModel
 //    @State private var mockIndex: Int = 0
     @Binding var showImage: Bool
@@ -59,67 +60,47 @@ struct KanjiDetailView: View {
                 // MARK: Отображение значения кандзи на русском
                 if let meaningInRussion = currentKanji.meaningInRussion {
 //                    Divider()
-                    HStack(spacing: 5) {
-                        Text("[RU]")
-                            .font(.system(size: 20))
-                            .frame(maxHeight: .infinity, alignment: .top)
-                        
-                        Text(meaningInRussion.uppercased())
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, Settings.padding)
-                            .font(.system(size: 30))
-                    }
-                }
-                
-                Divider()
-                if let meaningInRussion = currentKanji.meaningInEng {
-//                    Divider()
-                    HStack(spacing: 5) {
-                        Text("[EN]")
-                            .font(.system(size: 20))
-                            .frame(maxHeight: .infinity, alignment: .top)
-                        
-                        Text(meaningInRussion.uppercased())
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, Settings.padding)
-                            .font(.system(size: 30))
-                    }
+                    Meaning(groupName: "[RU]", meaning: meaningInRussion)
                     
                     Divider()
                 }
                 
-                // MARK: Значание на японском
-                HStack {
-                    Text("[JP]")
-                        .font(.system(size: 20))
-                        .frame(maxHeight: .infinity, alignment: .top)
+                // MARK: Отображение значения кандзи на английском
+                if let meaningInEng = currentKanji.meaningInEng, userSettings.showEnglishMeaning {
+                    Meaning(groupName: "[EN]", meaning: meaningInEng)
                     
-                    Text(currentKanji.meaning)
-                        .font(.system(size: 25))
-                    Spacer()
+                    Divider()
                 }
-                .padding(.horizontal, Settings.padding)
                 
-                BoldDivider(depth: 3)
+                // MARK: Отображение значения кандзи на японском
+                Meaning(groupName: "[JP]", meaning: currentKanji.meaning)
+                
+                BoldDivider(depth: Settings.boldDividerDepth)
                 
                 // MARK: Примеры
                 KanjiExamplesRowView(currentKankenKanji: currentKanji)
                 
-                Divider()
                 
                 // MARK: Пишет сообщение о уровне JLPT
-                if let nouryokuLevel = currentKanji.nouryokuLevel {
-                    Text("Данный кандзи входит в список JLPT \(nouryokuLevel)")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, Settings.padding)
-                    
-                    Divider()
-                }
+//                  Divider()
+//                if let nouryokuLevel = currentKanji.nouryokuLevel {
+//                    Text("Данный кандзи входит в список JLPT \(nouryokuLevel)")
+//                        .frame(maxWidth: .infinity, alignment: .leading)
+//                        .padding(.horizontal, Settings.padding)
+//                    
+//                    Divider()
+//                }
+                
+                BoldDivider(depth: Settings.boldDividerDepth)
                 
                 // MARK: Изображение, подгружаемое из сети
                 if showImage {
+                    
                     KanjiImageView(currentKanji: currentKanji)
 //                } else {
+                } else {
+                    Color.clear
+                        .frame(height: 50)
                 }
 //                Color.black
 //                    .frame(maxHeight: .infinity)
@@ -147,6 +128,7 @@ struct KanjiDetailView: View {
 
 #Preview {
     KanjiDetailView(currentKanji: .MOCK_KANJIKANKEN)
+        .environmentObject(UserSettings())
 }
 
 private struct TranslateSection: View {
@@ -159,6 +141,24 @@ private struct TranslateSection: View {
                 .frame(maxHeight: .infinity, alignment: .top)
             
             Text(translate)
+        }
+    }
+}
+
+private struct Meaning: View {
+    let groupName: String
+    let meaning: String
+     
+    var body: some View {
+        HStack(spacing: 5) {
+            Text(groupName)
+                .font(.system(size: 20))
+                .frame(maxHeight: .infinity, alignment: .top)
+            
+            Text(meaning.uppercased())
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, Settings.padding)
+                .font(.system(size: 30))
         }
     }
 }

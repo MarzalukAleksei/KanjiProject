@@ -12,9 +12,8 @@ struct KanjiReadings: View {
     @Binding var hideKanjiReadings: Bool
     var body: some View {
         VStack(spacing: Settings.paddingBetweenText) {
-            Divider()
-            
-            Divider()
+            BoldDivider(depth: Settings.boldDividerDepth)
+                .padding(.bottom, Settings.paddingBetweenText)
             
             Group {
                 ForEach(SchoolLevel.allCases, id: \.self) { type in
@@ -32,6 +31,7 @@ struct KanjiReadings: View {
             .opacity(hideKanjiReadings ? 0 : 1)
             
             Divider()
+                .opacity(checkDividerVisibility() ? 1 : 0)
             
             Group {
                 if let row = getKunReading(SchoolLevel.外) {
@@ -43,10 +43,18 @@ struct KanjiReadings: View {
             }
             .opacity(hideKanjiReadings ? 0 : 0.5)
             
-            Divider()
-            
-            Divider()
+            BoldDivider(depth: Settings.boldDividerDepth)
         }
+    }
+    
+    private func checkDividerVisibility() -> Bool {
+        if let _ = getKunReading(.外) {
+            return true
+        }
+        if let _ = getOnReading(.外) {
+            return true
+        }
+        return false
     }
     
     func getKunReading(_ type: SchoolLevel) -> String? {

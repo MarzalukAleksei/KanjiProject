@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserActivityView: View {
-    let userActivity: [Date]
+    let userActivity: [ActivityModel]
     private let rows: [GridItem] = .init(repeating: GridItem(.fixed(ElementSize.userActivityCellSize.width),
                                                      spacing: Settings.paddingBetweenText - 1),
                                  count: Settings.userActivityIndicatorRows)
@@ -54,15 +54,17 @@ struct UserActivityView: View {
         let currentCellDate = dates[index]
         let currentCellComponents = UserActivity.getDateComponents(for: currentCellDate)
         
-        guard let firstActivity = userActivity.first else { return .dateWithoutActivity }
+        if userActivity.isEmpty { return .dateBeforeFirstActivity }
+        
+        guard let firstActivity = userActivity.getActivityDates().first else { return .dateWithoutActivity }
         if currentCellDate < firstActivity {
             return .dateBeforeFirstActivity
         }
         
         for activity in userActivity {
-            let activityComp = UserActivity.getDateComponents(for: activity)
+            let activityComp = UserActivity.getDateComponents(for: activity.date)
             if currentCellComponents == activityComp {
-                return .confirmedActivity
+                return .confirmedActivity(opacity: activity.opacity())
             }
         }
         
@@ -75,7 +77,7 @@ struct UserActivityView: View {
 }
 
 #Preview {
-    UserActivityView(userActivity: [.now])
+    UserActivityView(userActivity: [.init(date: Date(), elementsInList: 10)])
 }
 
 private struct Cell: View {
@@ -96,16 +98,16 @@ private struct Cell: View {
         switch dateType {
         case .dateBeforeFirstActivity:
             return .white
-        case .confirmedActivity:
-            return .init(.activeIndicator)
+        case .confirmedActivity(opacity: let opacity):
+            return .init(.activeIndicator).opacity(opacity)
         case .dateWithoutActivity:
             return .init(.inActiveIndicator)
         }
     }
 }
 
-private enum DateCondition {
+private enum DateCondition: Equatable {
     case dateBeforeFirstActivity
-    case confirmedActivity
+    case confirmedActivity(opacity: Double)
     case dateWithoutActivity
 }

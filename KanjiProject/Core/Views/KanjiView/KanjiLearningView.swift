@@ -39,6 +39,10 @@ struct KanjiLearningView: View {
                         .opacity(currentKanji == nil ? 0 : 1)
                     
                     Spacer()
+                    
+                    if let jlpt = currentKanji?.nouryokuLevel {
+                        Text(jlpt != .another ? "Этот кандзи из JLPT \(jlpt)" : "")
+                    }
                 }
                 
                 Group {
@@ -180,7 +184,8 @@ struct KanjiLearningView: View {
     
     private func setUserActivity() async {
         let activity = UserActivity(data: userActivity)
-        activity.newActivity()
+//        activity.newActivity()
+        activity.newKanjiActivity(inList: allKanji.count + 1)
         userActivity = activity.encode()
     }
     
@@ -226,7 +231,7 @@ struct KanjiLearningView: View {
     private func reloadView() {
         setCurrentKanji()
         
-        Task(priority: .background) {
+        Task {
             await setUserActivity()
         }
     }
