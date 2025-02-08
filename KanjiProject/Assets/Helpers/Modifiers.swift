@@ -28,16 +28,10 @@ class Modifiers {
     
     static let trashButton = TrashButtonModifier()
     
-    static let learningNextButton = ButtonModifier(color: ElementsColors.learningNextButton, 
-                                                         height: ElementSize.bottomButtonImage.height + Settings.padding)
+    static let rightAnswerButton = ButtonModifier(color: ElementsColors.answerButton.right,
+                                                        height: ElementSize.bottomButtonImage.height * 2 + Settings.padding)
     
-    static let wrongAnsweButton = ButtonModifier(color: ElementsColors.wrongButton,
-                                                 height: ElementSize.bottomButtonImage.height + Settings.padding)
-    
-    static let learningNextButtonSecondVar = ButtonModifier(color: ElementsColors.learningNextButton,
-                                                         height: ElementSize.bottomButtonImage.height * 2 + Settings.padding)
-    
-    static let wrongAnsweButtonSecondVar = ButtonModifier(color: ElementsColors.wrongButton,
+    static let wrongAnswerButton = ButtonModifier(color: ElementsColors.answerButton.wrong,
                                                  height: ElementSize.bottomButtonImage.height * 2 + Settings.padding)
     
     static let inListButton = ButtonModifier(color: ElementsColors.inListButton,

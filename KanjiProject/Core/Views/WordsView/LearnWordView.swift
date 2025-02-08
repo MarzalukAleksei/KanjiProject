@@ -81,7 +81,7 @@ struct LearnWordView: View {
                 getWord()
             } label: {
                 Text("Следующее слово")
-                    .modifier(Modifiers.learningNextButton)
+                    .modifier(Modifiers.rightAnswerButton)
             }
             
         }

@@ -56,7 +56,7 @@ struct UserActivityView: View {
         
         if userActivity.isEmpty { return .dateBeforeFirstActivity }
         
-        guard let firstActivity = userActivity.getActivityDates().first else { return .dateWithoutActivity }
+        guard let firstActivity = userActivity.getActivityDates().first else { return .skippedDay }
         if currentCellDate < firstActivity {
             return .dateBeforeFirstActivity
         }
@@ -68,7 +68,7 @@ struct UserActivityView: View {
             }
         }
         
-        return .dateWithoutActivity
+        return .skippedDay
     }
     
     private func scrollToLast(proxy: ScrollViewProxy) {
@@ -97,11 +97,11 @@ private struct Cell: View {
     private func setColor() -> Color {
         switch dateType {
         case .dateBeforeFirstActivity:
-            return .white
-        case .confirmedActivity(opacity: let opacity):
-            return .init(.activeIndicator).opacity(opacity)
-        case .dateWithoutActivity:
-            return .init(.inActiveIndicator)
+            return ElementsColors.userActivityColors.beforeFirstAct
+        case .confirmedActivity(opacity: let value):
+            return ElementsColors.userActivityColors.confirmedAct.opacity(value)
+        case .skippedDay:
+            return ElementsColors.userActivityColors.skippedDay
         }
     }
 }
@@ -109,5 +109,5 @@ private struct Cell: View {
 private enum DateCondition: Equatable {
     case dateBeforeFirstActivity
     case confirmedActivity(opacity: Double)
-    case dateWithoutActivity
+    case skippedDay
 }

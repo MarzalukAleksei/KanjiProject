@@ -102,7 +102,7 @@ struct KanjiLearningView: View {
                                 .frame(width: ElementSize.bottomButtonImage.width,
                                        height: ElementSize.bottomButtonImage.height)
                         }
-                        .modifier(Modifiers.wrongAnsweButtonSecondVar)
+                        .modifier(Modifiers.wrongAnswerButton)
                     }
                     
                     Rectangle()
@@ -118,7 +118,7 @@ struct KanjiLearningView: View {
                                 .frame(width: ElementSize.bottomButtonImage.width,
                                        height: ElementSize.bottomButtonImage.height)
                         }
-                        .modifier(Modifiers.learningNextButtonSecondVar)
+                        .modifier(Modifiers.rightAnswerButton)
                     })
                     .font(.title2)
                 }

@@ -102,7 +102,7 @@ struct CheckWordsView: View { // ВРЕМЕННЫЙ ВЬЮ. УБРАТЬ ПОС�
                 global.wordToChange = lastWord
             } label: {
                 Text("Вернуться к последнему слову")
-                    .modifier(Modifiers.learningNextButton)
+                    .modifier(Modifiers.rightAnswerButton)
                     .background(.purple.opacity(0.4))
             }
             
@@ -112,7 +112,7 @@ struct CheckWordsView: View { // ВРЕМЕННЫЙ ВЬЮ. УБРАТЬ ПОС�
                 getWord()
             } label: {
                 Text("Пропустить и показать следующее слово")
-                    .modifier(Modifiers.learningNextButton)
+                    .modifier(Modifiers.rightAnswerButton)
             }
             
             Button {
@@ -121,7 +121,7 @@ struct CheckWordsView: View { // ВРЕМЕННЫЙ ВЬЮ. УБРАТЬ ПОС�
                 getWord()
             } label: {
                 Text("Это слово готово")
-                    .modifier(Modifiers.learningNextButton)
+                    .modifier(Modifiers.rightAnswerButton)
                     .background(.blue)
             }
             .padding(.top, 30)
