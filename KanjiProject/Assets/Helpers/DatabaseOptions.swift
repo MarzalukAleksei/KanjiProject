@@ -9,17 +9,9 @@ import Foundation
 
 /// Содержит базовые константные значения
 class DatabaseOptions {
-    static let minutesPassedFirst = 60 * 24 * 3 // 3 days later
+    static let passedDays: (first: Int, second: Int, third: Int) = (3, 5, 10)
     
-    static let minutesPassedSecond = 60 * 24 * 5 // 5 days later
-    
-    static let minutesPassedThird = 60 * 24 * 10 // 10 days later
-    
-    static let answersInRowFirst = 5
-    
-    static let answersInRowSecond = 10
-    
-    static let answersInRowThird = 15
+    static let answersCounts: (first: Int, second: Int, third: Int) = (5, 10, 15)
     
     static let maxLearningElementsCountBasicValue = 20
     

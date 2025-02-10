@@ -91,7 +91,7 @@ class StoreOperations {
         switch answer {
         case .right:
             kanji.setRightAnswer()
-            if kanji.rightAnwers ?? 0 > DatabaseOptions.answersInRowThird {
+            if kanji.rightAnwers ?? 0 > DatabaseOptions.answersCounts.third {
                 kanji.setLastAnswer(with: true)
             }
         case .wrong:
@@ -264,19 +264,20 @@ extension StoreOperations {
     private func filterForAllInListWithoutData(kanji: KanjiKankenModel) -> Bool {
         let rightAnswers = kanji.rightAnwers ?? 0
         
-        if rightAnswers < DatabaseOptions.answersInRowFirst + 1 {
+        if rightAnswers < DatabaseOptions.answersCounts.first + 1 {
             return true
         }
-        if rightAnswers < DatabaseOptions.answersInRowSecond + 1 {
+        if rightAnswers < DatabaseOptions.answersCounts.second + 1 {
             return true
         }
-        if rightAnswers < DatabaseOptions.answersInRowThird + 1 {
+        if rightAnswers < DatabaseOptions.answersCounts.third + 1 {
             return true
         }
         
         return false
     }
     
+    /// Метод отвечает за проверку соответсвия даты и частоты ответов в кандзи
     private func filterAllKanjiForCurrentLevel(kanji: KanjiKankenModel) -> Bool {
         if kanji.isInLearningList() == nil {
             return true
@@ -284,16 +285,28 @@ extension StoreOperations {
 
         if kanji.isInLearningList() == true {
             let rightAnswers = kanji.rightAnwers ?? 0
-            let minutePassed = Date.minutesPassed(from: kanji.getDate())
+            let daysPassed = DatabaseOptions.passedDays
             
-            if rightAnswers < DatabaseOptions.answersInRowFirst + 1,
-                minutePassed >= DatabaseOptions.minutesPassedFirst || kanji.getDate() == nil {
+            if rightAnswers < DatabaseOptions.answersCounts.first + 1,
+               kanji.getDate().passed(days: daysPassed.first, to: Date()) >= daysPassed.first {
                 return true
             }
-            if rightAnswers < DatabaseOptions.answersInRowSecond + 1,
-                minutePassed >= DatabaseOptions.minutesPassedSecond {
+            
+            if rightAnswers < DatabaseOptions.answersCounts.second + 1,
+               kanji.getDate().passed(days: daysPassed.second, to: Date()) >= daysPassed.second {
                 return true
             }
+            
+            if rightAnswers < DatabaseOptions.answersCounts.third + 1,
+               kanji.getDate().passed(days: daysPassed.third, to: Date()) >= daysPassed.third {
+                return true
+            }
+            
+            if kanji.getDate() == nil {
+                print("Kanji Date Value is nil -- Called storeOperations.filterAllKanjiForCurrentLevel")
+                return true
+            }
+            
         }
         return false
     }
@@ -311,17 +324,17 @@ extension StoreOperations {
     }
     
     // MARK: Возвращает все нандзи ниже текущего уровня
-    private func allKanji(below currentJLPTLevel: NouryokuLevel, _ array: [KanjiKankenModel]) -> [KanjiKankenModel] {
-        var result: [KanjiKankenModel] = []
-        let allLevelsBelow = allLevels(below: currentJLPTLevel)
-        if !allLevelsBelow.isEmpty {
-            for element in array where allLevelsBelow.contains(element.nouryokuLevel ?? .another) {
-                result.append(element)
-            }
-        }
-        
-        return result
-    }
+//    private func allKanji(below currentJLPTLevel: NouryokuLevel, _ array: [KanjiKankenModel]) -> [KanjiKankenModel] {
+//        var result: [KanjiKankenModel] = []
+//        let allLevelsBelow = allLevels(below: currentJLPTLevel)
+//        if !allLevelsBelow.isEmpty {
+//            for element in array where allLevelsBelow.contains(element.nouryokuLevel ?? .another) {
+//                result.append(element)
+//            }
+//        }
+//        
+//        return result
+//    }
     
     // MARK: Возвращает все нандзи для текущего уровня
     private func kanjiForCurrentLevel(_ level: NouryokuLevel, _ array: [KanjiKankenModel]) -> [KanjiKankenModel] {
@@ -359,31 +372,32 @@ extension StoreOperations {
         }
     }
     
-    private func allLevels(below currentJLPTLevel: NouryokuLevel) -> [NouryokuLevel] {
-        var result: [NouryokuLevel] = []
-        
-        switch currentJLPTLevel {
-        case .another:
-            result.append(.another)
-            fallthrough
-        case .N1:
-            result.append(.N1)
-            fallthrough
-        case .N2:
-            result.append(.N2)
-            fallthrough
-        case .N3:
-            result.append(.N3)
-            fallthrough
-        case .N4:
-            result.append(.N4)
-            fallthrough
-        case .N5:
-            result.append(.N5)
-        }
-        
-        return result.filter { $0 != currentJLPTLevel }
-    }
+    /// Возвращает массив уровней ниже текущего
+//    private func allLevels(below currentJLPTLevel: NouryokuLevel) -> [NouryokuLevel] {
+//        var result: [NouryokuLevel] = []
+//        
+//        switch currentJLPTLevel {
+//        case .another:
+//            result.append(.another)
+//            fallthrough
+//        case .N1:
+//            result.append(.N1)
+//            fallthrough
+//        case .N2:
+//            result.append(.N2)
+//            fallthrough
+//        case .N3:
+//            result.append(.N3)
+//            fallthrough
+//        case .N4:
+//            result.append(.N4)
+//            fallthrough
+//        case .N5:
+//            result.append(.N5)
+//        }
+//        
+//        return result.filter { $0 != currentJLPTLevel }
+//    }
     
     private func allLevels(below currentLevel: KankenLevel) -> [KankenLevel] {
         var result: [KankenLevel] = []

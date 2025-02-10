@@ -252,8 +252,33 @@ extension Data {
 }
 
 extension Date {
-    static func minutesPassed(from date: Date) -> Int {
-        let interval = Int(Date().timeIntervalSince(date)) / 60
-        return interval
+    /// Year, month, day
+    func getDateComponents() -> DateComponents {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day, .month, .year], from: self)
+        return components
+    }
+    
+    /// Возвращает true, если день у текучей и переданной даты совпадает
+    func isSameDay(with date: Date) -> Bool {
+        return Calendar.current.isDate(self, inSameDayAs: date)
+    }
+    
+    /// Возвращает Date после прибавления переданного количества дней
+    func getNewDateBy(additing days: Int) -> Date {
+        return Calendar.current.date(byAdding: .day, value: days, to: self) ?? self
+    }
+    
+    func daysPassed(to date: Date) -> Int {
+        let calendar = Calendar.current
+        let dateComponents = calendar.dateComponents([.day], from: self, to: date)
+        return dateComponents.day ?? 0
+    }
+    
+    func passed(days: Int, to date: Date) -> Int {
+        let newDate = self.getNewDateBy(additing: days)
+        let daysPassed = newDate.daysPassed(to: date)
+        return daysPassed
     }
 }
+

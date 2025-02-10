@@ -10,20 +10,15 @@ import Foundation
 protocol IActivity: Codable {
     init(data: Data?)
     
-//    func newActivity()
 }
 
 extension IActivity {
     func getDateComponents(for date: Date) -> DateComponents {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.day, .month, .year], from: date)
-        return components
+        return date.getDateComponents()
     }
     
     static func getDateComponents(for date: Date) -> DateComponents {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.day, .month, .year], from: date)
-        return components
+        return date.getDateComponents()
     }
     
     func encode() -> Data {
