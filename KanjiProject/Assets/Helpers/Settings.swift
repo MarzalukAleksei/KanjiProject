@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Константные значения переменных. Не относящиеся непосредственно к интерфейсу
-class Settings {
+final class Settings {
     static let elementsInRow = 20 // Deprecated
     
     static let customToggleViewCornerRadius: CGFloat = 0.2

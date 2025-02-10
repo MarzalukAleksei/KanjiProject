@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class Modifiers {
+final class Modifiers {
     static let cardView = CardViewModifire()
     
     static let learningRect = LearningNavigarionBarRectModifier()

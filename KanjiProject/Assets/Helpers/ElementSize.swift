@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Хранилище значения размеров элементов интерфейса 
-class ElementSize {
+final class ElementSize {
     static let woodPartHeight: CGFloat = 12
     
     static let litleWoodPartSize: (width: CGFloat, height: CGFloat) = (7, 8)

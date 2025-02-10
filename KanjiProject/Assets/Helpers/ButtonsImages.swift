@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class ButtonsImages {
+final class ButtonsImages {
     static var openBook: Image {
         return Image(systemName: "book.fill")
     }

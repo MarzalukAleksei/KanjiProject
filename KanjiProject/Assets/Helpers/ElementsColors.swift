@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Цвета используемые в приложении
-class ElementsColors {
+final class ElementsColors {
     /// Цвета круга кнопок уровня
     static let levelButton: (right: Color, wrong: Color, unknown: Color) = (.green, .red, .white)
     

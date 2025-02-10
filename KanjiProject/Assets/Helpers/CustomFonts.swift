@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class CustomFont {
+final class CustomFont {
     static var cardMainKanji: Font {
         Font.system(size: 70)
     }

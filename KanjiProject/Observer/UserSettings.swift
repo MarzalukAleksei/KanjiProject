@@ -8,7 +8,7 @@
 import Foundation
 
 /// Контейнер, хранящий переменные, значения которых меняет пользователь в зависимости от собственных потребностей
-class UserSettings: ObservableObject, Codable {
+final class UserSettings: ObservableObject, Codable {
     /// Показать перевод на английский
     @Published var showEnglishMeaning = true
     

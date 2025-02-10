@@ -8,7 +8,7 @@
 import Foundation
 
 /// Содержит базовые константные значения
-class DatabaseOptions {
+final class DatabaseOptions {
     static let passedDays: (first: Int, second: Int, third: Int) = (3, 5, 10)
     
     static let answersCounts: (first: Int, second: Int, third: Int) = (5, 10, 15)
