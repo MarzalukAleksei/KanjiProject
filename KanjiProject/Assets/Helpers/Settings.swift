@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Константные значения переменных. Не относящиеся непосредственно к интерфейсу
 class Settings {
     static let elementsInRow = 20 // Deprecated
     

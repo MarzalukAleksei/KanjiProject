@@ -20,13 +20,13 @@ struct KanjiExamplesRowView: View {
                 VStack(spacing: Settings.paddingBetweenText) {
                     HStack {
                         Text(level.rawValue)
-                            .font(.system(size: TextSizes.kanjiBody))
+                            .font(.system(size: TextSizes.kanji.schoolLevel))
                         Spacer()
                     }
                         let tDA = createTDA(row)
                     VStack(alignment: .leading, spacing: Settings.paddingBetweenText) {
                         ForEach(tDA, id: \.self) { section in
-                            HStack(spacing: TextSizes.spacingBetweenWords) {
+                            HStack(spacing: TextSizes.divider.space) {
                                 ForEach(section, id: \.self) { row in
                                     
                                     // MARK: Отвечает за слова и нажатия
@@ -42,11 +42,11 @@ struct KanjiExamplesRowView: View {
 //                                    }
                                     VStack {
                                         Text("")
-                                            .font(.system(size: TextSizes.kanjiBody))
+                                            .font(.system(size: TextSizes.kanji.body))
                                         if row != tDA.last?.last, row.last?.wasDivided != true {
                                             Circle()
-                                                .frame(width: TextSizes.deviderCircle,
-                                                       height: TextSizes.deviderCircle)
+                                                .frame(width: TextSizes.divider.circle,
+                                                       height: TextSizes.divider.circle)
                                         }
                                     }
                                 }
@@ -105,7 +105,7 @@ struct KanjiExamplesRowView: View {
                 var currentWord: [TextAndReading] = []
                 for part in parts {
                     // размер символа + размер кружка и отступы
-                    currentWordWidth += part.width() + TextSizes.deviderCircle + TextSizes.spacingBetweenWords
+                    currentWordWidth += part.width() + TextSizes.divider.circle + TextSizes.divider.space
                     currentWord.append(part)
                 }
                 allElements.append((currentWordWidth, currentWord))
@@ -126,7 +126,7 @@ struct KanjiExamplesRowView: View {
             var currentRow: [[TextAndReading]] = []
             for element in getWordAndSize() {
                 avalWidth -= element.width
-                if avalWidth > 0 + TextSizes.deviderCircle * 2 {
+                if avalWidth > 0 + TextSizes.divider.circle * 2 {
                     currentRow.append(element.word)
                     // Данное условие вызвается если слово длиннее чем экран
                     // Определяется величина ширины выходящей за рамки,а с конца извлекаются элемены до того моменка как строка будет подходящей длинны
@@ -153,7 +153,7 @@ struct KanjiExamplesRowView: View {
                     secondRow.reverse()
                     currentRow = []
                     currentRow.append(secondRow)
-                    avalWidth = screenWidth - sumWidth(secondRow) - TextSizes.deviderCircle - TextSizes.spacingBetweenWords * 2
+                    avalWidth = screenWidth - sumWidth(secondRow) - TextSizes.divider.circle - TextSizes.divider.space * 2
                 } else {
                     result.append(currentRow)
                     avalWidth = screenWidth - element.width

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: Убрать
 struct KanjiCheckView: View {
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var globalChanging: GlobalChanging

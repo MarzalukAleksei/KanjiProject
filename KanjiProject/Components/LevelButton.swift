@@ -12,9 +12,9 @@ struct LevelButton: View {
     let array: [IAnswers]
     let size: CGSize
     let color: Color
-    let colors: [Color] = [ElementsColors.levelButtonWrongAnswer,
-                           ElementsColors.levelButtonRightAnswer,
-                           ElementsColors.levelButtonUnknownAnswer]
+    let colors: [Color] = [ElementsColors.levelButton.wrong,
+                           ElementsColors.levelButton.right,
+                           ElementsColors.levelButton.unknown]
     var values: [Double] {
         getAngles()
     }

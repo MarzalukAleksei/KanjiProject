@@ -79,17 +79,7 @@ struct KanjiDetailView: View {
                 
                 // MARK: Примеры
                 KanjiExamplesRowView(currentKankenKanji: currentKanji)
-                
-                
-                // MARK: Пишет сообщение о уровне JLPT
-//                  Divider()
-//                if let nouryokuLevel = currentKanji.nouryokuLevel {
-//                    Text("Данный кандзи входит в список JLPT \(nouryokuLevel)")
-//                        .frame(maxWidth: .infinity, alignment: .leading)
-//                        .padding(.horizontal, Settings.padding)
-//                    
-//                    Divider()
-//                }
+                    .padding(.bottom, Settings.paddingBetweenText)
                 
                 BoldDivider(depth: Settings.boldDividerDepth)
                 
@@ -152,13 +142,13 @@ private struct Meaning: View {
     var body: some View {
         HStack(spacing: 5) {
             Text(groupName)
-                .font(.system(size: 20))
+                .font(.system(size: TextSizes.translation.tag))
                 .frame(maxHeight: .infinity, alignment: .top)
             
             Text(meaning.uppercased())
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, Settings.padding)
-                .font(.system(size: 30))
+                .font(.system(size: TextSizes.translation.meaning))
         }
     }
 }

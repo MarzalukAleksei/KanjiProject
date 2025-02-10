@@ -14,9 +14,9 @@ struct KankenReadingRowView: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(type.rawValue)
-                    .font(.system(size: TextSizes.scloolLevelLabel))
+                    .font(.system(size: TextSizes.kanji.schoolLevel))
                 Text(row)
-                    .font(.system(size: TextSizes.kanjiBody))
+                    .font(.system(size: TextSizes.kanji.body))
                     .bold()
             }
             Spacer()

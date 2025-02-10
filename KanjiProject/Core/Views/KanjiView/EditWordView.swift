@@ -149,7 +149,8 @@ struct EditWordView: View {
     }
     
     func wordReadingFrameHeight() -> CGFloat {
-        TextSizes.wordEdit * 3
+        print("!!!!")
+        return TextSizes.wordEdit * 3
     }
     
 //    func isDataChanged() -> Bool {

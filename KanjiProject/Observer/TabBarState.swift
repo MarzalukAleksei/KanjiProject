@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Отвечает за отображение кастомного нижнего навигатора
 class TabBarState: ObservableObject {
     @Published var tabBarIsHidden = false
 }

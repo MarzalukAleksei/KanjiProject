@@ -17,8 +17,8 @@ struct WordWithFuriganaView: View {
     /// Setup currentWord = .empty
     init(word: [TextAndReading],
          readingIsHidden: Bool,
-         kanjiBody: CGFloat = TextSizes.kanjiBody,
-         kanjiReading: CGFloat = TextSizes.kanjiReading)
+         kanjiBody: CGFloat = TextSizes.kanji.body,
+         kanjiReading: CGFloat = TextSizes.kanji.furigana)
     {
         self.word = word
         self.currentKanji = .empty
@@ -30,8 +30,8 @@ struct WordWithFuriganaView: View {
     init(word: [TextAndReading],
          currentKanji: KanjiKankenModel,
          readingIsHidden: Bool,
-         kanjiBody: CGFloat = TextSizes.kanjiBody,
-         kanjiReading: CGFloat = TextSizes.kanjiReading)
+         kanjiBody: CGFloat = TextSizes.kanji.body,
+         kanjiReading: CGFloat = TextSizes.kanji.furigana)
     {
         self.word = word
         self.currentKanji = currentKanji
@@ -43,8 +43,8 @@ struct WordWithFuriganaView: View {
     init(word: WordModel,
          currentKanji: KanjiKankenModel,
          readingIsHidden: Bool,
-         kanjiBody: CGFloat = TextSizes.kanjiBody,
-         kanjiReading: CGFloat = TextSizes.kanjiReading)
+         kanjiBody: CGFloat = TextSizes.kanji.body,
+         kanjiReading: CGFloat = TextSizes.kanji.furigana)
     {
         self.word = []
         self.currentKanji = currentKanji

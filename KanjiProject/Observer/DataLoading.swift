@@ -7,6 +7,10 @@
 
 import Foundation
 
+/// Отвечает за загрузку данных их Firebase
+/// - date(with completion: (Result<Store, Error>) -> Void): передает в completion полученные данные в виде clouser
+/// - load(): Метод отвечает за загрузку тех файлов, которые пусты. При загрузке проверяется наличие сохраненных данных. Если имеются, то в программе используюся имеющиеся данные и загрузка из Firebase не происходит
+/// - complete: вычисляемая переменная, проверяющая все ли файлы загружены.
 final class DataLoading: ObservableObject {
     @Published var baseWords: [WordModel] = []
     @Published var kanjiKanken: [KanjiKankenModel] = []

@@ -9,11 +9,8 @@ import SwiftUI
 
 /// Цвета используемые в приложении
 class ElementsColors {
-    static let levelButtonRightAnswer: Color = .green
-    
-    static let levelButtonWrongAnswer: Color = .red
-    
-    static let levelButtonUnknownAnswer: Color = .white
+    /// Цвета круга кнопок уровня
+    static let levelButton: (right: Color, wrong: Color, unknown: Color) = (.green, .red, .white)
     
     static let inListButton: Color = .cyan.opacity(0.35)
     
@@ -36,7 +33,8 @@ class ElementsColors {
     static let userActivityColors: (confirmedAct: Color,
                                     skippedDay: Color,
                                     beforeFirstAct: Color) = (
-                                        .init(.activeIndicator),
+//                                        .init(.activeIndicator),
+                                        .init(.green),
                                         .init(.inactiveIndicator),
                                         .white)
 }

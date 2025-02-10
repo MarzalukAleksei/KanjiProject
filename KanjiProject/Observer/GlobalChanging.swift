@@ -6,7 +6,8 @@
 //
 
 import Foundation
- 
+
+/// Отвечает за все свойства, которые могут быть использованы для редактирования базы данных
 class GlobalChanging: ObservableObject {
     @Published var wordToChange: WordModel?
 }

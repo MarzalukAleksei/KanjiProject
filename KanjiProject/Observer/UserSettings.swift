@@ -7,20 +7,25 @@
 
 import Foundation
 
+/// Контейнер, хранящий переменные, значения которых меняет пользователь в зависимости от собственных потребностей
 class UserSettings: ObservableObject, Codable {
+    /// Показать перевод на английский
     @Published var showEnglishMeaning = true
-    @Published var showKanjiConformationDialog = false // not used
-    @Published var showCurrentLevelOnly = false // not used
-    @Published var newKanjiInConfirmationDialog = DatabaseOptions.maxLearningElementsCountBasicValue
-    @Published var newKanjiInDay = DatabaseOptions.newKanjiInDayConstantValue // not used
-    @Published var newWordsInDay = DatabaseOptions.newWordsInDayConstantValue // not used
     
-//    @Published var answersInRowFirst = 5
-//    @Published var answersInRowSecond = 10
-//    @Published var answersInRow = 15
-//    @Published var minutesPassedFirst = 60 * 24 // 1 day later
-//    @Published var minutesPassedSecond = 60 * 24 * 5 // 5 days later
-//    @Published var minutesPassedThird = 60 * 24 * 10 // 10 days later
+    /// Показывать окно выбора режива при каждом переходе на экран изучения кандзи
+    @Published var showKanjiConformationDialog = false // not used
+    
+    /// При выборе уровня, отображать только выбранный уровень если true, при false отображать текущий и ниже
+    @Published var showCurrentLevelOnly = false // not used
+    
+    /// Сколько новых кандзи добавлять при выборе соответстующей строки в окне
+    @Published var newKanjiInConfirmationDialog = DatabaseOptions.maxLearningElementsCountBasicValue
+    
+    /// Сколько новых кандзи добавлять кажрый день новой активности
+    @Published var newKanjiInDay = DatabaseOptions.newKanjiInDayConstantValue // not used
+    
+    /// Сколько новых слов добавлять кажрый день новой активности
+    @Published var newWordsInDay = DatabaseOptions.newWordsInDayConstantValue // not used
     
     private var conformationDialogState: Bool {
         get { showKanjiConformationDialog }

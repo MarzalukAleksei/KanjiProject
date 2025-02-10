@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Основное хранилище всех данных
 final class Store: ObservableObject {
     @Published var kanjiStore = KanjiStore()
     @Published var dictionaryStore = DictionaryStore()

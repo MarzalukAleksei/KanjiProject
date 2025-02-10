@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Убрать
 struct LearningByWordView: View {
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var globalChanging: GlobalChanging

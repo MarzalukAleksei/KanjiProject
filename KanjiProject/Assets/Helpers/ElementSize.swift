@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Хранилище значения размеров элементов интерфейса 
 class ElementSize {
     static let woodPartHeight: CGFloat = 12
     
