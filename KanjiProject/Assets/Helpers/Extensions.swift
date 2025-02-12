@@ -82,7 +82,6 @@ extension String {
                            rightBracket: (startIndex: rightBrackets[index].firstIndex,
                                           lastIndex: rightBrackets[index].lastIndex)))
         }
-//        print(result)
         return result
     }
     

@@ -10,7 +10,7 @@ import Foundation
 struct ActivityModel: Codable {
     let date: Date
     var actionsCount: Int
-    private var added: Int
+    private(set) var added: Int
     let elementsInLearningListInThatDay: Int
     
     init(date: Date, elementsInList: Int) {
@@ -20,9 +20,22 @@ struct ActivityModel: Codable {
         self.elementsInLearningListInThatDay = elementsInList
     }
     
+    init(date: Date, elementsToLearn: Int, isNewKanji: Bool) {
+        self.date = date
+        self.actionsCount = 1
+        self.added = 0
+        self.elementsInLearningListInThatDay = elementsToLearn
+        if isNewKanji { increaseAdded() }
+    }
+    
     /// Увеличивает каунтер действий для текущей даты
     mutating func increase() {
         actionsCount += 1
+    }
+    
+    /// Увеличивает added counter
+    mutating func increaseAdded() {
+        added += 1
     }
     
     /// Нужно ли добавить новый елемент в список

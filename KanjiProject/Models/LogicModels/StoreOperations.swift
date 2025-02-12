@@ -155,12 +155,25 @@ class StoreOperations {
     }
     
     // MARK: Возвращает массив кандзи, для текущего уровня, если их в уровне ниже меньше константы, взять из следующего
-    /// Метод возвращает массив для текущего и ниже уровня, в случае если элементов меньше константного значения, берет из уровня выше,
-    func getKanjiArray(for currentJLPTLevel: NouryokuLevel) async -> [KanjiKankenModel] {
+    func getKanjiArray(for currentLevel: NouryokuLevel, kanjiActivity: [ActivityModel]) async -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
-        var allKanjiForCurrentLevel = store.kanjiKankenStore.getAllKanji(below: currentJLPTLevel).filter { $0.isInLearningList() != false }
-        let inLearningList = filterAndRemove(&allKanjiForCurrentLevel, inLearningList: true) // Добавить все, что находятся в списке на изучение
+        var allKanjiForCurrentLevel = getAllNotYetLearnedKanji(for: currentLevel) // Возвращает все кандзи, ниже текущего уровня которые еще никогда не изучались
+        let inLearningList = filterAndRemove(&allKanjiForCurrentLevel, inLearningList: true) // Добавить только те, что находятся в списке на изучение
         result = inLearningList.filter(filterAllKanjiForCurrentLevel)
+        
+        let needAdd = userSettings.newKanjiInDay
+        guard let lastActivity = kanjiActivity.last else {
+            result += addNewKanji(from: allKanjiForCurrentLevel, count: needAdd)
+            return result
+        }
+        let added = lastActivity.added
+        if lastActivity.date.isSameDay(with: Date()) {
+            let newKanji = addNewKanji(from: allKanjiForCurrentLevel, count: needAdd - added)
+            result += newKanji
+        } else {
+            let newKanji = addNewKanji(from: allKanjiForCurrentLevel, count: needAdd)
+            result += newKanji
+        }
         
         return result
     }
@@ -211,6 +224,33 @@ extension StoreOperations {
     private func getAllInLearningList() -> [KanjiKankenModel] {
         let allKanjiForCurrentLevel = store.kanjiKankenStore.getAll().filter { $0.isInLearningList() == true }
         return allKanjiForCurrentLevel.filter(filterAllKanjiForCurrentLevel)
+    }
+    
+    private func addNewKanji(from notLearnedKanjiArray: [KanjiKankenModel], count: Int) -> [KanjiKankenModel] {
+        var array = Set(notLearnedKanjiArray)
+        var result: [KanjiKankenModel] = []
+        
+        for _ in 0..<count where !array.isEmpty {
+            let kanji = array.removeFirst()
+            result.append(kanji)
+        }
+        
+        return result
+    }
+    
+    /// Возвращает все кандзи, ниже текущего уровня которые еще никогда не изучались
+    private func getAllNotYetLearnedKanji(for currentJLPTLevel: NouryokuLevel) -> [KanjiKankenModel] {
+        store.kanjiKankenStore.getAllKanji(below: currentJLPTLevel).filter { $0.isInLearningList() != false }
+    }
+    
+    /// Метод возвращает массив для текущего и ниже уровня, в случае если элементов меньше константного значения, берет из уровня выше,
+    /// - Deprecated
+    private func getKanjiArray(for currentJLPTLevel: NouryokuLevel) async -> [KanjiKankenModel] {
+        var result: [KanjiKankenModel] = []
+        var allKanjiForCurrentLevel = getAllNotYetLearnedKanji(for: currentJLPTLevel) // Возвращает все кандзи, ниже текущего уровня которые еще никогда не изучались
+        let inLearningList = filterAndRemove(&allKanjiForCurrentLevel, inLearningList: true) // Добавить только те, что находятся в списке на изучение
+        result = inLearningList.filter(filterAllKanjiForCurrentLevel)
+        return result
     }
     
     private func theFirstLoading(for currentJLPTLevel: NouryokuLevel) async -> [KanjiKankenModel] {

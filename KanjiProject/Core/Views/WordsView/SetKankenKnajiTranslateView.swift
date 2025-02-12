@@ -99,7 +99,6 @@ struct SetKankenKnajiTranslateView: View {
             } else {
                 print("COMPLETE")
             }
-//            printKanji()
         }
         .navigationBarBackButtonHidden(true)
     }

@@ -9,14 +9,19 @@ import SwiftUI
 
 /// Основное хранилище всех данных
 final class Store: ObservableObject {
+    /// старая база, УБРАТЬ
     @Published var kanjiStore = KanjiStore()
+    /// База данных слов
     @Published var dictionaryStore = DictionaryStore()
     @Published var kanaStore = KanaStore()
     @Published var yojijukugoStore = YojijukugoStore()
     @Published var giseigoStore = GiseigoStore()
+    /// Основная база данных по кандзи
     @Published var kanjiKankenStore = KanjiKankenStore()
+    /// Слова которые необходимо выучить для свободного использовая японского
     @Published var baseWordsStore = WordsStore()
     @Published var bushuStore = BushuStore()
+    /// Слова используемые в примерах
     @Published var kanjiKankenExamplesTranslationsStore = KanjiKankenExamplesTranslationsStore()
     @Published var goiStore = GoiStore()
     
@@ -33,12 +38,16 @@ final class Store: ObservableObject {
     /// This methood update word in store, than save a file
     /// - Parameter word: given word
     func updateWord(_ word: WordModel) async {
-        if kanjiKankenExamplesTranslationsStore.getAll().contains(where: { $0.id == word.id }) {
-            await kanjiKankenExamplesTranslationsStore.updateWord(word)
-            await kanjiKankenExamplesTranslationsStore.saveInFileManager()
-        } else {
-            await baseWordsStore.update(set: word)
-            await baseWordsStore.saveInFileManager()
+        await withTaskGroup(of: Void.self) { group in
+            group.addTask { [weak self] in
+                self?.kanjiKankenExamplesTranslationsStore.updateWord(word)
+                self?.kanjiKankenExamplesTranslationsStore.saveInFileManager()
+            }
+            group.addTask { [weak self] in
+                self?.baseWordsStore.update(set: word)
+                self?.baseWordsStore.saveInFileManager()
+            }
+            await group.waitForAll()
         }
     }
     

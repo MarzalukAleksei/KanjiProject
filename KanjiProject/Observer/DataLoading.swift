@@ -291,7 +291,6 @@ final class DataLoading: ObservableObject {
                     }
                 case .failure(let error):
                     print(error)
-//                    break
                 }
             }
         } else {

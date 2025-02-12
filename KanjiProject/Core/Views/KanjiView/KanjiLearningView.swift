@@ -72,7 +72,10 @@ struct KanjiLearningView: View {
                             .opacity(showListOverWarning ? 0 : 1)
                         // MARK: Выполняется при загрузке экрана, до тех пор, пока currentKanji = nil
                             .task {
-                                await allKanji = storeOperations.getKanjiArray(for: nouryokuLevel)
+//                                await allKanji = storeOperations.getKanjiArray(for: nouryokuLevel)
+                                let kanjiActivity = UserActivity(data: userActivity).kanjiActivity
+                                await allKanji = storeOperations.getKanjiArray(for: nouryokuLevel,
+                                                                               kanjiActivity: kanjiActivity)
                                 setCurrentKanji()
                             }
                     }
@@ -182,10 +185,11 @@ struct KanjiLearningView: View {
         }
     }
     
-    private func setUserActivity() async {
+    private func setUserActivity(isNewKanji: Bool) async {
         let activity = UserActivity(data: userActivity)
 //        activity.newActivity()
-        activity.newKanjiActivity(inList: allKanji.count + 1)
+//        activity.newKanjiActivity(inList: allKanji.count + 1)
+        activity.newkanjiActivity(inList: allKanji.count + 1, isNewKanji: isNewKanji)
         userActivity = activity.encode()
     }
     
@@ -216,6 +220,13 @@ struct KanjiLearningView: View {
         reloadView()
     }
     
+    private func userActionMark() -> Bool {
+        if currentKanji?.isInLearningList() == nil {
+            return true
+        }
+        return false
+    }
+    
     // MARK: Убирает кандзи из изучаемого списка
     /// - меняет свойство inList на false
     private func removeKanjiFromList() {
@@ -229,10 +240,11 @@ struct KanjiLearningView: View {
     }
     
     private func reloadView() {
+        let isNewKanji = userActionMark()
         setCurrentKanji()
         
         Task {
-            await setUserActivity()
+            await setUserActivity(isNewKanji: isNewKanji)
         }
     }
     

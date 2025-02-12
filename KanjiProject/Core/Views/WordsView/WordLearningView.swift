@@ -162,7 +162,6 @@ struct WordLearningView: View {
         let currentWord = currentWord
         print("current word deleted")
         Task {
-//            await store.baseWordsStore.delete(currentWord)
             await save(currentWord)
             do {
                 try await nextWord()
