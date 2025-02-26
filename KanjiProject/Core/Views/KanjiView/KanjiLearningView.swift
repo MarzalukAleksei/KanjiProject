@@ -9,6 +9,7 @@ import SwiftUI
 
 struct KanjiLearningView: View {
     @EnvironmentObject private var globalChanging: GlobalChanging
+    @EnvironmentObject var store: Store
     @EnvironmentObject private var userSettings: UserSettings
     @Environment(\.dismiss) private var dismiss
     @AppStorage("userActivity") private var userActivity: Data?
@@ -24,6 +25,7 @@ struct KanjiLearningView: View {
     let selectedKanken: Bool
     let nouryokuLevel: NouryokuLevel
     let kankenLevel: KankenLevel
+    
     var body: some View {
         VStack {
             VStack {
@@ -73,10 +75,7 @@ struct KanjiLearningView: View {
                         // MARK: Выполняется при загрузке экрана, до тех пор, пока currentKanji = nil
                             .task {
 //                                await allKanji = storeOperations.getKanjiArray(for: nouryokuLevel)
-                                let kanjiActivity = UserActivity(data: userActivity).kanjiActivity
-                                await allKanji = storeOperations.getKanjiArray(for: nouryokuLevel,
-                                                                               kanjiActivity: kanjiActivity)
-                                setCurrentKanji()
+                                await viewLoadData()
                             }
                     }
                     Spacer()
@@ -183,6 +182,18 @@ struct KanjiLearningView: View {
                     .presentationDetents([.medium])
             }
         }
+//        .onKeyPress(keys: [.clear]) { key in
+//            <#code#>
+//        }
+    }
+    
+    private func viewLoadData() async {
+        let kanjiActivity = UserActivity(data: userActivity).kanjiActivity
+        await allKanji = storeOperations.getKanjiArray(for: nouryokuLevel,
+                                                       kanjiActivity: kanjiActivity)
+//        allKanji = store.kanjiKankenStore.getAll().filter { $0.id == 732 || $0.id == 926}
+        print(allKanji.filter { $0.isInLearningList() == nil }.count)
+        setCurrentKanji()
     }
     
     private func setUserActivity(isNewKanji: Bool) async {
