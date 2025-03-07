@@ -8,8 +8,8 @@
 import Foundation
 
 class UserActivity: IActivity {
-    private(set) var kanjiActivity: [ActivityModel] = []
-    private(set) var wordsActivity: [ActivityModel] = []
+    var kanjiActivity: [ActivityModel] = []
+    var wordsActivity: [ActivityModel] = []
     
     required init(data: Data?) {
         do {
@@ -30,16 +30,23 @@ class UserActivity: IActivity {
 //        }
 //    }
     
-    func newkanjiActivity(inList count: Int, isNewKanji: Bool) {
-        guard var last = kanjiActivity.last else {
-            kanjiActivity.append(.init(date: Date(), elementsToLearn: count, isNewKanji: isNewKanji))
+    func newKanjiActivity(inList count: Int, isNewKanji: Bool) {
+        // Проверяем, есть ли последний элемент и совпадает ли его дата с текущей
+        guard var last = kanjiActivity.last, last.date.isSameDay(with: Date()) else {
+            // Если нет, добавляем новый элемент и выходим
+            let newActivity = ActivityModel(date: Date(), elementsToLearn: count, isNewKanji: isNewKanji)
+            kanjiActivity.append(newActivity)
             return
         }
-        if last.date.isSameDay(with: Date()) {
-            last.increase()
-            if isNewKanji { last.increaseAdded() }
-        } else {
-            kanjiActivity.append(.init(date: Date(), elementsToLearn: count, isNewKanji: isNewKanji))
+        isNewKanji ? last.increaseAdded() : ()
+        last.increaseActionsCount()
+        // Сохраняем изменения в массиве
+        kanjiActivity[kanjiActivity.count - 1] = last
+    }
+    
+    func deleteLastKanjiActivity() {
+        if let date = kanjiActivity.last?.date, date.isSameDay(with: Date()) {
+            kanjiActivity.removeLast()
         }
     }
     

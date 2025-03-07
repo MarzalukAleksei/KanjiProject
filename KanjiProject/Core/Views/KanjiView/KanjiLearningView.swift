@@ -27,6 +27,15 @@ struct KanjiLearningView: View {
     let kankenLevel: KankenLevel
     
     var body: some View {
+        ZStack {
+            // MARK: Кнопки на клавиатуре, при запуске на ПК
+            if #available(iOS 17.0, *) {
+                ButtonsActions {
+                    returnButtonAction()
+                } spaceButtonAction: {
+                    spaceButtonAction()
+                }
+            }
         VStack {
             VStack {
                 HStack {
@@ -44,6 +53,7 @@ struct KanjiLearningView: View {
                     
                     if let jlpt = currentKanji?.nouryokuLevel {
                         Text(jlpt != .another ? "Этот кандзи из JLPT \(jlpt)" : "")
+                            .opacity(hideReadings ? 0 : 1)
                     }
                 }
                 
@@ -56,7 +66,7 @@ struct KanjiLearningView: View {
                                 Text(currentKanji.body)
                                     .modifier(Modifiers.mainKanji)
                             }
-
+                            
                             Spacer()
                             
                             Button {
@@ -65,7 +75,7 @@ struct KanjiLearningView: View {
                                 Text(currentKanji.keys)
                                     .modifier(Modifiers.mainKanji)
                             }
-
+                            
                         }
                         
                         KanjiDetailView(currentKanji: currentKanji, showImage: .constant(false), hideKanji: $hideReadings).opacity(!hideReadings ? 1 : 0)
@@ -74,7 +84,7 @@ struct KanjiLearningView: View {
                             .opacity(showListOverWarning ? 0 : 1)
                         // MARK: Выполняется при загрузке экрана, до тех пор, пока currentKanji = nil
                             .task {
-//                                await allKanji = storeOperations.getKanjiArray(for: nouryokuLevel)
+                                //                                await allKanji = storeOperations.getKanjiArray(for: nouryokuLevel)
                                 await viewLoadData()
                             }
                     }
@@ -126,7 +136,7 @@ struct KanjiLearningView: View {
                 }
             }
         }
-        
+    }
         .blur(radius: showWordDetail ? Settings.blurEffectValue : 0)
 
         .alert("Вы точно хотите удалить этот кандзи из списка?", isPresented: $showDeleteWarning, actions: {
@@ -135,6 +145,7 @@ struct KanjiLearningView: View {
                 removeKanjiFromList()
             }
         })
+        
         .alert("Хотите продолжить изучeние?", isPresented: $showListOverWarning, actions: {
             Button("Повторить все из списка") {
                 repeatButton()
@@ -175,6 +186,7 @@ struct KanjiLearningView: View {
                 }
             }
         })
+        
         .sheet(isPresented: $showKeysViewSheet) {
             if let currentKanji = currentKanji {
                 ModalKeyDeteilView(currentkanji: currentKanji,
@@ -182,9 +194,6 @@ struct KanjiLearningView: View {
                     .presentationDetents([.medium])
             }
         }
-//        .onKeyPress(keys: [.clear]) { key in
-//            <#code#>
-//        }
     }
     
     private func viewLoadData() async {
@@ -198,10 +207,36 @@ struct KanjiLearningView: View {
     
     private func setUserActivity(isNewKanji: Bool) async {
         let activity = UserActivity(data: userActivity)
-//        activity.newActivity()
-//        activity.newKanjiActivity(inList: allKanji.count + 1)
-        activity.newkanjiActivity(inList: allKanji.count + 1, isNewKanji: isNewKanji)
+        activity.newKanjiActivity(inList: allKanji.count + 1, isNewKanji: isNewKanji)
         userActivity = activity.encode()
+    }
+    
+    private func returnButtonAction() {
+        if showWordDetail {
+            showWordDetail.toggle()
+            return
+        }
+        
+        if hideReadings {
+            hideReadings = false
+            return
+        }
+        
+        rightButtonAction()
+    }
+    
+    private func spaceButtonAction() {
+        if showWordDetail {
+            showWordDetail.toggle()
+            return
+        }
+        
+        if hideReadings {
+            hideReadings = false
+            return
+        }
+        
+        wrongAnswerButtonAction()
     }
     
     private func repeatWrongsButton() {
@@ -231,7 +266,7 @@ struct KanjiLearningView: View {
         reloadView()
     }
     
-    private func userActionMark() -> Bool {
+    private func kanjiWasInListBefore() -> Bool {
         if currentKanji?.isInLearningList() == nil {
             return true
         }
@@ -251,12 +286,12 @@ struct KanjiLearningView: View {
     }
     
     private func reloadView() {
-        let isNewKanji = userActionMark()
-        setCurrentKanji()
+        let isNewKanji = kanjiWasInListBefore()
         
         Task {
             await setUserActivity(isNewKanji: isNewKanji)
         }
+        setCurrentKanji()
     }
     
     private func setCurrentKanji() {
@@ -276,8 +311,53 @@ struct KanjiLearningView: View {
 }
 
 #Preview {
-    KanjiLearningView(storeOperations: .init(store: Store(), userSettings: UserSettings()), selectedKanken: false, nouryokuLevel: .N5, kankenLevel: .級10)
-        .environmentObject(Store())
-        .environmentObject(GlobalChanging())
-        .environmentObject(UserSettings())
+    if #available(iOS 17.0, *) {
+        KanjiLearningView(storeOperations: .init(store: Store(), userSettings: UserSettings()), selectedKanken: false, nouryokuLevel: .N5, kankenLevel: .級10)
+            .environmentObject(Store())
+            .environmentObject(GlobalChanging())
+            .environmentObject(UserSettings())
+        // Fallback on earlier versions
+    } else {
+        
+    }
+}
+
+@available(iOS 17.0, *)
+private struct ButtonsActions: View {
+    @Environment(\.scenePhase) private var scenePhase
+    @FocusState var focused: Bool
+    var returnButtonAction: () -> Void
+    var spaceButtonAction: () -> Void
+    
+    var body: some View {
+        Color.clear
+            .focusable()
+            .focused($focused)
+            .onKeyPress { keyPress in
+                if keyPress.key == .return {
+                    returnButtonAction()
+                    return .handled
+                }
+                if keyPress.key == .space {
+                    spaceButtonAction()
+                    return .handled
+                }
+                return .ignored
+            }
+            .onAppear {
+                focused = true
+            }
+            .onChange(of: scenePhase) { _, scenePhase in
+                switch scenePhase {
+                case .background:
+                    focused = false
+                case .inactive:
+                    focused = false
+                case .active:
+                    focused = true
+                @unknown default:
+                    break
+                }
+            }
+    }
 }

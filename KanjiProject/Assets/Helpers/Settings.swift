@@ -77,4 +77,7 @@ final class Settings {
     
     ///
     static let boldDividerDepth: CGFloat = 3
+    
+    /// прозрачность кнопки CloseButton
+    static let closeButtonOpacity: CGFloat = 0.4
 }

@@ -85,15 +85,12 @@ struct KanjiDetailView: View {
                 
                 // MARK: Изображение, подгружаемое из сети
                 if showImage {
-                    
                     KanjiImageView(currentKanji: currentKanji)
-//                } else {
+                        .padding(.bottom, 50)
                 } else {
                     Color.clear
                         .frame(height: 50)
                 }
-//                Color.black
-//                    .frame(maxHeight: .infinity)
             }
             .scrollIndicators(.hidden)
             

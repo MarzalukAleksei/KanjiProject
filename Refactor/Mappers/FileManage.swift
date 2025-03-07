@@ -16,7 +16,7 @@ class FileManage: IFileManager {
     
     func loadFile(fileName: String, fileType: FileType) throws -> String {
         guard let string = Bundle.main.path(forResource: fileName, ofType: fileType.rawValue) else {
-            return "File not found" }
+            throw FileManageError.fileNotFound }
         do {
             let result = try String(contentsOfFile: string)
             return result
@@ -25,4 +25,8 @@ class FileManage: IFileManager {
         }
     }
     
+}
+
+private enum FileManageError: Error {
+    case fileNotFound
 }

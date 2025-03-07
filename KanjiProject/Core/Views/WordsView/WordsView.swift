@@ -62,12 +62,12 @@ struct WordsView: View {
                         Text("Find Word")
                     }
                     
-                    NavigationLink {
-                        SetKankenKnajiTranslateView()
-                    } label : {
-                        Text("SET KANKEN KANJI TRANSLATE")
-                    }
-                    .padding(.top, 50)
+//                    NavigationLink {
+//                        SetKankenKnajiTranslateView()
+//                    } label : {
+//                        Text("SET KANKEN KANJI TRANSLATE")
+//                    }
+//                    .padding(.top, 50)
                 }
                 .padding(.horizontal, Settings.padding)
                 

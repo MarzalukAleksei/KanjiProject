@@ -34,7 +34,7 @@ class RefactoredStores {
 //            let bunpou = BunpouMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Bunpou", fileType: .csv)))
 //            let bushu = BushuMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Bushu", fileType: .csv)))
 ////            let kanjiReplacer = loadKankenReplacer()
-//            let kanjiKanken = await loadAllKanken()
+            let kanjiKanken = await loadAllKanken()
 //            let words = await loadAllWords()
 //            
 //            kanjiStore.updateAll(data: kanji)
@@ -47,7 +47,7 @@ class RefactoredStores {
 //            wordsStore.updateAll(data: words)
 //            bushuStore.updateAll(data: bushu)
 //            kanjiKankenStore.updateAll(data: updateKanji(kana: kana, kanjiKentei: createKanjiKankenArray(allKanji: kanjiReplacer)))
-//            
+            kanjiKankenStore.updateAll(data: kanjiKanken)
 //        } catch {
 //            print(error)
 //        }
@@ -61,7 +61,7 @@ class RefactoredStores {
                         let task = KankenMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: level.rawValue, fileType: .txt)))
                         return task
                     } catch {
-                        print(error)
+                        print(error.localizedDescription + "With level \(level)")
                         return []
                     }
                 }

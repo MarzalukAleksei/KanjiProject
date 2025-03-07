@@ -49,6 +49,30 @@ final class Modifiers {
     static let keyModalViewText = KeyModalViewTextModifiers()
     
     static let customSlider = CustomSlidermodifier()
+    
+    static let textEditorBounds = TextEditorModifier()
+    
+    static let closeButton = CloseButtonModifier()
+}
+
+struct CloseButtonModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: ElementSize.closeButton.width,
+                   height: ElementSize.closeButton.height)
+            .foregroundStyle(Color(.closeButton))
+            .opacity(Settings.closeButtonOpacity)
+    }
+}
+
+struct TextEditorModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .overlay {
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(lineWidth: 0.1)
+            }
+    }
 }
 
 struct CustomSlidermodifier: ViewModifier {

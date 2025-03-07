@@ -62,7 +62,7 @@ class KanjiKankenStore: IStore, ObservableObject {
     }
     
     func update(set kanji: KanjiKankenModel) {
-        if let index = data.firstIndex(where: { $0.body == kanji.body }) {
+        if let index = data.firstIndex(where: { $0.id == kanji.id }) {
             data[index] = kanji
         } else {
             print("Check input Kanji")
@@ -70,7 +70,7 @@ class KanjiKankenStore: IStore, ObservableObject {
     }
     
     func update(set kanji: KanjiKankenModel) async {
-        if let index = data.firstIndex(where: { $0.body == kanji.body }) {
+        if let index = data.firstIndex(where: { $0.id == kanji.id }) {
             data[index] = kanji
         } else {
             print("Check input Kanji")

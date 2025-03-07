@@ -88,6 +88,10 @@ class StoreOperations {
         guard var kanji = kanji else { throw MyErrors.nilWord }
         kanji.setCurrentDate()
         
+        if kanji.isInLearningList() == nil {
+            print(kanji.body, kanji.body, kanji.isInLearningList())
+        }
+        
         switch answer {
         case .right:
             kanji.setRightAnswer()
@@ -97,6 +101,7 @@ class StoreOperations {
         case .wrong:
             kanji.setWrongAnswer()
         }
+        
         kanji.learning()
         store.kanjiKankenStore.update(set: kanji)
     }
@@ -166,7 +171,7 @@ class StoreOperations {
             result += addNewKanji(from: allKanjiForCurrentLevel, count: needAdd)
             return result
         }
-        let added = lastActivity.added
+        let added = lastActivity.added > needAdd ? needAdd : lastActivity.added // Если в lastActivity число будет больше чем максимальное, вернет максимальное число
         if lastActivity.date.isSameDay(with: Date()) {
             let newKanji = addNewKanji(from: allKanjiForCurrentLevel, count: needAdd - added)
             result += newKanji
@@ -229,6 +234,7 @@ extension StoreOperations {
     private func addNewKanji(from notLearnedKanjiArray: [KanjiKankenModel], count: Int) -> [KanjiKankenModel] {
         var array = Set(notLearnedKanjiArray)
         var result: [KanjiKankenModel] = []
+        
         
         for _ in 0..<count where !array.isEmpty {
             let kanji = array.removeFirst()

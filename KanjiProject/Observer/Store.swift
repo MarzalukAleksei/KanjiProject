@@ -55,6 +55,10 @@ final class Store: ObservableObject {
         baseWordsStore.getAll() + kanjiKankenExamplesTranslationsStore.getAll()
     }
     
+    func getBaseWords() -> [WordModel] {
+        baseWordsStore.getAll() /*+ dictionaryStore.getAll()*/
+    }
+    
     func updateAll(store: Store) {
         kanjiStore = store.kanjiStore
         dictionaryStore = store.dictionaryStore

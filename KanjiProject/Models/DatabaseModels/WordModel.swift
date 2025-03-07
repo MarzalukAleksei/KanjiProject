@@ -58,6 +58,18 @@ struct WordModel: Codable, Hashable, Identifiable {
         self.lastAnswerRight = nil
         self.levels = []
     }
+    
+    init(body: String) {
+        self.id = UUID()
+        self.body = body
+        self.meaningInEnglish = ""
+        self.levelInTag = []
+        self.meaningInRussian = ""
+        self.reading = ""
+        self.type = ""
+        self.lastAnswerRight = nil
+        self.levels = []
+    }
 }
 
 extension WordModel: IAnswers {

@@ -155,6 +155,7 @@ struct KanjiView: View {
 //        }
         .fullScreenCover(isPresented: $showLearningByKanjiSecondVar) {
             KanjiLearningView(storeOperations: .init(store: store, userSettings: userSettings), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
+            
         }
         .fullScreenCover(isPresented: $showLearningByWord) {
             LearningByWordView(currentLevel: selectedNouryokuLevel, databaseOperation: .init(store: store, userSettings: userSettings))

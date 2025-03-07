@@ -9,28 +9,28 @@ import Foundation
 
 struct KanjiKankenModel: Identifiable, Codable, Hashable {
     
-    let id: Int
-    let body: String
+    var id: Int
+    var body: String
     let defaultReading: String
-    private(set) var kunReading: [SchoolLevel: String]
-    private(set) var onReading: [SchoolLevel: String]
-    let examples: [SchoolLevel: String]
-    private let examplesWithReading: [SchoolLevel: [[TextAndReading]]]
+    var kunReading: [SchoolLevel: String]
+    var onReading: [SchoolLevel: String]
+    var examples: [SchoolLevel: String]
+    var examplesWithReading: [SchoolLevel: [[TextAndReading]]]
     private(set) var translateExapmles: [SchoolLevel: [String]]
     let meaning: String
-    private(set) var meaningInRussion: String?
+    /*private(set) */var meaningInRussion: String?
     private(set) var meaningInEng: String?
     let keys: String
-    let kankenLevel: KankenLevel
+    var kankenLevel: KankenLevel
     /*private(set)*/ var nouryokuLevel: NouryokuLevel?
-    let stroke: Int
-    private(set) var oldKanji = ""
+    var stroke: Int
+    var oldKanji = ""
     var modernKanji: String?
     private var lastAnswerRight: Bool?
     /*private(set)*/ var rightAnwers: Int?
     private(set) var wrongAnswers: Int?
-    private var inList: Bool?
-    let link: String
+    /*private*/ var inList: Bool?
+    var link: String
     private var dateStamp: Date?
     
     init(id: Int, body: String, defaultReading: String, kunReading: [SchoolLevel : String], onReading: [SchoolLevel : String], examples: [SchoolLevel : String], examplesWithReading: [SchoolLevel : [[TextAndReading]]], translateExapmles: [SchoolLevel : [String]] = [:], meaning: String, keys: String, kankenLevel: KankenLevel, nouryokuLevel: NouryokuLevel? = nil, stroke: Int, oldKanji: String = "", lastAnswer: Bool? = nil, link: String) {

@@ -7,9 +7,14 @@
 
 import Foundation
 
+/// Отображает активность пользователя
+/// - parameter date: Время первой активности(отражает день когда была активности)
+/// - parameter actionsCount: всего было действий в этот день
+/// - parameter added: добавлено новых элементов в этот день
+/// - parameter elementsInLearningList: сколько всего было элементов для изучения на момент первой активности в текущий день
 struct ActivityModel: Codable {
     let date: Date
-    var actionsCount: Int
+    private(set) var actionsCount: Int
     private(set) var added: Int
     let elementsInLearningListInThatDay: Int
     
@@ -25,11 +30,12 @@ struct ActivityModel: Codable {
         self.actionsCount = 1
         self.added = 0
         self.elementsInLearningListInThatDay = elementsToLearn
-        if isNewKanji { increaseAdded() }
+        isNewKanji ? increaseAdded() : ()
+        increaseActionsCount()
     }
     
     /// Увеличивает каунтер действий для текущей даты
-    mutating func increase() {
+    mutating func increaseActionsCount() {
         actionsCount += 1
     }
     

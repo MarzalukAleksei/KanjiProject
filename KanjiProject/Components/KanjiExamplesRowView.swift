@@ -121,7 +121,7 @@ struct KanjiExamplesRowView: View {
                 return []
             }
             var result: [[[TextAndReading]]] = []
-            let screenWidth = bound - Settings.padding * 2
+            let screenWidth = bound - Settings.padding * 3
             var avalWidth = screenWidth
             var currentRow: [[TextAndReading]] = []
             for element in getWordAndSize() {

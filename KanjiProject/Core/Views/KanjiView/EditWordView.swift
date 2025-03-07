@@ -14,11 +14,20 @@ struct EditWordView: View {
     @State private var showInfo = false
     @State private var showMassage = false
     private var constantWord: WordModel
+    private var isNewWord: Bool = false
 
     init(word: WordModel) {
         self.word = word
         self.constantWord = word
         self.constantWord = toNewLine(word)
+    }
+    
+    /// Если слово отсутствует в базе данных
+    init(new word: WordModel) {
+        self.word = word
+        self.constantWord = word
+        self.constantWord = toNewLine(word)
+        self.isNewWord = true
     }
     
     var body: some View {
@@ -28,14 +37,13 @@ struct EditWordView: View {
                 
                 Spacer()
                 
+                // MARK: Кнопка подтверждения сохранения
                 if isDataChanged() {
                     CheckmarkButton {
-                        withAnimation(.easeOut(duration: 0.15)) {
-                            showMassage = true
-                        }
-                        Task {
-                            await store.updateWord(origin())
-                            global.wordToChange = word
+                        if !isNewWord {
+                            existWordSaveAction()
+                        } else {
+                            newWordSaveAction()
                         }
                     }
                     .foregroundStyle(.green)
@@ -44,19 +52,18 @@ struct EditWordView: View {
             .padding([.horizontal, .top], Settings.closeButtonPadding)
             
             Group {
-                Text(word.body)
+                // MARK: Слово
+                Text(!word.body.isEmpty ? word.body : " ")
                     .font(.title)
                 
+                // MARK: Переводы
                 Text("Значение:")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .opacity(0.5)
                 
                 TextEditor(text: $word.meaningInRussian)
                     .textFieldStyle(.roundedBorder)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(lineWidth: 0.1)
-                    }
+                    .modifier(Modifiers.textEditorBounds)
                 
                 // MARK: УДАЛИТЬ ЭТОТ БЛОК ПОСЛЕ ОКОНЧАНИЯ РАБОТЫ СО СЛОВОМ
                 HStack {
@@ -66,20 +73,42 @@ struct EditWordView: View {
                                 setLevel(cell)
                             } label: {
                                 let inTag = word.levelInTag
-                                Circle()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(inTag.contains(where: { $0 == cell }) ? .gray : .black)
-                                    .overlay {
-                                        Text("\(cell)")
-                                            .foregroundColor(.white)
-                                    }
+                                LVButton(cell: cell, inTag: inTag)
                                 
                             }
                             
                         }
                     }
+                    
+                    Button {
+                        inListAction()
+                    } label: {
+                        Text(word.isInList ? "Убрать из списка" : "Добавить в список")
+                            .frame(height: 50)
+                            .padding(.horizontal, 10)
+                            .background(word.isInList ? Color.gray : Color.black)
+                            .foregroundColor(.white)
+                            .clipShape(Capsule())
+                    }
+                    .frame(width: 100)
+
                 }
                 
+                // MARK: Поле, для редактирования основного слова
+                Text("Слово:")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                TextField("", text: $word.body)
+                    .textFieldStyle(.roundedBorder)
+                    
+                    
+//                TextEditor(text: $word.body)
+//                    .frame(maxHeight: wordReadingFrameHeight())
+//                    .modifier(Modifiers.textEditorBounds)
+//                    .font(.system(size: TextSizes.wordEdit))
+                    
+                
+                // MARK: Поле для записи фуриганы
                 HStack {
                     Text("Слово и его чтение:")
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -99,12 +128,10 @@ struct EditWordView: View {
                 
                 TextEditor(text: $word.reading)
                     .frame(maxHeight: wordReadingFrameHeight())
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(lineWidth: 0.1)
-                    }
+                    .modifier(Modifiers.textEditorBounds)
                     .font(.system(size: TextSizes.wordEdit))
                 
+                // MARK: Кнопка с сообщением
                 if showInfo {
                     Text(Massages.wordReadingEdit)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -135,6 +162,28 @@ struct EditWordView: View {
             word = toNewLine(word)
 //            global.wordToChange = word
         }
+        .onDisappear {
+            global.wordToChange = nil
+        }
+        .navigationBarBackButtonHidden(true)
+    }
+    
+    private func existWordSaveAction() {
+        savedMassage()
+        
+        Task {
+            await store.updateWord(origin())
+            global.wordToChange = word
+        }
+    }
+    
+    private func newWordSaveAction() {
+        savedMassage()
+        let newStore = store.baseWordsStore.getAll() + [origin()]
+        store.baseWordsStore.updateAll(data: newStore)
+        Task {
+            await store.baseWordsStore.saveInFileManager()
+        }
     }
     
     // MARK: УДАЛИТЬ ПОСЛЕ ОКОНЧАНИЯ РАБОТЫ СО СЛОВОМ
@@ -148,37 +197,45 @@ struct EditWordView: View {
         word.setLevels(inTag)
     }
     
-    func wordReadingFrameHeight() -> CGFloat {
-        return TextSizes.wordEdit * 3
+    private func wordReadingFrameHeight() -> CGFloat {
+        return TextSizes.wordEdit * 3 / 1.7
     }
     
+    private func inListAction() {
+        if word.isInList {
+            word.removeFromList()
+        } else {
+            word.addInList()
+        }
+    }
 //    func isDataChanged() -> Bool {
 //        if constantWord.reading != word.reading || constantWord.meaningInRussian != word.meaningInRussian {
 //            return true
 //        }
 //        return false
 //    }
-    func isDataChanged() -> Bool {
-        if constantWord.reading != word.reading || constantWord.meaningInRussian != word.meaningInRussian || constantWord.levelInTag != word.levelInTag {
+    private func isDataChanged() -> Bool {
+        if constantWord.reading != word.reading || constantWord.meaningInRussian != word.meaningInRussian || constantWord.levelInTag != word.levelInTag || constantWord.body != word.body || constantWord.isInList != word.isInList {
             return true
         }
         return false
     }
     
-    func screenWidth() -> CGFloat {
+    private func screenWidth() -> CGFloat {
         if let width = UIScreen.current?.bounds.width {
             return width
         }
         return .zero
     }
     
-    func toNewLine(_ word: WordModel) -> WordModel {
+    private func toNewLine(_ word: WordModel) -> WordModel {
         var word = word
         word.meaningInRussian = word.meaningInRussian.replacingOccurrences(of: "・", with: "\n")
         return word
     }
     
-    func origin() -> WordModel {
+    // MARK: Возвращает итоговый формат слова
+    private func origin() -> WordModel {
         var word = word
         word.meaningInRussian = word.meaningInRussian.replacingOccurrences(of: "\n", with: "・")
         return word
@@ -191,3 +248,24 @@ struct EditWordView: View {
         .environmentObject(Store())
 }
 
+extension EditWordView {
+    private func savedMassage() {
+        withAnimation(.easeOut(duration: 0.15)) {
+            showMassage = true
+        }
+    }
+}
+
+private struct LVButton: View {
+    let cell: NouryokuLevel
+    let inTag: [NouryokuLevel]
+    var body: some View {
+        Circle()
+            .frame(width: 50, height: 50)
+            .foregroundColor(inTag.contains(where: { $0 == cell }) ? .gray : .black)
+            .overlay {
+                Text("\(cell)")
+                    .foregroundColor(.white)
+            }
+    }
+}

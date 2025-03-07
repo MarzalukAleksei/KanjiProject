@@ -7,11 +7,15 @@
 
 import Foundation
 
-class WordsStore: IStore {
+class WordsStore: IStore, ObservableObject {
     typealias Result = [WordModel]
     typealias Entity = [WordModel]
     
-    private var data: [WordModel] = []
+    @Published private var data: [WordModel] = []
+    
+    init() {
+        
+    }
     
     func updateAll(data: [WordModel]) {
         self.data = data

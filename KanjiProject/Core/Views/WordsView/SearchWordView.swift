@@ -26,7 +26,7 @@ struct SearchWordView: View {
                             autoCompleteWord.autoComplete(value)
                         })
                 
-                    NavigationLink(destination: CreateWordView(_body: searchWord)) {
+                    NavigationLink(destination: CreateWordView(word: .init(body: searchWord))) {
                         ButtonsImages.pencil
                             .foregroundStyle(.white)
                     }
@@ -37,7 +37,8 @@ struct SearchWordView: View {
             
             List(autoCompleteWord.words) { word in
                 NavigationLink {
-                    WordLearningView(level: .another, currentWord: word)
+//                    WordLearningView(level: .another, currentWord: word)
+                    EditWordView(word: word)
                 } label: {
                     HStack {
                         Text(word.body)
@@ -45,34 +46,51 @@ struct SearchWordView: View {
                         ButtonsImages.checkmark.opacity(word.isInList ? 1 : 0)
                     }
                 }
-
+                .swipeActions {
+                    Button {
+                        swipeAction(for: word)
+                    } label: {
+                        Text(word.isInList ? "Убрать из списка" : "Добавить в список")
+                    }
+                    .tint(word.isInList ? .gray : .green)
+                }
             }
+            .listStyle(.plain)
             
             Spacer()
             
             DismissButton()
         }
-        
+        // MARK: Выполняется при  появлении экрана
+        .task {
+            await appearAction()
+        }
         .onAppear {
             tabbarState.tabBarIsHidden = true
-            let word = searchWord
-            searchWord = ""
-            Task {
-                try? await Task.sleep(nanoseconds:10000000)
-                searchWord = word
-            }
         }
+        
         .navigationBarBackButtonHidden(true)
     }
     
-//    func findWord() async -> [WordModel] {
-//        return await withUnsafeContinuation { continuation in
-//            Task {
-//                let result = store.baseWordsStore.getAll().filter { $0.body == searchWord }
-//                return result
-//            }
-//        }
-//    }
+    private func appearAction() async {
+        let words = Words(words: store.baseWordsStore.getAll())
+        autoCompleteWord.words = await words.lookUp(searchWord)
+    }
+    
+    private func swipeAction(for word: WordModel) {
+        var word = word
+        if !word.isInList {
+            word.addInList()
+        } else {
+            word.removeFromList()
+        }
+        
+        Task {
+            await store.baseWordsStore.update(set: word)
+            await store.baseWordsStore.saveInFileManager()
+        }
+        autoCompleteWord.updWord(word)
+    }
 }
 
 #Preview {
@@ -103,12 +121,17 @@ class AutoCompleteWord: ObservableObject {
     
     private var task: Task<Void, Never>?
     
+    func ar(word value: String) -> [WordModel] {
+        autoComplete(value)
+        return words
+    }
+    
     func autoComplete(_ text: String) {
-        guard !text.isEmpty else {
-            words = []
-            task?.cancel()
-            return
-        }
+//        guard !text.isEmpty else {
+//            words = []
+//            task?.cancel()
+//            return
+//        }
         
         task?.cancel()
         
@@ -122,6 +145,11 @@ class AutoCompleteWord: ObservableObject {
             
             words = newWords
         }
+    }
+    
+    func updWord(_ word: WordModel) {
+        guard let index = words.firstIndex(where: { $0.id == word.id }) else { return }
+        words[index] = word
     }
 }
 

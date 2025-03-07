@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CloseButton: View {
-    @Environment(\.dismiss) var dismiss
-//    @EnvironmentObject private var globalChanging: GlobalChanging
+    @Environment(\.dismiss) private var dismiss
     private var action: () -> Void
     
     init(action: @escaping () -> Void = {}) {
@@ -17,21 +16,14 @@ struct CloseButton: View {
     }
     
     var body: some View {
-//        HStack {
-            Button(action: {
-                dismiss()
-//                globalChanging.wordToChange = nil
-                action()
-            }, label: {
-                ButtonsImages.dismissButtonImage
-                    .resizable()
-                    .frame(width: ElementSize.closeButton.width,
-                           height: ElementSize.closeButton.height)
-                    .foregroundStyle(.black)
-                    .opacity(0.4)
-            })
-//            Spacer()
-//        }
+        Button(action: {
+            dismiss()
+            action()
+        }, label: {
+            ButtonsImages.dismissButtonImage
+                .resizable()
+                .modifier(Modifiers.closeButton)
+        })
     }
 }
 
