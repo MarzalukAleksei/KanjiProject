@@ -9,28 +9,28 @@ import Foundation
 
 struct KanjiKankenModel: Identifiable, Codable, Hashable {
     
-    var id: Int
-    var body: String
+    private(set) var id: Int
+    private(set) var body: String
     let defaultReading: String
-    var kunReading: [SchoolLevel: String]
-    var onReading: [SchoolLevel: String]
-    var examples: [SchoolLevel: String]
-    var examplesWithReading: [SchoolLevel: [[TextAndReading]]]
+    private(set) var kunReading: [SchoolLevel: String]
+    private(set) var onReading: [SchoolLevel: String]
+    private(set) var examples: [SchoolLevel: String]
+    private(set) var examplesWithReading: [SchoolLevel: [[TextAndReading]]]
     private(set) var translateExapmles: [SchoolLevel: [String]]
     let meaning: String
-    /*private(set) */var meaningInRussion: String?
+    private(set) var meaningInRussion: String?
     private(set) var meaningInEng: String?
     let keys: String
-    var kankenLevel: KankenLevel
-    /*private(set)*/ var nouryokuLevel: NouryokuLevel?
-    var stroke: Int
-    var oldKanji = ""
-    var modernKanji: String?
+    private(set) var kankenLevel: KankenLevel
+    private(set) var nouryokuLevel: NouryokuLevel?
+    private(set) var stroke: Int
+    private(set) var oldKanji = ""
+    private(set) var modernKanji: String?
     private var lastAnswerRight: Bool?
-    /*private(set)*/ var rightAnwers: Int?
+    private(set) var rightAnwers: Int?
     private(set) var wrongAnswers: Int?
-    /*private*/ var inList: Bool?
-    var link: String
+    private var inList: Bool?
+    private(set) var link: String
     private var dateStamp: Date?
     
     init(id: Int, body: String, defaultReading: String, kunReading: [SchoolLevel : String], onReading: [SchoolLevel : String], examples: [SchoolLevel : String], examplesWithReading: [SchoolLevel : [[TextAndReading]]], translateExapmles: [SchoolLevel : [String]] = [:], meaning: String, keys: String, kankenLevel: KankenLevel, nouryokuLevel: NouryokuLevel? = nil, stroke: Int, oldKanji: String = "", lastAnswer: Bool? = nil, link: String) {

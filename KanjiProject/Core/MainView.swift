@@ -63,54 +63,7 @@ struct MainView: View {
             
         }
         .onAppear {
-//            let all = store.baseWordsStore.getAll().filter { $0.reading.contains(" ")}
-//            print(all.count)
-//            for i in all {
-//                print(i.body, i.reading)
-//            }
-//            var result = store.kanjiKankenStore.getAll().map { $0.id }
-//            var missed: Set<Int> = []
-//            for i in result {
-//                let numbers = result.filter { $0 == i }
-//                if numbers.count > 1 {
-//                    missed.insert(i)
-//                }
-//            }
-//            
-//            for kan in missed.sorted() {
-//                let i = store.kanjiKankenStore.getAll().first(where: { $0.id == kan })
-//                print(i?.id, i?.body, i?.nouryokuLevel, i?.kankenLevel)
-//            }
             
-//            var sameList: [KanjiKankenModel] = []
-//            for kanji in store.kanjiKankenStore.getAll() {
-//                if kanji.body == kanji.oldKanji {
-//                    sameList.append(kanji)
-//                }
-//            }
-//            print(sameList.count)
-//            
-//            for i in sameList where i.nouryokuLevel == .N1 {
-//                print(i.body, i.oldKanji, i.nouryokuLevel)
-//            }
-////            print(kanji?.nouryokuLevel)
-//            
-//            let kan = store.kanjiKankenStore.getAll().filter { $0.body == "朗" }
-//            print(kan.count)
-//            for i in kan {
-//                print(i.body, i.nouryokuLevel, i.oldKanji, i.id)
-//                print(i.link)
-//                print(i.body.unicodeScalars.first?.value, i.oldKanji.unicodeScalars.first?.value)
-//                print("+++++++")
-//                print(i)
-//                print(i.body == "廊")
-//            }
-//            let kanji朗 = store.kanjiKankenStore.getAll().first(where: { $0.id == 3403 })
-//            let uni = "廊".unicodeScalars.first?.value
-//            let uni2 = "廊".unicodeScalars.first?.value
-//            print(uni)
-//            print(uni2)
-//            print(uni == uni2)
         }
         
     }

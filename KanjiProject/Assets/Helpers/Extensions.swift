@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 extension String {
     func textAndLinks() -> [(isText: Bool, text: String)] {
@@ -281,3 +282,17 @@ extension Date {
     }
 }
 
+extension Data {
+    func saveAs(file name: String, conformingTo: UTType) {
+        let fileManager = FileManager.default
+        guard let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        let fileURL = documentDirectory.appendingPathComponent(name, conformingTo: conformingTo)
+        
+        do {
+            try self.write(to: fileURL)
+            print("File SAVED TO \(fileURL) as \(conformingTo.description)")
+        } catch {
+            print(error)
+        }
+    }
+}
