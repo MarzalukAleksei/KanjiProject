@@ -63,6 +63,7 @@ struct MainView: View {
             
         }
         .onAppear {
+            let nonChecked = store.baseWordsStore.getAll().filter { $0.thisWordWasChecked == nil }
             
         }
         

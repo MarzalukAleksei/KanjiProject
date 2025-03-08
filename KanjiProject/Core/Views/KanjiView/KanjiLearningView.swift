@@ -19,21 +19,30 @@ struct KanjiLearningView: View {
     @State private var showListOverWarning = false
     @State private var hideReadings: Bool = true
     @State private var showKeysViewSheet = false
+    @ObservedObject private var states: KanjiLearningStates = .init()
     @State private var allKanji: [KanjiKankenModel] = []
+    @State private var makeFocus: Bool = true
     
     let storeOperations: StoreOperations
     let selectedKanken: Bool
     let nouryokuLevel: NouryokuLevel
     let kankenLevel: KankenLevel
+    /// Используется, чтобы вызывать тригер каждый раз, когда любое из вложенных свойств меняется
+    var combinedStates: [Bool] {
+        [showWordDetail, showDeleteWarning, showListOverWarning, showKeysViewSheet]
+    }
     
     var body: some View {
         ZStack {
             // MARK: Кнопки на клавиатуре, при запуске на ПК
             if #available(iOS 17.0, *) {
-                ButtonsActions {
+                ButtonsActions(makeFocus: $makeFocus) {
                     returnButtonAction()
                 } spaceButtonAction: {
                     spaceButtonAction()
+                }
+                .onChange(of: combinedStates) { _, _ in
+                    makeFocus.toggle()
                 }
             }
         VStack {
@@ -242,6 +251,7 @@ struct KanjiLearningView: View {
     private func repeatWrongsButton() {
         allKanji = storeOperations.getAllWrong(below: nouryokuLevel)
         setCurrentKanji()
+//        makeFocus.toggle()
     }
     
     private func repeatButton() {
@@ -325,7 +335,8 @@ struct KanjiLearningView: View {
 @available(iOS 17.0, *)
 private struct ButtonsActions: View {
     @Environment(\.scenePhase) private var scenePhase
-    @FocusState var focused: Bool
+    @FocusState private var focused: Bool
+    @Binding var makeFocus: Bool
     var returnButtonAction: () -> Void
     var spaceButtonAction: () -> Void
     
@@ -359,5 +370,16 @@ private struct ButtonsActions: View {
                     break
                 }
             }
+            .onChange(of: makeFocus) { _, _ in
+                focused = true
+            }
     }
+}
+
+class KanjiLearningStates: ObservableObject {
+    @Published var showWordDetail = false
+    @Published var showDeleteWarning = false
+    @Published var showListOverWarning = false
+    @Published var hideReadings: Bool = true
+    @Published var showKeysViewSheet = false
 }
