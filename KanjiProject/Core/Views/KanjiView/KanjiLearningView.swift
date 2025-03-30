@@ -19,52 +19,33 @@ struct KanjiLearningView: View {
     @State private var showListOverWarning = false
     @State private var hideReadings: Bool = true
     @State private var showKeysViewSheet = false
-    @ObservedObject private var states: KanjiLearningStates = .init()
     @State private var allKanji: [KanjiKankenModel] = []
-    @State private var makeFocus: Bool = true
     
     let storeOperations: StoreOperations
     let selectedKanken: Bool
     let nouryokuLevel: NouryokuLevel
     let kankenLevel: KankenLevel
     /// Используется, чтобы вызывать тригер каждый раз, когда любое из вложенных свойств меняется
-    var combinedStates: [Bool] {
+    private var combinedStates: [Bool] {
         [showWordDetail, showDeleteWarning, showListOverWarning, showKeysViewSheet]
     }
     
     var body: some View {
         ZStack {
             // MARK: Кнопки на клавиатуре, при запуске на ПК
-            if #available(iOS 17.0, *) {
-                ButtonsActions(makeFocus: $makeFocus) {
-                    returnButtonAction()
-                } spaceButtonAction: {
-                    spaceButtonAction()
-                }
-                .onChange(of: combinedStates) { _, _ in
-                    makeFocus.toggle()
-                }
+            FocusedButtonsActions(combinedStates: combinedStates) {
+                returnButtonAction()
+            } spaceButtonAction: {
+                spaceButtonAction()
             }
+
         VStack {
             VStack {
-                HStack {
-                    CloseButton {
-                        globalChanging.wordToChange = nil
-                        storeOperations.updKanjiKankenFile()
-                    }
-                    
-                    Spacer()
-                    
-                    Text(!allKanji.isEmpty ? "Осталось изучить \(allKanji.count + 1)" : "Последний")
-                        .opacity(currentKanji == nil ? 0 : 1)
-                    
-                    Spacer()
-                    
-                    if let jlpt = currentKanji?.nouryokuLevel {
-                        Text(jlpt != .another ? "Этот кандзи из JLPT \(jlpt)" : "")
-                            .opacity(hideReadings ? 0 : 1)
-                    }
-                }
+                LearningViewHeader(storeOperations: storeOperations,
+                                   remain: allKanji.count,
+                                   hideRemainText: currentKanji == nil ? true : false,
+                                   currentJLPTLevel: currentKanji?.nouryokuLevel,
+                                   hideReading: hideReadings)
                 
                 Group {
                     if let currentKanji = currentKanji {
@@ -321,65 +302,9 @@ struct KanjiLearningView: View {
 }
 
 #Preview {
-    if #available(iOS 17.0, *) {
-        KanjiLearningView(storeOperations: .init(store: Store(), userSettings: UserSettings()), selectedKanken: false, nouryokuLevel: .N5, kankenLevel: .級10)
-            .environmentObject(Store())
-            .environmentObject(GlobalChanging())
-            .environmentObject(UserSettings())
-        // Fallback on earlier versions
-    } else {
-        
-    }
+    KanjiLearningView(storeOperations: .init(store: Store(), userSettings: UserSettings()), selectedKanken: false, nouryokuLevel: .N5, kankenLevel: .級10)
+        .environmentObject(Store())
+        .environmentObject(GlobalChanging())
+        .environmentObject(UserSettings())
 }
 
-@available(iOS 17.0, *)
-private struct ButtonsActions: View {
-    @Environment(\.scenePhase) private var scenePhase
-    @FocusState private var focused: Bool
-    @Binding var makeFocus: Bool
-    var returnButtonAction: () -> Void
-    var spaceButtonAction: () -> Void
-    
-    var body: some View {
-        Color.clear
-            .focusable()
-            .focused($focused)
-            .onKeyPress { keyPress in
-                if keyPress.key == .return {
-                    returnButtonAction()
-                    return .handled
-                }
-                if keyPress.key == .space {
-                    spaceButtonAction()
-                    return .handled
-                }
-                return .ignored
-            }
-            .onAppear {
-                focused = true
-            }
-            .onChange(of: scenePhase) { _, scenePhase in
-                switch scenePhase {
-                case .background:
-                    focused = false
-                case .inactive:
-                    focused = false
-                case .active:
-                    focused = true
-                @unknown default:
-                    break
-                }
-            }
-            .onChange(of: makeFocus) { _, _ in
-                focused = true
-            }
-    }
-}
-
-class KanjiLearningStates: ObservableObject {
-    @Published var showWordDetail = false
-    @Published var showDeleteWarning = false
-    @Published var showListOverWarning = false
-    @Published var hideReadings: Bool = true
-    @Published var showKeysViewSheet = false
-}

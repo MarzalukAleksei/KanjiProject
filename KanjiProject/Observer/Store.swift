@@ -24,6 +24,8 @@ final class Store: ObservableObject {
     /// Слова используемые в примерах
     @Published var kanjiKankenExamplesTranslationsStore = KanjiKankenExamplesTranslationsStore()
     @Published var goiStore = GoiStore()
+    /// база нярса отображается некоректно. есть пропуски в словах. Поправить. по аналогии с 和
+    let nyarsStore = NyarsStore()
     
     init() {
 //        kanjiStore.updateAll(data: JSONManager.manager.getKanji())

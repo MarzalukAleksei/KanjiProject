@@ -56,11 +56,13 @@ class StoreOperations {
     func getKanjiArray(from word: WordModel?) -> [KanjiKankenModel] {
         var result: [KanjiKankenModel] = []
         guard let word = word else { return result }
+        
         for element in word.body {
-            if let kanji = store.kanjiKankenStore.getAll().first(where: { $0.body == String(element)}) {
-                result.append(kanji)
-            }
+            let element = String(element)
+            guard let kanji = try? store.kanjiKankenStore.getKanji(with: element) else { continue }
+            result.append(kanji)
         }
+        
         return result
     }
     

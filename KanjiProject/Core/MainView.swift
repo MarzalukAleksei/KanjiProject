@@ -24,6 +24,7 @@ struct MainView: View {
     @EnvironmentObject private var tabBarState: TabBarState
     
     @EnvironmentObject var store: Store
+    @EnvironmentObject private var userSettings: UserSettings
     
     init() {
         UITabBar.appearance().isHidden = true
@@ -63,8 +64,26 @@ struct MainView: View {
             
         }
         .onAppear {
-            let nonChecked = store.baseWordsStore.getAll().filter { $0.thisWordWasChecked == nil }
+            var nonChecked = store.baseWordsStore.getAll().filter { $0.thisWordWasChecked == nil }
+            let operations = StoreOperations(store: store, userSettings: userSettings)
+            nonChecked = nonChecked.map { word in
+                var word = word
+                if !word.reading.contains("["), word.reading.contains("）") {
+                    word.reading = word.reading.replacingOccurrences(of: "）", with: "）[]")
+                    let parts = operations.getKanjiArray(from: word)
+                    print(word.body, word.reading, parts.map { $0.body })
+                }
+                return word
+            }
             
+//            nonChecked.forEach { word in
+//                store.baseWordsStore.update(set: word)
+//            }
+//            store.baseWordsStore.saveInFileManager()
+            
+            for i in store.nyarsStore.getAll() {
+                print(i.words, i.readings, i.translates)
+            }
         }
         
     }

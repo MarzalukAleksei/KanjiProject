@@ -45,6 +45,13 @@
 		AF1EB0662A97796600850A3B /* KanaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB0652A97796600850A3B /* KanaStore.swift */; };
 		AF1EB06A2A98E12A00850A3B /* KanjiToUserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB0692A98E12A00850A3B /* KanjiToUserListView.swift */; };
 		AF1EB07A2A99693200850A3B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1EB0792A99693200850A3B /* Extensions.swift */; };
+		AF2656FB2D95964C00097085 /* terms_5.json in Resources */ = {isa = PBXBuildFile; fileRef = AF2656F82D95964C00097085 /* terms_5.json */; };
+		AF2656FC2D95964C00097085 /* terms_7.json in Resources */ = {isa = PBXBuildFile; fileRef = AF2656FA2D95964C00097085 /* terms_7.json */; };
+		AF2656FD2D95964C00097085 /* terms_2.json in Resources */ = {isa = PBXBuildFile; fileRef = AF2656F52D95964C00097085 /* terms_2.json */; };
+		AF2656FE2D95964C00097085 /* terms_3.json in Resources */ = {isa = PBXBuildFile; fileRef = AF2656F62D95964C00097085 /* terms_3.json */; };
+		AF2656FF2D95964C00097085 /* terms_4.json in Resources */ = {isa = PBXBuildFile; fileRef = AF2656F72D95964C00097085 /* terms_4.json */; };
+		AF2657002D95964C00097085 /* terms_6.json in Resources */ = {isa = PBXBuildFile; fileRef = AF2656F92D95964C00097085 /* terms_6.json */; };
+		AF2657022D95C09800097085 /* NyarsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2657012D95C09700097085 /* NyarsStore.swift */; };
 		AF2D7FAE2AC45D9E00642B48 /* Bunpou.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF2D7FAD2AC45D9E00642B48 /* Bunpou.csv */; };
 		AF2D7FB02AC45DD600642B48 /* BunpouMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D7FAF2AC45DD600642B48 /* BunpouMapper.swift */; };
 		AF2D7FB22AC45E1200642B48 /* BunpouModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D7FB12AC45E1200642B48 /* BunpouModel.swift */; };
@@ -60,12 +67,16 @@
 		AF34E55F2CADC7C200DE530F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF34E55E2CADC7C200DE530F /* Colors.xcassets */; };
 		AF362A742AF59443006DF143 /* LevelSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF362A732AF59443006DF143 /* LevelSelectorView.swift */; };
 		AF362A762AF5948C006DF143 /* KanjiTestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF362A752AF5948C006DF143 /* KanjiTestType.swift */; };
+		AF363C282D94246700C4B7C6 /* NyarsDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF363C272D94246700C4B7C6 /* NyarsDatabaseModel.swift */; };
+		AF363C2A2D942A0800C4B7C6 /* terms_1.json in Resources */ = {isa = PBXBuildFile; fileRef = AF363C292D942A0800C4B7C6 /* terms_1.json */; };
 		AF37E13F2D1C9AB700BC986B /* CheckWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF37E13E2D1C9AB700BC986B /* CheckWordsView.swift */; };
 		AF3A72B62A7D18CD00A5513C /* SelectGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */; };
 		AF3A72B82A7D1C3000A5513C /* ScrollPartsModifires.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B72A7D1C3000A5513C /* ScrollPartsModifires.swift */; };
 		AF3A72BA2A7D4AD500A5513C /* CloseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B92A7D4AD500A5513C /* CloseScrollView.swift */; };
 		AF3A72BC2A7E4AC500A5513C /* ElementSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72BB2A7E4AC500A5513C /* ElementSize.swift */; };
 		AF3A72C22A80512800A5513C /* PartialRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */; };
+		AF3BB7192D7DB37500D56E68 /* FocusedButtonsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3BB7182D7DB37500D56E68 /* FocusedButtonsActions.swift */; };
+		AF3BB71B2D7DBAB600D56E68 /* LearningViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3BB71A2D7DBAB600D56E68 /* LearningViewHeader.swift */; };
 		AF3D53B02C21C308005B495F /* VisionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D53AF2C21C308005B495F /* VisionManager.swift */; };
 		AF3D53B62C2450AC005B495F /* KanjiKankenExamplesTranslationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D53B52C2450AC005B495F /* KanjiKankenExamplesTranslationsStore.swift */; };
 		AF3D53B82C24CE46005B495F /* SelectedWordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D53B72C24CE46005B495F /* SelectedWordDetailView.swift */; };
@@ -247,6 +258,13 @@
 		AF1EB0652A97796600850A3B /* KanaStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaStore.swift; sourceTree = "<group>"; };
 		AF1EB0692A98E12A00850A3B /* KanjiToUserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiToUserListView.swift; sourceTree = "<group>"; };
 		AF1EB0792A99693200850A3B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AF2656F52D95964C00097085 /* terms_2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = terms_2.json; sourceTree = "<group>"; };
+		AF2656F62D95964C00097085 /* terms_3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = terms_3.json; sourceTree = "<group>"; };
+		AF2656F72D95964C00097085 /* terms_4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = terms_4.json; sourceTree = "<group>"; };
+		AF2656F82D95964C00097085 /* terms_5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = terms_5.json; sourceTree = "<group>"; };
+		AF2656F92D95964C00097085 /* terms_6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = terms_6.json; sourceTree = "<group>"; };
+		AF2656FA2D95964C00097085 /* terms_7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = terms_7.json; sourceTree = "<group>"; };
+		AF2657012D95C09700097085 /* NyarsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyarsStore.swift; sourceTree = "<group>"; };
 		AF2D7FAD2AC45D9E00642B48 /* Bunpou.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Bunpou.csv; sourceTree = "<group>"; };
 		AF2D7FAF2AC45DD600642B48 /* BunpouMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunpouMapper.swift; sourceTree = "<group>"; };
 		AF2D7FB12AC45E1200642B48 /* BunpouModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BunpouModel.swift; sourceTree = "<group>"; };
@@ -262,12 +280,16 @@
 		AF34E55E2CADC7C200DE530F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		AF362A732AF59443006DF143 /* LevelSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectorView.swift; sourceTree = "<group>"; };
 		AF362A752AF5948C006DF143 /* KanjiTestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiTestType.swift; sourceTree = "<group>"; };
+		AF363C272D94246700C4B7C6 /* NyarsDatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyarsDatabaseModel.swift; sourceTree = "<group>"; };
+		AF363C292D942A0800C4B7C6 /* terms_1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = terms_1.json; sourceTree = "<group>"; };
 		AF37E13E2D1C9AB700BC986B /* CheckWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckWordsView.swift; sourceTree = "<group>"; };
 		AF3A72B52A7D18CD00A5513C /* SelectGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGroupView.swift; sourceTree = "<group>"; };
 		AF3A72B72A7D1C3000A5513C /* ScrollPartsModifires.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollPartsModifires.swift; sourceTree = "<group>"; };
 		AF3A72B92A7D4AD500A5513C /* CloseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseScrollView.swift; sourceTree = "<group>"; };
 		AF3A72BB2A7E4AC500A5513C /* ElementSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementSize.swift; sourceTree = "<group>"; };
 		AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialRoundedRectangle.swift; sourceTree = "<group>"; };
+		AF3BB7182D7DB37500D56E68 /* FocusedButtonsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedButtonsActions.swift; sourceTree = "<group>"; };
+		AF3BB71A2D7DBAB600D56E68 /* LearningViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningViewHeader.swift; sourceTree = "<group>"; };
 		AF3D53AF2C21C308005B495F /* VisionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionManager.swift; sourceTree = "<group>"; };
 		AF3D53B52C2450AC005B495F /* KanjiKankenExamplesTranslationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiKankenExamplesTranslationsStore.swift; sourceTree = "<group>"; };
 		AF3D53B72C24CE46005B495F /* SelectedWordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedWordDetailView.swift; sourceTree = "<group>"; };
@@ -481,8 +503,23 @@
 				AFC9DACA2C04D1C5006A7ED0 /* BushuStore.swift */,
 				AF3D53B52C2450AC005B495F /* KanjiKankenExamplesTranslationsStore.swift */,
 				AF56AB5D2C41BF27000C1A31 /* GoiStore.swift */,
+				AF2657012D95C09700097085 /* NyarsStore.swift */,
 			);
 			path = Stores;
+			sourceTree = "<group>";
+		};
+		AF2656F42D95963500097085 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF363C292D942A0800C4B7C6 /* terms_1.json */,
+				AF2656F52D95964C00097085 /* terms_2.json */,
+				AF2656F62D95964C00097085 /* terms_3.json */,
+				AF2656F72D95964C00097085 /* terms_4.json */,
+				AF2656F82D95964C00097085 /* terms_5.json */,
+				AF2656F92D95964C00097085 /* terms_6.json */,
+				AF2656FA2D95964C00097085 /* terms_7.json */,
+			);
+			path = Files;
 			sourceTree = "<group>";
 		};
 		AF30EAF929E9F9D900E5B7A9 /* Fonts */ = {
@@ -598,6 +635,8 @@
 		AF78E6B92A49BC1300D43ED7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AF3BB71A2D7DBAB600D56E68 /* LearningViewHeader.swift */,
+				AF3BB7182D7DB37500D56E68 /* FocusedButtonsActions.swift */,
 				AFFF94C02B5C2CC700DD01EB /* BackForwardClearButtons.swift */,
 				AF8122B02B7251F000CCE83A /* BaseWordsSelectLevelView.swift */,
 				AFFC08AF2A8234980043B741 /* CustomNavigationBarView.swift */,
@@ -695,6 +734,7 @@
 			isa = PBXGroup;
 			children = (
 				AFAF80D829D9C646002B9921 /* KanjiProject */,
+				AF2656F42D95963500097085 /* Files */,
 				AFACD9C52A7A80B500F4091F /* Refactor */,
 				AFAF80D729D9C646002B9921 /* Products */,
 			);
@@ -900,6 +940,7 @@
 				AF67723B2D4FF48700B55893 /* ActivityModel.swift */,
 				AFA2BEB42B718EB900BAC9EB /* WordModel.swift */,
 				AF5600762AA46C9400F0123C /* YojijukugoModel.swift */,
+				AF363C272D94246700C4B7C6 /* NyarsDatabaseModel.swift */,
 			);
 			path = DatabaseModels;
 			sourceTree = "<group>";
@@ -1060,6 +1101,7 @@
 				AFA2BEAB2B718A0D00BAC9EB /* Core Japanese Vocabulary__JLPT N3.txt in Resources */,
 				AFA2BEAD2B718A9000BAC9EB /* Core Japanese Vocabulary__JLPT N4.txt in Resources */,
 				AFFF94CB2B5FE31900DD01EB /* 09級.txt in Resources */,
+				AF363C2A2D942A0800C4B7C6 /* terms_1.json in Resources */,
 				AFA2BEB12B718CCC00BAC9EB /* Core Japanese Vocabulary__JLPT N1.txt in Resources */,
 				AF56AB5C2C4168F8000C1A31 /* 語彙N2.csv in Resources */,
 				AFAF80E129D9C647002B9921 /* Preview Assets.xcassets in Resources */,
@@ -1070,6 +1112,12 @@
 				AFA2BE9F2B67C5FB00BAC9EB /* NotoSerifJP-Regular.otf in Resources */,
 				AFFF94DB2B600AED00DD01EB /* 07級.txt in Resources */,
 				AF30EAFE29E9FE1C00E5B7A9 /* ZeroGothic.otf in Resources */,
+				AF2656FB2D95964C00097085 /* terms_5.json in Resources */,
+				AF2656FC2D95964C00097085 /* terms_7.json in Resources */,
+				AF2656FD2D95964C00097085 /* terms_2.json in Resources */,
+				AF2656FE2D95964C00097085 /* terms_3.json in Resources */,
+				AF2656FF2D95964C00097085 /* terms_4.json in Resources */,
+				AF2657002D95964C00097085 /* terms_6.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1123,6 +1171,7 @@
 				AF1EB05C2A97618A00850A3B /* WordRowView.swift in Sources */,
 				AFEF74452AB4B1B5002AB67D /* UserListView.swift in Sources */,
 				AF10112E2B7982E6001EEB39 /* NihongoMapper.swift in Sources */,
+				AF3BB71B2D7DBAB600D56E68 /* LearningViewHeader.swift in Sources */,
 				AFA967F62C1F3FE400E42EEC /* ElementsColors.swift in Sources */,
 				AF3FEBA02AF6423900D40B23 /* SelectedKankenRow.swift in Sources */,
 				AF318A782C0CAE5800259386 /* QuestionMarkButtonView.swift in Sources */,
@@ -1187,6 +1236,7 @@
 				AFC9DACB2C04D1C5006A7ED0 /* BushuStore.swift in Sources */,
 				AF5600772AA46C9400F0123C /* YojijukugoModel.swift in Sources */,
 				AF52CDBE2AF508DD00C2D493 /* CoreMLManager.swift in Sources */,
+				AF3BB7192D7DB37500D56E68 /* FocusedButtonsActions.swift in Sources */,
 				AF728D972ADD0D6D0098765D /* KankenMapper.swift in Sources */,
 				AF2EF3042D3403E800F9DECF /* BoldDivider.swift in Sources */,
 				AF17B60C2D0196F900E436AB /* UserActivityView.swift in Sources */,
@@ -1194,6 +1244,7 @@
 				AF3D53BC2C29B0B0005B495F /* CloseButton.swift in Sources */,
 				AFAF810429D9E801002B9921 /* KanjiMapper.swift in Sources */,
 				AFFC08B42A823EAB0043B741 /* LevelButton.swift in Sources */,
+				AF363C282D94246700C4B7C6 /* NyarsDatabaseModel.swift in Sources */,
 				AF37E13F2D1C9AB700BC986B /* CheckWordsView.swift in Sources */,
 				AFA2BEB72B71984600BAC9EB /* WordsStore.swift in Sources */,
 				AF69CE712A001739009C7B92 /* ButtonsImages.swift in Sources */,
@@ -1226,6 +1277,7 @@
 				AFFF94B92B52F80400DD01EB /* TextSizes.swift in Sources */,
 				AF8E84042CD3CB9D009FE87C /* NouryokuWordsMapper.swift in Sources */,
 				AFB1FE162C1C957E00498A8F /* KanjiCheckView.swift in Sources */,
+				AF2657022D95C09800097085 /* NyarsStore.swift in Sources */,
 				AFB32FE92A93825F00934C09 /* WordDetailView.swift in Sources */,
 				AF30EB1129EB0A0C00E5B7A9 /* NouryokuLevel.swift in Sources */,
 				AF5621772B8CE8460067F87D /* SearchWordView.swift in Sources */,

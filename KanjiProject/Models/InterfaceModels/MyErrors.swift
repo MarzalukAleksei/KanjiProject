@@ -12,4 +12,6 @@ enum MyErrors: String, Error {
     case nilWord = "Отсутствует слово"
     case wrongBushu = "Нет соответстующего ключа"
     case activityDecodeFaled = "Ошибка декодирования активности"
+    case kanjiNotFound = "Не найден кандзи"
+    case unicodeNotFound = "Не найден Unicode"
 }

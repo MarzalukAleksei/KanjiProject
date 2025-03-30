@@ -77,6 +77,18 @@ class KanjiKankenStore: IStore, ObservableObject {
         }
     }
     
+    func getKanji(with kanji: String) throws -> KanjiKankenModel {
+        guard let givenKanjiUnicode = kanji.unicodeScalars.first?.value else { throw MyErrors.unicodeNotFound }
+        for kanji in data {
+            guard let currentKanjiUnicode = kanji.body.unicodeScalars.first?.value else { throw MyErrors.unicodeNotFound }
+            
+            if givenKanjiUnicode == currentKanjiUnicode {
+                return kanji
+            }
+        }
+        throw MyErrors.kanjiNotFound
+    }
+    
 //    func update(set kanji: KanjiKankenModel) async {
 //        if let index = data.firstIndex(where: { $0.body == kanji.body }) {
 //            data[index] = kanji
