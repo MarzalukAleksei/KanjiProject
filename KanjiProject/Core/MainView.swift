@@ -81,9 +81,23 @@ struct MainView: View {
 //            }
 //            store.baseWordsStore.saveInFileManager()
             
-            for i in store.nyarsStore.getAll() {
-                print(i.words, i.readings, i.translates)
-            }
+//            for i in store.nyarsStore.getAll() {
+//                print(i.spellings, i.readings, i.translates)
+//            }
+            
+//            var n2Nil = store.baseWordsStore.getAll(for: .N2).filter { $0.thisWordWasChecked == nil }
+//            
+//            for word in n2Nil.enumerated() {
+//                var newWord = word.element
+//                newWord.reading = newWord.reading.replacingOccurrences(of: " ", with: "[]")
+//                n2Nil[word.offset] = newWord
+//            }
+//            
+//            n2Nil.forEach { word in
+//                store.baseWordsStore.update(set: word)
+//            }
+//            store.baseWordsStore.saveInFileManager()
+            
         }
         
     }

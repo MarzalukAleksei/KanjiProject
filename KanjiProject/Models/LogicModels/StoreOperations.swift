@@ -72,7 +72,7 @@ class StoreOperations {
     }
     
     func getWord(from words: [WordModel]) throws -> WordModel {
-        guard let word = words.randomElement() else { throw MyErrors.nilWord }
+        guard let word = words.randomElement() else { throw MyErrors.wordIsNotAvailable }
         return word
     }
     
@@ -87,7 +87,7 @@ class StoreOperations {
     ///  - Parameter answer:
     ///  - rightAnswers: Если  больше чем константное значение, то сохранить базе с пометкой true
     func setAnswer(for kanji: KanjiKankenModel?, answer: Answer) throws {
-        guard var kanji = kanji else { throw MyErrors.nilWord }
+        guard var kanji = kanji else { throw MyErrors.wordIsNotAvailable }
         kanji.setCurrentDate()
         
         if kanji.isInLearningList() == nil {

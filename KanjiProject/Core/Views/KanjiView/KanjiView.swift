@@ -19,9 +19,6 @@ struct KanjiView: View {
     @AppStorage("userActivity") private var userActivity: Data?
     @State private var toggle = false // true - Kanken, false - JLPT
     @State private var showLearningView = false
-    @State private var showLearningByKanjiSecondVar = false
-    @State private var showCheckView = false
-    @State private var showLearningByWord = false
     @State private var reloadView = true
     @State private var showInfoAlert = false
     
@@ -92,7 +89,7 @@ struct KanjiView: View {
 //                }
                 
 // MARK: Кнопки повторения и изучения
-                LearningOrRememberSelectButtonsView(showLearningView: $showLearningView, showLearningByKanjiSecondVar: $showLearningByKanjiSecondVar, showCheckView: $showCheckView, showLearnigByWord: $showLearningByWord)
+                LearningOrRememberSelectButtonsView(showLearningView: $showLearningView)
                 
 // MARK: Список разделенный на ячейки
 //                GeometryReader { geo in
@@ -139,31 +136,9 @@ struct KanjiView: View {
             Color.gray.ignoresSafeArea()
                 .modifier(Modifiers.tabBarSize)
         }
-        .fullScreenCover(isPresented: $showCheckView) {
-            KanjiCheckView(selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
-                .onDisappear {
-                    let kanjiStore = store.kanjiKankenStore.getAll()
-//                    self.kanjiKankenStore.clearAll()
-                    self.kanjiKankenStore.updateAll(data: kanjiStore)
-                }
-        }
-//        .fullScreenCover(isPresented: $showLearningView) {
-//            KanjiLearningView(storeOperations: .init(store: store, chosenLevel: selectedNouryokuLevel), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
-//            //                .onDisappear {
-//            //
-//            //                }
-//        }
-        .fullScreenCover(isPresented: $showLearningByKanjiSecondVar) {
+        .fullScreenCover(isPresented: $showLearningView) {
             KanjiLearningView(storeOperations: .init(store: store, userSettings: userSettings), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
             
-        }
-        .fullScreenCover(isPresented: $showLearningByWord) {
-            LearningByWordView(currentLevel: selectedNouryokuLevel, databaseOperation: .init(store: store, userSettings: userSettings))
-                .onDisappear {
-                    let kanjiStore = store.kanjiKankenStore.getAll()
-//                    self.kanjiKankenStore.clearAll()
-                    self.kanjiKankenStore.updateAll(data: kanjiStore)
-                }
         }
         .alert(allertTitle(), isPresented: $showInfoAlert) {
             Button(InterfaceTexts.infoAlertButtonOnMainview) {}

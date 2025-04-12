@@ -163,7 +163,7 @@ struct EditWordView: View {
 //            global.wordToChange = word
         }
         .onDisappear {
-            global.wordToChange = nil
+//            global.wordToChange = nil
         }
         .navigationBarBackButtonHidden(true)
     }

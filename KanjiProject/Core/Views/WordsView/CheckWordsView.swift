@@ -37,7 +37,6 @@ struct CheckWordsView: View { // ВРЕМЕННЫЙ ВЬЮ. УБРАТЬ ПОС�
                     Spacer()
                     
                     Button {
-//                        global.wordToChange = currentWord
                         showEditView = true
                     } label: {
                         ButtonsImages.pencil
@@ -48,47 +47,54 @@ struct CheckWordsView: View { // ВРЕМЕННЫЙ ВЬЮ. УБРАТЬ ПОС�
 
                 }
                 GeometryReader { geo in
-                    ScrollView {
-                        if let currentWord = global.wordToChange {
-                            HStack {
-                                Spacer()
-                                WordWithFuriganaView(word: currentWord.getTextAndReading() ,
-                                                     readingIsHidden: hideReading,
-                                                     kanjiBody: TextSizes.kanjiSize(geo.size.width, 1),
-                                                     kanjiReading: TextSizes.furiganaSize(geo.size.width, 1))
+                    ScrollViewReader { proxy in
+                        ScrollView {
+                            if let currentWord = global.wordToChange {
+                                HStack {
+                                    Spacer()
+                                    WordWithFuriganaView(word: currentWord.getTextAndReading() ,
+                                                         readingIsHidden: hideReading,
+                                                         kanjiBody: TextSizes.kanjiSize(geo.size.width, 1),
+                                                         kanjiReading: TextSizes.furiganaSize(geo.size.width, 1))
+                                    
+                                    Spacer()
+                                }
+                                .id(0)
+                                let translates = currentWord.getSeparatedMeaning()
                                 
-                                Spacer()
-                            }
-                            let translates = currentWord.getSeparatedMeaning()
-                            
-                            ForEach(translates, id: \.self) { row in
-                                Text(row)
+                                ForEach(translates, id: \.self) { row in
+                                    Text(row)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .font(.title)
+                                }
+                                
+                                Divider()
+                                    .padding(.vertical, Settings.paddingBetweenText)
+                                
+                                Text(currentWord.reading)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .font(.title)
-                            }
-                            
-                            Divider()
-                                .padding(.vertical, Settings.paddingBetweenText)
-                            
-                            Text(currentWord.reading)
+                                
+                                Divider()
+                                
+                                Text(currentWord.levelInTag.reduce(into: "", { partialResult, level in
+                                    let level = "\(level)"
+                                    partialResult = partialResult.isEmpty ? level : partialResult + ", \(level)"
+                                }))
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.title)
-                            
-                            Divider()
-                            
-                            Text(currentWord.levelInTag.reduce(into: "", { partialResult, level in
-                                let level = "\(level)"
-                                partialResult = partialResult.isEmpty ? level : partialResult + ", \(level)"
-//                                partialResult += level
-                            }))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            Divider()
-                                .padding(.vertical, Settings.paddingBetweenText)
-                            
-                            let kanjiList = storeOperations.getKanjiArray(from: global.wordToChange)
-                            ListOfKanjiInGivenWordView(kanji: kanjiList, size: geo.size.width)
-                                .padding(.bottom, Settings.paddingBetweenText)
+                                
+                                Divider()
+                                    .padding(.vertical, Settings.paddingBetweenText)
+                                
+                                let kanjiList = storeOperations.getKanjiArray(from: global.wordToChange)
+                                ListOfKanjiInGivenWordView(kanji: kanjiList, action: { selectedKanji in
+                                    print(selectedKanji.body)
+                                })
+                                    .padding(.bottom, Settings.paddingBetweenText)
+                            }
+                        }
+                        .onChange(of: global.wordToChange) { _ in
+                            scrollTo(proxy: proxy)
                         }
                     }
                 }
@@ -170,6 +176,10 @@ struct CheckWordsView: View { // ВРЕМЕННЫЙ ВЬЮ. УБРАТЬ ПОС�
         } catch {
             showAllert = true
         }
+    }
+    
+    func scrollTo(proxy: ScrollViewProxy) {
+        proxy.scrollTo(0, anchor: .center)
     }
 }
 

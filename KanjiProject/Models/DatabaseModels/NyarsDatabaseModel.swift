@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct NyarsDatabaseModel: Codable, Identifiable {
+struct NyarsDatabaseModel: Codable, Identifiable, Hashable {
+    
     let id: UUID
     private let wid: String
     private let isUnreviewed: Bool
@@ -22,8 +23,16 @@ struct NyarsDatabaseModel: Codable, Identifiable {
     private let updatedAt: String
     private let entryJP: Entry
     
-    var words: [String] {
-        getWords()
+    static func == (lhs: NyarsDatabaseModel, rhs: NyarsDatabaseModel) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    var spellings: [String] {
+        getSpellings()
     }
     
     var readings: [String] {
@@ -56,7 +65,7 @@ extension NyarsDatabaseModel {
         case updatedAt = "UpdatedAt"
     }
     
-    private func getWords() -> [String] {
+    private func getSpellings() -> [String] {
         guard let words = entryJP.words else { return [] }
         
         var result: [String] = []

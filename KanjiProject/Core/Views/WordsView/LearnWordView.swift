@@ -66,7 +66,9 @@ struct LearnWordView: View {
                                 .padding(.vertical, Settings.paddingBetweenText)
                             
                             let kanjiList = storeOperations.getKanjiArray(from: global.wordToChange)
-                            ListOfKanjiInGivenWordView(kanji: kanjiList, size: geo.size.width)
+                            ListOfKanjiInGivenWordView(kanji: kanjiList, action: { selectedKanji in
+                                print(selectedKanji.body)
+                            })
                                 .padding(.bottom, Settings.paddingBetweenText)
                         }
                     }

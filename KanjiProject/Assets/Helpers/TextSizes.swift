@@ -32,13 +32,6 @@ final class TextSizes {
     /// Отвечает за нижний TextEditor в EditWordView
     static let wordEdit: CGFloat = 25
     
-    // MARK: Убрать вместе с LearningByWordView
-    static let learningWordBody: CGFloat = 50
-    
-    // MARK: Убрать вместе с LearningByWordView
-    static let learningWordReading: CGFloat = 30
-    
-    
     // MARK: используются в CheckWordsView и будут убраны после завершения работы со словами. (ВОЗМОЖНО)
     static func kanjiSize(_ size: CGFloat, _ multiplier: CGFloat = 1.5) -> CGFloat {
         size / 15 / multiplier

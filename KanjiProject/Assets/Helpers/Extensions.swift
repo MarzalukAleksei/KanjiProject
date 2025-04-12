@@ -259,7 +259,7 @@ extension Date {
         return components
     }
     
-    /// Возвращает true, если день у текучей и переданной даты совпадает
+    /// Возвращает true, если день у текущей и переданной даты совпадает
     func isSameDay(with date: Date) -> Bool {
         return Calendar.current.isDate(self, inSameDayAs: date)
     }

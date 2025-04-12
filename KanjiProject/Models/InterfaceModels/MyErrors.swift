@@ -9,7 +9,7 @@ import Foundation
 
 enum MyErrors: String, Error {
     case noWordsLeft
-    case nilWord = "Отсутствует слово"
+    case wordIsNotAvailable = "Отсутствует слово"
     case wrongBushu = "Нет соответстующего ключа"
     case activityDecodeFaled = "Ошибка декодирования активности"
     case kanjiNotFound = "Не найден кандзи"

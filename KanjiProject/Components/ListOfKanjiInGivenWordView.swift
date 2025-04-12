@@ -9,79 +9,110 @@ import SwiftUI
 
 struct ListOfKanjiInGivenWordView: View {
     let kanji: [KanjiKankenModel]
-    let size: CGFloat
+    let action: (_ currentKanji: KanjiKankenModel) -> Void
+    
+    init(kanji: [KanjiKankenModel], action: @escaping (_ currentKanji: KanjiKankenModel) -> Void = { _ in }) {
+        self.kanji = kanji
+        self.action = action
+    }
+    
     var body: some View {
         ForEach(kanji) { kanji in
+            Row(kanji: kanji, action: action)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Divider()
+        }
+    }
+}
+
+#Preview {
+    ListOfKanjiInGivenWordView(kanji: [.ANOTHER_MOCK_KANKENKANJI, .MOCK_KANJIKANKEN, .ANOTHER_MOCK_KANKENKANJI])
+}
+
+private struct Row: View {
+    @EnvironmentObject var userSettings: UserSettings
+    let kanji: KanjiKankenModel
+    let action: (_ currentKanji: KanjiKankenModel) -> Void
+    var body: some View {
+        HStack {
+            Text(kanji.body)
+                .font(.system(size: Settings.listKanjiSettings.kanji))
+                .padding(.top, Settings.listKanjiSettings.readings)
             HStack {
-                Text(kanji.body)
-                    .font(.system(size: setKanjiSize()))
                 VStack(alignment: .leading) {
                     if let meaning = kanji.meaningInRussion {
                         Text(meaning)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.bottom, Settings.paddingBetweenText / 2)
+                            .font(.system(size: Settings.listKanjiSettings.readings))
                     }
                     
                     ForEach(SchoolLevel.allCases, id: \.self) { level in
                         if let reading = kanji.kunReading[level], level != .外 {
-                            HStack(alignment: .top) {
-                                Text(level.rawValue)
-                                Text(reading)
-                            }
+                            ReadingRow(schoolLevel: level.rawValue, reading: reading)
                         }
                     }
                     
                     ForEach(SchoolLevel.allCases, id: \.self) { level in
                         if let reading = kanji.onReading[level], level != .外 {
-                            HStack(alignment: .top) {
-                                Text(level.rawValue)
-                                Text(reading)
-                            }
+                            ReadingRow(schoolLevel: level.rawValue, reading: reading)
                         }
                     }
                     
                     Group {
                         if let reading = kanji.kunReading[SchoolLevel.外] {
-                            HStack(alignment: .top) {
-                                Text(SchoolLevel.外.rawValue)
-                                Text(reading)
-                            }
+                            ReadingRow(schoolLevel: SchoolLevel.外.rawValue, reading: reading)
                         }
                         
                         if let reading = kanji.onReading[SchoolLevel.外] {
-                            HStack(alignment: .top) {
-                                Text(SchoolLevel.外.rawValue)
-                                Text(reading)
-                            }
+                            ReadingRow(schoolLevel: SchoolLevel.外.rawValue, reading: reading)
                         }
                     }
-                    .opacity(0.5)
+                    .opacity(Settings.listKanjiSettings.opacity)
+                    
+//                    if userSettings.showSenceInJapanese {
+//                        Text(kanji.meaning)
+//                    }
                 }
-                .font(.system(size: setReadingsSize()))
+                .font(.system(size: Settings.listKanjiSettings.readings))
                 
                 Spacer()
                 
-                if let nouryokuLevel = kanji.nouryokuLevel, nouryokuLevel != .another {
-                    Text("\(nouryokuLevel)")
+                VStack {
+                    if let nouryokuLevel = kanji.nouryokuLevel, nouryokuLevel != .another {
+                        Text("\(nouryokuLevel)")
+                    }
+                    
+                    Spacer()
+                    
+                    Button {
+                        action(kanji)
+                    } label: {
+                        Color.clear
+                            .frame(maxWidth: Settings.listKanjiSettings.readings)
+                            .contentShape(Rectangle())
+                            .overlay {
+                                ButtonsImages.arrowForward
+                                    .foregroundStyle(Color.black)
+                                    .opacity(Settings.listKanjiSettings.opacity)
+                            }
+                    }
+                    
+                    Spacer()
                 }
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            Divider()
         }
-    }
-    
-    func setReadingsSize() -> CGFloat {
-//        return setKanjiSize() / 1.7
-        return setKanjiSize() / 1.7 / 1.5
-    }
-    
-    func setKanjiSize() -> CGFloat {
-//        return size / 15
-        return size / 15 / 1.5
     }
 }
 
-
-#Preview {
-    ListOfKanjiInGivenWordView(kanji: [.ANOTHER_MOCK_KANKENKANJI, .MOCK_KANJIKANKEN, .ANOTHER_MOCK_KANKENKANJI], size: 300)
+struct ReadingRow: View {
+    let schoolLevel: String
+    let reading: String
+    var body: some View {
+        HStack(alignment: .top) {
+            Text(schoolLevel)
+            Text(reading)
+        }
+    }
 }

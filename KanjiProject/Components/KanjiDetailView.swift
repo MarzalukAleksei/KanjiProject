@@ -146,6 +146,7 @@ private struct Meaning: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, Settings.padding)
                 .font(.system(size: TextSizes.translation.meaning))
+                .textSelection(.enabled)
         }
     }
 }

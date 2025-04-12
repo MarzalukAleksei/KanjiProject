@@ -116,7 +116,7 @@ private struct RectData: View {
             Divider()
                 .padding(.vertical, Settings.paddingBetweenText)
             
-            ListOfKanjiInGivenWordView(kanji: kanji, size: size)
+            ListOfKanjiInGivenWordView(kanji: kanji)
             .padding(.bottom, Settings.paddingBetweenText)
         }
         .padding(.top, Settings.padding)

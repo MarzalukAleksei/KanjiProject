@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// Константные значения переменных. Не относящиеся непосредственно к интерфейсу
+/// Константные значения переменных.
 final class Settings {
     static let elementsInRow = 20 // Deprecated
     
@@ -18,7 +18,7 @@ final class Settings {
     static let opacity: CGFloat = 0.3
     
     /// Отступ от края View
-    static let padding: CGFloat = 15
+    static let padding: CGFloat = 10
     
     static let learningViewCornerRadius: CGFloat = 40
     
@@ -80,4 +80,7 @@ final class Settings {
     
     /// прозрачность кнопки CloseButton
     static let closeButtonOpacity: CGFloat = 0.4
+    
+    /// Отвечает за параметры кандзи и чтений в окне изучения слов, а так же содержит иные свойства
+    static let listKanjiSettings: (kanji: CGFloat, readings: CGFloat, opacity: Double) = (50, 20, 0.5)
 }

@@ -27,6 +27,9 @@ final class UserSettings: ObservableObject, Codable {
     /// Сколько новых слов добавлять кажрый день новой активности
     @Published var newWordsInDay = DatabaseOptions.newWordsInDayConstantValue // not used
     
+    /// Для отображения значения на японском.
+    @Published var showSenceInJapanese = false // not used
+    
     private var conformationDialogState: Bool {
         get { showKanjiConformationDialog }
         set { showKanjiConformationDialog = newValue }
@@ -56,6 +59,11 @@ final class UserSettings: ObservableObject, Codable {
         get { showEnglishMeaning }
         set { showEnglishMeaning = newValue }
     }
+    
+    private var showSenceInJapaneseState: Bool {
+        get { showSenceInJapanese }
+        set { showSenceInJapanese = newValue }
+    }
 
     private enum CodingKeys: String, CodingKey {
         case showConformationDialog
@@ -64,6 +72,7 @@ final class UserSettings: ObservableObject, Codable {
         case newWordsInDay
         case newKaniInDay
         case showEnglishMeaning
+        case showSenceInJapanese
     }
     
     /// Used for invironment
@@ -77,6 +86,7 @@ final class UserSettings: ObservableObject, Codable {
         newWordsInDayState = try container.decode(Int.self, forKey: .newWordsInDay)
         newKanjiInDayState = try container.decode(Int.self, forKey: .newKaniInDay)
         showEnglishMeaningState = try container.decode(Bool.self, forKey: .showEnglishMeaning)
+        showSenceInJapaneseState = try container.decode(Bool.self, forKey: .showSenceInJapanese)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -88,5 +98,6 @@ final class UserSettings: ObservableObject, Codable {
         try container.encode(newKanjiInDay, forKey: .newKaniInDay)
         try container.encode(newWordsInDay, forKey: .newWordsInDay)
         try container.encode(showEnglishMeaning, forKey: .showEnglishMeaning)
+        try container.encode(showSenceInJapanese, forKey: .showSenceInJapanese)
     }
 }
