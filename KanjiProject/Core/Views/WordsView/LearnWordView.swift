@@ -13,11 +13,15 @@ struct LearnWordView: View {
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var tabBarState: TabBarState
     @EnvironmentObject private var global: GlobalChanging
+    @EnvironmentObject private var coordinator: Coordinator
+    @EnvironmentObject private var userSettings: UserSettings
     @State private var words: [WordModel] = []
     @State private var showAllert = false
     @State private var hideReading = false
     @State private var showEditView = false
-    let storeOperations: StoreOperations
+    var storeOperations: StoreOperations {
+        .init(store: store, userSettings: userSettings)
+    }
     
     var body: some View {
         VStack {
@@ -68,6 +72,7 @@ struct LearnWordView: View {
                             let kanjiList = storeOperations.getKanjiArray(from: global.wordToChange)
                             ListOfKanjiInGivenWordView(kanji: kanjiList, action: { selectedKanji in
                                 print(selectedKanji.body)
+                                coordinator.push(page: .test)
                             })
                                 .padding(.bottom, Settings.paddingBetweenText)
                         }
@@ -119,9 +124,9 @@ struct LearnWordView: View {
 }
 
 #Preview {
-    LearnWordView(storeOperations: StoreOperations(store: Store(),
-                                                   userSettings: UserSettings()))
+    LearnWordView()
         .environmentObject(Store.MOCK_STORE)
         .environmentObject(TabBarState())
-    
+        .environmentObject(Coordinator())
+        .environmentObject(UserSettings())
 }

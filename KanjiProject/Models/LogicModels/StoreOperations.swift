@@ -17,6 +17,11 @@ class StoreOperations {
         self.userSettings = userSettings
     }
     
+    init() {
+        self.store = Store()
+        self.userSettings = UserSettings()
+    }
+    
     /// Обновление файл канкена
     func updKanjiKankenFile() {
         Task {

@@ -32,7 +32,7 @@ struct KanjiView: View {
 //    @State private var selectedType: KanjiTestType = .nouryoku
     
     var body: some View {
-        NavigationStack() {
+//        NavigationStack() {
             VStack(spacing: 0) {
                 CustomNavigationBarView(title: InterfaceTexts.kanjiViewTitle,
                                         corners: .bottomLeft,
@@ -122,27 +122,20 @@ struct KanjiView: View {
             .onChange(of: toggle) { value in
                 toggleInStorage = value
             }
-            
-// MARK: Destinations
-            .navigationDestination(for: KanjiFlow.self) { flow in
-                NouryokuKanjiLearningView(kanjiFlow: flow)
+            .fullScreenCover(isPresented: $showLearningView) {
+                KanjiLearningView(storeOperations: .init(store: store, userSettings: userSettings), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
+                
             }
-            .navigationDestination(for: KankenFlow.self) { flow in
-                KankenKanjiLearningView(kankenFlow: flow)
+            .alert(allertTitle(), isPresented: $showInfoAlert) {
+                Button(InterfaceTexts.infoAlertButtonOnMainview) {}
             }
             
             Spacer()
             
             Color.gray.ignoresSafeArea()
                 .modifier(Modifiers.tabBarSize)
-        }
-        .fullScreenCover(isPresented: $showLearningView) {
-            KanjiLearningView(storeOperations: .init(store: store, userSettings: userSettings), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
-            
-        }
-        .alert(allertTitle(), isPresented: $showInfoAlert) {
-            Button(InterfaceTexts.infoAlertButtonOnMainview) {}
-        }
+//        }
+        
 
     }
     

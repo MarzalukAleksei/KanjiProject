@@ -34,17 +34,17 @@ struct MainView: View {
         
         ZStack(alignment: .bottom) {
             TabView(selection: $currentTab) {
-                KanjiView()
+                CoordinatorView(firstPage: .kanjiView)
                     .tag(TabBarElements.kanji)
                 //                IdiomView()
                 //                    .tag(TabBarElements.yojijukugo)
-                WordsView()
+                CoordinatorView(firstPage: .wordView)
                     .tag(TabBarElements.words)
 //                UserListView()
 //                    .tag(TabBarElements.card)
 //                SearchView()
 //                    .tag(TabBarElements.search)
-                SettingsView()
+                CoordinatorView(firstPage: .settingsView)
                     .tag(TabBarElements.settings)
             }
             .padding(.bottom, 0) // поставил 0 вместо 53 так как здесь тернарный оператор не работает

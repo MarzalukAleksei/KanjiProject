@@ -13,12 +13,16 @@ struct CheckWordsView: View { // ВРЕМЕННЫЙ ВЬЮ. УБРАТЬ ПОС�
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var tabBarState: TabBarState
     @EnvironmentObject private var global: GlobalChanging
+    @EnvironmentObject private var userSettings: UserSettings
+    @EnvironmentObject private var coordinator: Coordinator
     @State private var words: [WordModel] = []
     @State private var showAllert = false
     @State private var hideReading = false
     @State private var showEditView = false
     @State var lastWord: WordModel?
-    let storeOperations: StoreOperations
+    var storeOperations: StoreOperations {
+        .init(store: store, userSettings: userSettings)
+    }
     
     var body: some View {
         VStack {
@@ -184,9 +188,9 @@ struct CheckWordsView: View { // ВРЕМЕННЫЙ ВЬЮ. УБРАТЬ ПОС�
 }
 
 #Preview {
-    CheckWordsView(storeOperations: StoreOperations(store: Store(),
-                                                   userSettings: UserSettings()))
+    CheckWordsView()
         .environmentObject(Store.MOCK_STORE)
         .environmentObject(TabBarState())
-    
+        .environmentObject(UserSettings())
+        .environmentObject(Coordinator())
 }

@@ -11,11 +11,12 @@ struct WordsView: View {
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var tabBar: TabBarState
     @EnvironmentObject private var userSettings: UserSettings
+    @EnvironmentObject private var coordinator: Coordinator
     @AppStorage("baseWordLevel") private var wordLevel: NouryokuLevel = .N5
     @State private var currentLevel: NouryokuLevel = .another
     
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             VStack {
                 CustomNavigationBarView(title: "文字・語彙", corners: [], cornerRadius: ElementSize.navigationCornerRadius, heigh: ElementSize.customNavigationBarHeight)
                 
@@ -23,9 +24,11 @@ struct WordsView: View {
                     BaseWordsSelectLevelView(currentLevel: $currentLevel)
                     Divider()
                     
-                    NavigationLink {
-                        LearnWordView(storeOperations: StoreOperations(store: store,
-                                                                       userSettings: userSettings))
+//                    NavigationLink {
+//                        LearnWordView(storeOperations: StoreOperations(store: store,
+//                                                                       userSettings: userSettings))
+                    Button {
+                        coordinator.push(page: .learnView)
                     } label: {
                         Text("Учить слова")
                             .frame(maxWidth: .infinity)
@@ -36,9 +39,8 @@ struct WordsView: View {
                             .clipShape(RoundedRectangle(cornerRadius: Settings.buttonsCornerRadius))
                     }
                     
-                    NavigationLink {
-                        CheckWordsView(storeOperations: .init(store: store,
-                                                              userSettings: userSettings))
+                    Button {
+                        coordinator.push(page: .checkWordsView)
                     } label: {
                         Text("ПРОВЕКА СЛОВ")
                             .frame(maxWidth: .infinity)
@@ -84,7 +86,7 @@ struct WordsView: View {
                 wordLevel = newValue
             }
         }
-    }
+//    }
 }
 
 #Preview {
@@ -92,4 +94,5 @@ struct WordsView: View {
         .environmentObject(Store())
         .environmentObject(TabBarState())
         .environmentObject(UserSettings())
+        .environmentObject(Coordinator())
 }
