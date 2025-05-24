@@ -36,7 +36,14 @@ struct LearnWordView: View {
                     Spacer()
                     
                     Button {
-//                        global.wordToChange = currentWord
+                        saveButton()
+                    } label: {
+                        Text("Сохранить")
+                            .frame(height: ElementSize.closeButton.height)
+                    }
+                    .opacity(global.wordWasChanged() ? 1 : 0)
+
+                    Button {
                         showEditView = true
                     } label: {
                         ButtonsImages.pencil
@@ -72,7 +79,7 @@ struct LearnWordView: View {
                             let kanjiList = storeOperations.getKanjiArray(from: global.wordToChange)
                             ListOfKanjiInGivenWordView(kanji: kanjiList, action: { selectedKanji in
                                 print(selectedKanji.body)
-                                coordinator.push(page: .test)
+                                coordinator.push(page: .test(num: 1))
                             })
                                 .padding(.bottom, Settings.paddingBetweenText)
                         }
@@ -85,7 +92,9 @@ struct LearnWordView: View {
             Spacer()
             
             Button {
-                getWord()
+//                getWord()
+                updStore()
+                nextWord()
             } label: {
                 Text("Следующее слово")
                     .modifier(Modifiers.rightAnswerButton)
@@ -98,27 +107,53 @@ struct LearnWordView: View {
             loadWords()
             getWord()
         }
-        .onDisappear {
-            global.wordToChange = nil
-        }
         .fullScreenCover(isPresented: $showEditView, content: {
             EditWordView(word: global.wordToChange ?? .empty)
                     .environmentObject(global)
                     .environmentObject(store)
         })
     }
+    
+    func saveButton() {
+        Task {
+            guard let word = global.wordToChange else { return }
+            global.wordToChange = nil
+            global.wordToChange = word
+            await storeOperations.updWord(word)
+            storeOperations.updBaseWordFile()
+            storeOperations.updUserWordsFile()
+        }
+    }
 
     func loadWords() {
-        words = storeOperations.learningWords(for: currentLevel)
+        words = storeOperations.learningWords()
     }
     
     func getWord() {
+        if let word = global.wordToChange {
+            words.removeAll(where: { $0.id == word.id })
+        } else {
+            nextWord()
+        }
+    }
+    
+    func nextWord() {
         do {
             global.wordToChange = try storeOperations.getWord(from: words)
-            let currentWord = global.wordToChange
-            words.removeAll(where: { $0.id == currentWord?.id })
+            let word = global.wordToChange
+            words.removeAll(where: { $0.id == word?.id })
         } catch {
             showAllert = true
+        }
+    }
+    
+    func updStore() {
+        Task {
+            guard var currentWord = global.wordToChange else { return }
+            currentWord.dateStamp = .init()
+            await storeOperations.updWord(currentWord)
+            storeOperations.updBaseWordFile()
+            storeOperations.updUserWordsFile()
         }
     }
 }

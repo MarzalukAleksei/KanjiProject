@@ -167,7 +167,7 @@ struct CheckWordsView: View { // ВРЕМЕННЫЙ ВЬЮ. УБРАТЬ ПОС�
     }
 
     func loadWords() {
-        words = storeOperations.learningWords(for: currentLevel).filter {
+        words = storeOperations.words(for: currentLevel).filter {
             $0.thisWordWasChecked == nil
         }
     }

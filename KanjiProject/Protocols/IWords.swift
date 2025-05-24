@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+protocol IWord {
+    associatedtype Word
+    
+    func update(set word: Word)
+    
+    func update(set word: Word) async
+    
+    func add(word: Word)
+    
+    func delete(_ word: Word) async
+    
+}

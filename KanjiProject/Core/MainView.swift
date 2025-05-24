@@ -42,7 +42,7 @@ struct MainView: View {
                     .tag(TabBarElements.words)
 //                UserListView()
 //                    .tag(TabBarElements.card)
-//                SearchView()
+//                CoordinatorView(firstPage: .searchView)
 //                    .tag(TabBarElements.search)
                 CoordinatorView(firstPage: .settingsView)
                     .tag(TabBarElements.settings)
@@ -64,17 +64,6 @@ struct MainView: View {
             
         }
         .onAppear {
-            var nonChecked = store.baseWordsStore.getAll().filter { $0.thisWordWasChecked == nil }
-            let operations = StoreOperations(store: store, userSettings: userSettings)
-            nonChecked = nonChecked.map { word in
-                var word = word
-                if !word.reading.contains("["), word.reading.contains("）") {
-                    word.reading = word.reading.replacingOccurrences(of: "）", with: "）[]")
-                    let parts = operations.getKanjiArray(from: word)
-                    print(word.body, word.reading, parts.map { $0.body })
-                }
-                return word
-            }
             
 //            nonChecked.forEach { word in
 //                store.baseWordsStore.update(set: word)

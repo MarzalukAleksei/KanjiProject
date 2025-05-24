@@ -21,7 +21,9 @@ struct KanjiLearningView: View {
     @State private var showKeysViewSheet = false
     @State private var allKanji: [KanjiKankenModel] = []
     
-    let storeOperations: StoreOperations
+    var  storeOperations: StoreOperations {
+        .init(store: store, userSettings: userSettings)
+    }
     let selectedKanken: Bool
     let nouryokuLevel: NouryokuLevel
     let kankenLevel: KankenLevel
@@ -302,7 +304,7 @@ struct KanjiLearningView: View {
 }
 
 #Preview {
-    KanjiLearningView(storeOperations: .init(store: Store(), userSettings: UserSettings()), selectedKanken: false, nouryokuLevel: .N5, kankenLevel: .級10)
+    KanjiLearningView(selectedKanken: false, nouryokuLevel: .N5, kankenLevel: .級10)
         .environmentObject(Store())
         .environmentObject(GlobalChanging())
         .environmentObject(UserSettings())

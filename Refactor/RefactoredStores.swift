@@ -19,12 +19,15 @@ class RefactoredStores {
     var kanjiKankenStore = KanjiKankenStore()
     var wordsStore = WordsStore()
     var bushuStore = BushuStore()
+    var usersWordsStore = UserWordsStore()
     
     init() async {
         await loadData()
     }
     
     private func loadData() async {
+        do {
+        let usersWords = UsersWordsMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "UsersWords", fileType: .txt)))
 //        do {
 //            let kanji = KanjiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Kanji", fileType: .csv)))
 //            let dictionary = DictionaryMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "warodai", fileType: .txt)))
@@ -34,7 +37,7 @@ class RefactoredStores {
 //            let bunpou = BunpouMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Bunpou", fileType: .csv)))
 //            let bushu = BushuMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "Bushu", fileType: .csv)))
 ////            let kanjiReplacer = loadKankenReplacer()
-            let kanjiKanken = await loadAllKanken()
+//            let kanjiKanken = await loadAllKanken()
 //            let words = await loadAllWords()
 //            
 //            kanjiStore.updateAll(data: kanji)
@@ -47,10 +50,11 @@ class RefactoredStores {
 //            wordsStore.updateAll(data: words)
 //            bushuStore.updateAll(data: bushu)
 //            kanjiKankenStore.updateAll(data: updateKanji(kana: kana, kanjiKentei: createKanjiKankenArray(allKanji: kanjiReplacer)))
-            kanjiKankenStore.updateAll(data: kanjiKanken)
-//        } catch {
-//            print(error)
-//        }
+//            kanjiKankenStore.updateAll(data: kanjiKanken)
+            usersWordsStore.updateAll(data: usersWords)
+        } catch {
+            print(error)
+        }
     }
     
     private func loadAllKanken() async -> [KanjiKankenModel] {

@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct LearningOrRememberSelectButtonsView: View {
+    @AppStorage("kanjiTypeSlider") private var toggleInStorage: Bool = false
+    @AppStorage("selectedNouryokuLevel") private var selectedNouryokuLevel: NouryokuLevel = .N5
+    @AppStorage("selectedKankenLevel") private var selectedKankenLevel: KankenLevel = .級10
+    @EnvironmentObject private var coordinator: Coordinator
     @Binding var showLearningView: Bool
 //    @Binding var showLearningByKanjiSecondVar: Bool
 //    @Binding var showCheckView: Bool
@@ -28,7 +32,9 @@ struct LearningOrRememberSelectButtonsView: View {
 //            })
             
             Button {
-                showLearningView = true
+                coordinator.cover(by: .kanjiLearningView(kankenIsSelected: toggleInStorage,
+                                                         jlpt: selectedNouryokuLevel,
+                                                         kanken: selectedKankenLevel))
             } label: {
                 Text("Учить кандзи")
                     .frame(maxWidth: .infinity)
@@ -46,4 +52,5 @@ struct LearningOrRememberSelectButtonsView: View {
 
 #Preview {
     LearningOrRememberSelectButtonsView(showLearningView: .constant(false))
+        .environmentObject(Coordinator())
 }

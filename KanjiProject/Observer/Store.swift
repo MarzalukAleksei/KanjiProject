@@ -24,6 +24,8 @@ final class Store: ObservableObject {
     /// Слова используемые в примерах
     @Published var kanjiKankenExamplesTranslationsStore = KanjiKankenExamplesTranslationsStore()
     @Published var goiStore = GoiStore()
+    /// слова изучаемые пользователем. не относятся к основной базе
+    @Published var usersWordsStore = UserWordsStore()
     /// база нярса отображается некоректно. есть пропуски в словах. Поправить. по аналогии с 和
     let nyarsStore = NyarsStore()
     
@@ -72,6 +74,7 @@ final class Store: ObservableObject {
         bushuStore = store.bushuStore
         kanjiKankenExamplesTranslationsStore = store.kanjiKankenExamplesTranslationsStore
         goiStore = store.goiStore
+        usersWordsStore = store.usersWordsStore
     }
     
     /// Обновляем существующий кандзи

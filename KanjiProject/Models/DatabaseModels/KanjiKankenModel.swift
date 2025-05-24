@@ -31,7 +31,7 @@ struct KanjiKankenModel: Identifiable, Codable, Hashable {
     private(set) var wrongAnswers: Int?
     private var inList: Bool?
     private(set) var link: String
-    private var dateStamp: Date?
+    var dateStamp: DateStamp?
     
     init(id: Int, body: String, defaultReading: String, kunReading: [SchoolLevel : String], onReading: [SchoolLevel : String], examples: [SchoolLevel : String], examplesWithReading: [SchoolLevel : [[TextAndReading]]], translateExapmles: [SchoolLevel : [String]] = [:], meaning: String, keys: String, kankenLevel: KankenLevel, nouryokuLevel: NouryokuLevel? = nil, stroke: Int, oldKanji: String = "", lastAnswer: Bool? = nil, link: String) {
         self.id = id
@@ -179,39 +179,34 @@ extension KanjiKankenModel {
                                         link: "")
 }
 
+//extension KanjiKankenModel: IDateStamp {
+//    
+//    func getDate() -> Date? {
+//        dateStamp
+//    }
+//    
+//    func getDate() -> Date {
+//        guard let dateStamp = dateStamp else { return Date() /*- 60 * 16*/ }
+//        return dateStamp
+//    }
+//    
+//    mutating func setCurrentDate() {
+//        dateStamp = Date()
+//    }
+//    
+//    mutating func resetDate() {
+//        dateStamp = nil
+//    }
+//}
+
 extension KanjiKankenModel {
-    
-    func getDate() -> Date? {
-        dateStamp
-    }
-    
-    func getDate() -> Date {
-        guard let dateStamp = dateStamp else { return Date() /*- 60 * 16*/ }
-        return dateStamp
-    }
-    
-    private func minutesPassed() -> Int {
-        if let date = getDate() {
-            let interval = Int(Date().timeIntervalSince(date)) / 60
-            return interval
-        }
-        return -1
-    }
-    
     func showKanji(after minutes: Int = 5) -> Bool {
-        if minutesPassed() >= minutes || minutesPassed() == -1 {
+        guard let dateStamp else { return true }
+        if dateStamp.minutesPassed() >= minutes || dateStamp.minutesPassed() == -1 {
             return true
         }
         
         return false
-    }
-    
-    mutating func setCurrentDate() {
-        dateStamp = Date()
-    }
-    
-    mutating func resetDate() {
-        dateStamp = nil
     }
     
     /// - Parameter inList: make inList = false
@@ -230,3 +225,4 @@ extension KanjiKankenModel {
         setLastAnswer(with: false)
     }
 }
+

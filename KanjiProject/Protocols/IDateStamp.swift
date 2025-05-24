@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol IDateStamp {
+    func filter(by: DateStamp.Conditions) -> Bool
+}

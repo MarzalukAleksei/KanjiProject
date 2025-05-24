@@ -32,7 +32,6 @@ struct KanjiView: View {
 //    @State private var selectedType: KanjiTestType = .nouryoku
     
     var body: some View {
-//        NavigationStack() {
             VStack(spacing: 0) {
                 CustomNavigationBarView(title: InterfaceTexts.kanjiViewTitle,
                                         corners: .bottomLeft,
@@ -112,19 +111,15 @@ struct KanjiView: View {
 //                GeometryReader { geo in
                 UserActivityView(userActivity: UserActivity(data: userActivity).kanjiActivity)
                         .padding(.horizontal, Settings.padding)
-//                }
+                }
                 
-            }
+            
             .onAppear {
                 tabBarState.tabBarIsHidden = false
                 toggle = toggleInStorage
             }
             .onChange(of: toggle) { value in
                 toggleInStorage = value
-            }
-            .fullScreenCover(isPresented: $showLearningView) {
-                KanjiLearningView(storeOperations: .init(store: store, userSettings: userSettings), selectedKanken: toggle, nouryokuLevel: selectedNouryokuLevel, kankenLevel: selectedKankenLevel)
-                
             }
             .alert(allertTitle(), isPresented: $showInfoAlert) {
                 Button(InterfaceTexts.infoAlertButtonOnMainview) {}

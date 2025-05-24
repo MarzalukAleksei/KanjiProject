@@ -48,7 +48,6 @@ struct TabBarButton: View {
 //        case .card:
 //            return ButtonsImages.list
 //        case .search:
-//            return tab == currentTab ? ButtonsImages.openBook : ButtonsImages.closeBook
 //            return ButtonsImages.magnifyingglass
         case .settings:
             return ButtonsImages.settingsImage

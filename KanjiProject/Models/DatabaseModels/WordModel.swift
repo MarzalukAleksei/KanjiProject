@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct WordModel: Codable, Hashable, Identifiable {
+struct WordModel: Codable, Identifiable {
     var id: UUID?
     var body: String
     let meaningInEnglish: String
     var meaningInRussian: String
+    var meaningInJapanese: String?
     var reading: String
     let type: String
     let levels: [String]
@@ -19,6 +20,7 @@ struct WordModel: Codable, Hashable, Identifiable {
     private var lastAnswerRight: Bool?
     private var _rightAnswersInRow: Int?
     private var inList: Bool?
+    var dateStamp: DateStamp?
     
     private(set) var thisWordWasChecked: Bool? // временное свойство. убрать после проверки всех слов в базе
     
@@ -34,11 +36,12 @@ struct WordModel: Codable, Hashable, Identifiable {
         levelInTag = levels
     }
     
-    init(body: String, meaningInEnglish: String, meaningInRussian: String, reading: String, type: String, levels: [String], levelInTag: [NouryokuLevel], lastAnswerRight: Bool? = nil, rightAnswersInRow: Int? = nil) {
+    init(body: String, meaningInEnglish: String, meaningInRussian: String, meaningInJapanese: String? = nil, reading: String, type: String, levels: [String], levelInTag: [NouryokuLevel], lastAnswerRight: Bool? = nil, rightAnswersInRow: Int? = nil) {
         self.id = UUID()
         self.body = body
         self.meaningInEnglish = meaningInEnglish
         self.meaningInRussian = meaningInRussian
+        self.meaningInJapanese = meaningInJapanese
         self.reading = reading
         self.type = type
         self.levels = levels
@@ -179,4 +182,25 @@ extension WordModel {
         guard let inList else { return false }
         return inList
     }
+}
+
+extension WordModel: Hashable {
+//    static func ==(lhs: WordModel, rhs: WordModel) -> Bool {
+//        lhs.id == rhs.id
+//    }
+//    
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(id)
+//    }
+}
+
+extension WordModel: IDateStamp {
+    func filter(by condition: DateStamp.Conditions) -> Bool {
+        guard let dateStamp else { return true }
+        if dateStamp.filter(by: condition) {
+            return true
+        }
+        return false
+    }
+    
 }

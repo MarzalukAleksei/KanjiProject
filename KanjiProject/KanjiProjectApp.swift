@@ -28,10 +28,11 @@ struct KanjiProjectApp: App {
     @ObservedObject var loading = DataLoading()
     
     @AppStorage("User Settings") private var settingsDatabase: Data?
+    @State private var listLoaded = false
     
     var body: some Scene {
         WindowGroup {
-            if loading.complete {
+            if allLoaded() {
                 MainView()
                     .preferredColorScheme(.light)
                     .statusBarHidden()
@@ -45,6 +46,7 @@ struct KanjiProjectApp: App {
                 LoadingView()
                     .onAppear {
                         loading.load()
+                        readFile(completion: { listLoaded = $0 })
                     }
             }
                 
@@ -79,6 +81,40 @@ struct KanjiProjectApp: App {
     init() {
         userSettings = decodeUserSettings()
 //        checkFontTitle()
+    }
+    
+    func allLoaded() -> Bool {
+        [loading.complete, listLoaded].allSatisfy { $0 }
+    }
+    
+    func readFile(completion: @escaping (Bool) -> Void) {
+        Task {
+            let userStore = await RefactoredStores().usersWordsStore
+            
+            for word in userStore.getAll() {
+                if store.baseWordsStore.getAll().contains(where: { $0.body == word.body }) {
+                    var indexes: [Int] = []
+                    for (index, word2) in store.baseWordsStore.getAll().enumerated() where word2.body == word.body {
+                        indexes.append(index)
+                    }
+                    indexes.forEach { index in
+                        var word = store.baseWordsStore.getAll()[index]
+                        word.addInList()
+                        store.baseWordsStore.update(set: word)
+                    }
+                } else {
+                    var array = store.usersWordsStore.getAll()
+                    if !array.contains(where: { $0.body == word.body }) {
+                        var word = word
+                        word.addInList()
+                        array.append(word)
+                        store.usersWordsStore.updateAll(data: array)
+                        print("New word \(word.body), \(word.reading), \(word.meaningInRussian)")
+                    }
+                }
+            }
+            completion(true)
+        }
     }
     
     func checkFontTitle() {

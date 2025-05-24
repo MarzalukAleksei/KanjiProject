@@ -10,6 +10,7 @@ import SwiftUI
 struct SelectedWordDetailView: View {
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var globalChanging: GlobalChanging
+    @EnvironmentObject private var coordinator: Coordinator
     @State private var kanjiSize: CGFloat = 0
     @State private var editButtonPressed = false
     @State private var printState = false
@@ -38,6 +39,9 @@ struct SelectedWordDetailView: View {
                         
                         Button(action: {
                             editButtonPressed = true
+//                            coordinator.cover(by: .editWord(word: getWord()))
+//                            coordinator.push(page: .editWord(word: getWord()))
+//                            coordinator.push(page: .test(num: 1))
                         }, label: {
                             Text("Исправить")
                                 .frame(maxWidth: .infinity)
@@ -89,6 +93,7 @@ struct SelectedWordDetailView: View {
     SelectedWordDetailView(storeOperations: StoreOperations(store: Store(), userSettings: UserSettings()))
         .environmentObject(Store())
         .environmentObject(GlobalChanging())
+        .environmentObject(Coordinator())
 }
 
 private struct RectData: View {

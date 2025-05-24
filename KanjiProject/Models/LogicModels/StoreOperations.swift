@@ -36,6 +36,22 @@ class StoreOperations {
         }
     }
     
+    /// Обновляет слово
+    func updWord(_ word: WordModel) async {
+        if store.usersWordsStore.getAll().contains(where: { $0.id == word.id }) {
+            await store.usersWordsStore.update(set: word)
+        } else {
+            await store.baseWordsStore.update(set: word)
+        }
+    }
+    
+    /// Сохраняет файл со словами пользователя
+    func updUserWordsFile() {
+        Task {
+            await store.usersWordsStore.saveInFileManager()
+        }
+    }
+    
     // MARK: Bushu
     /// Для  правильной работы сначала ищет варианты, потом в основном теле и, если не нашло, то по всему тексту.
     func getKeys(for currentKanji: KanjiKankenModel) throws -> [BushuModel] {
@@ -71,9 +87,17 @@ class StoreOperations {
         return result
     }
     
-    func learningWords(for currentJLPTLevel: NouryokuLevel) -> [WordModel] {
+    func words(for currentJLPTLevel: NouryokuLevel) -> [WordModel] {
         let words = store.baseWordsStore.getAll(for: currentJLPTLevel)
         return words
+    }
+    
+    /// Все изучаемые слова
+    func learningWords() -> [WordModel] {
+        let baseWords = store.baseWordsStore.getAll().filter { $0.isInList == true }
+        let usersWords = store.usersWordsStore.getAll().filter { $0.isInList == true }
+        let words = baseWords + usersWords
+        return words.filter { $0.filter(by: .hours) }
     }
     
     func getWord(from words: [WordModel]) throws -> WordModel {
@@ -93,7 +117,7 @@ class StoreOperations {
     ///  - rightAnswers: Если  больше чем константное значение, то сохранить базе с пометкой true
     func setAnswer(for kanji: KanjiKankenModel?, answer: Answer) throws {
         guard var kanji = kanji else { throw MyErrors.wordIsNotAvailable }
-        kanji.setCurrentDate()
+        kanji.dateStamp?.setCurrentDate()
         
         if kanji.isInLearningList() == nil {
             print(kanji.body, kanji.body, kanji.isInLearningList())
@@ -340,25 +364,30 @@ extension StoreOperations {
             let rightAnswers = kanji.rightAnwers ?? 0
             let daysPassed = DatabaseOptions.passedDays
             
+            guard let dateStamp = kanji.dateStamp else {
+                print("Kanji Date Value is nil -- Called storeOperations.filterAllKanjiForCurrentLevel")
+                return true
+            }
+            
             if rightAnswers < DatabaseOptions.answersCounts.first + 1,
-               kanji.getDate().passed(days: daysPassed.first, to: Date()) >= daysPassed.first {
+               dateStamp.getDate().passed(days: daysPassed.first, to: Date()) >= daysPassed.first {
                 return true
             }
             
             if rightAnswers < DatabaseOptions.answersCounts.second + 1,
-               kanji.getDate().passed(days: daysPassed.second, to: Date()) >= daysPassed.second {
+               dateStamp.getDate().passed(days: daysPassed.second, to: Date()) >= daysPassed.second {
                 return true
             }
             
             if rightAnswers < DatabaseOptions.answersCounts.third + 1,
-               kanji.getDate().passed(days: daysPassed.third, to: Date()) >= daysPassed.third {
+               dateStamp.getDate().passed(days: daysPassed.third, to: Date()) >= daysPassed.third {
                 return true
             }
             
-            if kanji.getDate() == nil {
-                print("Kanji Date Value is nil -- Called storeOperations.filterAllKanjiForCurrentLevel")
-                return true
-            }
+//            if kanji.getDate() == nil {
+//                print("Kanji Date Value is nil -- Called storeOperations.filterAllKanjiForCurrentLevel")
+//                return true
+//            }
             
         }
         return false

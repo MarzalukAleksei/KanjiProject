@@ -39,31 +39,6 @@ class WordsStore: IStore, ObservableObject {
         return result
     }
     
-    func update(set word: WordModel) async {
-        if let index = data.firstIndex(where: { $0.id == word.id }) {
-            data[index] = word
-        } else {
-            print("Cant find word")
-        }
-    }
-    
-    func update(set word: WordModel) {
-        if let index = data.firstIndex(where: { $0.id == word.id }) {
-            data[index] = word
-        } else {
-            print("Cant find word")
-        }
-    }
-    
-    func delete(_ word: WordModel) async {
-        data.removeAll(where: { $0.id == word.id })
-        
-    }
-    
-    func add(_ word: WordModel) {
-        data.append(word)
-    }
-    
     func saveInFileManager() async {
         let data = JSONManager.manager.encodeToJSON(data)
         JSONManager.manager.saveJSONToFile(data, fileName: .baseWords)
@@ -79,5 +54,33 @@ extension WordsStore {
     func saveInFileManager(fileName: JSONManager.FileName) async {
         let data = JSONManager.manager.encodeToJSON(data)
         JSONManager.manager.saveJSONToFile(data, fileName: fileName)
+    }
+}
+
+extension WordsStore: IWord {
+    typealias Word = WordModel
+    
+    func update(set word: WordModel) {
+        setWord(word)
+    }
+    
+    func update(set word: WordModel) async {
+        setWord(word)
+    }
+    
+    func add(word: WordModel) {
+        data.append(word)
+    }
+    
+    func delete(_ word: WordModel) async {
+        data.removeAll(where: { $0.id == word.id })
+    }
+    
+    private func setWord(_ word: WordModel) {
+        if let index = data.firstIndex(where: { $0.id == word.id }) {
+            data[index] = word
+        } else {
+            print("Cant find word \(word.body)")
+        }
     }
 }

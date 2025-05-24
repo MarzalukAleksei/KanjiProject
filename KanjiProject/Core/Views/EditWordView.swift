@@ -215,10 +215,7 @@ struct EditWordView: View {
 //        return false
 //    }
     private func isDataChanged() -> Bool {
-        if constantWord.reading != word.reading || constantWord.meaningInRussian != word.meaningInRussian || constantWord.levelInTag != word.levelInTag || constantWord.body != word.body || constantWord.isInList != word.isInList {
-            return true
-        }
-        return false
+        constantWord != word ? true : false
     }
     
     private func screenWidth() -> CGFloat {

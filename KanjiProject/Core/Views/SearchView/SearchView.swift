@@ -10,41 +10,43 @@ import SwiftUI
 struct SearchView: View {
     @EnvironmentObject private var store: Store
     @EnvironmentObject private var tabBatState: TabBarState
-    @State private var text: String = "青"
+    @EnvironmentObject private var coordinator: Coordinator
+    @State private var text: String = ""
     @State private var presentDrawView = false
     @State private var modalViewSize: CGSize = .zero
 //    @Binding var isEditing: Bool
     var body: some View {
         // MARK: GeometryReader используется для получения ширины экрана, чтобы выставить правильную высоту Модального вью
         GeometryReader { geo in
-            NavigationStack {
-                VStack {
-                    SearchNavigationBar(text: $text, presentDrawView: $presentDrawView)
-                    
-                    ScrollView(showsIndicators: false) {
-                        ForEach(findWord(), id: \.self) { word in
-                            NavigationLink(value: word) {
-                                SearchViewWordRow(word: word)
-                                    .padding(.top, 1)
-                                    .multilineTextAlignment(.leading)
-                            }
-                            .foregroundColor(.black)
+            VStack {
+                SearchNavigationBar(text: $text, presentDrawView: $presentDrawView)
+                
+                ScrollView(showsIndicators: false) {
+                    ForEach(findWord(), id: \.self) { word in
+                        Button {
+                            coordinator.push(page: .deteilWord(word: word))
+                        } label: {
+                            SearchViewWordRow(word: word)
+                                .padding(.top, 1)
+                                .multilineTextAlignment(.leading)
                         }
+                        .foregroundColor(.black)
                     }
                 }
-                .navigationDestination(for: DictionaryModel.self) { word in
-    //                SearchWordDetailView(word: word)
-                    WordDetailView(word: word)
-                }
-                .onAppear {
-                    tabBatState.tabBarIsHidden = false
-                }
-                .sheet(isPresented: $presentDrawView) {
-                    DrawModalView()
-                        .padding(.vertical, Settings.paddingBetweenElements)
-                        .presentationDetents([.height(modalViewSize.width)])
-                }
             }
+//            .navigationDestination(for: DictionaryModel.self) { word in
+////                SearchWordDetailView(word: word)
+//                WordDetailView(word: word)
+//            }
+            .onAppear {
+                tabBatState.tabBarIsHidden = false
+            }
+            .sheet(isPresented: $presentDrawView) {
+                DrawModalView()
+                    .padding(.vertical, Settings.paddingBetweenElements)
+                    .presentationDetents([.height(modalViewSize.width)])
+            }
+            
             // MARK: Используется чтобы присвоить ширину экрана
             .onAppear {
                 modalViewSize = geo.size
@@ -63,5 +65,6 @@ struct SearchView_Previews: PreviewProvider {
         SearchView()
             .environmentObject(Store())
             .environmentObject(TabBarState())
+            .environmentObject(Coordinator())
     }
 }

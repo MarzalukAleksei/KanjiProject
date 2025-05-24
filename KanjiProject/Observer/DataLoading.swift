@@ -22,21 +22,33 @@ final class DataLoading: ObservableObject {
     @Published var bushu: [BushuModel] = []
     @Published var kanjiKankenExamplesTranslations: [WordModel] = []
     @Published var goi: [WordModel] = []
+    @Published var usersWords: [WordModel] = []
     
     var complete: Bool {
-        if !baseWords.isEmpty,
-           !kanjiKanken.isEmpty,
-           !dictionary.isEmpty,
-           !giseigo.isEmpty,
-           !kana.isEmpty,
-//           !kanji.isEmpty,
-           !yojijukugo.isEmpty,
-           !bushu.isEmpty,
-//           !goi.isEmpty,
-           !kanjiKankenExamplesTranslations.isEmpty {
-            return true
-        }
-        return false
+        [
+            baseWords.isEmpty,
+            kanjiKanken.isEmpty,
+            dictionary.isEmpty,
+            giseigo.isEmpty,
+            yojijukugo.isEmpty,
+            bushu.isEmpty,
+            kanjiKankenExamplesTranslations.isEmpty
+        ].allSatisfy { !$0 }
+//        if !baseWords.isEmpty,
+//           !kanjiKanken.isEmpty,
+//           !dictionary.isEmpty,
+//           !giseigo.isEmpty,
+//           !kana.isEmpty,
+////           !kanji.isEmpty,
+//           !yojijukugo.isEmpty,
+//           !bushu.isEmpty,
+////           !goi.isEmpty,
+////           !usersWords.isEmpty,
+//           !kanjiKankenExamplesTranslations.isEmpty {
+//            return true
+//        }
+//        return false
+//        [baseWords].allSatisfy { !$0.isEmpty }
     }
     
     
@@ -51,6 +63,7 @@ final class DataLoading: ObservableObject {
         loadBushu()
         loadKanjiKankenExamplesTranslations()
         loadGoi()
+        loadUsersWords()
     }
     
     func data(with completion: (Result<Store, Error>) -> Void) {
@@ -64,8 +77,15 @@ final class DataLoading: ObservableObject {
         store.yojijukugoStore.updateAll(data: yojijukugo)
         store.bushuStore.updateAll(data: bushu)
         store.kanjiKankenExamplesTranslationsStore.updateAll(data: kanjiKankenExamplesTranslations)
+        store.usersWordsStore.updateAll(data: usersWords)
         
         completion(.success(store))
+    }
+    
+    private func loadUsersWords() {
+        let usersWords = getUsersWords()
+        
+        self.usersWords = usersWords
     }
     
     private func loadBaseWord() {
@@ -319,6 +339,20 @@ final class DataLoading: ObservableObject {
     private func getBaseWord() -> [WordModel] {
         guard let data = Data.myFile(.baseWords),
               let result: [WordModel] = JSONManager.manager.decodeToModel(data) else { return [] }
+        return result
+    }
+    
+    private func getUsersWords() -> [WordModel] {
+        guard let data = Data.myFile(.usersWords) else {
+            let empty: [WordModel] = []
+            print("UserWords file created")
+            JSONManager.manager.saveJSONToFile(JSONManager.manager.encodeToJSON(empty), fileName: .usersWords)
+            return empty
+        }
+        guard let result: [WordModel] = JSONManager.manager.decodeToModel(data) else {
+            print("User File decode Error")
+            return []
+        }
         return result
     }
     
