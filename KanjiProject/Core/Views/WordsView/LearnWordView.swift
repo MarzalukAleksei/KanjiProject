@@ -31,6 +31,10 @@ struct LearnWordView: View {
                     
                     Spacer()
                     
+                    Button("Delete current") {
+                        deleteButtonAction()
+                    }
+                    
                     Text(!words.isEmpty ? "Осталось \(words.count) слов" : "Последнее слово")
                     
                     Spacer()
@@ -122,6 +126,15 @@ struct LearnWordView: View {
             await storeOperations.updWord(word)
             storeOperations.updBaseWordFile()
             storeOperations.updUserWordsFile()
+        }
+    }
+    
+    func deleteButtonAction() {
+        guard let word = global.wordToChange else { return }
+        Task {
+            await storeOperations.removeWord(word)
+            updStore()
+            nextWord()
         }
     }
 

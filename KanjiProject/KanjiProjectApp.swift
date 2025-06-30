@@ -113,6 +113,9 @@ struct KanjiProjectApp: App {
                     }
                 }
             }
+            userStore.getAll().forEach { word in
+                print(word.body, word.reading)
+            }
             completion(true)
         }
     }

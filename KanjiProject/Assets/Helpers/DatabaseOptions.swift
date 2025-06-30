@@ -11,7 +11,7 @@ import Foundation
 final class DatabaseOptions {
     static let passedDays: (first: Int, second: Int, third: Int) = (3, 5, 10)
     
-    static let hoursPassed: (first: Int, _) = (2, 0)
+    static let hoursPassed: (first: Int, _) = (2000, 0)
     
     static let answersCounts: (first: Int, second: Int, third: Int) = (5, 10, 15)
     

@@ -91,6 +91,13 @@ struct MainView: View {
         
     }
     
+    func getLearnings() {
+        let baseWords = store.baseWordsStore.getAll().filter { $0.isInList == true }
+        let usersWords = store.usersWordsStore.getAll().filter { $0.isInList == true }
+        let words = baseWords + usersWords
+        print(words.map { $0.body })
+    }
+    
     func goiSetting() {
         do {
             var n2GoiWords = GoiMapper().gettingData(entity: FileMapper().transform(data: try FileManage().loadFile(fileName: "語彙N2", fileType: .csv)), level: .N2)

@@ -71,9 +71,9 @@ private struct Row: View {
                     }
                     .opacity(Settings.listKanjiSettings.opacity)
                     
-//                    if userSettings.showSenceInJapanese {
-//                        Text(kanji.meaning)
-//                    }
+                    if userSettings.showSenceInJapanese {
+                        Text(kanji.meaning)
+                    }
                 }
                 .font(.system(size: Settings.listKanjiSettings.readings))
                 

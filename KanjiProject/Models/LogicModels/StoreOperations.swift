@@ -45,6 +45,16 @@ class StoreOperations {
         }
     }
     
+    func removeWord(_ word: WordModel) async {
+        if store.baseWordsStore.getAll().contains(where: { $0.id == word.id }) {
+            var word = word
+            word.removeFromList()
+            await store.baseWordsStore.update(set: word)
+        } else {
+            await store.usersWordsStore.delete(word)
+        }
+    }
+    
     /// Сохраняет файл со словами пользователя
     func updUserWordsFile() {
         Task {

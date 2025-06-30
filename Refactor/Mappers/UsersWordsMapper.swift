@@ -14,31 +14,39 @@ class UsersWordsMapper: IDataMapper {
     func gettingData(entity: [String]) -> [WordModel] {
         var result: [WordModel] = []
         for row in entity {
-//            var word = WordModel.empty
             var row = row.replacingOccurrences(of: "-", with: "—")
-            var body = ""
-            var reading = ""
-            guard let dashIndex = row.firstIndex(of: "—") else {
-                print("Check value of \(row)")
-                continue
-            }
-            if let openBracketIndex = row.firstIndex(of: "("),
-               let closeBracketIndex = row.firstIndex(of: ")"),
-                closeBracketIndex < dashIndex {
-                reading = String(row[row.index(after: openBracketIndex)..<closeBracketIndex])
-                body = String(row[row.startIndex..<row.index(before: openBracketIndex)])
-            } else {
-                body = String(row[row.startIndex..<row.index(before: dashIndex)])
-            }
-            let meaning = String(row[row.index(after: dashIndex)..<row.endIndex])
+            let meaning = meaning(&row)
+            let reading = reading(&row)
             let ar = meaning.components(separatedBy: "***")
-            result.append(.init(body: body,
+            row = row.replacingOccurrences(of: " ", with: "")
+            result.append(.init(body: row,
                                 meaningInEnglish: "",
                                 meaningInRussian: ar[0],
                                 meaningInJapanese: ar.count > 1 ? ar[1] : nil,
-                                reading: body + "[" + reading + "]",
+                                reading: row + "[" + reading + "]",
                                 type: "", levels: [], levelInTag: []))
         }
+        return result
+    }
+    
+    private func reading(_ row: inout String) -> String {
+        row = row.replacingOccurrences(of: "（", with: "(")
+        row = row.replacingOccurrences(of: "）", with: ")")
+        guard let openBracketIndex = row.firstIndex(of: "("),
+              let closeBracketIndex = row.firstIndex(of: ")") else { return "" }
+        let result = String(row[row.index(after: openBracketIndex)..<closeBracketIndex])
+        row = String(row[row.startIndex..<row.index(openBracketIndex, offsetBy: -1)])
+        return result
+    }
+    
+    private func meaning(_ row: inout String) -> String {
+        guard let dashIndex = row.firstIndex(of: "—") else { return "" }
+        guard let meaningStartIndex = row.index(dashIndex, offsetBy: 2, limitedBy: row.endIndex) else {
+            row = String(row[row.startIndex..<dashIndex])
+            return ""
+        }
+        let result = String(row[meaningStartIndex..<row.endIndex])
+        row = String(row[row.startIndex..<dashIndex])
         return result
     }
 }

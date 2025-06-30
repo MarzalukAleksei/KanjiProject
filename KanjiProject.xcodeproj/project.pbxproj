@@ -69,6 +69,8 @@
 		AF3A72BA2A7D4AD500A5513C /* CloseScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72B92A7D4AD500A5513C /* CloseScrollView.swift */; };
 		AF3A72BC2A7E4AC500A5513C /* ElementSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72BB2A7E4AC500A5513C /* ElementSize.swift */; };
 		AF3A72C22A80512800A5513C /* PartialRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */; };
+		AF3B69622DEBDE95001FCCCD /* KanjiFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF3B69612DEBDE95001FCCCD /* KanjiFile.txt */; };
+		AF3B69642DEBE67D001FCCCD /* KanjiFileMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3B69632DEBE67D001FCCCD /* KanjiFileMapper.swift */; };
 		AF3BB7192D7DB37500D56E68 /* FocusedButtonsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3BB7182D7DB37500D56E68 /* FocusedButtonsActions.swift */; };
 		AF3BB71B2D7DBAB600D56E68 /* LearningViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3BB71A2D7DBAB600D56E68 /* LearningViewHeader.swift */; };
 		AF3D53B02C21C308005B495F /* VisionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D53AF2C21C308005B495F /* VisionManager.swift */; };
@@ -286,6 +288,8 @@
 		AF3A72B92A7D4AD500A5513C /* CloseScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseScrollView.swift; sourceTree = "<group>"; };
 		AF3A72BB2A7E4AC500A5513C /* ElementSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementSize.swift; sourceTree = "<group>"; };
 		AF3A72C12A80512800A5513C /* PartialRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialRoundedRectangle.swift; sourceTree = "<group>"; };
+		AF3B69612DEBDE95001FCCCD /* KanjiFile.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = KanjiFile.txt; sourceTree = "<group>"; };
+		AF3B69632DEBE67D001FCCCD /* KanjiFileMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiFileMapper.swift; sourceTree = "<group>"; };
 		AF3BB7182D7DB37500D56E68 /* FocusedButtonsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedButtonsActions.swift; sourceTree = "<group>"; };
 		AF3BB71A2D7DBAB600D56E68 /* LearningViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningViewHeader.swift; sourceTree = "<group>"; };
 		AF3D53AF2C21C308005B495F /* VisionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionManager.swift; sourceTree = "<group>"; };
@@ -840,6 +844,7 @@
 				AF56AB592C4166C8000C1A31 /* GoiMapper.swift */,
 				AF8E84032CD3CB9D009FE87C /* NouryokuWordsMapper.swift */,
 				AFABD54D2DD37F140094CF51 /* UsersWordsMapper.swift */,
+				AF3B69632DEBE67D001FCCCD /* KanjiFileMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -859,6 +864,7 @@
 			isa = PBXGroup;
 			children = (
 				AFABD5492DD16B390094CF51 /* UsersWords.txt */,
+				AF3B69612DEBDE95001FCCCD /* KanjiFile.txt */,
 				AF8E84072CD3DCFB009FE87C /* Japanese-Russian.txt */,
 				AF8E83FF2CD3CB20009FE87C /* noryoku.txt */,
 				AF10112F2B798999001EEB39 /* 日本語.txt */,
@@ -1114,6 +1120,7 @@
 				AFFF94DD2B600AED00DD01EB /* 08級.txt in Resources */,
 				AF0648802BBEBCA9005ECB2F /* GoogleService-Info.plist in Resources */,
 				AFFF94DC2B600AED00DD01EB /* 06級.txt in Resources */,
+				AF3B69622DEBDE95001FCCCD /* KanjiFile.txt in Resources */,
 				AFABD54A2DD16B390094CF51 /* UsersWords.txt in Resources */,
 				AFFF94D12B6009C000DD01EB /* 01級.txt in Resources */,
 				AFA2BEA92B7189B300BAC9EB /* Core Japanese Vocabulary__JLPT N5.txt in Resources */,
@@ -1244,6 +1251,7 @@
 				AF1EB07A2A99693200850A3B /* Extensions.swift in Sources */,
 				AF34E55D2CA5672200DE530F /* KanjiLearningView.swift in Sources */,
 				AF56AB5A2C4166C8000C1A31 /* GoiMapper.swift in Sources */,
+				AF3B69642DEBE67D001FCCCD /* KanjiFileMapper.swift in Sources */,
 				AF960B412A83C70600A33373 /* CustomSlider.swift in Sources */,
 				AF8122B32B7255E500CCE83A /* IAnswers.swift in Sources */,
 				AF960B472A8563C200A33373 /* Modifiers.swift in Sources */,
