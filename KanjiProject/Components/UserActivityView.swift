@@ -64,7 +64,7 @@ struct UserActivityView: View {
         for activity in userActivity {
             let activityComp = UserActivity.getDateComponents(for: activity.date)
             if currentCellComponents == activityComp {
-                return .confirmedActivity(opacity: activity.opacity())
+                return .confirmedActivity(opacity: activity.opacity(), dateComponents: activityComp)
             }
         }
         
@@ -92,22 +92,41 @@ private struct Cell: View {
                 .opacity(dateType == .dateBeforeFirstActivity ? Settings.opacity : 1)
         }
         .padding(1)
+        .overlay {
+            VStack(spacing: 0) {
+                let activity = activityDate()
+                Text(activity.month)
+                Text(activity.day)
+            }
+            .font(.system(size: ElementSize.userActivityCellSize.width / 2.7))
+            .bold()
+        }
     }
     
     private func setColor() -> Color {
         switch dateType {
         case .dateBeforeFirstActivity:
             return ElementsColors.userActivityColors.beforeFirstAct
-        case .confirmedActivity(opacity: let value):
+        case .confirmedActivity(opacity: let value, _):
             return ElementsColors.userActivityColors.confirmedAct.opacity(value)
         case .skippedDay:
             return ElementsColors.userActivityColors.skippedDay
+        }
+    }
+    
+    private func activityDate() -> (month: String, day: String) {
+        switch dateType {
+        case .confirmedActivity(_, let components):
+            guard let day = components.day, let month = components.month else { return ("", "") }
+            return ("\(month)月", "\(day)日")
+        case _:
+            return ("", "")
         }
     }
 }
 
 private enum DateCondition: Equatable {
     case dateBeforeFirstActivity
-    case confirmedActivity(opacity: Double)
+    case confirmedActivity(opacity: Double, dateComponents: DateComponents)
     case skippedDay
 }

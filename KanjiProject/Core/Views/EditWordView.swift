@@ -68,7 +68,7 @@ struct EditWordView: View {
                 // MARK: УДАЛИТЬ ЭТОТ БЛОК ПОСЛЕ ОКОНЧАНИЯ РАБОТЫ СО СЛОВОМ
                 HStack {
                     ForEach(NouryokuLevel.allCases.reversed(), id: \.self) { cell in
-                        if cell != .another {
+//                        if cell != .another {
                             Button {
                                 setLevel(cell)
                             } label: {
@@ -77,7 +77,7 @@ struct EditWordView: View {
                                 
                             }
                             
-                        }
+//                        }
                     }
                     
                     Button {

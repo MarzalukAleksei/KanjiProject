@@ -10,7 +10,7 @@ import Foundation
 /// Контейнер, хранящий переменные, значения которых меняет пользователь в зависимости от собственных потребностей
 final class UserSettings: ObservableObject, Codable {
     /// Показать перевод на английский
-    @Published var showEnglishMeaning = true
+    @Published var showEnglishMeaning = false
     
     /// Показывать окно выбора режива при каждом переходе на экран изучения кандзи
     @Published var showKanjiConformationDialog = false // not used
@@ -29,6 +29,8 @@ final class UserSettings: ObservableObject, Codable {
     
     /// Для отображения значения на японском.
     @Published var showSenceInJapanese = false // not used
+    
+    @Published var hideFurigana = false // not used
     
     private var conformationDialogState: Bool {
         get { showKanjiConformationDialog }
@@ -64,6 +66,11 @@ final class UserSettings: ObservableObject, Codable {
         get { showSenceInJapanese }
         set { showSenceInJapanese = newValue }
     }
+    
+    private var hideFuriganaState: Bool {
+        get { hideFurigana }
+        set { hideFurigana = newValue }
+    }
 
     private enum CodingKeys: String, CodingKey {
         case showConformationDialog
@@ -73,6 +80,7 @@ final class UserSettings: ObservableObject, Codable {
         case newKaniInDay
         case showEnglishMeaning
         case showSenceInJapanese
+        case hideFurigana
     }
     
     /// Used for invironment
@@ -87,6 +95,7 @@ final class UserSettings: ObservableObject, Codable {
         newKanjiInDayState = try container.decode(Int.self, forKey: .newKaniInDay)
         showEnglishMeaningState = try container.decode(Bool.self, forKey: .showEnglishMeaning)
         showSenceInJapaneseState = try container.decode(Bool.self, forKey: .showSenceInJapanese)
+        hideFuriganaState = try container.decode(Bool.self, forKey: .hideFurigana)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -99,5 +108,6 @@ final class UserSettings: ObservableObject, Codable {
         try container.encode(newWordsInDay, forKey: .newWordsInDay)
         try container.encode(showEnglishMeaning, forKey: .showEnglishMeaning)
         try container.encode(showSenceInJapanese, forKey: .showSenceInJapanese)
+        try container.encode(hideFurigana, forKey: .hideFurigana)
     }
 }

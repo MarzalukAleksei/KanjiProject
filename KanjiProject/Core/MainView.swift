@@ -64,7 +64,7 @@ struct MainView: View {
             
         }
         .onAppear {
-            
+            getLearnings()
 //            nonChecked.forEach { word in
 //                store.baseWordsStore.update(set: word)
 //            }

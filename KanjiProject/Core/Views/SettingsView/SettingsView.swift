@@ -49,6 +49,10 @@ struct SettingsView: View {
                     
                     Divider()
                     
+                    CellWithSlider(title: "Скрыть фуригану", toggle: $userSettings.hideFurigana)
+                    
+                    Divider()
+                    
                     SectionCell(title: "Общие настройки")
                     
                     CellWithPicker(title: "Добавлять новых слов каждый день", basicValue: DatabaseOptions.newWordsInDayConstantValue, selection: $userSettings.newWordsInDay)
